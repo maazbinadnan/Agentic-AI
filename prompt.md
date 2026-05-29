@@ -1,0 +1,1 @@
+this is a sample prompt file that will be used by the agent to geenrate tags : the tags to be generated should be football, basketball and prompt

@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 import json
+from openai import OpenAI
 load_dotenv()
 
 '''config setup'''
@@ -12,18 +13,28 @@ endpoint = config["AzureAI"]["ResponseEndpoint"]
 deployment = config["AzureAI"]["deployment"]
 
 '''setup api key'''
-api_key = os.getenv("api_key") 
+api_key = os.getenv("AZURE_OPENAI_API_KEY") 
 
-#setting up the client
+
+'''Agent setup'''
+def get_weather(city: str) -> str:
+    """Get weather for a given city."""
+    return f"It's always sunny in {city}!"
+
 client = OpenAI(
     base_url=endpoint,
-    api_key=api_key
+    api_key= api_key
 )
 
-# 4. Make your call (Note: the model argument targets your deployment name)
-response = client.responses.create(
+
+completion = client.chat.completions.create(
     model=deployment,
-    input="What is the capital of France?",
+    messages=[
+        {
+            "role": "user",
+            "content": "can you explain how langgraph works in simple short terms",
+        }
+    ],
 )
 
-print(response.output[0])
+print(completion.choices[0].message)
