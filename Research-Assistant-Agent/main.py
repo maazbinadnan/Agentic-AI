@@ -5,6 +5,7 @@ from langgraph.graph import StateGraph, START, END
 from langchain.messages import SystemMessage, HumanMessage
 import argparse
 
+
 def tagger(state: dict):
     """LLM decides whether to call a tool or not"""
 
@@ -28,7 +29,8 @@ def tagger(state: dict):
 agent_builder = StateGraph(TaggerState)
 
 #add node #1
-agent_builder.add_node("read_file",openfile)
+
+agent_builder.add_node("read_file",openfile) 
 
 #add node#2
 agent_builder.add_node("tagger",tagger)
@@ -44,13 +46,13 @@ agent_builder.add_edge("tagger",END)
 
 agent = agent_builder.compile()
 
-from IPython.display import Image, display
-png_bytes = agent.get_graph(xray=True).draw_mermaid_png()
+# from IPython.display import Image, display
+# png_bytes = agent.get_graph(xray=True).draw_mermaid_png()
 
-with open("graph.png", "wb") as f:
-    f.write(png_bytes)
+# with open("graph.png", "wb") as f:
+#     f.write(png_bytes)
 
-print("Graph saved successfully as 'graph2.png'!")
+# print("Graph saved successfully as 'graph2.png'!")
 
 
 def run_file_via_tagger(filepath: str):
