@@ -28,6 +28,3 @@ class Config:
         )
         model_name = os.getenv("EMBEDDING_MODEL_DEPLOYMENT", model)
         return client.embeddings.create(input=text, model=model_name)
-
-mock = Config()
-print(mock.get_base_model())

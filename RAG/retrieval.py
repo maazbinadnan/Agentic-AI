@@ -1,5 +1,6 @@
 from configurations import Config
 from pinecone import QueryResponse
+from pathlib import Path
 
 class Retrieval:
     def __init__(self,config:Config) -> None:
@@ -37,22 +38,17 @@ class Retrieval:
         # Retrieve prompt from system_prompt.md
         prompt_path = Path(__file__).parent / "system_prompt.md"
         system_instruction = prompt_path.read_text(encoding="utf-8").replace("{{context}}", context)
-        print(system_instruction)
         
         response = client.responses.create(
             model="gpt-4o-mini",
             input=[
                 {"role": "system", "content": system_instruction},
                 {"role": "user", "content": query}
-            ]
+            ],
+            stream= True
         )
-        return response.output_text
+        return response
 
 
-config = Config()
-from pathlib import Path  # Ensure Path is available for the runner
-retriever = Retrieval(config=config)
-query = "what is agentic AI"
-results = retriever.retrieve(query=query, top_k=10)
-context = retriever.build_context_string(results)
-print(retriever.generate_response(query=query, context=context))
+
+
