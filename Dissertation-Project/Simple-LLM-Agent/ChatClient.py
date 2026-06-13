@@ -15,18 +15,19 @@ class ChatClient:
             api_key= os.environ['AZURE_OPENAI_API_KEY']
         )
     
-    def call(self, messages: list[dict], model="gpt-4o-mini"):
+    def call(self,format, messages: list[dict], model="gpt-4o-mini"):
         """Call the LLM with a list of messages."""
         if self.client is None:
             self.resolveAPIClient()
 
         # Assert to Pylance that self.client is definitely not None at this point
         assert self.client is not None
-        response = self.client.responses.create(
+        response = self.client.responses.parse(
             model=model,
-            input=messages # type: ignore 
+            input=messages # type: ignore
+            ,text_format= format
         )
-        return response.output_text
+        return response.output_parsed
 
 
 
