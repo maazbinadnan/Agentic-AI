@@ -2,7 +2,7 @@ import os
 import csv
 from ChatClient import ChatClient
 from State import output_format_final,GraphState
-
+from Database_Layer.pinecone_connect import PineconeClient
 
 def read_md_file(filepath):
     """Takes a filepath to an MD file and reads all its contents."""
@@ -68,6 +68,29 @@ def write_to_csv(state:GraphState):
         except Exception as e:
             print(f"Error writing CSV to {filepath}: {e}")
     
+def upsert_vectors(state:GraphState, namespace: str | None = None):
+    model = state.get("requirements")
+    assert model is not None    
+    pc = PineconeClient()
+    # Ensure the namespace/schema exists before upserting
+    pc.ensure_namespace()
+    for category in model.final:
+        req_type = str(category.requirement_type)
+        for output_requirements in category.requirements:
+            # Obtain embedding: prefer a provided `vector` argument, otherwise
+            # use PineconeClient.create_embedding if implemented.
+            embedding = pc.create_embedding(output_requirements.requirement_text)
+            vector_embedding = embedding.data[0].embedding
+            # Build metadata from the requirement object
+            md = {
+                "requirement_no": output_requirements.requirement_no,
+                "requirement_type": req_type,
+                "requirement_text": output_requirements.requirement_text
+            }
+
+            pc.upsert_record(id=output_requirements.requirement_no, vector=vector_embedding, metadata=md, namespace=namespace)
+
+
 def generate_user_stories(state:GraphState):
     '''generate user stories given a prompt'''
     print("generating user stories")

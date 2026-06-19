@@ -26,6 +26,7 @@ class output_format_final(BaseModel):
     final: List[output_format]
 
 class GraphState(TypedDict):
+    namespace: str
     model : str
     requirements: output_format_final | None
     filepath: Path
