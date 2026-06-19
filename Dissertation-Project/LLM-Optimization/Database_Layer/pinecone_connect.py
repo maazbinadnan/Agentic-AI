@@ -1,3 +1,10 @@
+"""Module: pinecone_connect
+
+Light wrapper for Pinecone operations and OpenAI embedding creation.
+This pass only adds documentation and clarifying docstrings; no logic
+or behavioral changes were made.
+"""
+
 from pinecone import Pinecone
 from dotenv import load_dotenv
 import os

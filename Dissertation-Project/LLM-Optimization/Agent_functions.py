@@ -1,11 +1,20 @@
+"""Module: Agent_functions
+
+Contains helper functions used by the LLM-Optimization project. Only
+documentation was added in this pass; no code logic was modified.
+"""
+
 import os
 import csv
 from ChatClient import ChatClient
-from State import output_format_final,GraphState
+from State import output_format_final, GraphState
 from Database_Layer.pinecone_connect import PineconeClient
 
-def read_md_file(filepath):
-    """Takes a filepath to an MD file and reads all its contents."""
+def read_md_file(filepath: str) -> str:
+    """Read and return the contents of a Markdown file.
+
+    Returns a string with an error message on failure.
+    """
     try:
         with open(filepath, "r", encoding="utf-8") as file:
             return file.read()
@@ -15,12 +24,12 @@ def read_md_file(filepath):
         return f"An unexpected error occurred: {e}"
     
 
-def write_to_file(state:GraphState):
-    """Writes each category to a simple Markdown file, creating directories as needed."""
+def write_to_file(state: GraphState) -> None:
+    """Write each requirement category to a Markdown file under `filepath`."""
     model = state.get("requirements")
     assert model is not None
-    basepath = state.get('filepath', '.')
-    model_name = state.get('model', 'model')
+    basepath = state.get("filepath", ".")
+    model_name = state.get("model", "model")
 
     for category in model.final:
         req_type = str(category.requirement_type)
@@ -32,18 +41,20 @@ def write_to_file(state:GraphState):
                 os.makedirs(directory, exist_ok=True)
 
             with open(filepath, "w", encoding="utf-8") as file:
-                    for output_requirements in category.requirements:
-                        file.write(f"{output_requirements.requirement_no} {output_requirements.requirement_text}, reasoning = {output_requirements.requirement_reasoning}, reference = {output_requirements.requirement_reference}  \n")
+                for output_requirements in category.requirements:
+                    file.write(
+                        f"{output_requirements.requirement_no} {output_requirements.requirement_text}, reasoning = {output_requirements.requirement_reasoning}, reference = {output_requirements.requirement_reference}  \n"
+                    )
             print(f"Successfully wrote to {filepath}")
         except Exception as e:
             print(f"Error writing to {filepath}: {e}")
     
-def write_to_csv(state:GraphState):
-    """Writes each category to a CSV file, creating directories as needed."""
+def write_to_csv(state: GraphState) -> None:
+    """Write each requirement category to a CSV file under `filepath`."""
     model = state.get("requirements")
     assert model is not None
-    basepath = state.get('filepath', '.')
-    model_name = state.get('model', 'model')
+    basepath = state.get("filepath", ".")
+    model_name = state.get("model", "model")
 
     for category in model.final:
         req_type = str(category.requirement_type)
@@ -54,7 +65,7 @@ def write_to_csv(state:GraphState):
             if directory and not os.path.exists(directory):
                 os.makedirs(directory, exist_ok=True)
 
-            with open(filepath, "w", newline='', encoding="utf-8") as csvfile:
+            with open(filepath, "w", newline="", encoding="utf-8") as csvfile:
                 writer = csv.writer(csvfile)
                 writer.writerow(["requirement_no", "requirement_text", "requirement_reasoning", "requirement_reference"])
                 for output_requirements in category.requirements:
@@ -68,9 +79,10 @@ def write_to_csv(state:GraphState):
         except Exception as e:
             print(f"Error writing CSV to {filepath}: {e}")
     
-def upsert_vectors(state:GraphState, namespace: str | None = None):
+def upsert_vectors(state: GraphState, namespace: str | None = None) -> None:
+    """Create embeddings and upsert requirement vectors into Pinecone."""
     model = state.get("requirements")
-    assert model is not None    
+    assert model is not None
     pc = PineconeClient()
     # Ensure the namespace/schema exists before upserting
     pc.ensure_namespace()
@@ -85,16 +97,22 @@ def upsert_vectors(state:GraphState, namespace: str | None = None):
             md = {
                 "requirement_no": output_requirements.requirement_no,
                 "requirement_type": req_type,
-                "requirement_text": output_requirements.requirement_text
+                "requirement_text": output_requirements.requirement_text,
             }
 
-            pc.upsert_record(id=output_requirements.requirement_no, vector=vector_embedding, metadata=md, namespace=namespace)
+            pc.upsert_record(
+                id=output_requirements.requirement_no,
+                vector=vector_embedding,
+                metadata=md,
+                namespace=namespace,
+            )
 
 
-def generate_user_stories(state:GraphState):
-    '''generate user stories given a prompt'''
+def generate_user_stories(state: GraphState):
+    """Generate user stories given the project prompts and data files."""
     print("generating user stories")
-    #reolve chat client
+
+    # resolve chat client
     client = ChatClient()
     client.resolveAPIClient()
 
@@ -103,18 +121,14 @@ def generate_user_stories(state:GraphState):
 
     system_prompt = read_md_file(promptfile)
     data = read_md_file(datafile)
-    messages=[{
-               "role": "system",
-               "content": system_prompt
-           },
-           {
-               "role": "user",
-               "content": data
-           }
-           ]
-    
-    response = client.call(model=state["model"], messages=messages,format = output_format_final)
+
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": data},
+    ]
+
+    response = client.call(model=state["model"], messages=messages, format=output_format_final)
     if response is None:
-        return 
-    assert response is not None
-    return { "requirements": response }
+        return None
+
+    return {"requirements": response}
