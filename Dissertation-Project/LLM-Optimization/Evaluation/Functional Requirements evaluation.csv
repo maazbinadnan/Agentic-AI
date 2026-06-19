@@ -1,0 +1,16 @@
+,Ground Truth,Matched Requirement,Similarity Score
+0,The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.,The app must allow users to display current football news for their favorite teams.,0.887165189
+1,The app must allow users to view live results of their favorite teams in real time via a live ticker.,The app must provide live results of favorite teams via a live ticker.,0.939705253
+2,The app must allow users to view league tables and statistics from current as well as past seasons.,The app must allow users to display current football news for their favorite teams.,0.631839693
+3,The app must provide users with detailed team and player information that can be accessed at any time.,The app must provide detailed team and player information at all times.,0.935629427
+4,As soon as a live match begins the app must allow users to access live stream links from providers such as DAZN or Sky as long as the broadcast rights are valid.,The app must integrate live stream links from providers such as DAZN or Sky Sport when the live broadcast has begun.,0.849557281
+5,The app must allow users to register easily and log in directly from the start page.,Registration and login must be available directly at app startup and be uncomplicated.,0.791194916
+6,The app must allow users to personalize their experience by following their favorite teams and leagues.,Users must be able to personalize their experience by following favorite clubs and receiving notifications about news or results.,0.738282382
+7,The app must allow users to select favorite teams and national teams to receive push notifications about news and updates.,The app must allow users to display current football news for their favorite teams.,0.75709033
+8,The app must allow users to receive push notifications about news or results of their favorite teams.,The app must allow users to display current football news for their favorite teams.,0.739559233
+9,The app must allow users to share news and match reports directly via social media.,Users must be able to share news and game reports via social media directly from the app.,0.87744391
+10,The live ticker module must allow users to retrieve and display live data.,The live ticker module must retrieve and display live match data in real time from an external server via API.,0.821275711
+11,The app must allow users to access live match results through the user interface directly.,The app must allow users to retrieve live results of favorite teams in real time via the integrated live ticker module.,0.741249859
+12,The user interface must allow users to view and manage content and modules together.,"The app must allow users to configure their experience individually, including connecting their own interface to the main user interface.",0.504559338
+13,The registration system must allow the registration process to be carried out quickly and easily.,Registration and login must be available directly at app startup and be uncomplicated.,0.598261
+14,The notification system must allow the app to send users information about current events once activated.,The app must provide notifications about current events once the notification function is activated.,0.868218422

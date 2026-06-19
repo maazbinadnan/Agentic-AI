@@ -118,4 +118,3 @@ def generate_user_stories(state:GraphState):
         return 
     assert response is not None
     return { "requirements": response }
-
