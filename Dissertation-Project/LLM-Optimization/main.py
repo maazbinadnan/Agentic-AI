@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, MessagesState, START, END
 from State import GraphState
-from Agent_functions import generate_user_stories,write_to_file
+from Agent_functions import generate_user_stories,write_to_csv
 from pathlib import Path
 
 #create the graph 
@@ -9,7 +9,7 @@ workflow = StateGraph(GraphState)
 #add nodes
 # workflow.add_node("parse_file",parse_input)
 workflow.add_node("create_user_stories",generate_user_stories)
-workflow.add_node("write_to_file", write_to_file)
+workflow.add_node("write_to_file", write_to_csv)
 
 #edges
 workflow.add_edge(START,"create_user_stories")

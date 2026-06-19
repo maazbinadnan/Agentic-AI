@@ -1,7 +1,7 @@
 import os
+import csv
 from ChatClient import ChatClient
 from State import output_format_final,GraphState
-import os
 
 
 def read_md_file(filepath):
@@ -21,6 +21,7 @@ def write_to_file(state:GraphState):
     assert model is not None
     basepath = state.get('filepath', '.')
     model_name = state.get('model', 'model')
+
     for category in model.final:
         req_type = str(category.requirement_type)
         filename = f"{model_name}_{req_type}.md"
@@ -32,10 +33,40 @@ def write_to_file(state:GraphState):
 
             with open(filepath, "w", encoding="utf-8") as file:
                     for output_requirements in category.requirements:
-                        file.write(f"{output_requirements.requirement_no} {output_requirements.requirement_text} \n")
+                        file.write(f"{output_requirements.requirement_no} {output_requirements.requirement_text}, reasoning = {output_requirements.requirement_reasoning}, reference = {output_requirements.requirement_reference}  \n")
             print(f"Successfully wrote to {filepath}")
         except Exception as e:
             print(f"Error writing to {filepath}: {e}")
+    
+def write_to_csv(state:GraphState):
+    """Writes each category to a CSV file, creating directories as needed."""
+    model = state.get("requirements")
+    assert model is not None
+    basepath = state.get('filepath', '.')
+    model_name = state.get('model', 'model')
+
+    for category in model.final:
+        req_type = str(category.requirement_type)
+        filename = f"{model_name}_{req_type}.csv"
+        filepath = os.path.normpath(os.path.join(basepath, filename))
+        try:
+            directory = os.path.dirname(filepath)
+            if directory and not os.path.exists(directory):
+                os.makedirs(directory, exist_ok=True)
+
+            with open(filepath, "w", newline='', encoding="utf-8") as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(["requirement_no", "requirement_text", "requirement_reasoning", "requirement_reference"])
+                for output_requirements in category.requirements:
+                    writer.writerow([
+                        output_requirements.requirement_no,
+                        output_requirements.requirement_text,
+                        output_requirements.requirement_reasoning,
+                        output_requirements.requirement_reference,
+                    ])
+            print(f"Successfully wrote CSV to {filepath}")
+        except Exception as e:
+            print(f"Error writing CSV to {filepath}: {e}")
     
 def generate_user_stories(state:GraphState):
     '''generate user stories given a prompt'''

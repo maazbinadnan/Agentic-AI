@@ -9,6 +9,12 @@ class output_requirement(BaseModel):
     requirement_text: str = Field(
         description="The testable requirement statement."
     )
+    requirement_reference: str = Field(
+        description="What original line in the user research was this requirement extracted from"
+    )
+    requirement_reasoning: str = Field(
+        description="What reasoning is there for this requirements"
+    )
 
 class output_format(BaseModel):
     requirement_type: Literal["Functional Requirements", "Non-Functional Requirements"] = Field(
