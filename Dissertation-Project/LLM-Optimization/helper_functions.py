@@ -11,7 +11,7 @@ from typing import Literal
 import pandas as pd
 import os
 
-def evaluate_user_stories(filepath: Path, type: Literal["Functional Requirements", "non-functional"]):
+def evaluate_user_stories(filepath: Path, type: Literal["Functional Requirements", "Non-Functional Requirements"], score_threshold:float):
     """Evaluate user stories by finding nearest requirements in Pinecone.
 
     The function reads a CSV at `filepath`, creates embeddings for each
@@ -34,7 +34,6 @@ def evaluate_user_stories(filepath: Path, type: Literal["Functional Requirements
             include_metadata=True,
         )
 
-        print("ground_truth =", text)
         matches = data.get("matches", [])
         matched_text = ""
         score = 0
@@ -49,13 +48,13 @@ def evaluate_user_stories(filepath: Path, type: Literal["Functional Requirements
             {
                 "Ground Truth": text,
                 "Matched Requirement": matched_text,
-                "Similarity Score": score,
+                "Similarity Score": score > score_threshold,
             }
         )
 
     results_df = pd.DataFrame(results)
-    results_df.to_csv(f"Evaluation\\{type} evaluation.csv")
+    results_df.to_csv(rf"Dissertation-Project\LLM-Optimization\Evaluation\\{type} evaluation.csv")
 
-path = Path("Data\\functional_requirements.csv")
+path = Path(r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\Data\functional_requirements.csv")
 
-evaluate_user_stories(filepath=path, type="Functional Requirements")
+evaluate_user_stories(filepath=path, type="Functional Requirements",score_threshold=0.85)
