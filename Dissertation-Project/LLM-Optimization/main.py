@@ -35,6 +35,7 @@ workflow.add_node("revise_user_stories",agent.revise_user_stories)
 # edges
 workflow.add_edge(START, "create_user_stories")
 workflow.add_edge("create_user_stories" , "evaluate_user_stories")
+workflow.add_edge("evaluate_user_stories", "write_state")
 workflow.add_edge("evaluate_user_stories", "revise_user_stories")
 workflow.add_edge("revise_user_stories", "write_state")
 workflow.add_edge("write_state",END)
@@ -55,24 +56,20 @@ with open(output_path, "wb") as f:
 print(f"Workflow graph successfully saved to: {output_path}")
 
 
-# initial_state: GraphState = {
-# 	"namespace": "requirements",
-# 	"model": data["$model"],
-# 	"requirements": None,
-#     "evaluation" :None,
-# 	"filepath": r"C:\\Users\\OMNI BOOK\\OneDrive\\Personal-Projects\\Agent-Learning\\Dissertation-Project\\LLM-Optimization\\Data\\LLM_Outputs",
-#     "read_state":False
-# }
-state_path =r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\States\temp_final_state.pkl"
-with open(state_path, "rb") as f:
-    initial_state: GraphState  = pickle.load(f)
+initial_state: GraphState = {
+	"namespace": "requirements",
+	"model": data["$model"],
+	"requirements": None,
+    "evaluation" :None,
+	"filepath": r"C:\\Users\\OMNI BOOK\\OneDrive\\Personal-Projects\\Agent-Learning\\Dissertation-Project\\LLM-Optimization\\Data\\LLM_Outputs",
+    "read_state":False
+}
 
-
-# #uncomment to run app
+#uncomment to run app
 final_state = app.invoke(initial_state)
 print(final_state)
 
-data_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\Data\Ground_truths\functional_requirements.csv"
+# data_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\Data\Ground_truths\functional_requirements.csv"
 
 # score_threshold = [0,0.6,0.7,0.8,0.9]
 # for score in score_threshold:

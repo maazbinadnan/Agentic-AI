@@ -78,7 +78,7 @@ class evaluator_output(BaseModel):
 class GraphState(TypedDict):
     namespace: str
     model: str
-    requirements: Annotated[output_format,operator.add] | None
-    evaluation: evaluator_output | None
+    requirements: output_format | None
+    evaluation: Annotated[evaluator_output, operator.add] | None
     filepath: str
     read_state: bool

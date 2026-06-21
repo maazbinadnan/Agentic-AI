@@ -133,29 +133,36 @@ class Agent_functions():
         print("revising user stories")
         promptfile = os.path.normpath(os.path.join("prompt", "revise_prompt.md"))   
         system_prompt = self._read_md_file(promptfile)
-        payload = {
-        "model": state.get("model"),
-        "requirements": state.get("requirements"),
-        "evaluation": state.get("evaluation"),
-        }
-        print(payload)
-        # 2. Stringify the entire thing cleanly
-        # user_message = json.dumps(clean_state, ensure_ascii=False, indent=2)
+        if state['evaluation'] is None:
+            return "no evaluation found"
+        assert state['evaluation'] is not None
+        message = ''
+        for table in state['evaluation'].evaluation:
+            req_id = table.original_requirement_id
+            issue = table.issue_identified
+            rewritten = table.rewritten_requirement_text
+            
+            # Example string compilation:
+            message += f"ID: {req_id}\nIssue: {issue}\nFix: {rewritten}\n---\n"
+        
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": message},
+        ]
 
-        # response = self._azureclient.responses.parse(
-        #     model=state.get("model", "gpt-4o-mini"),
-        #     input=messages,
-        #     text_format=output_format,
-        # )
-        # if response is None:
-        #     return None
-
-        # return {"requirements": response.output_parsed}
+        response = self._azureclient.responses.parse(model="gpt-4o-mini", input= cast(str,messages),text_format=output_format)
+        if response is None:
+            return None
+        
+        return {"requirements": response.output_parsed ,"read_state":True}
 
 
     def write_state(self, state: GraphState):
+        if state['read_state'] == True:
+            state_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\States\final_state.pkl"
         # Change the file extension to .pkl or .bin to reflect it is a binary file
-        state_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\States\temp_final_state.pkl"
+        else:
+            state_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\States\state_before_evaluation.pkl"
         
         try:
             # Open the file in write-binary mode ("wb")

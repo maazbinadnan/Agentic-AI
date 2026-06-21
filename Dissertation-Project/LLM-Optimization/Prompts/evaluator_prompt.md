@@ -16,7 +16,7 @@ Analyze the inputs and provide an objective critique based on the following dime
 2. **Clarity & Precision**: Are the requirements unambiguous, measurable, and free of vague language (e.g., "fast", "user-friendly", "secure enough")?
 3. **Coherence & Conflicts**: Is there any contradiction between the functional features and non-functional constraints (e.g., a highly intensive functional data synchronization feature conflicting with a strict low-bandwidth non-functional requirement)?
 4. **Actionable Feedback**: For every issue found, provide a concrete recommendation or a rewritten example of how to improve it.
-
+5. **return** : return the ID's even if there's no change
 # Output Format
 Provide your analysis using the following structured format:
 
