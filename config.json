@@ -1,7 +1,0 @@
-
-{
-    "AzureAI":{
-        "ResponseEndpoint": "https://Maaz-Learning.services.ai.azure.com/openai/v1",
-        "deployment": "gpt-4o-mini"
-    }
-}

@@ -11,6 +11,10 @@ from Functions.helper_functions import evaluate_user_stories
 from Client_Layer.AzureClient import ChatClient
 from Client_Layer.PineconeClient import PineconeClient
 from pathlib import Path
+import json 
+with open(r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\config.json","r") as jsonfile:
+    data = json.load(jsonfile)
+    
 
 pc = PineconeClient()
 az = ChatClient()
@@ -35,7 +39,7 @@ app = workflow.compile()
 
 initial_state: GraphState = {
 	"namespace": "requirements",
-	"model": "gpt-4.1",
+	"model": data["$model"],
 	"requirements": None,
 	"filepath": Path(
 		r"C:\\Users\\OMNI BOOK\\OneDrive\\Personal-Projects\\Agent-Learning\\Dissertation-Project\\LLM-Optimization\\Data\\LLM_Outputs"
@@ -44,6 +48,7 @@ initial_state: GraphState = {
 
 # final_state = app.invoke(initial_state)
 data_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\Data\Ground_truths\functional_requirements.csv"
+
 score_threshold = [0,0.6,0.7,0.8,0.9]
 for score in score_threshold:
 	evaluate_user_stories(pc=pc,az=az,filepath=Path(data_path),type='Functional Requirements',score_threshold=score)
