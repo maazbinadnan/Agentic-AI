@@ -8,9 +8,9 @@ import os
 import csv
 from Client_Layer.PineconeClient import PineconeClient
 from Client_Layer.AzureClient import ChatClient
-from States.State import output_format_final, GraphState
+from States.State import output_format, GraphState,evaluator_output
 from typing import cast
-from openai.types.chat import ChatCompletionMessageParam
+import pandas as pd
 
 
 class Agent_functions():
@@ -32,31 +32,104 @@ class Agent_functions():
         except Exception as e:
             return f"An unexpected error occurred: {e}"
 
+    def generate_user_stories(self,state: GraphState):
+        """Generate user stories given the project prompts and data files."""
+        print("generating user stories")
 
-    def write_to_file(self,state: GraphState) -> None:
-        """Write each requirement category to a Markdown file under `filepath`."""
-        model = state.get("requirements")
-        assert model is not None
-        basepath = state.get("filepath", ".")
-        model_name = state.get("model", "model")
+        datafile = os.path.normpath(os.path.join("Data", "Requirements.md"))
+        promptfile = os.path.normpath(os.path.join("prompt", "system_prompt.md"))
 
-        for category in model.final:
-            req_type = str(category.requirement_type)
-            filename = f"{model_name}_{req_type}.md"
-            filepath = os.path.normpath(os.path.join(basepath, filename))
-            try:
-                directory = os.path.dirname(filepath)
-                if directory and not os.path.exists(directory):
-                    os.makedirs(directory, exist_ok=True)
+        system_prompt = self._read_md_file(promptfile)
+        requirements = self._read_md_file(datafile)
 
-                with open(filepath, "w", encoding="utf-8") as file:
-                    for output_requirements in category.requirements:
-                        file.write(
-                            f"{output_requirements.requirement_no} {output_requirements.requirement_text}, reasoning = {output_requirements.requirement_reasoning}, reference = {output_requirements.requirement_reference}  \n"
-                        )
-                print(f"Successfully wrote to {filepath}")
-            except Exception as e:
-                print(f"Error writing to {filepath}: {e}")
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": requirements},
+        ]
+
+        response = self._azureclient.responses.parse(model=state["model"], input= cast(str,messages),text_format=output_format)
+        if response is None:
+            return None
+        
+        return {"requirements": response.output_parsed}
+
+    def _generate_user_message(self, state: GraphState):
+        requirements = state.get("requirements")
+        assert requirements is not None
+
+        # 1. Build the Functional Requirements Table
+        functional_rows = []
+        # If your state is a raw dict from the JSON payload, use .get()
+        # If it's a Pydantic object, change to: requirements.functional_reqs
+        functional_reqs = requirements.get("functional_reqs", []) if isinstance(requirements, dict) else requirements.functional_reqs
+        
+        for req in functional_reqs:
+            # Safely handle both object attribute or dict key lookups
+            r_no = req.get("requirement_no") if isinstance(req, dict) else req.requirement_no
+            r_text = req.get("requirement_text") if isinstance(req, dict) else req.requirement_text
+            r_ref = req.get("requirement_reference") if isinstance(req, dict) else req.requirement_reference
+            
+            functional_rows.append(f"| {r_no} | {r_text} | *\"{r_ref}\"* |")
+
+        functional_table = (
+            "| Requirement ID | Requirement Text | Source Reference |\n"
+            "| :--- | :--- | :--- |\n" + "\n".join(functional_rows)
+        )
+
+        # 2. Build the Non-Functional Requirements Table
+        nfr_rows = []
+        non_functional_reqs = requirements.get("non_functional_reqs", []) if isinstance(requirements, dict) else requirements.non_functional_reqs
+        
+        for req in non_functional_reqs:
+            r_no = req.get("requirement_no") if isinstance(req, dict) else req.requirement_no
+            r_text = req.get("requirement_text") if isinstance(req, dict) else req.requirement_text
+            r_ref = req.get("requirement_reference") if isinstance(req, dict) else req.requirement_reference
+            
+            nfr_rows.append(f"| {r_no} | {r_text} | *\"{r_ref}\"* |")
+
+        nfr_table = (
+            "| Requirement ID | Requirement Text | Source Reference |\n"
+            "| :--- | :--- | :--- |\n" + "\n".join(nfr_rows)
+        )
+
+        datafile = os.path.normpath(os.path.join("Data", "Requirements.md"))
+        requirements = self._read_md_file(datafile)
+        # 3. Construct the clean prompt block for the Evaluator Agent
+        user_message_content = (
+            "#### 1. Original Requirements Data"
+            f"{requirements}\n\n"
+            "### 2. Functional Requirements\n"
+            f"{functional_table}\n\n"
+            "### 3. Non-Functional Requirements\n"
+            f"{nfr_table}"
+        )
+
+        # Return the update for your LangGraph state array
+        return user_message_content
+
+
+    def evaluate_user_stories(self,state: GraphState):
+        print("evaluating user stories")
+
+        datafile = os.path.normpath(os.path.join("Data", "Requirements.md"))
+        promptfile = os.path.normpath(os.path.join("prompt", "evaluator_prompt.md"))
+
+        system_prompt = self._read_md_file(promptfile)
+        requirements = self._read_md_file(datafile)
+
+        user_message = self._generate_user_message(state)
+
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_message},
+        ]
+
+        response = self._azureclient.responses.parse(model=state["model"], input= cast(str,messages),text_format = evaluator_output)
+        if response is None:
+            return None
+
+        return {"evaluation" : response.output_parsed}
+        
 
 
     def write_to_csv(self,state: GraphState) -> None:
@@ -66,73 +139,53 @@ class Agent_functions():
         basepath = state.get("filepath", ".")
         model_name = state.get("model", "model")
 
-        for category in model.final:
-            req_type = str(category.requirement_type)
-            filename = f"{model_name}_{req_type}.csv"
-            filepath = os.path.normpath(os.path.join(basepath, filename))
-            try:
-                directory = os.path.dirname(filepath)
-                if directory and not os.path.exists(directory):
-                    os.makedirs(directory, exist_ok=True)
+        # for category in model.:
+        #     req_type = str(category.requirement_type)
+        #     filename = f"{model_name}_{req_type}.csv"
+        #     filepath = os.path.normpath(os.path.join(basepath, filename))
+        #     try:
+        #         directory = os.path.dirname(filepath)
+        #         if directory and not os.path.exists(directory):
+        #             os.makedirs(directory, exist_ok=True)
 
-                with open(filepath, "w", newline="", encoding="utf-8") as csvfile:
-                    writer = csv.writer(csvfile)
-                    writer.writerow(["requirement_no", "requirement_text", "requirement_reasoning", "requirement_reference"])
-                    for output_requirements in category.requirements:
-                        writer.writerow([
-                            output_requirements.requirement_no,
-                            output_requirements.requirement_text,
-                            output_requirements.requirement_reasoning,
-                            output_requirements.requirement_reference,
-                        ])
-                print(f"Successfully wrote CSV to {filepath}")
-            except Exception as e:
-                print(f"Error writing CSV to {filepath}: {e}")
+        #         with open(filepath, "w", newline="", encoding="utf-8") as csvfile:
+        #             writer = csv.writer(csvfile)
+        #             writer.writerow(["requirement_no", "requirement_text", "requirement_reasoning", "requirement_reference"])
+        #             for output_requirements in category.requirements:
+        #                 writer.writerow([
+        #                     output_requirements.requirement_no,
+        #                     output_requirements.requirement_text,
+        #                     output_requirements.requirement_reasoning,
+        #                     output_requirements.requirement_reference,
+        #                 ])
+        #         print(f"Successfully wrote CSV to {filepath}")
+        #     except Exception as e:
+        #         print(f"Error writing CSV to {filepath}: {e}")
 
 
-    def upsert_vectors(self,state: GraphState) -> None:
-        """Create embeddings and upsert requirement vectors into Pinecone."""
-        namespace = "requirements"
-        model = state.get("requirements")
-        assert model is not None
+    # def upsert_vectors(self,state: GraphState) -> None:
+    #     """Create embeddings and upsert requirement vectors into Pinecone."""
+    #     namespace = "requirements"
+    #     model = state.get("requirements")
+    #     assert model is not None
         
-        # Ensure the namespace/schema exists before upserting
-        for category in model.final:
-            req_type = str(category.requirement_type)
-            for output_requirements in category.requirements:
+    #     # Ensure the namespace/schema exists before upserting
+    #     for category in model.final:
+    #         req_type = str(category.requirement_type)
+    #         for output_requirements in category.requirements:
                 
-                embedding = self._azureclient.embeddings.create(input = output_requirements.requirement_text,model="text-embedding-3-small")
-                vector_embedding = embedding.data[0].embedding
-                # Build metadata from the requirement object
-                md = {
-                    "requirement_no": output_requirements.requirement_no,
-                    "requirement_type": req_type,
-                    "requirement_text": output_requirements.requirement_text,
-                }
+    #             embedding = self._azureclient.embeddings.create(input = output_requirements.requirement_text,model="text-embedding-3-small")
+    #             vector_embedding = embedding.data[0].embedding
+    #             # Build metadata from the requirement object
+    #             md = {
+    #                 "requirement_no": output_requirements.requirement_no,
+    #                 "requirement_type": req_type,
+    #                 "requirement_text": output_requirements.requirement_text,
+    #             }
 
-                self._pcindex.upsert(
-                    vectors=[{ "id": output_requirements.requirement_no, "values":vector_embedding,"metadata":md}],
-                    namespace = namespace 
-                )
+    #             self._pcindex.upsert(
+    #                 vectors=[{ "id": output_requirements.requirement_no, "values":vector_embedding,"metadata":md}],
+    #                 namespace = namespace 
+    #             )
 
 
-    def generate_user_stories(self,state: GraphState):
-        """Generate user stories given the project prompts and data files."""
-        print("generating user stories")
-
-        datafile = os.path.normpath(os.path.join("Data", "Requirements.md"))
-        promptfile = os.path.normpath(os.path.join("prompt", "system_prompt.md"))
-
-        system_prompt = self._read_md_file(promptfile)
-        data = self._read_md_file(datafile)
-
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": data},
-        ]
-
-        response = self._azureclient.responses.parse(model=state["model"], input= cast(str,messages),text_format=output_format_final)
-        if response is None:
-            return None
-        
-        return {"requirements": response.output_parsed}
