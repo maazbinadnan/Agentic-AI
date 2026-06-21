@@ -4,9 +4,10 @@ Data model definitions for requirements outputs and the GraphState
 TypedDict. Only documentation added; no functional changes.
 """
 
-from typing import List, Literal, TypedDict
+from typing import List, Literal, TypedDict,Annotated
 from pydantic import BaseModel, Field
 from pathlib import Path
+import operator
 
 class functional_requirement(BaseModel):
     requirement_no: str = Field(
@@ -77,6 +78,7 @@ class evaluator_output(BaseModel):
 class GraphState(TypedDict):
     namespace: str
     model: str
-    requirements: output_format | None
+    requirements: Annotated[output_format,operator.add] | None
     evaluation: evaluator_output | None
     filepath: str
+    read_state: bool

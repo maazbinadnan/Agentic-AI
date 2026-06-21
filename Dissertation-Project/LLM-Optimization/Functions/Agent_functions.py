@@ -3,14 +3,13 @@
 Contains helper functions used by the LLM-Optimization project. Only
 documentation was added in this pass; no code logic was modified.
 """
-
 import os
-import csv
 from Client_Layer.PineconeClient import PineconeClient
 from Client_Layer.AzureClient import ChatClient
 from States.State import output_format, GraphState,evaluator_output
 from typing import cast
-import pandas as pd
+import pickle
+import json
 
 
 class Agent_functions():
@@ -129,38 +128,80 @@ class Agent_functions():
             return None
 
         return {"evaluation" : response.output_parsed}
+    
+    def revise_user_stories(self,state:GraphState):
+        print("revising user stories")
+        promptfile = os.path.normpath(os.path.join("prompt", "revise_prompt.md"))   
+        system_prompt = self._read_md_file(promptfile)
+        payload = {
+        "model": state.get("model"),
+        "requirements": state.get("requirements"),
+        "evaluation": state.get("evaluation"),
+        }
+        print(payload)
+        # 2. Stringify the entire thing cleanly
+        # user_message = json.dumps(clean_state, ensure_ascii=False, indent=2)
+
+        # response = self._azureclient.responses.parse(
+        #     model=state.get("model", "gpt-4o-mini"),
+        #     input=messages,
+        #     text_format=output_format,
+        # )
+        # if response is None:
+        #     return None
+
+        # return {"requirements": response.output_parsed}
+
+
+    def write_state(self, state: GraphState):
+        # Change the file extension to .pkl or .bin to reflect it is a binary file
+        state_path = r"C:\Users\OMNI BOOK\OneDrive\Personal-Projects\Agent-Learning\Dissertation-Project\LLM-Optimization\States\temp_final_state.pkl"
         
+        try:
+            # Open the file in write-binary mode ("wb")
+            with open(state_path, "wb") as f:
+                pickle.dump(state, f)
+            print(f"State object successfully saved directly to {state_path}")
+        except Exception as e:
+            print(f"Failed to save state object: {e}")
+
+
+    def router(self,state:GraphState):
+        if state["read_state"] == False:
+            return "write_state"
+        else:
+            return "read_state"
 
 
     def write_to_csv(self,state: GraphState) -> None:
         """Write each requirement category to a CSV file under `filepath`."""
-        model = state.get("requirements")
-        assert model is not None
+        requirements = state.get("requirements")
+        assert requirements is not None
         basepath = state.get("filepath", ".")
         model_name = state.get("model", "model")
 
-        # for category in model.:
-        #     req_type = str(category.requirement_type)
-        #     filename = f"{model_name}_{req_type}.csv"
-        #     filepath = os.path.normpath(os.path.join(basepath, filename))
-        #     try:
-        #         directory = os.path.dirname(filepath)
-        #         if directory and not os.path.exists(directory):
-        #             os.makedirs(directory, exist_ok=True)
+        for category in requirements:
+            filename = f"{model_name}_{category}.csv"
+            print(filename)
+            # filepath = os.path.normpath(os.path.join(basepath, filename))
+            # try:
+            #     directory = os.path.dirname(filepath)
+            #     if directory and not os.path.exists(directory):
+            #         os.makedirs(directory, exist_ok=True)
 
-        #         with open(filepath, "w", newline="", encoding="utf-8") as csvfile:
-        #             writer = csv.writer(csvfile)
-        #             writer.writerow(["requirement_no", "requirement_text", "requirement_reasoning", "requirement_reference"])
-        #             for output_requirements in category.requirements:
-        #                 writer.writerow([
-        #                     output_requirements.requirement_no,
-        #                     output_requirements.requirement_text,
-        #                     output_requirements.requirement_reasoning,
-        #                     output_requirements.requirement_reference,
-        #                 ])
-        #         print(f"Successfully wrote CSV to {filepath}")
-        #     except Exception as e:
-        #         print(f"Error writing CSV to {filepath}: {e}")
+            #     with open(filepath, "w", newline="", encoding="utf-8") as csvfile:
+            #         writer = csv.writer(csvfile)
+            #         writer.writerow(["requirement_no", "requirement_text", "requirement_reasoning", "requirement_reference"])
+            #         for output_requirements in category.requirements:
+            #             writer.writerow([
+            #                 output_requirements.requirement_no,
+            #                 output_requirements.requirement_text,
+            #                 output_requirements.requirement_reasoning,
+            #                 output_requirements.requirement_reference,
+            #             ])
+            #     print(f"Successfully wrote CSV to {filepath}")
+            # except Exception as e:
+            #     print(f"Error writing CSV to {filepath}: {e}")
 
 
     # def upsert_vectors(self,state: GraphState) -> None:
