@@ -5,8 +5,8 @@ Pinecone vector store. Only module-level documentation was added;
 no functional changes were made.
 """
 
-from Client_Layer.PineconeClient import PineconeClient
-from Client_Layer.AzureClient import ChatClient
+from ...Client_Layer.PineconeClient import PineconeClient
+from ...Client_Layer.AzureClient import ChatClient
 from pathlib import Path
 from typing import Literal
 import pandas as pd

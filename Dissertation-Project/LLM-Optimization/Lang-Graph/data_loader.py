@@ -27,7 +27,7 @@ def _make_serializable(obj: Any) -> Any:
 
 	# dataclasses
 	if is_dataclass(obj):
-		return asdict(obj)
+		return asdict(obj) #type: ignore
 
 	# common containers that may contain non-serializable items
 	if isinstance(obj, dict):
