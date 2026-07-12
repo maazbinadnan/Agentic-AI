@@ -1,0 +1,1 @@
+In the global layer of the project, we use the openAI SDK to natively call models. 

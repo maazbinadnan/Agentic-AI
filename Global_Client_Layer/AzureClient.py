@@ -4,7 +4,6 @@ Small wrapper around the OpenAI client used by the project. Only
 module-level documentation was added in this formatting pass; no
 behavioral changes were made.
 """
-
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
@@ -32,5 +31,5 @@ class ChatClient:
         model_name = os.getenv("EMBEDDING_MODEL_DEPLOYMENT", model)
         return self.client.embeddings.create(input=text, model=model_name)
 
-
+    
 
