@@ -1,0 +1,218 @@
+[
+    {
+        "requirement_no": "FR-001",
+        "requirement_text": "The system shall provide a mobile football application for Android devices.",
+        "requirement_reference": "\"We are currently developing a mobile football app that will be available for Android and iOS devices.\"",
+        "user_story": {
+            "user_story": "As an Android user, I want to use the football app on my device so that I can access football content on the go.\nAcceptance Criteria:\nGiven I use an Android device\nWhen I install and open the app\nThen I can access the football app and use its features."
+        }
+    },
+    {
+        "requirement_no": "FR-002",
+        "requirement_text": "The system shall provide a mobile football application for iOS devices.",
+        "requirement_reference": "\"We are currently developing a mobile football app that will be available for Android and iOS devices.\"",
+        "user_story": {
+            "user_story": "As an iOS user, I want to use the football app on my device so that I can access football content on the go.\nAcceptance Criteria:\nGiven I use an iOS device\nWhen I install and open the app\nThen I can access the football app and use its features."
+        }
+    },
+    {
+        "requirement_no": "FR-003",
+        "requirement_text": "The system shall allow users to view current football news for their favorite teams.",
+        "requirement_reference": "\"To achieve this, users can display current football news of their favorite teams\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to view current news about my favorite teams so that I can stay informed.\nAcceptance Criteria:\nGiven I have selected one or more favorite teams\nWhen I navigate to the news section\nThen I see current football news related to my favorite teams."
+        }
+    },
+    {
+        "requirement_no": "FR-004",
+        "requirement_text": "The system shall allow users to individually select preferred sports channels for news content.",
+        "requirement_reference": "\"and also select preferred sports channels individually.\"",
+        "user_story": {
+            "user_story": "As a user, I want to choose my preferred sports channels so that I receive news from sources I trust.\nAcceptance Criteria:\nGiven channel preferences are available\nWhen I select one or more preferred sports channels\nThen the app stores my preferences and uses them to tailor displayed news."
+        }
+    },
+    {
+        "requirement_no": "FR-005",
+        "requirement_text": "The system shall provide a live ticker for users to follow live results of their favorite teams.",
+        "requirement_reference": "\"In addition to the news, users can follow the results of their favorite teams live via a live ticker.\"",
+        "user_story": {
+            "user_story": "As a user, I want to follow my favorite teams via a live ticker so that I can track live match results.\nAcceptance Criteria:\nGiven I have selected favorite teams\nWhen a match involving a favorite team is live\nThen I can open a live ticker and see current live results."
+        }
+    },
+    {
+        "requirement_no": "FR-006",
+        "requirement_text": "The system shall provide coverage of national leagues and competitions.",
+        "requirement_reference": "\"Our app will offer extensive coverage of all leagues and competitions, both national and international.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want access to national league and competition coverage so that I can follow domestic football.\nAcceptance Criteria:\nGiven national leagues and competitions are supported\nWhen I browse competitions in the app\nThen I can view information and content for national leagues and competitions."
+        }
+    },
+    {
+        "requirement_no": "FR-007",
+        "requirement_text": "The system shall provide coverage of international leagues and competitions.",
+        "requirement_reference": "\"Our app will offer extensive coverage of all leagues and competitions, both national and international.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want access to international league and competition coverage so that I can follow global football.\nAcceptance Criteria:\nGiven international leagues and competitions are supported\nWhen I browse competitions in the app\nThen I can view information and content for international leagues and competitions."
+        }
+    },
+    {
+        "requirement_no": "FR-008",
+        "requirement_text": "The system shall provide detailed team information at any time.",
+        "requirement_reference": "\"Detailed team and player information will also be available at any time.\"",
+        "user_story": {
+            "user_story": "As a user, I want to view detailed team information so that I can learn more about teams.\nAcceptance Criteria:\nGiven team data exists\nWhen I open a team profile\nThen I can view detailed information about the selected team."
+        }
+    },
+    {
+        "requirement_no": "FR-009",
+        "requirement_text": "The system shall provide detailed player information at any time.",
+        "requirement_reference": "\"Detailed team and player information will also be available at any time.\"",
+        "user_story": {
+            "user_story": "As a user, I want to view detailed player information so that I can learn more about players.\nAcceptance Criteria:\nGiven player data exists\nWhen I open a player profile\nThen I can view detailed information about the selected player."
+        }
+    },
+    {
+        "requirement_no": "FR-010",
+        "requirement_text": "The system shall display live stream links in the app when a live broadcast has begun.",
+        "requirement_reference": "\"Another highlight is the integration of live stream links, for example, from providers such as DAZN or Sky Sport. These are available directly in the app as soon as the live broadcast has begun.\"",
+        "user_story": {
+            "user_story": "As a user, I want to see live stream links in the app when broadcasts start so that I can access live match coverage quickly.\nAcceptance Criteria:\nGiven a supported live broadcast has started\nWhen I view the relevant match in the app\nThen I see the available live stream link directly in the app."
+        }
+    },
+    {
+        "requirement_no": "FR-011",
+        "requirement_text": "The system shall display live stream links only when transmission rights are valid in the user's country.",
+        "requirement_reference": "\"Live streams will only be displayed when the respective rights are fulfilled in the country.\"",
+        "user_story": {
+            "user_story": "As a user, I want stream links to respect regional rights so that I only see streams legally available in my country.\nAcceptance Criteria:\nGiven a live stream exists for a match\nAnd transmission rights are not fulfilled in my country\nWhen I view the match in the app\nThen the live stream link is not displayed.\nGiven a live stream exists for a match\nAnd transmission rights are fulfilled in my country\nWhen I view the match in the app\nThen the live stream link is displayed."
+        }
+    },
+    {
+        "requirement_no": "FR-012",
+        "requirement_text": "The system shall include an integrated live ticker module that retrieves and displays live data in real time.",
+        "requirement_reference": "\"To implement this function, the app includes an integrated live ticker module that enables the retrieval and display of live data in real time.\"",
+        "user_story": {
+            "user_story": "As a user, I want the app to retrieve and display live ticker data in real time so that I can follow match events as they happen.\nAcceptance Criteria:\nGiven a live match is in progress\nWhen I open the live ticker\nThen live match data is retrieved and displayed in real time."
+        }
+    },
+    {
+        "requirement_no": "FR-013",
+        "requirement_text": "The system shall allow users to access app information directly through the user interface.",
+        "requirement_reference": "\"The user interface is designed so that users can access the information in the app directly.\"",
+        "user_story": {
+            "user_story": "As a user, I want direct access to information through the interface so that I can find content quickly.\nAcceptance Criteria:\nGiven I am using the app\nWhen I navigate through the interface\nThen I can directly access available information without unnecessary steps."
+        }
+    },
+    {
+        "requirement_no": "FR-014",
+        "requirement_text": "The system shall display and manage various app modules through the user interface.",
+        "requirement_reference": "\"The user interface is a key component of the app and connects various modules that are displayed together and managed via the interface.\"",
+        "user_story": {
+            "user_story": "As a user, I want app modules to be accessible in one interface so that I can use the app consistently.\nAcceptance Criteria:\nGiven multiple modules exist in the app\nWhen I use the user interface\nThen the modules are displayed together and can be managed through the interface."
+        }
+    },
+    {
+        "requirement_no": "FR-015",
+        "requirement_text": "The live ticker module shall communicate with the user interface to display and continuously update current match data.",
+        "requirement_reference": "\"The live ticker module communicates directly via the interface with the user interface to display and continuously update current match data.\"",
+        "user_story": {
+            "user_story": "As a user, I want the live ticker to continuously update match data in the interface so that I always see the latest information.\nAcceptance Criteria:\nGiven a live match is active\nWhen current match data changes\nThen the live ticker updates the displayed match data through the interface."
+        }
+    },
+    {
+        "requirement_no": "FR-016",
+        "requirement_text": "The system shall retrieve live data for the live ticker via an API from an external server.",
+        "requirement_reference": "\"The live data is retrieved via an API from an external server.\"",
+        "user_story": {
+            "user_story": "As a user, I want live ticker data to be sourced from an external server so that live information can be dynamically updated.\nAcceptance Criteria:\nGiven the external live data API is available\nWhen the live ticker requests match data\nThen the app retrieves the data from the external server API."
+        }
+    },
+    {
+        "requirement_no": "FR-017",
+        "requirement_text": "The system shall allow users to individually configure the app through additional modules.",
+        "requirement_reference": "\"In addition to the live ticker module, the app also offers additional modules that allow users to individually configure the app\"",
+        "user_story": {
+            "user_story": "As a user, I want configurable app modules so that I can personalize how the app works for me.\nAcceptance Criteria:\nGiven configurable modules are available\nWhen I change module settings\nThen the app saves and applies my individual configuration."
+        }
+    },
+    {
+        "requirement_no": "FR-018",
+        "requirement_text": "The system shall provide a notification function that informs users about current events when activated.",
+        "requirement_reference": "\"Furthermore, the app is linked to a notification system that provides users with information about current events as soon as the notification function is activated.\"",
+        "user_story": {
+            "user_story": "As a user, I want to receive notifications about current events when I enable notifications so that I stay updated.\nAcceptance Criteria:\nGiven I have activated notifications\nWhen a relevant current event occurs\nThen I receive a notification in the app or on my device."
+        }
+    },
+    {
+        "requirement_no": "FR-019",
+        "requirement_text": "The system shall allow users to register directly at app startup.",
+        "requirement_reference": "\"Registration and login are designed to be uncomplicated and can be completed directly at app startup.\"",
+        "user_story": {
+            "user_story": "As a new user, I want to register when I start the app so that I can begin using personalized features immediately.\nAcceptance Criteria:\nGiven I am a new user opening the app\nWhen I choose to register at startup\nThen I can complete registration directly from the startup flow."
+        }
+    },
+    {
+        "requirement_no": "FR-020",
+        "requirement_text": "The system shall allow users to log in directly at app startup.",
+        "requirement_reference": "\"Registration and login are designed to be uncomplicated and can be completed directly at app startup.\"",
+        "user_story": {
+            "user_story": "As a returning user, I want to log in when I start the app so that I can access my account quickly.\nAcceptance Criteria:\nGiven I am a returning user opening the app\nWhen I choose to log in at startup\nThen I can complete login directly from the startup flow."
+        }
+    },
+    {
+        "requirement_no": "FR-021",
+        "requirement_text": "The system shall allow users to follow favorite clubs.",
+        "requirement_reference": "\"Users have the option to personalize their experience by following favorite clubs\"",
+        "user_story": {
+            "user_story": "As a user, I want to follow my favorite clubs so that the app can personalize content for me.\nAcceptance Criteria:\nGiven club profiles are available\nWhen I mark one or more clubs as favorites\nThen the app stores those clubs as my favorites."
+        }
+    },
+    {
+        "requirement_no": "FR-022",
+        "requirement_text": "The system shall allow users to receive notifications about news related to their favorite teams.",
+        "requirement_reference": "\"and receiving notifications about news or results of their favorite teams.\"",
+        "user_story": {
+            "user_story": "As a user, I want notifications about news for my favorite teams so that I do not miss important updates.\nAcceptance Criteria:\nGiven I follow one or more favorite teams\nAnd notifications are activated\nWhen news about a favorite team is published\nThen I receive a notification about that news."
+        }
+    },
+    {
+        "requirement_no": "FR-023",
+        "requirement_text": "The system shall allow users to receive notifications about results related to their favorite teams.",
+        "requirement_reference": "\"and receiving notifications about news or results of their favorite teams.\"",
+        "user_story": {
+            "user_story": "As a user, I want notifications about results for my favorite teams so that I stay updated on match outcomes.\nAcceptance Criteria:\nGiven I follow one or more favorite teams\nAnd notifications are activated\nWhen a result for a favorite team is available\nThen I receive a notification about that result."
+        }
+    },
+    {
+        "requirement_no": "FR-024",
+        "requirement_text": "The system shall allow users to share news directly from the app via social media.",
+        "requirement_reference": "\"In addition, users can share news and game reports via social media directly from the app.\"",
+        "user_story": {
+            "user_story": "As a user, I want to share news on social media directly from the app so that I can easily post updates with others.\nAcceptance Criteria:\nGiven I am viewing a news item\nWhen I choose the share option\nThen I can share the news item via supported social media channels."
+        }
+    },
+    {
+        "requirement_no": "FR-025",
+        "requirement_text": "The system shall allow users to share game reports directly from the app via social media.",
+        "requirement_reference": "\"In addition, users can share news and game reports via social media directly from the app.\"",
+        "user_story": {
+            "user_story": "As a user, I want to share game reports on social media directly from the app so that I can easily post match information with others.\nAcceptance Criteria:\nGiven I am viewing a game report\nWhen I choose the share option\nThen I can share the game report via supported social media channels."
+        }
+    },
+    {
+        "requirement_no": "FR-026",
+        "requirement_text": "The system shall remain usable offline when network connectivity is temporarily lost.",
+        "requirement_reference": "\"The app remains usable offline, even if it temporarily loses connection.\"",
+        "user_story": {
+            "user_story": "As a user, I want the app to remain usable when I lose connectivity so that I can still access available features.\nAcceptance Criteria:\nGiven I have previously opened the app with network access\nWhen the device temporarily loses connection\nThen the app remains usable offline for available features."
+        }
+    },
+    {
+        "requirement_no": "FR-027",
+        "requirement_text": "The system shall continuously evaluate user feedback and app reviews to improve functionality.",
+        "requirement_reference": "\"In addition, user feedback and app reviews are continuously evaluated to improve functionality.\"",
+        "user_story": {
+            "user_story": "As a product team member, I want user feedback and app reviews to be evaluated continuously so that the app can be improved over time.\nAcceptance Criteria:\nGiven user feedback and app reviews are collected\nWhen evaluation activities are performed\nThen the findings can be used to inform functionality improvements."
+        }
+    }
+]

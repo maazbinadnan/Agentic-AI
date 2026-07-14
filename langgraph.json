@@ -1,0 +1,8 @@
+{
+  "dependencies": ["."],
+  "python_path": ["."],
+  "graphs": {
+    "requirements_agent": "./Single_Agent/main.py:app"
+  },
+  "env": ".env"
+}

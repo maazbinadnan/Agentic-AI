@@ -1,0 +1,12 @@
+pyproject.toml
+Global_Client_Layer/AzureClient.py
+Global_Client_Layer/PineconeClient.py
+Global_Client_Layer/__init__.py
+Single-Agent/functions.py
+Single-Agent/main.py
+Single-Agent/States/__init__.py
+Single-Agent/States/state.py
+msc_project.egg-info/PKG-INFO
+msc_project.egg-info/SOURCES.txt
+msc_project.egg-info/dependency_links.txt
+msc_project.egg-info/top_level.txt

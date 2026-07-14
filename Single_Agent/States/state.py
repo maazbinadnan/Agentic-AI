@@ -2,6 +2,11 @@ from typing import TypedDict
 from pydantic import BaseModel, Field
 
 
+
+class userStory(BaseModel):
+    user_story: str = Field(
+        description="The user story corresponding to the current requirement with a user story and an acceptance criteria expressed as Behaviour Driven Development Given  Given-When-Then statements"
+    )
 class functional_requirement(BaseModel):
     requirement_no: str = Field(
         description=(
@@ -18,6 +23,7 @@ class functional_requirement(BaseModel):
             "extracted from"
         )
     )
+    user_story: userStory
 
 class non_functional_requirement(BaseModel):
     requirement_no: str = Field(
@@ -35,7 +41,7 @@ class non_functional_requirement(BaseModel):
             "extracted from"
         )
     )
-
+    user_story: userStory
 class output_format(BaseModel):
     functional_reqs: list[functional_requirement] | None
     non_functional_reqs: list[non_functional_requirement] | None

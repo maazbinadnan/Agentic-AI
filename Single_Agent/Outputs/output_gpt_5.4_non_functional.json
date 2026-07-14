@@ -1,0 +1,66 @@
+[
+    {
+        "requirement_no": "NFR-001",
+        "requirement_text": "The application shall be fully loaded and ready to use within a maximum of 2 seconds after startup.",
+        "requirement_reference": "\"it is fully loaded and ready to use within a maximum of two seconds after starting.\"",
+        "user_story": {
+            "user_story": "As a user, I want the app to load within 2 seconds so that I can use it without delay.\nAcceptance Criteria:\nGiven the app is installed on a supported device\nWhen I start the app\nThen the app is fully loaded and ready to use within 2 seconds."
+        }
+    },
+    {
+        "requirement_no": "NFR-002",
+        "requirement_text": "The application shall run quickly and smoothly on supported Android and iOS devices.",
+        "requirement_reference": "\"It is particularly important to us that the app runs quickly and smoothly\"",
+        "user_story": {
+            "user_story": "As a user, I want the app to run quickly and smoothly so that my experience feels responsive.\nAcceptance Criteria:\nGiven I am using a supported mobile device\nWhen I navigate and interact with the app\nThen the app responds smoothly without noticeable performance issues."
+        }
+    },
+    {
+        "requirement_no": "NFR-003",
+        "requirement_text": "The live ticker data display shall update in real time.",
+        "requirement_reference": "\"retrieve the live results of their favorite teams in real time\" / \"display of live data in real time\"",
+        "user_story": {
+            "user_story": "As a user, I want live ticker updates in real time so that I can trust the timeliness of match information.\nAcceptance Criteria:\nGiven a live match is ongoing\nWhen live match data changes on the source system\nThen the displayed live ticker data is updated in real time."
+        }
+    },
+    {
+        "requirement_no": "NFR-004",
+        "requirement_text": "The system shall serve up to 100,000 concurrent users without performance loss.",
+        "requirement_reference": "\"our app is designed so that up to 100,000 users can be served simultaneously without performance loss.\"",
+        "user_story": {
+            "user_story": "As a business stakeholder, I want the app to support 100,000 simultaneous users without performance loss so that match-day demand can be handled reliably.\nAcceptance Criteria:\nGiven 100,000 concurrent users access the system\nWhen the system is under peak load\nThen performance remains within accepted operational thresholds without degradation."
+        }
+    },
+    {
+        "requirement_no": "NFR-005",
+        "requirement_text": "The system shall function reliably even with limited network coverage.",
+        "requirement_reference": "\"the app is developed so that it functions reliably even with limited network coverage.\"",
+        "user_story": {
+            "user_story": "As a user, I want the app to function reliably with poor connectivity so that I can still use it in difficult network conditions.\nAcceptance Criteria:\nGiven network coverage is limited\nWhen I use the app\nThen the app continues to function reliably for supported features."
+        }
+    },
+    {
+        "requirement_no": "NFR-006",
+        "requirement_text": "The application shall undergo thorough testing before release to detect and resolve malfunctions early.",
+        "requirement_reference": "\"the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early.\"",
+        "user_story": {
+            "user_story": "As a product owner, I want the app thoroughly tested before release so that defects are found and resolved early.\nAcceptance Criteria:\nGiven a release candidate is prepared\nWhen pre-release validation is performed\nThen thorough testing is completed and identified malfunctions are tracked for resolution."
+        }
+    },
+    {
+        "requirement_no": "NFR-007",
+        "requirement_text": "The application shall have a support process before release to detect and resolve malfunctions early.",
+        "requirement_reference": "\"the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early.\"",
+        "user_story": {
+            "user_story": "As a support stakeholder, I want a pre-release support process so that malfunctions can be addressed before launch.\nAcceptance Criteria:\nGiven a release candidate is prepared\nWhen the pre-release support process is executed\nThen malfunctions are identified, supported, and resolved or escalated before release."
+        }
+    },
+    {
+        "requirement_no": "NFR-008",
+        "requirement_text": "The system shall process all personal user data in compliance with GDPR.",
+        "requirement_reference": "\"All personal data of users are processed in compliance with the GDPR.\"",
+        "user_story": {
+            "user_story": "As a user, I want my personal data processed in compliance with GDPR so that my privacy rights are protected.\nAcceptance Criteria:\nGiven the app collects or processes personal data\nWhen personal data is stored, used, or transmitted\nThen the processing complies with GDPR requirements."
+        }
+    }
+]

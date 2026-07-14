@@ -1,4 +1,4 @@
-from States.state import GraphState,output_format
+from Single_Agent.States.state import GraphState,output_format
 from Global_Client_Layer.AzureClient import ChatClient
 from typing import cast
 import os
@@ -31,7 +31,7 @@ def _write_json_file(filepath: str, content: str):
         if target_dir:
             os.makedirs(target_dir, exist_ok=True)
             
-        with open(filepath, "w", encoding="utf-8") as file:
+        with open(filepath, "x", encoding="utf-8") as file:
             content =  json.dumps(content, indent=4, ensure_ascii=False)
             file.write(content)
     except FileNotFoundError:
@@ -56,6 +56,7 @@ def generate_requirements(state:GraphState):
     response = client.responses.parse(model=state["model"], input= cast(str,messages),text_format=output_format)
     reqs = json.loads(response.output_text)
     print(_write_json_file(state['output_functional_path'],reqs['functional_reqs']))
+    print(_write_json_file(state['output_non_functional_path'],reqs['non_functional_reqs']))
     
 
 
