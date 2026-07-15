@@ -1,82 +1,50 @@
 [
     {
         "requirement_no": "NFR-001",
-        "requirement_text": "The application startup time must be less than or equal to 2 seconds from launch until the app is fully loaded and ready to use.",
-        "requirement_reference": "\"it is fully loaded and ready to use within a maximum of two seconds after starting.\"",
+        "requirement_text": "The application must be fully loaded and ready to use within a maximum of 2 seconds after startup on supported Android and iOS devices.",
+        "requirement_reference": "\"it is particularly important to us that the app runs quickly and smoothly so that it is fully loaded and ready to use within a maximum of two seconds after starting\"",
         "user_story": {
-            "user_story": "As a mobile user, I want the app to be ready within two seconds after launch so that I can access content without delay. Acceptance Criteria: Given the app is closed, When I launch it on a supported device, Then the app must be fully loaded and ready to use within 2 seconds."
+            "user_story": "As a mobile user, I want the app to be ready quickly after startup so that I can use it without delay.\nAcceptance Criteria:\nGiven the app is closed on a supported device\nWhen I start the app\nThen the application must be fully loaded and ready to use within 2 seconds."
         }
     },
     {
         "requirement_no": "NFR-002",
-        "requirement_text": "The application must run quickly and smoothly during normal operation.",
-        "requirement_reference": "\"It is particularly important to us that the app runs quickly and smoothly\"",
+        "requirement_text": "The application must function reliably even with limited network coverage.",
+        "requirement_reference": "\"the app is developed so that it functions reliably even with limited network coverage\"",
         "user_story": {
-            "user_story": "As a mobile user, I want the app to run smoothly so that interactions feel responsive and frustration is minimized. Acceptance Criteria: Given I navigate through core app features, When I interact with screens and modules, Then the app must respond without noticeable lag or instability during normal operation."
+            "user_story": "As a mobile user, I want the app to work reliably in poor network conditions so that I can continue using it.\nAcceptance Criteria:\nGiven network coverage is limited\nWhen I use the app\nThen the application must continue to function reliably for supported features under degraded connectivity conditions."
         }
     },
     {
         "requirement_no": "NFR-003",
-        "requirement_text": "The user interface must allow users to access information in the app directly.",
-        "requirement_reference": "\"The user interface is designed so that users can access the information in the app directly.\"",
+        "requirement_text": "The application must remain usable offline when it temporarily loses network connection.",
+        "requirement_reference": "\"The app remains usable offline, even if it temporarily loses connection.\"",
         "user_story": {
-            "user_story": "As a football fan, I want direct access to information through the interface so that I can quickly reach the content I need. Acceptance Criteria: Given I am using the app interface, When I navigate to core information areas, Then the information must be directly accessible through the user interface."
+            "user_story": "As a mobile user, I want the app to remain usable offline so that temporary disconnections do not prevent access.\nAcceptance Criteria:\nGiven I am using the app and the network connection is lost temporarily\nWhen the app enters offline state\nThen the application must remain usable for offline-supported functionality."
         }
     },
     {
         "requirement_no": "NFR-004",
-        "requirement_text": "All modules and the user interface must remain consistent and fixed components of the app even when external server updates occur.",
-        "requirement_reference": "\"All modules and the user interface are fixed components of the app and remain consistent even with external server updates.\"",
+        "requirement_text": "The system must support up to 100,000 simultaneous users on high-traffic match days without performance loss.",
+        "requirement_reference": "\"our app is designed so that up to 100,000 users can be served simultaneously without performance loss\"",
         "user_story": {
-            "user_story": "As a user, I want the app structure and interface to remain consistent during external server updates so that my experience stays stable and predictable. Acceptance Criteria: Given an external server update occurs, When I use the app modules and interface, Then the app’s modules and user interface must remain consistent and available."
+            "user_story": "As a football fan, I want the app to remain performant during peak match-day traffic so that I can use it without degradation.\nAcceptance Criteria:\nGiven peak match-day traffic conditions\nWhen up to 100,000 users access the system simultaneously\nThen the system must continue operating without performance loss."
         }
     },
     {
         "requirement_no": "NFR-005",
-        "requirement_text": "Registration and login must be uncomplicated for users.",
-        "requirement_reference": "\"Registration and login are designed to be uncomplicated\"",
+        "requirement_text": "The application must undergo thorough testing and support processes before release to detect and resolve malfunctions early.",
+        "requirement_reference": "\"the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early\"",
         "user_story": {
-            "user_story": "As a new or returning user, I want registration and login to be uncomplicated so that I can access the app easily. Acceptance Criteria: Given I am on the startup authentication flow, When I complete registration or login, Then the process must be simple and straightforward for the user."
+            "user_story": "As a product owner, I want the app to undergo thorough pre-release testing and support so that defects are identified early.\nAcceptance Criteria:\nGiven a release candidate is prepared\nWhen the pre-release process is executed\nThen the application must complete defined testing and support activities before release."
         }
     },
     {
         "requirement_no": "NFR-006",
-        "requirement_text": "The application must function reliably even with limited network coverage.",
-        "requirement_reference": "\"the app is developed so that it functions reliably even with limited network coverage.\"",
-        "user_story": {
-            "user_story": "As a mobile user, I want the app to function reliably with weak connectivity so that I can still use it in difficult network conditions. Acceptance Criteria: Given network coverage is limited, When I use the app, Then the app must continue to function reliably for supported operations."
-        }
-    },
-    {
-        "requirement_no": "NFR-007",
-        "requirement_text": "The application must support up to 100,000 simultaneous users on match days without performance loss.",
-        "requirement_reference": "\"our app is designed so that up to 100,000 users can be served simultaneously without performance loss.\"",
-        "user_story": {
-            "user_story": "As a football fan, I want the app to remain performant on busy match days so that I can use it even during peak demand. Acceptance Criteria: Given 100,000 concurrent users are accessing the app, When peak match-day traffic occurs, Then the system must continue serving users without performance loss."
-        }
-    },
-    {
-        "requirement_no": "NFR-008",
-        "requirement_text": "The application must undergo thorough testing and support processes before release to detect and resolve malfunctions early.",
-        "requirement_reference": "\"the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early.\"",
-        "user_story": {
-            "user_story": "As a product owner, I want thorough pre-release testing and support so that malfunctions are found and resolved early. Acceptance Criteria: Given a release candidate is prepared, When pre-release validation is performed, Then the app must complete a thorough testing and support process aimed at detecting and resolving malfunctions before release."
-        }
-    },
-    {
-        "requirement_no": "NFR-009",
-        "requirement_text": "The system must comply with transmission rights restrictions by country when presenting live streams.",
-        "requirement_reference": "\"Of course, it is ensured that compliance with transmission rights is maintained.\"",
-        "user_story": {
-            "user_story": "As a business stakeholder, I want stream availability to comply with transmission rights so that the app operates legally in each country. Acceptance Criteria: Given a live stream is associated with territorial rights rules, When the app determines whether to present the stream, Then the system must enforce country-specific transmission rights compliance."
-        }
-    },
-    {
-        "requirement_no": "NFR-010",
-        "requirement_text": "All personal data of users must be processed in compliance with the GDPR.",
+        "requirement_text": "The system must process all personal user data in compliance with the GDPR.",
         "requirement_reference": "\"All personal data of users are processed in compliance with the GDPR.\"",
         "user_story": {
-            "user_story": "As a user, I want my personal data handled in compliance with GDPR so that my privacy rights are protected. Acceptance Criteria: Given the app collects or processes personal data, When personal data is stored, transmitted, or otherwise processed, Then the processing must comply with GDPR requirements."
+            "user_story": "As a user, I want my personal data handled in compliance with GDPR so that my privacy rights are protected.\nAcceptance Criteria:\nGiven the system collects, stores, or processes personal data\nWhen data processing occurs\nThen the system must process personal data in compliance with GDPR requirements."
         }
     }
 ]

@@ -1,7 +1,7 @@
-from typing import TypedDict
+from typing import TypedDict,Annotated
 from pydantic import BaseModel, Field
-
-
+import operator
+from langchain.messages import AnyMessage
 
 class userStory(BaseModel):
     user_story: str = Field(
@@ -50,8 +50,9 @@ class output_format(BaseModel):
     non_functional_reqs: list[non_functional_requirement] | None
 
 class GraphState(TypedDict):
+    messages: Annotated[list[AnyMessage], operator.add] | None
     model:str
-    filepath:str
+    requirements_filepath:str
     think_file : str
     output_functional_path:str
     output_non_functional_path:str
