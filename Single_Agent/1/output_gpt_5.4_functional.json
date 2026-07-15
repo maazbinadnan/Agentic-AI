@@ -1,0 +1,170 @@
+[
+    {
+        "requirement_no": "FR-001",
+        "requirement_text": "The system must provide a mobile application for football fans on Android and iOS devices.",
+        "requirement_reference": "\"We are currently developing a mobile football app that will be available for Android and iOS devices.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to use the app on my Android or iOS device so that I can access football content on my preferred mobile platform. Acceptance Criteria: Given I use a supported Android or iOS device, When I install and launch the app, Then the app must be available and operational on that platform."
+        }
+    },
+    {
+        "requirement_no": "FR-002",
+        "requirement_text": "The system must allow users to view current football news for their favorite teams.",
+        "requirement_reference": "\"To achieve this, users can display current football news of their favorite teams\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to see current news about my favorite teams so that I can stay informed about them. Acceptance Criteria: Given I have selected one or more favorite teams, When I open the news section, Then the app must display current football news related to those teams."
+        }
+    },
+    {
+        "requirement_no": "FR-003",
+        "requirement_text": "The system must allow users to individually select preferred sports channels as news sources.",
+        "requirement_reference": "\"and also select preferred sports channels individually.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to choose my preferred sports channels so that I receive news from sources I trust. Acceptance Criteria: Given I am in the preferences or news customization area, When I select one or more sports channels, Then the app must use those selected channels for news display."
+        }
+    },
+    {
+        "requirement_no": "FR-004",
+        "requirement_text": "The system must provide a live ticker for users to follow live results of their favorite teams.",
+        "requirement_reference": "\"In addition to the news, users can follow the results of their favorite teams live via a live ticker.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to follow my favorite teams through a live ticker so that I can monitor match results as they happen. Acceptance Criteria: Given my favorite team is playing, When I open the live ticker, Then the app must display live match result updates for that team."
+        }
+    },
+    {
+        "requirement_no": "FR-005",
+        "requirement_text": "The system must provide coverage of leagues and competitions at national and international levels.",
+        "requirement_reference": "\"Our app will offer extensive coverage of all leagues and competitions, both national and international.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want access to national and international leagues and competitions so that I can follow all relevant football events in one place. Acceptance Criteria: Given I browse leagues or competitions, When I navigate the coverage sections, Then the app must provide content for national and international football competitions."
+        }
+    },
+    {
+        "requirement_no": "FR-006",
+        "requirement_text": "The system must provide detailed team information and player information at any time.",
+        "requirement_reference": "\"Detailed team and player information will also be available at any time.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to access team and player details whenever I need them so that I can learn more about clubs and players. Acceptance Criteria: Given I open a team or player profile, When the profile page loads, Then the app must display detailed information for the selected team or player."
+        }
+    },
+    {
+        "requirement_no": "FR-007",
+        "requirement_text": "The system must integrate live stream links from supported providers such as DAZN and Sky Sport.",
+        "requirement_reference": "\"Another highlight is the integration of live stream links, for example, from providers such as DAZN or Sky Sport.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to access live stream links from supported providers so that I can quickly find available live broadcasts. Acceptance Criteria: Given a supported match broadcast exists from an integrated provider, When I view the match details in the app, Then the app must display the relevant live stream link."
+        }
+    },
+    {
+        "requirement_no": "FR-008",
+        "requirement_text": "The system must display live stream links directly in the app when the corresponding live broadcast has begun.",
+        "requirement_reference": "\"These are available directly in the app as soon as the live broadcast has begun.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want live stream links to appear as soon as a broadcast starts so that I can access the stream at the right time. Acceptance Criteria: Given a supported live broadcast has not yet started, When I view the match in the app, Then no active live stream link is shown. Given the broadcast has started, When I refresh or reopen the match page, Then the app must display the live stream link directly in the app."
+        }
+    },
+    {
+        "requirement_no": "FR-009",
+        "requirement_text": "The system must restrict display of live stream links to cases where transmission rights are valid for the user's country.",
+        "requirement_reference": "\"Live streams will only be displayed when the respective rights are fulfilled in the country.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want the app to show only streams legally available in my country so that I can access compliant viewing options. Acceptance Criteria: Given I am located in a country without valid transmission rights for a stream, When I open the match details, Then the app must not display that live stream link. Given valid rights exist in my country, When I open the same match details, Then the app must display the live stream link."
+        }
+    },
+    {
+        "requirement_no": "FR-010",
+        "requirement_text": "The system must provide live results of users' favorite teams in real time.",
+        "requirement_reference": "\"The LiveFootball app should also give users the option to retrieve the live results of their favorite teams in real time.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want real-time live results for my favorite teams so that I always know the current score. Acceptance Criteria: Given my favorite team is in a live match, When match events occur, Then the app must update the displayed live result in real time."
+        }
+    },
+    {
+        "requirement_no": "FR-011",
+        "requirement_text": "The system must include an integrated live ticker module that retrieves and displays live data in real time.",
+        "requirement_reference": "\"To implement this function, the app includes an integrated live ticker module that enables the retrieval and display of live data in real time.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want the live ticker module to retrieve and display live match data so that I can follow matches continuously. Acceptance Criteria: Given live data is available from the external source, When I open the live ticker module, Then the module must retrieve and display current live data and continue updating it."
+        }
+    },
+    {
+        "requirement_no": "FR-012",
+        "requirement_text": "The live ticker module must communicate with the user interface to display and continuously update current match data.",
+        "requirement_reference": "\"The live ticker module communicates directly via the interface with the user interface to display and continuously update current match data.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want match data on the interface to update continuously so that I can follow live events without manual refresh complexity. Acceptance Criteria: Given I am viewing a live match in the app, When new match data is received by the live ticker module, Then the user interface must display the updated current match data."
+        }
+    },
+    {
+        "requirement_no": "FR-013",
+        "requirement_text": "The system must retrieve live data via an API from an external server.",
+        "requirement_reference": "\"The live data is retrieved via an API from an external server.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want the app to obtain current live data from a connected external source so that the information shown is up to date. Acceptance Criteria: Given the external live data API is available, When the app requests live match information, Then the system must retrieve the live data from the external server API."
+        }
+    },
+    {
+        "requirement_no": "FR-014",
+        "requirement_text": "The system must provide additional modules that allow users to individually configure the app.",
+        "requirement_reference": "\"the app also offers additional modules that allow users to individually configure the app\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to configure the app individually so that the experience matches my preferences. Acceptance Criteria: Given I access the app settings or configuration area, When I change available configuration options, Then the app must save and apply my individual configuration."
+        }
+    },
+    {
+        "requirement_no": "FR-015",
+        "requirement_text": "The system must integrate with a notification system that provides users with information about current events when notifications are activated.",
+        "requirement_reference": "\"the app is linked to a notification system that provides users with information about current events as soon as the notification function is activated.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to receive notifications about current events when enabled so that I stay informed without opening the app. Acceptance Criteria: Given I have activated notifications, When a relevant current event occurs, Then the system must send me a notification about that event."
+        }
+    },
+    {
+        "requirement_no": "FR-016",
+        "requirement_text": "The system must provide user registration and login directly at app startup.",
+        "requirement_reference": "\"Registration and login are designed to be uncomplicated and can be completed directly at app startup.\"",
+        "user_story": {
+            "user_story": "As a user, I want to register and log in when I start the app so that I can quickly access personalized features. Acceptance Criteria: Given I open the app for the first time or while signed out, When the startup flow is shown, Then I must be able to complete registration or login directly from startup."
+        }
+    },
+    {
+        "requirement_no": "FR-017",
+        "requirement_text": "The system must allow users to follow favorite clubs to personalize their experience.",
+        "requirement_reference": "\"Users have the option to personalize their experience by following favorite clubs\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to follow favorite clubs so that the app can personalize content for me. Acceptance Criteria: Given I am viewing a club or preferences screen, When I mark a club as a favorite, Then the app must save that club as followed and use it for personalization."
+        }
+    },
+    {
+        "requirement_no": "FR-018",
+        "requirement_text": "The system must allow users to receive notifications about news or results of their favorite teams.",
+        "requirement_reference": "\"and receiving notifications about news or results of their favorite teams.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want notifications about news and results for my favorite teams so that I stay updated on the teams I care about. Acceptance Criteria: Given I follow one or more favorite teams and have enabled notifications, When relevant news or result updates occur, Then the system must send notifications related to those favorite teams."
+        }
+    },
+    {
+        "requirement_no": "FR-019",
+        "requirement_text": "The system must allow users to share news and game reports directly from the app via social media.",
+        "requirement_reference": "\"users can share news and game reports via social media directly from the app.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to share news and game reports on social media from within the app so that I can easily discuss football updates with others. Acceptance Criteria: Given I am viewing a news item or game report, When I tap the share option and choose a social media destination, Then the app must pass the selected content to the social media sharing flow."
+        }
+    },
+    {
+        "requirement_no": "FR-020",
+        "requirement_text": "The system must remain usable offline when the app temporarily loses network connection.",
+        "requirement_reference": "\"The app remains usable offline, even if it temporarily loses connection.\"",
+        "user_story": {
+            "user_story": "As a mobile user, I want the app to remain usable when my connection drops so that I can continue accessing available functionality. Acceptance Criteria: Given I have previously opened the app and then lose network connectivity, When I continue using the app, Then the app must remain usable offline for supported features."
+        }
+    },
+    {
+        "requirement_no": "FR-021",
+        "requirement_text": "The system must collect and evaluate user feedback and app reviews to support continuous improvement of functionality.",
+        "requirement_reference": "\"In addition, user feedback and app reviews are continuously evaluated to improve functionality.\"",
+        "user_story": {
+            "user_story": "As a product team member, I want user feedback and app reviews to be evaluated so that we can improve app functionality over time. Acceptance Criteria: Given users submit feedback or reviews exist, When the evaluation process is performed, Then feedback and reviews must be available for continuous functionality improvement activities."
+        }
+    }
+]

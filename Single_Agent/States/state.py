@@ -43,11 +43,15 @@ class non_functional_requirement(BaseModel):
     )
     user_story: userStory
 class output_format(BaseModel):
+    thinking: str = Field(
+        description="CRITICAL: Your step-by-step thinking scratchpad. This must be populated first to break down the text, map out candidates, de-duplicate requirements, and plan BDD scenarios before generating the lists."
+    )
     functional_reqs: list[functional_requirement] | None
     non_functional_reqs: list[non_functional_requirement] | None
 
 class GraphState(TypedDict):
     model:str
     filepath:str
+    think_file : str
     output_functional_path:str
     output_non_functional_path:str
