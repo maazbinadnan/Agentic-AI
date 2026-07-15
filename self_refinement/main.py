@@ -1,7 +1,7 @@
 import os, sys
 from langgraph.graph import StateGraph, MessagesState, START, END
-from single_agent.states.state import GraphState
-from single_agent.functions import generate_requirements
+from Single_Agent.States.state import GraphState
+from Single_Agent.functions import generate_requirements
 
 
 #-----Defining the Workflow-----#

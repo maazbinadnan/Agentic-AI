@@ -10,4 +10,4 @@ dependencies = []
 # Use setuptools package discovery to locate local packages automatically.
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["Global_Client_Layer*", "States*", "Single-Agent*"]
+include = ["Global_Client_Layer*", "States*", "Single-Agent*", "three_amigos*"]

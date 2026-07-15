@@ -2,7 +2,8 @@
   "dependencies": ["."],
   "python_path": ["."],
   "graphs": {
-    "requirements_agent": "./Single_Agent/main.py:app"
+    "requirements_agent": "./Single_Agent/main.py:app",
+    "three_amigos": "./three_amigos/main.py:app"
   },
   "env": ".env"
 }

@@ -11,9 +11,9 @@ prompt_file = r'C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertat
 
 def generate_requirements(state:GraphState):
     '''read the md file and output user stories'''
-
     requirements = _read_md_file(state['requirements_filepath'])
     system_prompt = _read_md_file(prompt_file)
+    print(system_prompt)
 
     print("calling LLM")
     messages = [
@@ -27,4 +27,11 @@ def generate_requirements(state:GraphState):
     print(_write_json_file(state['think_file'],reqs['thinking']))
     print(_write_json_file(state['output_functional_path'],reqs['functional_reqs']))
     print(_write_json_file(state['output_non_functional_path'],reqs['non_functional_reqs']))
-    return {"messages":messages}    
+    return {"messages":messages}
+
+
+def evaluate_requirements(state:GraphState):
+    
+    '''
+    evaluate the initial user stories and give feedback to LLM to update the user stories
+    '''
