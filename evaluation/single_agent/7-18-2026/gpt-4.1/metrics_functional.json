@@ -1,0 +1,109 @@
+{
+    "Metrics": [
+        {
+            "ground_truth_requirement": "The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.",
+            "generated_requirements": "FR-001: The system must allow users to select favorite teams and preferred sports channels, and use these selections to filter and display a personalized news feed.",
+            "matched": true,
+            "matched_score": 0.98,
+            "explanation": "FR-001 fully captures the core meaning: users select favorite teams and preferred sports channels, and the app displays personalized/current news accordingly. 'Personalized news feed' semantically covers displaying current football news for the selected team(s) from chosen channels."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to view live results of their favorite teams in real time via a live ticker.",
+            "generated_requirements": "FR-002: The system must provide live ticker functionality allowing users to follow the live results of their favorite teams in real time.",
+            "matched": true,
+            "matched_score": 1.0,
+            "explanation": "FR-002 is a direct semantic match. It preserves live results, favorite teams, real-time behavior, and the live ticker mechanism."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to view league tables and statistics from current as well as past seasons.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.08,
+            "explanation": "No generated requirement explicitly mentions league tables or statistics across current and past seasons. FR-003 discusses broad league/competition coverage for news, fixtures, and results, but omits league tables, statistics, and historical season coverage."
+        },
+        {
+            "ground_truth_requirement": "The app must provide users with detailed team and player information that can be accessed at any time.",
+            "generated_requirements": "FR-004: The system must provide detailed information on teams and individual players that is accessible at any time.",
+            "matched": true,
+            "matched_score": 1.0,
+            "explanation": "FR-004 is effectively identical in meaning, covering detailed team and player information with anytime access."
+        },
+        {
+            "ground_truth_requirement": "As soon as a live match begins the app must allow users to access live stream links from providers such as DAZN or Sky as long as the broadcast rights are valid.",
+            "generated_requirements": "FR-005: The system must integrate live stream links from providers (such as DAZN or Sky Sport) and display these links only when a live broadcast is available and transmission rights are fulfilled for the user's country.",
+            "matched": true,
+            "matched_score": 0.96,
+            "explanation": "FR-005 captures the required timing condition (when live broadcast is available / match begins), provider examples, and the legal-rights constraint. The added 'for the user's country' is a reasonable elaboration of valid broadcast rights rather than a contradiction."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to register easily and log in directly from the start page.",
+            "generated_requirements": "FR-007: The system must provide a streamlined registration and login process that can be completed directly at app startup.",
+            "matched": true,
+            "matched_score": 0.95,
+            "explanation": "FR-007 preserves easy registration and login and the requirement that this be possible directly when the app starts. 'At app startup' closely matches 'from the start page,' though the exact UI wording differs slightly."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to personalize their experience by following their favorite teams and leagues.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.22,
+            "explanation": "No generated requirement fully captures personalization specifically by following both favorite teams and leagues. FR-001 and FR-006 cover favorite teams; FR-003 covers leagues generally; FR-009 covers module/interface personalization. However, none states that users can follow favorite teams and leagues as the personalization mechanism."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to select favorite teams and national teams to receive push notifications about news and updates.",
+            "generated_requirements": "FR-006: The system must provide an in-app notification system that sends users real-time updates for current events, news, or results related to their followed teams, once the function is activated.",
+            "matched": false,
+            "matched_score": 0.63,
+            "explanation": "FR-006 partially overlaps by covering notifications for followed teams, news, and updates/results, but it does not explicitly include selection of national teams. The original requirement specifically includes both favorite teams and national teams as selectable notification targets, which is a dropped nuance."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to receive push notifications about news or results of their favorite teams.",
+            "generated_requirements": "FR-006: The system must provide an in-app notification system that sends users real-time updates for current events, news, or results related to their followed teams, once the function is activated.",
+            "matched": true,
+            "matched_score": 0.94,
+            "explanation": "FR-006 captures push/in-app notifications for news and results related to the user's followed/favorite teams. The activation condition is an added detail consistent with the source set."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to share news and match reports directly via social media.",
+            "generated_requirements": "FR-008: The system must allow users to share news and game reports directly from the app to social media platforms.",
+            "matched": true,
+            "matched_score": 0.99,
+            "explanation": "FR-008 is a near-exact match. 'Game reports' is semantically equivalent to 'match reports,' and direct social media sharing is preserved."
+        },
+        {
+            "ground_truth_requirement": "The live ticker module must allow users to retrieve and display live data.",
+            "generated_requirements": "FR-002: The system must provide live ticker functionality allowing users to follow the live results of their favorite teams in real time.",
+            "matched": false,
+            "matched_score": 0.58,
+            "explanation": "FR-002 partially covers the live ticker concept and real-time updates, but it narrows the scope to live results of favorite teams rather than the broader requirement that the live ticker module retrieve and display live data. The retrieval/display capability of live data in general is not fully stated."
+        },
+        {
+            "ground_truth_requirement": "The app must allow users to access live match results through the user interface directly.",
+            "generated_requirements": "FR-002: The system must provide live ticker functionality allowing users to follow the live results of their favorite teams in real time.",
+            "matched": false,
+            "matched_score": 0.61,
+            "explanation": "FR-002 partially overlaps because live results are accessible via the live ticker, but the original specifically requires direct access through the user interface, without limiting this to favorite teams. The direct UI access nuance is not explicitly preserved."
+        },
+        {
+            "ground_truth_requirement": "The user interface must allow users to view and manage content and modules together.",
+            "generated_requirements": "FR-009: The system must allow users to individually configure modules and connect their own interface to the user interface for personalized experience.",
+            "matched": false,
+            "matched_score": 0.54,
+            "explanation": "FR-009 partially addresses module configuration and interface personalization, but it does not clearly state that users can view and manage content and modules together within the interface. The content-management aspect is missing or underspecified."
+        },
+        {
+            "ground_truth_requirement": "The registration system must allow the registration process to be carried out quickly and easily.",
+            "generated_requirements": "FR-007: The system must provide a streamlined registration and login process that can be completed directly at app startup.",
+            "matched": true,
+            "matched_score": 0.9,
+            "explanation": "FR-007 captures the essence of a quick and easy registration process through 'streamlined registration.' Although it also includes login and startup context, the original requirement's meaning is sufficiently covered."
+        },
+        {
+            "ground_truth_requirement": "The notification system must allow the app to send users information about current events once activated.",
+            "generated_requirements": "FR-006: The system must provide an in-app notification system that sends users real-time updates for current events, news, or results related to their followed teams, once the function is activated.",
+            "matched": true,
+            "matched_score": 0.93,
+            "explanation": "FR-006 covers a notification system sending users information about current events once activated. It adds team-related scope and examples like news/results, but still includes the original meaning."
+        }
+    ]
+}

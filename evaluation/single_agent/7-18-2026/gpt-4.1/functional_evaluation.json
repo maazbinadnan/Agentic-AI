@@ -1,0 +1,92 @@
+[
+    {
+        "original_text": "The system must allow users to select favorite teams and preferred sports channels, and use these selections to filter and display a personalized news feed.",
+        "top_matches": [
+            {
+                "score": 0.791430593,
+                "matched_text": "The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must provide live ticker functionality allowing users to follow the live results of their favorite teams in real time.",
+        "top_matches": [
+            {
+                "score": 0.881057203,
+                "matched_text": "The app must allow users to view live results of their favorite teams in real time via a live ticker.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must cover and display news, results, and data for all football leagues and competitions, both national and international.",
+        "top_matches": [
+            {
+                "score": 0.607150495,
+                "matched_text": "The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must provide detailed information on teams and individual players that is accessible at any time.",
+        "top_matches": [
+            {
+                "score": 0.819058597,
+                "matched_text": "The app must provide users with detailed team and player information that can be accessed at any time.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must integrate live stream links from providers (such as DAZN or Sky Sport) and display these links only when a live broadcast is available and transmission rights are fulfilled for the user's country.",
+        "top_matches": [
+            {
+                "score": 0.79254818,
+                "matched_text": "As soon as a live match begins the app must allow users to access live stream links from providers such as DAZN or Sky as long as the broadcast rights are valid.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must provide an in-app notification system that sends users real-time updates for current events, news, or results related to their followed teams, once the function is activated.",
+        "top_matches": [
+            {
+                "score": 0.781898439,
+                "matched_text": "The notification system must allow the app to send users information about current events once activated.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must provide a streamlined registration and login process that can be completed directly at app startup.",
+        "top_matches": [
+            {
+                "score": 0.788763523,
+                "matched_text": "The app must allow users to register easily and log in directly from the start page.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must allow users to share news and game reports directly from the app to social media platforms.",
+        "top_matches": [
+            {
+                "score": 0.869734108,
+                "matched_text": "The app must allow users to share news and match reports directly via social media.",
+                "type": "Functional"
+            }
+        ]
+    },
+    {
+        "original_text": "The system must allow users to individually configure modules and connect their own interface to the user interface for personalized experience.",
+        "top_matches": [
+            {
+                "score": 0.64097476,
+                "matched_text": "The user management system must be connected to the user interface via its own interface.",
+                "type": "Property"
+            }
+        ]
+    }
+]

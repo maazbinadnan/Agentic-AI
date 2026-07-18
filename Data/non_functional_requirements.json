@@ -1,0 +1,102 @@
+[
+    {
+        "No.": 1,
+        "Requirement": "The app must be available for Android and iOS devices.",
+        "Type": "Property"
+    },
+    {
+        "No.": 2,
+        "Requirement": "Once the app is started, its startup time must be less than or equal to two seconds.",
+        "Type": "Property"
+    },
+    {
+        "No.": 3,
+        "Requirement": "The display of live streams in the app must comply with the respective broadcasting rights in the country.",
+        "Type": "Property"
+    },
+    {
+        "No.": 4,
+        "Requirement": "Users personal data must be stored in compliance with GDPR.",
+        "Type": "Property"
+    },
+    {
+        "No.": 5,
+        "Requirement": "The apps session management must ensure that logged-in users remain logged in until they actively log out.",
+        "Type": "Property"
+    },
+    {
+        "No.": 6,
+        "Requirement": "The app must function reliably even with limited network connectivity.",
+        "Type": "Environment"
+    },
+    {
+        "No.": 7,
+        "Requirement": "When the number of users reaches up to 100,000 simultaneously, the app must remain stable.",
+        "Type": "Environment"
+    },
+    {
+        "No.": 8,
+        "Requirement": "After release, a support process must be established to quickly resolve technical issues.",
+        "Type": "Process"
+    },
+    {
+        "No.": 9,
+        "Requirement": "After six months of operation, feedback and user reviews must be analyzed to further develop the app.",
+        "Type": "Process"
+    },
+    {
+        "No.": 10,
+        "Requirement": "The app must include an integrated live ticker module.",
+        "Type": "Property"
+    },
+    {
+        "No.": 11,
+        "Requirement": "The app must include a user interface that is an integral part of the app.",
+        "Type": "Property"
+    },
+    {
+        "No.": 12,
+        "Requirement": "The live ticker module must be connected to the user interface through its own interface to display data.",
+        "Type": "Property"
+    },
+    {
+        "No.": 13,
+        "Requirement": "The live ticker module must communicate with an external server via an API to retrieve current match data.",
+        "Type": "Property"
+    },
+    {
+        "No.": 14,
+        "Requirement": "The external server must provide the app with current match data.",
+        "Type": "Property"
+    },
+    {
+        "No.": 15,
+        "Requirement": "The external server must be physically located outside the app environment.",
+        "Type": "Property"
+    },
+    {
+        "No.": 16,
+        "Requirement": "The app must include a user management system.",
+        "Type": "Property"
+    },
+    {
+        "No.": 17,
+        "Requirement": "The user management system must be connected to the user interface via its own interface.",
+        "Type": "Property"
+    },
+    {
+        "No.": 18,
+        "Requirement": "The app must include a notification system.",
+        "Type": "Property"
+    },
+    {
+        "No.": 19,
+        "Requirement": "All modules and the user interface must be fixed components of the app.",
+        "Type": "Property"
+    },
+    {
+        "No.": 20,
+        "Requirement": "The connection to the external server must be designed flexibly.",
+        "Type": "Property"
+    }
+]
