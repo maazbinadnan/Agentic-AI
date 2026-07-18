@@ -1,83 +1,101 @@
 [
     {
         "requirement_no": "NFR-001",
-        "requirement_text": "The application must be fully loaded and ready to use within a maximum of two seconds after starting.",
-        "requirement_reference": "\"it is fully loaded and ready to use within a maximum of two seconds after starting\"",
+        "requirement_text": "The application must be fully loaded and ready for use within a maximum of 2 seconds after startup.",
+        "requirement_reference": "\"It is particularly important to us that the app runs quickly and smoothly so that it is fully loaded and ready to use within a maximum of two seconds after starting.\"",
         "user_story": {
-            "story": "As a user, I want the app to open quickly so that I do not have to wait to access information.",
-            "Acceptance": "Given the app is closed, When I launch the app, Then all main content is displayed and usable within 2 seconds."
+            "story": "As a mobile user, I want the app to load within two seconds so that I can use it without delay.",
+            "Acceptance": "Given the app is closed, When I start the app on a supported device, Then the app must be fully loaded and ready for use within 2 seconds."
         }
     },
     {
         "requirement_no": "NFR-002",
-        "requirement_text": "The application must function reliably even with limited network coverage, providing graceful degradation of features.",
-        "requirement_reference": "\"developed so that it functions reliably even with limited network coverage\"",
+        "requirement_text": "The application must run quickly and smoothly during use.",
+        "requirement_reference": "\"It is particularly important to us that the app runs quickly and smoothly\"",
         "user_story": {
-            "story": "As a user in an area with poor signal, I want the app to work reliably so that I can still access information.",
-            "Acceptance": "Given I have a weak network connection, When I use the app, Then all critical features (news, results last known state) remain usable with appropriate user feedback on unavailable features."
+            "story": "As a mobile user, I want the app to run smoothly so that I have a responsive experience.",
+            "Acceptance": "Given I navigate through core app features, When screens and modules are used under normal operating conditions, Then the app must respond smoothly without noticeable performance degradation."
         }
     },
     {
         "requirement_no": "NFR-003",
-        "requirement_text": "The application must remain usable offline, allowing access to core features and last-known data if the connection is lost temporarily.",
-        "requirement_reference": "\"app remains usable offline, even if it temporarily loses connection\"",
+        "requirement_text": "The user interface must enable direct access to information.",
+        "requirement_reference": "\"The user interface is designed so that users can access the information in the app directly.\"",
         "user_story": {
-            "story": "As a user, I want to use the app even when offline so that I can view previously loaded news and results.",
-            "Acceptance": "Given I have no internet connection, When I open the app, Then I am still able to access the last loaded news, results, and information."
+            "story": "As a user, I want information to be directly accessible through the interface so that I can find content efficiently.",
+            "Acceptance": "Given I open the app, When I navigate to major content areas, Then the interface must allow direct access to the information provided by the app."
         }
     },
     {
         "requirement_no": "NFR-004",
-        "requirement_text": "The application must support at least 100,000 simultaneous users without any loss of performance.",
-        "requirement_reference": "\"up to 100,000 users can be served simultaneously without performance loss\"",
+        "requirement_text": "The application's modules and user interface must remain consistent despite external server updates.",
+        "requirement_reference": "\"All modules and the user interface are fixed components of the app and remain consistent even with external server updates.\"",
         "user_story": {
-            "story": "As an app owner, I want the app to serve large numbers of users during peak times so that all users have a good experience.",
-            "Acceptance": "Given a popular match is ongoing, When 100,000 users use the app concurrently, Then the app remains as responsive as normal."
+            "story": "As a user, I want the app interface and modules to remain consistent even when server data changes so that my experience stays stable.",
+            "Acceptance": "Given the external server updates its data, When the app retrieves updated content, Then the available modules and user interface structure must remain consistent."
         }
     },
     {
         "requirement_no": "NFR-005",
-        "requirement_text": "All application modules and the user interface must remain consistent and operational even if the external server providing data is updated.",
-        "requirement_reference": "\"all modules and the user interface are fixed components ... remain consistent even with external server updates\"",
+        "requirement_text": "Registration and login must be uncomplicated for users.",
+        "requirement_reference": "\"Registration and login are designed to be uncomplicated\"",
         "user_story": {
-            "story": "As a user, I want the app layout and features to remain stable even when back-end data sources are updated so that I am not confused by unexpected changes.",
-            "Acceptance": "Given an external API update, When I use the app, Then all modules and the UI continue to function as before with no visible disruption."
+            "story": "As a user, I want registration and login to be uncomplicated so that I can access the app with minimal effort.",
+            "Acceptance": "Given I am at startup, When I attempt to register or log in, Then I must be able to complete the process through a straightforward startup flow without unnecessary steps."
         }
     },
     {
         "requirement_no": "NFR-006",
-        "requirement_text": "The application must undergo thorough testing and support processes before release to identify and resolve technical problems early.",
-        "requirement_reference": "\"app goes through a thorough testing and support process before release to detect and resolve any malfunctions early\"",
+        "requirement_text": "The application must function reliably even with limited network coverage.",
+        "requirement_reference": "\"Therefore, the app is developed so that it functions reliably even with limited network coverage.\"",
         "user_story": {
-            "story": "As a developer, I want every release to be fully tested so that issues are caught before users experience them.",
-            "Acceptance": "Given a new build, When QA is performed, Then all critical workflows are tested and defects corrected before release."
+            "story": "As a mobile user, I want the app to work reliably with poor connectivity so that I can still use it in difficult network conditions.",
+            "Acceptance": "Given network coverage is limited, When I use core app features, Then the application must continue to function reliably."
         }
     },
     {
         "requirement_no": "NFR-007",
-        "requirement_text": "User feedback and app reviews must be continuously evaluated to improve app functionality.",
-        "requirement_reference": "\"user feedback and app reviews are continuously evaluated to improve functionality\"",
+        "requirement_text": "The application must remain usable offline during temporary connection loss.",
+        "requirement_reference": "\"The app remains usable offline, even if it temporarily loses connection.\"",
         "user_story": {
-            "story": "As a product owner, I want ongoing user feedback review so that the app evolves and issues are addressed.",
-            "Acceptance": "Given new user feedback or reviews, When they are analyzed, Then relevant improvements are planned and tracked for future updates."
+            "story": "As a mobile user, I want the app to remain usable offline during temporary disconnections so that I can continue using it without interruption.",
+            "Acceptance": "Given I am using the app and the connection is lost temporarily, When I continue interacting with the app, Then the app must remain usable offline."
         }
     },
     {
         "requirement_no": "NFR-008",
-        "requirement_text": "All personal user data must be processed in compliance with the GDPR.",
-        "requirement_reference": "\"all personal data of users are processed in compliance with the GDPR\"",
+        "requirement_text": "The application must support up to 100,000 simultaneous users on match days without performance loss.",
+        "requirement_reference": "\"On match days with a particularly high number of accesses, our app is designed so that up to 100,000 users can be served simultaneously without performance loss.\"",
         "user_story": {
-            "story": "As a user, I want my personal information to be protected so that it is only handled according to GDPR standards.",
-            "Acceptance": "Given I register and provide personal data, When the data is processed, Then all operations comply with GDPR (e.g., consent, access, erasure, transparency)."
+            "story": "As a football fan, I want the app to perform well even during peak match-day traffic so that I can access it reliably.",
+            "Acceptance": "Given peak match-day load conditions, When up to 100,000 users access the system simultaneously, Then the system must continue serving users without performance loss."
         }
     },
     {
         "requirement_no": "NFR-009",
-        "requirement_text": "The application must be deployable and fully functional on both Android and iOS mobile operating systems.",
-        "requirement_reference": "\"mobile football app that will be available for Android and iOS devices\"",
+        "requirement_text": "The application must undergo thorough testing and support before release to detect and resolve malfunctions early.",
+        "requirement_reference": "\"To prevent technical problems, the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early.\"",
         "user_story": {
-            "story": "As a user with either an Android or iOS device, I want to install and use the app so that I have access regardless of my platform.",
-            "Acceptance": "Given I download the app from the Play Store or App Store, When I install and launch it, Then all features are available and work as specified on both platforms."
+            "story": "As a business stakeholder, I want the app thoroughly tested and supported before release so that malfunctions are identified early.",
+            "Acceptance": "Given a release candidate is prepared, When it enters the pre-release process, Then it must undergo thorough testing and support activities to identify and resolve malfunctions before release."
+        }
+    },
+    {
+        "requirement_no": "NFR-010",
+        "requirement_text": "The product team must continuously evaluate user feedback and app reviews to improve functionality.",
+        "requirement_reference": "\"In addition, user feedback and app reviews are continuously evaluated to improve functionality.\"",
+        "user_story": {
+            "story": "As a product stakeholder, I want user feedback and app reviews continuously evaluated so that the app can be improved over time.",
+            "Acceptance": "Given user feedback and app reviews are received, When the improvement process is performed, Then the feedback and reviews must be continuously evaluated for functionality improvements."
+        }
+    },
+    {
+        "requirement_no": "NFR-011",
+        "requirement_text": "The system must process all personal data in compliance with GDPR.",
+        "requirement_reference": "\"Data protection is our highest priority. All personal data of users are processed in compliance with the GDPR.\"",
+        "user_story": {
+            "story": "As a user, I want my personal data processed in compliance with GDPR so that my privacy rights are protected.",
+            "Acceptance": "Given the system collects or processes personal data, When personal data handling occurs, Then the processing must comply with GDPR requirements."
         }
     }
 ]

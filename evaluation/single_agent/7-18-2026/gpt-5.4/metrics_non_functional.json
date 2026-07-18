@@ -1,0 +1,144 @@
+{
+    "Metrics": [
+        {
+            "ground_truth_requirement": "The app must be available for Android and iOS devices.",
+            "generated_requirements": "NFR-001: The application must be fully loaded and ready to use within a maximum of 2 seconds after startup on supported Android and iOS devices.",
+            "matched": true,
+            "matched_score": 0.86,
+            "explanation": "NFR-001 explicitly states that the startup-time requirement applies on supported Android and iOS devices, thereby capturing the platform availability constraint. Although combined with the startup-time requirement rather than stated independently, the semantic meaning that the app supports Android and iOS is present."
+        },
+        {
+            "ground_truth_requirement": "Once the app is started, its startup time must be less than or equal to two seconds.",
+            "generated_requirements": "NFR-001: The application must be fully loaded and ready to use within a maximum of 2 seconds after startup on supported Android and iOS devices.",
+            "matched": true,
+            "matched_score": 0.99,
+            "explanation": "NFR-001 directly and precisely captures the startup performance requirement, including the threshold of a maximum of 2 seconds after startup."
+        },
+        {
+            "ground_truth_requirement": "The display of live streams in the app must comply with the respective broadcasting rights in the country.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement addresses live stream display compliance with country-specific broadcasting rights. This legal/content-distribution constraint is entirely missing."
+        },
+        {
+            "ground_truth_requirement": "Users personal data must be stored in compliance with GDPR.",
+            "generated_requirements": "NFR-008: The system must process all personal data in compliance with the GDPR.",
+            "matched": true,
+            "matched_score": 0.84,
+            "explanation": "NFR-008 covers GDPR compliance for personal data processing, which broadly includes storage. However, the original specifically mentions data being stored in compliance with GDPR, while the generated requirement generalizes this to all processing. The essential compliance intent is captured."
+        },
+        {
+            "ground_truth_requirement": "The apps session management must ensure that logged-in users remain logged in until they actively log out.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement covers persistent session management or the explicit condition that users remain logged in until they actively log out."
+        },
+        {
+            "ground_truth_requirement": "The app must function reliably even with limited network connectivity.",
+            "generated_requirements": "NFR-005: The application must function reliably even with limited network coverage.",
+            "matched": true,
+            "matched_score": 0.98,
+            "explanation": "NFR-005 is a very close semantic match. 'Limited network coverage' is effectively equivalent to 'limited network connectivity' in this context, and the reliability expectation is preserved."
+        },
+        {
+            "ground_truth_requirement": "When the number of users reaches up to 100,000 simultaneously, the app must remain stable.",
+            "generated_requirements": "NFR-006: The application must support up to 100,000 simultaneous users on high-traffic match days without performance loss.",
+            "matched": true,
+            "matched_score": 0.88,
+            "explanation": "NFR-006 captures the load condition of up to 100,000 simultaneous users and preserves the intent that the app continues operating under peak load. The original emphasizes stability, while the generated version emphasizes no performance loss; this is a close but slightly shifted interpretation."
+        },
+        {
+            "ground_truth_requirement": "After release, a support process must be established to quickly resolve technical issues.",
+            "generated_requirements": "NFR-007: The application must undergo thorough testing and support processes before release to detect and resolve malfunctions early.",
+            "matched": false,
+            "matched_score": 0.18,
+            "explanation": "NFR-007 discusses testing and support before release, whereas the original explicitly requires a support process after release for rapid issue resolution. The timing and operational purpose are materially different, so the original requirement is not captured."
+        },
+        {
+            "ground_truth_requirement": "After six months of operation, feedback and user reviews must be analyzed to further develop the app.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement addresses post-release analysis of feedback and user reviews after six months to guide further development."
+        },
+        {
+            "ground_truth_requirement": "The app must include an integrated live ticker module.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement mentions the existence of an integrated live ticker module."
+        },
+        {
+            "ground_truth_requirement": "The app must include a user interface that is an integral part of the app.",
+            "generated_requirements": "NFR-002: The application must provide direct and easy access to information through the user interface.; NFR-003: All modules and the user interface must remain consistent even when external server updates occur.",
+            "matched": false,
+            "matched_score": 0.43,
+            "explanation": "The generated requirements assume the presence of a user interface and describe qualities of it, but they do not explicitly capture the structural requirement that the app includes a user interface as an integral component of the app."
+        },
+        {
+            "ground_truth_requirement": "The live ticker module must be connected to the user interface through its own interface to display data.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement covers the architectural/interface connection between the live ticker module and the user interface."
+        },
+        {
+            "ground_truth_requirement": "The live ticker module must communicate with an external server via an API to retrieve current match data.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement specifies that the live ticker module communicates with an external server via an API for current match data retrieval."
+        },
+        {
+            "ground_truth_requirement": "The external server must provide the app with current match data.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement states that an external server provides current match data to the app."
+        },
+        {
+            "ground_truth_requirement": "The external server must be physically located outside the app environment.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement addresses the deployment/location constraint that the external server is physically outside the app environment."
+        },
+        {
+            "ground_truth_requirement": "The app must include a user management system.",
+            "generated_requirements": "NFR-004: Registration and login shall be uncomplicated for users.",
+            "matched": false,
+            "matched_score": 0.36,
+            "explanation": "NFR-004 touches user-facing authentication activities, which may imply some user management capability, but it does not explicitly require the inclusion of a user management system as a component of the app. The architectural requirement is only partially implied, not captured."
+        },
+        {
+            "ground_truth_requirement": "The user management system must be connected to the user interface via its own interface.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement describes the interface-based connection between the user management system and the user interface."
+        },
+        {
+            "ground_truth_requirement": "The app must include a notification system.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement mentions the inclusion of a notification system."
+        },
+        {
+            "ground_truth_requirement": "All modules and the user interface must be fixed components of the app.",
+            "generated_requirements": "NFR-003: All modules and the user interface must remain consistent even when external server updates occur.",
+            "matched": false,
+            "matched_score": 0.58,
+            "explanation": "NFR-003 partially overlaps by mentioning all modules and the user interface together, but it changes the meaning from being fixed structural components of the app to remaining consistent during external server updates. The original architectural/compositional constraint is not fully preserved."
+        },
+        {
+            "ground_truth_requirement": "The connection to the external server must be designed flexibly.",
+            "generated_requirements": null,
+            "matched": false,
+            "matched_score": 0.0,
+            "explanation": "No generated requirement addresses flexibility in the design of the connection to the external server."
+        }
+    ]
+}
