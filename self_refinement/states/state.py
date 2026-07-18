@@ -57,3 +57,7 @@ class GraphState(TypedDict):
     think_file : str
     output_functional_path:str
     output_non_functional_path:str
+    feedback_path :str
+    feedback : bool
+    evaluation_count: int
+    stop_requested: bool

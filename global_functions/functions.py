@@ -2,7 +2,7 @@ import os
 import json
 
 
-def _read_md_file(filepath:str):
+def _read_file(filepath:str):
     """Read and return the contents of a Markdown file.
     Returns a string with an error message on failure.
     """
@@ -26,7 +26,7 @@ def _write_json_file(filepath: str, content: str):
         if target_dir:
             os.makedirs(target_dir, exist_ok=True)
             
-        with open(filepath, "x", encoding="utf-8") as file:
+        with open(filepath, "w", encoding="utf-8") as file:
             content =  json.dumps(content, indent=4, ensure_ascii=False)
             file.write(content)
         return f"wrote file {filepath} successfully"

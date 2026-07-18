@@ -2,8 +2,8 @@ No.	Requirement according to Property-, Environment-, & ProcessMASTER	Type
 1	The app must be available for Android and iOS devices.	Property
 2	Once the app is started, its startup time must be less than or equal to two seconds.	Property
 3	The display of live streams in the app must comply with the respective broadcasting rights in the country.	Property
-4	Users’ personal data must be stored in compliance with GDPR.	Property
-5	The app’s session management must ensure that logged-in users remain logged in until they actively log out.	Property
+4	Users personal data must be stored in compliance with GDPR.	Property
+5	The apps session management must ensure that logged-in users remain logged in until they actively log out.	Property
 6	The app must function reliably even with limited network connectivity.	Environment
 7	When the number of users reaches up to 100,000 simultaneously, the app must remain stable.	Environment
 8	After release, a support process must be established to quickly resolve technical issues.	Process

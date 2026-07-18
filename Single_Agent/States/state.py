@@ -4,8 +4,11 @@ import operator
 from langchain.messages import AnyMessage
 
 class userStory(BaseModel):
-    user_story: str = Field(
-        description="The user story corresponding to the current requirement with a user story and an acceptance criteria expressed as Behaviour Driven Development Given  Given-When-Then statements"
+    story: str = Field(
+        description="The user story corresponding to the current requirement with a user story"
+    )
+    Acceptance: str = Field(
+        description="The acceptance criteria expressed as Behaviour Driven Development Given  Given-When-Then statements"
     )
 class functional_requirement(BaseModel):
     requirement_no: str = Field(

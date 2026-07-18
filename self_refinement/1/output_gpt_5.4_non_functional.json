@@ -1,0 +1,50 @@
+[
+    {
+        "requirement_no": "NFR-001",
+        "requirement_text": "The app must be available and fully functional on Android and iOS devices, providing equivalent (not necessarily identical) features across both platforms.",
+        "requirement_reference": "\"app that will be available for Android and iOS devices.\"",
+        "user_story": {
+            "user_story": "As a mobile user, I want to use the app on either Android or iOS, with the same major features supported.\nAcceptance Criteria: Given I download the app from the respective store, When I use core features (news, live ticker, notifications, sharing, etc.), Then they are all available and work comparably on both platforms."
+        }
+    },
+    {
+        "requirement_no": "NFR-002",
+        "requirement_text": "On cold start, the initial home screen and navigation must be interactive within two seconds, with core content loaded and rendered progressively and cached data shown first.",
+        "requirement_reference": "\"app runs quickly and smoothly so that it is fully loaded and ready to use within a maximum of two seconds after starting.\"",
+        "user_story": {
+            "user_story": "As a user, I want the app to become interactive quickly so I can start using it with minimal wait.\nAcceptance Criteria: Given I launch the app, When two seconds have elapsed, Then the dashboard UI is usable—even if some content is loading—with cached items shown immediately."
+        }
+    },
+    {
+        "requirement_no": "NFR-003",
+        "requirement_text": "The app must be designed to function reliably and remain responsive under limited or weak network conditions (e.g., GPRS/2G or intermittent Wi-Fi), providing cached content and user feedback if live data is unavailable.",
+        "requirement_reference": "\"app is developed so that it functions reliably even with limited network coverage.\"",
+        "user_story": {
+            "user_story": "As a user with weak connectivity, I want the app to stay functional, providing cached info if live updates fail.\nAcceptance Criteria: Given my connection is intermittent or poor, When live content cannot be fetched, Then cached data or status messages are shown and the app remains responsive."
+        }
+    },
+    {
+        "requirement_no": "NFR-004",
+        "requirement_text": "The app must maintain a mean response time under 1.5 seconds for all user actions, with an error rate below 0.5% overall, when serving up to 100,000 simultaneous users.",
+        "requirement_reference": "\"app is designed so that up to 100,000 users can be served simultaneously without performance loss.\"",
+        "user_story": {
+            "user_story": "As a user on a busy match day, I want the app to work smoothly for all features even when tens of thousands are online.\nAcceptance Criteria: Given 100,000 concurrent users, When I perform any main action, Then 99.5% of requests complete in under 1.5 seconds and errors are below 0.5%."
+        }
+    },
+    {
+        "requirement_no": "NFR-005",
+        "requirement_text": "All fixed app modules and core user interface must remain consistent and functionally compatible after any external server API update or deploy, including data model or schema changes.",
+        "requirement_reference": "\"All modules and the user interface are fixed components of the app and remain consistent even with external server updates.\"",
+        "user_story": {
+            "user_story": "As a user, I want the app interface and features to keep working after server upgrades so my experience is stable.\nAcceptance Criteria: Given the external server deploys a backwards-compatible update, When I use the app, Then all modules and the UI remain visually and functionally consistent."
+        }
+    },
+    {
+        "requirement_no": "NFR-006",
+        "requirement_text": "All personal user data must be processed according to GDPR standards including: explicit consent for tracking, accessible privacy notice, export and erasure request mechanisms, and documented lawful processing.",
+        "requirement_reference": "\"All personal data of users are processed in compliance with the GDPR.\"",
+        "user_story": {
+            "user_story": "As a privacy-conscious user, I want full GDPR compliance for my data, so I retain control and oversight.\nAcceptance Criteria: Given I use the app, When I provide or view personal data, Then I can view a privacy notice, set tracking consent, request export or deletion, and all processing or sharing is logged."
+        }
+    }
+]

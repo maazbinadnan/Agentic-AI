@@ -1,0 +1,98 @@
+[
+    {
+        "requirement_no": "FR-001",
+        "requirement_text": "The system must allow users to select, follow, and unfollow their favorite football clubs, with their choices persisted across sessions and reflected in news, live ticker, and notifications.",
+        "requirement_reference": "\"Users have the option to personalize their experience by following favorite clubs and receiving notifications about news or results of their favorite teams.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to follow or unfollow favorite clubs so that I get relevant updates. \nAcceptance Criteria:\nGiven I am registered and logged in,\nWhen I add or remove clubs from my favorites list,\nThen my selections are saved and influence my news feed, live ticker, and notifications. \nNegative Path: Given I am not logged in, When I follow a club, Then I am prompted to log in to save my preferences."
+        }
+    },
+    {
+        "requirement_no": "FR-002",
+        "requirement_text": "The app must provide a central dashboard or home screen that aggregates personalized news, live results (via live ticker), links to detailed team/player info, competition coverage, and notifications, accessible within two taps from launch.",
+        "requirement_reference": "\"central platform where they can stay comprehensively informed at all times\"",
+        "user_story": {
+            "user_story": "As a football fan, I want a home screen where I can access all key information about football news, live events, teams/players, and notifications without searching multiple sections. \nAcceptance Criteria: \nGiven I open the app, When the dashboard is displayed, Then it shows a personalized news list, live ticker widget (if matches are in progress), access links for teams, players, competitions, and a notifications center within two taps. \nNegative Path: Given app loading fails or data is missing, When I open the dashboard, Then cached data or clear error/retry messages are shown."
+        }
+    },
+    {
+        "requirement_no": "FR-003",
+        "requirement_text": "The system must allow users to browse and search all leagues and competitions, both national and international, and select any team or competition to see detailed information.",
+        "requirement_reference": "\"extensive coverage of all leagues and competitions, both national and international\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to browse all leagues and competitions so I can access results and info for any match, not just my favorites.\nAcceptance Criteria:\nGiven I am on the dashboard or search, When I select the 'Browse Leagues' or 'Competitions' section, Then I see a list of available leagues and competitions and can navigate to team or match details for any item."
+        }
+    },
+    {
+        "requirement_no": "FR-004",
+        "requirement_text": "The system must provide a personalized news feed prioritizing current football news about users' favorite teams and channels, but also allowing access to all news content.",
+        "requirement_reference": "\"users can display current football news of their favorite teams and also select preferred sports channels individually\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to see news relevant to my interests and favorites, but also browse all football news if I wish.\nAcceptance Criteria:\nGiven I selected favorite teams and channels, When I view the news feed, Then news about my favorites is prioritized with clear indicators. \nNegative Path: Given I have not set any favorites, When I view the news feed, Then I see the latest general football news."
+        }
+    },
+    {
+        "requirement_no": "FR-005",
+        "requirement_text": "The system must display live results of favorite teams and all matches in real time through a live ticker, updating within 5 seconds of new server data arrival, accessible from the dashboard and league/match screens.",
+        "requirement_reference": "\"users can follow the results of their favorite teams live via a live ticker... extensive coverage of all leagues and competitions\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to see the latest match events for my favorite teams and any other matches, updated in near real time, so I never miss a goal or update.\nAcceptance Criteria:\nGiven a match is in progress, When a significant event is detected by the server (e.g., goal, card), Then the live ticker UI for that match updates within 5 seconds. \nNegative Path: Given the server is unavailable, When I open the live ticker, Then a 'data not available' message appears."
+        }
+    },
+    {
+        "requirement_no": "FR-006",
+        "requirement_text": "The system must allow viewing of detailed team and player information, including squad list, positions, stats, fixtures, standing, and biography (for players), both online and via cached data if offline.",
+        "requirement_reference": "\"Detailed team and player information will also be available at any time.\" and offline support",
+        "user_story": {
+            "user_story": "As a football fan, I want to access full team and player details even without a network connection, so I can stay informed regardless of coverage.\nAcceptance Criteria:\nGiven I view a team or player profile, When I am online, Then I see the latest squad, position, stats, fixtures, results, and (for players) biography and career. \nGiven I am offline, When I view a profile visited previously, Then I see the last-cached information with an 'offline/last updated' message."
+        }
+    },
+    {
+        "requirement_no": "FR-007",
+        "requirement_text": "The system must offer live stream links from providers (including but not limited to DAZN, Sky Sport) for matches where broadcast rights are available in the user's country, and only during the live broadcast window. It must suppress stream links or show rights-unavailable messages where applicable, using device locale, profile, or IP to determine country.",
+        "requirement_reference": "\"integration of live stream links... Live streams will only be displayed when the respective rights are fulfilled in the country.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to see legal live stream links when available, and clear notices when streams are not permitted in my location. \nAcceptance Criteria: \nGiven a match is live and I am in a country with streaming rights, When I access match details, Then a valid stream link is provided during broadcast time. \nNegative Path: Given streaming rights are not available for my country, When I open match details, Then no stream link is shown and a message, 'Streaming not available in your region,' is displayed."
+        }
+    },
+    {
+        "requirement_no": "FR-008",
+        "requirement_text": "The system must allow users to configure which modules (e.g., news, live ticker, competitions, notifications) are shown on their dashboard and rearrange sections according to preference. Third-party interface extensions are not supported.",
+        "requirement_reference": "\"additional modules that allow users to individually configure the app and connect their own interface to the user interface.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to customize which features and sections are visible on my dashboard so my app experience matches my interests.\nAcceptance Criteria:\nGiven I am on the dashboard customization screen, When I hide, show, or rearrange modules, Then changes are reflected after saving and persist across sessions."
+        }
+    },
+    {
+        "requirement_no": "FR-009",
+        "requirement_text": "The system must provide notifications for current events, including match events, news, and results for favorite teams and major league events, within 10 seconds of event publication, provided the user has enabled notifications.",
+        "requirement_reference": "\"notification system that provides users with information about current events as soon as the notification function is activated.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to receive push notifications about news, results, and in-game events for my favorite teams and major matches so that I stay updated. \nAcceptance Criteria: Given I have enabled notifications and the app has OS permissions, When a tracked event (goal, card, news, result) occurs, Then I receive a notification on my device within 10 seconds. \nNegative Path: Given I deny notification permissions, When a tracked event occurs, Then I do not receive a notification."
+        }
+    },
+    {
+        "requirement_no": "FR-010",
+        "requirement_text": "The registration and login process must be optional for browsing general news and competition results, but required for following favorites and enabling notifications. Registration/login must not exceed three screens or five required fields, and must be available immediately from app start.",
+        "requirement_reference": "\"Registration and login are designed to be uncomplicated and can be completed directly at app startup.\"",
+        "user_story": {
+            "user_story": "As a new user, I want to start exploring the app immediately, but register or log in only if I want to save my preferences or enable notifications.\nAcceptance Criteria: Given I open the app for the first time, When I skip login, Then I can browse public news and matches. Given I want to follow a team or allow notifications, When I initiate registration/login, Then the process finishes in at most three screens and five required fields."
+        }
+    },
+    {
+        "requirement_no": "FR-011",
+        "requirement_text": "The system must allow users to share news and match reports via supported social media platforms using the OS share sheet, with the share payload including a link, headline, and summary.",
+        "requirement_reference": "\"users can share news and game reports via social media directly from the app.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to share interesting news and match reports with friends via social media so they can view the same stories.\nAcceptance Criteria: Given I select a news item or report, When I tap 'Share', Then I see the native OS share UI prefilled with a link, headline, and summary. \nNegative Path: Given my device restricts sharing, When I tap 'Share', Then I see a message indicating sharing is not available."
+        }
+    },
+    {
+        "requirement_no": "FR-012",
+        "requirement_text": "The app must remain usable and show the most recently cached news, results, and team/player information when offline. Upon regaining connection, the app must automatically refresh outdated data within 10 seconds and clear any offline indicators.",
+        "requirement_reference": "\"The app remains usable offline, even if it temporarily loses connection.\"",
+        "user_story": {
+            "user_story": "As a football fan, I want to keep using the app if I temporarily lose my network, and see fresh data as soon as I reconnect.\nAcceptance Criteria: Given I am offline, When I access news, results, or team/player info, Then I see a timestamped cached version if available, or a 'no data available' message if not. \nGiven I reconnect, When the network returns, Then all caches refresh within 10 seconds and any 'offline' banners are dismissed."
+        }
+    }
+]
