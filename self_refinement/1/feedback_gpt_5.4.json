@@ -1,1 +1,325 @@
-"{\n  \"pass\": false,\n  \"summary\": {\n    \"overall_assessment\": \"The generated requirements do not fully cover the source document, contain multiple ambiguities, and several acceptance criteria are not sufficiently testable despite using a superficial Given-When-Then structure. There are also scope interpretation issues, missing requirements, duplicated concepts, and weak/non-measurable statements that fail strict BDD and quality standards.\",\n    \"critical_issues_count\": 16,\n    \"major_issues_count\": 14,\n    \"minor_issues_count\": 8\n  },\n  \"feedback\": [\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing explicit requirement for users to follow favorite clubs\",\n      \"details\": \"The source explicitly states that users can personalize their experience by following favorite clubs. This is only partially implied in news/live ticker/notifications requirements, but there is no standalone functional requirement for following/unfollowing clubs and persisting those preferences.\",\n      \"affected_requirements\": [],\n      \"actionable_recommendation\": \"Add a functional requirement for managing favorite clubs, including follow, unfollow, persistence, and downstream use by news, live ticker, and notifications.\",\n      \"source_reference\": \"\\\"Users have the option to personalize their experience by following favorite clubs...\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing explicit requirement for comprehensive information platform behavior\",\n      \"details\": \"The source positions the app as a central platform to stay comprehensively informed at all times. The generated set decomposes some features but omits any requirement ensuring aggregation/discoverability of key content in one place, such as a home/dashboard or centralized access pattern.\",\n      \"affected_requirements\": [\n        \"FR-007\"\n      ],\n      \"actionable_recommendation\": \"Define a central home/dashboard requirement with testable content aggregation behavior for news, live ticker, team/player details, notifications entry points, and stream access.\",\n      \"source_reference\": \"\\\"offer football fans a central platform where they can stay comprehensively informed at all times.\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing requirement for real-time live results retrieval as a user capability separate from ticker rendering\",\n      \"details\": \"The source repeats that users can retrieve live results of favorite teams in real time. The generated requirements mention display/update via live ticker, but do not define retrieval behavior, refresh strategy, or user-facing access to favorite-team live results independent of general ticker coverage.\",\n      \"affected_requirements\": [\n        \"FR-002\",\n        \"FR-005\",\n        \"FR-006\"\n      ],\n      \"actionable_recommendation\": \"Add or revise a requirement to explicitly support real-time retrieval of favorite team results, including how the user accesses those results and expected update behavior.\",\n      \"source_reference\": \"\\\"The LiveFootball app should also give users the option to retrieve the live results of their favorite teams in real time.\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing requirement for handling transmission rights compliance logic beyond display suppression\",\n      \"details\": \"FR-004 only states links are displayed when rights are fulfilled. It does not cover the inverse behavior: suppression/blocking when rights are not fulfilled, how country is determined, or what the user sees when a stream exists but is unavailable due to rights.\",\n      \"affected_requirements\": [\n        \"FR-004\"\n      ],\n      \"actionable_recommendation\": \"Expand the requirement with explicit negative scenarios: Given rights are not available in the user's country, When the user opens match details, Then no stream link is shown or a rights-restriction message is displayed.\",\n      \"source_reference\": \"\\\"Of course, it is ensured that compliance with transmission rights is maintained. Live streams will only be displayed when the respective rights are fulfilled in the country.\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing requirement for module stability despite external server updates at functional integration level\",\n      \"details\": \"This appears only as an NFR, but the source also describes architectural relationships between UI and modules. The generated requirements omit functional expectations around module behavior when server-side data contracts change or refresh.\",\n      \"affected_requirements\": [\n        \"NFR-005\"\n      ],\n      \"actionable_recommendation\": \"Clarify whether this is a functional compatibility requirement, resilience requirement, or deployment constraint, and define testable behavior for app/module continuity when external server updates occur.\",\n      \"source_reference\": \"\\\"All modules and the user interface are fixed components of the app and remain consistent even with external server updates.\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"Several acceptance criteria are written in Given-When-Then form but are not valid BDD because outcomes are vague and non-testable\",\n      \"details\": \"Examples include 'up-to-date', 'comprehensive details', 'a few easy steps', 'promptly', 'normal response times', 'without errors', and 'strictly enforced'. These are not objectively verifiable without measurable definitions.\",\n      \"affected_requirements\": [\n        \"FR-001\",\n        \"FR-003\",\n        \"FR-009\",\n        \"FR-010\",\n        \"NFR-004\",\n        \"NFR-008\"\n      ],\n      \"actionable_recommendation\": \"Rewrite each acceptance criterion using measurable, observable outcomes. Example: define maximum delay, exact fields displayed, exact number of steps, specific error behavior, and explicit privacy actions.\",\n      \"source_reference\": \"BDD compliance requirement from evaluation criteria\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"NFR-006 and NFR-007 are process requirements, not product behaviors, and their acceptance criteria are not app-level BDD scenarios\",\n      \"details\": \"These describe internal organizational activities ('QA completed', 'product team evaluates input') rather than system behavior observable in the delivered app. They do not fit the requested functional/non-functional product requirements format.\",\n      \"affected_requirements\": [\n        \"NFR-006\",\n        \"NFR-007\"\n      ],\n      \"actionable_recommendation\": \"Remove or reclassify these as delivery/process constraints outside the product backlog, or convert them into product capabilities if the app includes support/feedback collection features.\",\n      \"source_reference\": \"\\\"the app goes through a thorough testing and support process before release\\\" and \\\"user feedback and app reviews are continuously evaluated\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"quality_structure\",\n      \"item\": \"FR-008 is not sufficiently understandable or estimable because 'connect their personal interface extensions' is undefined\",\n      \"details\": \"The phrase appears to be a weak or ambiguous translation from the source. The generated requirement adopts it without clarification, making the scope technically unclear and impossible to estimate or test properly.\",\n      \"affected_requirements\": [\n        \"FR-008\"\n      ],\n      \"actionable_recommendation\": \"Clarify the business meaning. If this means customizable layout/widgets/modules, rewrite accordingly. If it implies third-party plugins or user-created extensions, that is a much larger scope and needs explicit constraints.\",\n      \"source_reference\": \"\\\"connect their own interface to the user interface\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"feasibility\",\n      \"item\": \"FR-007 contains contradictory/subjective UX wording\",\n      \"details\": \"The acceptance criterion says users can access features directly from the main UI 'without needing to switch apps or screens unnecessarily.' Avoiding switching apps is trivial, but avoiding screens 'unnecessarily' is subjective and not testable. It also may conflict with normal navigation flows.\",\n      \"affected_requirements\": [\n        \"FR-007\"\n      ],\n      \"actionable_recommendation\": \"Replace with a defined navigation expectation such as maximum tap count from home screen to each core module.\",\n      \"source_reference\": \"\\\"users can access the information in the app directly\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"No explicit requirement for app usability during temporary connection loss and data synchronization upon reconnection\",\n      \"details\": \"FR-012 covers offline cached data/message, but the source mentions temporary loss of connection. The generated requirements omit recovery behavior when connectivity returns, which is essential for live ticker/news freshness.\",\n      \"affected_requirements\": [\n        \"FR-012\"\n      ],\n      \"actionable_recommendation\": \"Add acceptance criteria for reconnection: Given connectivity is restored, When the app regains network access, Then live data/news refresh automatically and stale indicators are cleared.\",\n      \"source_reference\": \"\\\"The app remains usable offline, even if it temporarily loses connection.\\\"\"\n    },\n    {\n      \"severity\": \"critical\",\n      \"category\": \"completeness\",\n      \"item\": \"No explicit requirement for country-based rights determination mechanism\",\n      \"details\": \"The source requires country-specific stream rights compliance. The generated requirement does not specify whether country is determined from device locale, account profile, IP geolocation, or another compliant mechanism. This ambiguity can produce inconsistent implementation.\",\n      \"affected_requirements\": [\n        \"FR-004\"\n      ],\n      \"actionable_recommendation\": \"Define the source of country determination and fallback/error handling when country cannot be determined.\",\n      \"source_reference\": \"\\\"rights are fulfilled in the country\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing explicit requirement for current events notifications beyond favorite teams\",\n      \"details\": \"The source says the notification system provides users with information about current events as soon as notification is activated. The generated requirement narrows scope to news/results of favorite teams only.\",\n      \"affected_requirements\": [\n        \"FR-009\"\n      ],\n      \"actionable_recommendation\": \"Clarify whether 'current events' includes match events, kickoff, goals, cards, transfer news, etc., and capture that scope explicitly.\",\n      \"source_reference\": \"\\\"provides users with information about current events as soon as the notification function is activated\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing explicit requirement for coverage browsing beyond favorite teams\",\n      \"details\": \"The source promises extensive coverage of all leagues and competitions, national and international. FR-002 ties this mostly to favorite teams in the live ticker; there is no explicit requirement that users can browse or search leagues/competitions generally.\",\n      \"affected_requirements\": [\n        \"FR-002\"\n      ],\n      \"actionable_recommendation\": \"Add requirements for viewing leagues and competitions broadly, independent of selected favorites.\",\n      \"source_reference\": \"\\\"Our app will offer extensive coverage of all leagues and competitions, both national and international.\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"completeness\",\n      \"item\": \"Missing explicit requirement for team and player information availability in offline/limited-network modes\",\n      \"details\": \"The source broadly states the app remains usable offline. FR-012 mentions news or match information, but not team/player details. Offline behavior for this content is unspecified.\",\n      \"affected_requirements\": [\n        \"FR-003\",\n        \"FR-012\"\n      ],\n      \"actionable_recommendation\": \"Define which content types are cached offline, including team/player details and profile metadata.\",\n      \"source_reference\": \"\\\"Detailed team and player information will also be available at any time.\\\" and offline statement\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"quality_structure\",\n      \"item\": \"FR-002, FR-005, and FR-006 are overlapping and not cleanly separated\",\n      \"details\": \"One covers live results via ticker, one covers real-time updates, and one covers API retrieval. These split a single feature across user-facing and technical implementation concerns, creating traceability overlap and possible duplicate testing.\",\n      \"affected_requirements\": [\n        \"FR-002\",\n        \"FR-005\",\n        \"FR-006\"\n      ],\n      \"actionable_recommendation\": \"Refactor into one user-facing requirement for live ticker behavior and, if needed, one technical supporting requirement outside the user story layer.\",\n      \"source_reference\": \"Live ticker and external API paragraphs\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"quality_structure\",\n      \"item\": \"FR-006 is implementation-specific and not a good user story\",\n      \"details\": \"It describes the data source architecture ('via an API from an external, dynamic server') rather than user value. This violates the spirit of INVEST, especially Valuable/Independent at backlog story level.\",\n      \"affected_requirements\": [\n        \"FR-006\"\n      ],\n      \"actionable_recommendation\": \"Move architecture details to technical specifications or convert to a system requirement without pretending it is a user story.\",\n      \"source_reference\": \"\\\"The live data is retrieved via an API from an external server...\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"FR-005 uses 'immediately updates' which is non-measurable\",\n      \"details\": \"Immediate is subjective and cannot be tested consistently.\",\n      \"affected_requirements\": [\n        \"FR-005\"\n      ],\n      \"actionable_recommendation\": \"Specify an update latency target, e.g., within X seconds of receiving a server event.\",\n      \"source_reference\": \"BDD compliance requirement from evaluation criteria\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"FR-003 uses 'current and comprehensive details' without defined fields\",\n      \"details\": \"There is no definition of what team/player details must be shown, so the criterion is not testable.\",\n      \"affected_requirements\": [\n        \"FR-003\"\n      ],\n      \"actionable_recommendation\": \"Define required data fields for team and player profiles, such as squad, position, stats, fixtures, standings, biography, etc., if intended.\",\n      \"source_reference\": \"\\\"Detailed team and player information\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"FR-010 uses 'within a few easy steps' which is subjective\",\n      \"details\": \"This is not a valid acceptance criterion.\",\n      \"affected_requirements\": [\n        \"FR-010\"\n      ],\n      \"actionable_recommendation\": \"Define exact maximum number of screens/steps and any mandatory input fields.\",\n      \"source_reference\": \"\\\"Registration and login are designed to be uncomplicated\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"FR-009 uses 'promptly' which is non-measurable\",\n      \"details\": \"Notification timeliness is important but undefined.\",\n      \"affected_requirements\": [\n        \"FR-009\"\n      ],\n      \"actionable_recommendation\": \"Specify maximum notification delay from event publication to device receipt, or define service-level expectation.\",\n      \"source_reference\": \"\\\"provides users with information about current events as soon as the notification function is activated\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"NFR-004 uses 'normal response times' and 'without errors' without thresholds\",\n      \"details\": \"This is not testable under load.\",\n      \"affected_requirements\": [\n        \"NFR-004\"\n      ],\n      \"actionable_recommendation\": \"Define target response times, error rate, and the transactions included in the load test.\",\n      \"source_reference\": \"\\\"100,000 users can be served simultaneously without performance loss\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"NFR-008 acceptance criterion is too broad and legalistic to be testable\",\n      \"details\": \"Saying 'all relevant GDPR rules must be strictly enforced' is not a verifiable acceptance test unless decomposed into concrete obligations.\",\n      \"affected_requirements\": [\n        \"NFR-008\"\n      ],\n      \"actionable_recommendation\": \"Split GDPR into concrete requirements such as consent capture, privacy notice access, export request handling, deletion request handling, and lawful processing auditability.\",\n      \"source_reference\": \"\\\"processed in compliance with the GDPR\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"feasibility\",\n      \"item\": \"NFR-002 may be unrealistic as written because it requires 'all content modules' to be ready within two seconds on cold start\",\n      \"details\": \"The source says the app is fully loaded and ready to use within two seconds after starting, but the generated criterion over-specifies that all content modules are ready and responsive, which may require network fetches and could be impossible under poor connectivity.\",\n      \"affected_requirements\": [\n        \"NFR-002\"\n      ],\n      \"actionable_recommendation\": \"Refine to a feasible startup definition, e.g., app shell/home screen interactive within two seconds, with content loading progressively and cached content shown first.\",\n      \"source_reference\": \"\\\"fully loaded and ready to use within a maximum of two seconds after starting\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"quality_structure\",\n      \"item\": \"NFR-001 claims all core features perform identically on Android and iOS\",\n      \"details\": \"Identical behavior may be too strict or unnecessary across platforms, especially around sharing, notifications, and stream handling, where OS capabilities differ.\",\n      \"affected_requirements\": [\n        \"NFR-001\"\n      ],\n      \"actionable_recommendation\": \"State equivalent functional availability and acceptable platform-specific UX differences rather than identical behavior.\",\n      \"source_reference\": \"\\\"available for Android and iOS devices\\\"\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"quality_structure\",\n      \"item\": \"The set lacks negative and exception scenarios in BDD coverage\",\n      \"details\": \"Most requirements only include happy-path criteria. Missing scenarios include invalid login, unavailable API, no favorites selected, no stream rights, no live broadcast yet, denied notification permissions, sharing failure, and server errors.\",\n      \"affected_requirements\": [\n        \"FR-001\",\n        \"FR-004\",\n        \"FR-005\",\n        \"FR-006\",\n        \"FR-009\",\n        \"FR-010\",\n        \"FR-011\",\n        \"FR-012\"\n      ],\n      \"actionable_recommendation\": \"Add alternative and error-path Given-When-Then scenarios for each critical feature.\",\n      \"source_reference\": \"General QA completeness expectation\"\n    },\n    {\n      \"severity\": \"major\",\n      \"category\": \"completeness\",\n      \"item\": \"No explicit requirement for login/registration optionality versus guest usage\",\n      \"details\": \"The source says registration and login can be completed directly at startup, but does not state they are mandatory. The generated requirements assume logged-in use for some features without clarifying access for anonymous users.\",\n      \"affected_requirements\": [\n        \"FR-001\",\n        \"FR-010\"\n      ],\n      \"actionable_recommendation\": \"Clarify whether the app supports guest access and which features require authentication.\",\n      \"source_reference\": \"\\\"Registration and login... can be completed directly at app startup.\\\"\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"quality_structure\",\n      \"item\": \"FR-001 acceptance criterion over-restricts the feed to 'only' selected teams/channels\",\n      \"details\": \"The source says users can display current news of favorite teams and select preferred channels individually. It does not explicitly require exclusive filtering with no other content.\",\n      \"affected_requirements\": [\n        \"FR-001\"\n      ],\n      \"actionable_recommendation\": \"Clarify whether the feed is exclusively filtered or prioritized/personalized around chosen teams/channels.\",\n      \"source_reference\": \"\\\"display current football news of their favorite teams and also select preferred sports channels individually\\\"\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"quality_structure\",\n      \"item\": \"FR-004 uses provider examples as if exhaustive behavior is tied to DAZN/Sky Sport\",\n      \"details\": \"The source says 'for example'. Requirements should not imply only those providers are supported.\",\n      \"affected_requirements\": [\n        \"FR-004\"\n      ],\n      \"actionable_recommendation\": \"State 'such as' or 'including but not limited to' in a neutral provider-agnostic way.\",\n      \"source_reference\": \"\\\"for example, from providers such as DAZN or Sky Sport\\\"\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"quality_structure\",\n      \"item\": \"FR-011 does not define what is actually shared\",\n      \"details\": \"Is the app sharing a link, title, summary, image, or full report excerpt? The current requirement is too generic.\",\n      \"affected_requirements\": [\n        \"FR-011\"\n      ],\n      \"actionable_recommendation\": \"Specify the content payload and whether native OS share sheets are used.\",\n      \"source_reference\": \"\\\"share news and game reports via social media directly from the app\\\"\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"bdd_compliance\",\n      \"item\": \"FR-012 combines two outcomes in one Then clause\",\n      \"details\": \"It says cached data or a message is shown, but does not define which condition leads to which result.\",\n      \"affected_requirements\": [\n        \"FR-012\"\n      ],\n      \"actionable_recommendation\": \"Split into separate scenarios: one for cached data available, one for no cached data available.\",\n      \"source_reference\": \"BDD precision requirement\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"quality_structure\",\n      \"item\": \"NFR-003 hardcodes a 1Mbps threshold not present in the source\",\n      \"details\": \"This introduces an unsupported assumption.\",\n      \"affected_requirements\": [\n        \"NFR-003\"\n      ],\n      \"actionable_recommendation\": \"Either remove the threshold or document it as an explicitly derived engineering assumption approved by stakeholders.\",\n      \"source_reference\": \"\\\"limited network coverage\\\"\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"quality_structure\",\n      \"item\": \"NFR-005 wording is ambiguous about what constitutes an 'external server update'\",\n      \"details\": \"It could mean data refresh, API deployment, content update, or schema change.\",\n      \"affected_requirements\": [\n        \"NFR-005\"\n      ],\n      \"actionable_recommendation\": \"Clarify the update type and expected compatibility behavior.\",\n      \"source_reference\": \"\\\"external server updates\\\"\"\n    },\n    {\n      \"severity\": \"minor\",\n      \"category\": \"completeness\",\n      \"item\": \"No requirement addresses support process in product terms\",\n      \"details\": \"The source mentions a testing and support process. The generation includes testing but not support. If support is in scope, it is missing; if not, process items should be excluded entirely.\",\n      \"affected_requirements\": [\n        \"NFR-006\"\n      ],\n      \"actionable_recommendation\": \"Clarify whether user support capability/process is part of scope. If yes, add support-related requirements; if no, remove process references from requirement set.\",\n      \"source_reference\": \"\\\"testing and support process before release\\\"\"\n    }\n  ],\n  \"coverage_gaps\": [\n    {\n      \"missing_requirement_area\": \"Manage favorite clubs\",\n      \"source_reference\": \"\\\"following favorite clubs\\\"\"\n    },\n    {\n      \"missing_requirement_area\": \"Centralized information hub/dashboard\",\n      \"source_reference\": \"\\\"central platform where they can stay comprehensively informed at all times\\\"\"\n    },\n    {\n      \"missing_requirement_area\": \"Browse all leagues/competitions beyond favorites\",\n      \"source_reference\": \"\\\"extensive coverage of all leagues and competitions, both national and international\\\"\"\n    },\n    {\n      \"missing_requirement_area\": \"Reconnection refresh behavior after temporary offline state\",\n      \"source_reference\": \"\\\"temporarily loses connection\\\"\"\n    },\n    {\n      \"missing_requirement_area\": \"Explicit blocked-stream behavior when rights are unavailable\",\n      \"source_reference\": \"\\\"Live streams will only be displayed when the respective rights are fulfilled in the country\\\"\"\n    },\n    {\n      \"missing_requirement_area\": \"Definition of country determination for rights enforcement\",\n      \"source_reference\": \"\\\"fulfilled in the country\\\"\"\n    },\n    {\n      \"missing_requirement_area\": \"Guest vs authenticated usage model\",\n      \"source_reference\": \"\\\"Registration and login... can be completed directly at app startup\\\"\"\n    }\n  ],\n  \"requirements_with_bdd_failures\": [\n    {\n      \"requirement_no\": \"FR-003\",\n      \"reason\": \"Uses non-testable terms: 'current and comprehensive details'.\"\n    },\n    {\n      \"requirement_no\": \"FR-005\",\n      \"reason\": \"Uses non-testable term: 'immediately updates'.\"\n    },\n    {\n      \"requirement_no\": \"FR-009\",\n      \"reason\": \"Uses non-testable term: 'promptly'.\"\n    },\n    {\n      \"requirement_no\": \"FR-010\",\n      \"reason\": \"Uses non-testable phrase: 'within a few easy steps'.\"\n    },\n    {\n      \"requirement_no\": \"NFR-004\",\n      \"reason\": \"Uses non-testable phrases: 'normal response times' and 'without errors'.\"\n    },\n    {\n      \"requirement_no\": \"NFR-006\",\n      \"reason\": \"Process-oriented, not a product BDD scenario.\"\n    },\n    {\n      \"requirement_no\": \"NFR-007\",\n      \"reason\": \"Process-oriented, not a product BDD scenario.\"\n    },\n    {\n      \"requirement_no\": \"NFR-008\",\n      \"reason\": \"Legal/compliance statement not decomposed into testable Given-When-Then outcomes.\"\n    }\n  ],\n  \"invest_concerns\": [\n    {\n      \"requirement_no\": \"FR-006\",\n      \"concern\": \"Not valuable as a user story; implementation detail rather than user value.\"\n    },\n    {\n      \"requirement_no\": \"FR-008\",\n      \"concern\": \"Not estimable/testable due to ambiguous scope.\"\n    },\n    {\n      \"requirement_no\": \"FR-002\",\n      \"concern\": \"Too broad because it combines favorite teams, live ticker, and all national/international competitions.\"\n    },\n    {\n      \"requirement_no\": \"FR-007\",\n      \"concern\": \"Subjective usability language makes it not testable.\"\n    }\n  ],\n  \"recommended_next_steps\": [\n    \"Add missing functional requirements for favorite club management, central dashboard behavior, browsing all leagues/competitions, and reconnection refresh logic.\",\n    \"Rewrite weak acceptance criteria into measurable BDD scenarios with explicit timings, data fields, counts, and negative paths.\",\n    \"Remove or reclassify process requirements (testing/support review, feedback evaluation) if the deliverable is strictly product requirements.\",\n    \"Separate user-facing requirements from technical architecture details.\",\n    \"Clarify ambiguous source interpretations, especially FR-008 and stream-rights country logic.\"\n  ]\n}"
+{
+    "pass": false,
+    "summary": {
+        "overall": "The generated requirements do not cover the full source scope, several acceptance criteria are weak or non-testable, and multiple important source requirements are missing or misplaced. BDD formatting is present in many items, but compliance is inconsistent because several criteria are vague, incomplete, or not sufficiently testable.",
+        "completeness_score": 0.58,
+        "bdd_compliance_score": 0.72,
+        "quality_structure_score": 0.66,
+        "feasibility_score": 0.81
+    },
+    "failures": [
+        {
+            "type": "missing_requirement",
+            "severity": "critical",
+            "location": "Functional requirements set",
+            "issue": "No requirement explicitly covers display of current football news as a general app capability independent of personalization.",
+            "source_reference": "\"offer football fans a central platform where they can stay comprehensively informed at all times\" + \"users can display current football news of their favorite teams\"",
+            "actionable_feedback": "Add a functional requirement for news retrieval and display, including browsing current football news, filtering by team, and surfacing updates from selected channels."
+        },
+        {
+            "type": "missing_requirement",
+            "severity": "critical",
+            "location": "Functional requirements set",
+            "issue": "No requirement explicitly covers extensive coverage of all leagues and competitions, national and international, as a browse/search/filter capability.",
+            "source_reference": "\"Our app will offer extensive coverage of all leagues and competitions, both national and international.\"",
+            "actionable_feedback": "Add a requirement stating users can access content, fixtures, results, teams, and players across national and international leagues/competitions."
+        },
+        {
+            "type": "missing_requirement",
+            "severity": "critical",
+            "location": "Functional requirements set",
+            "issue": "No requirement captures the notification system as a configurable module that can be activated/deactivated by the user.",
+            "source_reference": "\"app is linked to a notification system that provides users with information about current events as soon as the notification function is activated.\"",
+            "actionable_feedback": "Add a requirement for notification preferences, including enable/disable behavior, event categories, and delivery conditions."
+        },
+        {
+            "type": "missing_requirement",
+            "severity": "high",
+            "location": "Functional requirements set",
+            "issue": "No requirement covers the app's modular UI integration: modules displayed together, managed through the UI, and user configuration of additional modules.",
+            "source_reference": "\"The user interface is a key component of the app and connects various modules that are displayed together and managed via the interface.\" + \"app also offers additional modules that allow users to individually configure the app and connect their own interface to the user interface.\"",
+            "actionable_feedback": "Add one or more functional requirements for module management, configurable app sections, and UI composition/integration behavior."
+        },
+        {
+            "type": "missing_requirement",
+            "severity": "high",
+            "location": "Functional requirements set / integration scope",
+            "issue": "No requirement captures that live data is retrieved via an API from an external server.",
+            "source_reference": "\"The live data is retrieved via an API from an external server.\"",
+            "actionable_feedback": "Add a system integration requirement describing external API-based retrieval for live ticker data, including update frequency/freshness expectations if known."
+        },
+        {
+            "type": "missing_requirement",
+            "severity": "high",
+            "location": "Functional requirements set",
+            "issue": "No explicit requirement covers access to live results in real time separate from the ticker view, despite the source emphasizing real-time retrieval and display.",
+            "source_reference": "\"give users the option to retrieve the live results of their favorite teams in real time\"",
+            "actionable_feedback": "Clarify whether live results are solely through the ticker or also through a dedicated live scores/results view; add a requirement accordingly."
+        },
+        {
+            "type": "missing_requirement",
+            "severity": "medium",
+            "location": "Functional requirements set",
+            "issue": "No requirement addresses direct access and usability of information through the UI beyond isolated features.",
+            "source_reference": "\"The user interface is designed so that users can access the information in the app directly.\"",
+            "actionable_feedback": "Add functional navigation requirements for direct access to news, live ticker, team/player details, streams, and notifications from the main interface."
+        },
+        {
+            "type": "classification_issue",
+            "severity": "medium",
+            "location": "NFR-001",
+            "issue": "Platform availability on Android and iOS is treated as a non-functional requirement, but it is primarily a product scope/platform functional constraint.",
+            "source_reference": "\"available for Android and iOS devices\"",
+            "actionable_feedback": "Move this to product scope or functional/platform requirements, or explicitly classify it as a platform compatibility constraint."
+        },
+        {
+            "type": "bdd_noncompliance",
+            "severity": "critical",
+            "location": "FR-006",
+            "issue": "Acceptance criteria use vague wording: \"within a few simple steps\" is subjective and not testable.",
+            "source_reference": "\"Registration and login are designed to be uncomplicated and can be completed directly at app startup.\"",
+            "actionable_feedback": "Replace with measurable BDD scenarios, e.g., Given a first-time user opens the app, When they choose Register, Then they can create an account from the startup flow without navigating away from the launch sequence."
+        },
+        {
+            "type": "bdd_noncompliance",
+            "severity": "high",
+            "location": "NFR-003",
+            "issue": "\"No noticeable loss of performance\" is vague and not testable as written.",
+            "source_reference": "\"up to 100,000 users can be served simultaneously without performance loss\"",
+            "actionable_feedback": "Define measurable thresholds in Given-When-Then form, such as response time, update latency, error rate, or success rate under 100,000 concurrent users."
+        },
+        {
+            "type": "bdd_noncompliance",
+            "severity": "high",
+            "location": "NFR-006",
+            "issue": "\"all major issues are found and fixed\" is not objectively testable and lacks release criteria definition.",
+            "source_reference": "\"thorough testing and support process before release\"",
+            "actionable_feedback": "Specify measurable gates, e.g., Given pre-release testing is completed, When the release readiness report is generated, Then there are zero open severity-1 defects and no more than X severity-2 defects."
+        },
+        {
+            "type": "bdd_noncompliance",
+            "severity": "medium",
+            "location": "NFR-007",
+            "issue": "The acceptance criteria refer broadly to \"all GDPR requirements\" without defining observable system behaviors.",
+            "source_reference": "\"processed in compliance with the GDPR\"",
+            "actionable_feedback": "Break GDPR into testable scenarios: consent capture, privacy notice display, data deletion request handling, export request handling, and data minimization."
+        },
+        {
+            "type": "quality_issue",
+            "severity": "high",
+            "location": "FR-001",
+            "issue": "This combines multiple capabilities: following teams, selecting channels, personalized news, live results tailoring, and push notifications. This reduces independence and testability.",
+            "source_reference": "Derived from multiple source statements merged into one requirement.",
+            "actionable_feedback": "Split FR-001 into separate stories: manage favorite teams, manage preferred channels, personalize feed, and receive notifications."
+        },
+        {
+            "type": "quality_issue",
+            "severity": "medium",
+            "location": "FR-003",
+            "issue": "\"comprehensive statistics, biographical details, and current performance data\" over-specifies content not explicitly stated in the source and may introduce unsupported scope.",
+            "source_reference": "\"Detailed team and player information will also be available at any time.\"",
+            "actionable_feedback": "Limit the requirement to detailed team and player information unless the source defines the required data fields."
+        },
+        {
+            "type": "quality_issue",
+            "severity": "medium",
+            "location": "FR-005",
+            "issue": "Acceptance criteria assume successful posting to a chosen social media account from within the app, which may depend on third-party authentication and installed apps. This is underspecified.",
+            "source_reference": "\"share news and game reports via social media directly from the app\"",
+            "actionable_feedback": "Define expected behavior more realistically: open native share sheet or provider-specific share flow; include failure handling if no target app/account is available."
+        },
+        {
+            "type": "quality_issue",
+            "severity": "medium",
+            "location": "NFR-004",
+            "issue": "\"basic features\" and \"cached content\" are not defined, leaving the offline requirement incomplete.",
+            "source_reference": "\"functions reliably even with limited network coverage. The app remains usable offline\"",
+            "actionable_feedback": "Specify which features remain usable offline, such as viewing cached news, previously viewed team/player pages, stored preferences, and last known scores."
+        },
+        {
+            "type": "coverage_gap",
+            "severity": "medium",
+            "location": "FR-004",
+            "issue": "The requirement covers rights by country and live-start condition, but omits what happens before the broadcast begins.",
+            "source_reference": "\"available directly in the app as soon as the live broadcast has begun\"",
+            "actionable_feedback": "Add a BDD scenario: Given the match is scheduled but the live broadcast has not begun, When the user opens the match page, Then no live stream link is displayed."
+        },
+        {
+            "type": "coverage_gap",
+            "severity": "medium",
+            "location": "FR-002",
+            "issue": "The requirement focuses only on favorite teams, while the source also implies broad football coverage and a live ticker module as a core app function.",
+            "source_reference": "\"live ticker module\" + overall broad coverage statements",
+            "actionable_feedback": "Clarify whether live ticker is available only for favorites or for all matches/leagues covered by the app; add requirements accordingly."
+        },
+        {
+            "type": "coverage_gap",
+            "severity": "medium",
+            "location": "FR-006",
+            "issue": "Registration and login at startup are mentioned, but no scenarios cover returning users, invalid credentials, password recovery, or skipping login if applicable.",
+            "source_reference": "\"Registration and login are designed to be uncomplicated and can be completed directly at app startup.\"",
+            "actionable_feedback": "Add BDD scenarios for existing user login, failed login, account creation validation, and post-authentication routing."
+        },
+        {
+            "type": "scope_gap",
+            "severity": "medium",
+            "location": "NFR set",
+            "issue": "No requirement addresses smooth operation beyond cold start, despite the source emphasizing quick and smooth app behavior generally.",
+            "source_reference": "\"runs quickly and smoothly\"",
+            "actionable_feedback": "Add performance requirements for screen transitions, feed load times, and live ticker update responsiveness."
+        },
+        {
+            "type": "scope_gap",
+            "severity": "medium",
+            "location": "NFR set",
+            "issue": "No requirement covers reliability/support after release, only pre-release testing and feedback evaluation.",
+            "source_reference": "\"testing and support process before release\" could imply operational support, but the generation does not define any support behavior.",
+            "actionable_feedback": "Clarify whether support is internal process only or a product/service requirement; if required, define support and incident handling expectations."
+        }
+    ],
+    "requirement_level_assessment": [
+        {
+            "requirement_no": "FR-001",
+            "status": "fail",
+            "reasons": [
+                "Combines too many capabilities in one story, violating smallness and independence.",
+                "Does not separately define notifications as an activated function.",
+                "Acceptance criteria only show one positive path and omit editing/removing preferences and disabling notifications."
+            ]
+        },
+        {
+            "requirement_no": "FR-002",
+            "status": "partial",
+            "reasons": [
+                "Captures live ticker concept, but only for favorite teams.",
+                "Omits explicit external API integration and continuous update behavior through the UI.",
+                "Acceptance criteria do not define what 'real-time' means."
+            ]
+        },
+        {
+            "requirement_no": "FR-003",
+            "status": "partial",
+            "reasons": [
+                "Covers team/player information broadly.",
+                "Adds unsupported specificity about statistics/biographical/current performance data.",
+                "Does not explicitly tie to coverage of all competitions beyond a generic statement."
+            ]
+        },
+        {
+            "requirement_no": "FR-004",
+            "status": "partial",
+            "reasons": [
+                "Good core rights/country coverage.",
+                "Missing scenario for pre-live state.",
+                "No behavior specified for unavailable provider link or provider launch failure."
+            ]
+        },
+        {
+            "requirement_no": "FR-005",
+            "status": "partial",
+            "reasons": [
+                "Captures social sharing intent.",
+                "Acceptance criteria are optimistic and not robust for third-party dependencies.",
+                "No scenario for game reports specifically, only news articles."
+            ]
+        },
+        {
+            "requirement_no": "FR-006",
+            "status": "fail",
+            "reasons": [
+                "Vague, non-testable acceptance criteria.",
+                "Insufficient scope coverage for authentication flows.",
+                "Does not define what startup-integrated login/registration means behaviorally."
+            ]
+        },
+        {
+            "requirement_no": "NFR-001",
+            "status": "partial",
+            "reasons": [
+                "Covers platform availability.",
+                "Likely misclassified as non-functional."
+            ]
+        },
+        {
+            "requirement_no": "NFR-002",
+            "status": "pass",
+            "reasons": [
+                "Directly traceable and measurable.",
+                "BDD structure is adequate."
+            ]
+        },
+        {
+            "requirement_no": "NFR-003",
+            "status": "fail",
+            "reasons": [
+                "Uses subjective wording.",
+                "No measurable performance benchmark beyond concurrency count."
+            ]
+        },
+        {
+            "requirement_no": "NFR-004",
+            "status": "partial",
+            "reasons": [
+                "Captures degraded/offline intent.",
+                "Fails to define minimum offline feature set."
+            ]
+        },
+        {
+            "requirement_no": "NFR-005",
+            "status": "partial",
+            "reasons": [
+                "Traceable to the source.",
+                "Ambiguous whether this is a user-facing requirement or architectural constraint.",
+                "Needs clearer definition of what kinds of updates must not alter UI/module consistency."
+            ]
+        },
+        {
+            "requirement_no": "NFR-006",
+            "status": "fail",
+            "reasons": [
+                "Process-oriented and partially outside product requirement scope.",
+                "Acceptance criteria are not measurable enough."
+            ]
+        },
+        {
+            "requirement_no": "NFR-007",
+            "status": "partial",
+            "reasons": [
+                "Traceable to GDPR source requirement.",
+                "Acceptance criteria too broad to be verifiable as written."
+            ]
+        }
+    ],
+    "recommended_additions": [
+        {
+            "title": "Football news browsing and display",
+            "suggested_type": "functional",
+            "suggested_bdd": "Given current football news is available, When the user opens the news section, Then the app displays the latest football news items and allows filtering by followed teams and selected channels."
+        },
+        {
+            "title": "League and competition coverage",
+            "suggested_type": "functional",
+            "suggested_bdd": "Given the app supports multiple competitions, When the user browses leagues and tournaments, Then they can access national and international competitions and view related teams, players, fixtures, and results."
+        },
+        {
+            "title": "Notification settings management",
+            "suggested_type": "functional",
+            "suggested_bdd": "Given the user is in notification settings, When they enable notifications for followed teams, Then the app sends notifications for relevant news and match events; And Given they disable notifications, When new events occur, Then no push notification is sent."
+        },
+        {
+            "title": "Module configuration and UI integration",
+            "suggested_type": "functional",
+            "suggested_bdd": "Given configurable modules are available, When the user adds, removes, or reorders modules in the app interface, Then the selected modules are displayed through the main user interface according to the saved configuration."
+        },
+        {
+            "title": "External live-data API integration",
+            "suggested_type": "functional/integration",
+            "suggested_bdd": "Given a live match is in progress and the external live-data API is reachable, When the live ticker requests match updates, Then the app retrieves and displays the latest live data from the external server."
+        },
+        {
+            "title": "Offline usable feature definition",
+            "suggested_type": "non-functional/functional constraint",
+            "suggested_bdd": "Given the device is offline, When the user opens previously viewed news, team pages, or saved preferences, Then the app displays the last cached version and remains responsive."
+        }
+    ]
+}
