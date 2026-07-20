@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from self_refinement.main import _build_state, _build_workflow
-from self_refinement.testing.fake_client import FakeLLMClient
 
 
 def test_dummy_graph_run_end_to_end(tmp_path: Path):
@@ -14,7 +13,7 @@ def test_dummy_graph_run_end_to_end(tmp_path: Path):
 
     project_root = tmp_path
     state = _build_state(project_root=project_root, run_number="test-run")
-    state["llm_client"] = FakeLLMClient()
+    state["llm_mode"] = "dummy"
 
     app = _build_workflow(with_human_gate=False)
     result = app.invoke(state)

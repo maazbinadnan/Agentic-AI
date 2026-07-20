@@ -15,10 +15,17 @@ evaluator_prompt = str(PROMPTS_DIR / "evaluation_prompt.md")
 
 
 def _resolve_client(state: GraphState) -> Any:
-    """Use injected client for tests/dummy mode, else use real OpenAI client."""
+    """Resolve client without storing non-serializable objects in checkpointed state."""
+    if state.get("llm_mode") == "dummy":
+        from self_refinement.testing.fake_client import FakeLLMClient
+
+        return FakeLLMClient()
+
+    # Backward compatibility for non-checkpointed local tests.
     injected_client = state.get("llm_client")
     if injected_client is not None:
         return injected_client
+
     return ChatClient().client
 
 #initial step to generate requirements
@@ -92,22 +99,32 @@ def regenerate_requirements(state:GraphState):
     func_dir, func_file = os.path.split(state['output_functional_path'])
     non_func_dir, non_func_file = os.path.split(state['output_non_functional_path'])
 
-    # 2. Reconstruct the paths by nesting the evaluation count as a subfolder branch
-    new_func_path = os.path.join(func_dir, str(state['evaluation_count']), func_file)
-    new_non_path = os.path.join(non_func_dir, str(state['evaluation_count']), non_func_file)
+    # we peel back the last directory so they stack neatly as original/1, original/2,
+    # rather than creating nested sub-hell original/1/2/3.
+    if func_dir.split(os.sep)[-1].isdigit():
+        func_dir = os.path.dirname(func_dir)
+    if non_func_dir.split(os.sep)[-1].isdigit():
+        non_func_dir = os.path.dirname(non_func_dir)
 
-    # 3. Ensure the new nested folders (e.g., '\1\') physically exist on disk
+    #If count is 0, this loop generates folder '1', then '2', etc.
+    next_version = str(state['evaluation_count'])
+    new_func_path = os.path.join(func_dir, next_version, func_file)
+    new_non_path = os.path.join(non_func_dir, next_version, non_func_file)
+
+    #physically create the version directories on disk
     os.makedirs(os.path.dirname(new_func_path), exist_ok=True)
     os.makedirs(os.path.dirname(new_non_path), exist_ok=True)
 
-    # 4. Save your requirements data payloads to the new paths
-    print(_write_json_file(new_func_path, reqs['functional_reqs']))
-    print(_write_json_file(new_non_path, reqs['non_functional_reqs']))
+    #Write payloads to the new paths, not the old ones
+    _write_json_file(new_func_path, reqs['functional_reqs'])
+    _write_json_file(new_non_path, reqs['non_functional_reqs'])
 
-    return {"messages": new_message,
-            "output_functional_path":new_func_path,
-            "output_non_functional_path":new_non_path
-            }
+    
+    return {
+        "messages": new_message,
+        "output_functional_path": new_func_path,
+        "output_non_functional_path": new_non_path,
+    }
 
 #evaluate the requirements
 def evaluate_requirements(state: GraphState):
@@ -160,12 +177,27 @@ def evaluate_requirements(state: GraphState):
 def human_approval(state: GraphState):
     # Pause and ask for approval
     decision = interrupt({
-        "question": "Do you approve the following feedback?",
-        "feedback path": state['feedback_path']
+        "question": f"Do you approve the following feedback in file {state['feedback_path']}?"
     })
     
-    # Route based on decision
-    if decision == "approve":
-        return Command(goto=END, update={"stop_requested": "approved"})
-    else:
-        return Command(goto=END, update={"stop_requested": "rejected"})
+    return {"run_evaluation":decision}
+
+def route_after_human(state: GraphState) -> str:
+    # Approve => finish, Reject => regenerate and re-evaluate.
+    if state.get("run_evaluation") is False:
+        print("\n Ending workflow.")
+        return END
+
+    print("\n Routing to evaluating requirements...")
+    return "evaluate_requirements"
+
+def process_interrupt(response: str) -> bool:
+    clean_response = response.strip().lower()
+    if clean_response in ("true", "yes", "y", "approve", "1"):
+        return True
+    # Check for common "false" variations
+    if clean_response in ("false", "no", "n", "reject", "0"):
+        return False
+    # Optional: Fallback default if they type something unexpected
+    print(f"⚠️ Unrecognized input '{response}'. Defaulting to False.")
+    return False

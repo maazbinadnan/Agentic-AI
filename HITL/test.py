@@ -1,48 +1,48 @@
-from langgraph.types import interrupt, Command
-from langgraph.graph import StateGraph, START, END
-from langgraph.checkpoint.memory import InMemorySaver
+import uuid
+from typing import Optional
 from typing_extensions import TypedDict
 
+from langgraph.checkpoint.memory import InMemorySaver
+from langgraph.constants import START
+from langgraph.graph import StateGraph
+from langgraph.types import interrupt, Command
+
 class State(TypedDict):
-    input: str
-    user_feedback: str
+    """The graph state."""
 
-def step_1(state):
-    print("---Step 1---")
-    pass
+    foo: str
+    human_value: Optional[str]
+    """Human value will be updated using an interrupt."""
 
-def human_feedback(state):
-    print("---Waiting for human feedback---")
-    
-    # This pauses execution and waits for input
-    feedback = interrupt("Please provide feedback:")
-    
-    return {"user_feedback": feedback}
-
-def step_3(state):
-    print("---Step 3---")
-    pass
-
+def node(state: State):
+    answer = interrupt(
+        # This value will be sent to the client
+        # as part of the interrupt information.
+        "what is your age?"
+    )
+    print(f"> Received an input from the interrupt: {answer}")
+    return {"human_value": answer}
 
 builder = StateGraph(State)
-builder.add_node("step_1", step_1)
-builder.add_node("human_feedback", human_feedback)
-builder.add_node("step_3", step_3)
+builder.add_node("node", node)
+builder.add_edge(START, "node")
 
-builder.add_edge(START, "step_1")
-builder.add_edge("step_1", "human_feedback")
-builder.add_edge("human_feedback", "step_3")
-builder.add_edge("step_3", END)
+# A checkpointer must be enabled for interrupts to work!
+checkpointer = InMemorySaver()
+graph = builder.compile(checkpointer=checkpointer)
 
-# Checkpointer is required for interrupts
-memory = InMemorySaver()
-graph = builder.compile(checkpointer=memory)
+config = {
+    "configurable": {
+        "thread_id": uuid.uuid4(),
+    }
+}
 
+for chunk in graph.stream({"foo": "abc"}, config):
+    print(chunk)
 
-initial_input = {"input": "hello world"}
-thread = {"configurable": {"thread_id": "1"}}
+# > {'__interrupt__': (Interrupt(value='what is your age?', id='45fda8478b2ef754419799e10992af06'),)}
 
-# Run until interrupt
-for event in graph.stream(initial_input, thread, stream_mode="updates"):
-    print(event)
-    print("\n")
+command = Command(resume="some input from a human!!!")
+
+for chunk in graph.stream(Command(resume="some input from a human!!!"), config):
+    print(chunk)

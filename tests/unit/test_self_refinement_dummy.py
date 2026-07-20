@@ -2,7 +2,6 @@ import json
 from pathlib import Path
 
 from self_refinement.functions import generate_requirements, evaluate_requirements
-from self_refinement.testing.fake_client import FakeLLMClient
 
 
 def _state(tmp_path: Path) -> dict:
@@ -24,7 +23,7 @@ def _state(tmp_path: Path) -> dict:
         "feedback": False,
         "evaluation_count": 0,
         "stop_requested": False,
-        "llm_client": FakeLLMClient(),
+        "llm_mode": "dummy",
     }
 
 
