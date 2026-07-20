@@ -1,0 +1,92 @@
+[
+    {
+        "requirement_no": "FR-001",
+        "requirement_text": "The system must support both Android and iOS platforms for installation and operation.",
+        "requirement_reference": "Line 1: 'a mobile football app that will be available for Android and iOS devices.'",
+        "user_story": {
+            "story": "As a football fan, I want to use the app on my Android or iOS device so that I can stay informed wherever I am.",
+            "Acceptance": "Given I have an Android or iOS device, When I go to the app store and search for the app, Then I am able to download, install, and open the app successfully."
+        }
+    },
+    {
+        "requirement_no": "FR-002",
+        "requirement_text": "The system must allow users to select their favorite football teams and preferred sports channels to customize their news feed.",
+        "requirement_reference": "Lines 4, 20: 'users can display current football news of their favorite teams and also select preferred sports channels individually.'; 'Users have the option to personalize their experience by following favorite clubs...'",
+        "user_story": {
+            "story": "As a football fan, I want to select my favorite teams and news sources so that I see personalized football news.",
+            "Acceptance": "Given I am on the news customization screen, When I select my preferred teams and sports channels, Then my news feed updates to show news relevant to those selections."
+        }
+    },
+    {
+        "requirement_no": "FR-003",
+        "requirement_text": "The app must display real-time live ticker updates for the results of users' selected favorite teams.",
+        "requirement_reference": "Lines 5, 11, 12, 14: 'users can follow the results of their favorite teams live via a live ticker...'; 'integrated live ticker module...display of live data in real time.'",
+        "user_story": {
+            "story": "As a football fan, I want to see live results for my favorite teams so that I can follow matches in real time.",
+            "Acceptance": "Given my favorite team is playing, When I open the live ticker in the app, Then I see event and score updates in real time."
+        }
+    },
+    {
+        "requirement_no": "FR-004",
+        "requirement_text": "The system must provide up-to-date coverage and information for all football leagues and competitions, both national and international.",
+        "requirement_reference": "Line 6: 'app will offer extensive coverage of all leagues and competitions, both national and international.'",
+        "user_story": {
+            "story": "As a football fan, I want to access information about any league or competition so that I stay comprehensively informed.",
+            "Acceptance": "Given I search or browse for a league or competition, When I select it, Then I see up-to-date information, standings, and results."
+        }
+    },
+    {
+        "requirement_no": "FR-005",
+        "requirement_text": "The system must provide detailed information for teams and individual players at any time.",
+        "requirement_reference": "Line 7: 'Detailed team and player information will also be available at any time.'",
+        "user_story": {
+            "story": "As a user, I want to look up detailed stats and profiles on teams and players so that I can get in-depth information as needed.",
+            "Acceptance": "Given I select a team or player from the database, When I open their profile, Then I see comprehensive stats and current details."
+        }
+    },
+    {
+        "requirement_no": "FR-006",
+        "requirement_text": "The app must integrate live stream links from providers (e.g., DAZN, Sky Sport) and display them to users when a live broadcast has begun and the user has viewing rights in their country.",
+        "requirement_reference": "Lines 8, 9, 10: 'integration of live stream links... available directly in the app as soon as the live broadcast has begun.'; 'Live streams will only be displayed when the respective rights are fulfilled in the country.'",
+        "user_story": {
+            "story": "As a fan, I want to access live stream links for matches, so that I can watch games live when legally permitted in my country.",
+            "Acceptance": "Given a match is being broadcast live and my country has transmission rights, When I view the match page, Then I see the link to the live stream provider."
+        }
+    },
+    {
+        "requirement_no": "FR-007",
+        "requirement_text": "The app must provide push notifications to users about current events, news, or results for their selected favorite teams, when the notification function is activated.",
+        "requirement_reference": "Lines 17, 20: 'notification system that provides users with information about current events as soon as the notification function is activated.'; 'receiving notifications about news or results of their favorite teams.'",
+        "user_story": {
+            "story": "As a user, I want to get notifications about important events for my chosen teams so that I never miss critical news or results.",
+            "Acceptance": "Given I have notifications enabled, When there is news or a live result for my teams, Then I receive a push notification promptly."
+        }
+    },
+    {
+        "requirement_no": "FR-008",
+        "requirement_text": "The app must allow users to register and log in directly at app startup with a simple, streamlined process.",
+        "requirement_reference": "Line 19: 'Registration and login are designed to be uncomplicated and can be completed directly at app startup.'",
+        "user_story": {
+            "story": "As a new user, I want to sign up and log in quickly when I first open the app so that I can start using the app without delays.",
+            "Acceptance": "Given I open the app for the first time, When I fill in registration or login details, Then I am signed in and see the dashboard within seconds."
+        }
+    },
+    {
+        "requirement_no": "FR-009",
+        "requirement_text": "The app must allow users to share news articles and game reports directly to social media from within the app.",
+        "requirement_reference": "Line 21: 'users can share news and game reports via social media directly from the app.'",
+        "user_story": {
+            "story": "As a football fan, I want to share match news and reports with friends on social media so that I can discuss events in real time.",
+            "Acceptance": "Given I am viewing a news article or match report, When I tap the share button, Then I can choose a social media platform and post the content."
+        }
+    },
+    {
+        "requirement_no": "FR-010",
+        "requirement_text": "The app must allow users to configure modules and personalize the user interface according to their preferences, including connecting compatible external modules if available.",
+        "requirement_reference": "Line 16: 'the app also offers additional modules that allow users to individually configure the app and connect their own interface to the user interface.'",
+        "user_story": {
+            "story": "As a user, I want to personalize and extend the app interface so that it best fits my needs.",
+            "Acceptance": "Given I am in the settings or configuration menu, When I add or adjust modules, Then my UI updates according to my selections."
+        }
+    }
+]

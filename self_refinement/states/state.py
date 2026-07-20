@@ -1,4 +1,4 @@
-from typing import TypedDict,Annotated
+from typing import TypedDict,Annotated,Any,NotRequired
 from pydantic import BaseModel, Field
 import operator
 from typing import Optional
@@ -88,3 +88,4 @@ class GraphState(TypedDict):
     feedback : bool
     evaluation_count: int
     stop_requested: bool
+    llm_client: NotRequired[Any]

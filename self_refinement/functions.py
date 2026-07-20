@@ -1,16 +1,27 @@
 from self_refinement.states.state import GraphState,output_format,EvaluationReport, regenerated_format
 from global_client_layer.AzureClient import ChatClient
 from global_functions.functions import _read_file,_write_json_file
-from typing import cast
-from langgraph.types import interrupt
+from langgraph.graph import END
+from typing import cast, Any
+from langgraph.types import interrupt,Command
 import os
 import json
-client = ChatClient().client
+from pathlib import Path
 
-prompt_file = r'C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\self_refinement\prompts\initial_system_prompt.md'
-refinement_prompt = r'C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\self_refinement\prompts\refinement_prompt.md'
-evaluator_prompt = r'C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\self_refinement\prompts\evaluation_prompt.md'
+PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
+prompt_file = str(PROMPTS_DIR / "initial_system_prompt.md")
+refinement_prompt = str(PROMPTS_DIR / "refinement_prompt.md")
+evaluator_prompt = str(PROMPTS_DIR / "evaluation_prompt.md")
 
+
+def _resolve_client(state: GraphState) -> Any:
+    """Use injected client for tests/dummy mode, else use real OpenAI client."""
+    injected_client = state.get("llm_client")
+    if injected_client is not None:
+        return injected_client
+    return ChatClient().client
+
+#initial step to generate requirements
 def generate_requirements(state:GraphState):
     '''read the md file and output user stories'''
 
@@ -23,6 +34,7 @@ def generate_requirements(state:GraphState):
             {"role": "user", "content": requirements},
         ]
     
+    client = _resolve_client(state)
     response = client.responses.parse(model=state["generation_model"], input= cast(str,messages),text_format=output_format)
     reqs = json.loads(response.output_text)
     new_message = [{"role":"assistant","content":response.output_text}]
@@ -33,6 +45,8 @@ def generate_requirements(state:GraphState):
     print(_write_json_file(state['output_non_functional_path'],reqs['non_functional_reqs']))
     return {"messages":messages + new_message} 
 
+
+#initial step to re-generate requirements
 def regenerate_requirements(state:GraphState):
     '''regenerate requirements based on the evaluation'''
     
@@ -68,6 +82,7 @@ def regenerate_requirements(state:GraphState):
         }
     ]
 
+    client = _resolve_client(state)
     response = client.responses.parse(model=state["generation_model"], input= cast(str,messages),text_format=regenerated_format)
     reqs = json.loads(response.output_text)
     new_message = [{"role":"assistant","content":response.output_text}]
@@ -89,10 +104,12 @@ def regenerate_requirements(state:GraphState):
     print(_write_json_file(new_func_path, reqs['functional_reqs']))
     print(_write_json_file(new_non_path, reqs['non_functional_reqs']))
 
-    return {"messages": new_message}
+    return {"messages": new_message,
+            "output_functional_path":new_func_path,
+            "output_non_functional_path":new_non_path
+            }
 
-
-
+#evaluate the requirements
 def evaluate_requirements(state: GraphState):
     '''
     evaluate the initial user stories and give feedback to LLM to update the user stories
@@ -128,6 +145,7 @@ def evaluate_requirements(state: GraphState):
         }
     ]
     
+    client = _resolve_client(state)
     response = client.responses.parse(model=state['evaluator_model'], input= cast(str,messages),text_format=EvaluationReport)
     new_message = [{"role":"assistant","content":response.output_text}]
     print(_write_json_file(state['feedback_path'],json.loads(response.output_text)))
@@ -138,3 +156,16 @@ def evaluate_requirements(state: GraphState):
         "feedback":True,
         "evaluation_count": evaluation_count,
     }
+
+def human_approval(state: GraphState):
+    # Pause and ask for approval
+    decision = interrupt({
+        "question": "Do you approve the following feedback?",
+        "feedback path": state['feedback_path']
+    })
+    
+    # Route based on decision
+    if decision == "approve":
+        return Command(goto=END, update={"stop_requested": "approved"})
+    else:
+        return Command(goto=END, update={"stop_requested": "rejected"})
