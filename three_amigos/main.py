@@ -24,7 +24,7 @@ Graph topology
 
 from langgraph.graph import StateGraph, START, END
 from three_amigos.States.state import ThreeAmigosState
-from three_amigos.functions import (
+from three_amigos.agents import (
     supervisor_agent,
     elicitation_agent,
     human_clarification_node,

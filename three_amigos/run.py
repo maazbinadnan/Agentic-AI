@@ -48,6 +48,14 @@ def _outputs_dir() -> str:
     return d
 
 
+def _session_dir() -> str:
+    """Create and return a timestamped session subdirectory inside Outputs/."""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    d = os.path.join(_outputs_dir(), f"session_{timestamp}")
+    os.makedirs(d, exist_ok=True)
+    return d
+
+
 def _separator(char: str = "═", width: int = 70) -> str:
     return char * width
 
@@ -96,7 +104,13 @@ def main() -> None:
     print(_separator())
     print()
 
-    # ── Build graph with checkpointer ────────────────────────────────────
+    # ── Create session output directory ──────────────────────────────────────
+    session_out = _session_dir()
+    print(f"  📂  Output dir:  {session_out}")
+    print(_separator())
+    print()
+
+    # ── Build graph with checkpointer ────────────────────────────────────────
     memory = MemorySaver()
     graph = create_graph(checkpointer=memory)
     config = {"configurable": {"thread_id": args.thread_id}}
@@ -110,6 +124,7 @@ def main() -> None:
         "consensus_reached": False,
         "human_approved": False,
         "discussion_history": [],
+        "output_dir": session_out,
     }
 
     # ── First invocation ─────────────────────────────────────────────────
@@ -188,21 +203,54 @@ def main() -> None:
 
     # ── Save final output ────────────────────────────────────────────────
     final_state = graph.get_state(config)
-    final_output = final_state.values.get("final_output", "")
+    final_vals = final_state.values
+    final_output = final_vals.get("final_output", "")
 
     if not final_output:
         print("\n⚠️  No final output was generated.")
         sys.exit(1)
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = os.path.join(_outputs_dir(), f"final_report_{timestamp}.md")
-
-    with open(output_path, "w", encoding="utf-8") as fh:
+    # ── Write the combined final report ───────────────────────────────────
+    final_report_path = os.path.join(session_out, "final_report.md")
+    with open(final_report_path, "w", encoding="utf-8") as fh:
         fh.write(final_output)
+
+    # ── Write separate artifact files from the final state ────────────────
+    artifacts = {
+        "extracted_user_needs":       ("Extracted User Needs",          "extracted_user_needs"),
+        "functional_requirements":    ("Functional Requirements",       "functional_requirements"),
+        "non_functional_requirements":("Non-Functional Requirements",   "non_functional_requirements"),
+        "user_stories":              ("User Stories",                   "user_stories"),
+        "po_feedback":               ("Product Owner Feedback (Final)", "po_feedback_final"),
+        "dev_feedback":              ("Developer Feedback (Final)",     "dev_feedback_final"),
+        "qa_feedback":               ("QA Engineer Feedback (Final)",   "qa_feedback_final"),
+    }
+
+    artifacts_dir = os.path.join(session_out, "artifacts")
+    os.makedirs(artifacts_dir, exist_ok=True)
+
+    for state_key, (title, fname) in artifacts.items():
+        value = final_vals.get(state_key, "")
+        if value:
+            path = os.path.join(artifacts_dir, f"{fname}.md")
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(f"# {title}\n\n{value}")
+            print(f"  💾  {title:40s} → {path}")
+
+    # Save discussion history as a single file
+    disc_history = final_vals.get("discussion_history") or []
+    if disc_history:
+        disc_path = os.path.join(artifacts_dir, "discussion_history.md")
+        with open(disc_path, "w", encoding="utf-8") as fh:
+            fh.write("# Three Amigos Discussion History\n\n")
+            fh.write("\n\n---\n\n".join(disc_history))
+        print(f"  💾  {'Discussion History':40s} → {disc_path}")
 
     print(f"\n{_separator()}")
     print(f"  ✅  PIPELINE COMPLETE")
-    print(f"  📄  Report saved: {output_path}")
+    print(f"  📄  Full report:  {final_report_path}")
+    print(f"  📂  Artifacts:    {artifacts_dir}")
+    print(f"  📂  Session dir:  {session_out}")
     print(_separator())
 
 

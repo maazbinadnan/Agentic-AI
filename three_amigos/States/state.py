@@ -56,3 +56,6 @@ class ThreeAmigosState(TypedDict):
     # ── Final Output ───────────────────────────────────────────────
     final_output: str
     current_phase: str
+
+    # ── File I/O ───────────────────────────────────────────────────
+    output_dir: str

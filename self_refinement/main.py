@@ -3,6 +3,8 @@ from datetime import date
 from pathlib import Path
 import json
 import uuid
+from IPython.display import Image,display
+from global_functions.functions import _draw_graph
 
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.types import Command
@@ -16,14 +18,15 @@ from self_refinement.functions import (
     regenerate_requirements,
     human_approval,
     process_interrupt,
-    route_after_human
+    route_after_human,
+    evaluation_chart
 )
 
 from self_refinement.states.state import GraphState
 
 GENERATOR_MODEL = "gpt-4.1"
 EVALUATOR_MODEL = "gpt-5.4"
-
+AGENT_DIR = Path(__file__).resolve().parent
 
 #define the default run_number
 def _default_run_number() -> str:
@@ -38,6 +41,7 @@ def _build_workflow(with_human_gate: bool = False):
     workflow.add_node("evaluate_requirements", evaluate_requirements)
     workflow.add_node("regenerate_requirements", regenerate_requirements)
     workflow.add_node("human_approval", human_approval)
+    workflow.add_node("evaluation_chart", evaluation_chart)
 
     workflow.add_edge(START, "generate_requirements")
 
@@ -48,11 +52,12 @@ def _build_workflow(with_human_gate: bool = False):
             route_after_human,
             {
                 "evaluate_requirements": "evaluate_requirements",
-                END: END
+                "evaluation_chart": "evaluation_chart"
             }
         )
         workflow.add_edge("evaluate_requirements", "regenerate_requirements")
         workflow.add_edge("regenerate_requirements", "human_approval")
+        workflow.add_edge("evaluation_chart", END)
         # Add a checkpointer so interrupt/resume can persist state.
         checkpointer = InMemorySaver()
         return workflow.compile(checkpointer=checkpointer)
@@ -60,11 +65,10 @@ def _build_workflow(with_human_gate: bool = False):
         workflow.add_edge("generate_requirements", END)
         return workflow.compile()
 
-
 def _build_state(project_root: Path, run_number: str) -> GraphState:
     
     #output directory for the generated file
-    output_dir = project_root / "self_refinement" / run_number
+    output_dir = project_root / "self_refinement/runs" / run_number
     print("output director is ",output_dir)
     #read details from config file
     config_file = project_root/"self_refinement"/ "config.json"
@@ -84,7 +88,6 @@ def _build_state(project_root: Path, run_number: str) -> GraphState:
         "evaluation_count": 0,
         "run_evaluation": False,
     }
-
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -106,6 +109,13 @@ def main() -> None:
         action="store_true",
         help="Route through the human approval node after evaluation.",
     )
+    parser.add_argument(
+        "--draw-graph",
+        choices =["True","False"],
+        default = "False",
+        help= "draw the graph nodes and edges"
+    )
+    
     args = parser.parse_args()
 
     project_root = Path(__file__).resolve().parent.parent
@@ -115,6 +125,9 @@ def main() -> None:
         state["llm_mode"] = "dummy"
 
     graph = _build_workflow(with_human_gate=args.with_human_gate)
+    
+    if args.draw_graph == "True":
+        _draw_graph(graph,output_path=Path(rf"{AGENT_DIR}\graph.png"))
 
     ##define the config
     config: RunnableConfig = {
@@ -122,32 +135,26 @@ def main() -> None:
         "thread_id": str(uuid.uuid4()),
         }
     }
-
     initial_output = graph.invoke(state, config)
     #take user input
     if args.with_human_gate:
         while True:
             # Inspect the compiled graph's active checkpointer state
             graph_info = graph.get_state(config)
-            
             # If there are no pending interrupts, the graph has hit END successfully!
             if not graph_info.interrupts:
                 print("\nWorkflow completed successfully.")
                 break
-                
             print("\n--- Graph Paused for Human Approval ---")
             user_response = input("Do we run an evaluation loop? [Y/N]: ")
-            
             is_approved = process_interrupt(user_response)
-            
             # 3. Resume execution and capture the BRAND NEW snapshot returned by invoke
             print("\n--- Resuming Graph Execution ---")
             current_state_snapshot = graph.invoke(Command(resume=is_approved), config)
-
+    
     print("Run complete")
     print(f"mode={args.mode}")
     print(f"run_number={args.run_number}")
-    # print(f"feedback_written={final_state.get('feedback', False)}")
 
 if __name__ == "__main__":
     main()

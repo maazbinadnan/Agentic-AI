@@ -1,0 +1,65 @@
+[
+    {
+        "requirement_no": "NFR-001",
+        "requirement_text": "The system shall complete app startup and be ready for user interaction within 2 seconds of launch on supported Android and iOS devices.",
+        "requirement_reference": "\"the app runs quickly and smoothly so that it is fully loaded and ready to use within a maximum of two seconds after starting.\"",
+        "user_story": {
+            "story": "As a mobile user, I want the app to start quickly so that I can access features without delay.",
+            "Acceptance": "Given the app is installed on a supported device,\nWhen I launch the app,\nThen the app shall be ready for user interaction within 2 seconds."
+        }
+    },
+    {
+        "requirement_no": "NFR-002",
+        "requirement_text": "External server updates shall not change the availability of client-side app modules or break the defined user interface structure in released app versions.",
+        "requirement_reference": "\"All modules and the user interface are fixed components of the app and remain consistent even with external server updates.\"",
+        "user_story": {
+            "story": "As a user, I want the app's core interface and modules to remain stable after server updates so that I can continue using the app without disruption.",
+            "Acceptance": "Given a released version of the app is connected to an updated external server,\nWhen I open the app and navigate through its core modules,\nThen the same client-side modules shall remain accessible.\nGiven a released version of the app is connected to an updated external server,\nWhen I use the core user interface flows,\nThen the user interface structure shall continue to function without breaking due to the server update."
+        }
+    },
+    {
+        "requirement_no": "NFR-003",
+        "requirement_text": "The system shall continue to provide usable access to app screens and non-live content under limited network coverage, with degraded network conditions not causing the app to become unusable.",
+        "requirement_reference": "\"the app is developed so that it functions reliably even with limited network coverage.\"",
+        "user_story": {
+            "story": "As a user in a low-connectivity area, I want the app to remain usable so that I can still access information.",
+            "Acceptance": "Given the device has limited network coverage,\nWhen I navigate through the app,\nThen the app shall continue to open screens and display any available cached or previously retrieved content.\nGiven the device has limited network coverage,\nWhen live data cannot be refreshed immediately,\nThen the app shall remain responsive and shall not crash or block user navigation."
+        }
+    },
+    {
+        "requirement_no": "NFR-004",
+        "requirement_text": "The system shall remain usable during temporary loss of network connectivity and shall allow access to previously loaded data while offline.",
+        "requirement_reference": "\"The app remains usable offline, even if it temporarily loses connection.\"",
+        "user_story": {
+            "story": "As a user, I want to continue using the app when my connection is lost so that I can still access available information.",
+            "Acceptance": "Given I have previously loaded content in the app,\nWhen the device loses network connectivity,\nThen I shall still be able to open the app and view that previously loaded content.\nGiven the device is offline,\nWhen I navigate within the app,\nThen the app shall remain usable without crashing."
+        }
+    },
+    {
+        "requirement_no": "NFR-005",
+        "requirement_text": "The system shall support at least 100,000 concurrent users during peak periods such as match days while maintaining defined response-time and availability targets.",
+        "requirement_reference": "\"our app is designed so that up to 100,000 users can be served simultaneously without performance loss.\"",
+        "user_story": {
+            "story": "As an operator, I want the app to support peak match-day traffic so that users can continue using the service reliably.",
+            "Acceptance": "Given a load test simulates 100,000 concurrent users,\nWhen the system is under peak load,\nThen the service shall remain available to users.\nGiven a load test simulates 100,000 concurrent users,\nWhen users perform supported app actions,\nThen the measured response times shall remain within the project's defined performance thresholds."
+        }
+    },
+    {
+        "requirement_no": "NFR-006",
+        "requirement_text": "Before each production release, the product shall pass a defined pre-release test and support process in which all critical defects are resolved or formally accepted.",
+        "requirement_reference": "\"the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early.\"",
+        "user_story": {
+            "story": "As a release manager, I want each release to pass pre-release quality checks so that major malfunctions are identified before users receive the app.",
+            "Acceptance": "Given a release candidate is prepared for production,\nWhen the defined pre-release test process is completed,\nThen no open critical defects shall remain unless formally approved for release.\nGiven a defect is identified during pre-release validation,\nWhen the defect severity is classified as critical,\nThen the release shall not proceed until the defect is resolved or formally accepted through the release process."
+        }
+    },
+    {
+        "requirement_no": "NFR-007",
+        "requirement_text": "The system shall process users' personal data in accordance with GDPR requirements applicable to the app's operation.",
+        "requirement_reference": "\"All personal data of users are processed in compliance with the GDPR.\"",
+        "user_story": {
+            "story": "As a user, I want my personal data to be handled in a GDPR-compliant manner so that my privacy rights are protected.",
+            "Acceptance": "Given the app requests personal data from a user,\nWhen the data is collected,\nThen the app shall present the applicable privacy information required for that processing.\nGiven a user has not provided required consent for an optional data-processing activity,\nWhen the app attempts that optional processing,\nThen the app shall not process the user's personal data for that activity.\nGiven a user account contains personal data,\nWhen the system stores or uses that data,\nThen the processing shall follow the app's defined GDPR compliance rules and controls."
+        }
+    }
+]

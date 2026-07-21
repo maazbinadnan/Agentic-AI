@@ -186,7 +186,7 @@ def route_after_human(state: GraphState) -> str:
     # Approve => finish, Reject => regenerate and re-evaluate.
     if state.get("run_evaluation") is False:
         print("\n Ending workflow.")
-        return END
+        return "evaluation_chart"
 
     print("\n Routing to evaluating requirements...")
     return "evaluate_requirements"
@@ -201,3 +201,21 @@ def process_interrupt(response: str) -> bool:
     # Optional: Fallback default if they type something unexpected
     print(f"⚠️ Unrecognized input '{response}'. Defaulting to False.")
     return False
+
+def evaluation_chart(state:GraphState):
+    with open(state['feedback_path'],'r') as file:
+        data = json.load(file)
+    
+    # Force data into a list if it's just a single object item
+    evaluations = data if isinstance(data, list) else [data]
+        
+    total = len(evaluations)
+    passed_count = sum(1 for item in evaluations if item.get('passed') is True)
+    failed_count = total - passed_count
+    
+    print("\n=== EVALUATION RUN TOTALS ===")
+    print(f"Total Requirements Processed: {total}")
+    print(f"Passed                      : {passed_count}")
+    print(f"Failed                      : {failed_count}")
+    print("=============================")
+

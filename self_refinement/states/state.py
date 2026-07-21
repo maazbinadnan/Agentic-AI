@@ -68,8 +68,8 @@ class RequirementEvaluation(BaseModel):
     feedback: str = Field(
         description="Explicit reasoning detailing what problems were there in the requirement and what changes are needed"
     )
-    action_to_take: str = Field(
-        description="Explicit call to action as to what action needs to be taken"
+    rewritten_requirement: str = Field(
+        description="Explicit way to rewrite the requirement so that it is acceptable"
     )
 class EvaluationReport(BaseModel):
     evaluations: list[RequirementEvaluation] = Field(

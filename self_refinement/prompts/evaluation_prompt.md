@@ -12,4 +12,4 @@ CRITICAL EVALUATION CRITERIA:
 3. QUALITY & STRUCTURE: Do the core user stories follow the INVEST model (Independent, Negotiable, Valuable, Estimable, Small, Testable)?
 4. FEASIBILITY: Are any of the requirements technically impossible, contradictory, or completely outside the scope?
 
-You must evaluate these requirements and provide a structured JSON response indicating whether they pass, along with a detailed list of actionable feedback if they fail.
+You must evaluate these requirements and provide a structured JSON response indicating whether they pass, along with the rewritten requirement so that it passes.
