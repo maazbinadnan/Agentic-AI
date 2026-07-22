@@ -21,6 +21,8 @@ Graph topology
                                                                              └─ (approved) ─→ compile_final
                                                                                                 → END
 """
+from pathlib import Path
+from global_functions.functions import _draw_graph
 
 from langgraph.graph import StateGraph, START, END
 from three_amigos.States.state import ThreeAmigosState
@@ -129,3 +131,8 @@ def create_graph(checkpointer=None):
 # The deployment platform supplies its own checkpointer; for local CLI
 # usage see ``run.py`` which passes a ``MemorySaver``.
 app = create_graph()
+
+root = Path(__file__).resolve().parent
+
+_draw_graph(app,output_path=Path(root/"graph.png"))
+

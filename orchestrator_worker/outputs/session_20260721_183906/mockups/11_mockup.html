@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Notifications</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; margin: 0; }
+    .container { max-width: 400px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 1px 4px #0001; }
+    h2 { margin-top: 0; }
+    .notification { background: #e6f7ff; border-left: 4px solid #007bff; padding: 12px; margin-bottom: 12px; border-radius: 4px; }
+    label { display: block; margin: 12px 0 4px; }
+    button { margin-top: 16px; background: #007bff; color: #fff; border: none; border-radius: 4px; padding: 8px 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Notifications</h2>
+    <form>
+      <label><input type="checkbox" checked> Enable notifications for my favorite teams</label>
+      <label><input type="checkbox"> Enable news notifications</label>
+      <button type="submit">Save</button>
+    </form>
+    <div class="notification">
+      <strong>Team A scored!</strong> 2:1 vs Team B (Live)
+    </div>
+    <div class="notification">
+      <strong>New article:</strong> Team B signs new midfielder.
+    </div>
+  </div>
+</body>
+</html>

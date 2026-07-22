@@ -6,7 +6,6 @@ reached consensus, and refines stories if they have not.
 
 from three_amigos.States.state import ThreeAmigosState
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
-
 from three_amigos.agents._common import _stream_llm, _save_output, load_prompt
 
 

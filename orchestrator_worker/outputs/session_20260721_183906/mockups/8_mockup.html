@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Ticker</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; margin: 0; }
+    header { background: #222; color: #fff; padding: 16px; text-align: center; }
+    .ticker { max-width: 500px; margin: 24px auto; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px #0001; padding: 16px; }
+    .match-header { display: flex; justify-content: space-between; align-items: center; }
+    .score { font-size: 2em; font-weight: bold; }
+    .events { margin-top: 16px; }
+    .event { border-left: 3px solid #007bff; padding-left: 8px; margin-bottom: 8px; }
+    .time { color: #888; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Live Ticker - Team A</h2>
+  </header>
+  <div class="ticker">
+    <div class="match-header">
+      <div>Team A</div>
+      <div class="score">2 : 1</div>
+      <div>Team B</div>
+    </div>
+    <div class="events">
+      <div class="event"><span class="time">78'</span> Goal! Team A scores (Player X)</div>
+      <div class="event"><span class="time">65'</span> Yellow card for Team B</div>
+      <div class="event"><span class="time">50'</span> Goal! Team B scores (Player Y)</div>
+      <div class="event"><span class="time">30'</span> Goal! Team A scores (Player Z)</div>
+    </div>
+  </div>
+</body>
+</html>
