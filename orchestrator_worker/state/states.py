@@ -42,7 +42,7 @@ class CompilerExtraction(BaseModel):
 
 # ── Central workflow state ────────────────────────────────────────────────
 
-class CoordinatorState(TypedDict):
+class GlobalState(TypedDict):
     """Central state for the Orchestrator-Worker coordinator pipeline.
 
     Flows through all phases:
@@ -55,21 +55,18 @@ class CoordinatorState(TypedDict):
     # ── Core message history (LangGraph reducer: appends) ──────────
     messages: Annotated[list, add_messages]
 
-    # ── Input ──────────────────────────────────────────────────────
-    user_research: str
-
     # ── Routing ────────────────────────────────────────────────────
     next_agent: str | None
     current_phase: str
 
     # ── BA Team output ─────────────────────────────────────────────
-    user_stories: str
+    user_stories: str | None
 
     # ── IxD Team output ────────────────────────────────────────────
-    html_mockups: str
+    html_mockups: str | None
 
     # ── Final output ───────────────────────────────────────────────
-    final_output: str
+    final_output: str | None
 
     # ── File I/O ───────────────────────────────────────────────────
-    output_dir: str
+    output_dir: str | None

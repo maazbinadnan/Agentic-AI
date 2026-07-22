@@ -4,10 +4,10 @@ These pure functions inspect the current state and return a string key
 that tells LangGraph which edge to follow.
 """
 
-from orchestrator_worker.state.states import CoordinatorState
+from orchestrator_worker.state.states import GlobalState
 
 
-def route_after_coordinator(state: CoordinatorState) -> str:
+def route_after_coordinator(state: GlobalState) -> str:
     """Route to the team the coordinator chose, or to the compiler if finished."""
     next_agent = state.get("next_agent", "FINISH")
     if next_agent == "FINISH":

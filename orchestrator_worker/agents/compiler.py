@@ -7,12 +7,12 @@ as a separate file named by its user story number (e.g. ``1_mockup.html``).
 
 import os
 
-from orchestrator_worker.state.states import CoordinatorState, CompilerExtraction
+from orchestrator_worker.state.states import GlobalState, CompilerExtraction
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from orchestrator_worker.agents._common import llm, _stream_llm, _save_output, load_prompt
 
 
-def _save_html_mockups(state: CoordinatorState, extraction: CompilerExtraction) -> None:
+def _save_html_mockups(state: GlobalState, extraction: CompilerExtraction) -> None:
     """Save each extracted story-mockup pair as a numbered HTML file."""
     output_dir = state.get("output_dir", "")
     if not output_dir:
@@ -29,7 +29,7 @@ def _save_html_mockups(state: CoordinatorState, extraction: CompilerExtraction) 
         print(f"💾  Saved mockup → {filepath}  (Story {item.story_number}: {item.story_title})")
 
 
-def compile_final_output(state: CoordinatorState) -> dict:
+def compile_final_output(state: GlobalState) -> dict:
     """Compiler — extract story-mockup pairs, save HTML files, assemble final report."""
 
     # ── Step 1: Extract individual story → mockup mappings ────────────────

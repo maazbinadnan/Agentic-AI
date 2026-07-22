@@ -3,7 +3,6 @@ import json
 from pathlib import Path
 
 DATA_FILE = r"C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\Data\requirements.md"
-DATA_FILE =r"C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\self_refinement\runs\7-20-2026\output_gpt-4.1_functional.json"
 
 def _read_file(filepath:str):
     """Read and return the contents of a Markdown file.

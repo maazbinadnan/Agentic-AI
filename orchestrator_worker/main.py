@@ -17,7 +17,7 @@ from pathlib import Path
 from global_functions.functions import _draw_graph
 
 from langgraph.graph import StateGraph, START, END
-from orchestrator_worker.state.states import CoordinatorState
+from orchestrator_worker.state.states import GlobalState
 from orchestrator_worker.agents import (
     coordinator_node,
     ba_team_node,
@@ -44,7 +44,7 @@ def create_graph(checkpointer=None):
         The compiled, ready-to-invoke graph.
     """
 
-    workflow = StateGraph(CoordinatorState)
+    workflow = StateGraph(GlobalState)
 
     # ── Register nodes ────────────────────────────────────────────────────
     workflow.add_node("coordinator", coordinator_node)
@@ -55,23 +55,23 @@ def create_graph(checkpointer=None):
     # ── Phase 1: START → Coordinator ──────────────────────────────────────
     workflow.add_edge(START, "coordinator")
 
-    # ── Phase 2: Coordinator routes to workers or compiler ────────────────
-    workflow.add_conditional_edges(
-        "coordinator",
-        route_after_coordinator,
-        {
-            "ba_team": "ba_team",
-            "interaction_designers": "interaction_designers",
-            "compile": "compile_final",
-        },
-    )
+    # # ── Phase 2: Coordinator routes to workers or compiler ────────────────
+    # workflow.add_conditional_edges(
+    #     "coordinator",
+    #     route_after_coordinator,
+    #     {
+    #         "ba_team": "ba_team",
+    #         "interaction_designers": "interaction_designers",
+    #         "compile": "compile_final",
+    #     },
+    # )
 
-    # ── Workers always loop back to the coordinator ───────────────────────
-    workflow.add_edge("ba_team", "coordinator")
-    workflow.add_edge("interaction_designers", "coordinator")
+    # # ── Workers always loop back to the coordinator ───────────────────────
+    # workflow.add_edge("ba_team", "coordinator")
+    # workflow.add_edge("interaction_designers", "coordinator")
 
     # ── Compiler → END ────────────────────────────────────────────────────
-    workflow.add_edge("compile_final", END)
+    workflow.add_edge("coordinator", END)
 
     # ── Compile ──────────────────────────────────────────────────────────
     return workflow.compile(checkpointer=checkpointer)

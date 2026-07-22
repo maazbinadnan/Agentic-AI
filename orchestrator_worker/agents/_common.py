@@ -4,7 +4,7 @@ Contains the LLM client, streaming helper, file-I/O helper, and prompt
 loader that every agent imports.
 """
 
-from orchestrator_worker.state.states import CoordinatorState
+from orchestrator_worker.state.states import GlobalState
 from global_client_layer.llm_client import get_llm
 from dotenv import load_dotenv
 import os
@@ -76,7 +76,7 @@ _file_counter: int = 0
 
 
 def _save_output(
-    state: CoordinatorState,
+    state: GlobalState,
     filename: str,
     content: str,
     *,

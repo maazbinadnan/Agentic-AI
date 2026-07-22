@@ -3,12 +3,14 @@
 Inspects the conversation history and decides the next step in the pipeline.
 """
 
-from orchestrator_worker.state.states import CoordinatorState, CoordinatorDecision
+from orchestrator_worker.state.states import GlobalState, CoordinatorDecision
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from orchestrator_worker.agents._common import llm, _stream_llm, _save_output, load_prompt
+from typing import cast
+from pydantic import ValidationError
 
 
-def coordinator_node(state: CoordinatorState) -> dict:
+def coordinator_node(state: GlobalState) -> dict:
     """Coordinator — analyse the conversation and decide the next step."""
     system_prompt = load_prompt("coordinator.md")
 
@@ -17,15 +19,31 @@ def coordinator_node(state: CoordinatorState) -> dict:
         *state["messages"],
     ]
 
-    # Use structured output for the routing decision
-    structured_llm = llm.with_structured_output(CoordinatorDecision)
-    decision: CoordinatorDecision = structured_llm.invoke(messages)
+    full_response = ""
+    for chunk in llm.stream(messages):
+        if chunk.content:
+            # Stream to the UI if desired
+            print(chunk.content, end="", flush=True)
 
-    print(f"\n🎯  Coordinator decision: {decision.next_agent} — {decision.justification}\n")
+            # Accumulate the text
+            full_response += chunk.content #type: ignore
+
+    print()
+
+    # Parse into your Pydantic model
+    try:
+        decision = CoordinatorDecision.model_validate_json(full_response)
+    except ValidationError as e:
+        raise RuntimeError(f"Failed to parse coordinator output:\n{e}")
+
+    print(
+        f"\n🎯 Coordinator decision: "
+        f"{decision.next_agent} — {decision.justification}\n"
+    )
 
     return {
         "messages": [
-            AIMessage(content=f"[COORDINATOR] Routing to **{decision.next_agent}**. Reason: {decision.justification}")
+            AIMessage(content=full_response)
         ],
         "next_agent": decision.next_agent,
         "current_phase": decision.next_agent,

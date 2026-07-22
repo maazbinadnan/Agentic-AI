@@ -4,12 +4,12 @@ Produces structured User Stories with Given-When-Then BDD acceptance
 criteria from the raw research input.
 """
 
-from orchestrator_worker.state.states import CoordinatorState
+from orchestrator_worker.state.states import GlobalState
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from orchestrator_worker.agents._common import _stream_llm, _save_output, load_prompt
 
 
-def ba_team_node(state: CoordinatorState) -> dict:
+def ba_team_node(state: GlobalState) -> dict:
     """BA Team — formalise raw research into user stories and acceptance criteria."""
     system_prompt = load_prompt("ba_team.md")
     user_research = state["user_research"]

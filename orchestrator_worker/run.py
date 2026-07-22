@@ -16,25 +16,18 @@ import argparse
 import os
 import sys
 from datetime import datetime
+import asyncio
 
+from langchain.messages import HumanMessage
 from langgraph.checkpoint.memory import MemorySaver
+from langchain_core.runnables import RunnableConfig
 
 from orchestrator_worker.main import create_graph
+from orchestrator_worker.state.states import GlobalState
+from global_functions.functions import DATA_FILE,_data_file
 
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
-
-def _default_research_path() -> str:
-    """Return the path to the sample user research shipped with the repo."""
-    return os.path.normpath(
-        os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            "..",
-            "Data",
-            "requirements.md",
-        )
-    )
-
 
 def _outputs_dir() -> str:
     """Return (and create) the Outputs directory for this module."""
@@ -62,12 +55,6 @@ def main() -> None:
         description="Orchestrator-Worker Coordinator — CLI Runner",
     )
     parser.add_argument(
-        "--input", "-i",
-        type=str,
-        default=None,
-        help="Path to user research text file.  Defaults to Data/requirements.md.",
-    )
-    parser.add_argument(
         "--thread-id", "-t",
         type=str,
         default="coordinator-session-1",
@@ -76,18 +63,12 @@ def main() -> None:
     args = parser.parse_args()
 
     # ── Read user research ────────────────────────────────────────────────
-    research_path = args.input or _default_research_path()
-    if not os.path.isfile(research_path):
-        print(f"❌  File not found: {research_path}")
-        sys.exit(1)
 
-    with open(research_path, "r", encoding="utf-8") as fh:
-        user_research = fh.read()
 
     print(_separator())
     print("  ORCHESTRATOR-WORKER — Coordinator Pipeline")
     print(_separator())
-    print(f"  📄  Input:       {research_path}")
+    print(f"  📄  Input:       {DATA_FILE}")
     print(f"  🧵  Thread ID:   {args.thread_id}")
     print(_separator())
     print()
@@ -101,57 +82,69 @@ def main() -> None:
     # ── Build graph with checkpointer ────────────────────────────────────
     memory = MemorySaver()
     graph = create_graph(checkpointer=memory)
-    config = {"configurable": {"thread_id": args.thread_id}}
+    config:RunnableConfig = {"configurable": {"thread_id": args.thread_id}}
 
-    initial_state = {
-        "user_research": user_research,
-        "messages": [],
+    # ---- Build Initial Message ---- #
+    initial_message = HumanMessage(content="could you please extract requirements from this data file:" \
+    f"{_data_file()}")
+
+
+    # ---- Build Initial State ---- #
+    initial_state:GlobalState = {
+        "messages": [initial_message],
         "next_agent": None,
         "current_phase": "start",
         "output_dir": session_out,
+        "final_output": None,
+        "html_mockups" : None,
+        "user_stories" : None
     }
+
+
 
     # ── Run the pipeline ─────────────────────────────────────────────────
     print("🚀  Starting the Coordinator pipeline…\n")
-    graph.invoke(initial_state, config)
+    result = graph.invoke(initial_state, config)
+    print(result)
+    
 
-    # ── Save final output ────────────────────────────────────────────────
-    final_state = graph.get_state(config)
-    final_vals = final_state.values
-    final_output = final_vals.get("final_output", "")
+    # # ── Save final output ────────────────────────────────────────────────
+    # final_state = graph.get_state(config)
+    # final_vals = final_state.values
+    # final_output = final_vals.get("final_output", "")
 
-    if not final_output:
-        print("\n⚠️  No final output was generated.")
-        sys.exit(1)
+    # if not final_output:
+    #     print("\n⚠️  No final output was generated.")
+    #     sys.exit(1)
 
-    # ── Write the combined final report ──────────────────────────────────
-    final_report_path = os.path.join(session_out, "final_report.md")
-    with open(final_report_path, "w", encoding="utf-8") as fh:
-        fh.write(final_output)
+    # # ── Write the combined final report ──────────────────────────────────
+    # final_report_path = os.path.join(session_out, "final_report.md")
+    # with open(final_report_path, "w", encoding="utf-8") as fh:
+    #     fh.write(final_output)
 
-    # ── Write separate artifact files from the final state ───────────────
-    artifacts = {
-        "user_stories":  ("User Stories & Acceptance Criteria", "user_stories"),
-        "html_mockups":  ("HTML Mockups",                       "html_mockups"),
-    }
+    # # ── Write separate artifact files from the final state ───────────────
+    # artifacts = {
+    #     "user_stories":  ("User Stories & Acceptance Criteria", "user_stories"),
+    #     "html_mockups":  ("HTML Mockups",                       "html_mockups"),
+    # }
 
-    artifacts_dir = os.path.join(session_out, "artifacts")
-    os.makedirs(artifacts_dir, exist_ok=True)
+    # artifacts_dir = os.path.join(session_out, "artifacts")
+    # os.makedirs(artifacts_dir, exist_ok=True)
 
-    for state_key, (title, fname) in artifacts.items():
-        value = final_vals.get(state_key, "")
-        if value:
-            path = os.path.join(artifacts_dir, f"{fname}.md")
-            with open(path, "w", encoding="utf-8") as fh:
-                fh.write(f"# {title}\n\n{value}")
-            print(f"  💾  {title:40s} → {path}")
+    # for state_key, (title, fname) in artifacts.items():
+    #     value = final_vals.get(state_key, "")
+    #     if value:
+    #         path = os.path.join(artifacts_dir, f"{fname}.md")
+    #         with open(path, "w", encoding="utf-8") as fh:
+    #             fh.write(f"# {title}\n\n{value}")
+    #         print(f"  💾  {title:40s} → {path}")
 
-    print(f"\n{_separator()}")
-    print(f"  ✅  PIPELINE COMPLETE")
-    print(f"  📄  Full report:  {final_report_path}")
-    print(f"  📂  Artifacts:    {artifacts_dir}")
-    print(f"  📂  Session dir:  {session_out}")
-    print(_separator())
+    # print(f"\n{_separator()}")
+    # print(f"  ✅  PIPELINE COMPLETE")
+    # print(f"  📄  Full report:  {final_report_path}")
+    # print(f"  📂  Artifacts:    {artifacts_dir}")
+    # print(f"  📂  Session dir:  {session_out}")
+    # print(_separator())
 
 
 if __name__ == "__main__":
