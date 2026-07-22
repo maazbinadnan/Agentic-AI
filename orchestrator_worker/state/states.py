@@ -21,7 +21,6 @@ class CoordinatorDecision(BaseModel):
 
 
 # ── Structured output for the compiler's story-mockup extraction ──────────
-
 class StoryMockup(BaseModel):
     story_number: int = Field(
         description="The user story number (e.g. 1, 2, 3)."
@@ -53,7 +52,10 @@ class GlobalState(TypedDict):
     """
 
     # ── Core message history (LangGraph reducer: appends) ──────────
-    messages: Annotated[list, add_messages]
+    messages: Annotated[list, add_messages] | None
+
+    # ── Input ──────────────────────────────────────────────────────
+    input: str | None
 
     # ── Routing ────────────────────────────────────────────────────
     next_agent: str | None

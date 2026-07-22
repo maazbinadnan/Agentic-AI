@@ -92,6 +92,7 @@ def main() -> None:
     # ---- Build Initial State ---- #
     initial_state:GlobalState = {
         "messages": [initial_message],
+        "input": _data_file(),
         "next_agent": None,
         "current_phase": "start",
         "output_dir": session_out,
@@ -105,9 +106,7 @@ def main() -> None:
     # ── Run the pipeline ─────────────────────────────────────────────────
     print("🚀  Starting the Coordinator pipeline…\n")
     result = graph.invoke(initial_state, config)
-    print(result)
     
-
     # # ── Save final output ────────────────────────────────────────────────
     # final_state = graph.get_state(config)
     # final_vals = final_state.values

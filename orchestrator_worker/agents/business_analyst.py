@@ -11,16 +11,14 @@ from orchestrator_worker.agents._common import _stream_llm, _save_output, load_p
 
 def ba_team_node(state: GlobalState) -> dict:
     """BA Team — formalise raw research into user stories and acceptance criteria."""
-    system_prompt = load_prompt("ba_team.md")
-    user_research = state["user_research"]
+    system_prompt = load_prompt("business_analyst.md")
+    data = state["input"]
 
     messages = [
         SystemMessage(content=system_prompt),
         HumanMessage(
             content=(
-                "Formalise the following user research into user stories "
-                "with BDD acceptance criteria:\n\n"
-                f"{user_research}"
+                f"{data}"
             )
         ),
     ]

@@ -8,9 +8,9 @@ modules can do::
 
 # ── Node functions ──────────────────────────────────────────────────────────
 from orchestrator_worker.agents.orchestrator_agent import coordinator_node
-from orchestrator_worker.agents.ba_agent import ba_team_node
-from orchestrator_worker.agents.ixd_agent import interaction_designers_node
-from orchestrator_worker.agents.compiler import compile_final_output
+from orchestrator_worker.agents.business_analyst import ba_team_node
+from orchestrator_worker.agents.interaction_designer import interaction_designers_node
+from orchestrator_worker.agents.compiler import compile 
 
 # ── Routing helpers ─────────────────────────────────────────────────────────
 from orchestrator_worker.agents.routing import route_after_coordinator
@@ -19,6 +19,6 @@ __all__ = [
     "coordinator_node",
     "ba_team_node",
     "interaction_designers_node",
-    "compile_final_output",
+    "compile",
     "route_after_coordinator",
 ]

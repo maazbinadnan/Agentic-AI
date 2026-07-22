@@ -4,75 +4,91 @@ Combines the original research, BA user stories, and IxD HTML mockups
 into a single polished Markdown document.  Also saves each HTML mockup
 as a separate file named by its user story number (e.g. ``1_mockup.html``).
 """
-
-import os
-
+from pathlib import Path
 from orchestrator_worker.state.states import GlobalState, CompilerExtraction
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, ToolMessage
+from langchain.tools import tool
 from orchestrator_worker.agents._common import llm, _stream_llm, _save_output, load_prompt
 
+@tool
+def write_file(filename: str, content: str, output_folder: str) -> str:
+    """Writes text or code content to a specified output file/directory.
 
-def _save_html_mockups(state: GlobalState, extraction: CompilerExtraction) -> None:
-    """Save each extracted story-mockup pair as a numbered HTML file."""
-    output_dir = state.get("output_dir", "")
-    if not output_dir:
-        return
+    Args:
+        filename: The name of the file to save (e.g., 'user_needs.md or e.g 1_login.html').
+        content: The text, markdown, or HTML content to write inside the file.
+        output_folder: The directory path where the file should be saved.
 
-    mockups_dir = os.path.join(output_dir, "mockups")
-    os.makedirs(mockups_dir, exist_ok=True)
+    Returns:
+        A success or failure status message.
+    """
+    try:
+        base_dir = Path(output_folder)
+        base_dir.mkdir(parents=True, exist_ok=True)
 
-    for item in extraction.story_mockups:
-        filename = f"{item.story_number}_mockup.html"
-        filepath = os.path.join(mockups_dir, filename)
-        with open(filepath, "w", encoding="utf-8") as fh:
-            fh.write(item.html_content)
-        print(f"💾  Saved mockup → {filepath}  (Story {item.story_number}: {item.story_title})")
+        target_path = (base_dir / filename).resolve()
+
+        # Security check: Prevent path traversal outside the target directory
+        if not target_path.is_relative_to(base_dir.resolve()):
+            return f"Error: Target path '{filename}' attempts to write outside directory '{output_folder}'."
+
+        target_path.write_text(content, encoding="utf-8")
+        return f"Successfully wrote {len(content)} characters to '{target_path}'"
+
+    except Exception as e:
+        return f"Failed to write file '{filename}': {str(e)}"
 
 
-def compile_final_output(state: GlobalState) -> dict:
-    """Compiler — extract story-mockup pairs, save HTML files, assemble final report."""
+def compile(state:GlobalState):
 
-    # ── Step 1: Extract individual story → mockup mappings ────────────────
-    extraction_prompt = load_prompt("compiler_extraction.md")
+    llm_with_tools = llm.bind_tools([write_file])
 
-    extraction_messages = [
-        SystemMessage(content=extraction_prompt),
+    user_stories = state['user_stories']
+    html_mockups = state['html_mockups']
+
+
+    system_prompt = load_prompt("compiler.md")
+
+    messages = [
+        SystemMessage(content=system_prompt),
         HumanMessage(
             content=(
-                f"## User Stories & Acceptance Criteria\n\n{state.get('user_stories', '')}\n\n"
-                f"## HTML Mockups\n\n{state.get('html_mockups', '')}\n\n"
+                f'''## User Stories \n
+                {user_stories}  
+                
+                ##HTML Mockups \n
+                {html_mockups} '''
             )
         ),
     ]
 
-    structured_llm = llm.with_structured_output(CompilerExtraction)
-    extraction: CompilerExtraction = structured_llm.invoke(extraction_messages)
+    response = llm_with_tools.invoke(messages)
 
-    _save_html_mockups(state, extraction)
-    print(f"✅  Saved {len(extraction.story_mockups)} HTML mockup(s).")
+    saved_files_log = []
+    tool_messages = []
 
-    # ── Step 2: Compile the full report (streamed) ────────────────────────
-    report_prompt = load_prompt("compiler.md")
-
-    context = (
-        f"## Original User Research\n\n{state['user_research']}\n\n"
-        f"## User Stories & Acceptance Criteria\n\n{state.get('user_stories', '')}\n\n"
-        f"## HTML Mockups\n\n{state.get('html_mockups', '')}\n\n"
-    )
-
-    report_messages = [
-        SystemMessage(content=report_prompt),
-        HumanMessage(content=context),
-    ]
-
-    response_text = _stream_llm(report_messages, agent_label="COMPILER")
-    _save_output(state, "final_report", response_text, title="Final Coordinator Report")
-    print("📄  Final report compiled.")
+    if response.tool_calls:
+        print("🛠️ Executing tool calls to write output files...\n")
+        for tool_call in response.tool_calls:
+            if tool_call["name"] == "write_file":
+                # Execute the tool explicitly with args supplied by LLM
+                result = write_file.invoke(tool_call["args"])
+                tool_args = tool_call["args"]
+                tool_args["output_folder"] = state['output_dir']
+                print(f"  ✓ {result}")
+                saved_files_log.append(result)
+                # Append ToolMessage back for proper message chain tracking
+                tool_messages.append(
+                    ToolMessage(
+                        content=result,
+                        tool_call_id=tool_call["id"]
+                    )
+                )
 
     return {
-        "messages": [
-            AIMessage(content=f"[FINAL OUTPUT]\n{response_text}")
-        ],
-        "final_output": response_text,
-        "current_phase": "complete",
+        "messages": [response] + tool_messages,
+        "final_output": "\n".join(saved_files_log),
+        "current_phase": "completed",
     }
+
+

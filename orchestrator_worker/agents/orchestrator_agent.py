@@ -16,7 +16,7 @@ def coordinator_node(state: GlobalState) -> dict:
 
     messages = [
         SystemMessage(content=system_prompt),
-        *state["messages"],
+        state["messages"][-1], #type:ignore
     ]
 
     full_response = ""

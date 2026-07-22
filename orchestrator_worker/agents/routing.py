@@ -10,6 +10,7 @@ from orchestrator_worker.state.states import GlobalState
 def route_after_coordinator(state: GlobalState) -> str:
     """Route to the team the coordinator chose, or to the compiler if finished."""
     next_agent = state.get("next_agent", "FINISH")
+    assert next_agent is not None
     if next_agent == "FINISH":
-        return "compile"
-    return next_agent
+        return "compiler"
+    return next_agent 
