@@ -41,7 +41,7 @@ Select **FINISH** if:
 
 ## Output Requirements
 
-Select the appropriate `next_agent` value and provide a concise `justification` explaining why this routing decision was made based on the current state of the artifacts.
+Select the appropriate `next_agent` value and provide a concise `justification` explaining why this routing decision was made based on the current state of the artifacts in a json format.
 
 * **`next_agent`**: `"ba_team"` | `"interaction_designers"` | `"FINISH"`
 * **`justification`**: A brief explanation highlighting the state of the work (e.g., *"Raw user research detected without user stories -> routing to BA"*, or *"User stories complete, UI designs still pending -> routing to Interaction Designer"*).

@@ -19,28 +19,39 @@ class CoordinatorDecision(BaseModel):
         description="Brief explanation of why this routing choice was made."
     )
 
-
-# ── Structured output for the compiler's story-mockup extraction ──────────
-class StoryMockup(BaseModel):
-    story_number: int = Field(
-        description="The user story number (e.g. 1, 2, 3)."
+# ------- designer output ------- #
+class html_mockups(BaseModel):
+    file_name:str = Field(
+        description= "The file name relating to the html mockup such as 'login_mockup.html' based on the user stories"
     )
-    story_title: str = Field(
-        description="A short title for the user story."
-    )
-    html_content: str = Field(
-        description="The complete, self-contained HTML mockup for this story."
+    html:str = Field(
+        description= 'The formatted HTML relating to the file name and user story'
     )
 
-
-class CompilerExtraction(BaseModel):
-    story_mockups: list[StoryMockup] = Field(
-        description="A list of user story to HTML mockup mappings."
+class HtmlMapping(BaseModel):
+    architecture_mapping: str = Field(
+        description=(
+            "Markdown table or mapping string connecting HTML screen filenames "
+            "to their corresponding User Stories (US-XXX) / Requirements (FR-XXX) "
+            "and key interactions visualized."
+        )
+    )
+    design_tradeoff: str = Field(
+        description=(
+            "Markdown section detailing UI/UX design choices, layout rationale, "
+            "and state handling explanations."
+        )
     )
 
+class ixd_output(BaseModel):
+    html_files: list[html_mockups] = Field(
+        description= "a  list of the generated HTML files"
+    )
+    html_mapping: HtmlMapping = Field(
+        description= "markdown of the architecture and design trade_off"
+    )
 
 # ── Central workflow state ────────────────────────────────────────────────
-
 class GlobalState(TypedDict):
     """Central state for the Orchestrator-Worker coordinator pipeline.
 
@@ -62,6 +73,10 @@ class GlobalState(TypedDict):
     current_phase: str
 
     # ── BA Team output ─────────────────────────────────────────────
+    full_ba_analysis: str | None
+    user_needs: str | None
+    functional_requirements: str | None
+    non_functional_requirements: str | None
     user_stories: str | None
 
     # ── IxD Team output ────────────────────────────────────────────

@@ -12,5 +12,5 @@ def route_after_coordinator(state: GlobalState) -> str:
     next_agent = state.get("next_agent", "FINISH")
     assert next_agent is not None
     if next_agent == "FINISH":
-        return "compiler"
+        return "FINISH"
     return next_agent 

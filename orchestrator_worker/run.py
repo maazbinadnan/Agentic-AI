@@ -14,9 +14,7 @@ Usage
 
 import argparse
 import os
-import sys
 from datetime import datetime
-import asyncio
 
 from langchain.messages import HumanMessage
 from langgraph.checkpoint.memory import MemorySaver
@@ -24,7 +22,7 @@ from langchain_core.runnables import RunnableConfig
 
 from orchestrator_worker.main import create_graph
 from orchestrator_worker.state.states import GlobalState
-from global_functions.functions import DATA_FILE,_data_file
+from global_functions.functions import DATA_FILE, _data_file
 
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -36,10 +34,9 @@ def _outputs_dir() -> str:
     return d
 
 
-def _session_dir() -> str:
+def _session_dir(run_number:str) -> str:
     """Create and return a timestamped session subdirectory inside outputs/."""
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    d = os.path.join(_outputs_dir(), f"session_{timestamp}")
+    d = os.path.join(_outputs_dir(), f"session_{run_number}")
     os.makedirs(d, exist_ok=True)
     return d
 
@@ -60,7 +57,14 @@ def main() -> None:
         default="coordinator-session-1",
         help="LangGraph thread ID for checkpointing (default: coordinator-session-1).",
     )
+    parser.add_argument(
+        "--run", "-r",
+        type=str,
+        default=None,
+        help="run number for making output directory",
+    )
     args = parser.parse_args()
+    run_number = args.run if args.run else datetime.now().strftime("%Y%m%d_%H%M%S")
 
     # ── Read user research ────────────────────────────────────────────────
 
@@ -74,7 +78,7 @@ def main() -> None:
     print()
 
     # ── Create session output directory ──────────────────────────────────
-    session_out = _session_dir()
+    session_out = _session_dir(args.run)
     print(f"  📂  Output dir:  {session_out}")
     print(_separator())
     print()
@@ -97,53 +101,19 @@ def main() -> None:
         "current_phase": "start",
         "output_dir": session_out,
         "final_output": None,
-        "html_mockups" : None,
-        "user_stories" : None
+        "html_mockups": None,
+        "full_ba_analysis": None,
+        "user_needs": None,
+        "functional_requirements": None,
+        "non_functional_requirements": None,
+        "user_stories": None
     }
 
 
 
     # ── Run the pipeline ─────────────────────────────────────────────────
     print("🚀  Starting the Coordinator pipeline…\n")
-    result = graph.invoke(initial_state, config)
-    
-    # # ── Save final output ────────────────────────────────────────────────
-    # final_state = graph.get_state(config)
-    # final_vals = final_state.values
-    # final_output = final_vals.get("final_output", "")
-
-    # if not final_output:
-    #     print("\n⚠️  No final output was generated.")
-    #     sys.exit(1)
-
-    # # ── Write the combined final report ──────────────────────────────────
-    # final_report_path = os.path.join(session_out, "final_report.md")
-    # with open(final_report_path, "w", encoding="utf-8") as fh:
-    #     fh.write(final_output)
-
-    # # ── Write separate artifact files from the final state ───────────────
-    # artifacts = {
-    #     "user_stories":  ("User Stories & Acceptance Criteria", "user_stories"),
-    #     "html_mockups":  ("HTML Mockups",                       "html_mockups"),
-    # }
-
-    # artifacts_dir = os.path.join(session_out, "artifacts")
-    # os.makedirs(artifacts_dir, exist_ok=True)
-
-    # for state_key, (title, fname) in artifacts.items():
-    #     value = final_vals.get(state_key, "")
-    #     if value:
-    #         path = os.path.join(artifacts_dir, f"{fname}.md")
-    #         with open(path, "w", encoding="utf-8") as fh:
-    #             fh.write(f"# {title}\n\n{value}")
-    #         print(f"  💾  {title:40s} → {path}")
-
-    # print(f"\n{_separator()}")
-    # print(f"  ✅  PIPELINE COMPLETE")
-    # print(f"  📄  Full report:  {final_report_path}")
-    # print(f"  📂  Artifacts:    {artifacts_dir}")
-    # print(f"  📂  Session dir:  {session_out}")
-    # print(_separator())
+    graph.invoke(initial_state, config)
 
 
 if __name__ == "__main__":

@@ -22,7 +22,6 @@ from orchestrator_worker.agents import (
     coordinator_node,
     ba_team_node,
     interaction_designers_node,
-    compile,
     route_after_coordinator,
 )
 
@@ -50,7 +49,6 @@ def create_graph(checkpointer=None):
     workflow.add_node("coordinator", coordinator_node)
     workflow.add_node("ba_team", ba_team_node)
     workflow.add_node("interaction_designers", interaction_designers_node)
-    workflow.add_node("compiler", compile)
 
     # ── Phase 1: START → Coordinator ──────────────────────────────────────
     workflow.add_edge(START, "coordinator")
@@ -62,16 +60,13 @@ def create_graph(checkpointer=None):
         {
             "ba_team": "ba_team",
             "interaction_designers": "interaction_designers",
-            "compiler": "compiler",
+            "FINISH": END,
         },
     )
 
     # ── Workers always loop back to the coordinator ───────────────────────
     workflow.add_edge("ba_team", "coordinator")
     workflow.add_edge("interaction_designers", "coordinator")
-
-    # # ── Compiler → END ────────────────────────────────────────────────────
-    workflow.add_edge("compiler", END)
 
     # ── Compile ──────────────────────────────────────────────────────────
     return workflow.compile(checkpointer=checkpointer)

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized News Feed (US-002)</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-error: #dc3545;
+      --color-muted: #6c757d;
+      --color-card: #fff;
+    }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--color-text);
+    }
+    header {
+      background: var(--color-primary);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .favorites-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .favorites-bar label {
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+    .favorites-select {
+      min-width: 120px;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      background: var(--color-bg);
+      font-size: 1rem;
+    }
+    .news-feed {
+      max-width: 600px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .news-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1.25rem 1rem;
+      box-shadow: 0 2px 8px rgba(33,37,41,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .news-card .news-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .news-card .news-meta {
+      color: var(--color-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .news-card .news-summary {
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+    .empty-feed {
+      text-align: center;
+      color: var(--color-muted);
+      margin-top: 3rem;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 700px) {
+      .news-feed {
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Football Live
+    <span style="font-size:1rem;font-weight:400;">News Feed</span>
+  </header>
+  <section class="favorites-bar" aria-label="Favorite selection">
+    <label for="favorite-teams">Teams:</label>
+    <select id="favorite-teams" class="favorites-select" aria-label="Select favorite teams">
+      <option value="">All</option>
+      <option value="manutd">Manchester United</option>
+      <option value="realmadrid">Real Madrid</option>
+      <option value="bayern">Bayern Munich</option>
+    </select>
+    <label for="favorite-channels">Channels:</label>
+    <select id="favorite-channels" class="favorites-select" aria-label="Select favorite channels">
+      <option value="">All</option>
+      <option value="espn">ESPN</option>
+      <option value="sky">Sky Sports</option>
+      <option value="bbc">BBC Sport</option>
+    </select>
+  </section>
+  <main class="news-feed" aria-label="Personalized news feed">
+    <!-- Populated State: News for selected favorites -->
+    <article class="news-card">
+      <div class="news-title">Manchester United clinch dramatic win in stoppage time</div>
+      <div class="news-meta">Sky Sports &middot; 2h ago</div>
+      <div class="news-summary">A thrilling finish at Old Trafford saw United secure three points with a last-minute goal. Read more...</div>
+    </article>
+    <article class="news-card">
+      <div class="news-title">Real Madrid announce new signing ahead of derby</div>
+      <div class="news-meta">ESPN &middot; 1h ago</div>
+      <div class="news-summary">The Spanish giants have bolstered their squad with a high-profile transfer. Details inside.</div>
+    </article>
+    <!-- Empty State: No favorites selected -->
+    <!--
+    <div class="empty-feed">
+      No favorites selected. Showing general football news.
+    </div>
+    <article class="news-card">
+      <div class="news-title">Champions League: Quarterfinals set for next week</div>
+      <div class="news-meta">BBC Sport &middot; 3h ago</div>
+      <div class="news-summary">The stage is set for the most exciting matches of the season. Preview the fixtures here.</div>
+    </article>
+    -->
+  </main>
+</body>
+</html>

@@ -3,14 +3,13 @@
 Contains the LLM client, streaming helper, file-I/O helper, and prompt
 loader that every agent imports.
 """
-
 from orchestrator_worker.state.states import GlobalState
 from global_client_layer.llm_client import get_llm
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
 
+load_dotenv()
 # Module-level singleton — reused across all node calls
 llm = get_llm()
 
@@ -79,6 +78,7 @@ def _save_output(
     state: GlobalState,
     filename: str,
     content: str,
+    output_dir: str | None= None,
     *,
     title: str | None = None,
 ) -> None:
@@ -96,14 +96,16 @@ def _save_output(
         If provided, a ``# title`` heading is prepended to the file.
     """
     global _file_counter
-    output_dir = state.get("output_dir", "")
+    if output_dir is None:
+        output_dir = state.get("output_dir", "")
+
     if not output_dir:
         return
 
     os.makedirs(output_dir, exist_ok=True)
     _file_counter += 1
     safe_name = filename.replace(" ", "_").lower()
-    path = os.path.join(output_dir, f"{_file_counter:02d}_{safe_name}.md")
+    path = os.path.join(output_dir, f"{_file_counter:02d}_{safe_name}")
 
     body = ""
     if title:

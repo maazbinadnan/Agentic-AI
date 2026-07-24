@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enable Notifications (US-007)</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-success: #198754;
+      --color-muted: #6c757d;
+    }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .notif-container {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(33,37,41,0.04);
+      padding: 2rem 1.5rem;
+      max-width: 350px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .notif-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .notif-switch {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1rem;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--color-border);
+      border-radius: 24px;
+      transition: background 0.2s;
+    }
+    .switch input:checked + .slider {
+      background: var(--color-primary);
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      box-shadow: 0 1px 4px rgba(33,37,41,0.08);
+    }
+    .switch input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .notif-desc {
+      color: var(--color-muted);
+      font-size: 1rem;
+      text-align: center;
+    }
+    .notif-success {
+      color: var(--color-success);
+      font-size: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <section class="notif-container" aria-label="Notification preferences">
+    <div class="notif-title">Team Notifications</div>
+    <div class="notif-switch">
+      <label for="notif-toggle">Enable notifications</label>
+      <label class="switch">
+        <input type="checkbox" id="notif-toggle" aria-checked="false">
+        <span class="slider"></span>
+      </label>
+    </div>
+    <div class="notif-desc">Get alerts for news and results about your favorite teams.</div>
+    <!-- Success State: Notifications enabled -->
+    <!-- <div class="notif-success">Notifications enabled for your favorite teams.</div> -->
+  </section>
+</body>
+</html>
