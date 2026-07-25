@@ -10,7 +10,7 @@ import argparse
 from global_layer.functions import _data_file
 from supervisor_worker._common_ import _session_dir,save_state
 from supervisor_worker.main import create_graph
-from supervisor_worker._state_ import AgentState
+from supervisor_worker.local_states._state_ import AgentState
 
 
 def main() -> None:
@@ -31,8 +31,13 @@ def main() -> None:
 
     initial_state: AgentState = {
         "messages": [],
+        "ba_output": None,
+        "supervisor_feedback":None,
         "input": _data_file(),
         "output_dir": _session_dir(output_dir),
+        "iteration_count": 0,
+        "max_iterations":3,
+        "verdict":None
     }
 
     graph = create_graph()

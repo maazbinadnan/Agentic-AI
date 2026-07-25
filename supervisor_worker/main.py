@@ -2,8 +2,10 @@
 
 from pathlib import Path
 from langgraph.graph import StateGraph, START, END
-from supervisor_worker._state_ import AgentState
-from supervisor_worker.agents.business_analyst import generate
+from supervisor_worker.local_states._state_ import AgentState
+import supervisor_worker.agents.business_analyst as ba
+import supervisor_worker.agents.supervisor as supervisor
+import supervisor_worker.agents.routing as router
 from global_layer.functions import _draw_graph
 
 
@@ -12,11 +14,22 @@ def create_graph(checkpointer=None):
     workflow = StateGraph(AgentState)
 
     # ── Register nodes ────────────────────────────────────────────────────
-    workflow.add_node("business_analyst", generate)
+    workflow.add_node("business_analyst", ba.generate)
+    workflow.add_node("supervisor", supervisor.generate)
 
     # ── Edges ────────────────────────────────────────────────────────────
     workflow.add_edge(START, "business_analyst")
-    workflow.add_edge("business_analyst", END)
+    workflow.add_edge("business_analyst", "supervisor")
+
+    # ── Conditional edges based on supervisor review ─────────────────────
+    workflow.add_conditional_edges(
+        "supervisor",
+        router.route,
+        {
+            "business_analyst": "business_analyst",
+            "FINISH": END,
+        },
+    )
 
     return workflow.compile(checkpointer=checkpointer)
 
