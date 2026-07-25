@@ -1,20 +1,23 @@
 import os
+import json
+from pathlib import Path
+from typing import cast
+from langchain.messages import SystemMessage, HumanMessage, AIMessage
+
 from supervisor_worker._common_ import llm, load_prompt
 from supervisor_worker.local_states._state_ import AgentState
 from global_layer.ba_state import RequirementsPipelineOutput
 from global_layer.functions import _save__requirement_files
 
-from langchain.messages import SystemMessage, HumanMessage, AIMessage
-from typing import cast
-import json
-
 __all__ = ["generate"]
 
 def generate(state: AgentState):
-    iteration = state.get("iteration_count", 0)
-    iter_dir = os.path.join(state["output_dir"], str(iteration))
+    iterations = state.get("iterations", {})
+    iteration = iterations.get("ba", 0)
 
-    #load system prompt
+    # Phase-scoped iteration folder (e.g. outputs/run_1/01_business_analysis/iter_0)
+    phase_dir = Path(state["output_dir"]) / "01_business_analysis" / f"iter_{iteration}"
+
     system_prompt = load_prompt("business_analyst.md")
     input_val = state.get("input")
     assert input_val is not None
@@ -24,15 +27,21 @@ def generate(state: AgentState):
         HumanMessage(content=f"Requirements Data:\n{input_val}"),
     ]
 
-    # Append supervisor feedback if this is a revision iteration
-    feedback = state.get("supervisor_feedback")
+    # Include previous output and cumulative feedback history if revising
+    feedback_history = state.get("feedback_history", [])
+    ba_reviews = [log for log in feedback_history if log.get("phase") == "ba"]
     prev_output = state.get("ba_output")
-    if feedback and prev_output:
+
+    if ba_reviews and prev_output:
+        feedback_summary = "\n---\n".join(
+            f"Review Iteration {idx}:\nFeedback: {rev.get('feedback')}\nIssues: {rev.get('issues')}"
+            for idx, rev in enumerate(ba_reviews)
+        )
         messages.append(
             HumanMessage(
                 content=(
                     f"Your Previous Output:\n{json.dumps(prev_output, indent=2)}\n\n"
-                    f"Supervisor Feedback to apply:\n{feedback}"
+                    f"Supervisor Feedback History to apply:\n{feedback_summary}"
                 )
             )
         )
@@ -42,8 +51,8 @@ def generate(state: AgentState):
     structured_llm = llm.with_structured_output(RequirementsPipelineOutput)
     response = cast(RequirementsPipelineOutput, structured_llm.invoke(messages))
 
-    # Save output to iteration folder (e.g., test_run_1/0)
-    _save__requirement_files(response, output_dir=iter_dir)
+    # Save output to phase iteration folder
+    _save__requirement_files(response, output_dir=str(phase_dir))
 
     return {
         "ba_output": response.model_dump(),

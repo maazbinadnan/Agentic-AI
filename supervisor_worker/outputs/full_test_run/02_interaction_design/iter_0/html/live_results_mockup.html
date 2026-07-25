@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Results Ticker</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .ticker {
+      background: var(--gray-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .match-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .match-status {
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+    .match-score {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+    .event-list {
+      font-size: 0.95rem;
+      color: #6c757d;
+      margin-top: 8px;
+    }
+    .error {
+      color: var(--error);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Live Results for Your Teams</h2>
+    <div class="ticker">
+      <div class="match-title">Barcelona vs Real Madrid</div>
+      <div class="match-status">In Progress - 65'</div>
+      <div class="match-score">2 - 1</div>
+      <div class="event-list">
+        <div>60' Goal - Barcelona (Messi)</div>
+        <div>45' Yellow Card - Real Madrid (Ramos)</div>
+        <div>30' Goal - Real Madrid (Benzema)</div>
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="match-title">Manchester United vs Liverpool</div>
+      <div class="match-status">Upcoming - 20:00</div>
+      <div class="match-score">-</div>
+      <div class="event-list">
+        <div>Match starts at 20:00</div>
+      </div>
+    </div>
+    <div class="error" style="display:none;">No live matches for your favorite teams.</div>
+  </div>
+</body>
+</html>

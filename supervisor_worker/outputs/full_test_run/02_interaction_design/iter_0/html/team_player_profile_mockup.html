@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team & Player Profile</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .profile-section {
+      margin-bottom: 32px;
+    }
+    .profile-header {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .profile-details {
+      font-size: 1rem;
+      color: #6c757d;
+      margin-bottom: 8px;
+    }
+    .player-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .player-card {
+      background: var(--gray-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px;
+      width: 160px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .player-card.selected {
+      border: 2px solid var(--primary);
+      background: #e7f1ff;
+    }
+    .error {
+      color: var(--error);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Team & Player Profile</h2>
+    <section class="profile-section">
+      <div class="profile-header">FC Barcelona</div>
+      <div class="profile-details">Founded: 1899 | Stadium: Camp Nou | Coach: Xavi Hernandez</div>
+      <div class="profile-details">League: La Liga | Country: Spain</div>
+      <div class="profile-details">Recent Achievements: La Liga Champions 2024</div>
+      <div class="player-list">
+        <div class="player-card selected">Lionel Messi</div>
+        <div class="player-card">Pedri</div>
+        <div class="player-card">Ter Stegen</div>
+        <div class="player-card">Lewandowski</div>
+      </div>
+    </section>
+    <section class="profile-section">
+      <div class="profile-header">Player Profile: Lionel Messi</div>
+      <div class="profile-details">Position: Forward | Age: 36 | Nationality: Argentina</div>
+      <div class="profile-details">Goals this season: 30 | Assists: 12</div>
+      <div class="profile-details">Bio: Widely regarded as one of the greatest footballers of all time.</div>
+    </section>
+    <div class="error" style="display:none;">No details available for this team/player.</div>
+  </div>
+</body>
+</html>

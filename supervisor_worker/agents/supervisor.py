@@ -1,109 +1,81 @@
-from supervisor_worker._common_ import llm,load_prompt
+import json
+from pathlib import Path
+from typing import cast
+from langchain.messages import SystemMessage, HumanMessage
+
+from supervisor_worker._common_ import llm, load_prompt
 from supervisor_worker.local_states._state_ import AgentState
 from supervisor_worker.local_states.supervisor_state import SupervisorReview
-from pathlib import Path
-
-from langchain.messages import SystemMessage, HumanMessage
-from typing import cast
-import json
+from global_layer.functions import _save_supervisor_review
 
 __all__ = ["generate"]
 
-import os
+# Registry mapping for evaluated phases
+EVAL_CONFIG = {
+    "ba": {
+        "prompt": "coordinator_ba.md",
+        "subfolder": "01_business_analysis",
+        "get_message": lambda state: f"User Requirement:\n{state.get('input')}\n\nBA Output:\n{json.dumps(state.get('ba_output'), indent=2)}",
+    },
+    "ixd": {
+        "prompt": "coordinator_ixd.md",
+        "subfolder": "02_interaction_design",
+        "get_message": lambda state: (
+            f"User Stories:\n{json.dumps((state.get('ba_output') or {}).get('user_stories', []), indent=2)}\n\n"
+            f"IXD Output:\n{json.dumps(state.get('ixd_output'), indent=2)}"
+        ),
+    },
+}
+
 
 def generate(state: AgentState):
-    iteration = state.get("iteration_count", 0)
     phase = state.get("phase", "ba")
-    iter_dir = os.path.join(state["output_dir"], str(iteration))
-    
-    #load system prompt based on the phase
-    if phase == "ba":
-        system_prompt = load_prompt("coordinator_ba.md")
-        ba_output = state.get("ba_output")
-        # Rubric prompt
-        human_msg = f"User Requirement:\n{state['input']}\n\nBA Output:\n{json.dumps(ba_output)}"
-    else:
-        system_prompt = load_prompt("coordinator_ixd.md")
-        ixd_output = state.get("ixd_output")
-        # Rubric prompt
-        ba_output = state.get("ba_output")
-        # Safely get the list of user stories (defaults to [] if missing)
-        assert ba_output is not None
-        user_stories = ba_output.get("user_stories", [])
-        human_msg = f"User Stories:\n{json.dumps(user_stories)}\n\nIXD Output:\n{json.dumps(ixd_output)}"
+    if phase not in EVAL_CONFIG:
+        phase = "ba"
+
+    config = EVAL_CONFIG[phase]
+    iterations = dict(state.get("iterations", {"ba": 0, "ixd": 0}))
+    current_iter = iterations.get(phase, 0)
+
+    # Output directory for supervisor review file
+    iter_dir = Path(state["output_dir"]) / config["subfolder"] / f"iter_{current_iter}"
+
+    system_prompt = load_prompt(config["prompt"])
+    human_msg = config["get_message"](state)
 
     structured_llm = llm.with_structured_output(SupervisorReview)
+    review = cast(
+        SupervisorReview,
+        structured_llm.invoke([
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=human_msg)
+        ])
+    )
 
-    review = cast(SupervisorReview, structured_llm.invoke([
-        SystemMessage(content=system_prompt),
-        HumanMessage(content=human_msg)
-    ]))
-    _save_supervisor_review(review, output_dir=iter_dir)
+    # Save formatted review using shared global function
+    _save_supervisor_review(review, output_dir=str(iter_dir))
 
-    #set iteration if phase changes from BA to IxD
-    if review.phase != phase and review.phase != "END":
-        iteration = 0 
-    else:
-        iteration = iteration + 1
-
+    # Format feedback text
     issues_formatted = "\n".join(f"- {issue}" for issue in review.issues)
+    combined_feedback = f"{review.feedback}\n\nIssues Identified:\n{issues_formatted}" if review.issues else review.feedback
 
-    # Combine feedback text and formatted issues list
-    if review.issues:
-        combined_feedback = f"{review.feedback}\n\nIssues Identified:\n{issues_formatted}"
-    else:
-        combined_feedback = review.feedback
+    # Construct feedback history entry
+    new_log = {
+        "phase": phase,
+        "iteration": current_iter,
+        "verdict": review.verdict,
+        "score": review.score,
+        "issues": review.issues,
+        "feedback": review.feedback,
+    }
+
+    # Increment per-phase iteration counter
+    iterations[phase] = current_iter + 1
 
     return {
         "verdict": review.verdict,
         "supervisor_feedback": combined_feedback,
+        "feedback_history": [new_log],
         "phase": review.phase,
-        "iteration_count": iteration,
+        "iterations": iterations,
     }
-def _save_supervisor_review(review, output_dir: str = "output", filename: str = "supervisor_review.md") -> str:
-    """Saves the Supervisor's review/feedback into a formatted Markdown file.
-    
-    Parameters
-    ----------
-    review : SupervisorReview, dict, or str
-        The output from the Supervisor node.
-    output_dir : str
-        Target output directory.
-    filename : str
-        Name of the file to save (default: "supervisor_review.md").
-    """
-    out_path = Path(output_dir)
-    out_path.mkdir(parents=True, exist_ok=True)
-    file_path = out_path / filename
-
-    lines = ["# Supervisor Review & Feedback\n"]
-
-    if hasattr(review, "model_dump") or hasattr(review, "dict"):
-        data = review.model_dump() if hasattr(review, "model_dump") else review.dict()
-
-        verdict = data.get("verdict", "N/A")
-        lines.append(f"## Overall Verdict: **{verdict}**\n")
-
-        score = data.get("score")
-        if score is not None:
-            lines.append(f"- **Quality Score:** {score}/5")
-
-        lines.append("\n---\n")
-
-        issues = data.get("issues")
-        if issues:
-            lines.append("## Issues Found:\n")
-            for item in issues:
-                lines.append(f"- {item}")
-            lines.append("")
-
-        feedback = data.get("feedback")
-        if feedback:
-            lines.append("## Feedback Summary:\n")
-            lines.append(feedback)
-    else:
-        lines.append(str(review))
-
-    file_path.write_text("\n".join(lines), encoding="utf-8")
-    print(f" Successfully saved supervisor review to '{file_path.resolve()}'")
-    return str(file_path)

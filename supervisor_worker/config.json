@@ -1,4 +1,4 @@
 {
-    "prompts_dir": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\supervisor_worker\\prompts",
-    "state_dir": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\supervisor_worker\\states"
+    "prompts_dir": "prompts",
+    "state_dir": "states"
 }

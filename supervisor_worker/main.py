@@ -2,27 +2,30 @@
 
 from pathlib import Path
 from langgraph.graph import StateGraph, START, END
-from supervisor_worker.local_states._state_ import AgentState,OutputState
+from supervisor_worker.local_states._state_ import AgentState, OutputState
 import supervisor_worker.agents.business_analyst as ba
 import supervisor_worker.agents.interaction_designer as ixd
 import supervisor_worker.agents.supervisor as supervisor
+import supervisor_worker.agents.compile_deliverables as compiler
 import supervisor_worker.agents.routing as router
 from global_layer.functions import _draw_graph
 
 
 def create_graph(checkpointer=None):
     """Build and compile the Supervisor-Worker workflow graph."""
-    workflow = StateGraph(AgentState,output_schema=OutputState)
+    workflow = StateGraph(AgentState, output_schema=OutputState)
 
     # ── Register nodes ────────────────────────────────────────────────────
     workflow.add_node("business_analyst", ba.generate)
     workflow.add_node("interaction_designer", ixd.generate)
     workflow.add_node("supervisor", supervisor.generate)
+    workflow.add_node("compile_deliverables", compiler.generate)
 
     # ── Edges ────────────────────────────────────────────────────────────
     workflow.add_edge(START, "business_analyst")
     workflow.add_edge("business_analyst", "supervisor")
     workflow.add_edge("interaction_designer", "supervisor")
+    workflow.add_edge("compile_deliverables", END)
 
     # ── Conditional edges based on supervisor review ─────────────────────
     workflow.add_conditional_edges(
@@ -31,7 +34,7 @@ def create_graph(checkpointer=None):
         {
             "business_analyst": "business_analyst",
             "interaction_designer": "interaction_designer",
-            "FINISH": END,
+            "compile_deliverables": "compile_deliverables",
         },
     )
 

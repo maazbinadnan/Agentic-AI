@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personalized News Feed</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .news-card {
+      background: var(--gray-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+    }
+    .news-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .news-meta {
+      font-size: 0.95rem;
+      color: #6c757d;
+    }
+    .news-content {
+      font-size: 1rem;
+    }
+    .share-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .share-menu {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 8px;
+      z-index: 10;
+    }
+    .share-menu.active {
+      display: block;
+    }
+    .error {
+      color: var(--error);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  </style>
+  <script>
+    function toggleShareMenu(id) {
+      var menu = document.getElementById('share-menu-' + id);
+      menu.classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>News About Your Favorite Teams</h2>
+    <div class="news-list">
+      <article class="news-card">
+        <div class="news-title">Barcelona Wins La Liga</div>
+        <div class="news-meta">FC Barcelona | 2 hours ago</div>
+        <div class="news-content">Barcelona clinched the La Liga title after a thrilling match against Real Madrid.</div>
+        <button class="share-btn" onclick="toggleShareMenu(1)">Share</button>
+        <div class="share-menu" id="share-menu-1">
+          <div>Share to:</div>
+          <button class="btn" style="background:#4267B2; color:#fff; margin:4px 0;">Facebook</button>
+          <button class="btn" style="background:#1DA1F2; color:#fff; margin:4px 0;">Twitter/X</button>
+          <button class="btn" style="background:#25D366; color:#fff; margin:4px 0;">WhatsApp</button>
+          <button class="btn" style="background:#E1306C; color:#fff; margin:4px 0;">Instagram</button>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-title">Manchester United Signs New Player</div>
+        <div class="news-meta">Manchester United | 1 day ago</div>
+        <div class="news-content">Manchester United has announced the signing of a promising young midfielder.</div>
+        <button class="share-btn" onclick="toggleShareMenu(2)">Share</button>
+        <div class="share-menu" id="share-menu-2">
+          <div>Share to:</div>
+          <button class="btn" style="background:#4267B2; color:#fff; margin:4px 0;">Facebook</button>
+          <button class="btn" style="background:#1DA1F2; color:#fff; margin:4px 0;">Twitter/X</button>
+          <button class="btn" style="background:#25D366; color:#fff; margin:4px 0;">WhatsApp</button>
+          <button class="btn" style="background:#E1306C; color:#fff; margin:4px 0;">Instagram</button>
+        </div>
+      </article>
+    </div>
+    <div class="error" style="display:none;">No news available for your selected teams.</div>
+  </div>
+</body>
+</html>

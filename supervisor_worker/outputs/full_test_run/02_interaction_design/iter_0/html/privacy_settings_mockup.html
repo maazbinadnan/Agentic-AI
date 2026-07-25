@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy Settings & GDPR Control</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 24px;
+    }
+    .consent-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .consent-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .consent-toggle input[type="checkbox"] {
+      accent-color: var(--primary);
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+    .danger-btn {
+      background: var(--error);
+      color: #fff;
+      margin-top: 8px;
+    }
+    .export-btn {
+      background: var(--success);
+      color: #fff;
+      margin-top: 8px;
+    }
+    .error {
+      color: var(--error);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Privacy Settings</h2>
+    <div class="section">
+      <div style="font-weight:600;">GDPR Consent</div>
+      <div class="consent-group">
+        <div class="consent-toggle">
+          <input type="checkbox" id="analytics" checked>
+          <label for="analytics">Allow analytics tracking</label>
+        </div>
+        <div class="consent-toggle">
+          <input type="checkbox" id="personalization" checked>
+          <label for="personalization">Allow personalized content</label>
+        </div>
+        <div class="consent-toggle">
+          <input type="checkbox" id="marketing">
+          <label for="marketing">Allow marketing communications</label>
+        </div>
+      </div>
+      <button class="btn">Save Consent Preferences</button>
+    </div>
+    <div class="section">
+      <button class="danger-btn btn">Request Data Deletion</button>
+      <button class="export-btn btn">Request Data Export</button>
+    </div>
+    <div class="error" style="display:none;">Consent update failed. Please try again.</div>
+  </div>
+</body>
+</html>

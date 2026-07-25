@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Offline & Sync Status</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+    }
+    .offline-banner {
+      background: #fff3f3;
+      color: var(--error);
+      border: 1px solid var(--error);
+      border-radius: 4px;
+      padding: 12px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .sync-status {
+      background: var(--gray-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 12px;
+      margin-bottom: 16px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+    .content-section {
+      margin-bottom: 24px;
+    }
+    .error {
+      color: var(--error);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="offline-banner">You are offline. Some features may be unavailable.</div>
+    <div class="sync-status">Last synced: 2024-06-01 14:22 | Sync pending...</div>
+    <div class="content-section">
+      <div style="font-weight:600;">Previously Loaded News</div>
+      <ul>
+        <li>Barcelona Wins La Liga</li>
+        <li>Manchester United Signs New Player</li>
+      </ul>
+    </div>
+    <div class="content-section">
+      <div style="font-weight:600;">Team & Player Info</div>
+      <ul>
+        <li>FC Barcelona - Founded: 1899</li>
+        <li>Lionel Messi - Goals: 30</li>
+      </ul>
+    </div>
+    <div class="content-section">
+      <div style="font-weight:600;">Your Preferences</div>
+      <ul>
+        <li>Favorite Team: FC Barcelona</li>
+        <li>Sports Channel: ESPN</li>
+      </ul>
+    </div>
+    <div class="error" style="display:none;">No offline data available.</div>
+  </div>
+</body>
+</html>

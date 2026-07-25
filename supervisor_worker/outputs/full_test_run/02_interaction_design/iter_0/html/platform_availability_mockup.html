@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Platform Availability</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      font-family: var(--font);
+      background: var(--gray-light);
+      color: var(--gray-dark);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 24px;
+    }
+    .platform-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .platform-link {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .feature-list {
+      text-align: left;
+      margin: 0 auto;
+      max-width: 300px;
+      font-size: 0.95rem;
+      color: #6c757d;
+    }
+    .error {
+      color: var(--error);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Download Football App</h2>
+    <div class="platform-links">
+      <a class="platform-link" href="#">Download for Android</a>
+      <a class="platform-link" href="#">Download for iOS</a>
+    </div>
+    <div class="feature-list">
+      <div><strong>Feature Parity:</strong></div>
+      <ul>
+        <li>Personalized news & results</li>
+        <li>Live match ticker</li>
+        <li>Notifications & privacy controls</li>
+        <li>Support & feedback</li>
+      </ul>
+    </div>
+    <div class="error" style="display:none;">App not available for your platform.</div>
+  </div>
+</body>
+</html>

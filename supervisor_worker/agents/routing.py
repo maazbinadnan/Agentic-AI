@@ -2,25 +2,28 @@ from supervisor_worker.local_states._state_ import AgentState
 
 
 def route(state: AgentState) -> str:
-    iteration = state.get("iteration_count", 0)
-    max_iterations = state.get("max_iterations", 3)
+    iterations = state.get("iterations", {})
+    max_iter_per_phase = state.get("max_iterations_per_phase", 3)
     verdict = state.get("verdict", "APPROVE")
     phase = state.get("phase", "ba")
     has_ixd_output = bool(state.get("ixd_output"))
 
-    # 1. Safety valve: stop loop if max iterations reached
-    if iteration >= max_iterations:
-        print(f"[Router] Safety valve: Max iterations ({max_iterations}) reached for phase '{phase}'.")
+    # Determine current iteration count for the active phase
+    current_iter = iterations.get(phase if phase in ("ba", "ixd") else "ixd", 0)
+
+    # 1. Safety valve: check iteration limits per phase
+    if current_iter >= max_iter_per_phase:
+        print(f"[Router] Safety valve: Max iterations ({max_iter_per_phase}) reached for phase '{phase}'.")
         if not has_ixd_output:
             print("[Router] Advancing to Interaction Designer.")
             return "interaction_designer"
-        print("[Router] Finishing workflow.")
-        return "FINISH"
+        print("[Router] Advancing to Deliverables Compiler.")
+        return "compile_deliverables"
 
-    # 2. Explicit END phase check
-    if phase in ("END", "finish"):
-        print("[Router] Workflow complete.")
-        return "FINISH"
+    # 2. Explicit END / Completed phase check
+    if phase in ("END", "finish", "completed"):
+        print("[Router] Workflow approved. Compiling deliverables.")
+        return "compile_deliverables"
 
     # 3. BA Phase (Before IxD has produced output)
     if not has_ixd_output:
@@ -35,5 +38,5 @@ def route(state: AgentState) -> str:
         print("[Router] Routing to Interaction Designer for revisions.")
         return "interaction_designer"
 
-    print("[Router] Interaction Designer approved! Finishing workflow.")
-    return "FINISH"
+    print("[Router] IxD approved! Advancing to Deliverables Compiler.")
+    return "compile_deliverables"

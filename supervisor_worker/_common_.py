@@ -14,7 +14,8 @@ config_path = Path(__file__).parent / "config.json"
 if config_path.exists():
     with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
-    PROMPTS_DIR = Path(config["prompts_dir"])
+    p_dir = Path(config["prompts_dir"])
+    PROMPTS_DIR = p_dir if p_dir.is_absolute() else (Path(__file__).parent / p_dir).resolve()
 else:
     PROMPTS_DIR = Path(__file__).parent / "prompts"
 
@@ -31,6 +32,9 @@ def _session_dir(run_number:str) -> str:
     os.makedirs(d, exist_ok=True)
     return d
 
+from functools import lru_cache
+
+@lru_cache(maxsize=32)
 def load_prompt(prompt_name: str) -> str:
     """Load a prompt template from the ``prompts/`` directory."""
     prompt_path = os.path.join(PROMPTS_DIR, prompt_name)
