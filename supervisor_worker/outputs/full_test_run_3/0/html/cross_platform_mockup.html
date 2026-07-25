@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cross-Platform Download</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 32px 24px;
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+    h2 {
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .platform-btn {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 8px 0;
+      width: 80%;
+    }
+    .info {
+      color: #6c757d;
+      font-size: 0.95rem;
+      margin-top: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Download Football Fan App</h2>
+    <button class="platform-btn">Download for Android</button>
+    <button class="platform-btn">Download for iOS</button>
+    <div class="info">Available and fully functional on both Android and iOS platforms.</div>
+  </div>
+</body>
+</html>

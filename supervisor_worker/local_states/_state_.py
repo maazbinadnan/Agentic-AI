@@ -5,6 +5,7 @@ import operator
 class AgentState(TypedDict):
     messages: Annotated[List[AnyMessage], operator.add]
     ba_output: Optional[dict]
+    ixd_output:Optional[dict]
     supervisor_feedback: Optional[str]
     output_dir: str    
     input: str

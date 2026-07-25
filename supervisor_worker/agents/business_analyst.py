@@ -1,7 +1,7 @@
 import os
 from supervisor_worker._common_ import llm, load_prompt
 from supervisor_worker.local_states._state_ import AgentState
-from global_layer.state import RequirementsPipelineOutput
+from global_layer.ba_state import RequirementsPipelineOutput
 from global_layer.functions import _save__requirement_files
 
 from langchain.messages import SystemMessage, HumanMessage, AIMessage
@@ -14,6 +14,7 @@ def generate(state: AgentState):
     iteration = state.get("iteration_count", 0)
     iter_dir = os.path.join(state["output_dir"], str(iteration))
 
+    #load system prompt
     system_prompt = load_prompt("business_analyst.md")
     input_val = state.get("input")
     assert input_val is not None

@@ -15,11 +15,23 @@ def generate(state: AgentState):
     iteration = state.get("iteration_count", 0)
     phase = state.get("phase", "ba")
     iter_dir = os.path.join(state["output_dir"], str(iteration))
-    ba_output = state.get("ba_output")
     
-    system_prompt = load_prompt("coordinator_ba.md") # Rubric prompt
-    human_msg = f"User Requirement:\n{state['input']}\n\nBA Output:\n{json.dumps(ba_output)}"
-    
+    #load system prompt based on the phase
+    if phase == "ba":
+        system_prompt = load_prompt("coordinator_ba.md")
+        ba_output = state.get("ba_output")
+        # Rubric prompt
+        human_msg = f"User Requirement:\n{state['input']}\n\nBA Output:\n{json.dumps(ba_output)}"
+    else:
+        system_prompt = load_prompt("coordinator_ixd.md")
+        ixd_output = state.get("ixd_output")
+        # Rubric prompt
+        ba_output = state.get("ba_output")
+        # Safely get the list of user stories (defaults to [] if missing)
+        assert ba_output is not None
+        user_stories = ba_output.get("user_stories", [])
+        human_msg = f"User Stories:\n{json.dumps(user_stories)}\n\nIXD Output:\n{json.dumps(ixd_output)}"
+
     structured_llm = llm.with_structured_output(SupervisorReview)
 
     review = cast(SupervisorReview, structured_llm.invoke([
@@ -33,14 +45,21 @@ def generate(state: AgentState):
         iteration = 0 
     else:
         iteration = iteration + 1
-    
+
+    issues_formatted = "\n".join(f"- {issue}" for issue in review.issues)
+
+    # Combine feedback text and formatted issues list
+    if review.issues:
+        combined_feedback = f"{review.feedback}\n\nIssues Identified:\n{issues_formatted}"
+    else:
+        combined_feedback = review.feedback
+
     return {
         "verdict": review.verdict,
-        "supervisor_feedback": "\n".join(review.feedback),
-        "phase" : review.phase,
-        "iteration_count": iteration
+        "supervisor_feedback": combined_feedback,
+        "phase": review.phase,
+        "iteration_count": iteration,
     }
-
 def _save_supervisor_review(review, output_dir: str = "output", filename: str = "supervisor_review.md") -> str:
     """Saves the Supervisor's review/feedback into a formatted Markdown file.
     

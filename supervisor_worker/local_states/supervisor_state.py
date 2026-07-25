@@ -2,7 +2,7 @@ from pydantic import BaseModel, Field
 from typing import List, Literal
 
 class SupervisorReview(BaseModel):
-    verdict: Literal["APPROVE", "REVISE"]
+    verdict: Literal["APPROVED_BA", "REVISE","APPROVED"]
     score: int = Field(ge=1, le=5, description="Overall quality score: 1=poor, 5=excellent")
     phase: Literal["ba","ixd"]  = Field(
         description= "the phase that should be executed based on the review status"
