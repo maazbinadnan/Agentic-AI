@@ -2,15 +2,13 @@ from pydantic import BaseModel, Field
 from typing import List, Literal
 
 class SupervisorReview(BaseModel):
-    verdict: Literal["APPROVE", "REVISE"] = Field(
-        description="Return 'APPROVE' if quality standards are met, otherwise 'REVISE'"
+    verdict: Literal["APPROVE", "REVISE"]
+    score: int = Field(ge=1, le=5, description="Overall quality score: 1=poor, 5=excellent")
+    phase: Literal["ba","ixd"]  = Field(
+        description= "the phase that should be executed based on the review status"
     )
-    completeness_score: str = Field(
-        description="Rating from 1-10 on coverage of user needs, functional and non-functional requirements and if anything is missing"
+    issues: List[str] = Field(
+        default_factory=list,
+        description="Specific issues found, each citing an ID (UN-XXX, FR-XXX, US-XXX, screen name, etc). Empty if approved with no notes."
     )
-    traceability_passed: bool = Field(
-        description="True if all User Needs are mapped to FRs and User Stories"
-    )
-    actionable_feedback: List[str] = Field(
-        description="List of specific, actionable revision requests for the BA if verdict is REVISE"
-    )
+    feedback: str = Field(description="Detailed, actionable feedback. Cite specific IDs. If approving, briefly note strengths.")

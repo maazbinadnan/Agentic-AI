@@ -35,6 +35,7 @@ def main() -> None:
         "supervisor_feedback":None,
         "input": _data_file(),
         "output_dir": _session_dir(output_dir),
+        "phase" : "ba",
         "iteration_count": 0,
         "max_iterations":3,
         "verdict":None

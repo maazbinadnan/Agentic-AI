@@ -13,10 +13,11 @@ import os
 
 def generate(state: AgentState):
     iteration = state.get("iteration_count", 0)
+    phase = state.get("phase", "ba")
     iter_dir = os.path.join(state["output_dir"], str(iteration))
     ba_output = state.get("ba_output")
     
-    system_prompt = load_prompt("coordinator.md") # Rubric prompt
+    system_prompt = load_prompt("coordinator_ba.md") # Rubric prompt
     human_msg = f"User Requirement:\n{state['input']}\n\nBA Output:\n{json.dumps(ba_output)}"
     
     structured_llm = llm.with_structured_output(SupervisorReview)
@@ -25,13 +26,19 @@ def generate(state: AgentState):
         SystemMessage(content=system_prompt),
         HumanMessage(content=human_msg)
     ]))
-
     _save_supervisor_review(review, output_dir=iter_dir)
 
+    #set iteration if phase changes from BA to IxD
+    if review.phase != phase and review.phase != "END":
+        iteration = 0 
+    else:
+        iteration = iteration + 1
+    
     return {
         "verdict": review.verdict,
-        "supervisor_feedback": "\n".join(review.actionable_feedback),
-        "iteration_count": iteration + 1
+        "supervisor_feedback": "\n".join(review.feedback),
+        "phase" : review.phase,
+        "iteration_count": iteration
     }
 
 def _save_supervisor_review(review, output_dir: str = "output", filename: str = "supervisor_review.md") -> str:
@@ -39,7 +46,7 @@ def _save_supervisor_review(review, output_dir: str = "output", filename: str = 
     
     Parameters
     ----------
-    review : Pydantic BaseModel, dict, or str
+    review : SupervisorReview, dict, or str
         The output from the Supervisor node.
     output_dir : str
         Target output directory.
@@ -58,21 +65,21 @@ def _save_supervisor_review(review, output_dir: str = "output", filename: str = 
         verdict = data.get("verdict", "N/A")
         lines.append(f"## Overall Verdict: **{verdict}**\n")
 
-        if "quality_score" in data or "completeness_score" in data:
-            score = data.get("quality_score") or data.get("completeness_score")
-            lines.append(f"- **Quality Score:** {score}/10")
-
-        if "traceability_passed" in data:
-            lines.append(f"- **Traceability Passed:** {data['traceability_passed']}")
+        score = data.get("score")
+        if score is not None:
+            lines.append(f"- **Quality Score:** {score}/5")
 
         lines.append("\n---\n")
 
-        feedback = data.get("actionable_feedback") or data.get("feedback_summary") or data.get("feedback")
-        if isinstance(feedback, list):
-            lines.append("## Actionable Feedback Points:\n")
-            for item in feedback:
+        issues = data.get("issues")
+        if issues:
+            lines.append("## Issues Found:\n")
+            for item in issues:
                 lines.append(f"- {item}")
-        elif isinstance(feedback, str):
+            lines.append("")
+
+        feedback = data.get("feedback")
+        if feedback:
             lines.append("## Feedback Summary:\n")
             lines.append(feedback)
     else:
