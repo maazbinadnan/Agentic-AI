@@ -3,10 +3,10 @@ from pathlib import Path
 from typing import cast
 from langchain.messages import SystemMessage, HumanMessage
 
-from supervisor_worker._common_ import llm, load_prompt
+from supervisor_worker._common_ import llm, load_prompt,_save_supervisor_review
 from supervisor_worker.local_states._state_ import AgentState
 from supervisor_worker.local_states.supervisor_state import SupervisorReview
-from global_layer.functions import _save_supervisor_review
+from global_layer.functions import token_counter
 
 __all__ = ["generate"]
 
@@ -51,11 +51,7 @@ def generate(state: AgentState):
 
     if isinstance(response, dict):
         review = response["parsed"]
-        raw_msg = response["raw"]
-        usage = getattr(raw_msg, "usage_metadata", {}) or {}
-        in_tokens = usage.get("input_tokens", 0)
-        out_tokens = usage.get("output_tokens", 0)
-        tot_tokens = usage.get("total_tokens", in_tokens + out_tokens)
+        in_tokens,out_tokens,tot_tokens = token_counter(response,"supervisor")
         print(f"[Supervisor Usage Phase '{phase}' Iter {current_iter}] Input: {in_tokens}, Output: {out_tokens}, Total: {tot_tokens}")
     else:
         review = cast(SupervisorReview, response)
@@ -80,6 +76,8 @@ def generate(state: AgentState):
 
     # Increment per-phase iteration counter
     iterations[phase] = current_iter + 1
+    print(f"[Supervisor Worker] supervisor verdict : {review.verdict} for current phase {phase}")
+
 
     return {
         "verdict": review.verdict,

@@ -7,7 +7,7 @@ from langchain.messages import SystemMessage, HumanMessage, AIMessage
 from supervisor_worker._common_ import llm, load_prompt
 from supervisor_worker.local_states._state_ import AgentState
 from global_layer.ixd_state import IxdPipelineOutput
-from global_layer.functions import _save_ixd_files
+from global_layer.functions import _save_ixd_files,token_counter
 
 
 def generate(state: AgentState):
@@ -30,37 +30,42 @@ def generate(state: AgentState):
         HumanMessage(content=f"User Stories Data:\n{json.dumps(user_stories, indent=2)}"),
     ]
 
-    # Include previous output and cumulative feedback history if revising
+    # Targeted Feedback Context Trimming & Surgical Item Revision
     feedback_history = state.get("feedback_history", [])
     ixd_reviews = [log for log in feedback_history if log.get("phase") == "ixd"]
     prev_output = state.get("ixd_output")
 
     if ixd_reviews and prev_output:
-        feedback_summary = "\n---\n".join(
-            f"Review Iteration {idx}:\nFeedback: {rev.get('feedback')}\nIssues: {rev.get('issues')}"
-            for idx, rev in enumerate(ixd_reviews)
-        )
+        latest_review = ixd_reviews[-1]
+        issues_list = latest_review.get("issues", [])
+        issues_text = "\n".join(f"- {issue}" for issue in issues_list) if issues_list else "None"
+        feedback_text = latest_review.get("feedback", "")
+
         messages.append(
             HumanMessage(
                 content=(
-                    f"Your Previous Output:\n{json.dumps(prev_output, indent=2)}\n\n"
-                    f"Supervisor Feedback History to apply:\n{feedback_summary}"
+                    f"### PREVIOUS GENERATED IXD OUTPUT:\n{json.dumps(prev_output, indent=2)}\n\n"
+                    f"### SUPERVISOR AUDIT FEEDBACK (LATEST ITERATION):\n"
+                    f"Verdict: {latest_review.get('verdict')}\n"
+                    f"Score: {latest_review.get('score')}/5\n"
+                    f"Feedback: {feedback_text}\n"
+                    f"Flagged Issues:\n{issues_text}\n\n"
+                    f"### SURGICAL REVISION INSTRUCTIONS:\n"
+                    f"1. Perform IN-PLACE PATCHING: Retain all valid, approved HTML mockup files, story mapping entries, and tradeoff decisions from your Previous Output.\n"
+                    f"2. Modify, add, or repair ONLY the specific HTML mockup files or mapping rows cited in the Flagged Issues above.\n"
+                    f"3. Do NOT discard or re-generate unflagged approved mockup screens."
                 )
             )
         )
 
-    print(f"[Supervisor Worker] Generating Interaction Designer Output (Iteration {iteration})...")
+    print(f"[Interaction Designer Worker] Generating Interaction Designer Output (Iteration {iteration})...")
 
     structured_llm = llm.with_structured_output(IxdPipelineOutput, include_raw=True)
     response = structured_llm.invoke(messages)
 
     if isinstance(response, dict):
         result = response["parsed"]
-        raw_msg = response["raw"]
-        usage = getattr(raw_msg, "usage_metadata", {}) or {}
-        in_tokens = usage.get("input_tokens", 0)
-        out_tokens = usage.get("output_tokens", 0)
-        tot_tokens = usage.get("total_tokens", in_tokens + out_tokens)
+        in_tokens,out_tokens,tot_tokens = token_counter(response,"Interaction Designer")
         print(f"[IxD Usage Iter {iteration}] Input: {in_tokens}, Output: {out_tokens}, Total: {tot_tokens}")
     else:
         result = cast(IxdPipelineOutput, response)
@@ -68,7 +73,7 @@ def generate(state: AgentState):
 
     # Save output to phase iteration folder
     _save_ixd_files(result, output_dir=str(phase_dir))
-
+    
     return {
         "ixd_output": result.model_dump(),
         "input_tokens": in_tokens,
