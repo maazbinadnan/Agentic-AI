@@ -3,7 +3,11 @@
   "python_path": ["."],
   "graphs": {
     "supervisor_worker": "./supervisor_worker/main.py:app",
-    "single_agent": "./single_agent/main.py:app"
+    "single_agent": "./single_agent/main.py:app",
+    "single_agent_final": "./single_agent_final/main.py:app",
+    "three_amigos": "./three_amigos/main.py:app",
+    "orchestrator_worker": "./orchestrator_worker/main.py:app",
+    "plan_and_execute": "./plan_and_execute/main.py:app"
   },
   "env": ".env"
 }

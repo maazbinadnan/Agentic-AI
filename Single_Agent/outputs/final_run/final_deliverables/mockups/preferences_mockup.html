@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preferences - Favorite Teams & Channels</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-error: #dc3545;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      min-height: 100vh;
+    }
+    .preferences-container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .teams-list, .channels-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .team-item, .channel-item {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+    }
+    .team-item.selected, .channel-item.selected {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .notification-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    .save-btn {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .save-btn:hover {
+      background: #0b5ed7;
+    }
+    .error-message {
+      color: var(--color-error);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="preferences-container">
+      <div class="section-title">Select Your Favorite Teams</div>
+      <div class="teams-list">
+        <div class="team-item selected">Manchester United</div>
+        <div class="team-item">Real Madrid</div>
+        <div class="team-item">FC Barcelona</div>
+        <div class="team-item">Liverpool</div>
+        <div class="team-item">Juventus</div>
+      </div>
+      <div class="section-title">Select Your Sports Channels</div>
+      <div class="channels-list">
+        <div class="channel-item selected">ESPN</div>
+        <div class="channel-item">Sky Sports</div>
+        <div class="channel-item">beIN Sports</div>
+        <div class="channel-item">Fox Sports</div>
+      </div>
+      <div class="notification-toggle">
+        <input type="checkbox" id="notif-toggle" checked>
+        <label for="notif-toggle">Enable real-time notifications for favorite teams</label>
+      </div>
+      <button class="save-btn">Save Preferences</button>
+      <!-- Error State Example -->
+      <div class="error-message" style="display:none;">Please select at least one team and one channel.</div>
+    </section>
+  </main>
+</body>
+</html>

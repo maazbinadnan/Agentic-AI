@@ -1,0 +1,178 @@
+{
+    "architecture_name": "Supervisor Worker",
+    "target_type": "Functional",
+    "deterministic_metrics": {
+        "total_requirements": 1,
+        "bdd_compliant_count": 1,
+        "bdd_compliance_percentage": 100.0,
+        "total_words": 762,
+        "avg_word_count_per_requirement": 762.0,
+        "ambiguous_words_found": 2,
+        "ambiguity_density_per_100_words": 0.26,
+        "redundancy_score": 0.0,
+        "ambiguous_terms_breakdown": {
+            "appropriate": 1,
+            "quickly": 1
+        }
+    },
+    "alignment_metrics": {
+        "alignments": [
+            {
+                "ground_truth_id": "1",
+                "ground_truth_text": "The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "2",
+                "ground_truth_text": "The app must allow users to view live results of their favorite teams in real time via a live ticker.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "3",
+                "ground_truth_text": "The app must allow users to view league tables and statistics from current as well as past seasons.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "4",
+                "ground_truth_text": "The app must provide users with detailed team and player information that can be accessed at any time.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "5",
+                "ground_truth_text": "As soon as a live match begins the app must allow users to access live stream links from providers such as DAZN or Sky as long as the broadcast rights are valid.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "6",
+                "ground_truth_text": "The app must allow users to register easily and log in directly from the start page.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "7",
+                "ground_truth_text": "The app must allow users to personalize their experience by following their favorite teams and leagues.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "8",
+                "ground_truth_text": "The app must allow users to select favorite teams and national teams to receive push notifications about news and updates.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "9",
+                "ground_truth_text": "The app must allow users to receive push notifications about news or results of their favorite teams.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "10",
+                "ground_truth_text": "The app must allow users to share news and match reports directly via social media.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "11",
+                "ground_truth_text": "The live ticker module must allow users to retrieve and display live data.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "12",
+                "ground_truth_text": "The app must allow users to access live match results through the user interface directly.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "13",
+                "ground_truth_text": "The user interface must allow users to view and manage content and modules together.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "14",
+                "ground_truth_text": "The registration system must allow the registration process to be carried out quickly and easily.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            },
+            {
+                "ground_truth_id": "15",
+                "ground_truth_text": "The notification system must allow the app to send users information about current events once activated.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Connection error."
+            }
+        ],
+        "recall": 0.0,
+        "precision": 0.0,
+        "macro_f1": 0.0
+    },
+    "g_eval_metrics": {
+        "evaluations": [],
+        "mean_invest_score": 0.0,
+        "mean_bdd_score": 0.0,
+        "mean_completeness_score": 0.0,
+        "mean_feasibility_score": 0.0,
+        "mean_overall_score": 0.0
+    },
+    "ixd_metrics": {
+        "total_mockup_files": 0,
+        "total_interactive_components": 0,
+        "buttons_count": 0,
+        "inputs_count": 0,
+        "containers_count": 0,
+        "story_mapping_coverage_percentage": 0.0,
+        "mapped_stories_count": 0,
+        "unmapped_stories_count": 1,
+        "tradeoffs_count": 0
+    },
+    "traceability_metrics": {
+        "total_user_needs": 0,
+        "total_functional_reqs": 0,
+        "total_user_stories": 0,
+        "matrix_entries_count": 0,
+        "matrix_completeness_percentage": 100.0
+    },
+    "system_metrics": {
+        "total_iterations": 3,
+        "ba_iterations": 2,
+        "ixd_iterations": 1,
+        "feedback_rounds_count": 0,
+        "verdict": "APPROVE"
+    }
+}
