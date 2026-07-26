@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News Feed</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+    }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray-light); color: var(--gray-dark); margin: 0; }
+    main { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { font-size: 1.5rem; margin-bottom: 24px; }
+    .news-list { display: flex; flex-direction: column; gap: 16px; }
+    .news-card { background: var(--gray-light); border: 1px solid var(--border); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; }
+    .news-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 8px; }
+    .news-meta { font-size: 0.95rem; color: #666; margin-bottom: 8px; }
+    .news-content { margin-bottom: 12px; }
+    .share-btn { background: var(--primary); color: #fff; border: none; border-radius: 4px; padding: 8px 16px; font-size: 0.95rem; cursor: pointer; align-self: flex-end; }
+    .share-modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0006; justify-content: center; align-items: center; }
+    .share-modal-content { background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px #0002; }
+    .share-options { display: flex; gap: 12px; margin-top: 16px; }
+    .share-option { background: var(--primary); color: #fff; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>News Feed</h1>
+    <div class="news-list">
+      <article class="news-card">
+        <div class="news-title">Manchester United wins 2-1 against Liverpool</div>
+        <div class="news-meta">Team: Manchester United | 2 hours ago</div>
+        <div class="news-content">In a thrilling match, Manchester United secured a 2-1 victory over Liverpool. Goals by Rashford and Fernandes.</div>
+        <button class="share-btn">Share</button>
+      </article>
+      <article class="news-card">
+        <div class="news-title">Real Madrid signs new striker</div>
+        <div class="news-meta">Team: Real Madrid | 1 hour ago</div>
+        <div class="news-content">Real Madrid has announced the signing of a promising young striker from Brazil.</div>
+        <button class="share-btn">Share</button>
+      </article>
+    </div>
+    <!-- Share Modal Example -->
+    <div class="share-modal" id="shareModal">
+      <div class="share-modal-content">
+        <h2>Share Article</h2>
+        <div class="share-options">
+          <button class="share-option">Facebook</button>
+          <button class="share-option">Twitter</button>
+          <button class="share-option">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

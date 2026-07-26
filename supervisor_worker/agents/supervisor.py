@@ -43,14 +43,23 @@ def generate(state: AgentState):
     system_prompt = load_prompt(config["prompt"])
     human_msg = config["get_message"](state)
 
-    structured_llm = llm.with_structured_output(SupervisorReview)
-    review = cast(
-        SupervisorReview,
-        structured_llm.invoke([
-            SystemMessage(content=system_prompt),
-            HumanMessage(content=human_msg)
-        ])
-    )
+    structured_llm = llm.with_structured_output(SupervisorReview, include_raw=True)
+    response = structured_llm.invoke([
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=human_msg)
+    ])
+
+    if isinstance(response, dict):
+        review = response["parsed"]
+        raw_msg = response["raw"]
+        usage = getattr(raw_msg, "usage_metadata", {}) or {}
+        in_tokens = usage.get("input_tokens", 0)
+        out_tokens = usage.get("output_tokens", 0)
+        tot_tokens = usage.get("total_tokens", in_tokens + out_tokens)
+        print(f"[Supervisor Usage Phase '{phase}' Iter {current_iter}] Input: {in_tokens}, Output: {out_tokens}, Total: {tot_tokens}")
+    else:
+        review = cast(SupervisorReview, response)
+        in_tokens, out_tokens, tot_tokens = 0, 0, 0
 
     # Save formatted review using shared global function
     _save_supervisor_review(review, output_dir=str(iter_dir))
@@ -78,4 +87,7 @@ def generate(state: AgentState):
         "feedback_history": [new_log],
         "phase": review.phase,
         "iterations": iterations,
+        "input_tokens": in_tokens,
+        "output_tokens": out_tokens,
+        "total_tokens": tot_tokens,
     }

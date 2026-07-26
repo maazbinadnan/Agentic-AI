@@ -14,6 +14,10 @@ class AgentState(TypedDict):
     iterations: Dict[str, int]
     max_iterations_per_phase: int
     verdict: Optional[str]
+    input_tokens: Annotated[int, operator.add]
+    output_tokens: Annotated[int, operator.add]
+    total_tokens: Annotated[int, operator.add]
+
 
 class OutputState(TypedDict):
     messages: Annotated[List[AnyMessage], operator.add]
@@ -23,3 +27,6 @@ class OutputState(TypedDict):
     iterations: Dict[str, int]
     max_iterations_per_phase: int
     verdict: Optional[str]
+    input_tokens: int
+    output_tokens: int
+    total_tokens: int

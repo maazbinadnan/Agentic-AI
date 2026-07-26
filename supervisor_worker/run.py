@@ -40,13 +40,24 @@ def main() -> None:
         "iterations": {"ba": 0, "ixd": 0},
         "max_iterations_per_phase": 3,
         "verdict": None,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
     }
 
-    print(f"Launching Supervisor-Worker System pipeline...")
+    print("Launching Supervisor-Worker System pipeline...")
     print(f"Output Directory: {initial_state['output_dir']}\n")
 
     graph = create_graph()
     final_state = graph.invoke(initial_state)
+
+    print("\n=======================================================")
+    print("Execution Finished! Total Accumulated Token Usage:")
+    print(f"- Total Input Tokens:  {final_state.get('input_tokens', 0)}")
+    print(f"- Total Output Tokens: {final_state.get('output_tokens', 0)}")
+    print(f"- Total Tokens:        {final_state.get('total_tokens', 0)}")
+    print("=======================================================\n")
+
     save_state(final_state)
 
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team & Player Profiles</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+    }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray-light); color: var(--gray-dark); margin: 0; }
+    main { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { font-size: 1.5rem; margin-bottom: 24px; }
+    .profile-section { margin-bottom: 32px; }
+    .list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .card { background: var(--gray-light); border: 1px solid var(--border); border-radius: 6px; padding: 16px; width: 180px; cursor: pointer; }
+    .card-title { font-weight: 600; margin-bottom: 8px; }
+    .card-meta { font-size: 0.95rem; color: #666; margin-bottom: 8px; }
+    .profile-detail { background: #fff; border: 2px solid var(--primary); border-radius: 8px; padding: 24px; margin-top: 16px; }
+    .stats { margin-top: 12px; }
+    .stats label { font-weight: 500; }
+    .stats ul { margin: 8px 0 0 16px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Teams & Players</h1>
+    <section class="profile-section">
+      <label>Teams</label>
+      <div class="list">
+        <div class="card">
+          <div class="card-title">Manchester United</div>
+          <div class="card-meta">Premier League</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Real Madrid</div>
+          <div class="card-meta">La Liga</div>
+        </div>
+      </div>
+    </section>
+    <section class="profile-section">
+      <label>Players</label>
+      <div class="list">
+        <div class="card">
+          <div class="card-title">Marcus Rashford</div>
+          <div class="card-meta">Manchester United</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Karim Benzema</div>
+          <div class="card-meta">Real Madrid</div>
+        </div>
+      </div>
+    </section>
+    <!-- Profile Detail Example -->
+    <div class="profile-detail">
+      <h2>Manchester United</h2>
+      <div class="stats">
+        <label>Statistics:</label>
+        <ul>
+          <li>Founded: 1878</li>
+          <li>Stadium: Old Trafford</li>
+          <li>Titles: 20 Premier League</li>
+        </ul>
+      </div>
+      <div class="stats">
+        <label>Top Players:</label>
+        <ul>
+          <li>Marcus Rashford</li>
+          <li>Bruno Fernandes</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

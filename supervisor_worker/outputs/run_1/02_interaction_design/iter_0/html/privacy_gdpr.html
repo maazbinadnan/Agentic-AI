@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy & GDPR</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+    }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray-light); color: var(--gray-dark); margin: 0; }
+    main { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { font-size: 1.5rem; margin-bottom: 24px; }
+    .policy-section { background: var(--gray-light); border: 1px solid var(--border); border-radius: 4px; padding: 16px; margin-bottom: 24px; }
+    .delete-form { display: flex; flex-direction: column; gap: 12px; }
+    .delete-btn { background: var(--error); color: #fff; border: none; border-radius: 4px; padding: 12px 24px; font-size: 1rem; cursor: pointer; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #0006; justify-content: center; align-items: center; }
+    .modal-content { background: #fff; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px #0002; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Privacy & GDPR</h1>
+    <section class="policy-section">
+      <h2>Data Protection Policy</h2>
+      <p>Your personal data is processed, retained, and deleted in compliance with GDPR. You can request deletion at any time.</p>
+    </section>
+    <form class="delete-form">
+      <label for="delete-account">Request Account Deletion</label>
+      <input type="email" id="delete-account" placeholder="Enter your email">
+      <button class="delete-btn" type="submit">Delete Account</button>
+    </form>
+    <!-- Confirmation Modal Example -->
+    <div class="modal" id="deleteModal">
+      <div class="modal-content">
+        <h2>Account Deleted</h2>
+        <p>Your account and personal data have been deleted in compliance with GDPR.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

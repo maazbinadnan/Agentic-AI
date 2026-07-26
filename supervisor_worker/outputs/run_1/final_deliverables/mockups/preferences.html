@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preferences - Favorite Teams & Channels</title>
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --gray-light: #f8f9fa;
+      --gray-dark: #212529;
+      --border: #dee2e6;
+      --error: #dc3545;
+    }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--gray-light); color: var(--gray-dark); margin: 0; }
+    main { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { font-size: 1.5rem; margin-bottom: 24px; }
+    .section { margin-bottom: 24px; }
+    label { display: block; margin-bottom: 8px; font-weight: 500; }
+    .list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .item { background: var(--gray-light); border: 1px solid var(--border); border-radius: 4px; padding: 8px 16px; display: flex; align-items: center; }
+    .item span { margin-right: 8px; }
+    .item button { background: none; border: none; color: var(--error); font-size: 1rem; cursor: pointer; }
+    .add-controls { display: flex; gap: 8px; margin-top: 8px; }
+    .add-controls input { flex: 1; padding: 8px; border: 1px solid var(--border); border-radius: 4px; }
+    .add-controls button { background: var(--primary); color: #fff; border: none; border-radius: 4px; padding: 8px 16px; cursor: pointer; }
+    .error-msg { color: var(--error); margin-top: 8px; font-size: 0.95rem; }
+    .save-btn { background: var(--primary); color: #fff; border: none; border-radius: 4px; padding: 12px 24px; font-size: 1rem; cursor: pointer; margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Preferences</h1>
+    <section class="section">
+      <label for="teams">Favorite Teams</label>
+      <div class="list" id="teams">
+        <div class="item"><span>Manchester United</span><button title="Remove">&times;</button></div>
+        <div class="item"><span>Real Madrid</span><button title="Remove">&times;</button></div>
+      </div>
+      <div class="add-controls">
+        <input type="text" placeholder="Add team..." aria-label="Add team">
+        <button>Add</button>
+      </div>
+      <div class="error-msg" style="display:none;">Maximum 5 teams allowed.</div>
+    </section>
+    <section class="section">
+      <label for="channels">Favorite Channels</label>
+      <div class="list" id="channels">
+        <div class="item"><span>ESPN</span><button title="Remove">&times;</button></div>
+        <div class="item"><span>Sky Sports</span><button title="Remove">&times;</button></div>
+      </div>
+      <div class="add-controls">
+        <input type="text" placeholder="Add channel..." aria-label="Add channel">
+        <button>Add</button>
+      </div>
+      <div class="error-msg" style="display:none;">Maximum 3 channels allowed.</div>
+    </section>
+    <button class="save-btn">Save Preferences</button>
+  </main>
+</body>
+</html>

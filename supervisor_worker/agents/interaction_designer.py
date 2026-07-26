@@ -49,23 +49,39 @@ def generate(state: AgentState):
             )
         )
 
-    print(f"Generating Interaction Designer Output (Iteration {iteration})...")
+    print(f"[Supervisor Worker] Generating Interaction Designer Output (Iteration {iteration})...")
 
-    structured_llm = llm.with_structured_output(IxdPipelineOutput)
-    response = cast(IxdPipelineOutput, structured_llm.invoke(messages))
+    structured_llm = llm.with_structured_output(IxdPipelineOutput, include_raw=True)
+    response = structured_llm.invoke(messages)
+
+    if isinstance(response, dict):
+        result = response["parsed"]
+        raw_msg = response["raw"]
+        usage = getattr(raw_msg, "usage_metadata", {}) or {}
+        in_tokens = usage.get("input_tokens", 0)
+        out_tokens = usage.get("output_tokens", 0)
+        tot_tokens = usage.get("total_tokens", in_tokens + out_tokens)
+        print(f"[IxD Usage Iter {iteration}] Input: {in_tokens}, Output: {out_tokens}, Total: {tot_tokens}")
+    else:
+        result = cast(IxdPipelineOutput, response)
+        in_tokens, out_tokens, tot_tokens = 0, 0, 0
 
     # Save output to phase iteration folder
-    _save_ixd_files(response, output_dir=str(phase_dir))
+    _save_ixd_files(result, output_dir=str(phase_dir))
 
     return {
-        "ixd_output": response.model_dump(),
+        "ixd_output": result.model_dump(),
+        "input_tokens": in_tokens,
+        "output_tokens": out_tokens,
+        "total_tokens": tot_tokens,
         "messages": [
             AIMessage(
                 content=(
                     f"[Iteration {iteration}] Generated IxD Specifications & Mockups:\n"
-                    f"- {len(response.mockup_files.files)} HTML Mockup Files\n"
-                    f"- {len(response.mapping_table.mapping_table)} User Story Mappings\n"
-                    f"- {len(response.tradeoffs.table)} UI/UX Trade-off Decisions"
+                    f"- {len(result.mockup_files.files)} HTML Mockup Files\n"
+                    f"- {len(result.mapping_table.mapping_table)} User Story Mappings\n"
+                    f"- {len(result.tradeoffs.table)} UI/UX Trade-off Decisions\n"
+                    f"[Tokens: {in_tokens} in / {out_tokens} out]"
                 )
             )
         ],
