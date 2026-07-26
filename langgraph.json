@@ -2,9 +2,8 @@
   "dependencies": ["."],
   "python_path": ["."],
   "graphs": {
-    "requirements_agent": "./single_agent/main.py:app",
-    "three_amigos": "./three_amigos/main.py:app",
-    "orchestrator_worker": "./orchestrator_worker/main.py:app"
+    "supervisor_worker": "./supervisor_worker/main.py:app",
+    "single_agent": "./single_agent/main.py:app"
   },
   "env": ".env"
 }

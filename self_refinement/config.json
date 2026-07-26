@@ -1,5 +1,0 @@
-{
-    "generator_model" : "gpt-4.1",
-    "evaluator_model" : "gpt-5.4",
-    "refiner_model" : "gpt-4.1"
-}

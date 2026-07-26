@@ -1,0 +1,755 @@
+{
+  "messages": [
+    {
+      "content": "[Business Analyst] Generated requirements specification:\n- 13 User Needs\n- 10 Functional Requirements\n- 7 Non-Functional Requirements\n- 10 User Stories\n[Tokens: 4368 in / 4605 out]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": null,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    },
+    {
+      "content": "[Interaction Designer] Generated IxD Specifications & Mockups:\n- 9 HTML Mockup Files\n- 9 User Story Mappings\n- 6 UI/UX Trade-off Decisions\n[Tokens: 2963 in / 8775 out]",
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "type": "ai",
+      "name": null,
+      "id": null,
+      "tool_calls": [],
+      "invalid_tool_calls": [],
+      "usage_metadata": null
+    },
+    "Workflow completed successfully. Deliverables packaged at 'C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\test_run_token_count\\final_deliverables'"
+  ],
+  "input": "We are currently developing a mobile football app that will be available for Android and iOS devices. It is particularly important to us that the app runs quickly and smoothly so that it is fully loaded and ready to use within a maximum of two seconds after starting. With our app, we want to offer football fans a central platform where they can stay comprehensively informed at all times. To achieve this, users can display current football news of their favorite teams and also select preferred sports channels individually. In addition to the news, users can follow the results of their favorite teams live via a live ticker. Our app will offer extensive coverage of all leagues and competitions, both national and international. Detailed team and player information will also be available at any time. Another highlight is the integration of live stream links, for example, from providers such as DAZN or Sky Sport. These are available directly in the app as soon as the live broadcast has begun. Of course, it is ensured that compliance with transmission rights is maintained. Live streams will only be displayed when the respective rights are fulfilled in the country. The LiveFootball app should also give users the option to retrieve the live results of their favorite teams in real time. To implement this function, the app includes an integrated live ticker module that enables the retrieval and display of live data in real time. The user interface is designed so that users can access the information in the app directly. The user interface is a key component of the app and connects various modules that are displayed together and managed via the interface. The live ticker module communicates directly via the interface with the user interface to display and continuously update current match data. The live data is retrieved via an API from an external server. The server is located outside the app and provides the data dynamically so that the live ticker module can access it flexibly. In addition to the live ticker module, the app also offers additional modules that allow users to individually configure the app and connect their own interface to the user interface. Furthermore, the app is linked to a notification system that provides users with information about current events as soon as the notification function is activated. All modules and the user interface are fixed components of the app and remain consistent even with external server updates. Registration and login are designed to be uncomplicated and can be completed directly at app startup. Users have the option to personalize their experience by following favorite clubs and receiving notifications about news or results of their favorite teams. In addition, users can share news and game reports via social media directly from the app. We are aware that many mobile apps have to operate under difficult conditions. Therefore, the app is developed so that it functions reliably even with limited network coverage. The app remains usable offline, even if it temporarily loses connection. On match days with a particularly high number of accesses, our app is designed so that up to 100,000 users can be served simultaneously without performance loss. To prevent technical problems, the app goes through a thorough testing and support process before release to detect and resolve any malfunctions early. In addition, user feedback and app reviews are continuously evaluated to improve functionality. Data protection is our highest priority. All personal data of users are processed in compliance with the GDPR.",
+  "output_dir": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\test_run_token_count",
+  "ba_output": {
+    "user_needs": [
+      {
+        "id": "UN-001",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to access current football news and live results for my favorite teams so that I can stay informed at all times.",
+        "demand": "High",
+        "user_journey": "User opens the app, selects favorite teams, and views news and live results on the dashboard."
+      },
+      {
+        "id": "UN-002",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to personalize my app experience by selecting favorite teams and sports channels.",
+        "demand": "High",
+        "user_journey": "User configures preferences during onboarding or in settings to tailor content."
+      },
+      {
+        "id": "UN-003",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to receive real-time notifications about news and results for my favorite teams.",
+        "demand": "High",
+        "user_journey": "User enables notifications and receives push alerts for relevant events."
+      },
+      {
+        "id": "UN-004",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to access live stream links for matches when available and permitted in my country.",
+        "demand": "High",
+        "user_journey": "User browses match details and clicks on live stream links when rights are available."
+      },
+      {
+        "id": "UN-005",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to view detailed information about teams and players.",
+        "demand": "Medium",
+        "user_journey": "User navigates to team or player profiles for in-depth statistics and info."
+      },
+      {
+        "id": "UN-006",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to share news and game reports via social media directly from the app.",
+        "demand": "Medium",
+        "user_journey": "User reads an article and uses the share function to post on social media."
+      },
+      {
+        "id": "UN-007",
+        "user_group_type": "Overarching",
+        "user_group": "All Users",
+        "user_need": "I need the app to load quickly and run smoothly, even with high user traffic or poor network conditions.",
+        "demand": "High",
+        "user_journey": "User launches the app and expects it to be ready for use within 2 seconds, regardless of network or load."
+      },
+      {
+        "id": "UN-008",
+        "user_group_type": "Overarching",
+        "user_group": "All Users",
+        "user_need": "I need the app to function reliably and remain usable even if the network connection is temporarily lost.",
+        "demand": "High",
+        "user_journey": "User continues to use the app during intermittent connectivity, with cached data available."
+      },
+      {
+        "id": "UN-009",
+        "user_group_type": "Overarching",
+        "user_group": "All Users",
+        "user_need": "I need my personal data to be protected and processed in compliance with GDPR.",
+        "demand": "High",
+        "user_journey": "User registers, logs in, and manages data with assurance of privacy and legal compliance."
+      },
+      {
+        "id": "UN-010",
+        "user_group_type": "Primary",
+        "user_group": "Football Fan",
+        "user_need": "I need to register and log in quickly and easily at app startup.",
+        "demand": "High",
+        "user_journey": "User downloads the app, registers or logs in with minimal steps, and accesses main features."
+      },
+      {
+        "id": "UN-011",
+        "user_group_type": "Overarching",
+        "user_group": "All Users",
+        "user_need": "I need the app to be available on both Android and iOS devices.",
+        "demand": "High",
+        "user_journey": "User downloads and installs the app from the respective app store."
+      },
+      {
+        "id": "UN-012",
+        "user_group_type": "Overarching",
+        "user_group": "All Users",
+        "user_need": "I need the app to be thoroughly tested and supported to avoid malfunctions.",
+        "demand": "Medium",
+        "user_journey": "User expects a stable app experience due to robust QA and support processes."
+      },
+      {
+        "id": "UN-013",
+        "user_group_type": "Overarching",
+        "user_group": "All Users",
+        "user_need": "I need the app to continuously improve based on user feedback and reviews.",
+        "demand": "Low",
+        "user_journey": "User submits feedback or reviews and expects future updates to address issues."
+      }
+    ],
+    "functional_requirements": [
+      {
+        "id": "FR-001",
+        "requirement": "The system shall allow users to select and follow their favorite football teams and sports channels.",
+        "source": "UN-002",
+        "priority": "High"
+      },
+      {
+        "id": "FR-002",
+        "requirement": "The system shall display current football news relevant to the user's selected teams and channels.",
+        "source": "UN-001",
+        "priority": "High"
+      },
+      {
+        "id": "FR-003",
+        "requirement": "The system shall provide a live ticker module that retrieves and displays real-time match results for the user's favorite teams.",
+        "source": "UN-001",
+        "priority": "High"
+      },
+      {
+        "id": "FR-004",
+        "requirement": "The system shall enable users to receive push notifications about news and results for their favorite teams when notifications are enabled.",
+        "source": "UN-003",
+        "priority": "High"
+      },
+      {
+        "id": "FR-005",
+        "requirement": "The system shall provide live stream links for matches, displaying them only when transmission rights are fulfilled in the user's country.",
+        "source": "UN-004",
+        "priority": "High"
+      },
+      {
+        "id": "FR-006",
+        "requirement": "The system shall display detailed information about teams and players, including statistics and profiles.",
+        "source": "UN-005",
+        "priority": "Medium"
+      },
+      {
+        "id": "FR-007",
+        "requirement": "The system shall allow users to share news articles and game reports via social media platforms directly from the app.",
+        "source": "UN-006",
+        "priority": "Medium"
+      },
+      {
+        "id": "FR-008",
+        "requirement": "The system shall provide registration and login functionality that can be completed directly at app startup.",
+        "source": "UN-010",
+        "priority": "High"
+      },
+      {
+        "id": "FR-009",
+        "requirement": "The system shall provide an interface that integrates all modules and allows direct access to news, live ticker, streams, and team/player info.",
+        "source": "UN-007",
+        "priority": "High"
+      },
+      {
+        "id": "FR-010",
+        "requirement": "The system shall allow users to configure app modules and connect their own interface to the user interface.",
+        "source": "UN-002",
+        "priority": "Medium"
+      }
+    ],
+    "non_functional_requirements": [
+      {
+        "id": "NFR-001",
+        "requirement": "The system shall load and be ready for user interaction within 2 seconds of app launch under normal network conditions.",
+        "source": "UN-007",
+        "priority": "High"
+      },
+      {
+        "id": "NFR-002",
+        "requirement": "The system shall support up to 100,000 concurrent users without performance degradation.",
+        "source": "UN-007",
+        "priority": "High"
+      },
+      {
+        "id": "NFR-003",
+        "requirement": "The system shall remain usable and display cached data when the network connection is temporarily lost.",
+        "source": "UN-008",
+        "priority": "High"
+      },
+      {
+        "id": "NFR-004",
+        "requirement": "The system shall process all personal user data in compliance with GDPR.",
+        "source": "UN-009",
+        "priority": "High"
+      },
+      {
+        "id": "NFR-005",
+        "requirement": "The system shall be available for both Android and iOS platforms.",
+        "source": "UN-011",
+        "priority": "High"
+      },
+      {
+        "id": "NFR-006",
+        "requirement": "The system shall undergo thorough testing and support processes to detect and resolve malfunctions before release.",
+        "source": "UN-012",
+        "priority": "Medium"
+      },
+      {
+        "id": "NFR-007",
+        "requirement": "The system shall provide mechanisms for collecting and evaluating user feedback and app reviews for continuous improvement.",
+        "source": "UN-013",
+        "priority": "Low"
+      }
+    ],
+    "user_stories": [
+      {
+        "id": "US-001",
+        "user_story": "As a football fan, I want to select my favorite teams and sports channels so that I receive personalized news and live results.",
+        "source": "FR-001",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Selecting favorite teams and channels",
+            "given": "the user is logged in and on the preferences screen",
+            "when": "the user selects teams and channels and saves preferences",
+            "then": "the app displays news and live results relevant to the selected teams and channels"
+          }
+        ]
+      },
+      {
+        "id": "US-002",
+        "user_story": "As a football fan, I want to view current news about my favorite teams so that I stay informed.",
+        "source": "FR-002",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Displaying news for favorite teams",
+            "given": "the user has selected favorite teams",
+            "when": "the user opens the news section",
+            "then": "the app displays news articles relevant to the selected teams"
+          }
+        ]
+      },
+      {
+        "id": "US-003",
+        "user_story": "As a football fan, I want to follow live match results for my favorite teams so that I can track games in real time.",
+        "source": "FR-003",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Viewing live ticker for favorite teams",
+            "given": "the user has selected favorite teams",
+            "when": "the user opens the live ticker module",
+            "then": "the app displays real-time match results for those teams"
+          }
+        ]
+      },
+      {
+        "id": "US-004",
+        "user_story": "As a football fan, I want to receive push notifications about news and results for my favorite teams so that I never miss important updates.",
+        "source": "FR-004",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Receiving push notifications",
+            "given": "the user has enabled notifications",
+            "when": "a relevant news item or result is available",
+            "then": "the app sends a push notification to the user"
+          }
+        ]
+      },
+      {
+        "id": "US-005",
+        "user_story": "As a football fan, I want to access live stream links for matches when available and permitted in my country so that I can watch games live.",
+        "source": "FR-005",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Displaying live stream links with rights check",
+            "given": "the user is viewing a match detail and transmission rights are fulfilled in their country",
+            "when": "the live broadcast has begun",
+            "then": "the app displays the live stream link"
+          },
+          {
+            "scenario": "Hiding live stream links when rights are not available",
+            "given": "the user is in a country without transmission rights",
+            "when": "the user views match details",
+            "then": "the app does not display the live stream link"
+          }
+        ]
+      },
+      {
+        "id": "US-006",
+        "user_story": "As a football fan, I want to view detailed information about teams and players so that I can learn more about them.",
+        "source": "FR-006",
+        "priority": "Medium",
+        "acceptance_criteria": [
+          {
+            "scenario": "Viewing team and player details",
+            "given": "the user is on a team or player profile page",
+            "when": "the user selects a team or player",
+            "then": "the app displays detailed statistics and information"
+          }
+        ]
+      },
+      {
+        "id": "US-007",
+        "user_story": "As a football fan, I want to share news and game reports via social media so that I can inform my friends.",
+        "source": "FR-007",
+        "priority": "Medium",
+        "acceptance_criteria": [
+          {
+            "scenario": "Sharing news via social media",
+            "given": "the user is viewing a news article or game report",
+            "when": "the user taps the share button and selects a social media platform",
+            "then": "the app shares the content to the selected platform"
+          }
+        ]
+      },
+      {
+        "id": "US-008",
+        "user_story": "As a football fan, I want to register and log in quickly at app startup so that I can access the app's features immediately.",
+        "source": "FR-008",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Quick registration and login",
+            "given": "the user has just installed the app",
+            "when": "the user opens the app for the first time",
+            "then": "the app presents registration and login options that can be completed in minimal steps"
+          }
+        ]
+      },
+      {
+        "id": "US-009",
+        "user_story": "As a football fan, I want the app interface to provide direct access to all main features so that I can easily navigate between news, live ticker, streams, and team info.",
+        "source": "FR-009",
+        "priority": "High",
+        "acceptance_criteria": [
+          {
+            "scenario": "Accessing main features from the interface",
+            "given": "the user is logged in",
+            "when": "the user opens the app",
+            "then": "the interface displays navigation to news, live ticker, streams, and team/player info"
+          }
+        ]
+      },
+      {
+        "id": "US-010",
+        "user_story": "As a football fan, I want to configure app modules and connect my own interface to the user interface so that I can personalize my experience.",
+        "source": "FR-010",
+        "priority": "Medium",
+        "acceptance_criteria": [
+          {
+            "scenario": "Configuring modules and interface",
+            "given": "the user is in the app settings",
+            "when": "the user customizes modules and connects their interface",
+            "then": "the app updates the user interface according to the configuration"
+          }
+        ]
+      }
+    ],
+    "traceability_matrix": [
+      {
+        "user_need_id": "UN-001",
+        "derived_requirement_ids": [
+          "FR-002",
+          "FR-003"
+        ],
+        "mapped_user_story_ids": [
+          "US-002",
+          "US-003"
+        ],
+        "primary_domain_area": "News & Live Results"
+      },
+      {
+        "user_need_id": "UN-002",
+        "derived_requirement_ids": [
+          "FR-001",
+          "FR-010"
+        ],
+        "mapped_user_story_ids": [
+          "US-001",
+          "US-010"
+        ],
+        "primary_domain_area": "Personalization"
+      },
+      {
+        "user_need_id": "UN-003",
+        "derived_requirement_ids": [
+          "FR-004"
+        ],
+        "mapped_user_story_ids": [
+          "US-004"
+        ],
+        "primary_domain_area": "Notifications"
+      },
+      {
+        "user_need_id": "UN-004",
+        "derived_requirement_ids": [
+          "FR-005"
+        ],
+        "mapped_user_story_ids": [
+          "US-005"
+        ],
+        "primary_domain_area": "Live Streams"
+      },
+      {
+        "user_need_id": "UN-005",
+        "derived_requirement_ids": [
+          "FR-006"
+        ],
+        "mapped_user_story_ids": [
+          "US-006"
+        ],
+        "primary_domain_area": "Team & Player Info"
+      },
+      {
+        "user_need_id": "UN-006",
+        "derived_requirement_ids": [
+          "FR-007"
+        ],
+        "mapped_user_story_ids": [
+          "US-007"
+        ],
+        "primary_domain_area": "Social Sharing"
+      },
+      {
+        "user_need_id": "UN-007",
+        "derived_requirement_ids": [
+          "FR-009",
+          "NFR-001",
+          "NFR-002"
+        ],
+        "mapped_user_story_ids": [
+          "US-009"
+        ],
+        "primary_domain_area": "Performance & Interface"
+      },
+      {
+        "user_need_id": "UN-008",
+        "derived_requirement_ids": [
+          "NFR-003"
+        ],
+        "mapped_user_story_ids": [],
+        "primary_domain_area": "Reliability & Offline"
+      },
+      {
+        "user_need_id": "UN-009",
+        "derived_requirement_ids": [
+          "NFR-004"
+        ],
+        "mapped_user_story_ids": [],
+        "primary_domain_area": "Data Protection"
+      },
+      {
+        "user_need_id": "UN-010",
+        "derived_requirement_ids": [
+          "FR-008"
+        ],
+        "mapped_user_story_ids": [
+          "US-008"
+        ],
+        "primary_domain_area": "Authentication"
+      },
+      {
+        "user_need_id": "UN-011",
+        "derived_requirement_ids": [
+          "NFR-005"
+        ],
+        "mapped_user_story_ids": [],
+        "primary_domain_area": "Platform Availability"
+      },
+      {
+        "user_need_id": "UN-012",
+        "derived_requirement_ids": [
+          "NFR-006"
+        ],
+        "mapped_user_story_ids": [],
+        "primary_domain_area": "Testing & Support"
+      },
+      {
+        "user_need_id": "UN-013",
+        "derived_requirement_ids": [
+          "NFR-007"
+        ],
+        "mapped_user_story_ids": [],
+        "primary_domain_area": "Continuous Improvement"
+      }
+    ],
+    "gaps_and_recommendations": [
+      {
+        "title": "Live Stream Rights Verification",
+        "observation": "The process for verifying transmission rights for live streams in each country is not specified.",
+        "recommendation": "Clarify how the app will determine if live stream rights are fulfilled for a user's location (e.g., via IP geolocation, provider API, or user input)."
+      },
+      {
+        "title": "Offline Data Scope",
+        "observation": "It is unclear which data and features are available offline and how long cached data is retained.",
+        "recommendation": "Specify which modules (e.g., news, live ticker, team info) are accessible offline and define cache expiration policies."
+      },
+      {
+        "title": "User Registration Methods",
+        "observation": "The supported registration and login methods (e.g., email, social login, SSO) are not detailed.",
+        "recommendation": "Define which authentication methods are supported for registration and login."
+      },
+      {
+        "title": "Notification Preferences Granularity",
+        "observation": "The level of granularity for notification preferences (e.g., per team, per event type) is not described.",
+        "recommendation": "Clarify if users can customize notification types and for which teams or events."
+      },
+      {
+        "title": "User Feedback Mechanism",
+        "observation": "The mechanism for collecting and evaluating user feedback and app reviews is not specified.",
+        "recommendation": "Describe how users can submit feedback (e.g., in-app form, app store reviews) and how it will be processed."
+      },
+      {
+        "title": "Social Media Integration Scope",
+        "observation": "The specific social media platforms supported for sharing are not listed.",
+        "recommendation": "List the social media platforms (e.g., Facebook, Twitter, WhatsApp) that will be integrated for sharing."
+      }
+    ],
+    "summary_statistics": {
+      "total_user_needs": 13,
+      "total_functional_requirements": 10,
+      "total_non_functional_requirements": 7,
+      "total_user_stories": 10,
+      "priority_breakdown": {
+        "high": 21,
+        "medium": 5,
+        "low": 1
+      },
+      "user_needs_coverage": "13/13"
+    }
+  },
+  "ixd_output": {
+    "mapping_table": {
+      "mapping_table": [
+        {
+          "html_file": "startup_auth_mockup.html",
+          "user_stories": [
+            "US-008"
+          ],
+          "visualizations": [
+            "Splash screen",
+            "Registration form",
+            "Login form",
+            "Minimal steps flow",
+            "Error/validation states"
+          ]
+        },
+        {
+          "html_file": "main_navigation_mockup.html",
+          "user_stories": [
+            "US-009"
+          ],
+          "visualizations": [
+            "Main navigation bar (News, Live Ticker, Streams, Teams/Players)",
+            "Direct access buttons",
+            "Active state indication"
+          ]
+        },
+        {
+          "html_file": "preferences_mockup.html",
+          "user_stories": [
+            "US-001"
+          ],
+          "visualizations": [
+            "Favorite teams selection",
+            "Sports channels selection",
+            "Save preferences button",
+            "Sample populated state",
+            "Validation/error state"
+          ]
+        },
+        {
+          "html_file": "news_mockup.html",
+          "user_stories": [
+            "US-002",
+            "US-007"
+          ],
+          "visualizations": [
+            "News feed for favorite teams",
+            "News article cards",
+            "Share button (social media)",
+            "Empty state",
+            "Populated state",
+            "Error state"
+          ]
+        },
+        {
+          "html_file": "live_ticker_mockup.html",
+          "user_stories": [
+            "US-003"
+          ],
+          "visualizations": [
+            "Live match ticker for favorite teams",
+            "Match cards with real-time scores",
+            "Empty state",
+            "Populated state",
+            "Error state"
+          ]
+        },
+        {
+          "html_file": "notifications_mockup.html",
+          "user_stories": [
+            "US-004"
+          ],
+          "visualizations": [
+            "Notification toggle",
+            "Push notification settings",
+            "Sample notification preview",
+            "Error/validation state"
+          ]
+        },
+        {
+          "html_file": "match_stream_mockup.html",
+          "user_stories": [
+            "US-005"
+          ],
+          "visualizations": [
+            "Match detail view",
+            "Live stream link (rights available)",
+            "Rights unavailable state (link hidden)",
+            "Error state"
+          ]
+        },
+        {
+          "html_file": "team_player_details_mockup.html",
+          "user_stories": [
+            "US-006"
+          ],
+          "visualizations": [
+            "Team profile page",
+            "Player profile page",
+            "Detailed statistics",
+            "Sample populated state",
+            "Empty/error state"
+          ]
+        },
+        {
+          "html_file": "settings_customization_mockup.html",
+          "user_stories": [
+            "US-010"
+          ],
+          "visualizations": [
+            "Module configuration toggles",
+            "Interface connection options",
+            "Save configuration button",
+            "Populated state",
+            "Error/validation state"
+          ]
+        }
+      ]
+    },
+    "tradeoffs": {
+      "table": [
+        {
+          "tradeoff_name": "Modal vs. Dedicated Page for Registration/Login",
+          "tradeoff_data": "Chose dedicated startup screen for registration/login to minimize steps and avoid modal complexity, aligning with US-008's 'minimal steps' requirement."
+        },
+        {
+          "tradeoff_name": "Navigation Bar Placement",
+          "tradeoff_data": "Used persistent bottom navigation for direct access to main features (US-009), improving discoverability and reducing navigation friction."
+        },
+        {
+          "tradeoff_name": "Favorites Selection UI",
+          "tradeoff_data": "Used checkboxes and multi-select lists for teams/channels to maximize clarity and minimize accidental selection, supporting error/validation states."
+        },
+        {
+          "tradeoff_name": "Live Stream Link Visibility",
+          "tradeoff_data": "Stream link only shown when rights are available (US-005); error/rights-unavailable state is visually distinct to prevent confusion."
+        },
+        {
+          "tradeoff_name": "Share Button Placement",
+          "tradeoff_data": "Share button placed on each news/game report card for immediate access, supporting US-007's sharing flow without cluttering the UI."
+        },
+        {
+          "tradeoff_name": "Settings Customization UI",
+          "tradeoff_data": "Used toggles and checklists for module configuration (US-010) to allow granular personalization without overwhelming the user."
+        }
+      ]
+    },
+    "mockup_files": {
+      "files": [
+        {
+          "html_filename": "startup_auth_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Startup / Registration & Login</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      display: flex;\n      flex-direction: column;\n      min-height: 100vh;\n      justify-content: center;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      width: 320px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1.5rem;\n    }\n    h1 {\n      font-size: 1.5rem;\n      margin-bottom: 0.5rem;\n      text-align: center;\n    }\n    .form-group {\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n    }\n    label {\n      font-size: 1rem;\n    }\n    input[type=\"text\"], input[type=\"password\"], input[type=\"email\"] {\n      padding: 0.5rem;\n      border: 1px solid var(--color-border);\n      border-radius: 4px;\n      font-size: 1rem;\n    }\n    .actions {\n      display: flex;\n      gap: 1rem;\n      justify-content: center;\n    }\n    button {\n      background: var(--color-primary);\n      color: #fff;\n      border: none;\n      border-radius: 4px;\n      padding: 0.5rem 1rem;\n      font-size: 1rem;\n      cursor: pointer;\n      transition: background 0.2s;\n    }\n    button:hover {\n      background: #0b5ed7;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n    .divider {\n      text-align: center;\n      color: var(--color-border);\n      margin: 1rem 0;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h1>Welcome to Football Fan App</h1>\n    <form>\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input type=\"email\" id=\"email\" placeholder=\"Enter your email\">\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" id=\"password\" placeholder=\"Enter your password\">\n      </div>\n      <div class=\"actions\">\n        <button type=\"submit\">Login</button>\n        <button type=\"button\">Register</button>\n      </div>\n      <!-- Error State Example -->\n      <div class=\"error\" style=\"display:none;\">Invalid email or password.</div>\n    </form>\n    <div class=\"divider\">or</div>\n    <button style=\"width:100%;background:#fff;color:var(--color-primary);border:1px solid var(--color-primary);\">Continue with Google</button>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "main_navigation_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Main Navigation</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-active: #0d6efd;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n    }\n    main {\n      flex: 1;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n    .nav-bar {\n      position: fixed;\n      bottom: 0;\n      left: 0;\n      width: 100%;\n      background: #fff;\n      border-top: 1px solid var(--color-border);\n      display: flex;\n      justify-content: space-around;\n      padding: 0.5rem 0;\n      z-index: 10;\n    }\n    .nav-item {\n      flex: 1;\n      text-align: center;\n      color: var(--color-text);\n      font-size: 1rem;\n      padding: 0.5rem 0;\n      cursor: pointer;\n      transition: color 0.2s;\n    }\n    .nav-item.active {\n      color: var(--color-active);\n      font-weight: bold;\n      border-bottom: 2px solid var(--color-active);\n    }\n  </style>\n</head>\n<body>\n  <main>\n    <h2>Select a feature from the navigation below</h2>\n  </main>\n  <nav class=\"nav-bar\" aria-label=\"Main navigation\">\n    <div class=\"nav-item active\">News</div>\n    <div class=\"nav-item\">Live Ticker</div>\n    <div class=\"nav-item\">Streams</div>\n    <div class=\"nav-item\">Teams/Players</div>\n  </nav>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "preferences_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Preferences - Favorite Teams & Channels</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      min-height: 100vh;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 360px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1.5rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .section {\n      margin-bottom: 1rem;\n    }\n    .list {\n      display: flex;\n      flex-wrap: wrap;\n      gap: 0.5rem;\n    }\n    .list label {\n      background: var(--color-bg);\n      border: 1px solid var(--color-border);\n      border-radius: 4px;\n      padding: 0.5rem 1rem;\n      cursor: pointer;\n      font-size: 1rem;\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n    }\n    .list input[type=\"checkbox\"] {\n      accent-color: var(--color-primary);\n    }\n    .actions {\n      display: flex;\n      justify-content: center;\n      gap: 1rem;\n    }\n    button {\n      background: var(--color-primary);\n      color: #fff;\n      border: none;\n      border-radius: 4px;\n      padding: 0.5rem 1rem;\n      font-size: 1rem;\n      cursor: pointer;\n      transition: background 0.2s;\n    }\n    button:hover {\n      background: #0b5ed7;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Select Your Favorites</h2>\n    <section class=\"section\">\n      <strong>Teams:</strong>\n      <div class=\"list\">\n        <label><input type=\"checkbox\"> FC Barcelona</label>\n        <label><input type=\"checkbox\"> Real Madrid</label>\n        <label><input type=\"checkbox\"> Manchester United</label>\n        <label><input type=\"checkbox\"> Liverpool</label>\n        <label><input type=\"checkbox\"> Bayern Munich</label>\n      </div>\n    </section>\n    <section class=\"section\">\n      <strong>Sports Channels:</strong>\n      <div class=\"list\">\n        <label><input type=\"checkbox\"> ESPN</label>\n        <label><input type=\"checkbox\"> Sky Sports</label>\n        <label><input type=\"checkbox\"> DAZN</label>\n        <label><input type=\"checkbox\"> Fox Sports</label>\n      </div>\n    </section>\n    <div class=\"actions\">\n      <button type=\"button\">Save Preferences</button>\n    </div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Please select at least one team or channel.</div>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "news_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>News - Favorite Teams</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 420px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .news-list {\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    .news-card {\n      background: var(--color-bg);\n      border: 1px solid var(--color-border);\n      border-radius: 4px;\n      padding: 1rem;\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n      position: relative;\n    }\n    .news-title {\n      font-weight: bold;\n      font-size: 1.1rem;\n    }\n    .news-meta {\n      font-size: 0.95rem;\n      color: #6c757d;\n    }\n    .news-actions {\n      display: flex;\n      gap: 0.5rem;\n      margin-top: 0.5rem;\n    }\n    .share-btn {\n      background: var(--color-primary);\n      color: #fff;\n      border: none;\n      border-radius: 4px;\n      padding: 0.3rem 0.8rem;\n      font-size: 0.95rem;\n      cursor: pointer;\n      transition: background 0.2s;\n    }\n    .share-btn:hover {\n      background: #0b5ed7;\n    }\n    .empty {\n      text-align: center;\n      color: #6c757d;\n      margin-top: 2rem;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>News for Your Favorite Teams</h2>\n    <div class=\"news-list\">\n      <!-- Populated State Example -->\n      <article class=\"news-card\">\n        <div class=\"news-title\">Barcelona signs new striker</div>\n        <div class=\"news-meta\">FC Barcelona &middot; 2 hours ago</div>\n        <div class=\"news-actions\">\n          <button class=\"share-btn\">Share</button>\n        </div>\n      </article>\n      <article class=\"news-card\">\n        <div class=\"news-title\">Manchester United wins derby</div>\n        <div class=\"news-meta\">Manchester United &middot; 1 hour ago</div>\n        <div class=\"news-actions\">\n          <button class=\"share-btn\">Share</button>\n        </div>\n      </article>\n    </div>\n    <!-- Empty State Example -->\n    <div class=\"empty\" style=\"display:none;\">No news available for your selected teams.</div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Failed to load news. Please try again.</div>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "live_ticker_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Live Ticker - Favorite Teams</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 420px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .ticker-list {\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    .match-card {\n      background: var(--color-bg);\n      border: 1px solid var(--color-border);\n      border-radius: 4px;\n      padding: 1rem;\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n    }\n    .match-title {\n      font-weight: bold;\n      font-size: 1.1rem;\n    }\n    .match-score {\n      font-size: 1.2rem;\n      color: var(--color-primary);\n      font-weight: bold;\n    }\n    .match-meta {\n      font-size: 0.95rem;\n      color: #6c757d;\n    }\n    .empty {\n      text-align: center;\n      color: #6c757d;\n      margin-top: 2rem;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Live Match Results</h2>\n    <div class=\"ticker-list\">\n      <!-- Populated State Example -->\n      <div class=\"match-card\">\n        <div class=\"match-title\">Barcelona vs Real Madrid</div>\n        <div class=\"match-score\">2 - 1</div>\n        <div class=\"match-meta\">78' &middot; La Liga</div>\n      </div>\n      <div class=\"match-card\">\n        <div class=\"match-title\">Manchester United vs Liverpool</div>\n        <div class=\"match-score\">1 - 1</div>\n        <div class=\"match-meta\">65' &middot; Premier League</div>\n      </div>\n    </div>\n    <!-- Empty State Example -->\n    <div class=\"empty\" style=\"display:none;\">No live matches for your selected teams.</div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Failed to load live results. Please try again.</div>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "notifications_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Notification Settings</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 340px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1.5rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .toggle-group {\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    .toggle {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n      font-size: 1rem;\n    }\n    input[type=\"checkbox\"] {\n      accent-color: var(--color-primary);\n      width: 20px;\n      height: 20px;\n    }\n    .preview {\n      background: var(--color-bg);\n      border: 1px solid var(--color-border);\n      border-radius: 4px;\n      padding: 1rem;\n      font-size: 0.95rem;\n      color: #6c757d;\n      text-align: center;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n    .actions {\n      display: flex;\n      justify-content: center;\n      gap: 1rem;\n    }\n    button {\n      background: var(--color-primary);\n      color: #fff;\n      border: none;\n      border-radius: 4px;\n      padding: 0.5rem 1rem;\n      font-size: 1rem;\n      cursor: pointer;\n      transition: background 0.2s;\n    }\n    button:hover {\n      background: #0b5ed7;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Notification Settings</h2>\n    <div class=\"toggle-group\">\n      <label class=\"toggle\">\n        <input type=\"checkbox\" checked>\n        Enable push notifications\n      </label>\n      <label class=\"toggle\">\n        <input type=\"checkbox\">\n        News updates\n      </label>\n      <label class=\"toggle\">\n        <input type=\"checkbox\" checked>\n        Live match results\n      </label>\n    </div>\n    <div class=\"preview\">\n      Sample notification: <br>\n      <strong>Barcelona wins 2-1 against Real Madrid!</strong>\n    </div>\n    <div class=\"actions\">\n      <button type=\"button\">Save Settings</button>\n    </div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Failed to update notification settings.</div>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "match_stream_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Match Stream Link</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 420px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1.5rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .match-info {\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n      font-size: 1rem;\n    }\n    .stream-link {\n      background: var(--color-primary);\n      color: #fff;\n      border: none;\n      border-radius: 4px;\n      padding: 0.5rem 1rem;\n      font-size: 1rem;\n      cursor: pointer;\n      text-align: center;\n      margin-top: 1rem;\n      transition: background 0.2s;\n      display: inline-block;\n    }\n    .stream-link:hover {\n      background: #0b5ed7;\n    }\n    .rights-unavailable {\n      color: var(--color-error);\n      font-size: 1rem;\n      margin-top: 1rem;\n      text-align: center;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Match Details</h2>\n    <div class=\"match-info\">\n      <div><strong>Barcelona vs Real Madrid</strong></div>\n      <div>La Liga &middot; 2024-06-10 &middot; 21:00</div>\n      <div>Score: 2 - 1</div>\n    </div>\n    <!-- Populated State: Rights available -->\n    <a class=\"stream-link\" href=\"#\">Watch Live Stream</a>\n    <!-- Rights unavailable state -->\n    <div class=\"rights-unavailable\" style=\"display:none;\">Live stream not available in your country.</div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Failed to load stream link.</div>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "team_player_details_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Team & Player Details</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 420px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1.5rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .profile-section {\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    .profile-header {\n      font-size: 1.2rem;\n      font-weight: bold;\n    }\n    .stats {\n      display: grid;\n      grid-template-columns: 1fr 1fr;\n      gap: 0.5rem;\n      font-size: 1rem;\n    }\n    .stats div {\n      background: var(--color-bg);\n      border: 1px solid var(--color-border);\n      border-radius: 4px;\n      padding: 0.5rem;\n      text-align: center;\n    }\n    .empty {\n      text-align: center;\n      color: #6c757d;\n      margin-top: 2rem;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Team & Player Details</h2>\n    <section class=\"profile-section\">\n      <!-- Team Profile Example -->\n      <div class=\"profile-header\">FC Barcelona</div>\n      <div class=\"stats\">\n        <div>Wins: 22</div>\n        <div>Losses: 5</div>\n        <div>Draws: 7</div>\n        <div>Goals: 68</div>\n      </div>\n    </section>\n    <section class=\"profile-section\">\n      <!-- Player Profile Example -->\n      <div class=\"profile-header\">Lionel Messi</div>\n      <div class=\"stats\">\n        <div>Appearances: 30</div>\n        <div>Goals: 25</div>\n        <div>Assists: 12</div>\n        <div>Yellow Cards: 2</div>\n      </div>\n    </section>\n    <!-- Empty State Example -->\n    <div class=\"empty\" style=\"display:none;\">No details available for selected team/player.</div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Failed to load details. Please try again.</div>\n  </div>\n</body>\n</html>"
+        },
+        {
+          "html_filename": "settings_customization_mockup.html",
+          "html_content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Settings - Module Customization</title>\n  <style>\n    :root {\n      --color-bg: #f8f9fa;\n      --color-primary: #0d6efd;\n      --color-text: #212529;\n      --color-border: #dee2e6;\n      --color-error: #dc3545;\n    }\n    body {\n      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n      background: var(--color-bg);\n      color: var(--color-text);\n      margin: 0;\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n    .container {\n      background: #fff;\n      border: 1px solid var(--color-border);\n      border-radius: 8px;\n      padding: 2rem;\n      margin-top: 2rem;\n      width: 360px;\n      box-shadow: 0 2px 8px rgba(0,0,0,0.04);\n      display: flex;\n      flex-direction: column;\n      gap: 1.5rem;\n    }\n    h2 {\n      text-align: center;\n      margin-bottom: 1rem;\n    }\n    .module-list {\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n    .module-toggle {\n      display: flex;\n      align-items: center;\n      gap: 0.5rem;\n      font-size: 1rem;\n    }\n    input[type=\"checkbox\"] {\n      accent-color: var(--color-primary);\n      width: 20px;\n      height: 20px;\n    }\n    .interface-connect {\n      margin-top: 1rem;\n      display: flex;\n      flex-direction: column;\n      gap: 0.5rem;\n    }\n    .actions {\n      display: flex;\n      justify-content: center;\n      gap: 1rem;\n    }\n    button {\n      background: var(--color-primary);\n      color: #fff;\n      border: none;\n      border-radius: 4px;\n      padding: 0.5rem 1rem;\n      font-size: 1rem;\n      cursor: pointer;\n      transition: background 0.2s;\n    }\n    button:hover {\n      background: #0b5ed7;\n    }\n    .error {\n      color: var(--color-error);\n      font-size: 0.95rem;\n      margin-top: 0.5rem;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <h2>Customize Your App</h2>\n    <div class=\"module-list\">\n      <label class=\"module-toggle\">\n        <input type=\"checkbox\" checked>\n        News Module\n      </label>\n      <label class=\"module-toggle\">\n        <input type=\"checkbox\" checked>\n        Live Ticker Module\n      </label>\n      <label class=\"module-toggle\">\n        <input type=\"checkbox\">\n        Streams Module\n      </label>\n      <label class=\"module-toggle\">\n        <input type=\"checkbox\" checked>\n        Teams/Players Module\n      </label>\n    </div>\n    <div class=\"interface-connect\">\n      <label for=\"interface\">Connect your interface:</label>\n      <input type=\"text\" id=\"interface\" placeholder=\"Paste interface URL or code\">\n    </div>\n    <div class=\"actions\">\n      <button type=\"button\">Save Configuration</button>\n    </div>\n    <!-- Error State Example -->\n    <div class=\"error\" style=\"display:none;\">Failed to save configuration.</div>\n  </div>\n</body>\n</html>"
+        }
+      ]
+    }
+  },
+  "input_tokens": 7331,
+  "output_tokens": 13380,
+  "total_tokens": 20711
+}

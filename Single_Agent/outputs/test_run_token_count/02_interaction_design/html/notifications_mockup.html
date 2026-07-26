@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Settings</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-error: #dc3545;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 2rem;
+      width: 340px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .toggle-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    input[type="checkbox"] {
+      accent-color: var(--color-primary);
+      width: 20px;
+      height: 20px;
+    }
+    .preview {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 1rem;
+      font-size: 0.95rem;
+      color: #6c757d;
+      text-align: center;
+    }
+    .error {
+      color: var(--color-error);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    button {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0b5ed7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Notification Settings</h2>
+    <div class="toggle-group">
+      <label class="toggle">
+        <input type="checkbox" checked>
+        Enable push notifications
+      </label>
+      <label class="toggle">
+        <input type="checkbox">
+        News updates
+      </label>
+      <label class="toggle">
+        <input type="checkbox" checked>
+        Live match results
+      </label>
+    </div>
+    <div class="preview">
+      Sample notification: <br>
+      <strong>Barcelona wins 2-1 against Real Madrid!</strong>
+    </div>
+    <div class="actions">
+      <button type="button">Save Settings</button>
+    </div>
+    <!-- Error State Example -->
+    <div class="error" style="display:none;">Failed to update notification settings.</div>
+  </div>
+</body>
+</html>

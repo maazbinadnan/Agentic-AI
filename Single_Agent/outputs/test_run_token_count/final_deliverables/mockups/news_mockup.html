@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - Favorite Teams</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-error: #dc3545;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 2rem;
+      width: 420px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .news-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+    .news-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .news-meta {
+      font-size: 0.95rem;
+      color: #6c757d;
+    }
+    .news-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .share-btn {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .share-btn:hover {
+      background: #0b5ed7;
+    }
+    .empty {
+      text-align: center;
+      color: #6c757d;
+      margin-top: 2rem;
+    }
+    .error {
+      color: var(--color-error);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>News for Your Favorite Teams</h2>
+    <div class="news-list">
+      <!-- Populated State Example -->
+      <article class="news-card">
+        <div class="news-title">Barcelona signs new striker</div>
+        <div class="news-meta">FC Barcelona &middot; 2 hours ago</div>
+        <div class="news-actions">
+          <button class="share-btn">Share</button>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-title">Manchester United wins derby</div>
+        <div class="news-meta">Manchester United &middot; 1 hour ago</div>
+        <div class="news-actions">
+          <button class="share-btn">Share</button>
+        </div>
+      </article>
+    </div>
+    <!-- Empty State Example -->
+    <div class="empty" style="display:none;">No news available for your selected teams.</div>
+    <!-- Error State Example -->
+    <div class="error" style="display:none;">Failed to load news. Please try again.</div>
+  </div>
+</body>
+</html>

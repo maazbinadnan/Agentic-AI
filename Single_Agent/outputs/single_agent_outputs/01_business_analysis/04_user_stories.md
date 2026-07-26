@@ -8,63 +8,75 @@
 
 **Acceptance Criteria:**
 - **Scenario: Selecting favorite teams and channels**
-  - **Given:** the user is logged in and on the preferences screen
-  - **When:** the user selects teams and channels and saves preferences
-  - **Then:** the app displays news and live results relevant to the selected teams and channels
+  - **Given:** Given I am a registered user on the app
+  - **When:** When I access the preferences section and select my favorite teams and channels
+  - **Then:** Then my selections are saved and reflected in my news and live results feed
 
 ### US-002
-**User Story:** As a football fan, I want to view current news and live results for my favorite teams so that I stay informed.
+**User Story:** As a football fan, I want to view current news about my favorite teams so that I stay informed.
 
-- **Source:** FR-002, FR-003
+- **Source:** FR-002
 - **Priority:** High
 
 **Acceptance Criteria:**
-- **Scenario: Viewing news and live results**
-  - **Given:** the user has selected favorite teams
-  - **When:** the user opens the app dashboard
-  - **Then:** the app displays the latest news and live results for those teams
+- **Scenario: Viewing personalized news feed**
+  - **Given:** Given I have selected favorite teams
+  - **When:** When I open the news section
+  - **Then:** Then I see news articles relevant to my selected teams
 
 ### US-003
-**User Story:** As a football fan, I want to receive real-time notifications about news and results for my favorite teams so that I never miss important updates.
+**User Story:** As a football fan, I want to follow live results for my favorite teams so that I can track matches in real time.
 
-- **Source:** FR-006
+- **Source:** FR-003
 - **Priority:** High
 
 **Acceptance Criteria:**
-- **Scenario: Receiving notifications**
-  - **Given:** the user has enabled notifications
-  - **When:** a relevant news item or result is available
-  - **Then:** the user receives a push notification on their device
+- **Scenario: Viewing live ticker for favorite teams**
+  - **Given:** Given I have selected favorite teams
+  - **When:** When I open the live ticker module
+  - **Then:** Then I see real-time updates for ongoing matches involving my favorite teams
 
 ### US-004
+**User Story:** As a football fan, I want to receive push notifications about news and results for my favorite teams so that I never miss important updates.
+
+- **Source:** FR-004
+- **Priority:** High
+
+**Acceptance Criteria:**
+- **Scenario: Receiving push notifications**
+  - **Given:** Given I have enabled notifications in the app
+  - **When:** When news or results are available for my favorite teams
+  - **Then:** Then I receive a push notification with the relevant information
+
+### US-005
 **User Story:** As a football fan, I want to access live stream links for matches when available and permitted in my country so that I can watch games live.
 
 - **Source:** FR-005
 - **Priority:** High
 
 **Acceptance Criteria:**
-- **Scenario: Accessing live stream links**
-  - **Given:** a live broadcast is available and rights are fulfilled in the user's country
-  - **When:** the user opens the match details
-  - **Then:** the app displays the live stream link for the match
+- **Scenario: Accessing live stream links with rights check**
+  - **Given:** Given a live stream is available and rights are fulfilled in my country
+  - **When:** When I open the match details
+  - **Then:** Then I see and can access the live stream link
 - **Scenario: Live stream not available due to rights**
-  - **Given:** a live broadcast is not permitted in the user's country
-  - **When:** the user opens the match details
-  - **Then:** the app does not display the live stream link
+  - **Given:** Given a live stream is not permitted in my country
+  - **When:** When I open the match details
+  - **Then:** Then I do not see the live stream link
 
-### US-005
-**User Story:** As a football fan, I want to view detailed team and player information so that I can learn more about my favorite teams and players.
+### US-006
+**User Story:** As a football fan, I want to view detailed information about teams and players so that I can learn more about them.
 
-- **Source:** FR-004
+- **Source:** FR-006
 - **Priority:** Medium
 
 **Acceptance Criteria:**
-- **Scenario: Viewing team and player info**
-  - **Given:** the user is on the team or player profile screen
-  - **When:** the user selects a team or player
-  - **Then:** the app displays detailed information and statistics
+- **Scenario: Viewing team and player details**
+  - **Given:** Given I am on the team or player profile page
+  - **When:** When I select a team or player
+  - **Then:** Then I see detailed stats and information
 
-### US-006
+### US-007
 **User Story:** As a football fan, I want to share news and game reports via social media so that I can inform my friends.
 
 - **Source:** FR-007
@@ -72,66 +84,90 @@
 
 **Acceptance Criteria:**
 - **Scenario: Sharing news via social media**
-  - **Given:** the user is viewing a news article or game report
-  - **When:** the user taps the share button and selects a social media platform
-  - **Then:** the app shares the content via the selected platform
+  - **Given:** Given I am viewing a news article or game report
+  - **When:** When I tap the share button
+  - **Then:** Then I can select a social media platform and share the content
 
-### US-007
-**User Story:** As a football fan, I want the app to load and be ready to use within two seconds after starting so that I can access information quickly.
+### US-008
+**User Story:** As a new user, I want to register and log in quickly at app startup so that I can start using the app immediately.
+
+- **Source:** FR-008
+- **Priority:** High
+
+**Acceptance Criteria:**
+- **Scenario: Quick registration and login**
+  - **Given:** Given I have installed the app
+  - **When:** When I open the app for the first time
+  - **Then:** Then I can register or log in with minimal steps and access the main features
+
+### US-009
+**User Story:** As a football fan, I want to access all app features via a unified user interface so that I can easily navigate between news, live ticker, streams, and team/player info.
+
+- **Source:** FR-009
+- **Priority:** High
+
+**Acceptance Criteria:**
+- **Scenario: Navigating the unified interface**
+  - **Given:** Given I am logged into the app
+  - **When:** When I use the navigation menu
+  - **Then:** Then I can access news, live ticker, streams, and team/player information modules
+
+### US-010
+**User Story:** As a user, I want the app to load and be ready to use within two seconds so that I can access information quickly.
 
 - **Source:** NFR-001
 - **Priority:** High
 
 **Acceptance Criteria:**
 - **Scenario: App startup performance**
-  - **Given:** the user launches the app
-  - **When:** the app starts
-  - **Then:** the app is fully loaded and interactive within two seconds
+  - **Given:** Given the app is installed on my device
+  - **When:** When I launch the app
+  - **Then:** Then the app is fully loaded and ready for interaction within two seconds
 
-### US-008
-**User Story:** As a football fan, I want the app to function reliably even with limited network coverage and remain usable offline so that I can access information anytime.
+### US-011
+**User Story:** As a user, I want the app to function reliably even with limited network coverage and remain usable offline so that I am not dependent on constant connectivity.
 
-- **Source:** FR-009, NFR-003
+- **Source:** NFR-002
 - **Priority:** High
 
 **Acceptance Criteria:**
-- **Scenario: Offline access to previously loaded data**
-  - **Given:** the device is offline and the user has previously loaded news and results
-  - **When:** the user opens the app
-  - **Then:** the app displays the cached news, results, and team/player info
+- **Scenario: Offline usability**
+  - **Given:** Given I have previously loaded content
+  - **When:** When I lose network connection
+  - **Then:** Then I can still access previously loaded news, results, and team/player information
 
-### US-009
-**User Story:** As a user, I want my personal data to be processed securely and in compliance with GDPR so that my privacy is protected.
+### US-012
+**User Story:** As a user, I want my personal data to be protected and processed in compliance with GDPR so that my privacy is ensured.
+
+- **Source:** NFR-005
+- **Priority:** High
+
+**Acceptance Criteria:**
+- **Scenario: GDPR compliance**
+  - **Given:** Given I have registered and provided personal data
+  - **When:** When I use the app
+  - **Then:** Then my data is processed and stored according to GDPR requirements
+
+### US-013
+**User Story:** As a user, I want the app to remain stable and performant even during high traffic so that I can use it without issues on match days.
+
+- **Source:** NFR-003
+- **Priority:** High
+
+**Acceptance Criteria:**
+- **Scenario: High traffic performance**
+  - **Given:** Given there are up to 100,000 concurrent users
+  - **When:** When I use the app during peak times
+  - **Then:** Then the app remains responsive and stable
+
+### US-014
+**User Story:** As a user, I want the app to be available on both Android and iOS devices so that I can use it regardless of my device.
 
 - **Source:** NFR-004
 - **Priority:** High
 
 **Acceptance Criteria:**
-- **Scenario: GDPR-compliant data processing**
-  - **Given:** the user registers and uses the app
-  - **When:** personal data is processed
-  - **Then:** the app processes data according to GDPR requirements
-
-### US-010
-**User Story:** As a football fan, I want to register and log in quickly and easily at app startup so that I can start using the app without delay.
-
-- **Source:** FR-008
-- **Priority:** Medium
-
-**Acceptance Criteria:**
-- **Scenario: Quick registration and login**
-  - **Given:** the user opens the app for the first time
-  - **When:** the user completes the registration or login process
-  - **Then:** the user is granted access to the app's main features
-
-### US-011
-**User Story:** As a football fan, I want to download and install the app on my Android or iOS device so that I can use it on my preferred platform.
-
-- **Source:** FR-010
-- **Priority:** High
-
-**Acceptance Criteria:**
-- **Scenario: App availability on both platforms**
-  - **Given:** the user searches for the app in the app store
-  - **When:** the user downloads and installs the app
-  - **Then:** the app installs and runs on both Android and iOS devices
+- **Scenario: Cross-platform availability**
+  - **Given:** Given I have an Android or iOS device
+  - **When:** When I search for the app in the app store
+  - **Then:** Then I can download and install the app on my device

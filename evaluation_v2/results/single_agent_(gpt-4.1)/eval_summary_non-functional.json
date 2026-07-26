@@ -1,0 +1,193 @@
+{
+    "architecture_name": "Single Agent (GPT-4.1)",
+    "target_type": "Non-Functional",
+    "deterministic_metrics": {
+        "total_requirements": 11,
+        "bdd_compliant_count": 10,
+        "bdd_compliance_percentage": 90.91,
+        "total_words": 543,
+        "avg_word_count_per_requirement": 49.36,
+        "ambiguous_words_found": 2,
+        "ambiguity_density_per_100_words": 0.37,
+        "redundancy_score": 0.1935,
+        "ambiguous_terms_breakdown": {
+            "efficiently": 1,
+            "well": 1
+        }
+    },
+    "alignment_metrics": {
+        "alignments": [
+            {
+                "ground_truth_id": "1",
+                "ground_truth_text": "The app must be available for Android and iOS devices.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "2",
+                "ground_truth_text": "Once the app is started, its startup time must be less than or equal to two seconds.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "3",
+                "ground_truth_text": "The display of live streams in the app must comply with the respective broadcasting rights in the country.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "4",
+                "ground_truth_text": "Users personal data must be stored in compliance with GDPR.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "5",
+                "ground_truth_text": "The apps session management must ensure that logged-in users remain logged in until they actively log out.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "6",
+                "ground_truth_text": "The app must function reliably even with limited network connectivity.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "7",
+                "ground_truth_text": "When the number of users reaches up to 100,000 simultaneously, the app must remain stable.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "8",
+                "ground_truth_text": "After release, a support process must be established to quickly resolve technical issues.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "9",
+                "ground_truth_text": "After six months of operation, feedback and user reviews must be analyzed to further develop the app.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "10",
+                "ground_truth_text": "The app must include an integrated live ticker module.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "11",
+                "ground_truth_text": "The app must include a user interface that is an integral part of the app.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "12",
+                "ground_truth_text": "The live ticker module must be connected to the user interface through its own interface to display data.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "13",
+                "ground_truth_text": "The live ticker module must communicate with an external server via an API to retrieve current match data.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "14",
+                "ground_truth_text": "The external server must provide the app with current match data.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "15",
+                "ground_truth_text": "The external server must be physically located outside the app environment.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "16",
+                "ground_truth_text": "The app must include a user management system.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "17",
+                "ground_truth_text": "The user management system must be connected to the user interface via its own interface.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "18",
+                "ground_truth_text": "The app must include a notification system.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "19",
+                "ground_truth_text": "All modules and the user interface must be fixed components of the app.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            },
+            {
+                "ground_truth_id": "20",
+                "ground_truth_text": "The connection to the external server must be designed flexibly.",
+                "matched": false,
+                "match_score": 0.0,
+                "matched_generated_requirement": null,
+                "explanation": "LLM Parsing error during evaluation: Error code: 404 - {'error': {'type': 'invalid_request_error', 'code': 'DeploymentNotFound', 'message': 'The API deployment for this resource does not exist. If you created the deployment within the last 5 minutes, please wait a moment and try again.'}}"
+            }
+        ],
+        "recall": 0.0,
+        "precision": 0.0,
+        "macro_f1": 0.0
+    },
+    "g_eval_metrics": {
+        "evaluations": [],
+        "mean_invest_score": 0.0,
+        "mean_bdd_score": 0.0,
+        "mean_completeness_score": 0.0,
+        "mean_feasibility_score": 0.0,
+        "mean_overall_score": 0.0
+    }
+}

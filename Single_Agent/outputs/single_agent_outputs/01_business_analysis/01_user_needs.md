@@ -18,56 +18,56 @@
 - **Demand Level:** High
 - **User Journey Context:** User enables notifications and receives push alerts for relevant events.
 
-### UN-004: I need to view live streams of football matches when available and permitted in my country.
+### UN-004: I need to access live stream links for matches when available and permitted in my country.
 - **User Group Type:** Primary
 - **User Group:** Football Fan
 - **Demand Level:** High
-- **User Journey Context:** User accesses live stream links in the app when a broadcast is available and rights are fulfilled.
+- **User Journey Context:** User browses match details and clicks on live stream links when rights are available.
 
-### UN-005: I need to access detailed team and player information at any time.
+### UN-005: I need to view detailed team and player information at any time.
 - **User Group Type:** Primary
 - **User Group:** Football Fan
 - **Demand Level:** Medium
-- **User Journey Context:** User navigates to team or player profiles for in-depth statistics and info.
+- **User Journey Context:** User searches or navigates to team/player profiles for in-depth stats and info.
 
 ### UN-006: I need to share news and game reports via social media directly from the app.
 - **User Group Type:** Primary
 - **User Group:** Football Fan
 - **Demand Level:** Medium
-- **User Journey Context:** User reads an article or report and shares it using integrated social sharing options.
+- **User Journey Context:** User reads an article or report and uses the share function to post on social media.
 
-### UN-007: I need the app to load and be ready to use within two seconds after starting.
+### UN-007: I need to register and log in quickly and easily at app startup.
 - **User Group Type:** Primary
 - **User Group:** Football Fan
 - **Demand Level:** High
-- **User Journey Context:** User launches the app and expects immediate access to main features.
+- **User Journey Context:** User downloads the app, registers or logs in with minimal steps, and accesses main features.
 
-### UN-008: I need the app to function reliably even with limited network coverage and remain usable offline.
+### UN-008: I need the app to load and be ready to use within two seconds after starting.
 - **User Group Type:** Overarching
 - **User Group:** All Users
 - **Demand Level:** High
-- **User Journey Context:** User accesses the app in areas with poor connectivity and expects core features to work.
+- **User Journey Context:** User launches the app and expects immediate access to content.
 
-### UN-009: I need my personal data to be processed securely and in compliance with GDPR.
+### UN-009: I need the app to function reliably even with limited network coverage and remain usable offline.
 - **User Group Type:** Overarching
 - **User Group:** All Users
 - **Demand Level:** High
-- **User Journey Context:** User registers, logs in, and uses the app, expecting privacy and data protection.
+- **User Journey Context:** User accesses the app in areas with poor connectivity and expects continued usability.
 
-### UN-010: I need the app to support up to 100,000 simultaneous users without performance loss.
+### UN-010: I need assurance that my personal data is protected and processed in compliance with GDPR.
 - **User Group Type:** Overarching
 - **User Group:** All Users
 - **Demand Level:** High
-- **User Journey Context:** On match days, many users access the app concurrently and expect consistent performance.
+- **User Journey Context:** User registers and uses the app, expecting privacy and data protection.
 
-### UN-011: I need the app to be available on both Android and iOS devices.
+### UN-011: I need the app to remain stable and performant even during high traffic, such as match days.
+- **User Group Type:** Overarching
+- **User Group:** All Users
+- **Demand Level:** High
+- **User Journey Context:** User accesses the app during peak times and expects no performance degradation.
+
+### UN-012: I need the app to be available on both Android and iOS devices.
 - **User Group Type:** Overarching
 - **User Group:** All Users
 - **Demand Level:** High
 - **User Journey Context:** User downloads and installs the app from the respective app store.
-
-### UN-012: I need to register and log in quickly and easily at app startup.
-- **User Group Type:** Overarching
-- **User Group:** All Users
-- **Demand Level:** Medium
-- **User Journey Context:** User opens the app for the first time and completes registration/login with minimal steps.

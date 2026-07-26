@@ -5,7 +5,7 @@ loader that every agent imports.
 """
 
 from three_amigos.States.state import ThreeAmigosState
-from global_client_layer.llm_client import get_llm
+from global_layer.llm_client import get_llm
 from dotenv import load_dotenv
 import os
 

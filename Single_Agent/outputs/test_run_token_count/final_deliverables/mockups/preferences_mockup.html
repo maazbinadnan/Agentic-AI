@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferences - Favorite Teams & Channels</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-error: #dc3545;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 2rem;
+      width: 360px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .section {
+      margin-bottom: 1rem;
+    }
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .list label {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .list input[type="checkbox"] {
+      accent-color: var(--color-primary);
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    button {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0b5ed7;
+    }
+    .error {
+      color: var(--color-error);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Select Your Favorites</h2>
+    <section class="section">
+      <strong>Teams:</strong>
+      <div class="list">
+        <label><input type="checkbox"> FC Barcelona</label>
+        <label><input type="checkbox"> Real Madrid</label>
+        <label><input type="checkbox"> Manchester United</label>
+        <label><input type="checkbox"> Liverpool</label>
+        <label><input type="checkbox"> Bayern Munich</label>
+      </div>
+    </section>
+    <section class="section">
+      <strong>Sports Channels:</strong>
+      <div class="list">
+        <label><input type="checkbox"> ESPN</label>
+        <label><input type="checkbox"> Sky Sports</label>
+        <label><input type="checkbox"> DAZN</label>
+        <label><input type="checkbox"> Fox Sports</label>
+      </div>
+    </section>
+    <div class="actions">
+      <button type="button">Save Preferences</button>
+    </div>
+    <!-- Error State Example -->
+    <div class="error" style="display:none;">Please select at least one team or channel.</div>
+  </div>
+</body>
+</html>

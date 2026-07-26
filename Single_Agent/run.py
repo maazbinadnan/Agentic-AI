@@ -1,19 +1,19 @@
-"""Single Agent Final — CLI Runner.
+"""Single Agent — CLI Runner.
 
 Usage
 ─────
-    python -m single_agent_final.run --output-dir single_agent_outputs
+    python -m single_agent.run --output-dir single_agent_outputs
 """
 
 import argparse
 from global_layer.functions import _data_file
-from single_agent_final._common_ import _session_dir, save_state
-from single_agent_final.main import create_graph
-from single_agent_final.local_states._state_ import AgentState
+from single_agent._common_ import _session_dir, save_state
+from single_agent.main import create_graph
+from single_agent.local_states._state_ import AgentState
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Single Agent Final CLI Runner")
+    parser = argparse.ArgumentParser(description="Single Agent CLI Runner")
     parser.add_argument(
         "--output-dir", "-o",
         type=str,
@@ -25,7 +25,7 @@ def main() -> None:
     output_dir = args.output_dir
     if not output_dir:
         parser.error(
-            "Output directory path is required. Example: python -m single_agent_final.run --output-dir my_outputs"
+            "Output directory path is required. Example: python -m single_agent.run --output-dir my_outputs"
         )
 
     initial_state: AgentState = {
@@ -34,14 +34,24 @@ def main() -> None:
         "ixd_output": None,
         "input": _data_file(),
         "output_dir": _session_dir(output_dir),
-        "phase": "ba",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0,
     }
 
-    print("Launching Single Agent Final System pipeline...")
+    print("Launching Single Agent System pipeline...")
     print(f"Output Directory: {initial_state['output_dir']}\n")
 
     graph = create_graph()
     final_state = graph.invoke(initial_state)
+    
+    print("\n=======================================================")
+    print("Execution Finished! Total Accumulated Token Usage:")
+    print(f"- Total Input Tokens:  {final_state.get('input_tokens', 0)}")
+    print(f"- Total Output Tokens: {final_state.get('output_tokens', 0)}")
+    print(f"- Total Tokens:        {final_state.get('total_tokens', 0)}")
+    print("=======================================================\n")
+
     save_state(final_state)
 
 

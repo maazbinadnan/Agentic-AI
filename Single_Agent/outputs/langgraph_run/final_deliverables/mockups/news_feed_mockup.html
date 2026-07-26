@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personalized News Feed</title>
+  <style>
+    :root {
+      --color-bg: #f8f9fa;
+      --color-primary: #0d6efd;
+      --color-text: #212529;
+      --color-border: #dee2e6;
+      --color-error: #dc3545;
+      --color-success: #198754;
+      --color-offline: #ffc107;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    main {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 32px;
+    }
+    h2 {
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+    .offline-banner {
+      background: var(--color-offline);
+      color: #212529;
+      padding: 8px 16px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .news-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .news-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--color-primary);
+    }
+    .news-meta {
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+    .news-content {
+      font-size: 1rem;
+      color: var(--color-text);
+    }
+    .share-btn {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      align-self: flex-end;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .share-btn:hover {
+      background: #0b5ed7;
+    }
+    .empty-state {
+      text-align: center;
+      color: var(--color-text);
+      font-size: 1rem;
+      margin-top: 32px;
+    }
+    .error {
+      color: var(--color-error);
+      font-size: 1rem;
+      margin-top: 16px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h2>News About Your Favorite Teams</h2>
+    <div class="offline-banner" style="display:none;">You are offline. Showing previously loaded news.</div>
+    <div class="news-list">
+      <article class="news-card">
+        <div class="news-title">Manchester United Wins Derby</div>
+        <div class="news-meta">ESPN | 2 hours ago</div>
+        <div class="news-content">Manchester United defeated Manchester City 2-1 in a thrilling match. Read the full report for highlights and player ratings.</div>
+        <button class="share-btn" type="button">Share</button>
+      </article>
+      <article class="news-card">
+        <div class="news-title">Real Madrid Signs New Striker</div>
+        <div class="news-meta">Sky Sports | 1 hour ago</div>
+        <div class="news-content">Real Madrid has announced the signing of a promising young striker. Find out more about the transfer details.</div>
+        <button class="share-btn" type="button">Share</button>
+      </article>
+    </div>
+    <div class="empty-state" style="display:none;">No news available for your selected teams.</div>
+    <div class="error" style="display:none;">Failed to load news. Please try again.</div>
+  </main>
+</body>
+</html>

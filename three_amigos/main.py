@@ -22,7 +22,7 @@ Graph topology
                                                                                                 → END
 """
 from pathlib import Path
-from global_functions.functions import _draw_graph
+from global_layer.functions import _draw_graph
 
 from langgraph.graph import StateGraph, START, END
 from three_amigos.States.state import ThreeAmigosState
