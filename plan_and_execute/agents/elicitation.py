@@ -32,8 +32,10 @@ def _save_elicitation_markdown(result: ElicitationOutput, user_answers: dict, ou
     lines.append("## 2. High-Level User Needs\n")
     for un in result.user_needs:
         lines.append(f"### {un.id}: {un.user_need}")
+        lines.append(f"- **Target User Group :** {un.id}: {un.user_group_type}")
         lines.append(f"- **Target Persona:** {un.user_group}")
         lines.append(f"- **User Journey Context:** {un.user_journey}\n")
+        lines.append(f"- **User Need Demand:** {un.demand}\n")
 
     if result.questions:
         lines.append("## 3. Elicitation Clarifying Questions & Stakeholder Responses\n")
@@ -114,11 +116,11 @@ def ask_human(state: AgentState):
     # Re-save 01_elicitation.md with updated answers
     if isinstance(elicitation, dict):
         try:
-            parsed_elicitation = ElicitationOutput(**elicitation)
+            parsed_elicitation = ElicitationOutput.model_validate(elicitation)
             output_dir = state.get("output_dir", "outputs")
             _save_elicitation_markdown(parsed_elicitation, user_answers, output_dir)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"[Human-In-The-Loop] Error saving updated elicitation report: {e}")
 
     # Save to state["user_clarifications"]
     return {"user_clarifications": user_answers}

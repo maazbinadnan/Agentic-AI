@@ -1,6 +1,6 @@
 from typing import List, Optional
 from pydantic import BaseModel, Field
-
+from global_layer.ba_state import UserNeed
 
 class ClarifyingQuestion(BaseModel):
     id: str = Field(
@@ -16,19 +16,10 @@ class ClarifyingQuestion(BaseModel):
         description="Explanation of why this detail is ambiguous or missing in the source text."
     )
 
-
 class DiscoveredPersona(BaseModel):
     name: str = Field(description="Name or title of the user persona (e.g. 'Football Fan').")
     user_group_type: str = Field(description="Type of user group (All Users, Primary, Secondary).")
     description: str = Field(description="Core motivations and usage habits.")
-
-
-class DiscoveredUserNeed(BaseModel):
-    id: str = Field(description="User Need ID (e.g. 'UN-001').")
-    user_need: str = Field(description="High-level user need statement.")
-    user_group: str = Field(description="Target user persona.")
-    user_journey: str = Field(description="Context within the user journey.")
-
 
 class ElicitationOutput(BaseModel):
     has_ambiguities: bool = Field(
@@ -37,7 +28,7 @@ class ElicitationOutput(BaseModel):
     personas: List[DiscoveredPersona] = Field(
         description="Target user personas discovered during elicitation."
     )
-    user_needs: List[DiscoveredUserNeed] = Field(
+    user_needs: List[UserNeed] = Field(
         description="Initial set of high-level user needs extracted from the source document."
     )
     questions: List[ClarifyingQuestion] = Field(

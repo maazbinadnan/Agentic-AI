@@ -41,21 +41,22 @@ def main() -> None:
     graph = create_graph()
     current_input = initial_state
 
-    # Graph stream loop in run.py
+    
+    # Graph stream loop: repeat while graph execution is interrupted
     while True:
         interrupted = False
         for event in graph.stream(current_input, config=config):
             if "__interrupt__" in event:
                 interrupted = True
                 payload = event["__interrupt__"][0].value
-
-                # Input shenanigans delegated to answer_elicitation_qs in _common_.py
+                # Collect user answers via CLI
                 user_answers = answer_elicitation_qs(payload)
+                # Prepare resume Command for the next iteration of the while loop
                 current_input = Command(resume=user_answers)
                 break
         if not interrupted:
             break
-
+    
     state_snapshot = graph.get_state(config)
     final_state = state_snapshot.values
 
