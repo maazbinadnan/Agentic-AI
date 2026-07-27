@@ -3,15 +3,19 @@ import json
 from pathlib import Path
 from typing import cast
 from langchain.messages import SystemMessage, HumanMessage, AIMessage
+from langchain.tools import tool
+from deepagents import create_deep_agent,FilesystemPermission
+from deepagents.backends import FilesystemBackend
 
 from plan_and_execute._common_ import llm, load_prompt
 from plan_and_execute.local_states._state_ import AgentState
 from plan_and_execute.local_states.planner_state import PlanOutput
 from global_layer.functions import token_counter
 
+ROOT_DIR = r"C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\plan_and_execute\outputs"
 __all__ = ["generate_plan"]
 
-
+@tool
 def _save_plan_markdown(plan: PlanOutput, output_dir: str):
     """Saves the generated execution plan to 00_plan.md inside output_dir."""
     out_path = Path(output_dir)
@@ -44,37 +48,47 @@ def generate_plan(state: AgentState):
     system_prompt = load_prompt("planner.md")
     input_text = state.get("input", "")
 
+    # 1. Initialize your Deep Agent instance (or construct it if pre-configured)
+    # Deep agents typically manage their own internal thinking loop or tools
+    deep_agent = create_deep_agent(
+        model=llm,
+        response_format=PlanOutput,  # Enforce structured Pydantic schema
+        system_prompt=system_prompt,
+        backend=FilesystemBackend(root_dir=ROOT_DIR),
+        permissions=[
+        FilesystemPermission(
+            operations=["write"],
+            paths=["/**"],
+            mode="allow",
+        ),
+    ],
+    )
+
     messages = [
-        SystemMessage(content=system_prompt),
-        HumanMessage(content=f"Raw Input Requirements Document:\n{input_text}"),
+        {"role":"user","content": f"Raw Input Requirements Document:\n{input_text}"}
     ]
 
-    structured_llm = llm.with_structured_output(PlanOutput, include_raw=True)
-    response = structured_llm.invoke(messages)
+    # 2. Invoke the deep agent loop
+    result = deep_agent.invoke({"messages": messages})
 
-    if isinstance(response, dict):
-        plan = cast(PlanOutput, response["parsed"])
-        in_tokens, out_tokens, tot_tokens = token_counter(response, "Planner")
-    else:
-        plan = cast(PlanOutput, response)
-        in_tokens, out_tokens, tot_tokens = 0, 0, 0
+    # in_tokens, out_tokens, tot_tokens = token_counter(result, "Planner")
+    # output_dir = state.get("output_dir", "outputs")
+    print(result)
 
-    output_dir = state.get("output_dir", "outputs")
-    _save_plan_markdown(plan, output_dir)
 
-    return {
-        "plan_output": plan.model_dump(),
-        "input_tokens": in_tokens,
-        "output_tokens": out_tokens,
-        "total_tokens": tot_tokens,
-        "messages": [
-            AIMessage(
-                content=(
-                    f"[Planner Agent] Created Requirements Engineering Plan:\n"
-                    f"- Project Summary: {plan.project_summary[:100]}...\n"
-                    f"- Total RE Steps: {len(plan.steps)}\n"
-                    f"[Tokens: {in_tokens} in / {out_tokens} out]"
-                )
-            )
-        ],
-    }
+    # return {
+    #     "plan_output": plan.model_dump(),
+    #     "input_tokens": in_tokens,
+    #     "output_tokens": out_tokens,
+    #     "total_tokens": tot_tokens,
+    #     "messages": [
+    #         AIMessage(
+    #             content=(
+    #                 f"[Planner Agent] Created Requirements Engineering Plan:\n"
+    #                 f"- Project Summary: {plan.project_summary[:100]}...\n"
+    #                 f"- Total RE Steps: {len(plan.steps)}\n"
+    #                 f"[Tokens: {in_tokens} in / {out_tokens} out]"
+    #             )
+    #         )
+    #     ],
+    # }

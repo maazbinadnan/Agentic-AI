@@ -17,9 +17,9 @@ def create_graph():
 
     # 2-Node HITL Flow: START -> elicitation -> ask_human -> END
     builder.add_edge(START, "planner")
-    builder.add_edge("planner", "elicitation")
-    builder.add_edge("elicitation", "ask_human")
-    builder.add_edge("ask_human", END)
+    builder.add_edge("planner", END)
+    # builder.add_edge("elicitation", "ask_human")
+    # builder.add_edge("ask_human", END)
     # builder.add_edge("planner", END)
 
     return builder.compile(checkpointer=checkpointer)
