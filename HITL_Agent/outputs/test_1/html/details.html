@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team/Player Details - LiveFootball</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; }
+    .profile-header { background: #1b263b; color: #fff; border-radius: 8px; padding: 1rem; }
+    .stat-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 1rem; }
+    .live-stream-btn { background: #e63946; color: #fff; }
+    .error-banner { background: #ffc107; color: #222; }
+  </style>
+</head>
+<body>
+  <div class="container py-3">
+    <div class="profile-header mb-3 d-flex align-items-center gap-3">
+      <img src="https://img.icons8.com/color/64/000000/fc-barcelona.png" alt="Team Logo" style="width:64px;">
+      <div>
+        <h3 class="mb-0">FC Barcelona</h3>
+        <span class="small">La Liga</span>
+      </div>
+    </div>
+    <div id="error-banner" class="error-banner p-2 mb-3 d-none rounded text-center">
+      Information unavailable. Please try again later.
+    </div>
+    <div class="row g-3 mb-3">
+      <div class="col-6 col-md-3">
+        <div class="stat-card p-2 text-center">
+          <div class="fw-bold">Wins</div>
+          <div>22</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card p-2 text-center">
+          <div class="fw-bold">Draws</div>
+          <div>8</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card p-2 text-center">
+          <div class="fw-bold">Losses</div>
+          <div>4</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-card p-2 text-center">
+          <div class="fw-bold">Points</div>
+          <div>74</div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button class="btn live-stream-btn me-2">Watch Live Stream</button>
+      <button class="btn btn-outline-secondary" title="Share"><img src="https://img.icons8.com/ios-filled/16/000000/share.png"/> Share</button>
+    </div>
+    <div class="mb-3">
+      <h5>Players</h5>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Lionel Messi <span class="badge bg-primary">Forward</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Frenkie de Jong <span class="badge bg-secondary">Midfielder</span>
+        </li>
+        <!-- More players... -->
+      </ul>
+    </div>
+  </div>
+  <script>
+    // Simulate error state for demo
+    // document.getElementById('error-banner').classList.remove('d-none');
+  </script>
+</body>
+</html>

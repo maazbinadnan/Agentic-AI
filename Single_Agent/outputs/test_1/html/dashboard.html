@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveFootball App - Dashboard</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+  <style>
+    body { font-family: Roboto, Arial, sans-serif; background: #eaf6ff; margin: 0; }
+    .header { background: #2c3e50; color: #fff; padding: 16px; text-align: center; }
+    .nav { display: flex; justify-content: space-around; background: #34495e; color: #fff; padding: 10px 0; }
+    .nav a { color: #fff; text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 4px; }
+    .nav a.active, .nav a:hover { background: #27ae60; }
+    .container { max-width: 900px; margin: 32px auto; padding: 0 16px; }
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 1.3em; color: #2c3e50; margin-bottom: 12px; }
+    .live-ticker { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; margin-bottom: 18px; }
+    .news-feed { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; }
+    .news-item { border-bottom: 1px solid #eee; padding: 12px 0; }
+    .news-item:last-child { border-bottom: none; }
+    .team-selector { margin-bottom: 18px; }
+    .team-selector select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+    .stream-links { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; }
+    .stream-link { display: block; margin-bottom: 8px; color: #27ae60; text-decoration: none; font-weight: 500; }
+    .notification-bar { background: #f1c40f; color: #2c3e50; padding: 10px; border-radius: 4px; margin-bottom: 18px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>LiveFootball Dashboard</h1>
+  </div>
+  <div class="nav">
+    <a href="#" class="active">Home</a>
+    <a href="#">Teams</a>
+    <a href="#">Players</a>
+    <a href="#">Streams</a>
+    <a href="#">Settings</a>
+  </div>
+  <div class="container">
+    <div class="notification-bar">You are viewing live updates for your favorite teams.</div>
+    <div class="section">
+      <div class="section-title">Live Ticker</div>
+      <div class="live-ticker">
+        <div class="team-selector">
+          <label for="team">Select Team:</label>
+          <select id="team">
+            <option>Manchester United</option>
+            <option>Real Madrid</option>
+            <option>Bayern Munich</option>
+            <option>Juventus</option>
+          </select>
+        </div>
+        <div id="live-scores">
+          <strong>Manchester United vs Liverpool</strong> <br>
+          <span>Score: 2 - 1</span> <br>
+          <span>Time: 78'</span>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">News Feed</div>
+      <div class="news-feed">
+        <div class="news-item">
+          <strong>Breaking:</strong> Manchester United signs new striker.<br>
+          <span>10 mins ago</span>
+        </div>
+        <div class="news-item">
+          <strong>Match Preview:</strong> Real Madrid vs Barcelona tonight.<br>
+          <span>1 hour ago</span>
+        </div>
+        <div class="news-item">
+          <strong>Injury Update:</strong> Bayern Munich's goalkeeper out for 2 weeks.<br>
+          <span>2 hours ago</span>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Live Streams</div>
+      <div class="stream-links">
+        <a class="stream-link" href="#">DAZN: Manchester United vs Liverpool (Live)</a>
+        <a class="stream-link" href="#">Sky Sport: Real Madrid vs Barcelona (Live)</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

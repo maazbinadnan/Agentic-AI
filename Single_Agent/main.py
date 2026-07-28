@@ -1,38 +1,27 @@
-"""Single Agent — Linear Workflow Definition (BA -> IxD -> Compile)."""
-
-from pathlib import Path
-from langgraph.graph import StateGraph, START, END
-from single_agent.local_states._state_ import AgentState, OutputState
-import single_agent.agents.business_analyst as ba
-import single_agent.agents.interaction_designer as ixd
-import single_agent.agents.compile_deliverables as compiler
+from langgraph.checkpoint.memory import InMemorySaver
+from langchain.agents import create_agent
 from global_layer.functions import _draw_graph
 
+from single_agent_2._common_ import llm, load_prompt
+from single_agent_2.tools import save_report_file, save_html_mockup, read_file
 
-def create_graph(checkpointer=None):
-    """Build and compile the Single Agent linear workflow graph."""
-    workflow = StateGraph(AgentState, output_schema=OutputState)
-
-    # ── Register nodes ────────────────────────────────────────────────────
-    workflow.add_node("business_analyst", ba.generate)
-    workflow.add_node("interaction_designer", ixd.generate)
-    workflow.add_node("compile_deliverables", compiler.generate)
-
-    # ── Linear Edges ──────────────────────────────────────────────────────
-    workflow.add_edge(START, "business_analyst")
-    workflow.add_edge("business_analyst", "interaction_designer")
-    workflow.add_edge("interaction_designer", "compile_deliverables")
-    workflow.add_edge("compile_deliverables", END)
-
-    return workflow.compile(checkpointer=checkpointer)
+__all__ = ["create_agent_pipeline", "app"]
 
 
-# Default export — used by deployment / langgraph.json
-app = create_graph()
+def create_agent_pipeline():
+    """Creates the Single Agent 2 pipeline using langchain.agents.create_agent."""
+    tools = [save_report_file, save_html_mockup, read_file]
+    checkpointer = InMemorySaver()
 
-if __name__ == "__main__":
-    root = Path(__file__).resolve().parent
-    try:
-        _draw_graph(app, output_path=Path(root / "graph.png"))
-    except Exception as e:
-        print(f"Could not render graph image: {e}")
+    system_prompt = load_prompt("single_agent_master.md")
+
+    agent_graph = create_agent(
+        model=llm,
+        tools=tools,
+        system_prompt=system_prompt,
+        checkpointer=checkpointer,
+        name="Single_Agent_2",
+    )
+    return agent_graph
+
+app = create_agent_pipeline()

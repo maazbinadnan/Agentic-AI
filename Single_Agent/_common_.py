@@ -7,29 +7,22 @@ from functools import lru_cache
 
 load_dotenv()
 
-# Reused across all node calls
+# Reused LLM client instance
 llm = get_llm()
 
-# Read prompts directory from config.json
-config_path = Path(__file__).parent / "config.json"
-if config_path.exists():
-    with open(config_path, "r", encoding="utf-8") as f:
-        config = json.load(f)
-    p_dir = Path(config["prompts_dir"])
-    PROMPTS_DIR = p_dir if p_dir.is_absolute() else (Path(__file__).parent / p_dir).resolve()
-else:
-    PROMPTS_DIR = Path(__file__).parent / "prompts"
+# Read prompts directory
+PROMPTS_DIR = Path(__file__).parent / "prompts"
 
 
 def _outputs_dir() -> str:
-    """Return (and create) the outputs directory for this module."""
+    """Return (and create) the outputs directory for single_agent_2."""
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "outputs")
     os.makedirs(d, exist_ok=True)
     return d
 
 
 def _session_dir(run_number: str) -> str:
-    """Create and return a timestamped session subdirectory inside outputs/."""
+    """Create and return a session subdirectory inside outputs/."""
     d = os.path.join(_outputs_dir(), f"{run_number}")
     os.makedirs(d, exist_ok=True)
     return d
@@ -44,7 +37,7 @@ def load_prompt(prompt_name: str) -> str:
 
 
 def save_state(state: dict):
-    """Saves the graph execution state to a JSON file."""
+    """Saves the graph execution state to state.json."""
     path = Path(state["output_dir"]) / "state.json"
     path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -58,4 +51,4 @@ def save_state(state: dict):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2, default=default_serializer)
 
-    print(f"State saved successfully to '{path.resolve()}'")
+    print(f"[single_agent_2] State saved successfully to '{path.resolve()}'")
