@@ -50,9 +50,6 @@ def save_elicitation_report(report_markdown: str, output_dir: str = "outputs") -
     print(f"\n[ba_team_agent] Successfully saved final report to '{file_path.resolve()}'")
     return f"Successfully saved 01_elicitation_report.md to '{file_path.resolve()}'"
 
-
-
-
 from ba_team_agent._common_ import llm, load_prompt, read_file
 
 # 1. Compile the sub-agent graph using create_agent

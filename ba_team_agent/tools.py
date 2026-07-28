@@ -7,6 +7,7 @@ from ba_team_agent.subagents.user_needs import user_needs_subagent
 from ba_team_agent.subagents.functional_requirements import functional_requirements_subagent
 from ba_team_agent.subagents.non_functional_requirements import non_functional_requirements_subagent
 from ba_team_agent.subagents.user_stories import user_stories_subagent
+from ba_team_agent.subagents.interaction_designer import ixd_subagent
 
 __all__ = ["task", "read_file", "SubagentType"]
 
@@ -29,6 +30,11 @@ class SubagentType(str, Enum):
     USER_STORIES = "user_stories"
     USER_STORY_WRITER = "user_story_writer"
 
+    INTERACTION_DESIGNER = "interaction_designer"
+    IXD = "ixd"
+    INTERACTION_DESIGNER_SPECIALIST = "interaction_designer_specialist"
+    UI_MOCKUP_GENERATOR = "ui_mockup_generator"
+
 
 # Mapping Enum values and string names to compiled subagent instances
 SUBAGENTS = {
@@ -42,6 +48,10 @@ SUBAGENTS = {
     SubagentType.NON_FUNCTIONAL_REQUIREMENTS_GENERATOR.value: non_functional_requirements_subagent,
     SubagentType.USER_STORIES.value: user_stories_subagent,
     SubagentType.USER_STORY_WRITER.value: user_stories_subagent,
+    SubagentType.INTERACTION_DESIGNER.value: ixd_subagent,
+    SubagentType.IXD.value: ixd_subagent,
+    SubagentType.INTERACTION_DESIGNER_SPECIALIST.value: ixd_subagent,
+    SubagentType.UI_MOCKUP_GENERATOR.value: ixd_subagent,
 }
 
 
@@ -55,6 +65,7 @@ def task(agent_name: SubagentType, description: str) -> str:
     - functional_requirements: Generates formal system inputs, workflows, and Functional Requirements (FR-001, FR-002...).
     - non_functional_requirements: Formulates quality attributes, SLA metrics, and Non-Functional Requirements (NFR-001...).
     - user_stories: Formulates Agile User Stories (US-001) with Given/When/Then Acceptance Criteria (AC-001).
+    - interaction_designer (or ixd): Generates UI wireframes/mockups, screen layout specifications, and User Story to UI mapping table (06_ui_mockups.md).
     """
     raw_name = agent_name.value if isinstance(agent_name, Enum) else str(agent_name)
     key = raw_name.lower().strip()

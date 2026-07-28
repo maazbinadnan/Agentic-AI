@@ -2,8 +2,7 @@ from pathlib import Path
 from langchain.agents import create_agent
 from langchain_core.tools import tool
 
-from ba_team_agent._common_ import llm, load_prompt
-from ba_team_agent.tools import read_file
+from ba_team_agent._common_ import llm, load_prompt, read_file
 
 __all__ = ["non_functional_requirements_subagent", "save_non_functional_requirements_report"]
 

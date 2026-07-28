@@ -1,4 +1,4 @@
-"""Single Agent — CLI Runner.
+"""Single Agent — CLI Runner with Live Stream Processing.
 
 Usage
 ─────
@@ -6,6 +6,7 @@ Usage
 """
 
 import argparse
+import sys
 from global_layer.functions import _data_file
 from single_agent._common_ import _session_dir, save_state
 from single_agent.main import create_graph
@@ -39,13 +40,31 @@ def main() -> None:
         "total_tokens": 0,
     }
 
+    print("=======================================================")
     print("Launching Single Agent System pipeline...")
-    print(f"Output Directory: {initial_state['output_dir']}\n")
+    print(f"Output Directory: {initial_state['output_dir']}")
+    print("=======================================================\n")
 
     graph = create_graph()
-    final_state = graph.invoke(initial_state)
     
-    print("\n=======================================================")
+    print("--- Live Stream ---")
+    final_state = dict(initial_state)
+
+    for chunk in graph.stream(initial_state, stream_mode="updates"):
+        if isinstance(chunk, dict):
+            for node_name, state_update in chunk.items():
+                print(f"\n[Node Execution Completed]: `{node_name}`")
+                if isinstance(state_update, dict):
+                    final_state.update(state_update)
+                    if "messages" in state_update and state_update["messages"]:
+                        last_msg = state_update["messages"][-1]
+                        msg_content = getattr(last_msg, "content", str(last_msg))
+                        sys.stdout.write(f"{msg_content}\n")
+                        sys.stdout.flush()
+
+    print("\n--- End of Live Stream ---\n")
+
+    print("=======================================================")
     print("Execution Finished! Total Accumulated Token Usage:")
     print(f"- Total Input Tokens:  {final_state.get('input_tokens', 0)}")
     print(f"- Total Output Tokens: {final_state.get('output_tokens', 0)}")

@@ -6,14 +6,20 @@ We are currently developing a mobile football app that will be available for And
 
 ## Section 2: Stakeholder Q&A History
 
-**Q1:** What is the intended business model for the LiveFootball app (e.g., free, freemium, subscription-based, ad-supported, or paid download)?
+**Q1:** What is the intended business model for the LiveFootball app (e.g., free, freemium with in-app purchases, subscription-based, ad-supported, or a combination)?
+- **A1:** free
 
-**A1:** free
+**Q2:** Will users be required to create an account and log in to use the app, or is registration optional for accessing core features?
+- **A2:** yes create an account to use
 
-**Q2:** Will users need to create an account to access any core features, or is registration optional for all app functionality?
+**Q3:** Are there different user roles or access levels within the app (e.g., admin, moderator, regular user), or is every user treated the same?
+- **A3:** regular users only
 
-**A2:** registration is mandatory
+---
 
-**Q3:** Are there different user roles (e.g., admin, moderator, regular user) within the app, or is every user treated the same in terms of access and permissions?
+**Summary of Resolved Gaps:**
+- The app will be free to use, with no mention of ads, subscriptions, or in-app purchases.
+- All users must register and log in to access the app.
+- There are no special user roles; all users have the same access level.
 
-**A3:** only regular users
+No further high-level ambiguities remain based on the provided requirements and stakeholder clarifications.

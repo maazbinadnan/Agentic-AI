@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveFootball - News Details & Sharing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f5f6fa; }
+    .details-container { max-width: 600px; margin: 3vh auto 8vh auto; }
+    .offline-banner { background: #ffe082; color: #6d4c00; padding: 0.5rem 1rem; border-radius: 6px; margin-bottom: 1rem; display: none; }
+    .share-btn { float: right; }
+    .nav-bottom { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; border-top: 1px solid #eee; }
+    .nav-link.active { color: #1976d2 !important; }
+  </style>
+</head>
+<body>
+  <div class="details-container">
+    <div class="offline-banner" id="offlineBanner">You are offline. Showing cached article.</div>
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h5>Barcelona clinch La Liga title</h5>
+      <button class="btn btn-outline-primary btn-sm share-btn">Share</button>
+    </div>
+    <div class="mb-2 text-muted">By John Smith | 2 hours ago</div>
+    <div class="mb-3">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80" alt="Match photo" class="img-fluid rounded mb-3"/>
+      <p>FC Barcelona secured the La Liga title after a thrilling 2-1 win over Atletico Madrid. The match saw goals from Lewandowski and Pedri, with a late response from Griezmann. Fans celebrated across the city as the final whistle blew.</p>
+      <p>Read more for match highlights, player reactions, and what this means for the upcoming Champions League campaign.</p>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-success btn-sm">WhatsApp</button>
+      <button class="btn btn-outline-info btn-sm">Twitter</button>
+      <button class="btn btn-outline-primary btn-sm">Facebook</button>
+    </div>
+  </div>
+  <nav class="nav nav-pills nav-fill nav-bottom">
+    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="#">Live</a>
+    <a class="nav-link active" href="#">News</a>
+    <a class="nav-link" href="#">Teams</a>
+    <a class="nav-link" href="#">Settings</a>
+  </nav>
+</body>
+</html>

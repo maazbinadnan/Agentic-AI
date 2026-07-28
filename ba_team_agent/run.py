@@ -44,7 +44,8 @@ def main() -> None:
         f"2. User Needs Specification (02_user_needs_report.md)\n"
         f"3. Functional Requirements (03_functional_requirements.md)\n"
         f"4. Non-Functional Requirements (04_non_functional_requirements.md)\n"
-        f"5. User Stories with Acceptance Criteria (05_user_stories.md)"
+        f"5. User Stories with Acceptance Criteria (05_user_stories.md)\n"
+        f"6. UI Mockups and Interaction Design (06_ui_mockups.md)"
     )
 
     initial_state = {
