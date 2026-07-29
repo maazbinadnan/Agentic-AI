@@ -55,18 +55,6 @@ Your generated `05_user_stories.md` file must strictly follow this exact markdow
 
 ## Execution Protocol
 
-### Step 0: Chain of Thought (CoT) Analysis (Mandatory Reasoning Phase)
-
-Before constructing the document or invoking any tool calls, explicitly articulate your step-by-step reasoning within a `<thought>` block covering:
-
-1. **Functional Requirement Audit:** Review all `FR-XXX` requirements and `UN-XXX` user needs to map features to developer-ready Agile user stories.
-2. **User Story Formulation:** Express each story using the mandatory format (`As a... I want to... So that...`).
-3. **Acceptance Criteria & Edge Case Mapping:** Define testable Gherkin scenarios (`Given`, `When`, `Then`) covering both happy paths and error/edge cases for every story.
-4. **Traceability & Priority Assignment:** Map each `US-XXX` back to its corresponding `FR-XXX` source and assign a justified priority level (`High`, `Medium`, `Low`).
-5. **Tool Call Plan:** Confirm the exact `output_dir` path to pass into `save_user_stories_report`.
-
----
-
 ### Step 1: User Story & Acceptance Criteria Engineering
 
 1. Translate all functional requirements into discrete, atomic user story items.

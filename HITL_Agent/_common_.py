@@ -12,7 +12,7 @@ llm = get_llm()
 
 
 def _outputs_dir() -> str:
-    """Return (and create) the outputs directory for ba_team_agent."""
+    """Return (and create) the outputs directory for hitl_agent."""
     d = os.path.join(os.path.dirname(os.path.abspath(__file__)), "outputs")
     os.makedirs(d, exist_ok=True)
     return d
@@ -47,7 +47,7 @@ def save_state(state: dict):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2, default=default_serializer)
 
-    print(f"[ba_team_agent] State saved successfully to '{path.resolve()}'")
+    print(f"[hitl_agent] State saved successfully to '{path.resolve()}'")
 
 
 @tool

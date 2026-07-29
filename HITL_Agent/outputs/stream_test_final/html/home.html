@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball App – Home</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-[#181A1B] min-h-screen">
+  <!-- Side drawer navigation for mobile -->
+  <div class="fixed inset-y-0 left-0 z-40 w-64 bg-white dark:bg-[#23272A] shadow-lg flex flex-col p-4 space-y-4 hidden" id="drawer-nav">
+    <div class="flex items-center gap-2 mb-4">
+      <svg width="32" height="32" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="#0E2804"/><text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="20" font-family="Roboto" dy=".3em">⚽</text></svg>
+      <span class="text-lg font-bold text-[#0E2804] dark:text-[#3B82F6]">LiveFootball</span>
+    </div>
+    <nav class="flex flex-col gap-2">
+      <a href="#" class="py-2 px-3 rounded-lg text-[#0E2804] dark:text-[#3B82F6] bg-gray-100 dark:bg-[#181A1B] font-semibold">Home</a>
+      <a href="#" class="py-2 px-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#181A1B]">Live Ticker</a>
+      <a href="#" class="py-2 px-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#181A1B]">Teams</a>
+      <a href="#" class="py-2 px-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-[#181A1B]">Settings</a>
+    </nav>
+    <div class="mt-auto flex flex-col gap-2">
+      <button class="w-full py-2 rounded-lg bg-[#0E2804] text-white font-semibold">Log Out</button>
+    </div>
+  </div>
+  <!-- Top bar -->
+  <header class="flex items-center justify-between px-4 py-3 bg-white dark:bg-[#23272A] shadow-md sticky top-0 z-30">
+    <button class="md:hidden text-[#0E2804] dark:text-[#3B82F6]" aria-label="Open navigation">
+      <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <span class="text-xl font-bold text-[#0E2804] dark:text-[#3B82F6]">LiveFootball</span>
+    <div class="flex items-center gap-2">
+      <button class="relative" aria-label="Notifications">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="#3B82F6" stroke-width="2" d="M12 22a2 2 0 0 0 2-2H10a2 2 0 0 0 2 2Zm6-6V11a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2Z"/></svg>
+        <span class="absolute -top-1 -right-1 bg-[#F59E42] text-white text-xs rounded-full px-1.5">3</span>
+      </button>
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-8 h-8 rounded-full border-2 border-[#0E2804] dark:border-[#3B82F6]" />
+    </div>
+  </header>
+  <main class="max-w-lg mx-auto px-4 py-6">
+    <!-- Favorite teams filter -->
+    <div class="flex gap-2 overflow-x-auto mb-4">
+      <button class="px-4 py-2 rounded-full bg-[#0E2804] text-white font-semibold">All</button>
+      <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-[#23272A] text-[#0E2804] dark:text-[#3B82F6] font-semibold">Man United</button>
+      <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-[#23272A] text-[#0E2804] dark:text-[#3B82F6] font-semibold">Real Madrid</button>
+      <button class="px-4 py-2 rounded-full bg-gray-200 dark:bg-[#23272A] text-[#0E2804] dark:text-[#3B82F6] font-semibold">Bayern</button>
+    </div>
+    <!-- Live ticker widget -->
+    <section class="mb-6">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-lg font-semibold text-[#0E2804] dark:text-[#3B82F6]">Live Ticker</h2>
+        <a href="#" class="text-sm text-[#3B82F6] hover:underline">See all</a>
+      </div>
+      <div class="bg-white dark:bg-[#23272A] rounded-xl shadow p-4 flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <span class="font-medium text-gray-700 dark:text-gray-200">Man United vs Chelsea</span>
+          <span class="text-[#F59E42] font-bold">2 - 1</span>
+        </div>
+        <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+          <span>78'</span>
+          <span>Premier League</span>
+        </div>
+        <div class="text-xs text-[#3B82F6] mt-1">Goal! Rashford (MU)</div>
+      </div>
+    </section>
+    <!-- News feed cards -->
+    <section>
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-lg font-semibold text-[#0E2804] dark:text-[#3B82F6]">Latest News</h2>
+        <a href="#" class="text-sm text-[#3B82F6] hover:underline">Refresh</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <article class="bg-white dark:bg-[#23272A] rounded-xl shadow p-4 flex flex-col gap-2">
+          <h3 class="text-base font-bold text-[#0E2804] dark:text-[#3B82F6]">Man United clinch dramatic win</h3>
+          <p class="text-gray-700 dark:text-gray-200 text-sm">A late goal from Rashford secures a 2-1 victory over Chelsea in a thrilling match at Old Trafford.</p>
+          <div class="flex items-center gap-2 mt-2">
+            <button class="text-[#3B82F6] text-xs font-semibold flex items-center gap-1"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="#3B82F6" stroke-width="2" d="M4 12h16M12 4v16"/></svg>Share</button>
+            <span class="text-xs text-gray-400">2h ago</span>
+          </div>
+        </article>
+        <article class="bg-white dark:bg-[#23272A] rounded-xl shadow p-4 flex flex-col gap-2">
+          <h3 class="text-base font-bold text-[#0E2804] dark:text-[#3B82F6]">Champions League: Bayern advance</h3>
+          <p class="text-gray-700 dark:text-gray-200 text-sm">Bayern Munich progress to the semifinals after a convincing win over PSG.</p>
+          <div class="flex items-center gap-2 mt-2">
+            <button class="text-[#3B82F6] text-xs font-semibold flex items-center gap-1"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="#3B82F6" stroke-width="2" d="M4 12h16M12 4v16"/></svg>Share</button>
+            <span class="text-xs text-gray-400">4h ago</span>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- Offline/No data banner example -->
+    <div class="hidden mt-6 bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-200 px-4 py-2 rounded-lg text-sm" id="offline-banner">
+      You are offline. Showing cached news and results. Live features are disabled.
+    </div>
+    <div class="hidden mt-6 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 px-4 py-2 rounded-lg text-sm" id="error-banner">
+      News and results are currently unavailable. Please try again later.
+    </div>
+  </main>
+</body>
+</html>

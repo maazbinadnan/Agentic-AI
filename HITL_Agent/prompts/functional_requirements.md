@@ -37,18 +37,6 @@ Your generated `03_functional_requirements.md` file must strictly follow this ex
 
 ## Execution Protocol
 
-### Step 0: Chain of Thought (CoT) Analysis (Mandatory Reasoning Phase)
-
-Before constructing the document or invoking any tool calls, explicitly articulate your step-by-step reasoning within a `<thought>` block covering:
-
-1. **Input Audit & Feature Mapping:** Review the operational requirements, stakeholder Q&A, and `UN-XXX` user needs to map features to atomic system behaviors.
-2. **Requirement Phrasing & Validation:** Formulate precise, testable functional behavior statements using mandatory **"shall"** phrasing.
-3. **Traceability Mapping:** Map each `FR-XXX` back to its corresponding source user need(s) (`UN-XXX`).
-4. **Priority Assignment:** Assign justified priority levels (`High`, `Medium`, `Low`) to each requirement based on criticality.
-5. **Tool Call Plan:** Confirm the exact `output_dir` path to pass into `save_functional_requirements_report`.
-
----
-
 ### Step 1: Functional Requirements Engineering
 
 1. Deconstruct all functional capabilities into discrete, atomic requirement items.

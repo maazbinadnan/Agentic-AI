@@ -1,7 +1,7 @@
 from langchain.agents import create_agent
 from langchain_core.tools import tool
 from pathlib import Path
-from ba_team_agent._common_ import llm,load_prompt
+from hitl_agent._common_ import llm,load_prompt
 
 __all__ = ["elicitation_subagent"]
 
@@ -47,10 +47,10 @@ def save_elicitation_report(report_markdown: str, output_dir: str = "outputs") -
     out_path.mkdir(parents=True, exist_ok=True)
     file_path = out_path / "01_elicitation_report.md"
     file_path.write_text(report_markdown, encoding="utf-8")
-    print(f"\n[ba_team_agent] Successfully saved final report to '{file_path.resolve()}'")
+    print(f"\n[elicitation agent] Successfully saved final report to '{file_path.resolve()}'")
     return f"Successfully saved 01_elicitation_report.md to '{file_path.resolve()}'"
 
-from ba_team_agent._common_ import llm, load_prompt, read_file
+from hitl_agent._common_ import llm, load_prompt, read_file
 
 # 1. Compile the sub-agent graph using create_agent
 elicitation_subagent = create_agent(

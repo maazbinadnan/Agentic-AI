@@ -33,17 +33,6 @@ Your generated `02_user_needs_report.md` file must strictly follow this exact ma
 
 ## Execution Protocol
 
-### Step 0: Chain of Thought (CoT) Analysis (Mandatory Reasoning Phase)
-
-Before constructing the document or invoking any tool calls, explicitly articulate your step-by-step reasoning within a `<thought>` block covering:
-
-1. **User Group Identification:** Categorize all user roles into `Overarching`, `Primary`, or `Secondary` groups based on the raw input and Q&A updates.
-2. **Atomic Need Extraction:** Deconstruct operational claims and business rules into discrete `UN-XXX` statements.
-3. **Context & Demand Assignment:** Determine the appropriate demand level (`High`, `Medium`, `Low`) and map out the user journey context for each need.
-4. **Tool Call Plan:** Confirm the exact `output_dir` path to pass into `save_user_needs_report`.
-
----
-
 ### Step 1: User Needs Synthesis
 
 1. Audit the raw operational requirements text and stakeholder Q&A records.

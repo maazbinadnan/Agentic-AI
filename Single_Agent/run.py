@@ -10,8 +10,8 @@ from langchain_core.messages import HumanMessage, AIMessageChunk, ToolMessage
 from langchain_core.runnables import RunnableConfig
 
 from global_layer.functions import _data_file
-from single_agent_2._common_ import _session_dir, save_state
-from single_agent_2.main import create_agent_pipeline
+from single_agent._common_ import _session_dir, save_state
+from single_agent.main import create_agent_pipeline
 
 
 def main() -> None:

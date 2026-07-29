@@ -2,8 +2,8 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langchain.agents import create_agent
 from global_layer.functions import _draw_graph
 
-from single_agent_2._common_ import llm, load_prompt
-from single_agent_2.tools import save_report_file, save_html_mockup, read_file
+from single_agent._common_ import llm, load_prompt
+from single_agent.tools import save_report_file, save_html_mockup, read_file
 
 __all__ = ["create_agent_pipeline", "app"]
 

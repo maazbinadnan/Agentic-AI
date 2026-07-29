@@ -37,18 +37,6 @@ Your generated `04_non_functional_requirements.md` file must strictly follow thi
 
 ## Execution Protocol
 
-### Step 0: Chain of Thought (CoT) Analysis (Mandatory Reasoning Phase)
-
-Before constructing the document or invoking any tool calls, explicitly articulate your step-by-step reasoning within a `<thought>` block covering:
-
-1. **Quality Attribute Audit:** Analyze technical inputs across standard NFR categories (Performance, Scalability, Security & Compliance, Reliability & Availability, Usability, Platform Support).
-2. **Measurable Metric Formulation:** Ensure each requirement defines concrete, testable metrics (e.g., SLAs, load limits, response times, encryption standards) using mandatory **"shall"** phrasing.
-3. **Traceability Mapping:** Map each `NFR-XXX` back to its corresponding source user need(s) (`UN-XXX`).
-4. **Priority Assignment:** Assign justified priority levels (`High`, `Medium`, `Low`) to each non-functional requirement based on operational impact.
-5. **Tool Call Plan:** Confirm the exact `output_dir` path to pass into `save_non_functional_requirements_report`.
-
----
-
 ### Step 1: Non-Functional Requirements Engineering
 
 1. Formulate discrete, measurable NFR items specifying technical performance, security, availability, and usability bounds.

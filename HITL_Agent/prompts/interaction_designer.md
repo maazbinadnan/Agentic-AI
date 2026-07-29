@@ -40,18 +40,6 @@ Your compiled report must contain this exact markdown mapping table structure:
 
 ## Execution Protocol
 
-### Step 0: Chain of Thought (CoT) Analysis (Mandatory Reasoning Phase)
-
-Before invoking any tool calls or generating files, explicitly articulate your step-by-step reasoning within a `<thought>` block covering:
-
-1. **User Story & Screen Extraction:** Review all `US-XXX` items and acceptance criteria to map user flows into distinct screen views (e.g., authentication view, main dashboard, detail views, settings).
-2. **Component & Interaction Layout:** Outline key UI components, layout structures, and visual elements required for each screen to satisfy the corresponding Gherkin scenarios.
-3. **HTML File Plan:** Determine the exact set of HTML files to construct and save into `{output_dir}/html/`.
-4. **Mapping Matrix Formulation:** Construct the mapping table linking each HTML file to its covered `US-XXX` IDs and key UI components.
-5. **Tool Call Plan:** Outline the tool call sequence (`save_html_mockup` calls followed by `save_ui_mockups_report`).
-
----
-
 ### Step 1: Standalone HTML Mockup Generation
 
 1. Read `05_user_stories.md` (or target input prompt) to extract all user stories and acceptance criteria.

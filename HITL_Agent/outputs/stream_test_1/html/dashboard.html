@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveFootball App - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8fafc; }
+    .navbar { background: #0a192f; }
+    .navbar-brand, .nav-link, .navbar-text { color: #fff !important; }
+    .news-card { box-shadow: 0 2px 8px #0001; border-radius: 1rem; margin-bottom: 1.5rem; }
+    .favorite-filter { margin-bottom: 1rem; }
+    .live-ticker-widget { background: #e0ffe0; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.5rem; }
+    .offline-banner { background: #ffc107; color: #212529; padding: 0.5rem 1rem; border-radius: 0.5rem; margin-bottom: 1rem; display: none; }
+    .share-btn { background: #4267B2; color: #fff; border: none; border-radius: 0.5rem; padding: 0.3rem 0.8rem; margin-left: 0.5rem; }
+    .share-btn:hover { background: #365899; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/soccer-ball.png" style="margin-right:8px;">LiveFootball</a>
+      <div class="d-flex align-items-center">
+        <a href="settings.html" class="nav-link">⚙️</a>
+        <a href="#" class="nav-link position-relative">
+          <span class="bi bi-bell"></span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-3 mb-5">
+    <div class="offline-banner" id="offlineBanner">You are offline. Showing cached information.</div>
+    <div class="favorite-filter">
+      <label for="favoriteTeams" class="form-label">Filter by Favorite Team:</label>
+      <select class="form-select" id="favoriteTeams">
+        <option selected>All Teams</option>
+        <option>Manchester United</option>
+        <option>Real Madrid</option>
+        <option>FC Bayern</option>
+      </select>
+    </div>
+    <div class="live-ticker-widget mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div><strong>Live Ticker:</strong> Man Utd 2 - 1 Chelsea (75')</div>
+        <a href="liveticker.html" class="btn btn-outline-success btn-sm">View All</a>
+      </div>
+    </div>
+    <h5>Latest News</h5>
+    <div class="news-card p-3 mb-3 bg-white">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Manchester United sign new striker</strong>
+          <div class="text-muted small">2 hours ago</div>
+        </div>
+        <button class="share-btn">Share</button>
+      </div>
+      <div class="mt-2">Manchester United have completed the signing of...</div>
+    </div>
+    <div class="news-card p-3 mb-3 bg-white">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Real Madrid win El Clasico</strong>
+          <div class="text-muted small">1 hour ago</div>
+        </div>
+        <button class="share-btn">Share</button>
+      </div>
+      <div class="mt-2">Real Madrid secured a dramatic victory over Barcelona...</div>
+    </div>
+    <div class="news-card p-3 mb-3 bg-white">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>No news available for your selected teams.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar fixed-bottom navbar-light bg-light border-top">
+    <div class="container justify-content-around">
+      <a href="dashboard.html" class="nav-link text-center"><span class="bi bi-house"></span><br>Home</a>
+      <a href="liveticker.html" class="nav-link text-center"><span class="bi bi-clock"></span><br>Live Ticker</a>
+      <a href="details.html" class="nav-link text-center"><span class="bi bi-people"></span><br>Teams</a>
+      <a href="settings.html" class="nav-link text-center"><span class="bi bi-gear"></span><br>Settings</a>
+    </div>
+  </nav>
+  <script>
+    // Simulate offline for demo
+    // document.getElementById('offlineBanner').style.display = 'block';
+  </script>
+</body>
+</html>
