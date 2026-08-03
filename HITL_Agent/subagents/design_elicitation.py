@@ -51,11 +51,11 @@ def ask_stakeholder(question_text: str, context_reason: str = "") -> str:
     print(f"-> Recorded Stakeholder Response: '{ans_text}'\n")
     return f"Stakeholder Answer to '{question_text}': {ans_text}"
 
-
+llm_with_tools = llm.bind_tools(tools=[ask_stakeholder, save_design_elicitation_report, read_file],tool_choice="any")
 # Compile the sub-agent graph using create_agent
 design_elicitation_subagent = create_agent(
     model=llm,
     tools=[ask_stakeholder, save_design_elicitation_report, read_file],
     system_prompt=load_prompt("design_elicitation.md"),
-    name="design_elicitation_specialist",
+    name="design_elicitation_specialist"
 )

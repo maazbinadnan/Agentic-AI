@@ -1,0 +1,54 @@
+[
+  {
+    "No.": 1,
+    "Requirement": "User research highlights the fact that most user groups feel that more of the burden should be shared by other user groups (ie airline industry) - this is an inescapable fact. The aim is to try and mitigate this by providing a persuasive argument/rationale in comms, by offering transparency on the progress of the scheme, and by providing clarity around the user's options in terms of travel alternatives or vehicle upgrade."
+  },
+  {
+    "No.": 2,
+    "Requirement": "From UR users, some are aware of CAZS, many who know about it don't fully understand the impact it will have on them."
+  },
+  {
+    "No.": 3,
+    "Requirement": "Zone boundary links are included in both vehicle checker and accounts. Recommendations have been made to Local Authorities to provide a standardised map to communicate boundaries. and LAs have significantly improved their maps over the last few months. All users who have clicked the boundary maps have understood where the zone will be. There is an expectation that the zone will be picked up by mapping such as waze and google maps once zones are live."
+  },
+  {
+    "No.": 4,
+    "Requirement": "Addressed within the digital service through clarity of instructions ensuring users understand whether their vehicles are compliant and, if not, the charges and how to pay. User testing has proven users are under no doubt about their compliance status after using the Compliance Checker service."
+  },
+  {
+    "No.": 5,
+    "Requirement": "User need is met by checking compliance prior to accepting payment, compliant users are unable to proceed through the payment service. Duplicate payments are also prevented for the same VRN within a CAZ on the same day."
+  },
+  {
+    "No.": 6,
+    "Requirement": "User testing indicates the payment process is smooth and intuitive for users. The design patterns are consistent with other government services (eg tax your vehicle) which users have commented make them feel confident because they are familiar."
+  },
+  {
+    "No.": 7,
+    "Requirement": "National exemptions have been built into the service to ensure payments are not taken when an exemption applies. Users are directed to Local Authority sites to check other available local exemptions and asked to confirm they are not locally exempt. Some users report they feel the service should also pick these up. Options are being considered to create integration of local exemptions into the central service for future CAZs."
+  },
+  {
+    "No.": 8,
+    "Requirement": "Users are shown compliance per CAZ on checking their vehicle and UR shows that users understand this. The exact differences between CAZ types is presented in the guidance information."
+  },
+  {
+    "No.": 9,
+    "Requirement": "Support services are being run by DVLA call centre as well as the capability to take offline payments if a user cannot complete the journey online."
+  },
+  {
+    "No.": 10,
+    "Requirement": "Information regarding alternative vehicle options is embedded into the service. Furthermore, local authorities have been publicising local exemption schemes where changing vehicles is being incentivised."
+  },
+  {
+    "No.": 11,
+    "Requirement": "Signposting has been tested with users."
+  },
+  {
+    "No.": 12,
+    "Requirement": "Users are referred to the relevant local authority regarding refunds. Refunds are outside of the centrally controlled service - but links are provided to LAs as they are part of the E2E journey. Until the service goes live for payments, it will be difficult to fully assess how well this need is met, therefore amber status."
+  },
+  {
+    "No.": 13,
+    "Requirement": "PCNs will use the same process as other local authority schemes (bus lanes, parking fines). This is a well known process. PCN has been tested with users and all have understood what action to take."
+  }
+]

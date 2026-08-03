@@ -1,3 +1,6 @@
+import os
+import re
+from pathlib import Path
 from enum import Enum
 from langchain.tools import tool
 
@@ -36,6 +39,16 @@ SUBAGENTS = {
     SubagentType.INTERACTION_DESIGNER.value: ixd_subagent,
 }
 
+EXPECTED_OUTPUT_FILES = {
+    SubagentType.ELICITATION.value: "01_elicitation_report.md",
+    SubagentType.USER_NEEDS.value: "02_user_needs_report.md",
+    SubagentType.FUNCTIONAL_REQUIREMENTS.value: "03_functional_requirements.md",
+    SubagentType.NON_FUNCTIONAL_REQUIREMENTS.value: "04_non_functional_requirements.md",
+    SubagentType.USER_STORIES.value: "05_user_stories.md",
+    SubagentType.DESIGN_ELICITATION.value: "06_design_requirements.md",
+    SubagentType.INTERACTION_DESIGNER.value: "07_ui_mockups.md",
+}
+
 
 @tool
 def task(agent_name: SubagentType, description: str) -> str:
@@ -55,12 +68,28 @@ def task(agent_name: SubagentType, description: str) -> str:
     
     agent = SUBAGENTS.get(key, elicitation_subagent)
     
+    # Extract output directory from description if specified
+    out_dir_match = re.search(r"Output Directory:\s*['\"]?([^'\"\n]+)['\"]?", description, re.IGNORECASE)
+    output_dir = out_dir_match.group(1).strip() if out_dir_match else "outputs"
+    
     result = agent.invoke(
         {"messages": [{"role": "user", "content": description}]},
         config={"recursion_limit": 50}
     )
     
     messages = result.get("messages", [])
-    if messages:
-        return str(messages[-1].content)
-    return "Sub-agent task completed."
+    last_content = str(messages[-1].content) if messages else "Sub-agent task completed."
+
+    # Programmatic file creation check (Option 2)
+    expected_filename = EXPECTED_OUTPUT_FILES.get(key)
+    if expected_filename:
+        file_path = Path(output_dir) / expected_filename
+        if not file_path.exists():
+            return (
+                f"SUB-AGENT EXECUTION FAILED / INCOMPLETE: The sub-agent '{key}' finished execution, "
+                f"but its designated output file '{expected_filename}' was NOT created on disk in '{output_dir}'. "
+                f"Please re-invoke the '{key}' sub-agent to properly complete and save '{expected_filename}'.\n\n"
+                f"Sub-agent response text: {last_content}"
+            )
+
+    return last_content

@@ -1,11 +1,13 @@
 import os
 import json
+import re
+from typing import Any
 from pathlib import Path
 
 from global_layer.ba_state import RequirementsPipelineOutput
 from global_layer.ixd_state import IxdPipelineOutput
 
-DATA_FILE = r"C:\Users\OMNI BOOK\OneDrive - Lancaster University\MSc Dissertation\MSc Project\Data\requirements.md"
+DATA_FILE = r"Data\dataset2\requirements.md"
 
 def _read_file(filepath:str):
     """Read and return the contents of a Markdown file.
@@ -19,8 +21,8 @@ def _read_file(filepath:str):
     except Exception as e:
         return f"An unexpected error occurred: {e}"
     
-def _write_json_file(filepath: str, content: str):
-    """Writes the provided content string to a Markdown file.
+def _write_json_file(filepath: str, content: Any):
+    """Writes content (dict, list, Pydantic model, or JSON string) to a JSON file safely.
     
     Returns a success message on completion, or an error message on failure.
     """
@@ -30,10 +32,24 @@ def _write_json_file(filepath: str, content: str):
         # Create the directory structure if it doesn't exist (does nothing if it exists)
         if target_dir:
             os.makedirs(target_dir, exist_ok=True)
+
+        # 1. Convert Pydantic models automatically
+        if hasattr(content, "model_dump"):
+            content = content.model_dump()
+        elif hasattr(content, "dict"):
+            content = content.dict()
+
+        # 2. Parse raw JSON strings to avoid double-encoding or markdown fences
+        if isinstance(content, str):
+            clean_str = re.sub(r"^```json\s*|```$", "", content.strip(), flags=re.MULTILINE).strip()
+            try:
+                content = json.loads(clean_str)
+            except Exception:
+                pass  # Keep as string if it's plain text
             
         with open(filepath, "w", encoding="utf-8") as file:
-            content =  json.dumps(content, indent=4, ensure_ascii=False)
-            file.write(content)
+            formatted_json = json.dumps(content, indent=4, ensure_ascii=False, default=str)
+            file.write(formatted_json)
         return f"wrote file {filepath} successfully"
     except FileNotFoundError:
         return f"Error: The directory for '{filepath}' was not found."

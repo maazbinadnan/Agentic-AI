@@ -1,0 +1,5 @@
+{
+    "ground_fnr": "Data/functional_requirements.json",
+    "ground_nfnr": "Data/non_functional_requirements.json",
+    "evals_folder": "evaluation/evals"
+}

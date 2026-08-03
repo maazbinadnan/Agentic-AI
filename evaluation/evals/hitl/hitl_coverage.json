@@ -1,0 +1,772 @@
+[
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to individually select preferred sports news channels for display.",
+        "similarity_score": 0.8025
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.797
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.6288
+      }
+    ],
+    "coverage_score": 0.7428
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to view live results of their favorite teams in real time via a live ticker.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.8074
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall update live ticker data in the user interface within a few seconds of real-world events.",
+        "similarity_score": 0.6062
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.6048
+      }
+    ],
+    "coverage_score": 0.6728
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to view league tables and statistics from current as well as past seasons.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display detailed team and player information on demand.",
+        "similarity_score": 0.5126
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.5002
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.4464
+      }
+    ],
+    "coverage_score": 0.4864
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must provide users with detailed team and player information that can be accessed at any time.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display detailed team and player information on demand.",
+        "similarity_score": 0.7514
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall provide offline access to previously loaded news, team, and player information, and allow basic navigation when network connectivity is unavailable.",
+        "similarity_score": 0.5759
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.5154
+      }
+    ],
+    "coverage_score": 0.6142
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "As soon as a live match begins the app must allow users to access live stream links from providers such as DAZN or Sky as long as the broadcast rights are valid.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall integrate live stream links from external providers (e.g., DAZN, Sky Sport) and display them when a live broadcast has begun.",
+        "similarity_score": 0.7522
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall ensure that live stream links are only displayed when transmission rights are fulfilled for the user's country.",
+        "similarity_score": 0.6056
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall ensure that live stream links are only displayed to users in countries where the respective transmission rights are fulfilled.",
+        "similarity_score": 0.6018
+      }
+    ],
+    "coverage_score": 0.6532
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to register easily and log in directly from the start page.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.6651
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.6651
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.4735
+      }
+    ],
+    "coverage_score": 0.6012
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to personalize their experience by following their favorite teams and leagues.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to personalize their experience by following favorite clubs.",
+        "similarity_score": 0.7621
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.616
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.569
+      }
+    ],
+    "coverage_score": 0.6491
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to select favorite teams and national teams to receive push notifications about news and updates.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.7453
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.6683
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to individually select preferred sports news channels for display.",
+        "similarity_score": 0.5768
+      }
+    ],
+    "coverage_score": 0.6635
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to receive push notifications about news or results of their favorite teams.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.8197
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.5948
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to share news articles and game reports via social media directly from the app.",
+        "similarity_score": 0.5784
+      }
+    ],
+    "coverage_score": 0.6643
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to share news and match reports directly via social media.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to share news articles and game reports via social media directly from the app.",
+        "similarity_score": 0.8456
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.5722
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall display current football news relevant to the user's selected favorite teams.",
+        "similarity_score": 0.5173
+      }
+    ],
+    "coverage_score": 0.645
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The live ticker module must allow users to retrieve and display live data.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.7788
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall update live ticker data in the user interface within a few seconds of real-world events.",
+        "similarity_score": 0.6983
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall update and display live ticker data within five seconds of real-world events as provided by the external API.",
+        "similarity_score": 0.6675
+      }
+    ],
+    "coverage_score": 0.7149
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The app must allow users to access live match results through the user interface directly.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.5957
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to share news articles and game reports via social media directly from the app.",
+        "similarity_score": 0.5416
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.5285
+      }
+    ],
+    "coverage_score": 0.5553
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The user interface must allow users to view and manage content and modules together.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.6272
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall maintain consistent user interface layout and module availability regardless of external server updates.",
+        "similarity_score": 0.5252
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to customize the user interface theme (e.g., light/dark mode or color schemes).",
+        "similarity_score": 0.464
+      }
+    ],
+    "coverage_score": 0.5388
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The registration system must allow the registration process to be carried out quickly and easily.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall ensure that registration and login processes can be completed within ten seconds under typical network conditions.",
+        "similarity_score": 0.6472
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.5034
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.5033
+      }
+    ],
+    "coverage_score": 0.5513
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The notification system must allow the app to send users information about current events once activated.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a notification system that informs users about current events when notifications are enabled.",
+        "similarity_score": 0.7966
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall provide notifications to users within five seconds of relevant events when the notification function is activated.",
+        "similarity_score": 0.661
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.6407
+      }
+    ],
+    "coverage_score": 0.6994
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The app must be available for Android and iOS devices.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall be available as a mobile application for both Android and iOS devices.",
+        "similarity_score": 0.7162
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall be fully loaded and ready for user interaction within two seconds of app launch on supported Android and iOS devices under typical network conditions.",
+        "similarity_score": 0.5057
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.4192
+      }
+    ],
+    "coverage_score": 0.547
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Once the app is started, its startup time must be less than or equal to two seconds.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall fully load and be ready for user interaction within a maximum of two seconds after startup.",
+        "similarity_score": 0.6448
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall be fully loaded and ready for user interaction within two seconds of app launch on supported Android and iOS devices under typical network conditions.",
+        "similarity_score": 0.6431
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall ensure that registration and login processes can be completed within ten seconds under typical network conditions.",
+        "similarity_score": 0.4509
+      }
+    ],
+    "coverage_score": 0.5796
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The display of live streams in the app must comply with the respective broadcasting rights in the country.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall ensure that live stream links are only displayed to users in countries where the respective transmission rights are fulfilled.",
+        "similarity_score": 0.7331
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall ensure that live stream links are only displayed when transmission rights are fulfilled for the user's country.",
+        "similarity_score": 0.7251
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall integrate live stream links from external providers (e.g., DAZN, Sky Sport) and display them when a live broadcast has begun.",
+        "similarity_score": 0.5789
+      }
+    ],
+    "coverage_score": 0.679
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Users personal data must be stored in compliance with GDPR.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall process all personal user data in compliance with the GDPR.",
+        "similarity_score": 0.7811
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall process all personal user data in full compliance with the General Data Protection Regulation (GDPR), including user consent, data minimization, and right to erasure.",
+        "similarity_score": 0.709
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.3753
+      }
+    ],
+    "coverage_score": 0.6218
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The apps session management must ensure that logged-in users remain logged in until they actively log out.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.5072
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.5071
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall ensure that registration and login processes can be completed within ten seconds under typical network conditions.",
+        "similarity_score": 0.3883
+      }
+    ],
+    "coverage_score": 0.4675
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The app must function reliably even with limited network connectivity.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall function reliably with limited network coverage, allowing access to previously loaded content and basic navigation when offline.",
+        "similarity_score": 0.6974
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall be fully loaded and ready for user interaction within two seconds of app launch on supported Android and iOS devices under typical network conditions.",
+        "similarity_score": 0.5285
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall provide offline access to previously loaded news, team, and player information, and allow basic navigation when network connectivity is unavailable.",
+        "similarity_score": 0.5246
+      }
+    ],
+    "coverage_score": 0.5835
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "When the number of users reaches up to 100,000 simultaneously, the app must remain stable.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support up to 100,000 concurrent users without performance degradation.",
+        "similarity_score": 0.6925
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support at least 100,000 concurrent users without performance degradation, including during peak match days.",
+        "similarity_score": 0.6324
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall be fully loaded and ready for user interaction within two seconds of app launch on supported Android and iOS devices under typical network conditions.",
+        "similarity_score": 0.4511
+      }
+    ],
+    "coverage_score": 0.592
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "After release, a support process must be established to quickly resolve technical issues.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall undergo thorough testing and support processes before release to detect and resolve malfunctions.",
+        "similarity_score": 0.6574
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall undergo comprehensive testing and support processes prior to release to detect and resolve malfunctions, with user feedback and app reviews continuously evaluated post-release for improvements.",
+        "similarity_score": 0.6348
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall fully load and be ready for user interaction within a maximum of two seconds after startup.",
+        "similarity_score": 0.376
+      }
+    ],
+    "coverage_score": 0.5561
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "After six months of operation, feedback and user reviews must be analyzed to further develop the app.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall continuously evaluate user feedback and app reviews to improve functionality.",
+        "similarity_score": 0.6676
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall undergo comprehensive testing and support processes prior to release to detect and resolve malfunctions, with user feedback and app reviews continuously evaluated post-release for improvements.",
+        "similarity_score": 0.559
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall be fully loaded and ready for user interaction within two seconds of app launch on supported Android and iOS devices under typical network conditions.",
+        "similarity_score": 0.3587
+      }
+    ],
+    "coverage_score": 0.5284
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The app must include an integrated live ticker module.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.7221
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall update and display live ticker data within five seconds of real-world events as provided by the external API.",
+        "similarity_score": 0.6115
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall update live ticker data in the user interface within a few seconds of real-world events.",
+        "similarity_score": 0.5971
+      }
+    ],
+    "coverage_score": 0.6436
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The app must include a user interface that is an integral part of the app.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.5694
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.476
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.4759
+      }
+    ],
+    "coverage_score": 0.5071
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The live ticker module must be connected to the user interface through its own interface to display data.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall update live ticker data in the user interface within a few seconds of real-world events.",
+        "similarity_score": 0.6903
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.6756
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall update and display live ticker data within five seconds of real-world events as provided by the external API.",
+        "similarity_score": 0.6109
+      }
+    ],
+    "coverage_score": 0.6589
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The live ticker module must communicate with an external server via an API to retrieve current match data.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall retrieve live ticker data via an API from an external server.",
+        "similarity_score": 0.7767
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall update and display live ticker data within five seconds of real-world events as provided by the external API.",
+        "similarity_score": 0.6751
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a live ticker module that displays real-time results for the user's favorite teams.",
+        "similarity_score": 0.6692
+      }
+    ],
+    "coverage_score": 0.707
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The external server must provide the app with current match data.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall retrieve live ticker data via an API from an external server.",
+        "similarity_score": 0.5465
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require an active internet connection for live data and live stream features.",
+        "similarity_score": 0.4745
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall update and display live ticker data within five seconds of real-world events as provided by the external API.",
+        "similarity_score": 0.4647
+      }
+    ],
+    "coverage_score": 0.4952
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The external server must be physically located outside the app environment.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall retrieve live ticker data via an API from an external server.",
+        "similarity_score": 0.4177
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall maintain consistent user interface layout and module availability regardless of external server updates.",
+        "similarity_score": 0.398
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require an active internet connection for live data and live stream features.",
+        "similarity_score": 0.3477
+      }
+    ],
+    "coverage_score": 0.3878
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The app must include a user management system.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.6061
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.6061
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.4776
+      }
+    ],
+    "coverage_score": 0.5633
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The user management system must be connected to the user interface via its own interface.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.5816
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall maintain consistent user interface layout and module availability regardless of external server updates.",
+        "similarity_score": 0.5189
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to customize the user interface theme (e.g., light/dark mode or color schemes).",
+        "similarity_score": 0.486
+      }
+    ],
+    "coverage_score": 0.5288
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The app must include a notification system.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a notification system that informs users about current events when notifications are enabled.",
+        "similarity_score": 0.6303
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall provide notifications to users within five seconds of relevant events when the notification function is activated.",
+        "similarity_score": 0.5693
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow users to receive notifications about news or results related to their favorite teams.",
+        "similarity_score": 0.5429
+      }
+    ],
+    "coverage_score": 0.5808
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "All modules and the user interface must be fixed components of the app.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a user interface that allows direct access to all app modules and information.",
+        "similarity_score": 0.583
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall maintain consistent user interface layout and module availability regardless of external server updates.",
+        "similarity_score": 0.5352
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require all users to register and log in before accessing any app features.",
+        "similarity_score": 0.4249
+      }
+    ],
+    "coverage_score": 0.5144
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The connection to the external server must be designed flexibly.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall maintain consistent user interface layout and module availability regardless of external server updates.",
+        "similarity_score": 0.4672
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall retrieve live ticker data via an API from an external server.",
+        "similarity_score": 0.4072
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require an active internet connection for live data and live stream features.",
+        "similarity_score": 0.3973
+      }
+    ],
+    "coverage_score": 0.4239
+  }
+]

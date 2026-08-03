@@ -6,8 +6,10 @@ Usage:
 
 import argparse
 import sys, json
-from langchain_core.messages import HumanMessage, AIMessageChunk, ToolMessage
+from langchain_core.messages import HumanMessage
 from langchain_core.runnables import RunnableConfig
+from langchain.agents.middleware.types import _InputAgentState
+import textwrap
 
 from global_layer.functions import _data_file
 from single_agent._common_ import _session_dir, save_state
@@ -38,74 +40,42 @@ def main() -> None:
     instruction = (
         f"Target Output Directory: '{out_dir}'\n\n"
         f"Raw Operational Requirements Document:\n{raw_input}\n\n"
-        f"GOAL: Autonomously analyze the requirements and generate all BA and IxD deliverables into '{out_dir}' including:\n"
-        f"1. Elicitation Report (01_elicitation_report.md)\n"
-        f"2. User Needs Specification (02_user_needs_report.md)\n"
-        f"3. Functional Requirements (03_functional_requirements.md)\n"
-        f"4. Non-Functional Requirements (04_non_functional_requirements.md)\n"
-        f"5. User Stories with Acceptance Criteria (05_user_stories.md)\n"
-        f"6. Interactive HTML Mockup files in the 'html/' subfolder (save_html_mockup)\n"
-        f"7. UI Mockups and Interaction Design Report (06_ui_mockups.md)\n"
-        f"8. Deliverables Summary Index (INDEX.md)"
+        f"GOAL: Autonomously analyze the raw research and generate all BA and IxD deliverables into '{out_dir}' including:\n"
+        f"1. Functional Requirements (03_functional_requirements.md)\n"
+        f"2. Non-Functional Requirements (04_non_functional_requirements.md)\n"
+        f"3. User Stories with Acceptance Criteria (05_user_stories.md)\n"
+        f"4. Interactive HTML Mockup files in the 'html/' subfolder (save_html_mockup)\n"
+        f"5. UI Mockups and Interaction Design Report (06_ui_mockups.md)\n"
+        f"6. Deliverables Summary Index (INDEX.md)"
     )
 
-    initial_state = {
+    initial_state:_InputAgentState = {
         "messages": [HumanMessage(content=instruction)],
     }
 
     print("\n--- Live Stream (Token-by-Token & Tool Arguments) ---")
-    tool_call_buffer = {}
+   
+    stream = pipeline.stream_events(
+           initial_state,
+           config = config,
+           version ="v3"
+       )
+   
+    for kind, item in stream.interleave("messages", "tool_calls"):
+        if kind == "messages":
+            for token in item.text:
+                print(token, end="", flush=True)
+            for token in item.reasoning:
+                print(f"[thinking] {token}", end="")
+        elif kind == "tool_calls":
+            print(f"\nTool call: {item.tool_name}({textwrap.shorten(str(item.input), width=100, placeholder='...')})")
+            for delta in item.output_deltas:
+                print(delta, end="", flush=True)
+            print(f"\nTool result: {item.output}")
 
-    def flush_tool_calls():
-        if tool_call_buffer:
-            for idx, tc in list(tool_call_buffer.items()):
-                t_name = tc.get("name", "tool")
-                t_args = tc.get("args", "")
-                sys.stdout.write(f"\n\n -> [Tool Call]: `{t_name}`\n")
-                if t_args:
-                    try:
-                        parsed = json.loads(t_args)
-                        formatted_args = json.dumps(parsed, indent=4)
-                        sys.stdout.write(f"    Arguments:\n{formatted_args}\n")
-                    except Exception:
-                        sys.stdout.write(f"    Arguments: {t_args}\n")
-                sys.stdout.flush()
-            tool_call_buffer.clear()
-
-    # Stream mode "messages" yields (message_chunk, metadata) tuples for token-by-token streaming
-    for chunk, metadata in pipeline.stream(initial_state, config=config, stream_mode="messages"):  # type: ignore
-        if isinstance(chunk, AIMessageChunk):
-            if chunk.content:
-                flush_tool_calls()
-                if isinstance(chunk.content, str):
-                    sys.stdout.write(chunk.content)
-                    sys.stdout.flush()
-                elif isinstance(chunk.content, list):
-                    for part in chunk.content:
-                        if isinstance(part, dict) and part.get("type") == "text":
-                            sys.stdout.write(part.get("text", ""))
-                            sys.stdout.flush()
-                        elif isinstance(part, str):
-                            sys.stdout.write(part)
-                            sys.stdout.flush()
-
-            if hasattr(chunk, "tool_call_chunks") and chunk.tool_call_chunks:
-                for tc in chunk.tool_call_chunks:
-                    idx = tc.get("index", 0)
-                    if idx not in tool_call_buffer:
-                        tool_call_buffer[idx] = {"name": tc.get("name") or "", "args": tc.get("args") or ""}
-                    else:
-                        if tc.get("name"):
-                            tool_call_buffer[idx]["name"] += tc.get("name")
-                        if tc.get("args"):
-                            tool_call_buffer[idx]["args"] += tc.get("args")
-
-        elif isinstance(chunk, ToolMessage):
-            flush_tool_calls()
-            sys.stdout.write(f"\n <- [Tool Result]: {chunk.content}\n\n")
-            sys.stdout.flush()
-
-    flush_tool_calls()
+    final_state = stream.output  
+    state_snapshot = pipeline.get_state(config)
+    final_values = state_snapshot.values
     print("\n--- End of Live Stream ---\n")
 
     state_snapshot = pipeline.get_state(config)

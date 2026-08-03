@@ -84,6 +84,7 @@ Every `description` string passed to the `task` tool **MUST** include:
 
 * Execute sub-agent tasks step-by-step based on the user's explicit request.
 * Any sub-agent tasks that require interactive human input must run sequentially depending on whichever step comes first.
+* **STRICT ELICITATION DEPENDENCY RULE**: `design_elicitation` MUST ONLY be invoked after `user_stories` (`05_user_stories.md`) has been compiled and saved to disk or the User has provided them in the initial input. NEVER invoke `design_elicitation` concurrently with `elicitation` or in the same initial turn.
 * Wait for each sub-agent to successfully write its designated Markdown/HTML deliverables before triggering downstream agents that depend on those artifacts.
 
 ---

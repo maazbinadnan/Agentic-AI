@@ -4,9 +4,10 @@ Small wrapper around the OpenAI client used by the project. Only
 module-level documentation was added in this formatting pass; no
 behavioral changes were made.
 """
-from openai import OpenAI
 import os
+import httpx
 from dotenv import load_dotenv
+from openai import OpenAI
 
 load_dotenv()
 
@@ -22,7 +23,9 @@ class ChatClient:
         self._client = OpenAI(
             base_url=os.environ["AZURE_OPENAI_ENDPOINT"],
             api_key=os.environ["AZURE_OPENAI_API_KEY"],
+            http_client=httpx.Client(verify=False),
         )
+
     @property    
     def client(self):
         return self._client

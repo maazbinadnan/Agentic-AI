@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball App – Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-[#0F172A] min-h-screen">
+  <header class="flex items-center justify-between px-4 py-3 bg-[#1E293B] shadow-md">
+    <a href="dashboard.html" class="text-[#3B82F6] hover:text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </a>
+    <span class="text-xl font-bold text-white">Settings</span>
+    <span></span>
+  </header>
+  <main class="px-4 py-6 max-w-2xl mx-auto">
+    <section class="bg-[#1E293B] rounded-xl shadow p-4 mb-6">
+      <h2 class="text-lg font-semibold text-white mb-2">Theme</h2>
+      <div class="flex items-center gap-4">
+        <label class="flex items-center text-gray-300">
+          <input type="radio" name="theme" value="dark" checked class="accent-[#3B82F6] mr-2" />
+          Dark Mode
+        </label>
+        <label class="flex items-center text-gray-300">
+          <input type="radio" name="theme" value="light" class="accent-[#3B82F6] mr-2" />
+          Light Mode
+        </label>
+      </div>
+      <!-- Error state example -->
+      <div class="hidden mt-4 bg-red-600 text-white text-center py-2 rounded-lg" id="theme-error">
+        Failed to apply theme. Please try again.
+      </div>
+    </section>
+    <section class="bg-[#1E293B] rounded-xl shadow p-4 mb-6">
+      <h2 class="text-lg font-semibold text-white mb-2">Preferred News Channels</h2>
+      <div class="flex flex-wrap gap-2 mb-2">
+        <span class="bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm">Sky Sports</span>
+        <span class="bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm">BBC Sport</span>
+        <button class="bg-[#10B981] text-white px-3 py-1 rounded-full text-sm hover:bg-[#059669]">+ Add Channel</button>
+      </div>
+    </section>
+    <section class="bg-[#1E293B] rounded-xl shadow p-4 mb-6">
+      <h2 class="text-lg font-semibold text-white mb-2">Notifications</h2>
+      <label class="flex items-center text-gray-300 mb-2">
+        <input type="checkbox" class="accent-[#3B82F6] mr-2" checked />
+        Enable notifications
+      </label>
+      <label class="flex items-center text-gray-300">
+        <input type="checkbox" class="accent-[#3B82F6] mr-2" checked />
+        Notify me about favorite teams
+      </label>
+    </section>
+    <section class="bg-[#1E293B] rounded-xl shadow p-4 mb-6">
+      <h2 class="text-lg font-semibold text-white mb-2">Account</h2>
+      <button class="w-full py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold rounded-lg transition mb-2">Change Password</button>
+      <button class="w-full py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition">Delete Account</button>
+      <div class="text-xs text-gray-500 text-center mt-2">
+        Your data is processed in compliance with <a href="#" class="underline">GDPR</a>.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
