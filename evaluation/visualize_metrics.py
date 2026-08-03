@@ -150,9 +150,50 @@ def build_iso_table(filepath: str, output_table_path: str | None = None):
 	avg_quality  = overall_score/total
 	table['average_quality_score'] = avg_quality
 	if output_table_path:
-		output_dir = os.path.dirname(output_table_path)
 		_write_json_file(output_table_path,table)
-		print(f"Saved ISO 29148 quality summary table to: {output_table_path}")
+	return table
+
+
+def build_invest_table(filepath: str, output_table_path: str | None = None) -> pd.DataFrame:
+	"""Read INVEST user story evaluation JSON and return a summary DataFrame 
+	highlighting average scores for each INVEST criterion (I, N, V, E, S, T).
+	"""
+	with open(filepath, "r", encoding="utf-8") as jsonfile:
+		data = json.load(jsonfile)
+
+	evaluations = data.get("evaluations", []) if isinstance(data, dict) else data
+	total_stories = len(evaluations)
+
+	if total_stories == 0:
+		return pd.DataFrame(columns=["criterion", "average_score"])
+
+	dim_totals = {"independent": 0.0, "negotiable": 0.0, "valuable": 0.0, "estimable": 0.0, "small": 0.0, "testable": 0.0}
+	overall_total = 0.0
+
+	for item in evaluations:
+		scores = item.get("scores", {}) or {}
+		for k in dim_totals:
+			dim_totals[k] += float(scores.get(k, 0.0))
+		overall_total += float(item.get("overall_invest_score", 0.0))
+
+	rows = [
+		{"criterion": "Independent (I)", "average_score": round(dim_totals["independent"] / total_stories, 4)},
+		{"criterion": "Negotiable (N)", "average_score": round(dim_totals["negotiable"] / total_stories, 4)},
+		{"criterion": "Valuable (V)", "average_score": round(dim_totals["valuable"] / total_stories, 4)},
+		{"criterion": "Estimable (E)", "average_score": round(dim_totals["estimable"] / total_stories, 4)},
+		{"criterion": "Small (S)", "average_score": round(dim_totals["small"] / total_stories, 4)},
+		{"criterion": "Testable (T)", "average_score": round(dim_totals["testable"] / total_stories, 4)},
+		{"criterion": "OVERALL INVEST MEAN", "average_score": round(overall_total / total_stories, 4)},
+	]
+
+	table = pd.DataFrame(rows)
+
+	if output_table_path:
+		output_dir = os.path.dirname(output_table_path)
+		if output_dir:
+			os.makedirs(output_dir, exist_ok=True)
+		table.to_csv(output_table_path, index=False)
+		print(f"Saved INVEST evaluation summary table to: {output_table_path}")
 
 	return table
 

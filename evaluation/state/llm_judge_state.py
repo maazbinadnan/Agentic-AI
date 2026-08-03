@@ -76,4 +76,23 @@ class ISO29148RequirementEvaluation(BaseModel):
 
 class ISO29148EvaluationReport(BaseModel):
     evaluations: List[ISO29148RequirementEvaluation]
+
+
+class INVESTScores(BaseModel):
+    independent: float = Field(description="Score between 0.0 and 1.0 for Independent criterion (I)")
+    negotiable: float = Field(description="Score between 0.0 and 1.0 for Negotiable criterion (N)")
+    valuable: float = Field(description="Score between 0.0 and 1.0 for Valuable criterion (V)")
+    estimable: float = Field(description="Score between 0.0 and 1.0 for Estimable criterion (E)")
+    small: float = Field(description="Score between 0.0 and 1.0 for Small criterion (S)")
+    testable: float = Field(description="Score between 0.0 and 1.0 for Testable criterion (T)")
+
+
+class SingleUserStoryINVESTEvaluation(BaseModel):
+    us_id: str = Field(description="Unique identifier for the user story (e.g. US-001)")
+    user_story: str = Field(description="Text of the user story")
+    scores: INVESTScores = Field(description="INVEST scores each rated between 0.0 and 1.0")
+    reasoning: str = Field(description="Detailed technical explanation for the scores")
+
+class INVESTEvaluationReport(BaseModel):
+    evaluations: List[SingleUserStoryINVESTEvaluation]
     
