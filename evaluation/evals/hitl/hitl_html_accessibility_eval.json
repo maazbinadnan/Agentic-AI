@@ -1,0 +1,298 @@
+[
+    {
+        "filename": "dashboard.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\dashboard.html",
+        "violations_count": 5,
+        "passes_count": 20,
+        "incomplete_count": 0,
+        "inapplicable_count": 68,
+        "report_summary": "Found 5 accessibility violations:\nRule Violated:\nbutton-name - Ensure buttons have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/button-name?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.9.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .hover\\:text-white.focus\\:outline-none[onclick=\"toggleDrawer()\"]\n\t\tSnippet: <button onclick=\"toggleDrawer()\" class=\"text-gray-400 hover:text-white focus:outline-none\">\n\t\tMessages:\n\t\t* Element does not have inner text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: header > .focus\\:outline-none[onclick=\"toggleDrawer()\"]\n\t\tSnippet: <button onclick=\"toggleDrawer()\" class=\"text-[#3B82F6] focus:outline-none\">\n\t\tMessages:\n\t\t* Element does not have inner text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .bg-\\[\\#3B82F6\\].py-1.rounded-full:nth-child(1)\n\t\tSnippet: <span class=\"bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm\">Liverpool</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .bg-\\[\\#3B82F6\\].py-1.rounded-full:nth-child(2)\n\t\tSnippet: <span class=\"bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm\">Real Madrid</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .bg-\\[\\#10B981\\]\n\t\tSnippet: <button class=\"bg-[#10B981] text-white px-3 py-1 rounded-full text-sm hover:bg-[#059669]\">+ Add</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .hover\\:underline.text-sm[href$=\"liveticker.html\"]\n\t\tSnippet: <a href=\"liveticker.html\" class=\"text-[#3B82F6] text-sm hover:underline\">See all</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .rounded-xl.shadow.p-4:nth-child(1) > .font-semibold.text-xs.text-\\[\\#3B82F6\\]\n\t\tSnippet: <span class=\"text-[#3B82F6] text-xs font-semibold\">Liverpool</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: .rounded-xl.shadow.p-4:nth-child(1) > .mt-2.gap-2.items-center > .hover\\:underline:nth-child(1)\n\t\tSnippet: <button class=\"text-[#3B82F6] text-xs hover:underline\">Read more</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t7)\tTarget: .rounded-xl.shadow.p-4:nth-child(2) > .font-semibold.text-xs.text-\\[\\#3B82F6\\]\n\t\tSnippet: <span class=\"text-[#3B82F6] text-xs font-semibold\">Real Madrid</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t8)\tTarget: .rounded-xl.shadow.p-4:nth-child(2) > .mt-2.gap-2.items-center > .hover\\:underline:nth-child(1)\n\t\tSnippet: <button class=\"text-[#3B82F6] text-xs hover:underline\">Read more</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .hover\\:text-white.text-\\[\\#3B82F6\\][href$=\"settings.html\"]\n\t\tSnippet: <a href=\"settings.html\" class=\"text-[#3B82F6] hover:text-white\">\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .py-4 > .text-xl.font-bold\n\t\tSnippet: <span class=\"text-xl font-bold text-white\">LiveFootball</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "button-name",
+                "impact": "critical",
+                "description": "Ensure buttons have discernible text",
+                "help": "Buttons must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/button-name?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 8
+            },
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "leagues.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\leagues.html",
+        "violations_count": 3,
+        "passes_count": 18,
+        "incomplete_count": 0,
+        "inapplicable_count": 70,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .rounded-xl.shadow.p-4:nth-child(1) > .hover\\:underline[href=\"#\"]\n\t\tSnippet: <a href=\"#\" class=\"text-[#3B82F6] text-sm hover:underline\">View</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .rounded-xl.shadow.p-4:nth-child(2) > .hover\\:underline[href=\"#\"]\n\t\tSnippet: <a href=\"#\" class=\"text-[#3B82F6] text-sm hover:underline\">View</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .rounded-xl.shadow.p-4:nth-child(3) > .hover\\:underline[href=\"#\"]\n\t\tSnippet: <a href=\"#\" class=\"text-[#3B82F6] text-sm hover:underline\">View</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: a[href$=\"dashboard.html\"]\n\t\tSnippet: <a href=\"dashboard.html\" class=\"text-[#3B82F6] hover:text-white\">      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>    </a>\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\n\n\t2)\tTarget: a[href$=\"settings.html\"]\n\t\tSnippet: <a href=\"settings.html\" class=\"text-[#3B82F6] hover:text-white\">\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "livestreams.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\livestreams.html",
+        "violations_count": 3,
+        "passes_count": 18,
+        "incomplete_count": 0,
+        "inapplicable_count": 70,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .rounded-xl.shadow.p-4:nth-child(1) > .text-xs\n\t\tSnippet: <span class=\"text-[#3B82F6] text-xs font-semibold\">Liverpool vs Man City</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .bg-\\[\\#10B981\\]\n\t\tSnippet: <a href=\"#\" class=\"bg-[#10B981] text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-[#059669] transition\">Watch on DAZN</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .rounded-xl.shadow.p-4:nth-child(2) > .text-xs\n\t\tSnippet: <span class=\"text-[#3B82F6] text-xs font-semibold\">Real Madrid vs Barcelona</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .bg-\\[\\#3B82F6\\]\n\t\tSnippet: <a href=\"#\" class=\"bg-[#3B82F6] text-white px-4 py-2 rounded-lg font-semibold text-center hover:bg-[#2563EB] transition\">Watch on Sky Sport</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: a[href$=\"dashboard.html\"]\n\t\tSnippet: <a href=\"dashboard.html\" class=\"text-[#3B82F6] hover:text-white\">      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>    </a>\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\n\n\t2)\tTarget: a[href$=\"settings.html\"]\n\t\tSnippet: <a href=\"settings.html\" class=\"text-[#3B82F6] hover:text-white\">\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 4
+            },
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "liveticker.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\liveticker.html",
+        "violations_count": 3,
+        "passes_count": 20,
+        "incomplete_count": 0,
+        "inapplicable_count": 66,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: a[href$=\"dashboard.html\"]\n\t\tSnippet: <a href=\"dashboard.html\" class=\"text-[#3B82F6] hover:text-white\">      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>    </a>\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\n\n\t2)\tTarget: a[href$=\"settings.html\"]\n\t\tSnippet: <a href=\"settings.html\" class=\"text-[#3B82F6] hover:text-white\">\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nselect-name - Ensure select element has an accessible name\n\tURL: https://dequeuniversity.com/rules/axe/4.12/select-name?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: select\n\t\tSnippet: <select class=\"w-full px-3 py-2 rounded-lg bg-[#0F172A] text-white border border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]\">        <option>Liverpool</option>        <option>Real Madrid</option>        <option>Barcelona</option>      </select>\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n",
+        "violations": [
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "select-name",
+                "impact": "critical",
+                "description": "Ensure select element has an accessible name",
+                "help": "Select element must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/select-name?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "login.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\login.html",
+        "violations_count": 4,
+        "passes_count": 22,
+        "incomplete_count": 0,
+        "inapplicable_count": 66,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .justify-between > .text-\\[\\#3B82F6\\].hover\\:underline\n\t\tSnippet: <a href=\"#\" class=\"text-sm text-[#3B82F6] hover:underline\">Forgot password?</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .bg-\\[\\#3B82F6\\]\n\t\tSnippet: <button type=\"submit\" class=\"w-full py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold rounded-lg transition\">Login</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .bg-\\[\\#1877F2\\]\n\t\tSnippet: <button class=\"w-full flex items-center justify-center gap-2 py-2 bg-[#1877F2] text-white font-semibold rounded-lg hover:bg-[#145db2] transition\"><img src=\"https://www.svgrepo.com/show/448224/facebook.svg\" alt=\"Facebook\" class=\"w-5 h-5\">Login with Facebook</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.23 (foreground color: #ffffff, background color: #1877f2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .text-gray-400.text-sm.mt-4 > .text-\\[\\#3B82F6\\].hover\\:underline\n\t\tSnippet: <a href=\"#\" class=\"text-[#3B82F6] hover:underline\">Register</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .text-xs\n\t\tSnippet: <div class=\"text-xs text-gray-500 text-center mt-4\">      By logging in, you agree to our <a href=\"#\" class=\"underline\">Privacy Policy (GDPR)</a>.    </div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.02 (foreground color: #6b7280, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: .underline\n\t\tSnippet: <a href=\"#\" class=\"underline\">Privacy Policy (GDPR)</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.02 (foreground color: #6b7280, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nlink-in-text-block - Ensure links are distinguished from surrounding text in a way that does not rely on color\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-in-text-block?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2a', 'wcag141', 'TTv5', 'TT13.a', 'EN-301-549', 'EN-9.1.4.1', 'RGAAv4', 'RGAA-10.6.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .text-gray-400.text-sm.mt-4 > .text-\\[\\#3B82F6\\].hover\\:underline\n\t\tSnippet: <a href=\"#\" class=\"text-[#3B82F6] hover:underline\">Register</a>\n\t\tMessages:\n\t\t* The link has insufficient color contrast of 1.44:1 with the surrounding text. (Minimum contrast is 3:1, link text: #3b82f6, surrounding text: #9ca3af)\n\t\t* The link has no styling (such as underline) to distinguish it from the surrounding text\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: h1\n\t\tSnippet: <h1 class=\"text-2xl font-bold text-white text-center mb-2\">Welcome to LiveFootball</h1>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: form > div:nth-child(1)\n\t\tSnippet: <div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: div:nth-child(2)\n\t\tSnippet: <div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .justify-between\n\t\tSnippet: <div class=\"flex items-center justify-between\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .my-4\n\t\tSnippet: <div class=\"flex items-center my-4\">      <div class=\"flex-grow border-t border-gray-600\"></div>      <span class=\"mx-2 text-gray-400 text-sm\">or</span>      <div class=\"flex-grow border-t border-gray-600\"></div>    </div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .text-gray-400.text-sm.mt-4\n\t\tSnippet: <div class=\"text-center text-gray-400 text-sm mt-4\">      Don’t have an account? <a href=\"#\" class=\"text-[#3B82F6] hover:underline\">Register</a>    </div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .text-xs\n\t\tSnippet: <div class=\"text-xs text-gray-500 text-center mt-4\">      By logging in, you agree to our <a href=\"#\" class=\"underline\">Privacy Policy (GDPR)</a>.    </div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 6
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "link-in-text-block",
+                "impact": "serious",
+                "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+                "help": "Links must be distinguishable without relying on color",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-in-text-block?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 7
+            }
+        ]
+    },
+    {
+        "filename": "news.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\news.html",
+        "violations_count": 3,
+        "passes_count": 19,
+        "incomplete_count": 0,
+        "inapplicable_count": 68,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .bg-\\[\\#3B82F6\\].px-3.py-1:nth-child(1)\n\t\tSnippet: <span class=\"bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm\">Sky Sports</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .bg-\\[\\#3B82F6\\].px-3.py-1:nth-child(2)\n\t\tSnippet: <span class=\"bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm\">BBC Sport</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .bg-\\[\\#10B981\\]\n\t\tSnippet: <button class=\"bg-[#10B981] text-white px-3 py-1 rounded-full text-sm hover:bg-[#059669]\">+ Add Channel</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .rounded-xl.shadow.p-4:nth-child(1) > .font-semibold\n\t\tSnippet: <span class=\"text-[#3B82F6] text-xs font-semibold\">Liverpool</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .rounded-xl.shadow.p-4:nth-child(1) > .mt-2.items-center.gap-2 > .hover\\:underline:nth-child(1)\n\t\tSnippet: <button class=\"text-[#3B82F6] text-xs hover:underline\">Read more</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: .rounded-xl.shadow.p-4:nth-child(2) > .font-semibold\n\t\tSnippet: <span class=\"text-[#3B82F6] text-xs font-semibold\">Real Madrid</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t7)\tTarget: .rounded-xl.shadow.p-4:nth-child(2) > .mt-2.items-center.gap-2 > .hover\\:underline:nth-child(1)\n\t\tSnippet: <button class=\"text-[#3B82F6] text-xs hover:underline\">Read more</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.97 (foreground color: #3b82f6, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: a[href$=\"dashboard.html\"]\n\t\tSnippet: <a href=\"dashboard.html\" class=\"text-[#3B82F6] hover:text-white\">      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>    </a>\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\n\n\t2)\tTarget: a[href$=\"settings.html\"]\n\t\tSnippet: <a href=\"settings.html\" class=\"text-[#3B82F6] hover:text-white\">\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 7
+            },
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "settings.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\settings.html",
+        "violations_count": 3,
+        "passes_count": 24,
+        "incomplete_count": 0,
+        "inapplicable_count": 64,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .bg-\\[\\#3B82F6\\].px-3.py-1:nth-child(1)\n\t\tSnippet: <span class=\"bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm\">Sky Sports</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .bg-\\[\\#3B82F6\\].px-3.py-1:nth-child(2)\n\t\tSnippet: <span class=\"bg-[#3B82F6] text-white px-3 py-1 rounded-full text-sm\">BBC Sport</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .bg-\\[\\#10B981\\]\n\t\tSnippet: <button class=\"bg-[#10B981] text-white px-3 py-1 rounded-full text-sm hover:bg-[#059669]\">+ Add Channel</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.53 (foreground color: #ffffff, background color: #10b981, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .hover\\:bg-\\[\\#2563EB\\]\n\t\tSnippet: <button class=\"w-full py-2 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold rounded-lg transition mb-2\">Change Password</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.67 (foreground color: #ffffff, background color: #3b82f6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .text-xs\n\t\tSnippet: <div class=\"text-xs text-gray-500 text-center mt-2\">        Your data is processed in compliance with <a href=\"#\" class=\"underline\">GDPR</a>.      </div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.02 (foreground color: #6b7280, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: .underline\n\t\tSnippet: <a href=\"#\" class=\"underline\">GDPR</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.02 (foreground color: #6b7280, background color: #1e293b, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .text-\\[\\#3B82F6\\]\n\t\tSnippet: <a href=\"dashboard.html\" class=\"text-[#3B82F6] hover:text-white\">      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>    </a>\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 6
+            },
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "team_player_details.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\hitl_agent\\outputs\\stream_testl\\html\\team_player_details.html",
+        "violations_count": 2,
+        "passes_count": 24,
+        "incomplete_count": 0,
+        "inapplicable_count": 63,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\nlink-name - Ensure links have discernible text\n\tURL: https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.name-role-value', 'wcag2a', 'wcag244', 'wcag412', 'section508', 'section508.22.a', 'TTv5', 'TT6.a', 'EN-301-549', 'EN-9.2.4.4', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-6.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: a\n\t\tSnippet: <a href=\"dashboard.html\" class=\"text-[#3B82F6] hover:text-white\">      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-7 w-7\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 19l-7-7 7-7\"></path></svg>    </a>\n\t\tMessages:\n\t\t* Element does not have text that is visible to screen readers\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element is in tab order and does not have accessible text\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\n",
+        "violations": [
+            {
+                "id": "link-name",
+                "impact": "serious",
+                "description": "Ensure links have discernible text",
+                "help": "Links must have discernible text",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/link-name?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    }
+]

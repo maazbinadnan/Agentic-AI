@@ -76,6 +76,16 @@ def main():
         help="Skip INVEST user story evaluation.",
     )
     parser.add_argument(
+        "--html-dir", "-hd",
+        default=None,
+        help="Path to generated HTML directory or file. If omitted, attempts to auto-locate 'html/' subfolder.",
+    )
+    parser.add_argument(
+        "--skip-html-eval",
+        action="store_true",
+        help="Skip Playwright/Axe HTML accessibility evaluation.",
+    )
+    parser.add_argument(
         "--model", "-m",
         default=None,
         help="LLM model deployment name for LLM judge (default: from MODEL env var or gpt-4.1).",
@@ -106,6 +116,14 @@ def main():
         default_us_path = os.path.join(possible_us_dir, "05_user_stories.md")
         user_stories = default_us_path if os.path.isfile(default_us_path) else None
 
+    # Auto-resolve html dir if not provided
+    if args.html_dir:
+        html_target = args.html_dir if os.path.isabs(args.html_dir) else os.path.join(project_root, args.html_dir)
+    else:
+        possible_us_dir = os.path.dirname(func_reqs)
+        default_html_dir = os.path.join(possible_us_dir, "html")
+        html_target = default_html_dir if (os.path.isdir(default_html_dir) or os.path.isfile(default_html_dir)) else None
+
     # Validate inputs exist
     for label, path in [("func-reqs", func_reqs), ("nfunc-reqs", nfunc_reqs)]:
         if not os.path.isfile(path):
@@ -119,6 +137,8 @@ def main():
     iso_table_path = os.path.join(agent_output_dir, f"{args.agent}_iso_table.csv")
     invest_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_invest_eval.json")
     invest_table_path = os.path.join(agent_output_dir, f"{args.agent}_invest_table.json")
+    html_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_html_accessibility_eval.json")
+    html_table_path = os.path.join(agent_output_dir, f"{args.agent}_html_accessibility_table.csv")
     ratio_table_path = os.path.join(agent_output_dir, f"{args.agent}_coverage_ratio_table.csv")
 
     print("=" * 60)
@@ -126,12 +146,13 @@ def main():
     print(f"  Functional Reqs:     {func_reqs}")
     print(f"  Non-Functional Reqs: {nfunc_reqs}")
     print(f"  User Stories File:   {user_stories or 'None'}")
+    print(f"  HTML Mockups Target: {html_target or 'None'}")
     print(f"  Output Directory:    {agent_output_dir}")
     print("=" * 60)
 
     # --- Step 1: Embedding-based Coverage ---
     if not args.skip_coverage:
-        print("\n[Step 1/4] Running embedding-based coverage evaluation...")
+        print("\n[Step 1/5] Running embedding-based coverage evaluation...")
         from evaluation.confusion_matrix import get_ground_truths, get_generated, requirements_coverage
         from evaluation.visualize_metrics import build_coverage_ratio_table
 
@@ -151,11 +172,11 @@ def main():
             table = build_coverage_ratio_table(coverage_json_path, ratio_table_path)
             print(table.to_string(index=False))
     else:
-        print("\n[Step 1/4] Skipped embedding-based coverage (--skip-coverage).")
+        print("\n[Step 1/5] Skipped embedding-based coverage (--skip-coverage).")
 
     # --- Step 2: LLM Judge Coverage ---
     if not args.skip_llm_judge:
-        print("\n[Step 2/4] Running LLM Judge ground truth coverage evaluation...")
+        print("\n[Step 2/5] Running LLM Judge ground truth coverage evaluation...")
         from evaluation.llm_judge import evaluate_requirements
         from evaluation.visualize_metrics import build_coverage_llm_ratio_table
 
@@ -171,11 +192,11 @@ def main():
             llm_table = build_coverage_llm_ratio_table(llm_eval_json_path, llm_eval_table_path)
             print(llm_table.to_string(index=False))
     else:
-        print("\n[Step 2/4] Skipped LLM Judge coverage (--skip-llm-judge).")
+        print("\n[Step 2/5] Skipped LLM Judge coverage (--skip-llm-judge).")
 
     # --- Step 3: ISO 29148 Quality Audit ---
     if not args.skip_iso_audit:
-        print("\n[Step 3/4] Running ISO 29148 Requirements Quality Audit...")
+        print("\n[Step 3/5] Running ISO 29148 Requirements Quality Audit...")
         from evaluation.llm_judge import evaluate_iso_29148_quality
         from evaluation.visualize_metrics import build_iso_table
 
@@ -189,13 +210,14 @@ def main():
         if os.path.isfile(iso_eval_json_path):
             print("\n  ISO 29148 Quality Summary Table:")
             iso_table = build_iso_table(iso_eval_json_path, iso_table_path)
+            print(iso_table.to_string(index=False))
     else:
-        print("\n[Step 3/4] Skipped ISO 29148 Quality Audit (--skip-iso-audit).")
+        print("\n[Step 3/5] Skipped ISO 29148 Quality Audit (--skip-iso-audit).")
 
     # --- Step 4: INVEST User Stories Evaluation ---
     if not args.skip_invest_eval:
         if user_stories and os.path.isfile(user_stories):
-            print("\n[Step 4/4] Running INVEST Agile User Story Evaluation...")
+            print("\n[Step 4/5] Running INVEST Agile User Story Evaluation...")
             from evaluation.llm_judge import evaluate_invest_user_stories
             from evaluation.visualize_metrics import build_invest_table
 
@@ -210,9 +232,32 @@ def main():
                 invest_table = build_invest_table(invest_eval_json_path, invest_table_path)
                 print(invest_table.to_string(index=False))
         else:
-            print("\n[Step 4/4] Skipped INVEST Evaluation (User Stories file not found or not provided).")
+            print("\n[Step 4/5] Skipped INVEST Evaluation (User Stories file not found or not provided).")
     else:
-        print("\n[Step 4/4] Skipped INVEST Evaluation (--skip-invest-eval).")
+        print("\n[Step 4/5] Skipped INVEST Evaluation (--skip-invest-eval).")
+
+    # --- Step 5: HTML Playwright / Axe Accessibility Evaluation ---
+    if not args.skip_html_eval:
+        if html_target and (os.path.isdir(html_target) or os.path.isfile(html_target)):
+            print("\n[Step 5/5] Running HTML Playwright + Axe Accessibility Evaluation...")
+            from evaluation.html_evals import evaluate_html_accessibility, build_html_accessibility_table
+
+            try:
+                evaluate_html_accessibility(
+                    html_dir_or_file=html_target,
+                    output_json_path=html_eval_json_path,
+                    output_csv_path=html_table_path,
+                )
+                if os.path.isfile(html_table_path):
+                    print("\n  HTML Accessibility Summary Table:")
+                    html_table = build_html_accessibility_table(html_eval_json_path, html_table_path)
+                    print(html_table.to_string(index=False))
+            except ImportError:
+                print("  Skipped HTML accessibility evaluation due to missing packages.")
+        else:
+            print("\n[Step 5/5] Skipped HTML Accessibility Evaluation (HTML target directory/file not found or not provided).")
+    else:
+        print("\n[Step 5/5] Skipped HTML Accessibility Evaluation (--skip-html-eval).")
 
     print("\n" + "=" * 60)
     print("Evaluation complete.")

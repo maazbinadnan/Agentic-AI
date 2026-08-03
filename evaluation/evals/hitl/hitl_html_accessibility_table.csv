@@ -1,0 +1,9 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+dashboard.html,5,20,0,FAIL (5 Violations)
+leagues.html,3,18,0,FAIL (3 Violations)
+livestreams.html,3,18,0,FAIL (3 Violations)
+liveticker.html,3,20,0,FAIL (3 Violations)
+login.html,4,22,0,FAIL (4 Violations)
+news.html,3,19,0,FAIL (3 Violations)
+settings.html,3,24,0,FAIL (3 Violations)
+team_player_details.html,2,24,0,FAIL (2 Violations)
