@@ -1,0 +1,418 @@
+{
+    "evaluations": [
+        {
+            "gen_id": 1,
+            "gen_requirement": "The system shall provide a live ticker module that displays real-time scores and results for selected football teams.",
+            "is_well_formed": false,
+            "quality_score": 0.74,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "scores and results",
+                    "explanation": "The statement combines two distinct information outputs in one requirement. Under ISO 29148, each requirement should express a single capability so it can be verified independently.",
+                    "suggested_fix": "The system shall display real-time scores for each user-selected football team in the live ticker module."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "real-time",
+                    "explanation": "The term \"real-time\" is ambiguous unless a maximum update latency or refresh interval is specified. Different stakeholders may interpret it differently.",
+                    "suggested_fix": "The system shall update the live ticker module with new score data for each user-selected football team within 5 seconds of receiving the data from the source system."
+                }
+            ]
+        },
+        {
+            "gen_id": 2,
+            "gen_requirement": "The system shall allow users to view current football news and updates for their favorite teams and leagues.",
+            "is_well_formed": false,
+            "quality_score": 0.76,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news and updates",
+                    "explanation": "The requirement bundles two content types into one statement. If news and updates are distinct features or feeds, they should be specified separately for independent verification.",
+                    "suggested_fix": "The system shall display current football news for each user-selected team and league."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "current",
+                    "explanation": "The word \"current\" is vague because it does not define the acceptable age or refresh frequency of the content.",
+                    "suggested_fix": "The system shall display football news items published within the last 24 hours for each user-selected team and league."
+                }
+            ]
+        },
+        {
+            "gen_id": 3,
+            "gen_requirement": "The system shall integrate live stream links for football matches, displaying them only when rights are fulfilled in the user's country.",
+            "is_well_formed": false,
+            "quality_score": 0.7,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "rights are fulfilled",
+                    "explanation": "The phrase is unclear and not standard terminology. It does not precisely define the legal or business condition that controls link display.",
+                    "suggested_fix": "The system shall display a live stream link for a football match only when the licensing database indicates that streaming rights are available in the user's detected country."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "integrate live stream links",
+                    "explanation": "The requirement does not clearly state the system behavior in a verifiable action-oriented form. \"Integrate\" is implementation-oriented and less testable than a direct behavioral verb such as display or provide.",
+                    "suggested_fix": "The system shall display a live stream link for each football match when streaming rights are available in the user's detected country."
+                }
+            ]
+        },
+        {
+            "gen_id": 4,
+            "gen_requirement": "The system shall enable users to personalize their experience by selecting favorite teams and sports channels.",
+            "is_well_formed": false,
+            "quality_score": 0.72,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "favorite teams and sports channels",
+                    "explanation": "The requirement includes two separate selectable preference types. These should be split so each behavior can be specified and tested independently.",
+                    "suggested_fix": "The system shall allow the user to select one or more favorite football teams."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "personalize their experience",
+                    "explanation": "This phrase is subjective and does not identify the exact system behavior to be implemented or verified.",
+                    "suggested_fix": "The system shall store the user's selected favorite football teams in the user profile."
+                }
+            ]
+        },
+        {
+            "gen_id": 5,
+            "gen_requirement": "The system shall provide a notification system that informs users about news, scores, and events related to their favorite teams.",
+            "is_well_formed": false,
+            "quality_score": 0.71,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news, scores, and events",
+                    "explanation": "The requirement merges multiple notification categories into one statement. Each category may require different triggers and verification criteria.",
+                    "suggested_fix": "The system shall send a notification to the user when a new score update is available for a user-selected favorite team."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "provide a notification system",
+                    "explanation": "The phrase describes a solution component rather than a precise system behavior. ISO 29148 prefers explicit behavioral wording that states what the system shall do.",
+                    "suggested_fix": "The system shall send push notifications for score updates related to user-selected favorite teams."
+                }
+            ]
+        },
+        {
+            "gen_id": 6,
+            "gen_requirement": "The system shall allow users to access detailed information about teams and players at any time.",
+            "is_well_formed": false,
+            "quality_score": 0.61,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "teams and players",
+                    "explanation": "The requirement includes two distinct information objects. These should be separated so each can be specified and verified independently.",
+                    "suggested_fix": "The system shall display detailed information for each football team selected by the user."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "detailed information",
+                    "explanation": "The phrase does not define which attributes must be provided, so different implementations could satisfy it differently.",
+                    "suggested_fix": "The system shall display the team name, league, standings position, and roster for each football team selected by the user."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "at any time",
+                    "explanation": "This phrase is absolute and not realistically testable without explicit availability or access conditions. It should be replaced with measurable availability criteria or operational conditions.",
+                    "suggested_fix": "The system shall make team information available whenever the application is online and the data service is reachable."
+                }
+            ]
+        },
+        {
+            "gen_id": 7,
+            "gen_requirement": "The system shall allow users to share news and game reports via social media directly from the app.",
+            "is_well_formed": false,
+            "quality_score": 0.78,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news and game reports",
+                    "explanation": "The statement combines two shareable content types into one requirement. If these are distinct objects, they should be specified separately.",
+                    "suggested_fix": "The system shall allow the user to share a news article to a supported social media application from within the app."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "social media",
+                    "explanation": "The target platforms are not defined, making the requirement open to multiple interpretations and difficult to verify conclusively.",
+                    "suggested_fix": "The system shall allow the user to share a news article to Facebook, X, or WhatsApp from within the app."
+                }
+            ]
+        },
+        {
+            "gen_id": 8,
+            "gen_requirement": "The system shall provide registration and login functionality that is simple and can be completed at app startup.",
+            "is_well_formed": false,
+            "quality_score": 0.42,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "registration and login",
+                    "explanation": "Registration and login are separate functions and should be specified in separate requirements for independent implementation and verification.",
+                    "suggested_fix": "The system shall allow a new user to register an account at application startup."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "simple",
+                    "explanation": "The word \"simple\" is subjective and cannot be interpreted consistently across stakeholders or tested objectively.",
+                    "suggested_fix": "The system shall allow a new user to complete account registration in no more than 4 input steps at application startup."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "can be completed at app startup",
+                    "explanation": "This phrase is weak and does not clearly state mandatory system behavior using enforceable wording. It also does not specify whether both registration and login must be available at startup.",
+                    "suggested_fix": "The system shall display the account registration screen when the application starts for users who are not authenticated."
+                }
+            ]
+        },
+        {
+            "gen_id": 9,
+            "gen_requirement": "The system shall maintain a consistent user interface that connects and manages all modules.",
+            "is_well_formed": false,
+            "quality_score": 0.39,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "consistent user interface",
+                    "explanation": "The term \"consistent\" is subjective unless defined by concrete UI rules or standards.",
+                    "suggested_fix": "The system shall use the same navigation bar layout, color palette, and typography across all application modules."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "connects and manages all modules",
+                    "explanation": "This phrase is vague and unclear about the actual user-visible behavior or system function.",
+                    "suggested_fix": "The system shall provide navigation controls that allow the user to open each application module from the main menu."
+                },
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "maintain a consistent user interface",
+                    "explanation": "This is a usability or interface quality constraint rather than a functional behavior. It is better categorized as a non-functional requirement with measurable interface consistency criteria.",
+                    "suggested_fix": "The system shall use the same navigation bar layout, color palette, and typography across all application modules."
+                }
+            ]
+        },
+        {
+            "gen_id": 10,
+            "gen_requirement": "The system shall evaluate user feedback and app reviews to improve functionality.",
+            "is_well_formed": false,
+            "quality_score": 0.18,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "evaluate user feedback and app reviews to improve functionality",
+                    "explanation": "The statement combines feedback evaluation with product improvement, which are separate activities. It also mixes system behavior with organizational process intent.",
+                    "suggested_fix": "The system shall store user feedback submissions in a review database for administrator access."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "improve functionality",
+                    "explanation": "\"Improve functionality\" is a business goal, not an objectively testable system behavior. It cannot be verified with a pass/fail test case.",
+                    "suggested_fix": "The system shall record each user feedback submission with a timestamp, rating, and comment text."
+                },
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "evaluate user feedback and app reviews",
+                    "explanation": "This reads more like a business or operational process than a product requirement. It does not clearly define executable system behavior for the application itself.",
+                    "suggested_fix": "The system shall provide an administrative view that lists all submitted user feedback entries."
+                }
+            ]
+        },
+        {
+            "gen_id": 11,
+            "gen_requirement": "The system shall fully load and be ready to use within a maximum of two seconds after startup.",
+            "is_well_formed": false,
+            "quality_score": 0.86,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "fully load and be ready to use",
+                    "explanation": "The statement contains two closely related but still distinct conditions. If \"fully load\" and \"ready to use\" are defined differently, they should be separated or one should be used as the measurable criterion.",
+                    "suggested_fix": "The system shall display the home screen and accept user input within 2 seconds after application startup."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "fully load",
+                    "explanation": "The term does not specify what completion criteria define loading. A measurable readiness condition is needed.",
+                    "suggested_fix": "The system shall display the home screen and accept user input within 2 seconds after application startup."
+                }
+            ]
+        },
+        {
+            "gen_id": 12,
+            "gen_requirement": "The system shall reliably serve up to 100,000 concurrent users without performance loss.",
+            "is_well_formed": false,
+            "quality_score": 0.58,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "reliably",
+                    "explanation": "The term is subjective unless expressed through measurable availability, error rate, or success criteria.",
+                    "suggested_fix": "The system shall support 100,000 concurrent users with at least 99.5% successful request completion during a 1-hour load test."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "without performance loss",
+                    "explanation": "This phrase is not measurable because no baseline or performance metric is defined. QA cannot verify pass/fail without response-time or throughput thresholds.",
+                    "suggested_fix": "The system shall support 100,000 concurrent users while maintaining a 95th-percentile response time of 2 seconds or less for all read operations."
+                }
+            ]
+        },
+        {
+            "gen_id": 13,
+            "gen_requirement": "The system shall function reliably with limited network coverage and remain usable offline.",
+            "is_well_formed": false,
+            "quality_score": 0.37,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "function reliably with limited network coverage and remain usable offline",
+                    "explanation": "The statement combines degraded-network behavior and offline behavior, which are separate operating conditions and should be specified independently.",
+                    "suggested_fix": "The system shall display cached match data when no network connection is available."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "reliably",
+                    "explanation": "The term is subjective and lacks measurable criteria such as success rate, retry behavior, or availability.",
+                    "suggested_fix": "The system shall complete data synchronization successfully in at least 95% of sessions when network bandwidth is 256 kbps or higher."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "limited network coverage",
+                    "explanation": "The operating condition is vague because it does not define bandwidth, latency, or packet loss thresholds.",
+                    "suggested_fix": "The system shall retrieve score updates when network bandwidth is at least 256 kbps and latency does not exceed 500 ms."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "usable offline",
+                    "explanation": "This phrase is subjective because it does not specify which functions must remain available without connectivity.",
+                    "suggested_fix": "The system shall allow the user to view previously cached news articles and team data when the device has no network connection."
+                }
+            ]
+        },
+        {
+            "gen_id": 14,
+            "gen_requirement": "The system shall process all personal data in compliance with GDPR.",
+            "is_well_formed": false,
+            "quality_score": 0.52,
+            "issues": [
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "in compliance with GDPR",
+                    "explanation": "This references an external regulation broadly but does not state the concrete, verifiable system behaviors needed for compliance. QA cannot test compliance from this statement alone.",
+                    "suggested_fix": "The system shall obtain explicit user consent before storing personal data for personalized content delivery."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "process all personal data",
+                    "explanation": "The statement is too broad and does not identify the specific processing actions, conditions, or controls the system must implement.",
+                    "suggested_fix": "The system shall provide a function that allows a user to delete their stored personal data from the application database upon request."
+                }
+            ]
+        },
+        {
+            "gen_id": 15,
+            "gen_requirement": "The system shall maintain a consistent and modular user interface across all modules.",
+            "is_well_formed": false,
+            "quality_score": 0.46,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "consistent and modular",
+                    "explanation": "Both terms are subjective or architecture-oriented and do not define measurable user-interface criteria.",
+                    "suggested_fix": "The system shall use the same navigation bar layout, color palette, and typography across all application modules."
+                },
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "modular user interface",
+                    "explanation": "This is a quality or design characteristic rather than a direct functional behavior. It should be framed as a measurable non-functional UI consistency constraint.",
+                    "suggested_fix": "The system shall use the same navigation bar layout, color palette, and typography across all application modules."
+                }
+            ]
+        },
+        {
+            "gen_id": 16,
+            "gen_requirement": "The system shall undergo thorough testing and support processes before release to detect and resolve malfunctions early.",
+            "is_well_formed": false,
+            "quality_score": 0.12,
+            "issues": [
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "undergo thorough testing and support processes before release",
+                    "explanation": "This is a project or organizational process requirement, not a product system requirement. It does not specify software behavior.",
+                    "suggested_fix": "The release process shall execute automated regression tests on all critical user flows before production deployment."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "thorough",
+                    "explanation": "The word is subjective and not measurable.",
+                    "suggested_fix": "The release process shall execute test cases covering 100% of critical user flows before production deployment."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "detect and resolve malfunctions early",
+                    "explanation": "\"Early\" is vague and the statement expresses intent rather than measurable acceptance criteria.",
+                    "suggested_fix": "The release process shall block production deployment when any critical-severity defect remains open."
+                }
+            ]
+        },
+        {
+            "gen_id": 17,
+            "gen_requirement": "The system shall dynamically retrieve live data via an external API and update the user interface in real time.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "retrieve live data via an external API and update the user interface",
+                    "explanation": "The statement combines data retrieval and UI update behaviors. These should be separated if they are to be verified independently.",
+                    "suggested_fix": "The system shall request match data from the external API at intervals not exceeding 5 seconds while the live ticker screen is open."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "dynamically",
+                    "explanation": "The term does not add measurable meaning and is vague in this context.",
+                    "suggested_fix": "The system shall request match data from the external API at intervals not exceeding 5 seconds while the live ticker screen is open."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "live data",
+                    "explanation": "The freshness or acceptable age of the data is not defined.",
+                    "suggested_fix": "The system shall display match data that is no more than 10 seconds older than the timestamp provided by the external API."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "in real time",
+                    "explanation": "This phrase is ambiguous unless a specific latency threshold is provided.",
+                    "suggested_fix": "The system shall update the user interface within 2 seconds after receiving new match data from the external API."
+                }
+            ]
+        },
+        {
+            "gen_id": 18,
+            "gen_requirement": "The system shall ensure accessibility for users with disabilities, including screen reader support and high-contrast modes.",
+            "is_well_formed": false,
+            "quality_score": 0.69,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "ensure accessibility",
+                    "explanation": "This phrase is broad and not measurable unless tied to a concrete accessibility standard or explicit behaviors.",
+                    "suggested_fix": "The system shall conform to WCAG 2.1 AA success criteria for all user-facing screens."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "including screen reader support and high-contrast modes",
+                    "explanation": "The requirement contains multiple accessibility features in one statement. These should be separated for independent verification.",
+                    "suggested_fix": "The system shall expose all interactive user-interface elements with accessible labels that are readable by platform-supported screen readers."
+                }
+            ]
+        }
+    ]
+}

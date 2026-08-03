@@ -76,11 +76,6 @@ def main():
         help="Skip INVEST user story evaluation.",
     )
     parser.add_argument(
-        "--skip-viz",
-        action="store_true",
-        help="Skip summary visualization tables.",
-    )
-    parser.add_argument(
         "--model", "-m",
         default=None,
         help="LLM model deployment name for LLM judge (default: from MODEL env var or gpt-4.1).",
@@ -123,7 +118,7 @@ def main():
     iso_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_iso_eval.json")
     iso_table_path = os.path.join(agent_output_dir, f"{args.agent}_iso_table.csv")
     invest_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_invest_eval.json")
-    invest_table_path = os.path.join(agent_output_dir, f"{args.agent}_invest_table.csv")
+    invest_table_path = os.path.join(agent_output_dir, f"{args.agent}_invest_table.json")
     ratio_table_path = os.path.join(agent_output_dir, f"{args.agent}_coverage_ratio_table.csv")
 
     print("=" * 60)
@@ -136,8 +131,9 @@ def main():
 
     # --- Step 1: Embedding-based Coverage ---
     if not args.skip_coverage:
-        print("\n[Step 1/5] Running embedding-based coverage evaluation...")
+        print("\n[Step 1/4] Running embedding-based coverage evaluation...")
         from evaluation.confusion_matrix import get_ground_truths, get_generated, requirements_coverage
+        from evaluation.visualize_metrics import build_coverage_ratio_table
 
         ground_truths = get_ground_truths()
         generated_reqs = get_generated(func_reqs, nfunc_reqs)
@@ -150,13 +146,18 @@ def main():
             generated_reqs=generated_reqs,
             output_json_path=coverage_json_path,
         )
+        if os.path.isfile(coverage_json_path):
+            print("\n  Embedding Coverage Ratio Table:")
+            table = build_coverage_ratio_table(coverage_json_path, ratio_table_path)
+            print(table.to_string(index=False))
     else:
-        print("\n[Step 1/5] Skipped embedding-based coverage (--skip-coverage).")
+        print("\n[Step 1/4] Skipped embedding-based coverage (--skip-coverage).")
 
     # --- Step 2: LLM Judge Coverage ---
     if not args.skip_llm_judge:
-        print("\n[Step 2/5] Running LLM Judge ground truth coverage evaluation...")
+        print("\n[Step 2/4] Running LLM Judge ground truth coverage evaluation...")
         from evaluation.llm_judge import evaluate_requirements
+        from evaluation.visualize_metrics import build_coverage_llm_ratio_table
 
         evaluate_requirements(
             func_reqs=func_reqs,
@@ -165,13 +166,18 @@ def main():
             model=args.model,
         )
         print(f"  LLM Judge results saved to: {llm_eval_json_path}")
+        if os.path.isfile(llm_eval_json_path):
+            print("\n  LLM Judge Coverage Ratio Table:")
+            llm_table = build_coverage_llm_ratio_table(llm_eval_json_path, llm_eval_table_path)
+            print(llm_table.to_string(index=False))
     else:
-        print("\n[Step 2/5] Skipped LLM Judge coverage (--skip-llm-judge).")
+        print("\n[Step 2/4] Skipped LLM Judge coverage (--skip-llm-judge).")
 
     # --- Step 3: ISO 29148 Quality Audit ---
     if not args.skip_iso_audit:
-        print("\n[Step 3/5] Running ISO 29148 Requirements Quality Audit...")
+        print("\n[Step 3/4] Running ISO 29148 Requirements Quality Audit...")
         from evaluation.llm_judge import evaluate_iso_29148_quality
+        from evaluation.visualize_metrics import build_iso_table
 
         evaluate_iso_29148_quality(
             func_reqs=func_reqs,
@@ -180,14 +186,18 @@ def main():
             model=args.model,
         )
         print(f"  ISO 29148 Quality Audit results saved to: {iso_eval_json_path}")
+        if os.path.isfile(iso_eval_json_path):
+            print("\n  ISO 29148 Quality Summary Table:")
+            iso_table = build_iso_table(iso_eval_json_path, iso_table_path)
     else:
-        print("\n[Step 3/5] Skipped ISO 29148 Quality Audit (--skip-iso-audit).")
+        print("\n[Step 3/4] Skipped ISO 29148 Quality Audit (--skip-iso-audit).")
 
     # --- Step 4: INVEST User Stories Evaluation ---
     if not args.skip_invest_eval:
         if user_stories and os.path.isfile(user_stories):
-            print("\n[Step 4/5] Running INVEST Agile User Story Evaluation...")
+            print("\n[Step 4/4] Running INVEST Agile User Story Evaluation...")
             from evaluation.llm_judge import evaluate_invest_user_stories
+            from evaluation.visualize_metrics import build_invest_table
 
             evaluate_invest_user_stories(
                 user_stories_file_or_text=user_stories,
@@ -195,41 +205,14 @@ def main():
                 model=args.model,
             )
             print(f"  INVEST Evaluation results saved to: {invest_eval_json_path}")
+            if os.path.isfile(invest_eval_json_path):
+                print("\n  INVEST User Story Evaluation Table:")
+                invest_table = build_invest_table(invest_eval_json_path, invest_table_path)
+                print(invest_table.to_string(index=False))
         else:
-            print("\n[Step 4/5] Skipped INVEST Evaluation (User Stories file not found or not provided).")
+            print("\n[Step 4/4] Skipped INVEST Evaluation (User Stories file not found or not provided).")
     else:
-        print("\n[Step 4/5] Skipped INVEST Evaluation (--skip-invest-eval).")
-
-    # --- Step 5: Coverage & ISO Summary Tables ---
-    if not args.skip_viz:
-        print("\n[Step 5/5] Building summary and ratio tables...")
-        from evaluation.visualize_metrics import (
-            build_coverage_ratio_table,
-            build_coverage_llm_ratio_table,
-            build_iso_table,
-            build_invest_table,
-        )
-
-        if not args.skip_coverage and os.path.isfile(coverage_json_path):
-            print("\nEmbedding Coverage Ratio Table:")
-            table = build_coverage_ratio_table(coverage_json_path, ratio_table_path)
-            print(table.to_string(index=False))
-
-        if not args.skip_llm_judge and os.path.isfile(llm_eval_json_path):
-            print("\nLLM Judge Coverage Ratio Table:")
-            llm_table = build_coverage_llm_ratio_table(llm_eval_json_path, llm_eval_table_path)
-            print(llm_table.to_string(index=False))
-
-        if not args.skip_iso_audit and os.path.isfile(iso_eval_json_path):
-            print("\nISO 29148 Quality Summary Table:")
-            iso_table = build_iso_table(iso_eval_json_path, iso_table_path)
-
-        if not args.skip_invest_eval and os.path.isfile(invest_eval_json_path):
-            print("\nINVEST User Story Evaluation Table:")
-            invest_table = build_invest_table(invest_eval_json_path, invest_table_path)
-            print(invest_table.to_string(index=False))
-    else:
-        print("\n[Step 5/5] Skipped visualization.")
+        print("\n[Step 4/4] Skipped INVEST Evaluation (--skip-invest-eval).")
 
     print("\n" + "=" * 60)
     print("Evaluation complete.")

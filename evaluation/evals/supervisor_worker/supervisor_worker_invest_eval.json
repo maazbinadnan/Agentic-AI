@@ -1,0 +1,134 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a football fan, I want to register and log in quickly at app startup using email, Google, Apple, or Facebook so that I can access personalized content immediately.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.6,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.3,
+                "testable": 0.8
+            },
+            "reasoning": "Clear end-user value is present: access to personalized content immediately after startup. The story is only partially independent because social authentication depends on external identity providers and app startup/auth infrastructure. It is less negotiable because it bundles specific authentication channels and a speed expectation ('quickly'), constraining solution options. Estimation is possible but complicated by combining registration, login, startup entry flow, email auth, and three social providers in one story. It is not small because it spans multiple workflows and integrations that would typically be split. Acceptance criteria are mostly objective, but 'quickly' is not measurable and there are missing edge cases such as provider failure, duplicate account handling, and password/login distinctions."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a football fan, I want to select my favorite teams and sports channels so that I only see relevant news and results.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.7,
+                "testable": 0.7
+            },
+            "reasoning": "The story provides clear user value through personalization of visible content. It is largely negotiable because it states the outcome rather than prescribing implementation. Independence is fairly high, though practical delivery likely depends on authentication/profile persistence and downstream filtering capabilities. Estimation is reasonable because scope is understandable, but acceptance criteria are minimal and do not define limits, edit behavior, defaults, or channel/team selection rules. It is moderately small but still combines preference capture, persistence, and content filtering effects. Testability is acceptable, though the criterion 'filters content accordingly' needs more precise expected behavior across news and results."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a football fan, I want to view current football news filtered by my preferences so that I stay informed about my favorite teams.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "The story has strong user value and is focused on a single capability: viewing filtered news. It is highly negotiable because it does not dictate technical design. However, independence is low to moderate because it directly depends on prior preference selection and availability of news data/filtering logic. Estimation is reasonably straightforward, though details such as fallback behavior when no preferences are set or no matching news exists are unspecified. The story is small enough for a sprint if underlying services already exist. Testability is good, but acceptance criteria should define exact filtering rules and empty-state behavior to avoid ambiguity."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a football fan, I want to follow live results for my favorite teams in real time so that I can keep up with ongoing matches.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.5,
+                "small": 0.7,
+                "testable": 0.4
+            },
+            "reasoning": "The story offers clear end-user value by providing live match awareness. It is only partially independent because it depends on favorite-team preferences and an external live data feed. It remains fairly negotiable since no implementation detail is prescribed. Estimation is weakened by the undefined meaning of 'real time,' refresh expectations, latency tolerances, and behavior for interrupted connectivity or unavailable data. Scope is moderate and could fit a sprint if interpreted narrowly, but live update infrastructure may enlarge it. Testability is weak because 'updated in real time' is subjective without measurable timing or update criteria."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As a football fan, I want to access detailed team and player information at any time so that I can learn more about them.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.6,
+                "small": 0.6,
+                "testable": 0.5
+            },
+            "reasoning": "The story has clear informational value for users, though the benefit is somewhat generic. It is mostly independent aside from dependency on content/data sources. It is negotiable because it describes intent without prescribing design. Estimation is only moderate because 'detailed information' is undefined and could range from a small profile to extensive statistics, history, and media. The story is somewhat broad because it covers both teams and players and all-time access. Testability is limited by the lack of specificity around what fields must be displayed, data completeness, and error/empty-state behavior."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a football fan, I want to watch live streams of matches when available and permitted so that I can follow games directly from the app.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.7,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.6,
+                "testable": 0.8
+            },
+            "reasoning": "This story delivers strong user value by enabling match viewing. Independence is moderate because it relies heavily on external streaming availability, rights management, geo-restriction logic, and possibly external players. Negotiability is decent, though the acceptance criteria narrow the delivery option to external browser or native player behavior. Estimation is possible but affected by ambiguity around entitlement checks, rights-source integration, and what 'when available and permitted' entails. Scope is moderate, combining availability detection, rights enforcement, and launch behavior. Testability is relatively good because allowed and restricted scenarios are stated, though the alternative restricted outcomes ('link not displayed or message shown') introduce variability."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a football fan, I want to share news and match reports via social media so that I can engage with my friends.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.6,
+                "valuable": 0.9,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "The story has clear social engagement value and is focused on a single capability. It is largely independent, with manageable dependency on OS sharing and installed social apps. Negotiability is reduced because the acceptance criteria prescribe specific platforms while also requiring the native OS sharing dialog, which may make the platform list redundant or constraining. Estimation is straightforward due to bounded scope. The story is small and suitable for a sprint. Testability is good, although true end-to-end confirmation that content is actually shared on third-party platforms may be outside app control; verifying the share payload and dialog invocation is feasible."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a football fan, I want to receive real-time notifications about news and results for my favorite teams so that I never miss important updates.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.5,
+                "testable": 0.6
+            },
+            "reasoning": "The story has strong user value and generally expresses intent rather than implementation. Independence is limited because it depends on notification infrastructure, device permissions, event generation, user preferences, and favorite-team data. Estimation is moderate due to ambiguity around 'real-time,' supported event taxonomy, delivery timing, throttling, duplicates, and platform-specific push behavior. It is somewhat too broad because it combines notification delivery and notification preference management in one story. Testability is partial: scenarios exist, but deterministic verification is weakened by the undefined timing of 'real-time' and lack of detail on payload content and preference edge cases."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a football fan, I want the app interface and modules to remain consistent even when external servers are updated so that my experience is not disrupted.",
+            "scores": {
+                "independent": 0.2,
+                "negotiable": 0.7,
+                "valuable": 0.7,
+                "estimable": 0.2,
+                "small": 0.2,
+                "testable": 0.1
+            },
+            "reasoning": "The intended value is service continuity and a stable user experience, but the story is highly dependent on external server behavior, integration architecture, and broad system resilience mechanisms. It is somewhat negotiable because it does not prescribe a technical solution, yet it is framed as a quality/system constraint rather than a discrete user-facing capability. Estimation is very poor because scope is undefined: 'interface and modules remain unchanged' could imply compatibility layers, contract versioning, regression handling, or full backward compatibility. It is not small and reads more like a non-functional requirement or epic spanning many components. Testability is very weak because the acceptance criterion is broad and absolute, with no measurable definition of consistency, no bounded server update scenarios, and no objective pass/fail conditions."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a football fan, I want to configure and connect additional modules to the user interface so that I can personalize my app experience.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.6,
+                "valuable": 0.9,
+                "estimable": 0.5,
+                "small": 0.5,
+                "testable": 0.7
+            },
+            "reasoning": "The story provides clear personalization value. Independence is moderate because it depends on an extensible module framework and available supported modules. Negotiability is only moderate since the concept of 'connect additional modules to the user interface' implies a particular extensibility model, and acceptance criteria predefine official-versus-third-party support rules. Estimation is limited by ambiguity around what a module is, what configuration options exist, how modules are discovered/installed, and lifecycle behaviors. The story is somewhat broad because it combines configuration, connection, UI rendering, and support-policy enforcement. Testability is fairly good thanks to positive and negative scenarios, though more detail is needed on module states, persistence, and failure handling."
+        }
+    ]
+}

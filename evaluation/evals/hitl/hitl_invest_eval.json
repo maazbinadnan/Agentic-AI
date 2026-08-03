@@ -1,0 +1,316 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a football fan, I want to use the app on both Android and iOS devices so that I can access football content regardless of my device.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.6,
+                "testable": 0.9
+            },
+            "reasoning": "Clear user value and generally negotiable statement focused on cross-platform availability. It is only partially independent because delivery on Android and iOS may require platform-specific work and coordinated release readiness. Scope is somewhat broad because supporting two mobile platforms can exceed a single focused story and may be split by platform or by minimum supported version/device matrix. Acceptance criteria are objective and testable, though compatibility boundaries are not fully defined."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a football fan, I want the app to fully load and be ready for interaction within two seconds so that I can quickly access football content.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.8,
+                "testable": 0.6
+            },
+            "reasoning": "Strong user value with a measurable performance target. The story is mostly independent, but startup performance can depend on broader architecture and infrastructure. It remains reasonably negotiable because it states an outcome rather than implementation, though the fixed threshold constrains refinement. Estimation is possible but ambiguous because environment, device class, network assumptions, and definition of fully loaded are not specified. Testability is weakened by missing benchmark conditions and by the vague fallback message about performance issues."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a football fan, I want to see current football news relevant to my favorite teams so that I stay informed about their latest updates.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.7
+            },
+            "reasoning": "The story expresses clear user value and leaves implementation flexible. Independence is only moderate because it depends on favorite-team selection capability and availability of a news source. Scope is focused and likely sprint-sized. Estimation is feasible, but terms such as current and relevant are not operationalized. Acceptance criteria are mostly testable, although relevance rules and behavior when no favorites are selected are somewhat open-ended due to the 'prompt or displays general football news' alternative."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a football fan, I want to select preferred sports news channels for display so that I can customize the news sources I see.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "Good user-facing value and strong negotiability because it describes customization intent without prescribing design. Independence is partial because it relies on an existing news module and source/channel model. Scope is focused and small. Estimation is reasonable, though details such as how channels are listed, persisted, and combined with favorite-team filtering are not defined. Acceptance criteria are objective enough, with only minor ambiguity around default channels and exact selection behavior."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As a football fan, I want to follow live results for my favorite teams via a live ticker so that I can stay updated during matches.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.7
+            },
+            "reasoning": "The story is valuable and mostly negotiable, centered on a user goal. Independence is limited because it depends on favorite-team setup and live-data availability/integration. Scope is reasonably focused on live ticker consumption. Estimation is possible, but 'real-time' is not quantified and data-source assumptions are implicit. Testability is acceptable for happy and failure paths, but timing precision and update frequency are not measurable as written."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a football fan, I want to access coverage of all national and international football leagues and competitions so that I can follow any team or league I am interested in.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.4,
+                "small": 0.2,
+                "testable": 0.5
+            },
+            "reasoning": "The story has strong user value but is very broad and close to epic scale. 'All national and international football leagues and competitions' creates major dependency on data coverage, licensing, and content breadth, reducing independence. Estimation is difficult because scope boundaries are effectively unlimited. Smallness is poor because this spans many workflows and datasets. Acceptance criteria are only partly testable because 'all' and 'information and updates' are not bounded by a defined catalog or coverage list."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a football fan, I want to view detailed team and player information on demand so that I can learn more about teams and players.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.6,
+                "testable": 0.5
+            },
+            "reasoning": "The story is valuable and highly negotiable. Independence is fairly good, though it still depends on underlying team/player data availability. It is somewhat broad because it combines two related domains, team details and player details, which could be split. Estimation is hindered by the undefined scope of 'comprehensive details.' Testability is only moderate because expected detail fields are not specified, making pass/fail verification subjective."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a football fan, I want to access live stream links for matches from external providers when broadcasts begin so that I can watch live games.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.8,
+                "testable": 0.7
+            },
+            "reasoning": "Clear user value and mostly negotiable wording. Independence is limited because this story depends on external providers, timing of broadcasts, and rights availability. Scope is focused enough for one capability. Estimation is possible, but external integration and rights logic add uncertainty. Acceptance criteria are reasonably objective, though 'when broadcasts begin' and 'transmission rights are fulfilled' require external definitions and country/provider rules not captured here."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a football fan, I want live stream links to be shown only when transmission rights are fulfilled for my country so that I comply with legal requirements.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.7,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "This is focused and user-relevant, although the value is partly regulatory/legal rather than direct user convenience. It is only partially independent because it relies on geo-location and rights-management data, and overlaps strongly with the live-stream-link feature. Scope is small and bounded. Estimation is reasonable but depends on country resolution and rights source. Acceptance criteria are fairly testable if country and rights states can be simulated."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a football fan, I want the app to retrieve live ticker data via an API from an external server so that I get real-time match updates.",
+            "scores": {
+                "independent": 0.3,
+                "negotiable": 0.3,
+                "valuable": 0.7,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "The story includes explicit implementation detail ('via an API from an external server'), which makes it less negotiable and more like a solution or technical story. Independence is weak because it is tightly coupled to external service availability and to the live ticker feature. User value exists but is mediated through a technical mechanism rather than pure user outcome. Scope is bounded and estimable, and acceptance criteria are testable for success and failure scenarios."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a football fan, I want live ticker data to update in the user interface within a few seconds of real-world events so that I stay up-to-date during matches.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.8,
+                "testable": 0.4
+            },
+            "reasoning": "The story has clear value and a focused performance/timeliness goal. Independence is partial because it depends on upstream event feeds and the live ticker subsystem. Estimation is hindered by the vague phrase 'within a few seconds' and uncertainty about event-source latency. Smallness is acceptable. Testability is weak because the timing threshold is not objectively defined and real-world event time reference is difficult to validate without a formal SLA."
+        },
+        {
+            "us_id": "US-012",
+            "user_story": "As a football fan, I want a user interface that allows direct access to all app modules and information so that I can easily navigate the app.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.5,
+                "small": 0.4,
+                "testable": 0.5
+            },
+            "reasoning": "The story is valuable and highly negotiable, but it is broad. 'All app modules and information' suggests a navigation architecture spanning much of the product, which reduces smallness and makes estimation harder. Independence is only moderate because the story relies on the existence and definition of multiple modules. Acceptance criteria are partly testable, but 'direct access' and full coverage of all modules/information are insufficiently specified for deterministic verification."
+        },
+        {
+            "us_id": "US-013",
+            "user_story": "As a football fan, I want to customize the user interface theme so that I can personalize the app’s appearance.",
+            "scores": {
+                "independent": 0.9,
+                "negotiable": 1.0,
+                "valuable": 0.9,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "A well-formed, focused customization story with clear though moderate user value. It is largely independent and does not strongly depend on other features beyond a settings area. Scope is small and easy to estimate. Acceptance criteria are objective enough, though persistence of the selected theme and supported theme list are not explicitly covered, slightly reducing testability."
+        },
+        {
+            "us_id": "US-014",
+            "user_story": "As a football fan, I want to receive notifications about current events when notifications are enabled so that I stay informed in real time.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.7,
+                "testable": 0.6
+            },
+            "reasoning": "The user value is clear and the story is negotiable. Independence is partial because it depends on notification infrastructure, event generation, and user preference settings. Estimation is somewhat limited by ambiguity in 'current events' and notification timing/content. Scope is focused but may still span multiple event types. Testability is moderate because enabling/disabling is clear, but what qualifies as an event and what 'real time' means are not specified."
+        },
+        {
+            "us_id": "US-015",
+            "user_story": "As a football fan, I want to register and log in before accessing app features so that my experience is personalized and secure.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.5,
+                "testable": 0.7
+            },
+            "reasoning": "The story has strong user/business value and is mostly negotiable. It is somewhat broad because it combines registration, login, and access control into one story, which could be split into separate capabilities. Independence is fairly good but authentication often touches many areas. Estimation is possible, though credential rules, validation, and what features are gated are undefined. Acceptance criteria are testable at a basic level but lack detail for registration fields, security rules, and edge cases."
+        },
+        {
+            "us_id": "US-016",
+            "user_story": "As a football fan, I want to follow favorite clubs so that I can personalize my app experience.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "This is a strong user story: clear value, focused scope, and flexible implementation. It is largely independent, though downstream personalization features may consume the favorites. Estimation is straightforward. Acceptance criteria are objective, with only minor ambiguity around unsupported clubs and whether favorites persist across sessions."
+        },
+        {
+            "us_id": "US-017",
+            "user_story": "As a football fan, I want to receive notifications about news or results related to my favorite teams so that I stay updated on their activities.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.7
+            },
+            "reasoning": "The story delivers clear value and remains implementation-agnostic. Independence is moderate because it depends on favorite-team selection, notification settings, and event/news pipelines. Scope is somewhat broader because it combines at least two notification categories: news and results. Estimation is feasible but timing, frequency, and filtering rules are not defined. Acceptance criteria are reasonably testable but omit notification content and deduplication expectations."
+        },
+        {
+            "us_id": "US-018",
+            "user_story": "As a social media user, I want to share news articles and game reports via social media directly from the app so that I can engage with my network.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 1.0,
+                "valuable": 0.9,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "A focused, user-centered story with clear value and good negotiability. Independence is fairly strong, though it relies on device/platform sharing capabilities. Scope is manageable even though it covers both news articles and game reports. Estimation is reasonable. Acceptance criteria are objective, though supported social platforms and expected share payload are not specified."
+        },
+        {
+            "us_id": "US-019",
+            "user_story": "As a football fan, I want the app to function reliably with limited network coverage so that I can access previously loaded content and basic navigation offline.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "The story has clear value and mostly flexible wording. Independence is moderate because offline behavior affects multiple app modules and depends on local caching strategy. It is somewhat broad, combining resilience under poor connectivity, offline content access, and basic navigation. Estimation is possible, but 'reliably,' 'limited network coverage,' and 'basic navigation' need tighter definition. Acceptance criteria are testable at a high level, though specific offline content scope is not fully bounded."
+        },
+        {
+            "us_id": "US-020",
+            "user_story": "As a football fan, I want the app to require an active internet connection for live data and live stream features so that I understand when connectivity is needed.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 1.0,
+                "valuable": 0.9,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "This is a focused and clear behavior story with good user value, mainly around expectation management. It is fairly independent and small. Estimation is straightforward. Acceptance criteria are objective and easy to test in online/offline conditions. Minor dependence remains on the existence of live data/stream features, but the requirement itself is well-bounded."
+        },
+        {
+            "us_id": "US-021",
+            "user_story": "As a football fan, I want the app to support up to 100,000 concurrent users without performance degradation so that I can use the app reliably during peak times.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.5,
+                "small": 0.3,
+                "testable": 0.4
+            },
+            "reasoning": "The story has strong business and user value, but it is a large nonfunctional requirement spanning architecture, infrastructure, and performance engineering. Independence is weak because it depends on system-wide design and deployment. Scope is too large for a normal sprint-sized story. Estimation is difficult without defined workload model and specific performance metrics. Acceptance criteria are weakly testable because 'normal performance' and 'performance degradation' are not objectively defined."
+        },
+        {
+            "us_id": "US-022",
+            "user_story": "As a football fan, I want the app to undergo thorough testing and support processes before release so that malfunctions are detected and resolved early.",
+            "scores": {
+                "independent": 0.2,
+                "negotiable": 0.4,
+                "valuable": 0.4,
+                "estimable": 0.3,
+                "small": 0.2,
+                "testable": 0.2
+            },
+            "reasoning": "This is not a strong user story; it describes a process/quality activity rather than a discrete user-facing capability. Independence is poor because it spans release governance, QA, and support operations across the whole product. Negotiability is limited by prescribing process intent rather than user outcome. Value to the end user is indirect. Scope is epic-level and hard to estimate. Acceptance criteria are vague, using subjective terms like 'thorough' and broad outcomes like malfunctions being resolved."
+        },
+        {
+            "us_id": "US-023",
+            "user_story": "As a football fan, I want the app to be continuously improved based on user feedback and app reviews so that my experience gets better over time.",
+            "scores": {
+                "independent": 0.3,
+                "negotiable": 0.7,
+                "valuable": 0.7,
+                "estimable": 0.2,
+                "small": 0.1,
+                "testable": 0.1
+            },
+            "reasoning": "This statement expresses a desirable product principle but not a bounded sprint-ready story. Independence is low because it depends on an ongoing feedback loop and potentially many future changes. The value is understandable but generic. Estimation is very poor because the scope is open-ended and continuous by definition. Smallness is poor because it represents a roadmap theme rather than a single capability. Acceptance criteria are not deterministic; 'improved functionality' is too broad to verify objectively."
+        },
+        {
+            "us_id": "US-024",
+            "user_story": "As a football fan, I want my personal data to be processed in compliance with GDPR so that my privacy is protected.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.4,
+                "small": 0.3,
+                "testable": 0.4
+            },
+            "reasoning": "The story has strong legal and user value, but it is too broad as written. GDPR compliance spans consent, retention, access, deletion, portability, lawful basis, and more, so independence is only partial and scope is larger than a single story. Negotiability is decent because it states an outcome, though compliance requirements constrain implementation. Estimation is difficult without specifying which GDPR obligations are in scope. Acceptance criteria are partly testable for deletion requests, but 'processes data in compliance with GDPR' is too broad and not directly verifiable without detailed sub-requirements."
+        }
+    ]
+}
