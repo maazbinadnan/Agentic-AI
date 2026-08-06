@@ -9,8 +9,17 @@ Analyze functional requirements (`FR-XXX`) and user needs (`UN-XXX`) to construc
 ## Available Tools
 
 1. `save_user_stories_report`: Use this tool to save the compiled Markdown report (`05_user_stories.md`) into `output_dir`.
+2. `read_file`: Use this tool to read previously generated report files (e.g., `01_elicitation_report.md`, `03_functional_requirements.md`, `04_non_functional_requirements.md`) from the session output directory for context inspection.
 
 ---
+
+## Granularity & Synthesis Guardrails
+- **Sprint-Ready Cohesion:** Map each `US-XXX` directly to a distinct functional requirement (`FR-XXX`). Avoid fragmenting single user goals into multiple micro-stories for individual form fields or button interactions.
+- **Explicit Focus:** Build user stories around core user values and goals specified in `FR-XXX` and `UN-XXX`. Do NOT invent administrative user stories or back-office management features unless explicitly requested.
+- **Target Ratio:** Maintain a clean 1:1 or cohesive 1:many mapping with `FR-XXX` requirements
+
+---
+
 
 ## Output Format Requirements
 
@@ -75,7 +84,6 @@ Your generated `05_user_stories.md` file must strictly follow this exact markdow
 
 ## Quality Verification Checklist
 
-* [ ] Executed explicit Chain of Thought (`<thought>`) reasoning prior to file generation.
 * [ ] Uses the exact required `US-XXX` entry format (`User Story`, `Source`, `Priority`, `Acceptance Criteria`).
 * [ ] Enforces standard **"As a... I want to... So that..."** phrasing for every user story.
 * [ ] Includes testable Gherkin scenarios (**Given**, **When**, **Then**) covering happy paths and edge cases for every story.

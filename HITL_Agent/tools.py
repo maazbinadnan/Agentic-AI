@@ -12,8 +12,16 @@ from hitl_agent.subagents.functional_requirements import functional_requirements
 from hitl_agent.subagents.non_functional_requirements import non_functional_requirements_subagent
 from hitl_agent.subagents.user_stories import user_stories_subagent
 from hitl_agent.subagents.interaction_designer import ixd_subagent
+from hitl_agent.subagents.feedback import feedback_subagent
+from hitl_agent.subagents.re_validation import re_validation_subagent
 
-__all__ = ["task", "read_file", "SubagentType"]
+__all__ = ["task", "read_file", "SubagentType", "SUBAGENT_TOKENS"]
+
+SUBAGENT_TOKENS = {
+    "input_tokens": 0,
+    "output_tokens": 0,
+}
+
 
 
 class SubagentType(str, Enum):
@@ -26,6 +34,8 @@ class SubagentType(str, Enum):
     NON_FUNCTIONAL_REQUIREMENTS = "non_functional_requirements"
     USER_STORIES = "user_stories"
     INTERACTION_DESIGNER = "interaction_designer"
+    FEEDBACK = "feedback"
+    RE_VALIDATION = "re_validation"
 
 
 # Mapping Enum values to compiled subagent instances
@@ -37,6 +47,8 @@ SUBAGENTS = {
     SubagentType.NON_FUNCTIONAL_REQUIREMENTS.value: non_functional_requirements_subagent,
     SubagentType.USER_STORIES.value: user_stories_subagent,
     SubagentType.INTERACTION_DESIGNER.value: ixd_subagent,
+    SubagentType.FEEDBACK.value: feedback_subagent,
+    SubagentType.RE_VALIDATION.value: re_validation_subagent,
 }
 
 EXPECTED_OUTPUT_FILES = {
@@ -47,6 +59,8 @@ EXPECTED_OUTPUT_FILES = {
     SubagentType.USER_STORIES.value: "05_user_stories.md",
     SubagentType.DESIGN_ELICITATION.value: "06_design_requirements.md",
     SubagentType.INTERACTION_DESIGNER.value: "07_ui_mockups.md",
+    SubagentType.FEEDBACK.value: "08_feedback_report.md",
+    SubagentType.RE_VALIDATION.value: "re_validation_report.md",
 }
 
 
@@ -61,7 +75,9 @@ def task(agent_name: SubagentType, description: str) -> str:
     - functional_requirements: Generates formal system inputs, workflows, and Functional Requirements (FR-001, FR-002...).
     - non_functional_requirements: Formulates quality attributes, SLA metrics, and Non-Functional Requirements (NFR-001...).
     - user_stories: Formulates Agile User Stories (US-001) with Given/When/Then Acceptance Criteria (AC-001).
-    - interaction_designer: Generates UI wireframes/mockups, screen layout specifications, and User Story to UI mapping table (06_ui_mockups.md).
+    - interaction_designer: Generates UI wireframes/mockups, screen layout specifications, and User Story to UI mapping table (07_ui_mockups.md).
+    - feedback: Reviews completed deliverables with human stakeholder at the end, collects feedback, incorporates any requested changes into files, and compiles 08_feedback_report.md.
+    - re_validation: Audits all Requirements Engineering deliverables (01 through 05) for syntax compliance ("shall"), Gherkin completeness, traceability, and consistency, saving re_validation_report.md.
     """
     raw_name = agent_name.value if isinstance(agent_name, Enum) else str(agent_name)
     key = raw_name.lower().strip()
@@ -79,6 +95,13 @@ def task(agent_name: SubagentType, description: str) -> str:
     
     messages = result.get("messages", [])
     last_content = str(messages[-1].content) if messages else "Sub-agent task completed."
+
+    # Accumulate subagent token usage
+    for msg in messages:
+        usage = getattr(msg, "usage_metadata", {}) or {}
+        SUBAGENT_TOKENS["input_tokens"] += usage.get("input_tokens", 0)
+        SUBAGENT_TOKENS["output_tokens"] += usage.get("output_tokens", 0)
+
 
     # Programmatic file creation check (Option 2)
     expected_filename = EXPECTED_OUTPUT_FILES.get(key)

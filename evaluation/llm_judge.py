@@ -12,6 +12,7 @@ _EVAL_DIR = os.path.dirname(os.path.abspath(__file__))
 SYSTEM_PROMPT = os.path.join(_EVAL_DIR, "prompts", "requirements_evaluator.md")
 ISO_29148_PROMPT = os.path.join(_EVAL_DIR, "prompts", "iso_29148_auditor.md")
 INVEST_PROMPT = os.path.join(_EVAL_DIR, "prompts", "invest_evaluator.md")
+MODEL = os.getenv("EVAL_MODEL", "gpt-4.1")
 
 client = ChatClient().client
 
@@ -23,7 +24,7 @@ def evaluate_requirements(
     model: str | None = None,
 ):
     """Lean LLM Judge that evaluates generated requirements against ground truth."""
-    model = model or os.getenv("EVAL_MODEL", "gpt-4.1")
+    model = model or MODEL
 
     # Load system prompt
     with open(SYSTEM_PROMPT, "r", encoding="utf-8") as prompt:
@@ -65,7 +66,7 @@ def evaluate_iso_29148_quality(
     model: str | None = None,
 ):
     """Evaluates generated requirements against ISO/IEC/IEEE 29148 quality standards (identifying requirement issues)."""
-    model = model or os.getenv("EVAL_MODEL", "gpt-4.1")
+    model = model or MODEL
 
     with open(ISO_29148_PROMPT, "r", encoding="utf-8") as prompt_file:
         sys_prompt = prompt_file.read()
@@ -101,7 +102,7 @@ def evaluate_invest_user_stories(
     model: str | None = None,
 ):
     """Evaluates Agile User Stories against the INVEST rubric (Independent, Negotiable, Valuable, Estimable, Small, Testable)."""
-    model = model or os.getenv("EVAL_MODEL", "gpt-4.1")
+    model = model or MODEL
 
     with open(INVEST_PROMPT, "r", encoding="utf-8") as prompt_file:
         sys_prompt = prompt_file.read()

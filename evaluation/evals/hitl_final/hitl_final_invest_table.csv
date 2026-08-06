@@ -1,0 +1,8 @@
+criterion,average_score
+Independent (I),0.6694
+Negotiable (N),0.8833
+Valuable (V),0.9694
+Estimable (E),0.6667
+Small (S),0.6556
+Testable (T),0.7278
+OVERALL INVEST MEAN,0.0

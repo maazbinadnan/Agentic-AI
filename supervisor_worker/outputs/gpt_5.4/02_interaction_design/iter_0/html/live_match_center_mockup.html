@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Match Center Mockup</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --text: #212529;
+      --muted: #6c757d;
+      --border: #dee2e6;
+      --primary: #0d6efd;
+      --error: #dc3545;
+      --success: #198754;
+      --warning: #fff3cd;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .layout { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+    .scorebar {
+      display: flex; justify-content: space-between; align-items: center; padding: 18px; border-radius: 14px;
+      background: #0b1526; color: #fff; margin-bottom: 16px;
+    }
+    .status { color: #9ec5fe; font-size: 13px; }
+    .timeline { position: relative; margin-top: 12px; }
+    .event {
+      display: grid; grid-template-columns: 70px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--border);
+    }
+    .event:first-child { border-top: none; }
+    .minute { font-weight: 700; color: var(--primary); }
+    .tag { display: inline-block; font-size: 12px; padding: 4px 8px; border-radius: 999px; background: #eef4ff; color: var(--primary); margin-bottom: 6px; }
+    .notice { padding: 12px 14px; border-radius: 10px; font-size: 14px; margin-bottom: 12px; }
+    .notice.warning { background: var(--warning); border: 1px solid #ffe69c; }
+    .notice.error { background: #fdeaea; border: 1px solid #f5c2c7; color: #842029; }
+    .notice.success { background: #edf7ef; border: 1px solid #badbcc; color: #0f5132; }
+    .stream-box { border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+    .btn { padding: 11px 14px; border-radius: 10px; border: 1px solid var(--border); background: #fff; font-weight: 600; }
+    .btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .muted { color: var(--muted); font-size: 14px; }
+    @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <h1 style="margin:0;">Live Match Center</h1>
+        <div class="muted">Real-time ticker, stream eligibility, and unavailable-data states.</div>
+      </div>
+      <button class="btn">Back to Matches</button>
+    </div>
+
+    <div class="layout">
+      <section>
+        <div class="scorebar">
+          <div>
+            <div style="font-size:22px;font-weight:700;">Arsenal 2 - 1 Barcelona</div>
+            <div class="status">Live · 78' · Auto-updating from external data feed</div>
+          </div>
+          <button class="btn primary">Open full ticker</button>
+        </div>
+
+        <article class="card">
+          <div class="notice success">Live ticker populated state: updates appear as new match events are published by the external API.</div>
+          <h2 style="margin-top:0;">Ticker timeline</h2>
+          <div class="timeline">
+            <div class="event">
+              <div class="minute">78'</div>
+              <div><span class="tag">Substitution</span><div>Trossard replaces Martinelli for Arsenal.</div></div>
+            </div>
+            <div class="event">
+              <div class="minute">70'</div>
+              <div><span class="tag">Goal</span><div>Barcelona score from close range after a cutback. Arsenal 2 - 1 Barcelona.</div></div>
+            </div>
+            <div class="event">
+              <div class="minute">52'</div>
+              <div><span class="tag">Yellow card</span><div>Midfield foul stops a counterattack.</div></div>
+            </div>
+            <div class="event">
+              <div class="minute">HT</div>
+              <div><span class="tag">Half-time</span><div>Arsenal lead 2 - 0 after an intense first half.</div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="notice error">Unavailable live data state: live ticker data is currently unavailable for the selected match. Please try again later.</div>
+          <div class="muted">This non-crashing fallback covers matches where the external API does not provide live updates.</div>
+        </article>
+
+        <article class="card">
+          <div class="notice warning">Offline state: your device is offline. Live data and stream availability cannot be refreshed until connectivity returns.</div>
+          <div class="muted">Previously loaded match information remains visible.</div>
+        </article>
+      </section>
+
+      <aside>
+        <article class="card">
+          <h2 style="margin-top:0;">Broadcast availability</h2>
+          <div class="stream-box">
+            <strong>Eligible stream available</strong>
+            <div class="muted" style="margin:6px 0 12px;">Broadcast started and rights are valid in your country.</div>
+            <button class="btn primary">Open live stream link</button>
+          </div>
+          <div class="stream-box">
+            <strong>Restricted / hidden link state</strong>
+            <div class="muted" style="margin-top:6px;">No live stream link displayed because broadcast has not started or rights are not valid in this country.</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 style="margin-top:0;">Match facts</h3>
+          <div class="muted">Possession: 54% - 46%</div>
+          <div class="muted">Shots on target: 6 - 4</div>
+          <div class="muted">Corners: 5 - 3</div>
+        </article>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

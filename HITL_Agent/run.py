@@ -64,26 +64,34 @@ def main() :
             for token in item.reasoning:
                 print(f"[thinking] {token}", end="")
         elif kind == "tool_calls":
-            print(f"\nTool call: {item.tool_name}({textwrap.shorten(str(item.input), width=100, placeholder='...')})")
+            print(f"\nTool call: {item.tool_name}({textwrap.shorten(str(item.input), width=200, placeholder='...')})")
             for delta in item.output_deltas:
                 print(delta, end="", flush=True)
-            print(f"\nTool result: {item.output}")
+            print(f"\nTool result: {textwrap.shorten(str(item.output),width=200,placeholder="...")}")
 
     final_state = stream.output  
     state_snapshot = pipeline.get_state(config)
     final_values = state_snapshot.values
 
-    # Accumulate token metrics (Method 1)
-    tot_in, tot_out = 0, 0
+    from hitl_agent.tools import SUBAGENT_TOKENS
+
+    # Accumulate token metrics (Dispatcher + Subagents)
+    disp_in, disp_out = 0, 0
     for msg in final_values.get("messages", []):
         usage = getattr(msg, "usage_metadata", {}) or {}
-        tot_in += usage.get("input_tokens", 0)
-        tot_out += usage.get("output_tokens", 0)
+        disp_in += usage.get("input_tokens", 0)
+        disp_out += usage.get("output_tokens", 0)
+
+    tot_in = disp_in + SUBAGENT_TOKENS["input_tokens"]
+    tot_out = disp_out + SUBAGENT_TOKENS["output_tokens"]
 
     print("=======================================================")
     print("hitl_agent Task Dispatcher Execution Finished!")
     print(f"- Output Directory: {out_dir}")
-    print("\nTotal Accumulated Token Usage:")
+    print("\nToken Usage Breakdown:")
+    print(f"- Dispatcher Tokens:   {disp_in} in / {disp_out} out")
+    print(f"- Subagents Tokens:    {SUBAGENT_TOKENS['input_tokens']} in / {SUBAGENT_TOKENS['output_tokens']} out")
+    print(f"\nTotal Combined Token Usage:")
     print(f"- Total Input Tokens:  {tot_in}")
     print(f"- Total Output Tokens: {tot_out}")
     print(f"- Total Tokens:        {tot_in + tot_out}")
@@ -96,6 +104,7 @@ def main() :
         "total_tokens": tot_in + tot_out,
         "messages": [m.content for m in final_values.get("messages", []) if hasattr(m, "content")],
     })
+
 
 
 if __name__ == "__main__":

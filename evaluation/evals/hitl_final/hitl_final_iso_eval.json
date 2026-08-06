@@ -1,0 +1,734 @@
+{
+    "evaluations": [
+        {
+            "gen_id": 1,
+            "gen_requirement": "The system shall provide the mobile application on Android and iOS platforms and make the application ready for user interaction within a maximum of two seconds after startup under normal supported operating conditions.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "and make the application ready for user interaction",
+                    "explanation": "The statement combines platform availability with a startup performance constraint. These are separate requirements and should be stated independently.",
+                    "suggested_fix": "Split into: “The system shall provide the mobile application on supported Android devices.” and “The system shall provide the mobile application on supported iOS devices.” and “The system shall make the application ready for user interaction within 2 seconds after startup under defined test conditions.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "normal supported operating conditions",
+                    "explanation": "The phrase is vague unless the operating conditions are explicitly defined, such as device model, OS version, network state, and cache state.",
+                    "suggested_fix": "The system shall make the application ready for user interaction within 2 seconds after startup on supported Android and iOS devices using the approved performance test profile."
+                },
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "within a maximum of two seconds",
+                    "explanation": "This is a measurable performance constraint and should be categorized as a non-functional requirement rather than a functional requirement.",
+                    "suggested_fix": "NFR: The system shall make the application ready for user interaction within 2 seconds after startup on supported Android and iOS devices under the approved performance test profile."
+                }
+            ]
+        },
+        {
+            "gen_id": 2,
+            "gen_requirement": "The system shall require users to register and log in at app startup before accessing application functionality.",
+            "is_well_formed": false,
+            "quality_score": 0.6,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "register and log in",
+                    "explanation": "Registration and login are distinct authentication capabilities with different triggers and verification criteria.",
+                    "suggested_fix": "Split into: “The system shall require an unregistered user to create an account before accessing protected application functionality.” and “The system shall require a registered user to authenticate before accessing protected application functionality.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "application functionality",
+                    "explanation": "The phrase does not identify which functions are protected and could be interpreted as all functions or only account-specific functions.",
+                    "suggested_fix": "The system shall require a registered user to authenticate before accessing protected functions listed in the access-control specification."
+                }
+            ]
+        },
+        {
+            "gen_id": 3,
+            "gen_requirement": "The system shall provide a unified user interface that presents and manages the app’s core modules, including news, live ticker, team and player information, stream links, notifications, and personalization features, through a consistent and directly accessible interface.",
+            "is_well_formed": false,
+            "quality_score": 0.35,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "presents and manages",
+                    "explanation": "The requirement combines presentation and management capabilities, which are different behaviors and may require separate tests.",
+                    "suggested_fix": "Split into: “The system shall present the app modules listed in the navigation specification through the main user interface.” and “The system shall provide controls to manage configurable app modules listed in the personalization specification.”"
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news, live ticker, team and player information, stream links, notifications, and personalization features",
+                    "explanation": "The requirement aggregates many modules into one statement, making complete verification difficult.",
+                    "suggested_fix": "Create separate requirements for access to each module: news, live ticker, team information, player information, stream links, notifications, and personalization."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "unified",
+                    "explanation": "“Unified” is a subjective usability term without measurable criteria.",
+                    "suggested_fix": "The system shall display the modules listed in the navigation specification from a single primary navigation menu."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "consistent and directly accessible",
+                    "explanation": "These terms are subjective unless measurable navigation rules are defined, such as number of taps or shared layout elements.",
+                    "suggested_fix": "The system shall allow users to open each module listed in the navigation specification from the primary navigation menu within two taps."
+                }
+            ]
+        },
+        {
+            "gen_id": 4,
+            "gen_requirement": "The system shall allow authenticated users to select favorite clubs and preferred supported sports channels to personalize the content presented in the application.",
+            "is_well_formed": false,
+            "quality_score": 0.78,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "favorite clubs and preferred supported sports channels",
+                    "explanation": "The statement combines two independent preference-selection capabilities that may have different data sources and validation rules.",
+                    "suggested_fix": "Split into: “The system shall allow authenticated users to select favorite clubs from the supported club list.” and “The system shall allow authenticated users to select preferred sports channels from the supported channel list.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "personalize the content",
+                    "explanation": "The phrase describes an intended outcome but does not specify which content changes or how preferences are applied.",
+                    "suggested_fix": "The system shall filter displayed news items using the authenticated user’s selected favorite clubs and preferred sports channels."
+                }
+            ]
+        },
+        {
+            "gen_id": 5,
+            "gen_requirement": "The system shall display current football news filtered according to the authenticated user’s selected favorite clubs and preferred supported sports channels.",
+            "is_well_formed": false,
+            "quality_score": 0.82,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "current football news",
+                    "explanation": "“Current” is ambiguous without a time window or freshness rule.",
+                    "suggested_fix": "The system shall display football news items published within the last 24 hours that match the authenticated user’s selected favorite clubs and preferred supported sports channels."
+                }
+            ]
+        },
+        {
+            "gen_id": 6,
+            "gen_requirement": "The system shall provide coverage data for supported national and international football leagues and competitions.",
+            "is_well_formed": false,
+            "quality_score": 0.65,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "coverage data",
+                    "explanation": "The required data elements are not identified, so testers cannot determine whether implementation is complete.",
+                    "suggested_fix": "The system shall display the league name, competition name, season, participating teams, fixtures, results, and standings for each supported football league and competition."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "supported national and international football leagues and competitions",
+                    "explanation": "The source or list of supported leagues and competitions is not referenced.",
+                    "suggested_fix": "The system shall display the specified coverage data for each league and competition listed in the supported competitions catalog."
+                }
+            ]
+        },
+        {
+            "gen_id": 7,
+            "gen_requirement": "The system shall provide detailed information pages for teams and players and make them accessible at any time from within the application.",
+            "is_well_formed": false,
+            "quality_score": 0.45,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "teams and players",
+                    "explanation": "Team information pages and player information pages are separate content types with different required fields.",
+                    "suggested_fix": "Split into: “The system shall provide an information page for each supported team.” and “The system shall provide an information page for each supported player.”"
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "and make them accessible",
+                    "explanation": "Providing information pages and defining accessibility/navigation behavior are separate requirements.",
+                    "suggested_fix": "The system shall allow users to open each supported team information page and player information page from the relevant team or player list."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "detailed information",
+                    "explanation": "“Detailed” is subjective and does not specify required fields.",
+                    "suggested_fix": "The system shall display name, logo or photo, country, league, squad membership, and statistics fields defined in the team and player data specification."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "at any time",
+                    "explanation": "This phrase is absolute and ambiguous because availability may depend on authentication, network, maintenance, or cached data state.",
+                    "suggested_fix": "The system shall allow authenticated users to open cached team and player information pages while the application is running."
+                }
+            ]
+        },
+        {
+            "gen_id": 8,
+            "gen_requirement": "The system shall retrieve live match data from an external API and display live results and match events for users’ favorite teams through an integrated live ticker module.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "retrieve live match data from an external API and display",
+                    "explanation": "Retrieving data and displaying data are separate system behaviors with different verification methods.",
+                    "suggested_fix": "Split into: “The system shall retrieve live match data for users’ favorite teams from the configured external API.” and “The system shall display retrieved live match data in the live ticker module.”"
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "live results and match events",
+                    "explanation": "Live results and match events are distinct data types and should have separately defined display requirements if they have different fields or timing constraints.",
+                    "suggested_fix": "The system shall display the current score for each live match involving a user’s favorite team in the live ticker module."
+                }
+            ]
+        },
+        {
+            "gen_id": 9,
+            "gen_requirement": "The system shall continuously update the live ticker display with current match data as new live data is received from the external API.",
+            "is_well_formed": false,
+            "quality_score": 0.68,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "continuously update",
+                    "explanation": "“Continuously” is ambiguous and cannot be tested without a refresh interval or latency threshold.",
+                    "suggested_fix": "The system shall update the live ticker display within 2 seconds after receiving new live match data from the external API."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "current match data",
+                    "explanation": "“Current” is vague unless tied to the latest received API payload or a timestamp rule.",
+                    "suggested_fix": "The system shall display the most recent live match data payload received from the external API for each active match."
+                }
+            ]
+        },
+        {
+            "gen_id": 10,
+            "gen_requirement": "The system shall display eligible external live stream links for matches directly in the application when the corresponding live broadcast has begun.",
+            "is_well_formed": false,
+            "quality_score": 0.78,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "eligible external live stream links",
+                    "explanation": "“Eligible” is ambiguous unless eligibility criteria are defined, such as rights metadata, geography, subscription status, or provider approval.",
+                    "suggested_fix": "The system shall display an external live stream link for a match when the rights metadata marks the stream as permitted for the user’s country and the broadcast status is “started”."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "directly in the application",
+                    "explanation": "The phrase does not specify where or how the link is displayed.",
+                    "suggested_fix": "The system shall display the permitted external live stream link on the match detail page when the broadcast status is “started”."
+                }
+            ]
+        },
+        {
+            "gen_id": 11,
+            "gen_requirement": "The system shall display live stream links only when broadcast rights metadata confirms that the stream is permitted in the user’s country.",
+            "is_well_formed": true,
+            "quality_score": 0.95,
+            "issues": []
+        },
+        {
+            "gen_id": 12,
+            "gen_requirement": "The system shall allow users to manually activate notifications for their selected favorite teams.",
+            "is_well_formed": true,
+            "quality_score": 0.95,
+            "issues": []
+        },
+        {
+            "gen_id": 13,
+            "gen_requirement": "The system shall send notifications about news and live results only for the user’s selected favorite teams when the user has activated notifications.",
+            "is_well_formed": false,
+            "quality_score": 0.75,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news and live results",
+                    "explanation": "News notifications and live-result notifications are distinct event types and may require separate triggers and test cases.",
+                    "suggested_fix": "Split into: “The system shall send news notifications only for the user’s selected favorite teams when the user has activated news notifications.” and “The system shall send live-result notifications only for the user’s selected favorite teams when the user has activated live-result notifications.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "about news",
+                    "explanation": "The triggering condition for a news notification is not specified, such as publication, source ingestion, or editorial approval.",
+                    "suggested_fix": "The system shall send a news notification when a published news item is tagged with one of the user’s selected favorite teams and the user has activated news notifications."
+                }
+            ]
+        },
+        {
+            "gen_id": 14,
+            "gen_requirement": "The system shall allow users to share supported news items and match reports through the mobile device’s social sharing capabilities directly from the application.",
+            "is_well_formed": false,
+            "quality_score": 0.76,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news items and match reports",
+                    "explanation": "Sharing news items and sharing match reports are separate content-sharing functions and should be independently verifiable.",
+                    "suggested_fix": "Split into: “The system shall allow users to share supported news items through the mobile device’s native share sheet.” and “The system shall allow users to share supported match reports through the mobile device’s native share sheet.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "supported news items",
+                    "explanation": "“Supported” is ambiguous unless the supported content types or eligibility rules are defined.",
+                    "suggested_fix": "The system shall allow users to share news items marked as shareable in the content metadata through the mobile device’s native share sheet."
+                }
+            ]
+        },
+        {
+            "gen_id": 15,
+            "gen_requirement": "The system shall remain usable during limited network coverage or temporary loss of connectivity by allowing access to available application interface components and previously loaded content.",
+            "is_well_formed": false,
+            "quality_score": 0.25,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "remain usable",
+                    "explanation": "“Usable” is subjective and cannot be objectively verified without specifying available functions or success criteria.",
+                    "suggested_fix": "The system shall allow users to open previously loaded news items while the device has no network connection."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "limited network coverage or temporary loss of connectivity",
+                    "explanation": "The network conditions are not quantified, so testers cannot reproduce the condition.",
+                    "suggested_fix": "The system shall allow users to open previously loaded news items when network connectivity is unavailable for up to 30 minutes."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "available application interface components",
+                    "explanation": "The phrase does not specify which interface components must remain accessible.",
+                    "suggested_fix": "The system shall display the home screen, navigation menu, settings screen, and cached content screens when the device has no network connection."
+                },
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "remain usable during limited network coverage",
+                    "explanation": "This describes resilience/availability behavior and is better treated as a non-functional requirement with measurable offline capability criteria.",
+                    "suggested_fix": "NFR: The system shall provide access to cached content screens when network connectivity is unavailable for up to 30 minutes."
+                }
+            ]
+        },
+        {
+            "gen_id": 16,
+            "gen_requirement": "The system shall support up to 100,000 simultaneous users during peak match-day usage without loss of core application performance.",
+            "is_well_formed": false,
+            "quality_score": 0.45,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "peak match-day usage",
+                    "explanation": "The condition is not reproducible unless the traffic profile, request mix, and duration are defined.",
+                    "suggested_fix": "The system shall support 100,000 simultaneous authenticated users for 60 minutes using the approved peak-match traffic profile."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "without loss of core application performance",
+                    "explanation": "The phrase lacks measurable performance thresholds, such as response time, error rate, throughput, or update latency.",
+                    "suggested_fix": "The system shall support 100,000 simultaneous authenticated users with a 95th-percentile API response time of 500 ms or less and an error rate below 1% during the approved peak-match traffic profile."
+                },
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "support up to 100,000 simultaneous users",
+                    "explanation": "This is a capacity/performance constraint and should be categorized as a non-functional requirement.",
+                    "suggested_fix": "NFR: The system shall support 100,000 simultaneous authenticated users with defined response-time and error-rate thresholds during the approved peak-match traffic profile."
+                }
+            ]
+        },
+        {
+            "gen_id": 17,
+            "gen_requirement": "The system shall process users’ personal data, including account data, preferences, and notification settings, in compliance with GDPR.",
+            "is_well_formed": false,
+            "quality_score": 0.45,
+            "issues": [
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "in compliance with GDPR",
+                    "explanation": "A broad legal compliance statement is not directly testable as a single requirement. It should be decomposed into specific controls and obligations.",
+                    "suggested_fix": "The system shall obtain explicit user consent before processing personalization preferences for non-essential personalization purposes."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "account data, preferences, and notification settings",
+                    "explanation": "The requirement combines multiple personal data categories that may require different processing rules and controls.",
+                    "suggested_fix": "Create separate data-protection requirements for account data, personalization preferences, and notification settings."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "GDPR",
+                    "explanation": "The requirement does not identify the applicable GDPR obligations, such as lawful basis, consent, deletion, access, portability, retention, or breach logging.",
+                    "suggested_fix": "The system shall allow a user to request deletion of account data, preferences, and notification settings in accordance with the retention rules defined in the data-protection specification."
+                }
+            ]
+        },
+        {
+            "gen_id": 18,
+            "gen_requirement": "The system shall keep the user interface and application modules operational and structurally consistent when external server data is updated.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "operational",
+                    "explanation": "“Operational” is broad and does not specify which functions must continue working or what failure criteria apply.",
+                    "suggested_fix": "The system shall continue to display the home screen and navigation menu when external server data is refreshed."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "structurally consistent",
+                    "explanation": "This phrase is subjective unless layout and schema compatibility rules are defined.",
+                    "suggested_fix": "The system shall render updated server data using the layout components defined in the UI schema specification."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "user interface and application modules",
+                    "explanation": "The statement combines UI behavior and internal module behavior, which should be verified separately.",
+                    "suggested_fix": "Split into: “The system shall render updated server data using the layout components defined in the UI schema specification.” and “The system shall maintain module interfaces compatible with the server data schema version declared in the API response.”"
+                }
+            ]
+        },
+        {
+            "gen_id": 19,
+            "gen_requirement": "The system shall load and be fully ready for user interaction within a maximum of 2 seconds after application startup on supported Android and iOS devices under normal operating conditions.",
+            "is_well_formed": false,
+            "quality_score": 0.75,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "fully ready for user interaction",
+                    "explanation": "The phrase is vague unless the specific readiness criteria are defined, such as visible home screen and responsive controls.",
+                    "suggested_fix": "The system shall display the home screen and respond to a tap on the primary navigation control within 2 seconds after application startup."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "normal operating conditions",
+                    "explanation": "The test environment is not defined and may lead to inconsistent verification results.",
+                    "suggested_fix": "The system shall display the home screen and respond to a tap on the primary navigation control within 2 seconds after startup under the approved startup performance test profile."
+                }
+            ]
+        },
+        {
+            "gen_id": 20,
+            "gen_requirement": "The system shall update and display live ticker match data in real time with end-to-end data refresh latency low enough to present current match events continuously during active matches.",
+            "is_well_formed": false,
+            "quality_score": 0.2,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "update and display",
+                    "explanation": "Updating data and displaying data are separate behaviors and should be tested independently.",
+                    "suggested_fix": "Split into: “The system shall update stored live ticker match data within 2 seconds after receiving a new API payload.” and “The system shall display the updated live ticker match data within 1 second after the stored data is updated.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "in real time",
+                    "explanation": "“Real time” is ambiguous without a specific maximum latency.",
+                    "suggested_fix": "The system shall display live ticker match data within 3 seconds after the external API publishes the corresponding event."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "low enough",
+                    "explanation": "This phrase is subjective and provides no objective pass/fail threshold.",
+                    "suggested_fix": "The system shall maintain end-to-end live ticker event latency of 3 seconds or less for 95% of events during active matches."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "current match events continuously",
+                    "explanation": "“Current” and “continuously” are vague without defining freshness and update frequency.",
+                    "suggested_fix": "The system shall refresh the live ticker display at least once every 2 seconds while an active match has newly received event data."
+                }
+            ]
+        },
+        {
+            "gen_id": 21,
+            "gen_requirement": "The system shall remain usable during periods of limited network coverage and shall preserve access to core app functionality and previously retrieved content when connectivity is temporarily unavailable.",
+            "is_well_formed": false,
+            "quality_score": 0.25,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "and shall preserve access",
+                    "explanation": "The requirement contains two separate obligations: usability under limited coverage and access preservation during no connectivity.",
+                    "suggested_fix": "Split into: “The system shall display cached content when network connectivity is unavailable.” and “The system shall allow users to access the cached screens listed in the offline access specification when network connectivity is unavailable.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "remain usable",
+                    "explanation": "“Usable” is subjective and not measurable without specifying supported offline interactions.",
+                    "suggested_fix": "The system shall allow users to open previously retrieved news items, team pages, and player pages when network connectivity is unavailable."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "limited network coverage",
+                    "explanation": "The network condition is not quantitatively defined.",
+                    "suggested_fix": "The system shall allow users to open cached content when network bandwidth is below 128 kbps or connectivity is unavailable."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "core app functionality",
+                    "explanation": "The term does not identify which functions must remain available.",
+                    "suggested_fix": "The system shall allow offline access to the home screen, navigation menu, settings screen, and previously retrieved content screens."
+                }
+            ]
+        },
+        {
+            "gen_id": 22,
+            "gen_requirement": "The system shall support at least 100,000 concurrent users on peak match days without performance loss affecting core user functions, including news access, live ticker updates, and team information retrieval.",
+            "is_well_formed": false,
+            "quality_score": 0.5,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "peak match days",
+                    "explanation": "The load condition is not reproducible without a defined traffic profile and duration.",
+                    "suggested_fix": "The system shall support at least 100,000 concurrent users for 60 minutes using the approved peak-match traffic profile."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "without performance loss",
+                    "explanation": "No measurable performance thresholds are provided, so pass/fail verification is not possible.",
+                    "suggested_fix": "The system shall support at least 100,000 concurrent users with a 95th-percentile response time of 500 ms or less for news access and team information retrieval, and live ticker update latency of 3 seconds or less."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news access, live ticker updates, and team information retrieval",
+                    "explanation": "The requirement combines multiple functions with potentially different performance metrics.",
+                    "suggested_fix": "Create separate performance requirements for news access, live ticker updates, and team information retrieval under the 100,000-concurrent-user load profile."
+                }
+            ]
+        },
+        {
+            "gen_id": 23,
+            "gen_requirement": "The system shall display live stream links only when transmission rights are valid for the user’s country and shall prevent presentation of restricted streams where rights are not fulfilled.",
+            "is_well_formed": false,
+            "quality_score": 0.72,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "and shall prevent presentation",
+                    "explanation": "The statement combines a positive display rule and a negative prevention rule. Although related, they should be separated for independent verification.",
+                    "suggested_fix": "Split into: “The system shall display a live stream link only when rights metadata marks the stream as permitted for the user’s country.” and “The system shall not display a live stream link when rights metadata marks the stream as restricted for the user’s country.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "rights are not fulfilled",
+                    "explanation": "The phrase is unclear and should refer to a specific metadata state or validation rule.",
+                    "suggested_fix": "The system shall not display a live stream link when the rights metadata state for the user’s country is “restricted”, “expired”, or “unknown”."
+                }
+            ]
+        },
+        {
+            "gen_id": 24,
+            "gen_requirement": "The system shall process all personal data in compliance with GDPR requirements, including lawful processing, data minimization, and protection of user privacy for registration, personalization, notifications, and account-related data.",
+            "is_well_formed": false,
+            "quality_score": 0.35,
+            "issues": [
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "in compliance with GDPR requirements",
+                    "explanation": "This is a broad legal compliance objective, not a single objectively testable system behavior.",
+                    "suggested_fix": "The system shall record the lawful basis for each stored personal data category listed in the data inventory."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "lawful processing, data minimization, and protection of user privacy",
+                    "explanation": "The requirement combines multiple legal/privacy obligations that require separate controls and tests.",
+                    "suggested_fix": "Create separate requirements for lawful basis recording, data minimization, consent management, retention, access requests, deletion requests, and privacy notice presentation."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "registration, personalization, notifications, and account-related data",
+                    "explanation": "The requirement combines multiple processing contexts and data categories, each requiring separate verification.",
+                    "suggested_fix": "The system shall store only the personal data fields listed in the approved data inventory for user registration."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "all personal data",
+                    "explanation": "The scope is too broad unless the personal data inventory is referenced.",
+                    "suggested_fix": "The system shall process the personal data categories listed in the approved data inventory according to their documented lawful basis and retention period."
+                }
+            ]
+        },
+        {
+            "gen_id": 25,
+            "gen_requirement": "The system shall provide a user interface that enables users to access core information and functions directly and consistently across integrated modules on supported Android and iOS devices.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "core information and functions",
+                    "explanation": "The phrase does not identify which information and functions must be accessible.",
+                    "suggested_fix": "The system shall allow users to access the news module, live ticker module, team pages, player pages, stream links, notifications, and personalization settings from the primary navigation menu."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "directly and consistently",
+                    "explanation": "These are subjective usability terms unless measurable navigation and layout criteria are defined.",
+                    "suggested_fix": "The system shall allow users to open each module listed in the navigation specification from the primary navigation menu within two taps, using the same menu structure on supported Android and iOS devices."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "consistently across integrated modules",
+                    "explanation": "No objective consistency criteria are specified, such as shared navigation labels, layout components, or maximum tap count.",
+                    "suggested_fix": "The system shall use the navigation labels and menu order defined in the UI navigation specification on all supported Android and iOS devices."
+                }
+            ]
+        },
+        {
+            "gen_id": 26,
+            "gen_requirement": "The system shall maintain functional consistency of the user interface and internal modules despite updates received from external servers.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "functional consistency",
+                    "explanation": "The phrase is vague and lacks measurable criteria for acceptable behavior after server updates.",
+                    "suggested_fix": "The system shall render server data that conforms to the supported API schema without changing the navigation menu labels, menu order, or screen layout identifiers defined in the UI specification."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "user interface and internal modules",
+                    "explanation": "The requirement combines user-interface consistency and internal module consistency, which are different verification targets.",
+                    "suggested_fix": "Split into: “The system shall preserve the UI navigation menu labels and order after receiving server data updates.” and “The system shall process server data updates that conform to the supported API schema without module interface errors.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "despite updates received from external servers",
+                    "explanation": "The update type, schema constraints, and compatibility assumptions are not specified.",
+                    "suggested_fix": "The system shall process external server updates that conform to API schema version 1.x without causing client-side validation errors."
+                }
+            ]
+        },
+        {
+            "gen_id": 27,
+            "gen_requirement": "The system shall support uncomplicated registration and login at application startup with a streamlined authentication flow requiring minimal user steps.",
+            "is_well_formed": false,
+            "quality_score": 0.2,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "uncomplicated",
+                    "explanation": "This is a subjective usability adjective and cannot be objectively tested.",
+                    "suggested_fix": "The system shall allow a registered user to log in from application startup using no more than three user actions after credentials are available."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "registration and login",
+                    "explanation": "Registration and login are separate authentication flows with different steps and validation criteria.",
+                    "suggested_fix": "Split into: “The system shall allow an unregistered user to create an account from application startup using no more than five user actions after entering required data.” and “The system shall allow a registered user to log in from application startup using no more than three user actions after credentials are available.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "streamlined authentication flow",
+                    "explanation": "“Streamlined” is subjective and lacks measurable criteria.",
+                    "suggested_fix": "The system shall complete successful login within 3 seconds after the user submits valid credentials."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "minimal user steps",
+                    "explanation": "“Minimal” is not a defined number and cannot support pass/fail testing.",
+                    "suggested_fix": "The system shall require no more than three user actions to submit valid login credentials from the startup screen."
+                }
+            ]
+        },
+        {
+            "gen_id": 28,
+            "gen_requirement": "The system shall deliver notifications about current events to users as soon as the notification function is activated and relevant subscribed events occur.",
+            "is_well_formed": false,
+            "quality_score": 0.35,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "current events",
+                    "explanation": "The event types are not specified, so the trigger for notifications is unclear.",
+                    "suggested_fix": "The system shall deliver a notification when a news item or live match event is tagged with a team for which the user has activated notifications."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "as soon as",
+                    "explanation": "This phrase is not measurable and needs a maximum delivery latency.",
+                    "suggested_fix": "The system shall deliver a notification within 10 seconds after a subscribed event is received by the notification service."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "relevant subscribed events",
+                    "explanation": "“Relevant” is subjective unless the subscription matching rule is defined.",
+                    "suggested_fix": "The system shall treat an event as subscribed when the event metadata contains a team identifier matching one of the user’s notification-enabled favorite teams."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "notification function is activated",
+                    "explanation": "The statement does not specify whether activation applies globally, by team, or by notification type.",
+                    "suggested_fix": "The system shall deliver a notification within 10 seconds after receiving an event whose team identifier matches a user’s notification-enabled favorite team."
+                }
+            ]
+        },
+        {
+            "gen_id": 29,
+            "gen_requirement": "The system shall undergo thorough pre-release testing and support processes to detect and resolve malfunctions before production release.",
+            "is_well_formed": false,
+            "quality_score": 0.2,
+            "issues": [
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "undergo thorough pre-release testing and support processes",
+                    "explanation": "This is a development/process requirement, not a system functional or non-functional requirement describing runtime system behavior or a measurable system constraint.",
+                    "suggested_fix": "Process requirement: The project shall execute the approved pre-release test suite before production release."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "thorough",
+                    "explanation": "“Thorough” is subjective and cannot be verified without defined coverage or pass criteria.",
+                    "suggested_fix": "The project shall execute 100% of priority 1 and priority 2 test cases in the approved pre-release test suite before production release."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "detect and resolve malfunctions",
+                    "explanation": "Detection and resolution are separate process obligations with different verification evidence.",
+                    "suggested_fix": "Split into: “The project shall record all failed pre-release test cases in the defect tracking system.” and “The project shall close all severity 1 and severity 2 defects before production release.”"
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "malfunctions",
+                    "explanation": "The term does not define defect severity, failure type, or acceptance threshold.",
+                    "suggested_fix": "The project shall close all severity 1 and severity 2 defects identified by the approved pre-release test suite before production release."
+                }
+            ]
+        },
+        {
+            "gen_id": 30,
+            "gen_requirement": "The system shall support continuous evaluation of user feedback and app reviews to inform ongoing improvements to app functionality and service quality.",
+            "is_well_formed": false,
+            "quality_score": 0.15,
+            "issues": [
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "support continuous evaluation of user feedback and app reviews",
+                    "explanation": "This is an operational/product management process goal rather than a system requirement unless a specific system capability is defined.",
+                    "suggested_fix": "The system shall import user feedback records from the configured app store review sources once every 24 hours."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "continuous evaluation",
+                    "explanation": "“Continuous” is vague without a frequency or trigger.",
+                    "suggested_fix": "The system shall analyze imported user feedback records once every 24 hours."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "to inform ongoing improvements",
+                    "explanation": "This describes an intended business outcome, not a verifiable system behavior.",
+                    "suggested_fix": "The system shall create a feedback analysis report containing the number of reviews, average rating, and top five reported issue categories for each 24-hour period."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "service quality",
+                    "explanation": "“Service quality” is subjective and not measurable in this requirement.",
+                    "suggested_fix": "The system shall include average app rating and count of crash-related review tags in the daily feedback analysis report."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,429 @@
+{
+    "evaluations": [
+        {
+            "gen_id": 1,
+            "gen_requirement": "The system shall provide registration and login capability directly at app startup so that users can create an account or authenticate with minimal steps.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "registration and login capability",
+                    "explanation": "The statement combines two distinct capabilities: account registration and user login. Each capability has separate triggers, inputs, validation rules, and test cases.",
+                    "suggested_fix": "Split into: 1) The system shall display an account registration option on the app startup screen. 2) The system shall display a login option on the app startup screen."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "minimal steps",
+                    "explanation": "“Minimal” is subjective and does not define a measurable number of steps, making the requirement open to multiple interpretations.",
+                    "suggested_fix": "The system shall allow a user to start account registration from the app startup screen in no more than one user action."
+                }
+            ]
+        },
+        {
+            "gen_id": 2,
+            "gen_requirement": "The system shall allow authenticated users to select, update, and store favorite clubs, preferred sports channels, and notification preferences within their profile settings.",
+            "is_well_formed": false,
+            "quality_score": 0.65,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "select, update, and store favorite clubs, preferred sports channels, and notification preferences",
+                    "explanation": "The requirement combines multiple actions and multiple preference types in one statement. Each preference type and action may require separate verification.",
+                    "suggested_fix": "Split into: 1) The system shall allow an authenticated user to select favorite clubs in profile settings. 2) The system shall allow an authenticated user to update favorite clubs in profile settings. 3) The system shall store the authenticated user's selected favorite clubs in the user's profile."
+                },
+                {
+                    "dimension": "Completeness",
+                    "detected_issue": "preferred sports channels, and notification preferences",
+                    "explanation": "The requirement does not define allowable values, limits, or persistence behavior for the different preference categories.",
+                    "suggested_fix": "The system shall store the authenticated user's selected notification preferences in the user's profile immediately after the user confirms the changes."
+                }
+            ]
+        },
+        {
+            "gen_id": 3,
+            "gen_requirement": "The system shall display a personalized football news feed containing current news for the user’s favorite teams and content filtered by selected sports channels.",
+            "is_well_formed": false,
+            "quality_score": 0.7,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "current news",
+                    "explanation": "“Current” is vague because it does not define a publication age, update frequency, or retrieval time window.",
+                    "suggested_fix": "The system shall display football news items published within the previous 24 hours for the user's favorite teams."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "favorite teams and content filtered by selected sports channels",
+                    "explanation": "The statement combines two filtering rules: favorite-team filtering and selected-channel filtering. These can be tested independently.",
+                    "suggested_fix": "Split into: 1) The system shall display football news items associated with the user's favorite teams. 2) The system shall filter football news items by the user's selected sports channels."
+                }
+            ]
+        },
+        {
+            "gen_id": 4,
+            "gen_requirement": "The system shall provide live scores and a continuously updating live ticker for matches involving favorite teams using data retrieved from an external live-data API.",
+            "is_well_formed": false,
+            "quality_score": 0.6,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "live scores and a continuously updating live ticker",
+                    "explanation": "The requirement combines two separate capabilities: displaying live scores and providing a live ticker. They may have different data formats, update rates, and acceptance tests.",
+                    "suggested_fix": "Split into: 1) The system shall display live scores for matches involving the user's favorite teams. 2) The system shall display live ticker events for matches involving the user's favorite teams."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "continuously updating",
+                    "explanation": "“Continuously” is not measurable and does not specify an update interval or latency threshold.",
+                    "suggested_fix": "The system shall refresh live ticker events for matches involving the user's favorite teams at least once every 10 seconds while the match is in progress."
+                }
+            ]
+        },
+        {
+            "gen_id": 5,
+            "gen_requirement": "The system shall provide browsable coverage of national and international leagues and competitions, including access to related matches, teams, and standings or summary context where available.",
+            "is_well_formed": false,
+            "quality_score": 0.35,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "browsable coverage",
+                    "explanation": "“Browsable coverage” is vague and does not define the content, navigation behavior, or supported league set.",
+                    "suggested_fix": "The system shall display a league list containing each league configured in the content management system."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "matches, teams, and standings or summary context",
+                    "explanation": "The requirement combines access to matches, teams, standings, and summary context. These are separate information views and should be specified independently.",
+                    "suggested_fix": "Split into: 1) The system shall display matches for a selected competition. 2) The system shall display teams for a selected competition. 3) The system shall display standings for a selected competition when standings data exists."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "where available",
+                    "explanation": "This is an escape clause. It does not specify the condition under which data is considered available or what the system must do when data is unavailable.",
+                    "suggested_fix": "The system shall display a 'Standings unavailable' message when standings data is not returned by the competition data service."
+                }
+            ]
+        },
+        {
+            "gen_id": 6,
+            "gen_requirement": "The system shall display detailed information pages for teams and players that users can access from relevant news items, matches, or competition views.",
+            "is_well_formed": false,
+            "quality_score": 0.55,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "detailed information pages",
+                    "explanation": "“Detailed” is subjective and does not specify the required data fields for team or player pages.",
+                    "suggested_fix": "The system shall display a team information page containing the team name, logo, country, current squad list, and recent match list."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "relevant news items",
+                    "explanation": "“Relevant” is ambiguous because it does not define the relationship between a news item and a team or player.",
+                    "suggested_fix": "The system shall link a news item to a team information page when the news item's metadata contains the team's identifier."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "teams and players",
+                    "explanation": "Team pages and player pages are different content types with different fields and test conditions.",
+                    "suggested_fix": "Split into: 1) The system shall display team information pages. 2) The system shall display player information pages."
+                }
+            ]
+        },
+        {
+            "gen_id": 7,
+            "gen_requirement": "The system shall display live stream links for eligible live broadcasts only after the broadcast has begun and only when transmission rights are valid for the user’s country.",
+            "is_well_formed": false,
+            "quality_score": 0.82,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "eligible live broadcasts",
+                    "explanation": "“Eligible” is not defined. The requirement does not specify the data attribute or rule that determines broadcast eligibility.",
+                    "suggested_fix": "The system shall display a live stream link when the broadcast record has status 'started' and the rights service returns authorization 'allowed' for the user's country."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "transmission rights are valid",
+                    "explanation": "“Valid” should be tied to a verifiable authorization source or status value to avoid interpretation differences.",
+                    "suggested_fix": "The system shall display a live stream link only when the rights service returns an active authorization for the user's country code."
+                }
+            ]
+        },
+        {
+            "gen_id": 8,
+            "gen_requirement": "The system shall enable users to activate notifications and receive alerts about relevant news, live events, and results related to their favorite teams.",
+            "is_well_formed": false,
+            "quality_score": 0.6,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "activate notifications and receive alerts",
+                    "explanation": "Activating notifications and receiving alerts are distinct behaviors with separate triggers and acceptance tests.",
+                    "suggested_fix": "Split into: 1) The system shall allow a user to enable notifications for favorite-team updates. 2) The system shall send an alert to the user when a configured favorite-team update event occurs."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "relevant news, live events, and results",
+                    "explanation": "“Relevant” is vague, and the requirement groups multiple alert categories without defining event criteria.",
+                    "suggested_fix": "The system shall send an alert when a news item is tagged with one of the user's favorite team identifiers."
+                }
+            ]
+        },
+        {
+            "gen_id": 9,
+            "gen_requirement": "The system shall allow users to share news items and match reports to supported social media channels using the device’s native sharing capabilities or configured integrations.",
+            "is_well_formed": false,
+            "quality_score": 0.6,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "news items and match reports",
+                    "explanation": "Sharing news items and sharing match reports are separate content-sharing capabilities that should be tested independently.",
+                    "suggested_fix": "Split into: 1) The system shall allow a user to share a news item using the device's native sharing interface. 2) The system shall allow a user to share a match report using the device's native sharing interface."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "supported social media channels",
+                    "explanation": "“Supported” does not identify the channels or the source of the supported-channel list.",
+                    "suggested_fix": "The system shall allow a user to share a news item to each social media channel returned by the device's native sharing interface."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "native sharing capabilities or configured integrations",
+                    "explanation": "The use of “or” creates ambiguity about which sharing mechanism is required under which condition.",
+                    "suggested_fix": "The system shall use the device's native sharing interface when the operating system provides one."
+                }
+            ]
+        },
+        {
+            "gen_id": 10,
+            "gen_requirement": "The system shall provide offline-accessible and degraded-mode behavior by showing cached content, preserving core navigation, and synchronizing updated data when connectivity is restored.",
+            "is_well_formed": false,
+            "quality_score": 0.35,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "showing cached content, preserving core navigation, and synchronizing updated data",
+                    "explanation": "The requirement combines three separate behaviors: cached-content display, navigation availability, and synchronization after reconnection.",
+                    "suggested_fix": "Split into: 1) The system shall display cached content when network connectivity is unavailable. 2) The system shall allow access to the Home, News, Favorites, and Settings screens when network connectivity is unavailable. 3) The system shall synchronize locally stored changes within 60 seconds after network connectivity is restored."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "core navigation",
+                    "explanation": "“Core navigation” is undefined and does not identify which screens or navigation paths must remain available.",
+                    "suggested_fix": "The system shall allow navigation to the Home, News, Favorites, and Settings screens when network connectivity is unavailable."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "updated data",
+                    "explanation": "“Updated data” does not specify which data objects are synchronized or the timing of synchronization.",
+                    "suggested_fix": "The system shall synchronize pending profile preference changes within 60 seconds after network connectivity is restored."
+                }
+            ]
+        },
+        {
+            "gen_id": 11,
+            "gen_requirement": "The system shall become fully loaded and ready for user interaction within a maximum of 2 seconds after app startup under normal supported device and network conditions.",
+            "is_well_formed": false,
+            "quality_score": 0.72,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "fully loaded and ready for user interaction",
+                    "explanation": "The phrase does not specify the exact screen state or interaction that marks completion of loading.",
+                    "suggested_fix": "The system shall display the home screen and accept a tap on the first visible navigation control within 2 seconds after app startup."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "normal supported device and network conditions",
+                    "explanation": "The test environment is not objectively defined. Device class, operating system version, bandwidth, latency, and cache state should be specified or referenced.",
+                    "suggested_fix": "The system shall display the home screen and accept a tap on the first visible navigation control within 2 seconds after app startup on supported devices connected to a network with at least 10 Mbps downstream bandwidth and no more than 100 ms round-trip latency."
+                }
+            ]
+        },
+        {
+            "gen_id": 12,
+            "gen_requirement": "The system shall support at least 100,000 concurrent users during peak match-day demand without material degradation of core functions including login, news retrieval, and live ticker updates.",
+            "is_well_formed": false,
+            "quality_score": 0.42,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "peak match-day demand",
+                    "explanation": "The phrase is contextual and does not define a reproducible load profile for testing.",
+                    "suggested_fix": "The system shall support 100,000 concurrent authenticated user sessions during a load test with the traffic profile defined in the performance test plan."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "without material degradation",
+                    "explanation": "“Material degradation” is subjective and lacks measurable performance thresholds.",
+                    "suggested_fix": "The system shall support 100,000 concurrent authenticated user sessions while maintaining p95 login response time of 2 seconds or less, p95 news retrieval response time of 1.5 seconds or less, and live ticker update latency of 5 seconds or less."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "login, news retrieval, and live ticker updates",
+                    "explanation": "The requirement combines performance constraints for three different functions. Each function should have its own measurable SLA.",
+                    "suggested_fix": "Split into separate performance requirements for login, news retrieval, and live ticker update latency under the 100,000-concurrent-user load condition."
+                }
+            ]
+        },
+        {
+            "gen_id": 13,
+            "gen_requirement": "The system shall continue to provide access to cached content and core navigation during temporary network loss, and shall clearly indicate stale or offline data states to the user.",
+            "is_well_formed": false,
+            "quality_score": 0.5,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "provide access to cached content and core navigation during temporary network loss, and shall clearly indicate stale or offline data states",
+                    "explanation": "The statement combines cached-content access, navigation availability, and offline/stale-state indication in one requirement.",
+                    "suggested_fix": "Split into: 1) The system shall display cached content when network connectivity is unavailable. 2) The system shall allow navigation to the Home, News, Favorites, and Settings screens when network connectivity is unavailable. 3) The system shall display an offline indicator while network connectivity is unavailable."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "temporary network loss",
+                    "explanation": "The duration and detection condition for network loss are not defined.",
+                    "suggested_fix": "The system shall display cached content when the device has no network connection for more than 5 seconds."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "clearly indicate",
+                    "explanation": "“Clearly” is subjective and does not define the required user-interface element.",
+                    "suggested_fix": "The system shall display the text 'Offline' in the app header while network connectivity is unavailable."
+                }
+            ]
+        },
+        {
+            "gen_id": 14,
+            "gen_requirement": "The system shall retrieve and display live ticker updates with a refresh and delivery pattern suitable for near-real-time mobile use, and shall recover gracefully from external API latency or temporary failure.",
+            "is_well_formed": false,
+            "quality_score": 0.25,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "retrieve and display live ticker updates ... and shall recover gracefully",
+                    "explanation": "The requirement combines live ticker retrieval/display behavior with error recovery behavior. These are separate capabilities and should be specified independently.",
+                    "suggested_fix": "Split into: 1) The system shall retrieve live ticker updates from the live-data API at least once every 10 seconds while a followed match is in progress. 2) The system shall display retrieved live ticker updates within 2 seconds after receipt. 3) The system shall retry a failed live-data API request up to three times using exponential backoff."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "suitable for near-real-time mobile use",
+                    "explanation": "This phrase is subjective and does not define a measurable refresh interval or delivery latency.",
+                    "suggested_fix": "The system shall retrieve live ticker updates from the live-data API at least once every 10 seconds while a followed match is in progress."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "recover gracefully",
+                    "explanation": "“Recover gracefully” is vague and not directly testable without specific error-handling behavior.",
+                    "suggested_fix": "The system shall display the message 'Live updates temporarily unavailable' when the live-data API fails to respond within 5 seconds."
+                }
+            ]
+        },
+        {
+            "gen_id": 15,
+            "gen_requirement": "The system shall provide a user interface that is responsive, mobile-optimized, and consistent across Android and iOS form factors, enabling direct access to major modules within minimal navigation steps.",
+            "is_well_formed": false,
+            "quality_score": 0.2,
+            "issues": [
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "responsive, mobile-optimized, and consistent",
+                    "explanation": "These are subjective quality terms unless tied to measurable layout, timing, or style criteria.",
+                    "suggested_fix": "The system shall render each primary screen without horizontal scrolling on supported Android and iOS devices with viewport widths from 360 px to 430 px."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "major modules",
+                    "explanation": "The requirement does not identify which modules are considered major.",
+                    "suggested_fix": "The system shall provide navigation links to the Home, News, Live Scores, Favorites, and Settings modules from the primary navigation menu."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "minimal navigation steps",
+                    "explanation": "“Minimal” is subjective and not measurable.",
+                    "suggested_fix": "The system shall allow the user to open the Home, News, Live Scores, Favorites, and Settings modules from the primary navigation menu in no more than two user actions."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "responsive, mobile-optimized, and consistent ... enabling direct access",
+                    "explanation": "The requirement combines layout quality, cross-platform consistency, and navigation-depth constraints.",
+                    "suggested_fix": "Split into separate requirements for supported viewport rendering, cross-platform component consistency, and maximum navigation depth."
+                }
+            ]
+        },
+        {
+            "gen_id": 16,
+            "gen_requirement": "The system shall process personal data in compliance with GDPR, including lawful processing, data minimization, secure handling of personal data, and support for privacy-related user controls and records as applicable.",
+            "is_well_formed": false,
+            "quality_score": 0.4,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "lawful processing, data minimization, secure handling of personal data, and support for privacy-related user controls and records",
+                    "explanation": "The requirement combines multiple privacy and security obligations that require separate controls and verification methods.",
+                    "suggested_fix": "Split into: 1) The system shall store a user's consent status for each optional personal-data processing purpose. 2) The system shall allow a user to request export of the user's personal data. 3) The system shall allow a user to request deletion of the user's personal data."
+                },
+                {
+                    "dimension": "Testability",
+                    "detected_issue": "in compliance with GDPR",
+                    "explanation": "A broad legal compliance statement is difficult to verify as a single pass/fail system requirement. It should reference specific controls, articles, or acceptance criteria.",
+                    "suggested_fix": "The system shall record the timestamp, consent purpose, consent text version, and user identifier when a user grants consent for optional personal-data processing."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "secure handling",
+                    "explanation": "“Secure” is too broad unless it specifies controls such as encryption, access control, or audit logging.",
+                    "suggested_fix": "The system shall encrypt personal data at rest using AES-256 or a stronger encryption algorithm."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "as applicable",
+                    "explanation": "This is an escape clause that weakens the obligation and does not specify when the requirement applies.",
+                    "suggested_fix": "The system shall provide privacy-related user controls for consent withdrawal, personal-data export, and personal-data deletion for every authenticated user account."
+                }
+            ]
+        },
+        {
+            "gen_id": 17,
+            "gen_requirement": "The system shall enforce rights-aware stream availability checks based on the user’s country before displaying live stream links.",
+            "is_well_formed": true,
+            "quality_score": 0.9,
+            "issues": []
+        },
+        {
+            "gen_id": 18,
+            "gen_requirement": "The system shall undergo structured testing and operational support readiness before release, and shall support continuous improvement through review of user feedback and app-store reviews.",
+            "is_well_formed": false,
+            "quality_score": 0.15,
+            "issues": [
+                {
+                    "dimension": "Categorization",
+                    "detected_issue": "shall undergo structured testing and operational support readiness before release",
+                    "explanation": "This is a project/process requirement rather than a system functional or non-functional requirement. It describes development lifecycle activity, not system behavior or a measurable product constraint.",
+                    "suggested_fix": "The release package shall include a completed test report showing pass/fail results for all approved functional and non-functional acceptance tests before production deployment."
+                },
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "structured testing and operational support readiness ... continuous improvement through review of user feedback and app-store reviews",
+                    "explanation": "The statement combines testing, operational readiness, and continuous improvement activities in one requirement.",
+                    "suggested_fix": "Split into: 1) The release package shall include a completed acceptance test report before production deployment. 2) The operations team shall approve the production support checklist before production deployment. 3) The product team shall review user feedback and app-store reviews at least once per calendar month."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "structured testing",
+                    "explanation": "The phrase does not define the required test types, coverage criteria, or pass/fail threshold.",
+                    "suggested_fix": "The release package shall include test results for functional, performance, security, and regression test suites with 100% of severity-1 and severity-2 defects closed."
+                },
+                {
+                    "dimension": "Unambiguity",
+                    "detected_issue": "continuous improvement",
+                    "explanation": "“Continuous improvement” is an abstract business goal and not a directly verifiable system behavior.",
+                    "suggested_fix": "The product team shall create or update backlog items for reviewed user feedback items that are accepted by the product owner."
+                }
+            ]
+        }
+    ]
+}

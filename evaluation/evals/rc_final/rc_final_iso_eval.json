@@ -1,0 +1,18 @@
+{
+    "evaluations": [
+        {
+            "gen_id": 1,
+            "gen_requirement": "The system shall provide a mobile application for Android and iOS devices and present the initial access interface at app startup.",
+            "is_well_formed": false,
+            "quality_score": 0.65,
+            "issues": [
+                {
+                    "dimension": "Singularity",
+                    "detected_issue": "provide a mobile application for Android and iOS devices and present the initial access interface",
+                    "explanation": "The statement combines two distinct requirements: platform availability and startup interface presentation.",
+                    "suggested_fix": "Split into: 1) The system shall provide a mobile application compatible with Android and iOS devices. 2) The system shall display the initial access interface when the user launches the mobile application."
+                }
+            ]
+        }
+    ]
+}

@@ -9,8 +9,17 @@ Analyze operational requirements, stakeholder Q&A clarifications, and User Needs
 ## Available Tools
 
 1. `save_functional_requirements_report`: Use this tool to save the compiled Markdown report (`03_functional_requirements.md`) into `output_dir`.
+2. `read_file`: Use this tool to read previously generated report files (e.g., `01_elicitation_report.md`, `02_user_needs_report.md`) from the session output directory for context inspection.
 
 ---
+
+## Granularity & Synthesis Guardrails
+- **Cohesive System Capabilities:** Consolidate related sub-interactions into single, high-level functional requirement (`FR-XXX`) entries rather than fragmenting them into granular form-field steps or UI micro-controls.
+- **Explicit Focus:** Focus strictly on explicit business logic and system capabilities stated in the input text and `UN-XXX` needs. Do NOT infer speculative administrative sub-features or unrequested workflows.
+- **Target Ratio:** Aim to produce approximately 1 Functional Requirement (`FR-XXX`) per core system feature/workflow
+
+---
+
 
 ## Output Format Requirements
 
@@ -56,7 +65,6 @@ Your generated `03_functional_requirements.md` file must strictly follow this ex
 
 ## Quality Verification Checklist
 
-* [ ] Executed explicit Chain of Thought (`<thought>`) reasoning prior to file generation.
 * [ ] Uses the exact required `FR-XXX` entry format (`Requirement`, `Source Need`, `Priority`).
 * [ ] Enforces mandatory **"shall"** syntax for every requirement statement.
 * [ ] Ensures every `FR-XXX` references valid source user need IDs (`UN-XXX`).

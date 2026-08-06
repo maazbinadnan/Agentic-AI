@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Login States</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#16A34A', accent: '#2563EB', live: '#F59E0B', danger: '#EF4444', ink: '#0F172A', mute: '#475569', line: '#E2E8F0', soft: '#F8FAFC'
+          },
+          boxShadow: { card: '0 8px 24px rgba(15,23,42,0.08)' }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body{font-family:'Inter',sans-serif}</style>
+</head>
+<body class="bg-soft text-ink min-h-screen">
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold">LiveFootball Login Screen States</h1>
+      <p class="mt-2 text-sm text-mute">Three separate mockup states: initial, failed login, and successful login redirect state.</p>
+    </header>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      <section class="bg-white rounded-3xl border border-line shadow-card p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-mute mb-3">State 1</p>
+        <h2 class="text-xl font-bold mb-4">Initial Login</h2>
+        <div class="text-center mb-6">
+          <div class="mx-auto w-16 h-16 rounded-2xl bg-brand text-white flex items-center justify-center text-2xl font-extrabold shadow-card">LF</div>
+          <h3 class="mt-4 text-2xl font-bold">Welcome back</h3>
+          <p class="mt-2 text-sm text-mute">Fast, personalized football updates in under 2 seconds.</p>
+        </div>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input type="email" placeholder="fan@example.com" class="w-full rounded-xl border border-line px-4 py-3 text-sm" />
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-medium">Password</label>
+              <a href="#" class="text-sm text-accent font-medium">Forgot password?</a>
+            </div>
+            <input type="password" placeholder="Enter password" class="w-full rounded-xl border border-line px-4 py-3 text-sm" />
+          </div>
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2 text-mute"><input type="checkbox" class="w-4 h-4" /> Remember me</label>
+            <span class="text-mute">GDPR compliant</span>
+          </div>
+          <button class="w-full rounded-xl bg-brand text-white py-3 font-semibold min-h-[44px]">Log in</button>
+          <button type="button" class="w-full rounded-xl border border-line bg-white py-3 font-semibold min-h-[44px]">Create account</button>
+        </form>
+      </section>
+
+      <section class="bg-white rounded-3xl border border-line shadow-card p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-mute mb-3">State 2</p>
+        <h2 class="text-xl font-bold mb-4">Failed Login</h2>
+        <div class="text-center mb-6">
+          <div class="mx-auto w-16 h-16 rounded-2xl bg-brand text-white flex items-center justify-center text-2xl font-extrabold shadow-card">LF</div>
+          <h3 class="mt-4 text-2xl font-bold">Try again</h3>
+          <p class="mt-2 text-sm text-mute">We could not sign you in with the submitted credentials.</p>
+        </div>
+        <div class="mb-4 rounded-xl border border-danger/20 bg-danger/10 text-danger px-4 py-3 text-sm" role="alert">
+          Invalid email or password. Please check your details and try again.
+        </div>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input type="email" value="fan@example.com" class="w-full rounded-xl border border-danger px-4 py-3 text-sm" />
+          </div>
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-medium">Password</label>
+              <a href="#" class="text-sm text-accent font-medium">Forgot password?</a>
+            </div>
+            <input type="password" value="wrongpassword" class="w-full rounded-xl border border-danger px-4 py-3 text-sm" />
+          </div>
+          <button class="w-full rounded-xl bg-brand text-white py-3 font-semibold min-h-[44px]">Retry login</button>
+          <button type="button" class="w-full rounded-xl border border-line bg-white py-3 font-semibold min-h-[44px]">Reset password</button>
+        </form>
+      </section>
+
+      <section class="bg-white rounded-3xl border border-line shadow-card p-5">
+        <p class="text-xs font-semibold uppercase tracking-wide text-mute mb-3">State 3</p>
+        <h2 class="text-xl font-bold mb-4">Successful Login</h2>
+        <div class="rounded-2xl bg-brand/5 border border-brand/20 p-5 text-center">
+          <div class="mx-auto w-16 h-16 rounded-full bg-brand text-white flex items-center justify-center text-3xl font-bold">✓</div>
+          <h3 class="mt-4 text-2xl font-bold">Login successful</h3>
+          <p class="mt-2 text-sm text-mute">Welcome back, Sarah. Your personalized football dashboard is ready.</p>
+          <div class="mt-4 h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div class="h-full w-[92%] bg-brand"></div>
+          </div>
+          <p class="mt-2 text-xs text-mute">Redirecting to Home in 1 second...</p>
+          <button class="mt-5 w-full rounded-xl bg-brand text-white py-3 font-semibold min-h-[44px]">Go to home now</button>
+        </div>
+        <div class="mt-5 rounded-2xl border border-line bg-slate-50 p-4 text-sm text-mute">
+          <div class="flex items-center justify-between">
+            <span>Startup readiness target</span>
+            <span class="font-semibold text-brand">1.8s</span>
+          </div>
+          <p class="mt-2">Authentication complete. Favorites, news feed preferences, and alert settings are loading.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>

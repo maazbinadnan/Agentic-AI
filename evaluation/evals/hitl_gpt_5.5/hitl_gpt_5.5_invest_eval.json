@@ -1,0 +1,212 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a football fan, I want to register or log in at app startup so that I can securely access LiveFootball features with my personal account.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.6,
+                "testable": 0.9
+            },
+            "reasoning": "Clear end-user value and largely implementation-agnostic wording. Acceptance criteria are mostly objective and cover success, failure, and unauthorized access. However, scope combines registration, login, startup gating, and protected-feature access control, making it somewhat broad and partially dependent on downstream protected modules being defined. Estimation is possible but slightly affected by breadth and by the protected-feature list spanning multiple areas."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As an authenticated football fan, I want to follow favorite clubs and select preferred sports channels so that my news, live results, and notifications are personalized to my interests.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.8,
+                "testable": 0.9
+            },
+            "reasoning": "Strong user value and clear intent with little implementation prescription. Acceptance criteria define happy path, empty state, and offline behavior, making the story reasonably bounded and testable. It is somewhat dependent on authentication and later personalization consumers, but the preference-capture capability itself is mostly self-contained. Slight breadth exists because it covers clubs and channels together."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As an authenticated football fan, I want to view a personalized football news feed so that I can stay informed about my favorite teams and preferred sports channels.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.8,
+                "testable": 0.7
+            },
+            "reasoning": "The story delivers clear user value and keeps solution details flexible. It depends materially on prior authentication, saved preferences, and news/personalization data availability, so independence is moderate. Scope is fairly focused, but estimation and testability are weakened by non-specific phrases such as 'defined core read-operation response targets' and fallback behavior that is informative but not fully measurable within the story text."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a match-day football fan, I want to follow live ticker updates for matches involving my favorite teams so that I can see scores, match status, and key events in near real time.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Clear business value and mostly objective acceptance criteria, including error handling. Independence is limited because the story relies on authentication, favorite-team selection, external live-data API integration, and covered live matches. Estimation is feasible but impacted by unspecified 'defined live ticker update target' and continuous update behavior. The story is somewhat broad because it includes retrieval, real-time refresh, UI display, and resilience handling."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As an authenticated football fan, I want to access team, player, league, and competition information so that I can understand the football context around covered European matches and clubs.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.8,
+                "small": 0.5,
+                "testable": 0.8
+            },
+            "reasoning": "The user value is clear, and the story avoids over-prescribing implementation. Acceptance criteria are objective enough for testing and include unavailable-content and performance behavior. The main weakness is size: team, player, league, and competition detail access likely represent multiple related slices rather than one small story. Some dependency exists on underlying content/data services and MVP coverage rules."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As an authenticated football fan, I want football content to be limited to the MVP coverage scope so that I receive consistent news, live ticker, team, player, league, competition, and match-report information for supported European competitions.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.8,
+                "valuable": 0.8,
+                "estimable": 0.6,
+                "small": 0.3,
+                "testable": 0.8
+            },
+            "reasoning": "The story has business value as a scope-control rule, but it spans many modules and acts more like a cross-cutting product constraint than a small vertical slice. Independence is weak because it depends on multiple content domains and personalization behavior. Estimation is harder because the impact area is broad across news, live ticker, detail pages, match reports, and personalization. Acceptance criteria are reasonably testable for supported versus unsupported content handling."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As an authenticated football fan, I want to open authorized third-party live broadcast links after a broadcast has begun so that I can access live viewing through legitimate providers.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Well-formed story with strong user value and clear boundaries. Acceptance criteria are concrete, cover timing and routing behavior, and explicitly exclude hosting or embedding streams, which reduces ambiguity. Some dependency exists on authentication, rights/provider metadata, and broadcast timing, but the capability is still relatively self-contained and small enough for a sprint."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As an authenticated football fan, I want live broadcast links to be hidden when transmission rights are not fulfilled in my country so that the app complies with broadcast restrictions.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 1.0
+            },
+            "reasoning": "Strong compliance value and clearly bounded behavior. Criteria are highly testable with explicit valid, invalid, and uncertain rights-metadata cases. The story is small and estimable, though partially dependent on geolocation/country determination and rights metadata. It remains largely negotiable because it states the rule without prescribing implementation details."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As an authenticated football fan, I want to opt in to notifications for my favorite teams so that I can receive timely alerts about news, results, and match updates that matter to me.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "Clear user benefit and mostly flexible implementation. Acceptance criteria cover enablement, denied permission, and withdrawal. Independence is moderate because the feature depends on authentication, favorite-team preferences, OS-level permission flows, and notification infrastructure. Testability and estimation are slightly reduced by the undefined 'withdrawal handling time' and by broad notification categories bundled into one story."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a social football fan, I want to share football news and match reports from the app so that I can discuss relevant football content through social media or native mobile sharing.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "This is a focused, valuable, and largely self-contained story. Acceptance criteria are specific and objectively testable, including native share invocation, privacy exclusions, and user cancellation behavior. Minor dependency exists on mobile OS sharing mechanisms and content eligibility, but the story remains small and straightforward to estimate."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.4,
+                "testable": 0.8
+            },
+            "reasoning": "The value proposition is strong, and the intent is not overly prescriptive. However, the story spans many content types—news, match reports, team/player/competition info, and live ticker—which makes it broad and less independent because it relies on prior caching behavior across multiple modules. Estimation is possible but affected by the breadth and by the undefined 'offline usability target.' Acceptance criteria are otherwise objective and cover cached, uncached, and last-known live data cases."
+        },
+        {
+            "us_id": "US-012",
+            "user_story": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.8,
+                "small": 0.7,
+                "testable": 0.9
+            },
+            "reasoning": "This story provides clear user and integrity value by avoiding misleading offline behavior. Acceptance criteria are objective and include blocked preference changes, blocked refresh, and restoration after reconnection. Independence is moderate because it affects several server-dependent workflows, but the rule itself is cohesive. Slight breadth exists because multiple action categories are covered in one story."
+        },
+        {
+            "us_id": "US-013",
+            "user_story": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "A focused UX transparency story with clear user value. It is mostly independent, aside from relying on cached-content states produced elsewhere. Acceptance criteria are concrete across offline cached content, stale live ticker data, and indicator removal after fresh updates. Testability is good, though terms like 'clearly indicated' could benefit from more explicit UI expectations."
+        },
+        {
+            "us_id": "US-014",
+            "user_story": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+            "scores": {
+                "independent": 0.3,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.5,
+                "small": 0.1,
+                "testable": 0.6
+            },
+            "reasoning": "The story expresses important user value but is too broad, covering integrated navigation, startup performance, and accessibility across nearly all core modules. Independence is low because delivery depends on many other features existing. Estimation is difficult due to the wide functional and non-functional scope. Testability is mixed: some criteria are measurable, but 'clear mobile user interface' is subjective and the story reads more like an epic or theme than a sprint-sized story."
+        },
+        {
+            "us_id": "US-015",
+            "user_story": "As a product stakeholder, I want user feedback and app review information to be continuously evaluated so that defects, usability issues, and improvement opportunities can inform future LiveFootball enhancements.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.7,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "The story has clear stakeholder value and is relatively independent from end-user features. However, it mixes operational process behavior with system support and includes ongoing evaluation, weekly triage, and critical defect response, which broadens the scope. Estimation and testability are moderate because several criteria describe supporting process outcomes rather than deterministic product behavior, though the time-bound triage expectations are measurable."
+        },
+        {
+            "us_id": "US-016",
+            "user_story": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+            "scores": {
+                "independent": 0.3,
+                "negotiable": 0.7,
+                "valuable": 1.0,
+                "estimable": 0.5,
+                "small": 0.1,
+                "testable": 0.7
+            },
+            "reasoning": "This story delivers very strong business and user trust value, but it is a large cross-cutting compliance and security epic spanning lawful processing, consent, storage, encryption, privacy notices, and data-subject rights across many modules. Independence is low because it depends on numerous features and workflows. Estimation is difficult due to broad scope and legal/compliance interpretation, though several acceptance criteria are objectively testable, especially encryption/storage requirements and consent withdrawal behavior."
+        }
+    ]
+}

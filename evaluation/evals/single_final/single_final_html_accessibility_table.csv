@@ -1,0 +1,4 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+auth_preferences.html,5,15,1,FAIL (5 Violations)
+live_match.html,4,13,1,FAIL (4 Violations)
+news_dashboard.html,4,8,0,FAIL (4 Violations)

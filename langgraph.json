@@ -7,7 +7,8 @@
     "single_agent_final": "./single_agent_final/main.py:app",
     "three_amigos": "./three_amigos/main.py:app",
     "orchestrator_worker": "./orchestrator_worker/main.py:app",
-    "plan_and_execute": "./plan_and_execute/main.py:app"
+    "plan_and_execute": "./plan_and_execute/main.py:app",
+    "supervisor_worker_agent": "./supervisor_worker_agent/main.py:app"
   },
   "env": ".env"
 }

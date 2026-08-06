@@ -46,7 +46,7 @@ def save_ui_mockups_report(report_markdown: str, output_dir: str = "outputs") ->
     file_path = out_path / "07_ui_mockups.md"
     file_path.write_text(report_markdown, encoding="utf-8")
     print(f"\n[interaction designer agent] Successfully saved UI Mockups report to '{file_path.resolve()}'")
-    return f"Successfully saved 07_ui_mockups.md to '{file_path.resolve()}'"
+    return f"Successfully saved 08_ui_mockups.md to '{file_path.resolve()}'"
 
 
 ixd_subagent = create_agent(

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Privacy, Feedback & Offline</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand:'#16A34A', accent:'#F59E0B', info:'#3B82F6', danger:'#EF4444', bg:'#0B1220', surface:'#111827', surface2:'#1F2937', borderc:'#334155', textp:'#F8FAFC', texts:'#CBD5E1', textm:'#94A3B8' }, fontFamily:{ sans:['Inter','Roboto','Arial','sans-serif'] } } } }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-bg text-textp font-sans min-h-screen">
+  <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-5">
+    <div class="rounded-2xl border border-danger/40 bg-danger/10 px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>
+        <p class="font-semibold text-red-300">You are offline</p>
+        <p class="text-sm text-texts">Cached articles, saved preferences, and previous match data remain available. Fresh live data and new streams require connectivity.</p>
+      </div>
+      <button class="rounded-xl border border-borderc bg-surface px-4 py-2 text-sm">Retry connection</button>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-5">
+      <section class="lg:col-span-2 space-y-5">
+        <div class="bg-surface rounded-3xl border border-borderc p-5">
+          <h1 class="text-3xl font-extrabold">Privacy information</h1>
+          <p class="text-texts mt-2">This screen makes privacy processing visible in-app and remains readable even when remote privacy content cannot be fetched.</p>
+          <div class="mt-5 space-y-3 text-sm">
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4">
+              <p class="font-semibold">What data is used</p>
+              <p class="text-textm mt-1">Registration details, authentication status, favorite clubs, preferred channels, and notification consent preferences.</p>
+            </div>
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4">
+              <p class="font-semibold">Why data is used</p>
+              <p class="text-textm mt-1">To authenticate accounts, personalize content, deliver opted-in notifications, and maintain saved settings.</p>
+            </div>
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4">
+              <p class="font-semibold">Consent controls</p>
+              <p class="text-textm mt-1">Users may change notification choices and review privacy information at any time.</p>
+            </div>
+          </div>
+          <div class="mt-5 rounded-2xl border border-borderc bg-surface2 p-4">
+            <p class="text-sm font-semibold">Remote content fallback</p>
+            <p class="text-sm text-textm mt-1">If remote privacy text cannot be loaded, this in-app summary remains available or the user is informed about temporary unavailability.</p>
+          </div>
+        </div>
+
+        <div class="bg-surface rounded-3xl border border-borderc p-5">
+          <h2 class="text-xl font-bold">Feedback & app reviews</h2>
+          <p class="text-sm text-textm mt-1">Capture product feedback for continuous improvement and stakeholder evaluation.</p>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4">
+              <label class="block text-sm text-texts mb-2">Your feedback</label>
+              <textarea class="w-full h-36 rounded-2xl bg-surface border border-borderc p-3 outline-none" placeholder="Tell us what worked well, what felt slow, or what you want improved."></textarea>
+              <button class="mt-3 w-full rounded-2xl bg-brand py-3 text-sm font-semibold">Submit feedback</button>
+            </div>
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4">
+              <p class="text-sm font-semibold">Operational note</p>
+              <p class="text-sm text-textm mt-2">If a feedback or review source is unreachable, the system records the collection failure and avoids presenting stale synchronized counts as fresh data.</p>
+              <div class="mt-4 rounded-2xl border border-accent/30 bg-accent/10 p-4">
+                <p class="text-sm font-semibold text-amber-300">Queued for sync</p>
+                <p class="text-sm text-texts mt-1">Submission stored locally and will sync when connectivity returns.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="space-y-5">
+        <div class="bg-surface rounded-3xl border border-borderc p-5">
+          <h2 class="text-lg font-bold">Cached content</h2>
+          <div class="mt-4 space-y-3 text-sm">
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4 flex justify-between"><span>Saved clubs</span><span class="text-brand">Available</span></div>
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4 flex justify-between"><span>Latest read articles</span><span class="text-brand">Available</span></div>
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4 flex justify-between"><span>Fresh live stream links</span><span class="text-danger">Unavailable</span></div>
+            <div class="rounded-2xl bg-surface2 border border-borderc p-4 flex justify-between"><span>Real-time ticker refresh</span><span class="text-danger">Paused</span></div>
+          </div>
+        </div>
+
+        <div class="bg-surface rounded-3xl border border-borderc p-5">
+          <h2 class="text-lg font-bold">Consistency promise</h2>
+          <p class="text-sm text-texts mt-3">Even when server data changes or arrives malformed, fixed navigation and core modules remain stable and usable.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

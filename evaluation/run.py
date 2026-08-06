@@ -210,7 +210,6 @@ def main():
         if os.path.isfile(iso_eval_json_path):
             print("\n  ISO 29148 Quality Summary Table:")
             iso_table = build_iso_table(iso_eval_json_path, iso_table_path)
-            print(iso_table.to_string(index=False))
     else:
         print("\n[Step 3/5] Skipped ISO 29148 Quality Audit (--skip-iso-audit).")
 

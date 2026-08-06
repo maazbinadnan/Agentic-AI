@@ -5,6 +5,8 @@ from hitl_agent.subagents.functional_requirements import functional_requirements
 from hitl_agent.subagents.non_functional_requirements import non_functional_requirements_subagent
 from hitl_agent.subagents.user_stories import user_stories_subagent
 from hitl_agent.subagents.interaction_designer import ixd_subagent
+from hitl_agent.subagents.feedback import feedback_subagent
+from hitl_agent.subagents.re_validation import re_validation_subagent
 
 __all__ = [
     "elicitation_subagent",
@@ -14,4 +16,8 @@ __all__ = [
     "non_functional_requirements_subagent",
     "user_stories_subagent",
     "ixd_subagent",
+    "feedback_subagent",
+    "re_validation_subagent",
 ]
+
+

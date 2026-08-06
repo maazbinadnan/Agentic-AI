@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Authentication Mockup</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --text: #212529;
+      --muted: #6c757d;
+      --border: #dee2e6;
+      --primary: #0d6efd;
+      --error: #dc3545;
+      --success: #198754;
+      --warning: #fff3cd;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+    .hero {
+      padding: 48px;
+      background: linear-gradient(180deg, #eef4ff, #f8f9fa);
+      border-right: 1px solid var(--border);
+    }
+    .hero h1 { margin: 0 0 12px; font-size: 34px; }
+    .hero p { color: var(--muted); max-width: 560px; }
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .panel-wrap { padding: 36px; display: flex; align-items: center; justify-content: center; }
+    .auth-card {
+      width: 100%; max-width: 460px; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 16px; padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+    .tab {
+      flex: 1; padding: 12px; border-radius: 10px; border: 1px solid var(--border);
+      background: #f1f3f5; text-align: center; font-weight: 600;
+    }
+    .tab.active { background: #e7f1ff; color: var(--primary); border-color: #b6d4fe; }
+    .section-title { margin: 0 0 16px; font-size: 20px; }
+    form { display: grid; gap: 14px; }
+    label { font-size: 14px; font-weight: 600; }
+    input {
+      width: 100%; margin-top: 6px; padding: 12px; border-radius: 10px;
+      border: 1px solid var(--border); background: #fff;
+    }
+    .error input { border-color: var(--error); background: #fff5f5; }
+    .hint { font-size: 12px; color: var(--muted); }
+    .error-text { font-size: 12px; color: var(--error); margin-top: 4px; }
+    .row { display: flex; gap: 12px; }
+    .row > div { flex: 1; }
+    .banner {
+      background: #fdeaea; color: #842029; border: 1px solid #f5c2c7;
+      padding: 12px 14px; border-radius: 10px; font-size: 14px;
+    }
+    .privacy {
+      margin-top: 16px; padding: 12px; border-radius: 10px;
+      background: #f8f9fa; border: 1px solid var(--border); font-size: 13px;
+    }
+    .privacy a { color: var(--primary); text-decoration: none; }
+    .actions { display: flex; gap: 10px; margin-top: 6px; }
+    .btn {
+      border: 1px solid var(--border); background: #fff; color: var(--text);
+      padding: 12px 14px; border-radius: 10px; font-weight: 600;
+    }
+    .btn.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .success-box {
+      margin-top: 18px; border: 1px solid #badbcc; background: #edf7ef;
+      color: #0f5132; border-radius: 10px; padding: 12px;
+      font-size: 14px;
+    }
+    @media (max-width: 900px) {
+      .page { grid-template-columns: 1fr; }
+      .hero { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Startup overview">
+      <h1>Football Central</h1>
+      <p>Browse football news, competitions, live coverage, team and player details, and personalized updates from one place.</p>
+      <div class="feature-list">
+        <article class="feature">
+          <strong>Personalized after sign-in</strong>
+          <div class="hint">Favorites, channels, and notification settings are tied to your account.</div>
+        </article>
+        <article class="feature">
+          <strong>Quick startup access</strong>
+          <div class="hint">Returning users can log in immediately. New users can register without leaving the startup flow.</div>
+        </article>
+        <article class="feature">
+          <strong>Privacy transparency</strong>
+          <div class="hint">Privacy notice is available before submitting personal data.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel-wrap" aria-label="Authentication panel">
+      <div class="auth-card">
+        <div class="tabs" role="tablist" aria-label="Authentication options">
+          <div class="tab active" role="tab" aria-selected="true">Log in</div>
+          <div class="tab" role="tab" aria-selected="false">Register</div>
+        </div>
+
+        <h2 class="section-title">Welcome back</h2>
+        <div class="banner" role="alert">Login unsuccessful. Please check your email and password.</div>
+
+        <form>
+          <div class="error">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" value="fan@example.com" aria-invalid="true" />
+            <div class="error-text">This account/password combination is not valid.</div>
+          </div>
+          <div class="error">
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" value="wrongpassword" aria-invalid="true" />
+            <div class="error-text">Please try again or reset your password.</div>
+          </div>
+          <div class="actions">
+            <button class="btn primary" type="button">Log in</button>
+            <button class="btn" type="button">Use demo startup state</button>
+          </div>
+        </form>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:22px 0;" />
+
+        <h2 class="section-title">Create account</h2>
+        <form>
+          <div class="row">
+            <div>
+              <label for="first-name">First name</label>
+              <input id="first-name" type="text" value="Alex" />
+            </div>
+            <div>
+              <label for="last-name">Last name</label>
+              <input id="last-name" type="text" value="Morgan" />
+            </div>
+          </div>
+          <div>
+            <label for="register-email">Email</label>
+            <input id="register-email" type="email" value="alex@example.com" />
+          </div>
+          <div>
+            <label for="register-password">Password</label>
+            <input id="register-password" type="password" value="StrongPass123" />
+          </div>
+          <div class="privacy">
+            By registering, you acknowledge that personal data is processed for account access and personalized features. <a href="#">View Privacy Notice</a>
+          </div>
+          <div class="actions">
+            <button class="btn primary" type="button">Register</button>
+            <button class="btn" type="button">Back</button>
+          </div>
+        </form>
+
+        <div class="success-box">Successful authentication state example: user is granted access to personalized content and stored preferences.</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Startup, Registration & Login</title>
+  <style>
+    :root{--bg:#f4f6f8;--card:#ffffff;--line:#d9e0e7;--text:#1f2933;--muted:#6b7785;--accent:#0f766e;--accent-soft:#dff6f3;--warn:#b45309;--warn-soft:#fff7ed;--error:#b42318;--error-soft:#fef3f2;--ok:#027a48;--ok-soft:#ecfdf3}
+    *{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1440px;margin:0 auto;padding:24px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .phone{background:#111827;border-radius:28px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.18)} .screen{background:var(--card);border-radius:20px;min-height:700px;overflow:hidden}
+    .top{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.brand{font-weight:700}.sub{font-size:12px;color:var(--muted)}.content{padding:20px}
+    h1,h2,h3,p{margin:0 0 12px}.hero{padding:20px;background:linear-gradient(180deg,#e6fffb,#fff)}.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700}
+    .btn{display:block;width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;font-weight:700;text-align:center;margin-top:10px;cursor:pointer}
+    .btn.secondary{background:#fff;color:var(--accent)} .field{margin:12px 0} label{font-size:12px;font-weight:700;display:block;margin-bottom:6px}
+    input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.error input{border-color:var(--error);background:var(--error-soft)}.help{font-size:12px;color:var(--muted)}.error .help{color:var(--error)}
+    .banner{padding:10px 12px;border-radius:10px;font-size:13px;margin:10px 0;border:1px solid}.banner.ok{background:var(--ok-soft);border-color:#a6f4c5;color:var(--ok)}.banner.warn{background:var(--warn-soft);border-color:#fed7aa;color:var(--warn)}
+    .list{padding-left:18px;color:var(--muted);font-size:14px}.footer-note{font-size:12px;color:var(--muted);margin-top:14px}.card{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}.chip{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;margin:0 6px 6px 0;background:#f8fafc}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Startup / Registration / Login</h1>
+    <p class="sub">Revised to cover US-001 and all US-007 states, including successful returning-user login access to personalized features.</p>
+    <div class="grid">
+      <div class="phone"><div class="screen">
+        <div class="top"><div><div class="brand">LiveFootball</div><div class="sub">Default startup state</div></div><div class="pill">Android / iOS</div></div>
+        <div class="hero">
+          <h2>Football in one place</h2>
+          <p>News, live scores, teams, players, streams and notifications.</p>
+          <div class="banner ok">App ready in under 2 seconds on supported devices.</div>
+          <button class="btn" type="button" aria-label="Create account">Create account</button>
+          <button class="btn secondary" type="button" aria-label="Log in to LiveFootball">Log in</button>
+        </div>
+        <div class="content">
+          <h3>What you can do</h3>
+          <ul class="list"><li>Follow favorite clubs</li><li>Get live match ticker updates</li><li>Receive alerts for news and results</li></ul>
+          <div class="footer-note">Only available on supported Android and iOS devices.</div>
+        </div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><div><div class="brand">Create account</div><div class="sub">Registration success state</div></div><div class="pill">US-007</div></div>
+        <div class="content">
+          <div class="field"><label for="reg-name">Full name</label><input id="reg-name" value="Ava Carter" /></div>
+          <div class="field"><label for="reg-email">Email</label><input id="reg-email" value="ava@example.com" /></div>
+          <div class="field"><label for="reg-pass">Password</label><input id="reg-pass" type="password" value="password123" /></div>
+          <button class="btn" type="button" aria-label="Register account">Register</button>
+          <div class="banner ok">Account created successfully. Continue to personalization.</div>
+          <p class="footer-note">Personal data handled in compliance with GDPR.</p>
+        </div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><div><div class="brand">Log in</div><div class="sub">Validation / error state</div></div><div class="pill">Error state</div></div>
+        <div class="content">
+          <div class="field"><label for="login-email">Email</label><input id="login-email" value="ava@example" /></div>
+          <div class="field error"><label for="login-password">Password</label><input id="login-password" type="password" value="123" /><div class="help">Password is incorrect. Please try again.</div></div>
+          <div class="banner warn">Login failed. Check your credentials or reset your password.</div>
+          <button class="btn" type="button" aria-label="Submit login">Log in</button>
+          <div class="footer-note">Unsupported platforms are not offered installation access.</div>
+        </div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><div><div class="brand">Welcome back, Ava</div><div class="sub">Successful returning-user login</div></div><div class="pill">Personalized access</div></div>
+        <div class="content">
+          <div class="banner ok">Login successful. Personalized features are now available.</div>
+          <div class="card"><h3>Your favorites</h3><span class="chip">Arsenal</span><span class="chip">Barcelona</span></div>
+          <div class="card"><h3>Quick actions</h3><p class="sub">Access personalized news, live ticker updates, and notification settings.</p><button class="btn" type="button" aria-label="Open personalized news">Open personalized news</button><button class="btn secondary" type="button" aria-label="Open live ticker">Open live ticker</button></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</body>
+</html>

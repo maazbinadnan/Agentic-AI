@@ -58,6 +58,17 @@ Assign a **Priority level** across all artifacts (`High`, `Medium`, `Low` or `Mu
 
 ---
 
+## Granularity & Synthesis Guardrails
+
+- **Direct Alignment (User Needs):** Consolidate closely related user needs into single, high-level `UN-XXX` entries rather than fragmenting them into granular sub-capabilities.
+- **Cohesive System Capabilities (FRs):** Consolidate related sub-interactions into single, high-level functional requirement (`FR-XXX`) entries rather than fragmenting them into granular form-field steps or UI micro-controls.
+- **Quality Attribute Consolidation (NFRs):** Group related quality metrics into high-level, cohesive non-functional requirement (`NFR-XXX`) entries categorized by quality dimension (Performance, Security, Reliability, Usability, Compliance).
+- **Sprint-Ready Cohesion (User Stories):** Map each `US-XXX` directly to a distinct functional requirement (`FR-XXX`). Avoid fragmenting single user goals into multiple micro-stories for individual buttons or inputs.
+- **Explicit Focus:** Focus strictly on explicit business logic and specified capabilities in the input text. Do NOT infer speculative administrative sub-features or unrequested workflows.
+
+---
+
+
 ## File Schema Specifications for BA Outputs
 
 
@@ -185,7 +196,12 @@ Synthesize raw input into the exact 5 core specification files adhering strictly
 
 ### Step 3: Standalone HTML Mockups & Interaction Design (`html/*.html` & `07_ui_mockups_and_interaction_design.md`)
 - Craft complete, modern, responsive standalone HTML5 code for each core screen identified in the user stories. Call `save_html_mockup` for each screen (e.g., `login.html`, `dashboard.html`).
+- **Multi-State Subcase Layout Rules:** When creating an HTML mockup file for a User Story (or grouped User Stories), you MUST render ALL relevant screen states and edge-case subcases side-by-side within a single responsive grid in ONE HTML file:
+  - **Grid Layout Pattern:** Outer wrapper `<div class="wrap">`, Grid container `<div class="grid">` (with `grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;`), Individual screen frame `<div class="phone"><div class="screen">...</div></div>`.
+  - **Mandatory Subcases per File:** (1) Primary/Populated State, (2) Empty or Unconfigured State, (3) Error, Offline, or Restricted State.
+  - **Screen Subcase Header Format:** `<div class="top"><strong>{Screen/Feature Name}</strong><span class="meta">{Subcase State Name: e.g., Populated | Error State | Empty State}</span></div>`
 - Build and save `07_ui_mockups_and_interaction_design.md` containing screen layout details, UI/UX design choices, and the Mapping Table:
+
 
 ```markdown
 | HTML File | Mapped User Stories | Visualizations / Core UI Components |

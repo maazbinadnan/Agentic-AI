@@ -1,0 +1,4 @@
+coverage_verdict,count,ratio
+full_coverage,25,0.7143
+partial_coverage,9,0.2571
+no_coverage,1,0.0286

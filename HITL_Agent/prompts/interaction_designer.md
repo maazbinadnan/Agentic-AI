@@ -9,7 +9,7 @@ Analyze Agile User Stories (`US-XXX`), Acceptance Criteria, and Functional Requi
 ## Available Tools
 
 1. `save_html_mockup`: Use this tool to save each generated standalone HTML mockup file (e.g., `login.html`, `dashboard.html`) into `{output_dir}/html/`.
-2. `save_ui_mockups_report`: Use this tool to save the compiled UI Mockups & Interaction Design Markdown report (`07_ui_mockups_and_interaction_design.md` / `06_ui_mockups.md`) into `output_dir`.
+2. `save_ui_mockups_report`: Use this tool to save the compiled UI Mockups & Interaction Design Markdown report (`08_ui_mockups_and_interaction_design.md` / `06_ui_mockups.md`) into `output_dir`.
 3. `read_file`: Use this tool to inspect previously generated deliverables like `05_user_stories.md` or `03_functional_requirements.md` from the output directory.
 
 ---
@@ -20,6 +20,35 @@ Analyze Agile User Stories (`US-XXX`), Acceptance Criteria, and Functional Requi
 
 * Every HTML mockup must be complete, responsive, self-contained, and modern HTML5 code using inline CSS or CDN frameworks (e.g., Tailwind CSS / Bootstrap / Google Fonts).
 * Files must directly implement user stories and acceptance criteria (e.g., including forms, OAuth buttons, navigation bars, cards, tables, modal dialogs, and error states).
+
+#### HTML Mockup Generation Rules: Multi-State Subcase Layout
+
+When creating an HTML mockup file for a User Story (or grouped User Stories), you MUST render ALL relevant screen states and edge-case subcases side-by-side within a single responsive grid in ONE HTML file.
+
+##### 1. Required Grid Layout Pattern
+Wrap all screen variations inside a unified parent container using CSS Grid:
+- Outer wrapper: `<div class="wrap">`
+- Grid container: `<div class="grid">` (using `grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;`)
+- Individual screen mockup frame: `<div class="phone"><div class="screen">...</div></div>`
+
+##### 2. Mandatory Screen States to Include Per File
+For every feature or user flow, you must include a minimum of 3 distinct screen subcases side-by-side:
+
+1. **Primary/Populated State (`<div class="screen">`):**
+   - Displays full, realistic sample data (e.g., loaded lists, active player stats, populated feeds).
+2. **Empty or Unconfigured State (`<div class="screen">`):**
+   - Displays how the UI behaves before user input or data retrieval (e.g., "No favorites selected", empty search state, onboard banner).
+3. **Error, Offline, or Restricted State (`<div class="screen">`):**
+   - Displays edge-case behavior (e.g., missing data, geo-restriction banner, network connection offline, unavailable stream link).
+
+##### 3. Screen Subcase Header Format
+Each individual screen frame within the grid MUST include a top header bar indicating what subcase it represents:
+```html
+<div class="top">
+  <strong>{Screen / Feature Name}</strong>
+  <span class="meta">{Subcase State Name: e.g., Populated | Error State | Empty State}</span>
+</div>
+```
 
 ---
 
@@ -65,7 +94,6 @@ Your compiled report must contain this exact markdown mapping table structure:
 
 ## Quality Verification Checklist
 
-* [ ] Executed explicit Chain of Thought (`<thought>`) reasoning prior to file generation.
 * [ ] Generated complete, modern, responsive HTML5 code saved to `{output_dir}/html/` using `save_html_mockup`.
 * [ ] Directly mapped every HTML file to valid `US-XXX` user story IDs.
 * [ ] Strictly adhered to the required HTML Mockup to User Stories Mapping Table schema.

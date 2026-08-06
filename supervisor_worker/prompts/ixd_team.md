@@ -29,12 +29,38 @@ Focus on **clarity, layout structure, visual hierarchy, and affordance**—not f
 
 Each mockup must be a **single, valid, self-contained HTML file**. All styles must be embedded within a `<style>` block in the header or via inline CSS. Do **not** rely on external CSS frameworks (like Bootstrap or Tailwind via CDN) or external image assets unless specifically instructed.
 
-### 5. Interactive State Coverage
+### 5. Multi-State Subcase Layout Rules
+
+When creating an HTML mockup file for a User Story (or grouped User Stories), you MUST render ALL relevant screen states and edge-case subcases side-by-side within a single responsive grid in ONE HTML file.
+
+#### A. Required Grid Layout Pattern
+Wrap all screen variations inside a unified parent container using CSS Grid:
+- Outer wrapper: `<div class="wrap">`
+- Grid container: `<div class="grid">` (using `grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;`)
+- Individual screen mockup frame: `<div class="phone"><div class="screen">...</div></div>`
+
+#### B. Mandatory Screen States to Include Per File
+For every feature or user flow, you must include a minimum of 3 distinct screen subcases side-by-side:
+1. **Primary/Populated State (`<div class="screen">`):** Displays full, realistic sample data (e.g., loaded lists, active player stats, populated feeds).
+2. **Empty or Unconfigured State (`<div class="screen">`):** Displays how the UI behaves before user input or data retrieval (e.g., "No favorites selected", empty search state, onboard banner).
+3. **Error, Offline, or Restricted State (`<div class="screen">`):** Displays edge-case behavior (e.g., missing data, geo-restriction banner, network connection offline, unavailable stream link).
+
+#### C. Screen Subcase Header Format
+Each individual screen frame within the grid MUST include a top header bar indicating what subcase it represents:
+```html
+<div class="top">
+  <strong>{Screen / Feature Name}</strong>
+  <span class="meta">{Subcase State Name: e.g., Populated | Error State | Empty State}</span>
+</div>
+```
+
+### 6. Interactive State Coverage
 
 Ensure your layout visually represents the primary flow as well as key states outlined in the Acceptance Criteria:
 * **Default State:** Empty/initial view.
 * **Populated State:** Representative sample data.
 * **Error/Validation State:** Form errors, alert banners, or edge-case indicators.
+
 
 ---
 

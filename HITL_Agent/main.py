@@ -3,11 +3,11 @@ from langchain.agents import create_agent
 
 from hitl_agent.tools import task
 from hitl_agent._common_ import llm,load_prompt,read_file
+from global_layer.llm_client import get_llm
 
+llm= get_llm("gpt-5.4-mini")
 
 __all__ = ["create_agent_pipeline", "app"]
-
-
 
 def create_agent_pipeline():
     """Creates the Main Task Dispatcher Agent using langchain.agents.create_agent exclusively."""

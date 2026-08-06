@@ -1,0 +1,12 @@
+{
+    "average_quality_score": 0.65,
+    "well_formed": 0,
+    "problems": 1,
+    "problem_breakdown": {
+        "Singularity": 1,
+        "Unambiguity": 0,
+        "Testability": 0,
+        "Categorization": 0,
+        "Completeness": 0
+    }
+}

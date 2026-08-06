@@ -1,0 +1,238 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a football fan, I want the app to open and be ready to use quickly on my Android or iOS device so that I can access football information without delay.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 1.0,
+                "testable": 0.8
+            },
+            "reasoning": "Overall mean: 0.8833. Clear user value and narrow performance-oriented startup capability. Acceptance criteria are measurable with a 2-second threshold, but estimability and testability are reduced by undefined supported device matrix and vague 'normal supported operating conditions'. Some dependency exists on the baseline mobile app shell."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a football fan, I want to register and log in when starting the app so that I can access the app’s features through my personal account.",
+            "scores": {
+                "independent": 0.9,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.65,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "Overall mean: 0.7917. Authentication value is clear and the story is mostly independent as a foundational capability. Scope combines registration and login, which are often separate workflows. Acceptance criteria are objective at a high level but lack details on required fields, validation rules, session handling, error messages, and supported authentication paths, reducing estimability and testability."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a football fan, I want a unified interface for all major app features so that I can access news, live scores, team details, stream links, notifications, and personalization options in one place.",
+            "scores": {
+                "independent": 0.3,
+                "negotiable": 0.8,
+                "valuable": 0.8,
+                "estimable": 0.4,
+                "small": 0.2,
+                "testable": 0.4
+            },
+            "reasoning": "Overall mean: 0.4833. The value of unified navigation is understandable, but the story is tightly coupled to many modules and reads like an epic or application shell requirement. It is too broad for a single sprint story and depends on the existence or design of news, live ticker, team/player, streaming, notification, and personalization features. 'Consistent interface structure' is subjective and not sufficiently testable without defined navigation or UI consistency rules."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As an authenticated football fan, I want to select my favorite clubs and preferred sports channels so that the app can personalize the content I receive.",
+            "scores": {
+                "independent": 0.85,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.8,
+                "testable": 0.9
+            },
+            "reasoning": "Overall mean: 0.8833. Clear personalization value with bounded acceptance criteria for saving supported selections and rejecting unsupported ones. It has minor dependency on authentication and supported club/channel catalog data. Scope includes two preference types but they belong to the same profile-settings capability, so it remains reasonably small and testable."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As an authenticated football fan, I want to view current football news filtered by my favorite clubs and preferred sports channels so that I can stay informed about the teams and sources I care about most.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.85
+            },
+            "reasoning": "Overall mean: 0.8250. Strong user value and clear behavior for matched and unmatched personalized news. Independence is reduced because it depends on authentication, saved personalization settings, and a news/content source. Estimation is mostly possible, but 'current news' and exact filter semantics for clubs versus channels need clarification for deterministic implementation and testing."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a football fan, I want to browse supported national and international leagues and competitions so that I can follow football coverage beyond only my favorite teams.",
+            "scores": {
+                "independent": 0.9,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Overall mean: 0.8917. Focused browsing capability with clear user benefit and straightforward pass/fail criteria for displaying supported competitions and handling unavailable data. Minor ambiguity remains around the definition and source of 'supported' leagues and competitions, but the story is generally small, estimable, and testable."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a football fan, I want to access detailed team and player information pages so that I can review background and current information whenever I need it.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.65,
+                "small": 0.6,
+                "testable": 0.75
+            },
+            "reasoning": "Overall mean: 0.7667. User value is clear and the story is mostly negotiable, but it combines team and player detail pages and uses the broad term 'detailed information' without specifying required fields. Acceptance criteria cover success and unavailable-data cases, but deterministic testing requires clearer content expectations and data source boundaries."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As an authenticated football fan, I want to see live results and match events for my favorite teams through a live ticker so that I can follow matches in real time.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.85,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.75,
+                "testable": 0.85
+            },
+            "reasoning": "Overall mean: 0.8000. High value and objectively testable basic behaviors for live data display and API unavailability. Independence is reduced by dependencies on favorite-team selection, authentication, external API integration, and a live ticker module. Estimation is affected by unspecified event types, update format, data mapping, and real-time behavior expectations."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As an authenticated football fan, I want the live ticker to refresh automatically with new match data so that I can keep up with ongoing events without manually reloading.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.9,
+                "testable": 0.8
+            },
+            "reasoning": "Overall mean: 0.8333. Focused single capability with clear value: automatic refresh without manual reload. It depends on an existing live ticker and external data feed. Testability is reasonable for receipt of new data and no-data behavior, but estimability is reduced because refresh mechanism, polling or push interval, latency expectations, and conflict/error handling are not specified."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a football fan, I want to see external live stream links for matches when broadcasts begin so that I can quickly access licensed live coverage.",
+            "scores": {
+                "independent": 0.75,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.85,
+                "testable": 0.85
+            },
+            "reasoning": "Overall mean: 0.8500. Clear business/user value and a focused stream-link display rule. Some dependency exists on authentication, match details, broadcast schedule status, and stream-link metadata. Terms such as 'supported match', 'available external live stream link', and exact broadcast-start timing need clarification for stronger estimation and deterministic tests."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a football fan, I want live stream links to appear only when they are legally available in my country so that I only see streams I am allowed to access.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.85,
+                "testable": 0.9
+            },
+            "reasoning": "Overall mean: 0.8333. Strong compliance and user relevance value with clear show/hide acceptance criteria based on rights metadata. Independence is reduced because it depends on the stream-link feature, country determination, and broadcast-rights metadata. Estimation needs clarification on how user country is determined, how metadata is trusted, and behavior for missing or conflicting rights data."
+        },
+        {
+            "us_id": "US-012",
+            "user_story": "As an authenticated football fan, I want to manually activate notifications for my favorite teams so that I can choose which team updates I receive.",
+            "scores": {
+                "independent": 0.65,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Overall mean: 0.8667. Clear user-controlled notification preference capability with objective criteria for saving settings and restricting activation to favorite teams. It is dependent on authentication and favorite-team selection. Scope is focused and testable, with minor missing details around device permissions, opt-in state representation, and persistence behavior across devices."
+        },
+        {
+            "us_id": "US-013",
+            "user_story": "As an authenticated football fan, I want to receive notifications about news and live results for my selected favorite teams when notifications are enabled so that I stay updated on the teams I follow.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.6,
+                "testable": 0.8
+            },
+            "reasoning": "Overall mean: 0.7500. Strong value and clear positive/negative notification conditions. Independence is limited by dependencies on favorite teams, notification activation, news ingestion, live-results ingestion, and push notification infrastructure. Scope covers both news and live-result events, making it broader than ideal. Testability is good at a high level but needs timing, deduplication, delivery-channel, permission, and failure-handling rules."
+        },
+        {
+            "us_id": "US-014",
+            "user_story": "As a football fan, I want to share news items and match reports using my device’s social sharing options so that I can easily share football content with others.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.85,
+                "testable": 0.85
+            },
+            "reasoning": "Overall mean: 0.8667. Clear user value and a reasonably focused content-sharing capability. It depends on existing content detail views and the platform share sheet. Acceptance criteria are pass/fail oriented, but 'supported' and 'unsupported' content types should be explicitly defined, and behavior after opening the native share UI may vary by device/platform."
+        },
+        {
+            "us_id": "US-015",
+            "user_story": "As a football fan, I want the app to remain usable during poor or lost network connectivity so that I can still access the interface and previously loaded content offline.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.5,
+                "small": 0.4,
+                "testable": 0.6
+            },
+            "reasoning": "Overall mean: 0.6667. Offline usability has strong user value, but this is a cross-cutting resilience/cache requirement spanning interface components, cached content, live data, news, and stream links. It depends on multiple feature areas and caching design. Terms such as 'remain usable', 'available interface components', 'previously loaded content', and poor connectivity thresholds are not specific enough for reliable estimation or deterministic QA."
+        },
+        {
+            "us_id": "US-016",
+            "user_story": "As a football fan, I want the app’s core features to remain performant during peak match-day demand so that I can still use the app reliably when many users are online at the same time.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.85,
+                "valuable": 1.0,
+                "estimable": 0.45,
+                "small": 0.3,
+                "testable": 0.5
+            },
+            "reasoning": "Overall mean: 0.6167. High business value and includes a measurable concurrency target of 100,000 users, but the story is a broad non-functional epic across news, live ticker, team information, and availability. 'Without loss of core application performance' is not objectively defined; response-time, error-rate, throughput, availability, and test environment thresholds are needed. It is difficult to estimate and too large as a single implementation story."
+        },
+        {
+            "us_id": "US-017",
+            "user_story": "As a football fan, I want my personal data to be handled in compliance with GDPR so that my account, preferences, and notification settings are processed lawfully and securely.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.3,
+                "small": 0.1,
+                "testable": 0.25
+            },
+            "reasoning": "Overall mean: 0.4917. The business and user value is very important, but the story is too broad and compliance-oriented to be a single sprint-sized user story. GDPR compliance spans consent, lawful basis, privacy notices, access/deletion rights, retention, security controls, auditability, processors, and breach handling. Acceptance criteria reference GDPR generically and are not deterministic enough for QA without specific controls or regulatory obligations."
+        },
+        {
+            "us_id": "US-018",
+            "user_story": "As a football fan, I want the app interface and modules to remain consistent and operational when external server data changes so that I can continue using the app without disruption.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 0.85,
+                "estimable": 0.45,
+                "small": 0.4,
+                "testable": 0.5
+            },
+            "reasoning": "Overall mean: 0.6167. The resilience value is valid, but the requirement is broad across all interface modules and external data update scenarios. It depends on external data integrations and module implementations. 'Remain operational', 'without disruption', and 'structural consistency' are subjective unless specific data-change types, schema compatibility expectations, UI invariants, and failure-handling rules are defined. This reduces estimability, smallness, and testability."
+        }
+    ]
+}

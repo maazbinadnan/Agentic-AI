@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LiveFootball - Login & Onboarding</title>
+<style>
+:root{--green:#00a86b;--dark:#071b16;--muted:#6b7b76;--bg:#f4f8f6;--card:#fff;--line:#dbe7e2}*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(160deg,#071b16,#0b3b2d 45%,#f4f8f6 45%);color:var(--dark);min-height:100vh}.phone{max-width:430px;margin:0 auto;min-height:100vh;padding:22px}.hero{color:white;padding:28px 6px 18px}.brand{display:flex;gap:10px;align-items:center;font-weight:900;font-size:1.35rem}.ball{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 35% 35%,white 0 20%,#111 21% 32%,white 33%)}.hero h1{font-size:2.25rem;line-height:1.05;margin:30px 0 8px}.hero p{color:#d8fff0}.card{background:var(--card);border-radius:28px;padding:22px;box-shadow:0 22px 50px #001b1238}.tabs{display:grid;grid-template-columns:1fr 1fr;background:#edf5f1;border-radius:16px;padding:4px;margin-bottom:18px}.tabs button{border:0;border-radius:12px;padding:12px;font-weight:800;background:transparent}.tabs button.active{background:var(--green);color:#fff}label{font-weight:700;font-size:.9rem}input{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:14px;margin:7px 0 14px;font-size:1rem}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.9rem}.primary{width:100%;border:0;background:var(--green);color:#fff;padding:15px;border-radius:16px;font-weight:900;font-size:1rem;margin-top:14px}.secondary{width:100%;border:1px solid var(--line);background:white;padding:13px;border-radius:16px;font-weight:800;margin-top:10px}.clubs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{border:1px solid var(--line);padding:9px 12px;border-radius:999px;background:#f8fbfa;font-weight:700}.chip.selected{background:#e0fff2;border-color:var(--green);color:#08784f}.note{font-size:.82rem;color:var(--muted);margin-top:14px}.offline{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;background:#10231d;color:white;padding:9px 14px;border-radius:999px;font-size:.82rem}a{color:var(--green);font-weight:800;text-decoration:none}@media(min-width:760px){.phone{max-width:900px;display:grid;grid-template-columns:1fr 420px;gap:34px;align-items:center}.hero h1{font-size:3.3rem}.card{margin-top:70px}}
+</style>
+</head><body>
+<main class="phone">
+<section class="hero"><div class="brand"><span class="ball"></span>LiveFootball</div><h1>All football. Live, fast, personal.</h1><p>Sign in to follow clubs, live scores, news and legal broadcast links from one mobile hub.</p></section>
+<section class="card" aria-label="Authentication and onboarding">
+<div class="tabs"><button class="active" onclick="switchMode('login',this)">Login</button><button onclick="switchMode('register',this)">Register</button></div>
+<form onsubmit="event.preventDefault();document.getElementById('status').textContent='Demo: authenticated session created. Continue to dashboard.'">
+<label>Email</label><input type="email" placeholder="fan@example.com" required>
+<label>Password</label><input type="password" placeholder="••••••••" required>
+<div class="row"><label><input style="width:auto;margin:0 6px 0 0" type="checkbox">Remember me</label><a href="#">Forgot?</a></div>
+<button class="primary" id="submit">Log in</button><button type="button" class="secondary">Continue with Apple / Google</button>
+</form>
+<p id="status" class="note">Cold-start target: first usable screen within 2 seconds.</p>
+<h3>Choose favorite clubs</h3><div class="clubs"><span class="chip selected">Liverpool</span><span class="chip">Barcelona</span><span class="chip selected">Dortmund</span><span class="chip">PSG</span><span class="chip">Inter</span></div>
+<p class="note">By continuing you can review privacy information and manage GDPR consent in settings.</p>
+</section>
+</main><div class="offline">Network-aware startup • cached fallback ready</div>
+<script>function switchMode(mode,btn){document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('submit').textContent=mode==='login'?'Log in':'Create account';}</script>
+</body></html>

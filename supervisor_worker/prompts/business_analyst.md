@@ -34,6 +34,17 @@ Derive needs and requirements strictly grounded in the context provided. If you 
 
 ---
 
+## Granularity & Synthesis Guardrails
+
+- **Direct Alignment (User Needs):** Consolidate closely related user needs into single, high-level `UN-XXX` entries rather than fragmenting them into granular sub-capabilities.
+- **Cohesive System Capabilities (FRs):** Consolidate related sub-interactions into single, high-level functional requirement (`FR-XXX`) entries rather than fragmenting them into granular form-field steps or UI micro-controls.
+- **Quality Attribute Consolidation (NFRs):** Group related quality metrics into high-level, cohesive non-functional requirement (`NFR-XXX`) entries categorized by quality dimension (Performance, Security, Reliability, Usability, Compliance).
+- **Sprint-Ready Cohesion (User Stories):** Map each `US-XXX` directly to a distinct functional requirement (`FR-XXX`). Avoid fragmenting single user goals into multiple micro-stories for individual buttons or inputs.
+- **Explicit Focus:** Focus strictly on explicit business logic and specified capabilities in the input text. Do NOT infer speculative administrative sub-features or unrequested workflows.
+
+---
+
+
 ## ID Conventions & Priority (MoSCoW)
 
 * **Discovered User Needs:** `UN-001`, `UN-002`, `UN-003`, etc.

@@ -25,26 +25,29 @@ def get_llm(
 
     Reads ``AZURE_OPENAI_ENDPOINT`` and ``AZURE_OPENAI_API_KEY`` from the
     environment (same variables used by the existing ``Global_Client_Layer``).
-    The model defaults to ``gpt-4o-mini`` but can be overridden via the
-    ``THREE_AMIGOS_MODEL`` env-var or the *model* parameter.
+    The model defaults to ``gpt-4.1`` but can be overridden via the
     
+    Supports ``model-router`` — Azure AI's automatic model routing that
+    selects the optimal model per request based on prompt complexity.
+
     Also takes a test input that returns a Fake Generic Chat Model for testing
     """
-    model =  os.getenv("MODEL","gpt-4.1")
+    model = model or os.getenv("MODEL", "gpt-4.1")
+    print(f"[GLOBAL] LLM initialized with model {model}")
     if test:
         return GenericFakeChatModel(
             messages=iter([AIMessage(content="hello this is a fake chat streaming model")]),
         )
-    return ChatOpenAI(
+    else: 
+        return ChatOpenAI(
         base_url=os.environ["AZURE_OPENAI_ENDPOINT"],
         api_key=os.environ["AZURE_OPENAI_API_KEY"], #type: ignore
         model=model, 
         temperature=temperature,
-        http_client=httpx.Client(verify=False),
-        http_async_client=httpx.AsyncClient(verify=False),
         stream_usage= True,
         streaming= True
     )
+
 
 
 def stream_llm(messages: list[BaseMessage], llm, agent_label: str = "AGENT") -> str:

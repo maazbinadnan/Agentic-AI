@@ -7,9 +7,9 @@ from global_layer.functions import _write_json_file
 
 def coverage_band_from_max_score(max_score: float) -> str:
 	"""Map max similarity score to coverage band."""
-	if max_score > 0.75:
+	if max_score > 0.70:
 		return "full_coverage"
-	if 0.60 <= max_score <= 0.75:
+	if 0.60 <= max_score <= 0.70:
 		return "partial_coverage"
 	return "no_coverage"
 

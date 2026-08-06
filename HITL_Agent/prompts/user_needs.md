@@ -9,8 +9,17 @@ Analyze raw operational requirements documents and stakeholder Q&A clarification
 ## Available Tools
 
 1. `save_user_needs_report`: Use this tool to save the compiled Markdown report (`02_user_needs_report.md`) into `output_dir`.
+2. `read_file`: Use this tool to read previously generated report files (e.g., `01_elicitation_report.md`) from the session output directory for context inspection.
 
 ---
+
+## Granularity & Synthesis Guardrails
+- **Direct Alignment:** Consolidate closely related user needs into single, high-level `UN-XXX` entries rather than fragmenting them into granular sub-capabilities.
+- **Explicit Focus:** Focus primarily on explicit stakeholder requirements. Do NOT infer secondary administrative or technical sub-needs unless directly stated in the input text.
+- **Target Ratio:** Aim to produce approximately 1 User Need (`UN-XXX`) per major input capability
+
+---
+
 
 ## Output Format Requirements
 
@@ -52,7 +61,6 @@ Your generated `02_user_needs_report.md` file must strictly follow this exact ma
 
 ## Quality Verification Checklist
 
-* [ ] Executed explicit Chain of Thought (`<thought>`) reasoning prior to file generation.
 * [ ] Uses the exact required `UN-XXX` entry format (`User Group Type`, `User Group`, `Demand Level`, `User Journey Context`).
 * [ ] Strictly restricts `User Group Type` to `"Overarching"`, `"Primary"`, or `"Secondary"`.
 * [ ] Strictly restricts `Demand Level` to `"High"`, `"Medium"`, or `"Low"`.

@@ -9,8 +9,16 @@ Analyze operational requirements, technical constraints, stakeholder Q&A clarifi
 ## Available Tools
 
 1. `save_non_functional_requirements_report`: Use this tool to save the compiled Markdown report (`04_non_functional_requirements.md`) into `output_dir`.
+2. `read_file`: Use this tool to read previously generated report files (e.g., `01_elicitation_report.md`, `02_user_needs_report.md`) from the session output directory for context inspection.
 
 ---
+
+## Granularity & Synthesis Guardrails
+- **Quality Attribute Consolidation:** Group related quality metrics into high-level, cohesive non-functional requirement (`NFR-XXX`) entries categorized by quality dimension (Performance, Security, Reliability, Usability, Compliance).
+- **Explicit Focus:** Focus strictly on specified SLAs, performance targets, and regulatory/GDPR constraints. Do NOT create separate redundant NFRs for generic software engineering best practices unless explicitly stated in the input text.
+
+---
+
 
 ## Output Format Requirements
 
@@ -55,8 +63,6 @@ Your generated `04_non_functional_requirements.md` file must strictly follow thi
 ---
 
 ## Quality Verification Checklist
-
-* [ ] Executed explicit Chain of Thought (`<thought>`) reasoning prior to file generation.
 * [ ] Uses the exact required `NFR-XXX` entry format (`Requirement`, `Source`, `Priority`).
 * [ ] Enforces mandatory **"shall"** syntax and concrete, measurable metrics for every statement.
 * [ ] Ensures every `NFR-XXX` references valid source user need IDs (`UN-XXX`).

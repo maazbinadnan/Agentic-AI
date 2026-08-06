@@ -1,0 +1,4 @@
+coverage_band,count,ratio
+full_coverage,8,0.2286
+partial_coverage,15,0.4286
+no_coverage,12,0.3429

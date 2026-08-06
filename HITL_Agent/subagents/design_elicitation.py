@@ -23,7 +23,7 @@ def save_design_elicitation_report(report_markdown: str, output_dir: str = "outp
     file_path = out_path / "06_design_requirements.md"
     file_path.write_text(report_markdown, encoding="utf-8")
     print(f"\n[design requirement agent] Successfully saved design requirements report to '{file_path.resolve()}'")
-    return f"Successfully saved 06_design_requirements.md to '{file_path.resolve()}'"
+    return f"Successfully saved 07_design_requirements.md to '{file_path.resolve()}'"
 
 
 @tool
