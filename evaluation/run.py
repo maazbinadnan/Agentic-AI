@@ -147,12 +147,12 @@ def main():
     print(f"  Non-Functional Reqs: {nfunc_reqs}")
     print(f"  User Stories File:   {user_stories or 'None'}")
     print(f"  HTML Mockups Target: {html_target or 'None'}")
-    print(f"  Output Directory:    {agent_output_dir}")
     print("=" * 60)
 
     # --- Step 1: Embedding-based Coverage ---
     if not args.skip_coverage:
-        print("\n[Step 1/5] Running embedding-based coverage evaluation...")
+
+        print("\n[Step 1/4] Running embedding-based coverage evaluation...")
         from evaluation.confusion_matrix import get_ground_truths, get_generated, requirements_coverage
         from evaluation.visualize_metrics import build_coverage_ratio_table
 
@@ -172,11 +172,11 @@ def main():
             table = build_coverage_ratio_table(coverage_json_path, ratio_table_path)
             print(table.to_string(index=False))
     else:
-        print("\n[Step 1/5] Skipped embedding-based coverage (--skip-coverage).")
+        print("\n[Step 1/4] Skipped embedding-based coverage (--skip-coverage).")
 
     # --- Step 2: LLM Judge Coverage ---
     if not args.skip_llm_judge:
-        print("\n[Step 2/5] Running LLM Judge ground truth coverage evaluation...")
+        print("\n[Step 2/4] Running LLM Judge ground truth coverage evaluation...")
         from evaluation.llm_judge import evaluate_requirements
         from evaluation.visualize_metrics import build_coverage_llm_ratio_table
 
@@ -192,31 +192,12 @@ def main():
             llm_table = build_coverage_llm_ratio_table(llm_eval_json_path, llm_eval_table_path)
             print(llm_table.to_string(index=False))
     else:
-        print("\n[Step 2/5] Skipped LLM Judge coverage (--skip-llm-judge).")
+        print("\n[Step 2/4] Skipped LLM Judge coverage (--skip-llm-judge).")
 
-    # --- Step 3: ISO 29148 Quality Audit ---
-    if not args.skip_iso_audit:
-        print("\n[Step 3/5] Running ISO 29148 Requirements Quality Audit...")
-        from evaluation.llm_judge import evaluate_iso_29148_quality
-        from evaluation.visualize_metrics import build_iso_table
-
-        evaluate_iso_29148_quality(
-            func_reqs=func_reqs,
-            non_func_reqs=nfunc_reqs,
-            output_file=iso_eval_json_path,
-            model=args.model,
-        )
-        print(f"  ISO 29148 Quality Audit results saved to: {iso_eval_json_path}")
-        if os.path.isfile(iso_eval_json_path):
-            print("\n  ISO 29148 Quality Summary Table:")
-            iso_table = build_iso_table(iso_eval_json_path, iso_table_path)
-    else:
-        print("\n[Step 3/5] Skipped ISO 29148 Quality Audit (--skip-iso-audit).")
-
-    # --- Step 4: INVEST User Stories Evaluation ---
+    # --- Step 3: INVEST User Stories Evaluation ---
     if not args.skip_invest_eval:
         if user_stories and os.path.isfile(user_stories):
-            print("\n[Step 4/5] Running INVEST Agile User Story Evaluation...")
+            print("\n[Step 3/4] Running INVEST Agile User Story Evaluation...")
             from evaluation.llm_judge import evaluate_invest_user_stories
             from evaluation.visualize_metrics import build_invest_table
 
@@ -231,15 +212,16 @@ def main():
                 invest_table = build_invest_table(invest_eval_json_path, invest_table_path)
                 print(invest_table.to_string(index=False))
         else:
-            print("\n[Step 4/5] Skipped INVEST Evaluation (User Stories file not found or not provided).")
+            print("\n[Step 3/4] Skipped INVEST Evaluation (User Stories file not found or not provided).")
     else:
-        print("\n[Step 4/5] Skipped INVEST Evaluation (--skip-invest-eval).")
+        print("\n[Step 3/4] Skipped INVEST Evaluation (--skip-invest-eval).")
 
-    # --- Step 5: HTML Playwright / Axe Accessibility Evaluation ---
+    # --- Step 4: HTML Playwright / Axe Accessibility Evaluation ---
     if not args.skip_html_eval:
         if html_target and (os.path.isdir(html_target) or os.path.isfile(html_target)):
-            print("\n[Step 5/5] Running HTML Playwright + Axe Accessibility Evaluation...")
+            print("\n[Step 4/4] Running HTML Playwright/Axe Accessibility Evaluation...")
             from evaluation.html_evals import evaluate_html_accessibility, build_html_accessibility_table
+
 
             try:
                 evaluate_html_accessibility(
