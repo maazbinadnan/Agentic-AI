@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LiveFootball - Startup, Registration & Login</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef1f4;color:#17212b}
+  .wrap{padding:24px} .title{margin:0 0 8px;font-size:24px} .subtitle{margin:0 0 18px;color:#556370}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+  .phone{background:#1f2937;padding:10px;border-radius:28px;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+  .screen{background:#fff;border-radius:20px;min-height:700px;overflow:hidden;border:1px solid #d9e1e8}
+  .top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#f7f9fb;border-bottom:1px solid #dfe6ee}
+  .meta{font-size:12px;color:#667788}.hero{padding:22px 18px;background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff}
+  .hero h2{margin:0 0 6px;font-size:28px}.hero p{margin:0;font-size:14px;line-height:1.5;color:#dbe7ff}
+  .content{padding:18px}.field{margin-bottom:14px}.label{font-size:12px;font-weight:700;margin-bottom:6px;color:#52606d}
+  .input,.btn,.chip{border-radius:12px}.input{width:100%;padding:12px 14px;border:1px solid #cfd8e3;background:#fff}
+  .btn{display:block;width:100%;padding:12px 14px;border:none;background:#14532d;color:#fff;font-weight:700;margin-top:10px}
+  .btn.secondary{background:#e8eef5;color:#18324a}.tabs{display:flex;gap:8px;margin:14px 0}.chip{padding:8px 12px;background:#e8eef5;color:#274055;font-size:13px}
+  .chip.active{background:#dbeafe;color:#1d4ed8;font-weight:700}.note,.error,.success{padding:10px 12px;border-radius:12px;font-size:13px;margin:12px 0}
+  .note{background:#f3f4f6;color:#44505c}.error{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}.success{background:#ecfdf5;color:#166534;border:1px solid #bbf7d0}
+  .list{display:grid;gap:10px;margin-top:12px}.row{display:flex;justify-content:space-between;align-items:center;padding:12px;border:1px solid #e2e8f0;border-radius:12px}
+  .small{font-size:12px;color:#6b7280}.footer{position:sticky;bottom:0;background:#fff;border-top:1px solid #e5e7eb;padding:12px 18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="title">Mockup: Startup, Registration & Login</h1>
+  <p class="subtitle">Covers US-001, FR-001, FR-009 with default, success, and validation/error states.</p>
+  <div class="grid">
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Startup & Authentication</strong><span class="meta">Primary / Populated</span></div>
+      <div class="hero"><h2>LiveFootball</h2><p>News, live scores, streams and club updates in one place. Ready in under 2 seconds.</p></div>
+      <div class="content">
+        <div class="tabs"><div class="chip active">Log In</div><div class="chip">Register</div></div>
+        <div class="field"><div class="label">Email</div><input class="input" value="fan@clubmail.com" /></div>
+        <div class="field"><div class="label">Password</div><input class="input" value="••••••••••" /></div>
+        <div class="success">Login successful. Personalized experience is ready.</div>
+        <button class="btn">Continue to Home</button>
+        <button class="btn secondary">Create New Account Instead</button>
+        <div class="list">
+          <div class="row"><span>Saved profile</span><span class="small">Favorites + notifications enabled</span></div>
+          <div class="row"><span>Privacy notice</span><span class="small">GDPR compliant</span></div>
+        </div>
+      </div>
+      <div class="footer"><span class="small">Fast startup flow with direct access to registration and login.</span></div>
+    </div></div>
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Startup & Authentication</strong><span class="meta">Empty / Unconfigured</span></div>
+      <div class="hero"><h2>Welcome</h2><p>Set up your account to unlock favorites, alerts and personalized football content.</p></div>
+      <div class="content">
+        <div class="tabs"><div class="chip">Log In</div><div class="chip active">Register</div></div>
+        <div class="field"><div class="label">Full Name</div><input class="input" placeholder="Enter your name" /></div>
+        <div class="field"><div class="label">Email</div><input class="input" placeholder="name@example.com" /></div>
+        <div class="field"><div class="label">Password</div><input class="input" placeholder="Create password" /></div>
+        <div class="note">No account or personalization has been configured yet.</div>
+        <button class="btn">Register & Start</button>
+        <button class="btn secondary">Skip for now</button>
+      </div>
+      <div class="footer"><span class="small">Initial state before any credentials are entered.</span></div>
+    </div></div>
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Startup & Authentication</strong><span class="meta">Error / Validation</span></div>
+      <div class="hero"><h2>Log In</h2><p>Please correct the highlighted issues to continue.</p></div>
+      <div class="content">
+        <div class="tabs"><div class="chip active">Log In</div><div class="chip">Register</div></div>
+        <div class="field"><div class="label">Email</div><input class="input" value="fan@clubmail" style="border-color:#ef4444;background:#fff5f5" /></div>
+        <div class="field"><div class="label">Password</div><input class="input" value="123" style="border-color:#ef4444;background:#fff5f5" /></div>
+        <div class="error">Login unsuccessful. Check your email format and password, then try again.</div>
+        <button class="btn">Retry Login</button>
+        <button class="btn secondary">Reset Password</button>
+        <div class="list"><div class="row"><span>Help</span><span class="small">Support available before release</span></div></div>
+      </div>
+      <div class="footer"><span class="small">Edge case for invalid credentials and failed access.</span></div>
+    </div></div>
+  </div>
+</div>
+</body>
+</html>

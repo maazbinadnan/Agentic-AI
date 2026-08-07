@@ -151,8 +151,29 @@ def build_invest_table(filepath: str, output_table_path: str | None = None) -> p
 	return table
 
 
-def _load_invest_df(path: str) -> pd.DataFrame:
-	"""Load INVEST evaluation scores from either a summary CSV, raw story CSV, or JSON evaluation file."""
+def _load_invest_df(path: str | list[str]) -> pd.DataFrame:
+	"""Load INVEST evaluation scores from CSV/JSON file(s). Supports a list of paths to average across multiple runs."""
+	if isinstance(path, (list, tuple)):
+		dfs = [_load_invest_df(p) for p in path]
+		first_df = dfs[0].copy()
+		criteria = first_df["criterion"].tolist()
+		averaged_rows = []
+		for crit in criteria:
+			crit_scores = []
+			for df in dfs:
+				match = df[df["criterion"] == crit]
+				if not match.empty:
+					crit_scores.append(float(match["average_score"].values[0]))
+			avg_score = round(float(np.mean(crit_scores)), 4) if crit_scores else 0.0
+			averaged_rows.append({"criterion": crit, "average_score": avg_score})
+
+		res_df = pd.DataFrame(averaged_rows)
+		# Ensure overall mean is accurate
+		main_scores = res_df[res_df["criterion"] != "OVERALL INVEST MEAN"]["average_score"]
+		if (res_df["criterion"] == "OVERALL INVEST MEAN").any() and len(main_scores) > 0:
+			res_df.loc[res_df["criterion"] == "OVERALL INVEST MEAN", "average_score"] = round(float(main_scores.mean()), 4)
+		return res_df
+
 	if not os.path.exists(path):
 		raise FileNotFoundError(f"INVEST evaluation file not found: '{path}'")
 
@@ -160,14 +181,19 @@ def _load_invest_df(path: str) -> pd.DataFrame:
 
 	if ext == ".csv":
 		df = pd.read_csv(path)
-		cols_lower = [str(c).lower().strip() for c in df.columns]
-		if "criterion" in cols_lower:
-			crit_col = df.columns[cols_lower.index("criterion")]
-			score_col = df.columns[cols_lower.index("average_score")] if "average_score" in cols_lower else df.columns[1]
-			return pd.DataFrame({
+		crit_col = next((c for c in df.columns if "criterion" in str(c).lower()), None)
+		if crit_col:
+			score_col = next((c for c in df.columns if "score" in str(c).lower()), df.columns[1])
+			res_df = pd.DataFrame({
 				"criterion": df[crit_col].astype(str),
 				"average_score": pd.to_numeric(df[score_col], errors="coerce").fillna(0.0)
 			})
+			main_scores = res_df[res_df["criterion"] != "OVERALL INVEST MEAN"]["average_score"]
+			if (res_df["criterion"] == "OVERALL INVEST MEAN").any():
+				ov_val = float(res_df.loc[res_df["criterion"] == "OVERALL INVEST MEAN", "average_score"].values[0])
+				if ov_val == 0.0 and len(main_scores) > 0:
+					res_df.loc[res_df["criterion"] == "OVERALL INVEST MEAN", "average_score"] = round(float(main_scores.mean()), 4)
+			return res_df
 
 		dim_totals = {"independent": 0.0, "negotiable": 0.0, "valuable": 0.0, "estimable": 0.0, "small": 0.0, "testable": 0.0}
 		total_stories = len(df)
@@ -191,11 +217,17 @@ def _load_invest_df(path: str) -> pd.DataFrame:
 			]
 			return pd.DataFrame(rows)
 
-	return build_invest_table(path)
+	res_df = build_invest_table(path)
+	main_scores = res_df[res_df["criterion"] != "OVERALL INVEST MEAN"]["average_score"]
+	if (res_df["criterion"] == "OVERALL INVEST MEAN").any():
+		ov_val = float(res_df.loc[res_df["criterion"] == "OVERALL INVEST MEAN", "average_score"].values[0])
+		if ov_val == 0.0 and len(main_scores) > 0:
+			res_df.loc[res_df["criterion"] == "OVERALL INVEST MEAN", "average_score"] = round(float(main_scores.mean()), 4)
+	return res_df
 
 
 def plot_invest_comparison(
-	file_paths: list[str] | dict[str, str],
+	file_paths: list[str] | dict[str, str | list[str]],
 	labels: list[str] | None = None,
 	output_image_path: str = "invest_comparison_barchart.png",
 	title: str = "INVEST Criteria Evaluation Comparison Across Designs",
@@ -205,8 +237,8 @@ def plot_invest_comparison(
 
 	Parameters
 	----------
-	file_paths : list[str] | dict[str, str]
-		A list of 3 (or more) CSV or JSON file paths or a dict mapping {design_label: file_path}.
+	file_paths : list[str] | dict[str, str | list[str]]
+		A list of CSV/JSON file paths or a dict mapping {design_label: file_path_or_list_of_paths}.
 	labels : list[str] | None
 		Custom labels for each design if file_paths is provided as a list.
 	output_image_path : str
@@ -298,8 +330,27 @@ def plot_invest_comparison(
 	return output_image_path
 
 
-def _load_coverage_df(path: str) -> pd.DataFrame:
-	"""Load Embedding Coverage ratio DataFrame from CSV or JSON file."""
+def _load_coverage_df(path: str | list[str]) -> pd.DataFrame:
+	"""Load Embedding Coverage ratio DataFrame from CSV/JSON file(s). Supports a list of paths to average across multiple runs."""
+	if isinstance(path, (list, tuple)):
+		dfs = [_load_coverage_df(p) for p in path]
+		std_bands = ["full_coverage", "partial_coverage", "no_coverage"]
+		band_ratios = {b: [] for b in std_bands}
+		for df in dfs:
+			ratio_map = {}
+			for _, row in df.iterrows():
+				b_name = str(row.iloc[0]).lower().strip()
+				r_val = float(row.get("ratio", row.iloc[-1]))
+				ratio_map[b_name] = r_val
+			for b in std_bands:
+				val = ratio_map.get(b, ratio_map.get(b.replace("_coverage", ""), 0.0))
+				band_ratios[b].append(val)
+
+		return pd.DataFrame([
+			{"coverage_band": b, "ratio": round(float(np.mean(band_ratios[b])), 4)}
+			for b in std_bands
+		])
+
 	if not os.path.exists(path):
 		raise FileNotFoundError(f"Coverage file not found: '{path}'")
 
@@ -317,7 +368,7 @@ def _load_coverage_df(path: str) -> pd.DataFrame:
 
 
 def plot_coverage_comparison(
-	file_paths: list[str] | dict[str, str],
+	file_paths: list[str] | dict[str, str | list[str]],
 	labels: list[str] | None = None,
 	output_image_path: str = "coverage_comparison_barchart.png",
 	title: str = "Embedding Coverage Ratio Comparison Across Designs",
@@ -326,8 +377,8 @@ def plot_coverage_comparison(
 
 	Parameters
 	----------
-	file_paths : list[str] | dict[str, str]
-		A list of 3 (or more) CSV or JSON file paths or a dict mapping {design_label: file_path}.
+	file_paths : list[str] | dict[str, str | list[str]]
+		A list of CSV/JSON file paths or a dict mapping {design_label: file_path_or_list_of_paths}.
 	labels : list[str] | None
 		Custom labels for each design if file_paths is provided as a list.
 	output_image_path : str
@@ -416,8 +467,27 @@ def plot_coverage_comparison(
 	return output_image_path
 
 
-def _load_coverage_llm_df(path: str) -> pd.DataFrame:
-	"""Load LLM Judge Coverage ratio DataFrame from CSV or JSON file."""
+def _load_coverage_llm_df(path: str | list[str]) -> pd.DataFrame:
+	"""Load LLM Judge Coverage ratio DataFrame from CSV/JSON file(s). Supports a list of paths to average across multiple runs."""
+	if isinstance(path, (list, tuple)):
+		dfs = [_load_coverage_llm_df(p) for p in path]
+		std_bands = ["full_coverage", "partial_coverage", "no_coverage"]
+		band_ratios = {b: [] for b in std_bands}
+		for df in dfs:
+			ratio_map = {}
+			for _, row in df.iterrows():
+				b_name = str(row.iloc[0]).lower().strip()
+				r_val = float(row.get("ratio", row.iloc[-1]))
+				ratio_map[b_name] = r_val
+			for b in std_bands:
+				val = ratio_map.get(b, ratio_map.get(b.replace("_coverage", ""), 0.0))
+				band_ratios[b].append(val)
+
+		return pd.DataFrame([
+			{"coverage_verdict": b, "ratio": round(float(np.mean(band_ratios[b])), 4)}
+			for b in std_bands
+		])
+
 	if not os.path.exists(path):
 		raise FileNotFoundError(f"LLM Coverage file not found: '{path}'")
 
@@ -536,39 +606,68 @@ def plot_coverage_llm_comparison(
 
 if __name__ == "__main__":
 	evals_base = os.path.join(os.path.dirname(__file__), "evals")
+	avg_run_base = os.path.join(evals_base, "avg_run")
 
-	# 1. INVEST Comparison Bar Chart Call
+	# =========================================================================
+	# Averaged Comparison Bar Charts across 2 Runs (from evals/avg_run)
+	# =========================================================================
+
+	# 1. Averaged INVEST Comparison
 	plot_invest_comparison(
-		file_paths=[
-			os.path.join(evals_base, "single_final", "single_final_invest_table.csv"),
-			os.path.join(evals_base, "rc_final", "rc_final_invest_table.csv"),
-			os.path.join(evals_base, "hitl_final", "hitl_final_invest_table.csv"),
-		],
-		labels=["Single Agent", "Supervisor-Worker", "HITL Agent"],
-		output_image_path=os.path.join(evals_base, "invest_comparison_barchart.png"),
-		title="INVEST Criteria Evaluation Comparison Across Designs",
+		file_paths={
+			"Single Agent": [
+				os.path.join(avg_run_base, "single_agent_1", "avg_run", "single_agent_1_invest_eval.json"),
+				os.path.join(avg_run_base, "single_agent_2", "single_final_invest_table.csv"),
+			],
+			"Supervisor-Worker": [
+				os.path.join(avg_run_base, "review_critique_1", "avg_run", "review_critique_1_invest_eval.json"),
+				os.path.join(avg_run_base, "review_critique_2", "rc_final_invest_eval.json"),
+			],
+			"HITL Agent": [
+				os.path.join(avg_run_base, "hitl_agent_1", "avg_run", "hitl_agent_1_invest_eval.json"),
+				os.path.join(avg_run_base, "hitl_agent_2", "hitl_final_invest_table.csv"),
+			],
+		},
+		output_image_path=os.path.join(avg_run_base, "invest_comparison_avg_barchart.png"),
+		title="Averaged INVEST Criteria Evaluation Comparison Across 2 Runs",
 	)
 
-	# 2. Embedding Coverage Ratio Comparison Bar Chart Call
+	# 2. Averaged Embedding Coverage Comparison
 	plot_coverage_comparison(
-		file_paths=[
-			os.path.join(evals_base, "single_final", "single_final_coverage_ratio_table.csv"),
-			os.path.join(evals_base, "rc_final", "rc_final_coverage_ratio_table.csv"),
-			os.path.join(evals_base, "hitl_final", "hitl_final_coverage_ratio_table.csv"),
-		],
-		labels=["Single Agent", "Supervisor-Worker", "HITL Agent"],
-		output_image_path=os.path.join(evals_base, "coverage_comparison_barchart.png"),
-		title="Embedding Coverage Ratio Comparison Across Designs",
+		file_paths={
+			"Single Agent": [
+				os.path.join(avg_run_base, "single_agent_1", "avg_run", "single_agent_1_coverage_ratio_table.csv"),
+				os.path.join(avg_run_base, "single_agent_2", "single_final_coverage_ratio_table.csv"),
+			],
+			"Supervisor-Worker": [
+				os.path.join(avg_run_base, "review_critique_1", "avg_run", "review_critique_1_coverage_ratio_table.csv"),
+				os.path.join(avg_run_base, "review_critique_2", "rc_final_coverage_ratio_table.csv"),
+			],
+			"HITL Agent": [
+				os.path.join(avg_run_base, "hitl_agent_1", "avg_run", "hitl_agent_1_coverage_ratio_table.csv"),
+				os.path.join(avg_run_base, "hitl_agent_2", "hitl_final_coverage_ratio_table.csv"),
+			],
+		},
+		output_image_path=os.path.join(avg_run_base, "coverage_comparison_avg_barchart.png"),
+		title="Averaged Embedding Coverage Ratio Comparison Across 2 Runs",
 	)
 
-	# 3. LLM Judge Coverage Ratio Comparison Bar Chart Call
+	# 3. Averaged LLM Judge Coverage Comparison
 	plot_coverage_llm_comparison(
-		file_paths=[
-			os.path.join(evals_base, "single_final", "single_final_llm_eval_table.csv"),
-			os.path.join(evals_base, "rc_final", "rc_final_llm_eval_table.csv"),
-			os.path.join(evals_base, "hitl_final", "hitl_final_llm_eval_table.csv"),
-		],
-		labels=["Single Agent", "Supervisor-Worker", "HITL Agent"],
-		output_image_path=os.path.join(evals_base, "coverage_llm_comparison_barchart.png"),
-		title="LLM Judge Coverage Ratio Comparison Across Designs",
+		file_paths={
+			"Single Agent": [
+				os.path.join(avg_run_base, "single_agent_1", "avg_run", "single_agent_1_llm_eval_table.csv"),
+				os.path.join(avg_run_base, "single_agent_2", "single_final_llm_eval_table.csv"),
+			],
+			"Supervisor-Worker": [
+				os.path.join(avg_run_base, "review_critique_1", "avg_run", "review_critique_1_llm_eval_table.csv"),
+				os.path.join(avg_run_base, "review_critique_2", "rc_final_llm_eval_table.csv"),
+			],
+			"HITL Agent": [
+				os.path.join(avg_run_base, "hitl_agent_1", "avg_run", "hitl_agent_1_llm_eval_table.csv"),
+				os.path.join(avg_run_base, "hitl_agent_2", "hitl_final_llm_eval_table.csv"),
+			],
+		},
+		output_image_path=os.path.join(avg_run_base, "coverage_llm_comparison_avg_barchart.png"),
+		title="Averaged LLM Judge Coverage Ratio Comparison Across 2 Runs",
 	)

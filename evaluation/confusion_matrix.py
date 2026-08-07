@@ -90,7 +90,7 @@ def get_generated(functional_reqs: str, nfunctional_reqs: str):
 def requirements_coverage(
     ground_truths: list,
     generated_reqs: list,
-    top_k: int = 3,
+    top_k: int = 2,
     threshold: float = 0.0,
     output_json_path: str = "coverage.json",
 ):

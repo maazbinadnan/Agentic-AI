@@ -1,0 +1,121 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a new or returning user, I want to register or log in quickly at app startup so that I can access my personalized football experience.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.5,
+                "testable": 0.8
+            },
+            "reasoning": "Clear user value and objective authentication outcomes are described. The story is only partially independent because registration, login, account creation, personalization access, and error handling may rely on identity and profile services. It combines two capabilities—registration and login—so it is somewhat broad and should likely be split. Acceptance criteria are mostly testable, though terms such as 'quickly,' 'required registration fields,' and 'clear error message' need measurable definitions. Overall INVEST mean: 0.7667."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a registered football fan, I want to manage favorite clubs, sports channels, and notification settings so that the app reflects my interests.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.7,
+                "small": 0.4,
+                "testable": 0.75
+            },
+            "reasoning": "The value is clear: personalization based on user interests. However, the story combines favorite clubs, channels, and notification settings, which are distinct preference domains and may involve separate data models and UI flows. It depends on authentication and supported notification types being defined. Acceptance criteria are generally objective but leave ambiguity around supported channels, notification types, validation rules, and how personalization uses the stored preferences. Overall INVEST mean: 0.6917."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a football fan, I want to see a personalized news feed so that I can stay informed about the teams and sources I care about.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.5,
+                "testable": 0.6
+            },
+            "reasoning": "The story has strong end-user value and expresses intent without over-prescribing implementation. It is partially dependent on preferences, news ingestion, content matching, and caching infrastructure. Scope is moderately broad because it includes personalization, empty states, and offline cached access. Testability is limited by subjective or underspecified terms such as 'relevant,' 'current,' 'meaningful,' and unspecified matching rules, cache age, and refresh behavior. Overall INVEST mean: 0.6667."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a football fan, I want to follow live scores and ticker events so that I can track matches in real time.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.75
+            },
+            "reasoning": "The story provides clear user value and is focused on the live ticker experience. It is partially dependent on external live-data APIs, match selection/favorites, and data availability. The scope is reasonably small but includes current score, recent events, no-live state, and API failure handling. Acceptance criteria are testable at a high level, but 'real time,' 'recent match events,' 'last known update,' and API failure handling need more precise timing and data expectations. Overall INVEST mean: 0.7583."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As a football fan, I want to browse leagues, competitions, teams, and players so that I can explore detailed football information at any time.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.5,
+                "small": 0.2,
+                "testable": 0.55
+            },
+            "reasoning": "The value is understandable, but the story is too broad: browsing leagues, competitions, teams, and players plus multiple detail pages is closer to an epic or feature set. It depends on content taxonomy, data availability, navigation, and multiple entity detail models. Estimation is difficult because 'detailed information' is undefined for each entity type. Acceptance criteria are only partially testable because they do not specify required fields, navigation depth, filters, sorting, or error-state behavior beyond a generic unavailable-data message. Overall INVEST mean: 0.5750."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a football fan, I want to see official live stream links only when they are available in my country so that I can access lawful broadcasts.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "The story has clear legal/business and user value and is focused on conditional display of official stream links. It is partially dependent on live match status, country detection, rights metadata, and official link providers. Scope is reasonably small. Acceptance criteria are objective, but test precision would improve by defining how country is determined, how rights validity is represented, fallback behavior for unknown location, and timing for 'broadcast has not started.' Overall INVEST mean: 0.7917."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a registered fan, I want to receive notifications about relevant news and results so that I do not miss important updates about my favorite teams.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.65,
+                "small": 0.5,
+                "testable": 0.7
+            },
+            "reasoning": "The user value is clear and the story leaves implementation largely open. It is partially dependent on user registration, favorite-team preferences, notification settings, OS permissions, event detection, and push notification infrastructure. Scope is somewhat broad because it includes sending notifications, respecting disabled preferences, and permission prompting. Acceptance criteria are mostly testable, but 'relevant,' 'important,' configured event taxonomy, delivery timing, and notification content are not fully defined. Overall INVEST mean: 0.6917."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a football fan, I want to share news articles and match reports so that I can send interesting football updates to others.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.85,
+                "valuable": 0.9,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.85
+            },
+            "reasoning": "This is a focused, small capability with clear user value. It is mostly independent, though it depends on article/report views and device sharing APIs. The story is negotiable and does not mandate a specific sharing implementation beyond using device sharing options. Acceptance criteria are objective and cover success, cancellation, and unavailable sharing; minor ambiguity remains around what content is attached, supported destinations, and platform-specific share behavior. Overall INVEST mean: 0.8583."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a user in poor connectivity conditions, I want to access cached content and last known data so that the app remains useful even when I am offline.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.55,
+                "small": 0.3,
+                "testable": 0.65
+            },
+            "reasoning": "The story provides strong user value but is cross-cutting and broad, spanning cached content, offline states, app reopening, multiple content sections, degraded data, connectivity restoration, and refresh behavior. It depends on caching strategy, supported content definitions, network monitoring, storage limits, and each feature area's data model. Estimation is difficult without specifying which content is supported, cache retention, staleness rules, and conflict/error handling. Acceptance criteria are partially testable but use broad terms such as 'supported content,' 'appropriately,' 'recovery guidance,' and 'updates the user interface.' Overall INVEST mean: 0.6167."
+        }
+    ]
+}

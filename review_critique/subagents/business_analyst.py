@@ -175,7 +175,8 @@ def run_business_analyst(task: str, max_rounds: int = 3, thread_id: str = "ba_re
         critique_prompt_msg = (
             f"Target Output Directory: '{output_dir}'\n"
             f"Task: {task}\n"
-            f"Draft to review: Inspect all generated files in directory '{output_dir}' using read_file.\n\n"
+            f"Draft to review: Inspect all generated requirements files (01_user_needs.md to 05_analysis_summary.md) in '{output_dir}' using read_file.\n"
+            f"NOTE: Focus exclusively on Business Analysis deliverables. HTML mockups and UI code are OUT OF SCOPE for this review (handled downstream by Interaction Designer).\n\n"
             f"Evaluate the files against the checklist and save your evaluation to "
             f"'06_review_summary.md' directly in '{output_dir}' using save_report_file."
         )

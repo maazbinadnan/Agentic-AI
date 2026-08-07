@@ -1,0 +1,17 @@
+Supervisor IxD Review & Feedback
+
+Overall Verdict: APPROVE
+Quality Score: 4/5
+
+Identified Issues & Flaws:
+- favorites_notifications_mockup.html / US-002 / US-007: Favorite club chips, preferred channel chips, and the notification toggle are represented as static `span`/`div` elements rather than clearly specified interactive controls with selected, unselected, focus, disabled, and saved states; this leaves some implementation detail for saving/updating preferences and notification opt-in behavior to developer interpretation.
+- unified_interface_feedback_mockup.html / US-009: The persistent navigation and “Quick jump: Live ticker” module show integrated access conceptually, but the mockup does not explicitly specify the tap transition from the main interface to the live ticker module required by US-009 Scenario 2.
+- live_ticker_streams_mockup.html / US-004 / US-006: The restricted/error state combines external API live-data failure and stream rights restriction in one message, which weakens the distinction between “live data unavailable” for US-004 and “do not display stream link due to country rights” for US-006.
+- live_ticker_streams_mockup.html / US-004: The live ticker populated state shows match events but does not define a loading/updating indicator, refresh cadence, “last updated” timestamp, or transitional state while new external API data is being retrieved, which is relevant to the acceptance criterion that match data continues to update as new data arrives.
+
+Detailed Feedback:
+The design package provides strong user story traceability across all approved stories US-001 through US-011, and each HTML mockup is clearly mapped in the Interaction Design report to functional requirements and acceptance scenarios. The screen grouping is logical for a mobile football app: authentication, preferences, news, live match center, browsing/offline support, and unified interface/feedback support. The deliverables also include useful primary, empty, error, restricted, or offline states, which makes the mockups broadly implementable and demonstrates good coverage of the core user journeys.
+
+The main areas needing polish are interaction specificity and accessibility semantics rather than overall structure. Several controls that represent real user actions, especially preference chips, notification toggles, and navigation items, are visually clear but not specified as accessible interactive components. The Interaction Designer should revise the relevant screen specifications to identify these as buttons, checkbox groups, switches, or tabs, and define focus, selected, disabled, validation, and saved states. This is particularly important for US-002, US-007, and US-009 because those stories depend on user selection, activation, and navigation behavior rather than static presentation.
+
+For the live match experience, the populated and unavailable states are useful, but US-004 and US-006 would be stronger if live API updating and rights-aware stream behavior were separated more explicitly. Add a loading or “syncing live data” state, a last-updated timestamp, and a clear retry behavior for API failure. Also separate the rights-restricted stream case from the live-data-unavailable case so developers know whether to hide only the stream link, show match data without stream access, or show a full match data outage. With these refinements, the approved design will be easier to implement consistently and will better satisfy the real-time and rights-compliance acceptance criteria.
