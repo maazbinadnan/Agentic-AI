@@ -5,7 +5,7 @@ __all__ = ["save_report_file", "save_html_mockup", "read_file"]
 
 
 @tool
-def save_report_file(filename: str, report_markdown: str, output_dir: str = "outputs") -> str:
+def save_report_file(filename: str, report_markdown: str, output_dir: str) -> str:
     """Saves a formal Markdown report deliverable (e.g., '01_elicitation_report.md', '02_user_needs_report.md', '03_functional_requirements.md', '04_non_functional_requirements.md', '05_user_stories.md', '06_ui_mockups.md', 'INDEX.md') into output_dir.
     
     Parameters
@@ -26,7 +26,7 @@ def save_report_file(filename: str, report_markdown: str, output_dir: str = "out
 
 
 @tool
-def save_html_mockup(filename: str, html_content: str, output_dir: str = "outputs") -> str:
+def save_html_mockup(filename: str, html_content: str, output_dir:str) -> str:
     """Saves an individual HTML mockup file (e.g., 'login.html', 'dashboard.html') into the 'html/' subfolder of output_dir.
     
     Parameters

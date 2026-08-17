@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHome - Access & Role-Based Entry</title>
+<style>
+  :root{--bg:#f4f6f8;--card:#ffffff;--line:#d7dde3;--text:#1f2933;--muted:#6b7785;--accent:#2f6fed;--ok:#14804a;--warn:#b26a00;--err:#c0362c;}
+  *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+  .wrap{padding:20px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+  .phone{background:#cfd6dd;padding:10px;border-radius:20px;box-shadow:0 6px 18px rgba(0,0,0,.12)} .screen{background:var(--card);border-radius:14px;min-height:700px;overflow:hidden;border:1px solid #bfc8d1}
+  .top{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#eef2f6;border-bottom:1px solid var(--line)} .meta{font-size:12px;color:var(--muted)}
+  .content{padding:16px} .logo{font-size:22px;font-weight:700;margin-bottom:6px} .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+  .field{margin-bottom:12px} label{display:block;font-size:12px;font-weight:700;margin-bottom:6px} input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;font-weight:700;font-size:14px;text-align:center} .btn.secondary{background:#eef2f6;color:var(--text);border:1px solid var(--line)}
+  .row{display:flex;gap:8px;flex-wrap:wrap}.banner{padding:10px 12px;border-radius:8px;font-size:13px;margin:12px 0}.ok{background:#eaf7ef;color:var(--ok)}.warn{background:#fff4df;color:var(--warn)}.err{background:#fdecea;color:var(--err)}
+  .nav{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.tile{border:1px solid var(--line);border-radius:10px;padding:12px}.tile h4{margin:0 0 4px 0;font-size:14px}.tile p{margin:0;color:var(--muted);font-size:12px}
+  .footer{margin-top:18px;padding-top:12px;border-top:1px dashed var(--line);font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="grid">
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Authentication & Access</strong><span class="meta">Populated</span></div>
+      <div class="content">
+        <div class="logo">DigitalHome</div>
+        <div class="sub">US-001, US-011 · FR-001, FR-011</div>
+        <div class="banner ok">Logged in as <strong>General User</strong>. Session active on home web server.</div>
+        <div class="field"><label>Username</label><input value="alex.home" /></div>
+        <div class="field"><label>Password</label><input value="••••••••" /></div>
+        <div class="row"><div class="btn">Log In</div><div class="btn secondary">Log Out</div></div>
+        <div class="nav">
+          <div class="tile"><h4>Temperature</h4><p>View current reading and set target.</p></div>
+          <div class="tile"><h4>Humidity</h4><p>Monitor humidity and update set point.</p></div>
+          <div class="tile"><h4>Security</h4><p>Check entry points and alarm state.</p></div>
+          <div class="tile"><h4>Appliances & Lights</h4><p>Review on/off status and control power.</p></div>
+        </div>
+        <div class="footer">Role-limited navigation exposes monitoring and control pages but not admin configuration tools.</div>
+      </div>
+    </div></div>
+
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Authentication & Access</strong><span class="meta">Empty / Logged Out</span></div>
+      <div class="content">
+        <div class="logo">DigitalHome</div>
+        <div class="sub">Initial state before authentication.</div>
+        <div class="banner warn">Please sign in to access simulated home devices and server features.</div>
+        <div class="field"><label>Username</label><input placeholder="Enter username" /></div>
+        <div class="field"><label>Password</label><input placeholder="Enter password" /></div>
+        <div class="row"><div class="btn">Log In</div></div>
+        <div class="tile" style="margin-top:16px"><h4>Available after login</h4><p>Temperature, humidity, security, appliance power, and role-appropriate administration pages.</p></div>
+        <div class="footer">Supports web-ready interaction via DigitalHome web server or local home server.</div>
+      </div>
+    </div></div>
+
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Authentication & Access</strong><span class="meta">Restricted / Error</span></div>
+      <div class="content">
+        <div class="logo">DigitalHome</div>
+        <div class="sub">Unauthorized administration attempt.</div>
+        <div class="banner err">Access denied. General users cannot modify configuration, user accounts, or system operations.</div>
+        <div class="tile"><h4>Attempted page</h4><p>/admin/configuration</p></div>
+        <div class="tile" style="margin-top:10px"><h4>User role</h4><p>General User</p></div>
+        <div class="tile" style="margin-top:10px"><h4>Allowed actions</h4><p>Monitor and control supported home devices only.</p></div>
+        <div class="row" style="margin-top:16px"><div class="btn secondary">Return to Dashboard</div><div class="btn">Log Out</div></div>
+        <div class="footer">Visualizes role-based privilege enforcement for protected actions.</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+</body>
+</html>

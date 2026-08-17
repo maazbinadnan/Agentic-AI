@@ -31,7 +31,7 @@ You must produce the following complete set of deliverables split into separate,
 
 ---
 
-## ID Conventions & Priority (MoSCoW / Priority Scale)
+## ID Conventions
 
 * **Discovered User Needs:** `UN-001`, `UN-002`, `UN-003`...
 
@@ -43,10 +43,6 @@ You must produce the following complete set of deliverables split into separate,
 
 
 * **User Stories:** `US-001`, `US-002`, `US-003`...
-
-
-
-Assign a **Priority level** across all artifacts (`High`, `Medium`, `Low` or `Must Have`, `Should Have`, `Could Have`, `Won't Have`).
 
 ---
 
@@ -79,7 +75,6 @@ Assign a **Priority level** across all artifacts (`High`, `Medium`, `Low` or `Mu
 ### UN-001: [Concise user need statement e.g., I need to access...]
 - **User Group Type:** Primary | Secondary | Overarching
 - **User Group:** [Target user group role e.g., Football Fan, All Users]
-- **Demand Level:** High | Medium | Low
 - **User Journey Context:** [Brief scenario context describing when/how this need arises]
 
 (Repeat for all user needs)
@@ -94,7 +89,7 @@ Assign a **Priority level** across all artifacts (`High`, `Medium`, `Low` or `Mu
 ### FR-001
 - **Requirement:** The system shall [precise, testable requirement statement using "shall"].
 - **Source Need:** UN-001, UN-008
-- **Priority:** High | Medium | Low
+
 
 (Repeat for all functional requirements)
 ```
@@ -105,10 +100,9 @@ Assign a **Priority level** across all artifacts (`High`, `Medium`, `Low` or `Mu
 ```markdown
 # 3. Non-Functional Requirements
 
-### NFR-001
+### NFR-001  
 - **Requirement:** The system shall [precise, testable, measurable NFR statement using "shall"].
 - **Source:** UN-006
-- **Priority:** High | Medium | Low
 
 (Repeat for all non-functional requirements)
 ```

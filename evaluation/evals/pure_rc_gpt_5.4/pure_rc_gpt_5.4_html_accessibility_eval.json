@@ -1,0 +1,429 @@
+[
+    {
+        "filename": "admin_configuration_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\admin_configuration_mockup.html",
+        "violations_count": 6,
+        "passes_count": 11,
+        "incomplete_count": 0,
+        "inapplicable_count": 74,
+        "report_summary": "Found 6 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Empty / Initial</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .phone:nth-child(3) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Restricted / Error</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlabel - Ensure every form element has a label\n\tURL: https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: input[value=\"jamie.family\"]\n\t\tSnippet: <input value=\"jamie.family\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: input[value=\"21°C\"]\n\t\tSnippet: <input value=\"21°C\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t3)\tTarget: input[value=\"45%\"]\n\t\tSnippet: <input value=\"45%\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\nRule Violated:\nselect-name - Ensure select element has an accessible name\n\tURL: https://dequeuniversity.com/rules/axe/4.12/select-name?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: select\n\t\tSnippet: <select><option>General User</option><option selected=\"\">Master User</option><option>DH Technician</option></select>\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "label",
+                "impact": "critical",
+                "description": "Ensure every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "select-name",
+                "impact": "critical",
+                "description": "Ensure select element has an accessible name",
+                "help": "Select element must have an accessible name",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/select-name?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "auth_access_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\auth_access_mockup.html",
+        "violations_count": 5,
+        "passes_count": 14,
+        "incomplete_count": 0,
+        "inapplicable_count": 73,
+        "report_summary": "Found 5 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Empty / Logged Out</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .warn\n\t\tSnippet: <div class=\"banner warn\">Please sign in to access simulated home devices and server features.</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.88 (foreground color: #b26a00, background color: #fff4df, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .phone:nth-child(3) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Restricted / Error</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlabel - Ensure every form element has a label\n\tURL: https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: input[value=\"alex.home\"]\n\t\tSnippet: <input value=\"alex.home\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: input[value=\"••••••••\"]\n\t\tSnippet: <input value=\"••••••••\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 4
+            },
+            {
+                "id": "label",
+                "impact": "critical",
+                "description": "Ensure every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "environment_dashboard_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\environment_dashboard_mockup.html",
+        "violations_count": 4,
+        "passes_count": 11,
+        "incomplete_count": 0,
+        "inapplicable_count": 76,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Empty / Unconfigured</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .phone:nth-child(3) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Restricted / Error</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "gateway_communications_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\gateway_communications_mockup.html",
+        "violations_count": 4,
+        "passes_count": 8,
+        "incomplete_count": 1,
+        "inapplicable_count": 79,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Empty / Waiting</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .warn\n\t\tSnippet: <div class=\"banner warn\">No device traffic yet. Waiting for first command or sensor transmission.</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.88 (foreground color: #b26a00, background color: #fff4df, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .phone:nth-child(3) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Error / Offline</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 4
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "humidity_control_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\humidity_control_mockup.html",
+        "violations_count": 5,
+        "passes_count": 11,
+        "incomplete_count": 0,
+        "inapplicable_count": 76,
+        "report_summary": "Found 5 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Empty / No Device</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .phone:nth-child(3) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Error / Device Unavailable</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlabel - Ensure every form element has a label\n\tURL: https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: input[value=\"45%\"]\n\t\tSnippet: <input value=\"45%\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: input[value=\"50%\"]\n\t\tSnippet: <input value=\"50%\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "label",
+                "impact": "critical",
+                "description": "Ensure every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "power_control_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\power_control_mockup.html",
+        "violations_count": 4,
+        "passes_count": 8,
+        "incomplete_count": 0,
+        "inapplicable_count": 79,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(1) > .screen > .content > .device:nth-child(2) > .off.toggle\n\t\tSnippet: <span class=\"toggle off\">OFF</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .phone:nth-child(2) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Empty / No Linked Devices</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .phone:nth-child(3) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Error / Command Failed</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .phone:nth-child(3) > .screen > .content > .device > .off.toggle\n\t\tSnippet: <span class=\"toggle off\">OFF</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 5
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "security_monitoring_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\security_monitoring_mockup.html",
+        "violations_count": 4,
+        "passes_count": 8,
+        "incomplete_count": 0,
+        "inapplicable_count": 79,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Empty / Disarmed</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .phone:nth-child(3) > .screen > .top > .meta\n\t\tSnippet: <span class=\"meta\">Breach / Alarm State</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "system_operations_and_server_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\system_operations_and_server_mockup.html",
+        "violations_count": 4,
+        "passes_count": 9,
+        "incomplete_count": 0,
+        "inapplicable_count": 78,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Empty / Stopped</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .warn\n\t\tSnippet: <div class=\"banner warn\">DigitalHome is currently stopped. Start operation to enable device communication and data services.</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.88 (foreground color: #b26a00, background color: #fff4df, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .phone:nth-child(3) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Error / Restricted</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 4
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "temperature_control_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\smart_home_gpt_5.4\\html\\temperature_control_mockup.html",
+        "violations_count": 5,
+        "passes_count": 11,
+        "incomplete_count": 0,
+        "inapplicable_count": 76,
+        "report_summary": "Found 5 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Populated</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .phone:nth-child(2) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Empty / No Reading</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .phone:nth-child(3) > .screen > .top > span\n\t\tSnippet: <span class=\"meta\">Error / Validation</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.05 (foreground color: #6b7785, background color: #eef2f6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlabel - Ensure every form element has a label\n\tURL: https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: input[value=\"22°C\"]\n\t\tSnippet: <input value=\"22°C\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: input[value=\"55°C\"]\n\t\tSnippet: <input value=\"55°C\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "label",
+                "impact": "critical",
+                "description": "Ensure every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI",
+                "nodes_count": 2
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    }
+]

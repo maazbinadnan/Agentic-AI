@@ -1,0 +1,7 @@
+criterion,average_score
+Independent (I),0.6545
+Negotiable (N),0.8182
+Valuable (V),0.9409
+Estimable (E),0.6591
+Small (S),0.5864
+Testable (T),0.7318

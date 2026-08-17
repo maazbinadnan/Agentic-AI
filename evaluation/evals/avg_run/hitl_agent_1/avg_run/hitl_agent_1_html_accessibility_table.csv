@@ -1,4 +1,0 @@
-html_filename,violations_count,passes_count,incomplete_count,status
-browse_details_streams_share.html,2,14,1,FAIL (2 Violations)
-home_news_live.html,4,12,1,FAIL (4 Violations)
-startup_login.html,3,18,1,FAIL (3 Violations)

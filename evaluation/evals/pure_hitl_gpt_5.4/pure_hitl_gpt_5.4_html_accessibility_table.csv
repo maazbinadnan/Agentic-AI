@@ -1,0 +1,7 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+admin_console.html,4,17,0,FAIL (4 Violations)
+climate_controls.html,4,13,0,FAIL (4 Violations)
+dashboard_monitoring.html,5,17,0,FAIL (5 Violations)
+login.html,4,19,1,FAIL (4 Violations)
+plans_reports.html,4,14,0,FAIL (4 Violations)
+security_power.html,4,11,0,FAIL (4 Violations)

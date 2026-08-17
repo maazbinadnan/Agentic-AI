@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHome - Environment Dashboard</title>
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--line:#d7dde3;--text:#1f2933;--muted:#6b7785;--accent:#2f6fed;--ok:#14804a;--err:#c0362c;--soft:#eef2f6}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)} .wrap{padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}.phone{background:#cfd6dd;padding:10px;border-radius:20px;box-shadow:0 6px 18px rgba(0,0,0,.12)} .screen{background:#fff;border-radius:14px;min-height:740px;overflow:hidden;border:1px solid #bfc8d1}.top{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--soft);border-bottom:1px solid var(--line)}.meta{font-size:12px;color:var(--muted)} .content{padding:16px}.hero{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.hero h2{margin:0}.muted{color:var(--muted);font-size:12px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{border:1px solid var(--line);border-radius:10px;padding:12px}.stat{font-size:24px;font-weight:700}.label{font-size:12px;color:var(--muted)} .btn{margin-top:10px;display:inline-block;padding:8px 10px;background:var(--accent);color:#fff;border-radius:8px;font-size:13px;font-weight:700}.banner{padding:10px 12px;border-radius:8px;font-size:13px;margin-bottom:12px}.ok{background:#eaf7ef;color:var(--ok)}.err{background:#fdecea;color:var(--err)} .list{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}.item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #edf1f4}
+</style>
+</head>
+<body><div class="wrap"><div class="grid">
+<div class="phone"><div class="screen"><div class="top"><strong>Home Management Dashboard</strong><span class="meta">Populated</span></div><div class="content">
+<div class="hero"><h2>My Home</h2><span class="muted">US-002 · FR-002</span></div>
+<div class="banner ok">All monitored systems responding in simulated environment.</div>
+<div class="cards">
+<div class="card"><div class="label">Temperature</div><div class="stat">21°C</div><div class="btn">Adjust</div></div>
+<div class="card"><div class="label">Humidity</div><div class="stat">46%</div><div class="btn">Adjust</div></div>
+<div class="card"><div class="label">Security</div><div class="stat">Armed</div><div class="btn">View</div></div>
+<div class="card"><div class="label">Lights & Appliances</div><div class="stat">5 On</div><div class="btn">Manage</div></div>
+</div>
+<div class="list">
+<div class="item"><span>Living Room</span><span>Comfort normal</span></div>
+<div class="item"><span>Front Door</span><span>Closed</span></div>
+<div class="item"><span>Coffee Maker</span><span>Off</span></div>
+</div></div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Home Management Dashboard</strong><span class="meta">Empty / Unconfigured</span></div><div class="content">
+<div class="hero"><h2>My Home</h2><span class="muted">No devices paired yet</span></div>
+<div class="card"><div class="label">Setup status</div><div class="stat" style="font-size:18px">No supported devices available</div><p class="muted">Temperature, humidity, security, and power controls will appear after technician configuration.</p><div class="btn">Contact Admin</div></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Home Management Dashboard</strong><span class="meta">Restricted / Error</span></div><div class="content">
+<div class="banner err">Administration area unavailable. Your role supports monitoring and control only.</div>
+<div class="card"><div class="label">Attempted action</div><div class="stat" style="font-size:18px">Edit default system parameters</div><p class="muted">Denied under role-based privilege enforcement.</p></div>
+</div></div></div>
+</div></div></body></html>

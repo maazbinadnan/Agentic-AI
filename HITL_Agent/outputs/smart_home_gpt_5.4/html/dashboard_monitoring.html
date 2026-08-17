@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalHome - Monitoring Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;min-width:0} html,body{max-width:100%;overflow-x:hidden} body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0f172a;color:#0f172a;word-break:break-word;overflow-wrap:anywhere}.wrap{padding:24px;width:100%;overflow-x:hidden}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;max-width:1400px;margin:0 auto;width:100%}.phone{background:#94a3b8;border-radius:28px;padding:10px;box-shadow:0 24px 64px rgba(0,0,0,.35);width:100%;overflow:hidden}.screen{background:#f8fafc;border-radius:20px;min-height:860px;overflow:hidden;width:100%}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;background:#111827;color:#fff;flex-wrap:wrap}.meta{font-size:12px;color:#cbd5e1}.header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 20px;border-bottom:1px solid #e2e8f0;background:#fff}.brand{font-weight:800}.shell{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);min-height:780px;width:100%}.nav{background:#e2e8f0;padding:18px;overflow:hidden}.nav a{display:block;padding:10px 12px;border-radius:10px;color:#334155;text-decoration:none;margin-bottom:6px;word-break:break-word}.nav a.active{background:#0ea5e9;color:#fff;font-weight:700}.main{padding:20px;overflow:hidden}.banner{padding:14px 16px;border-radius:14px;margin-bottom:16px;font-size:13px}.banner.good{background:#ecfeff;border:1px solid #a5f3fc;color:#155e75}.banner.warn{background:#fff7ed;border:1px solid #fdba74;color:#9a3412}.banner.error{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 6px 20px rgba(15,23,42,.05);width:100%}.value{font-size:28px;font-weight:800;margin-top:8px}.muted{font-size:12px;color:#64748b}.devices{display:grid;grid-template-columns:1fr;gap:12px}.device{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:14px;border:1px solid #e2e8f0;border-radius:14px;background:#fff;flex-wrap:wrap}.tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700;max-width:100%}.ok{background:#dcfce7;color:#166534}.idle{background:#e2e8f0;color:#475569}.bad{background:#fee2e2;color:#991b1b}.btn{padding:10px 12px;border:none;border-radius:10px;background:#0ea5e9;color:#fff;font-weight:700;max-width:100%}.toggle{display:flex;gap:8px;flex-wrap:wrap}.ghost{background:#e2e8f0;color:#0f172a}.small{font-size:13px}.title{font-size:22px;font-weight:800;margin:0 0 14px}.mini{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.lock{padding:16px;border:1px dashed #cbd5e1;border-radius:14px;background:#f8fafc}
+    @media(max-width:900px){.shell{grid-template-columns:1fr}.nav{display:flex;overflow:auto;gap:8px}.nav a{white-space:nowrap;margin:0}.stats,.mini{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="grid">
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Home Monitoring Dashboard</strong><span class="meta">Populated State</span></div>
+      <div class="header"><div><div class="brand">DigitalHome</div><div class="muted">General User · Remote session active</div></div><button class="btn">Logout</button></div>
+      <div class="shell">
+        <aside class="nav">
+          <a class="active" href="#">Dashboard</a><a href="#">Climate</a><a href="#">Security</a><a href="#">Power</a><a href="#">Plans</a><a href="#">Reports</a><a href="#">Backups</a><a href="#">Admin</a>
+        </aside>
+        <main class="main">
+          <div class="banner good">Gateway connected · Broadband available · Simulated home devices reporting normally.</div>
+          <h2 class="title">Current Home Status</h2>
+          <div class="stats">
+            <div class="card"><div class="muted">Temperature</div><div class="value">72°F</div><div class="muted">Set point 70°F · Cooling idle</div></div>
+            <div class="card"><div class="muted">Humidity</div><div class="value">46%</div><div class="muted">Set point 45% · Dehumidifier standby</div></div>
+            <div class="card"><div class="muted">Security</div><div class="value">Normal</div><div class="muted">All active contacts closed</div></div>
+            <div class="card"><div class="muted">Power Devices On</div><div class="value">3</div><div class="muted">Kitchen lamp, coffee maker, porch light</div></div>
+          </div>
+          <div class="devices">
+            <div class="device"><div><strong>Front Door Contact</strong><div class="small">Closed · Sensor active</div></div><span class="tag ok">Normal</span></div>
+            <div class="device"><div><strong>Living Room Window</strong><div class="small">Closed · Sensor active</div></div><span class="tag ok">Normal</span></div>
+            <div class="device"><div><strong>Coffee Maker Switch</strong><div class="small">Current state: On</div></div><div class="toggle"><button class="btn ghost">Off</button><button class="btn">On</button></div></div>
+            <div class="device"><div><strong>Hallway Light</strong><div class="small">Current state: Off</div></div><div class="toggle"><button class="btn">On</button><button class="btn ghost">Off</button></div></div>
+          </div>
+        </main>
+      </div>
+    </div></div>
+
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Home Monitoring Dashboard</strong><span class="meta">Empty / Unconfigured State</span></div>
+      <div class="header"><div><div class="brand">DigitalHome</div><div class="muted">General User · First setup</div></div><button class="btn">Logout</button></div>
+      <div class="shell">
+        <aside class="nav">
+          <a class="active" href="#">Dashboard</a><a href="#">Climate</a><a href="#">Security</a><a href="#">Power</a><a href="#">Plans</a><a href="#">Reports</a><a href="#">Backups</a><a href="#">Admin</a>
+        </aside>
+        <main class="main">
+          <div class="banner warn">No device statuses have been received yet. The simulated gateway is awaiting its first sync.</div>
+          <h2 class="title">Current Home Status</h2>
+          <div class="mini">
+            <div class="card"><div class="muted">Temperature</div><div class="value">--</div><div class="muted">Thermostat not yet paired</div></div>
+            <div class="card"><div class="muted">Humidity</div><div class="value">--</div><div class="muted">Humidistat not yet paired</div></div>
+          </div>
+          <div class="lock" style="margin-top:16px">
+            <strong>No monitored data available</strong>
+            <p class="small">Once sensors and controllers are simulated and connected, the dashboard will show temperature, humidity, contact states, alarm status, and appliance/lighting power states.</p>
+            <button class="btn">Run simulation sync</button>
+          </div>
+        </main>
+      </div>
+    </div></div>
+
+    <div class="phone"><div class="screen">
+      <div class="top"><strong>Home Monitoring Dashboard</strong><span class="meta">Restricted / Offline State</span></div>
+      <div class="header"><div><div class="brand">DigitalHome</div><div class="muted">General User · Connectivity degraded</div></div><button class="btn">Logout</button></div>
+      <div class="shell">
+        <aside class="nav">
+          <a class="active" href="#">Dashboard</a><a href="#">Climate</a><a href="#">Security</a><a href="#">Power</a><a href="#">Plans</a><a href="#">Reports</a><a href="#">Backups</a><a href="#">Admin</a>
+        </aside>
+        <main class="main">
+          <div class="banner error">Broadband unavailable. Remote communication path to some home devices is interrupted.</div>
+          <div class="banner warn">Access restriction: General Users cannot open account management, configuration, or system start/stop functions.</div>
+          <h2 class="title">Partial Status</h2>
+          <div class="devices">
+            <div class="device"><div><strong>Thermostat</strong><div class="small">Last known reading: 71°F from 08:21</div></div><span class="tag idle">Stale</span></div>
+            <div class="device"><div><strong>Back Door Contact</strong><div class="small">Unavailable from gateway</div></div><span class="tag bad">No data</span></div>
+            <div class="device"><div><strong>Admin Settings</strong><div class="small">User attempted access to restricted function</div></div><span class="tag bad">Denied</span></div>
+          </div>
+          <div class="lock" style="margin-top:16px"><strong>Unauthorized action blocked.</strong><p class="small">Protected administrative functions remain disabled for General Users, and remote device updates may fail until broadband connectivity is restored.</p></div>
+        </main>
+      </div>
+    </div></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+admin_configuration_mockup.html,6,11,0,FAIL (6 Violations)
+auth_access_mockup.html,5,14,0,FAIL (5 Violations)
+environment_dashboard_mockup.html,4,11,0,FAIL (4 Violations)
+gateway_communications_mockup.html,4,8,1,FAIL (4 Violations)
+humidity_control_mockup.html,5,11,0,FAIL (5 Violations)
+power_control_mockup.html,4,8,0,FAIL (4 Violations)
+security_monitoring_mockup.html,4,8,0,FAIL (4 Violations)
+system_operations_and_server_mockup.html,4,9,0,FAIL (4 Violations)
+temperature_control_mockup.html,5,11,0,FAIL (5 Violations)

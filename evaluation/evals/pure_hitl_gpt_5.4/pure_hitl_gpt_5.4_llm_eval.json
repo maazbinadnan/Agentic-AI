@@ -1,0 +1,1256 @@
+{
+    "coverage": [
+        {
+            "gt_id": 1,
+            "ground_truth_requirement": "The DigitalHome System shall allow a web-ready computer, cell phone or PDA to control a home's temperature, humidity, lights, security, and the state of small appliances.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall authenticate users through a web interface using a valid username and password before permitting access to DigitalHome monitoring, control, planning, reporting, or administration functions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Establishes web-based authenticated access to monitoring and control functions."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers web display of temperature, humidity, security/contact, alarm, appliance, and lighting states."
+                },
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers temperature monitoring and control."
+                },
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidity monitoring and control."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers appliance and lighting on/off control."
+                },
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall support magnetic alarm contact switches for doors and windows and shall detect and display whether each active contact sensor indicates a normal closed state or an entry breach state.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers security contact monitoring."
+                },
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers security alarm activation and display."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements collectively cover web-based monitoring and control of temperature, humidity, lighting, security, and appliance power states. They do not explicitly name cell phones or PDAs, but web-interface access semantically covers web-ready clients, so the functional capability is essentially complete."
+        },
+        {
+            "gt_id": 2,
+            "ground_truth_requirement": "The communication center of the DH system shall be a DH home web server, through which a user shall be able to monitor and control home devices and systems.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Explicitly provides the DH home web server as the user interaction point."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers monitoring through the web interface."
+                },
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers device control for thermostats."
+                },
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers device control for humidistats."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers power-device monitoring and control."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The home web server is explicitly generated and tied to user interaction, monitoring, control, storage, and operational data. The matched device requirements substantiate the monitor/control functions through the web interface."
+        },
+        {
+            "gt_id": 3,
+            "ground_truth_requirement": "Each DigitalHome shall contain a master control device (the DH Gateway Device) that connects to the home’s broadband Internet connection, and uses wireless communication to send and receive communication between the DigitalHome system and the home devices and systems.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers the gateway, broadband connection, and wireless RF exchange with devices."
+                },
+                {
+                    "gen_id": 21,
+                    "gen_requirement": "The system shall require broadband Internet service availability for remote communication between the home web server, gateway, and authenticated users accessing the DigitalHome web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Reinforces broadband Internet dependency for gateway/web-server communication."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated gateway requirement fully captures the master gateway device, broadband connectivity, and wireless bidirectional communication with home devices."
+        },
+        {
+            "gt_id": 4,
+            "ground_truth_requirement": "The DigitalHome shall be equipped with various environmental controllers and sensors (temperature controller-sensors: thermostats, humidity controller-sensors: humidistats, contact sensors, security sound and light alarms, and power switches).",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers thermostat temperature controller-sensors."
+                },
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidistat humidity controller-sensors."
+                },
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall support magnetic alarm contact switches for doors and windows and shall detect and display whether each active contact sensor indicates a normal closed state or an entry breach state.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers contact sensors."
+                },
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers sound and light alarms."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers power switches."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "All device categories named in the ground truth are represented: thermostats, humidistats, contact sensors, sound/light alarms, and power switches."
+        },
+        {
+            "gt_id": 5,
+            "ground_truth_requirement": "Using wireless communication, sensor values can be read and saved in the home database.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers wireless communication with sensors and controllers."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers reading/displaying current sensor values."
+                },
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall store historical operational data for supported monitored and controlled devices and shall provide historical reports through the web interface that include averages, minimum values, maximum values, and downtime logs.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers storage of monitored operational data."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions the home database and storage of operational data."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Wireless communication, reading monitored values, and storage in operational/home database data are all covered by the generated requirements."
+        },
+        {
+            "gt_id": 6,
+            "ground_truth_requirement": "Controller values can be sent to controllers to change the DH environment.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers sending/applying thermostat control values."
+                },
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers sending/applying humidistat control values."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers sending power-switch control commands."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall execute stored monthly plans and daily presets by applying the scheduled set points or power states to the targeted supported devices at the planned times.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers applying scheduled controller values to devices."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover user-entered and scheduled control values being applied to thermostats, humidistats, and power switches to alter the home environment."
+        },
+        {
+            "gt_id": 7,
+            "ground_truth_requirement": "The DigitalHome programmable thermostat shall allow a user to monitor and control a home’s temperature from any location, using a web ready computer, cell phone, or PDA.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers thermostat monitoring and control."
+                },
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall authenticate users through a web interface using a valid username and password before permitting access to DigitalHome monitoring, control, planning, reporting, or administration functions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers access through a web interface."
+                },
+                {
+                    "gen_id": 21,
+                    "gen_requirement": "The system shall require broadband Internet service availability for remote communication between the home web server, gateway, and authenticated users accessing the DigitalHome web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers remote access dependency."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The thermostat monitoring/control capability and remote web access are covered. Specific client examples such as cell phone and PDA are not named, but the web interface and remote communication satisfy the core requirement."
+        },
+        {
+            "gt_id": 8,
+            "ground_truth_requirement": "A DH user shall be able to read the temperature at a thermostat position.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers receiving and displaying current temperature readings from thermostats."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers presentation of current temperature readings to users."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements clearly allow users to read current thermostat temperature values; the physical 'thermostat position' detail is implicit in thermostat readings."
+        },
+        {
+            "gt_id": 9,
+            "ground_truth_requirement": "A DH user shall be able to set the thermostat temperatures to between 60 ° F and 80 ° F, inclusive, at one degree increments.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers accepting user-entered thermostat set points."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement supports entering a thermostat set point, but it omits the required allowable set-point range of 60°F to 80°F inclusive and the one-degree increment constraint."
+        },
+        {
+            "gt_id": 10,
+            "ground_truth_requirement": "Up to eight thermostats shall be placed in rooms throughout the home.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies support for or placement of up to eight thermostats throughout the home."
+        },
+        {
+            "gt_id": 11,
+            "ground_truth_requirement": "The thermostats may be controlled individually or collectively, so that temperature can be controlled at different levels in different home spaces.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions thermostat control of an enclosed space."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Thermostat control is covered at a device/space level, but there is no explicit support for multiple thermostats, individual versus collective control, or different set points for different home spaces."
+        },
+        {
+            "gt_id": 12,
+            "ground_truth_requirement": "A single thermostat shall be placed in an enclosed space (e.g., a room in the house) for which the air temperature is to be controlled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers regulating an enclosed space using a thermostat."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement captures control of an enclosed space, but it does not specify the placement rule of exactly one thermostat per enclosed space."
+        },
+        {
+            "gt_id": 13,
+            "ground_truth_requirement": "For each thermostat, up to twenty-four one hour settings per day for every day of the week can be scheduled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers scheduling thermostat set points."
+                },
+                {
+                    "gen_id": 30,
+                    "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides a schedule-period constraint, but only at least four periods per day."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Scheduling thermostat set points is covered, but the specific requirement for up to twenty-four one-hour settings per day for every day of the week is not satisfied; the generated constraint only requires at least four schedule periods per day."
+        },
+        {
+            "gt_id": 14,
+            "ground_truth_requirement": "If a thermostat device allows a user to make a manual temperature setting, the setting shall remain in effect until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers planned thermostat schedules."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall execute stored monthly plans and daily presets by applying the scheduled set points or power states to the targeted supported devices at the planned times.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers applying planned/default scheduled set points."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover schedules and planned set points, but they do not specify the manual override behavior or its duration until the end of the current planned/default period."
+        },
+        {
+            "gt_id": 15,
+            "ground_truth_requirement": "A thermostat unit shall communicate, through wireless signals, with the master control unit.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers wireless RF communication between the gateway/master control path and devices including thermostats."
+                },
+                {
+                    "gen_id": 29,
+                    "gen_requirement": "The system shall transmit and receive gateway-to-device wireless communications over a simulated indoor RF range of up to 1000 feet without loss of functional connectivity in the modeled environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Reinforces wireless gateway-to-device communication."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Wireless communication between the control gateway and DigitalHome devices is explicitly covered and applies to thermostat units."
+        },
+        {
+            "gt_id": 16,
+            "ground_truth_requirement": "The system shall support Fahrenheit and Celsius temperature values.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions thermostat sensing range in both Fahrenheit and Celsius."
+                },
+                {
+                    "gen_id": 26,
+                    "gen_requirement": "The system shall support thermostat sensing and reporting only within the specified operating range of 14°F to 104°F (-10°C to 40°C), and shall reject or flag any simulated reading outside that range as invalid.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions reporting temperature values with both Fahrenheit and Celsius units."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements express temperature ranges in both Fahrenheit and Celsius, indicating some unit awareness, but they do not explicitly state that users can select, enter, or display all temperature values in either unit."
+        },
+        {
+            "gt_id": 17,
+            "ground_truth_requirement": "The system shall be compatible with a centralized HVAC (Heating, Ventilation and Air Conditioning) systems: gas, oil, electricity, solar, or a combination of two or more. The system shall adhere to the standards, policies and procedures of the American Society of Heating, Refrigerating and Air-Conditioning Engineers [ASHRAE 2010].",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Only tangentially covers heating/cooling control outputs."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement mentions heating/cooling outputs, but it does not cover centralized HVAC compatibility, supported energy types, mixed systems, ventilation/air conditioning compatibility, or ASHRAE 2010 compliance."
+        },
+        {
+            "gt_id": 18,
+            "ground_truth_requirement": "The DigitalHome programmable humidistat shall allow a user to monitor and control a home’s humidity from any location, using a web ready computer, cell phone, or PDA.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidistat monitoring and control."
+                },
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall authenticate users through a web interface using a valid username and password before permitting access to DigitalHome monitoring, control, planning, reporting, or administration functions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers access to monitoring/control through a web interface."
+                },
+                {
+                    "gen_id": 21,
+                    "gen_requirement": "The system shall require broadband Internet service availability for remote communication between the home web server, gateway, and authenticated users accessing the DigitalHome web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers remote communication to the web interface."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover humidity monitoring/control through a remote web interface. Specific client examples such as cell phone and PDA are not listed, but web-ready remote access is semantically addressed."
+        },
+        {
+            "gt_id": 19,
+            "ground_truth_requirement": "A DH user shall be able to read the humidity at a humidistat position.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers receiving and displaying humidity readings."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers user presentation of current humidity readings."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements allow users to read current humidistat humidity values; the position aspect is implicit in readings from individual humidistat devices."
+        },
+        {
+            "gt_id": 20,
+            "ground_truth_requirement": "A DH user shall be able to set the humidity level for a humidistat, from 30% to 60%, inclusive a 1% increments.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers accepting a user-entered humidity set point."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement supports setting humidity, but it omits the required 30% to 60% inclusive range and 1% increment constraint."
+        },
+        {
+            "gt_id": 21,
+            "ground_truth_requirement": "Up to eight humidistats shall be placed in rooms throughout the home.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies support for or placement of up to eight humidistats throughout the home."
+        },
+        {
+            "gt_id": 22,
+            "ground_truth_requirement": "A single humidistat shall be placed in an enclosed space (e.g., a room in the house) for which the humidity is to be controlled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidity regulation for an enclosed space."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement covers control of humidity in an enclosed space, but it does not specify the placement rule of a single humidistat per enclosed space."
+        },
+        {
+            "gt_id": 23,
+            "ground_truth_requirement": "If a humidistat device allows a user to make a manual temperature setting, the setting shall remain in effect until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers planned humidistat schedules."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall execute stored monthly plans and daily presets by applying the scheduled set points or power states to the targeted supported devices at the planned times.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers applying planned/default scheduled values."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover schedules for humidistat set points, but not the manual-setting override semantics or the rule that the manual value remains only until the end of the current planned/default period."
+        },
+        {
+            "gt_id": 24,
+            "ground_truth_requirement": "For each humidistat, up to twenty-four one hour settings per day for every day of the week can be scheduled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers scheduling humidistat set points."
+                },
+                {
+                    "gen_id": 30,
+                    "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides a schedule-period constraint, but only at least four periods per day."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Scheduling is covered, but the generated requirements do not provide up to twenty-four one-hour settings per day for every day of the week; they only require at least four periods per day."
+        },
+        {
+            "gt_id": 25,
+            "ground_truth_requirement": "A DigitalHome system shall use wireless signals to communicate, through the master control unit, with the humidistats.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers wireless RF communication through the gateway/master control path to devices such as humidistats."
+                },
+                {
+                    "gen_id": 29,
+                    "gen_requirement": "The system shall transmit and receive gateway-to-device wireless communications over a simulated indoor RF range of up to 1000 feet without loss of functional connectivity in the modeled environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Reinforces gateway-to-device wireless communication."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Wireless communication through the master gateway to DigitalHome devices is explicitly covered and applies to humidistats."
+        },
+        {
+            "gt_id": 26,
+            "ground_truth_requirement": "The DigitalHome security system consists of contact sensors and a set security alarms.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall support magnetic alarm contact switches for doors and windows and shall detect and display whether each active contact sensor indicates a normal closed state or an entry breach state.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers contact sensors."
+                },
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers configured security alarms."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated security requirements include both contact sensors and sound/light alarms, satisfying the composition of the security system."
+        },
+        {
+            "gt_id": 27,
+            "ground_truth_requirement": "A DigitalHome system shall be able to manage up to fifty door and window contact sensors.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall support magnetic alarm contact switches for doors and windows and shall detect and display whether each active contact sensor indicates a normal closed state or an entry breach state.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers management/monitoring of door and window contact sensors."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement covers door/window contact sensors, but omits the capacity constraint of up to fifty sensors."
+        },
+        {
+            "gt_id": 28,
+            "ground_truth_requirement": "A DigitalHome system shall be able to activate both light and sound alarms: one sound alarm and one light alarm subsystem, with multiple lights.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers activation of sound and light alarms."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement covers both sound and light alarm activation. It does not specify the exact subsystem cardinality or multiple lights, but the essential functional behavior is present."
+        },
+        {
+            "gt_id": 29,
+            "ground_truth_requirement": "When a security breach occurs and a contact sensor is set OPEN, the alarm system shall be activated.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall support magnetic alarm contact switches for doors and windows and shall detect and display whether each active contact sensor indicates a normal closed state or an entry breach state.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers detection of contact sensor breach/open state."
+                },
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers alarm activation on detected breach."
+                },
+                {
+                    "gen_id": 46,
+                    "gen_requirement": "The system shall detect an active door or window contact sensor breach and activate the associated sound and light alarm indication within 2 seconds of the triggering event while the security monitoring function is active.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Adds timing for breach detection and alarm activation."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover detecting a contact sensor breach/open state and activating the alarm system."
+        },
+        {
+            "gt_id": 30,
+            "ground_truth_requirement": "The DigitalHome programmable Appliance Manager shall provide for management of a home’s small appliances, including lighting units, by allowing a user to turn them on or off as desired.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers management of small appliances and lighting via on/off commands."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement directly covers user control of small appliances and lighting units through power-switch on/off commands."
+        },
+        {
+            "gt_id": 31,
+            "ground_truth_requirement": "The Appliance Manager shall be able to manage up to one hundred 115 volt, 10 amp power switches.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers programmable power-switch management generally."
+                },
+                {
+                    "gen_id": 49,
+                    "gen_requirement": "The system shall support programmable power switches only for simulated small-appliance and lighting loads up to 120 volts and 15 amperes per switch.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides an electrical load limit, but not the specified 115V/10A value and no quantity of 100 switches."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Power-switch management is covered, and an electrical load limit is provided, but the generated requirements omit the required capacity of up to 100 switches and specify a different electrical rating."
+        },
+        {
+            "gt_id": 32,
+            "ground_truth_requirement": "The system shall be able to provide information about the state of a power switch (OFF or ON), indicating the whether an appliance connected to the power switch is OFF or ON.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers monitoring and displaying on/off power state of connected appliances/lighting."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers presentation of appliance/lighting power states."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover reporting the on/off state of power switches and connected appliances/lighting."
+        },
+        {
+            "gt_id": 33,
+            "ground_truth_requirement": "The system shall be able to change the state of a power switch (OFF to ON, or ON to OFF), in turn changing the state of an appliance connected to the power switch.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers changing switch state from off to on or on to off."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement directly matches the ability to toggle power switches and thereby connected appliance/lighting states."
+        },
+        {
+            "gt_id": 34,
+            "ground_truth_requirement": "If a user changes the state of power switch device manually, the device shall remain in that state until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers scheduled power switch states."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall execute stored monthly plans and daily presets by applying the scheduled set points or power states to the targeted supported devices at the planned times.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers applying planned power states."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover scheduled power-switch states, but they do not specify manual switch override behavior or retention until the end of the current planned/default time period."
+        },
+        {
+            "gt_id": 35,
+            "ground_truth_requirement": "DigitalHome Planner shall provide a user with the capability to direct the system to set various preset home parameters (temperature, humidity, security contacts, and on/off appliance/light status) for certain time periods.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 12,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers creation and storage of scheduled monthly behavior."
+                },
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers presets for temperature, humidity, and power-switch states."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall execute stored monthly plans and daily presets by applying the scheduled set points or power states to the targeted supported devices at the planned times.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers applying scheduled parameters at planned times."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Planner support for temperature, humidity, and appliance/light power states over time is covered. Security contact parameters are not explicitly included in generated planner schedules."
+        },
+        {
+            "gt_id": 36,
+            "ground_truth_requirement": "DigitalHome provides a monthly planner.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 12,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly provides monthly planning capability."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement explicitly provides monthly plans."
+        },
+        {
+            "gt_id": 37,
+            "ground_truth_requirement": "For a given month and year, a user shall be able to create or modify a month plan that specifies for each day, for up to four daily time periods, the environmental parameter settings (temperature, humidity, contact sensors and power switches).",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 12,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers creating/updating/storing monthly plans."
+                },
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers daily scheduled temperature, humidity, and power settings."
+                },
+                {
+                    "gen_id": 30,
+                    "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers a four-period-per-day scheduling capability."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover monthly and daily scheduling with four periods for temperature, humidity, and power switches. They omit explicit month/year selection, contact sensor settings, and the exact 'up to four' constraint."
+        },
+        {
+            "gt_id": 38,
+            "ground_truth_requirement": "A user shall be able to override planned parameter values, through the DH website, or if available, through manual switches on household devices.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct user set-point entry through the system."
+                },
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct humidity set-point entry."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct power-switch control."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover direct web-based control commands that could function as overrides, but they do not explicitly state override of planned values or support for manual household device switches."
+        },
+        {
+            "gt_id": 39,
+            "ground_truth_requirement": "For a given month and year, in the past two years, DigitalHome shall be able to provide a report on the management and control of the home.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall store historical operational data for supported monitored and controlled devices and shall provide historical reports through the web interface that include averages, minimum values, maximum values, and downtime logs.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers historical reporting of monitored and controlled devices."
+                },
+                {
+                    "gen_id": 32,
+                    "gen_requirement": "The system shall generate historical reports containing averages, minimums, maximums, and downtime logs for a selected date range within 5 seconds for 95% of report requests covering up to 31 days of data.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides selected-date-range reporting up to 31 days."
+                },
+                {
+                    "gen_id": 33,
+                    "gen_requirement": "The system shall retain historical monitoring, event, and downtime data for at least 90 days in the prototype data store to support historical reporting.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides retention for reporting, but only 90 days."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Historical reporting is covered, including selected ranges and operational data. However, the generated requirements support only 31-day report coverage and 90-day retention, not monthly reports for any month/year in the past two years."
+        },
+        {
+            "gt_id": 40,
+            "ground_truth_requirement": "The month report shall contain daily average, maximum (with time) and minimum (with time) values of temperature and humidity for each thermostat and humidistat, respectively.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall store historical operational data for supported monitored and controlled devices and shall provide historical reports through the web interface that include averages, minimum values, maximum values, and downtime logs.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers averages, minimums, and maximums in historical reports."
+                },
+                {
+                    "gen_id": 32,
+                    "gen_requirement": "The system shall generate historical reports containing averages, minimums, maximums, and downtime logs for a selected date range within 5 seconds for 95% of report requests covering up to 31 days of data.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Reinforces report contents of averages, minimums, maximums, and downtime logs."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover average, minimum, and maximum values in reports, but omit daily granularity, timestamp of min/max values, and per-thermostat/per-humidistat temperature and humidity specificity."
+        },
+        {
+            "gt_id": 41,
+            "ground_truth_requirement": "The month report shall provide the day and time for which any security breaches occurred, that is, when the security alarms were activated.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers alarm activation and display, but not reporting."
+                },
+                {
+                    "gen_id": 46,
+                    "gen_requirement": "The system shall detect an active door or window contact sensor breach and activate the associated sound and light alarm indication within 2 seconds of the triggering event while the security monitoring function is active.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers detection and activation timing for breach events."
+                },
+                {
+                    "gen_id": 33,
+                    "gen_requirement": "The system shall retain historical monitoring, event, and downtime data for at least 90 days in the prototype data store to support historical reporting.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions historical event data retention, which may include breaches."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover breach detection, alarm activation, and some event retention, but they do not explicitly require a month report listing the day and time of security breaches/alarm activations."
+        },
+        {
+            "gt_id": 42,
+            "ground_truth_requirement": "The month report shall provide a section that indicates the periods of time when the DH System was not in operation.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall store historical operational data for supported monitored and controlled devices and shall provide historical reports through the web interface that include averages, minimum values, maximum values, and downtime logs.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers downtime logs in historical reports."
+                },
+                {
+                    "gen_id": 32,
+                    "gen_requirement": "The system shall generate historical reports containing averages, minimums, maximums, and downtime logs for a selected date range within 5 seconds for 95% of report requests covering up to 31 days of data.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers generation of reports including downtime logs."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Downtime logs in historical reports cover periods when the DH system was not operating. The generated requirements do not mandate a distinct named report section, but the required information is covered."
+        },
+        {
+            "gt_id": 43,
+            "ground_truth_requirement": "Displays of environmental conditions (temperature, humidity, contact sensors and power switches) shall be updated at least every two seconds.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 22,
+                    "gen_requirement": "The system shall present updated values for monitored temperature, humidity, contact sensor status, and appliance power state on the web interface within 2 seconds of receiving a new device or simulated device status update.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers updating the specified displayed values within two seconds."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement covers the same display categories and a two-second update bound. It is framed as within two seconds of receiving status updates rather than periodic refresh every two seconds, but the performance intent is satisfied."
+        },
+        {
+            "gt_id": 44,
+            "ground_truth_requirement": "Sensor (temperature, humidity, contact sensor, power state) shall have a minimum data acquisition rate of 10 Hz.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 25,
+                    "gen_requirement": "The system shall sample and process thermostat readings at a minimum rate of 1 Hz for each active thermostat in the simulated environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers thermostat sampling but at an insufficient rate."
+                },
+                {
+                    "gen_id": 27,
+                    "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers humidistat sampling but at an insufficient rate."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Sampling is specified only for thermostat and humidistat readings, not contact sensors or power state. The generated sampling rate is 1 Hz, which is below the required 10 Hz."
+        },
+        {
+            "gt_id": 45,
+            "ground_truth_requirement": "An environmental sensor or controller device shall have to be within 1000 feet of the master control device, in order to be in communication with the system.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers the 1000-foot wireless range between gateway and devices."
+                },
+                {
+                    "gen_id": 29,
+                    "gen_requirement": "The system shall transmit and receive gateway-to-device wireless communications over a simulated indoor RF range of up to 1000 feet without loss of functional connectivity in the modeled environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers connectivity within a 1000-foot RF range."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover the 1000-foot communication range between the master/gateway device and environmental devices."
+        },
+        {
+            "gt_id": 46,
+            "ground_truth_requirement": "The DigitalHome System must be highly reliable with no more than 1 failure per 10,000 hours of operation.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 45,
+                    "gen_requirement": "The system shall achieve at least 99.0% availability over each 30-day period excluding planned maintenance windows not exceeding 4 hours per month.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides an availability reliability-related target."
+                },
+                {
+                    "gen_id": 52,
+                    "gen_requirement": "The system shall achieve a mean time between service-affecting failures of at least 720 operating hours in the prototype test environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Provides an MTBF target, but much weaker than 10,000 hours."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Reliability is addressed, but the generated MTBF target of 720 hours and availability target do not meet or equal the ground-truth threshold of no more than one failure per 10,000 hours."
+        },
+        {
+            "gt_id": 47,
+            "ground_truth_requirement": "The Digital Home System shall incorporate backup and recovery mechanisms.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall perform backup of user account information, user plans, and the home database so that stored DigitalHome configuration and usage information can be preserved for later recovery.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers backup for later recovery."
+                },
+                {
+                    "gen_id": 43,
+                    "gen_requirement": "The system shall perform an automated backup of user account information, user plans, and the home database at least once every 24 hours.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers automated backup."
+                },
+                {
+                    "gen_id": 44,
+                    "gen_requirement": "The system shall restore the most recent successful backup of user account information, user plans, and the home database within 4 hours of a recovery request.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers recovery from backup."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements explicitly include both backup and restore/recovery mechanisms."
+        },
+        {
+            "gt_id": 48,
+            "ground_truth_requirement": "The DH System will backup all system data (configuration, default parameter settings, planning, and usage data) on a daily basis, with the backup time set by the DH Technician at system set up.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall perform backup of user account information, user plans, and the home database so that stored DigitalHome configuration and usage information can be preserved for later recovery.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers backup of accounts, plans, database, configuration, and usage information broadly."
+                },
+                {
+                    "gen_id": 43,
+                    "gen_requirement": "The system shall perform an automated backup of user account information, user plans, and the home database at least once every 24 hours.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers daily/24-hour automated backup frequency."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Daily backup is covered, and most data categories are broadly represented. However, the generated requirements do not explicitly include default parameter settings as a backup category and do not require the backup time to be set by the DH Technician at setup."
+        },
+        {
+            "gt_id": 49,
+            "ground_truth_requirement": "If the DH System fails (due to power loss, loss of internet access, or other software or hardware failure), the system recovery mechanism shall restore system data (configuration, default parameter settings, planning, and usage data) from the most recent backup.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 44,
+                    "gen_requirement": "The system shall restore the most recent successful backup of user account information, user plans, and the home database within 4 hours of a recovery request.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers restoring the most recent backup."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall perform backup of user account information, user plans, and the home database so that stored DigitalHome configuration and usage information can be preserved for later recovery.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers preservation of configuration and usage information for recovery."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Restoration from the most recent backup is covered, but the generated requirements do not specify triggering after power loss, Internet loss, software failure, or hardware failure, and do not explicitly cover default parameter settings as restored data."
+        },
+        {
+            "gt_id": 50,
+            "ground_truth_requirement": "All DigitalHome operations shall incorporate exception handling so that the system responds to a user with a clear, descriptive message when an error or an exceptional condition occurs.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement addresses exception handling or clear user-facing error messages."
+        },
+        {
+            "gt_id": 51,
+            "ground_truth_requirement": "Although there are no specific safety requirements, high system reliability is important to insure there are no system failures in carrying out user requests. Such failures might affect the safety of home dwellers (e.g., security breaches, inadequate lighting in dark spaces, inappropriate temperature and humidity for people who are in ill-health, or powering certain appliances when young children are present).",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 45,
+                    "gen_requirement": "The system shall achieve at least 99.0% availability over each 30-day period excluding planned maintenance windows not exceeding 4 hours per month.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Addresses system availability as a reliability-related safety support."
+                },
+                {
+                    "gen_id": 52,
+                    "gen_requirement": "The system shall achieve a mean time between service-affecting failures of at least 720 operating hours in the prototype test environment.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Addresses reliability using MTBF."
+                },
+                {
+                    "gen_id": 46,
+                    "gen_requirement": "The system shall detect an active door or window contact sensor breach and activate the associated sound and light alarm indication within 2 seconds of the triggering event while the security monitoring function is active.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Addresses reliable/timely security alarm behavior."
+                },
+                {
+                    "gen_id": 48,
+                    "gen_requirement": "The system shall preserve the last confirmed appliance power state across server or application restart and, if the prior state cannot be verified during recovery, shall reset the affected programmable power switch to OFF by default.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Addresses safer appliance power-state recovery behavior."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements include reliability, availability, alarm timing, and some fail-safe power behavior. They do not explicitly tie reliability to carrying out user requests or cover all safety examples in the ground truth."
+        },
+        {
+            "gt_id": 52,
+            "ground_truth_requirement": "Upon installation, a DigitalHome user account shall be established. The DigitalHome web system shall provide for authentication and information encryption through a recognized reliable and effective security technology, such as Transport Layer Security.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 16,
+                    "gen_requirement": "The system shall allow Master Users and DH Technicians to create, view, update, and maintain DigitalHome user accounts through the web interface.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers user account creation and maintenance."
+                },
+                {
+                    "gen_id": 34,
+                    "gen_requirement": "The system shall require successful username-and-password authentication before granting access to any monitoring, control, planning, reporting, or configuration function.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers authentication before access."
+                },
+                {
+                    "gen_id": 36,
+                    "gen_requirement": "The system shall encrypt all authenticated web sessions and all transmitted credentials using TLS 1.2 or higher.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers encryption using TLS."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "User accounts, authentication, and TLS encryption are covered. The only minor omission is the timing phrase 'upon installation,' but account establishment capability is present."
+        },
+        {
+            "gt_id": 53,
+            "ground_truth_requirement": "Log in to an account shall require entry of an account name and a password.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall authenticate users through a web interface using a valid username and password before permitting access to DigitalHome monitoring, control, planning, reporting, or administration functions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Requires valid username and password for authentication."
+                },
+                {
+                    "gen_id": 34,
+                    "gen_requirement": "The system shall require successful username-and-password authentication before granting access to any monitoring, control, planning, reporting, or configuration function.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Requires username-and-password authentication before access."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements directly require username/account-name and password authentication for login/access."
+        },
+        {
+            "gt_id": 54,
+            "ground_truth_requirement": "The development of the DH system shall use methods and techniques such as documentation of requirements/design/code, abstraction/module independence, and IEEE standards to support system maintenance.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement addresses development methodology, documentation practices, abstraction/module independence, IEEE standards, or maintainability process constraints."
+        },
+        {
+            "gt_id": 55,
+            "ground_truth_requirement": "Documentation of requirements, design, and code.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement requires documentation of requirements, design, or code."
+        },
+        {
+            "gt_id": 56,
+            "ground_truth_requirement": "Use of abstraction, information hiding and module independence in system design.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies abstraction, information hiding, or module independence."
+        },
+        {
+            "gt_id": 57,
+            "ground_truth_requirement": "Use of IEEE standards [IEEE830, IEEE1008, IEEE1016, IEEE1028] and the HomeOwner Coding Standard [HO4710].",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement references IEEE830, IEEE1008, IEEE1016, IEEE1028, HO4710, or any equivalent standards compliance."
+        },
+        {
+            "gt_id": 58,
+            "ground_truth_requirement": "Although the product produced under this document will be a 'prototype' version, all modules and components of this prototype version shall be designed and implemented in such a manner that it may be incorporated in a fully specified commercial version of the DigitalHome System.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement addresses prototype modules/components being designed for later incorporation into a commercial DigitalHome system."
+        },
+        {
+            "gt_id": 59,
+            "ground_truth_requirement": "All system documents (Software Requirements Specification, Architectural Design Specification, Module Detailed Design, Module Source Code, and all Test Plans) shall be up-to-date, use the Homeowner document format [HO2305] and reside in the HomeOwner Document Archive at completion of the project.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers required system documents, currency, HO2305 format, or archiving in the HomeOwner Document Archive."
+        },
+        {
+            "gt_id": 60,
+            "ground_truth_requirement": "HomeOwner has designated object-oriented development, using UML 2.0, as the preferred method for development of software for HomeOwner products. Exceptions to this rule must be approved by the CIO.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies object-oriented development, UML 2.0, or CIO approval for exceptions."
+        },
+        {
+            "gt_id": 61,
+            "ground_truth_requirement": "The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home (FAQ, parameter/sensor explanation, DH Planner guide).",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement provides online user documentation, FAQ content, parameter/sensor explanations, or a planner guide."
+        },
+        {
+            "gt_id": 62,
+            "ground_truth_requirement": "An FAQ section – a set of 'Frequently Asked Questions' about use and maintenance of the DigitalHome System (e.g., 'How do I change my password?', 'Where to I go to get DigitalHome support?').",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement includes an FAQ section or equivalent user support documentation."
+        },
+        {
+            "gt_id": 63,
+            "ground_truth_requirement": "A section that explains how DH parameters are set and sensor values are read. This shall include information on limitations and constraints on parameter settings and sensor reading accuracy.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement requires documentation explaining parameter setting, sensor reading, constraints, or sensor accuracy."
+        },
+        {
+            "gt_id": 64,
+            "ground_truth_requirement": "A section that describes how to use the DH Planner.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement requires an online documentation section or guide for using the DH Planner."
+        }
+    ]
+}

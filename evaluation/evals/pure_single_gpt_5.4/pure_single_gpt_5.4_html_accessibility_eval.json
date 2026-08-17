@@ -1,0 +1,201 @@
+[
+    {
+        "filename": "admin_console.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\smart_home_gpt_5.4\\html\\admin_console.html",
+        "violations_count": 3,
+        "passes_count": 10,
+        "incomplete_count": 0,
+        "inapplicable_count": 77,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Admin Console</strong><span class=\"meta\">Populated</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .title\n\t\tSnippet: <div class=\"title\">System Operation</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .row:nth-child(2)\n\t\tSnippet: <div class=\"row\"><span>Operational State</span><span class=\"pill ok\">Running</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .row:nth-child(3)\n\t\tSnippet: <div class=\"row\"><span>Gateway Service</span><span class=\"pill ok\">Connected</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .section:nth-child(1) > .row:nth-child(4) > span\n\t\tSnippet: <span>Controls</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">User Accounts</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .row:nth-child(2) > span\n\t\tSnippet: <span>Jordan Smith (Master)</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .row:nth-child(3) > span\n\t\tSnippet: <span>Taylor Lee (General)</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .section:nth-child(2) > .row:nth-child(4) > span\n\t\tSnippet: <span>Add User</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(3) > .title\n\t\tSnippet: <div class=\"title\">Backup &amp; Defaults</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t11)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(3) > .row:nth-child(2)\n\t\tSnippet: <div class=\"row\"><span>Last Backup</span><span class=\"pill warn\">Today 09:20</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t12)\tTarget: .section:nth-child(3) > .row:nth-child(3) > span\n\t\tSnippet: <span>Run Backup</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t13)\tTarget: .section:nth-child(3) > .row:nth-child(4)\n\t\tSnippet: <div class=\"row\"><span>Default Temperature</span><span>22°C</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t14)\tTarget: .phone:nth-child(2)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t15)\tTarget: .phone:nth-child(3)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 15
+            }
+        ]
+    },
+    {
+        "filename": "dashboard.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\smart_home_gpt_5.4\\html\\dashboard.html",
+        "violations_count": 2,
+        "passes_count": 12,
+        "incomplete_count": 0,
+        "inapplicable_count": 76,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "environment_control.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\smart_home_gpt_5.4\\html\\environment_control.html",
+        "violations_count": 5,
+        "passes_count": 14,
+        "incomplete_count": 0,
+        "inapplicable_count": 73,
+        "report_summary": "Found 5 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .disabled.section:nth-child(1) > .title\n\t\tSnippet: <div class=\"title\">Thermostat</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.86 (foreground color: #7c8088, background color: #fcfcfd, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .disabled.section:nth-child(1) > .hint\n\t\tSnippet: <div class=\"hint\">No thermostat configured</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.09 (foreground color: #aeb1b9, background color: #fcfcfd, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .disabled.section:nth-child(1) > .row > .field > label\n\t\tSnippet: <label>Target Temperature</label>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.87 (foreground color: #91979f, background color: #fcfcfd, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .disabled.section:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">Humidistat</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.86 (foreground color: #7c8088, background color: #fcfcfd, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .disabled.section:nth-child(2) > .hint\n\t\tSnippet: <div class=\"hint\">No humidistat configured</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.09 (foreground color: #aeb1b9, background color: #fcfcfd, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: .disabled.section:nth-child(2) > .row > .field > label\n\t\tSnippet: <label>Target Humidity</label>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 2.87 (foreground color: #91979f, background color: #fcfcfd, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlabel - Ensure every form element has a label\n\tURL: https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: input[value=\"22\"]\n\t\tSnippet: <input value=\"22\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: input[value=\"50\"]\n\t\tSnippet: <input value=\"50\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t3)\tTarget: input[value=\"150\"]\n\t\tSnippet: <input value=\"150\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Environment Control</strong><span class=\"meta\">Populated</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .title\n\t\tSnippet: <div class=\"title\">Thermostat</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .metric\n\t\tSnippet: <div class=\"metric\">21°C</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .hint\n\t\tSnippet: <div class=\"hint\">Supported range: 14°F to 104°F equivalent device constraint</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1) > .row > .field\n\t\tSnippet: <div class=\"field\"><label>Target Temperature</label><input value=\"22\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">Humidistat</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .metric\n\t\tSnippet: <div class=\"metric\">48%</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .hint\n\t\tSnippet: <div class=\"hint\">Current target humidity: 50%</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .row > .field\n\t\tSnippet: <div class=\"field\"><label>Target Humidity</label><input value=\"50\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(2) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Environment Control</strong><span class=\"meta\">Empty State</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t11)\tTarget: .disabled.section:nth-child(1) > .title\n\t\tSnippet: <div class=\"title\">Thermostat</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t12)\tTarget: .disabled.section:nth-child(1) > .metric\n\t\tSnippet: <div class=\"metric\">--</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t13)\tTarget: .disabled.section:nth-child(1) > .hint\n\t\tSnippet: <div class=\"hint\">No thermostat configured</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t14)\tTarget: .disabled.section:nth-child(1) > .row > .field\n\t\tSnippet: <div class=\"field\"><label>Target Temperature</label><input placeholder=\"Unavailable\" disabled=\"\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t15)\tTarget: .disabled.section:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">Humidistat</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t16)\tTarget: .disabled.section:nth-child(2) > .metric\n\t\tSnippet: <div class=\"metric\">--</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t17)\tTarget: .disabled.section:nth-child(2) > .hint\n\t\tSnippet: <div class=\"hint\">No humidistat configured</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t18)\tTarget: .disabled.section:nth-child(2) > .row > .field\n\t\tSnippet: <div class=\"field\"><label>Target Humidity</label><input placeholder=\"Unavailable\" disabled=\"\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t19)\tTarget: .phone:nth-child(3) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Environment Control</strong><span class=\"meta\">Error State</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t20)\tTarget: .error\n\t\tSnippet: <div class=\"alert error\">The requested temperature set point is outside the supported device range and was not applied.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t21)\tTarget: .phone:nth-child(3) > .screen > .content > .section:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">Thermostat</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t22)\tTarget: .phone:nth-child(3) > .screen > .content > .section:nth-child(2) > .metric\n\t\tSnippet: <div class=\"metric\">21°C</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t23)\tTarget: .phone:nth-child(3) > .screen > .content > .section:nth-child(2) > .row > .field\n\t\tSnippet: <div class=\"field\"><label>Target Temperature</label><input value=\"150\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t24)\tTarget: .section:nth-child(3) > .title\n\t\tSnippet: <div class=\"title\">Humidistat</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t25)\tTarget: .info\n\t\tSnippet: <div class=\"alert info\">Humidity controls are temporarily unavailable because the simulated device is offline.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t26)\tTarget: .section:nth-child(3) > .row > .field\n\t\tSnippet: <div class=\"field\"><label>Target Humidity</label><input placeholder=\"Device offline\" disabled=\"\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 6
+            },
+            {
+                "id": "label",
+                "impact": "critical",
+                "description": "Ensure every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI",
+                "nodes_count": 3
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 26
+            }
+        ]
+    },
+    {
+        "filename": "login.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\smart_home_gpt_5.4\\html\\login.html",
+        "violations_count": 4,
+        "passes_count": 14,
+        "incomplete_count": 0,
+        "inapplicable_count": 73,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\nlabel - Ensure every form element has a label\n\tURL: https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI\n\tImpact Level: critical\n\tTags: ['cat.forms', 'wcag2a', 'wcag412', 'section508', 'section508.22.n', 'TTv5', 'TT5.c', 'EN-301-549', 'EN-9.4.1.2', 'ACT', 'RGAAv4', 'RGAA-11.1.1']\n\tElements Affected:\n\n\n\t1)\tTarget: input[value=\"j.smith\"]\n\t\tSnippet: <input value=\"j.smith\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t2)\tTarget: input[value=\"password\"]\n\t\tSnippet: <input type=\"password\" value=\"password\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t3)\tTarget: input[value=\"guest01\"]\n\t\tSnippet: <input value=\"guest01\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\n\n\t4)\tTarget: input[value=\"wrongpass\"]\n\t\tSnippet: <input type=\"password\" value=\"wrongpass\">\n\t\tMessages:\n\t\t* Element does not have an implicit (wrapped) <label>\n\t\t* Element does not have an explicit <label>\n\t\t* aria-label attribute does not exist or is empty\n\t\t* aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n\t\t* Element has no title attribute\n\t\t* Element has no placeholder attribute\n\t\t* Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Login</strong><span class=\"meta\">Populated</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: .phone:nth-child(1) > .screen > .content > .brand\n\t\tSnippet: <div class=\"brand\">DigitalHome</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .content > .sub\n\t\tSnippet: <div class=\"sub\">Access your smart house dashboard</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .ok\n\t\tSnippet: <div class=\"alert ok\">Role-aware access enabled: General User, Master User, Technician</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .phone:nth-child(1) > .screen > .content > .card > .field:nth-child(2)\n\t\tSnippet: <div class=\"field\"><label>Username</label><input value=\"j.smith\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .phone:nth-child(1) > .screen > .content > .card > .field:nth-child(3)\n\t\tSnippet: <div class=\"field\"><label>Password</label><input type=\"password\" value=\"password\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(1) > .screen > .content > .card > .muted\n\t\tSnippet: <div class=\"muted\">Use your assigned credentials to continue.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .phone:nth-child(2) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Login</strong><span class=\"meta\">Error State</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .phone:nth-child(2) > .screen > .content > .brand\n\t\tSnippet: <div class=\"brand\">DigitalHome</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(2) > .screen > .content > .sub\n\t\tSnippet: <div class=\"sub\">Authentication required</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t11)\tTarget: .error\n\t\tSnippet: <div class=\"alert error\">The username or password you entered is incorrect.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t12)\tTarget: .phone:nth-child(2) > .screen > .content > .card > .field:nth-child(2)\n\t\tSnippet: <div class=\"field\"><label>Username</label><input value=\"guest01\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t13)\tTarget: .phone:nth-child(2) > .screen > .content > .card > .field:nth-child(3)\n\t\tSnippet: <div class=\"field\"><label>Password</label><input type=\"password\" value=\"wrongpass\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t14)\tTarget: .phone:nth-child(2) > .screen > .content > .card > .muted\n\t\tSnippet: <div class=\"muted\">If this continues, contact the Master User or DH Technician.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t15)\tTarget: .phone:nth-child(3) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Login</strong><span class=\"meta\">Offline State</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t16)\tTarget: .phone:nth-child(3) > .screen > .content > .brand\n\t\tSnippet: <div class=\"brand\">DigitalHome</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t17)\tTarget: .phone:nth-child(3) > .screen > .content > .sub\n\t\tSnippet: <div class=\"sub\">Service unavailable</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t18)\tTarget: .warn\n\t\tSnippet: <div class=\"alert warn\">The home server is currently unavailable. Login is temporarily disabled.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t19)\tTarget: .phone:nth-child(3) > .screen > .content > .card > .field:nth-child(2)\n\t\tSnippet: <div class=\"field\"><label>Username</label><input placeholder=\"Unavailable\" disabled=\"\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t20)\tTarget: .phone:nth-child(3) > .screen > .content > .card > .field:nth-child(3)\n\t\tSnippet: <div class=\"field\"><label>Password</label><input placeholder=\"Unavailable\" disabled=\"\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t21)\tTarget: .phone:nth-child(3) > .screen > .content > .card > .muted\n\t\tSnippet: <div class=\"muted\">Check the local server or gateway connection and try again.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "label",
+                "impact": "critical",
+                "description": "Ensure every form element has a label",
+                "help": "Form elements must have labels",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/label?application=axeAPI",
+                "nodes_count": 4
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 21
+            }
+        ]
+    },
+    {
+        "filename": "security_power.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\smart_home_gpt_5.4\\html\\security_power.html",
+        "violations_count": 4,
+        "passes_count": 11,
+        "incomplete_count": 0,
+        "inapplicable_count": 76,
+        "report_summary": "Found 4 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .row:nth-child(3) > button\n\t\tSnippet: <button class=\"toggle\" style=\"background:#16a34a\">Turn On</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.29 (foreground color: #ffffff, background color: #16a34a, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Security &amp; Power</strong><span class=\"meta\">Populated</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(1)\n\t\tSnippet: <div class=\"section\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">Power Switches</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .row:nth-child(2) > span\n\t\tSnippet: <span>Living Room Lamp</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .row:nth-child(3) > span\n\t\tSnippet: <span>Coffee Maker</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .phone:nth-child(1) > .screen > .content > .section:nth-child(2) > .row:nth-child(4) > span\n\t\tSnippet: <span>Hall Light</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(2)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .phone:nth-child(3)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 8
+            }
+        ]
+    }
+]

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHome - Climate Controls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}html,body{max-width:100%;overflow-x:hidden}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#111827;word-break:break-word;overflow-wrap:anywhere}.wrap{padding:24px;width:100%;overflow-x:hidden}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;max-width:1360px;margin:0 auto;width:100%}.phone{background:#9ca3af;padding:10px;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}.screen{background:#f9fafb;border-radius:20px;min-height:780px;overflow:hidden}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#0f172a;color:#fff}.meta{font-size:12px;color:#cbd5e1}.content{padding:22px}.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:18px;margin-bottom:14px;width:100%}.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.metric{font-size:30px;font-weight:800;margin-top:6px}.label{font-size:12px;color:#6b7280}.input{width:100%;max-width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:12px;font:inherit;margin-top:8px}.btn{padding:12px 14px;border:none;border-radius:12px;background:#2563eb;color:#fff;font-weight:700;max-width:100%}.note{padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:14px}.ok{background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8}.warn{background:#fff7ed;border:1px solid #fdba74;color:#9a3412}.err{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c}.pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#dcfce7;color:#166534;font-size:11px;font-weight:700;max-width:100%}.muted{font-size:13px;color:#6b7280}
+@media(max-width:720px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="wrap"><div class="grid">
+<div class="phone"><div class="screen"><div class="top"><strong>Climate Controls</strong><span class="meta">Populated State</span></div><div class="content">
+<div class="note ok">Climate sensors connected. The system can regulate toward submitted thermostat and humidistat set points.</div>
+<div class="row">
+  <div class="card"><div class="label">Current Temperature</div><div class="metric">68°F</div><div class="muted">Supported range: 14°F to 104°F</div><div style="margin-top:12px"><span class="pill">Heating On</span></div></div>
+  <div class="card"><div class="label">Current Humidity</div><div class="metric">42%</div><div class="muted">Humidifier output available</div><div style="margin-top:12px"><span class="pill">Regulating</span></div></div>
+</div>
+<div class="card"><strong>Update Thermostat</strong><input class="input" value="70°F target set point" /><button class="btn" style="margin-top:12px">Save thermostat set point</button></div>
+<div class="card"><strong>Update Humidistat</strong><input class="input" value="45% target humidity" /><button class="btn" style="margin-top:12px">Save humidity set point</button></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Climate Controls</strong><span class="meta">Empty / Unconfigured State</span></div><div class="content">
+<div class="note warn">No climate devices are currently configured in this simulated home.</div>
+<div class="row">
+  <div class="card"><div class="label">Thermostat</div><div class="metric">--</div><div class="muted">Pair a thermostat to begin monitoring and control.</div></div>
+  <div class="card"><div class="label">Humidistat</div><div class="metric">--</div><div class="muted">Pair a humidistat to begin monitoring and control.</div></div>
+</div>
+<div class="card"><strong>Guided setup</strong><p class="muted">After connecting simulated climate controllers, this page will show current readings, target set points, and active outputs.</p><button class="btn">Add simulated device</button></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Climate Controls</strong><span class="meta">Error / Degraded State</span></div><div class="content">
+<div class="note err">Thermostat reading rejected: simulated value 110°F is outside the supported sensing range. Humidity set point saved, but the dehumidifier output is unavailable.</div>
+<div class="row">
+  <div class="card"><div class="label">Current Temperature</div><div class="metric">Invalid</div><div class="muted">Out-of-range reading is excluded from normal regulation.</div></div>
+  <div class="card"><div class="label">Current Humidity</div><div class="metric">61%</div><div class="muted">Requested target: 45% · Active control unavailable</div></div>
+</div>
+<div class="card"><strong>Thermostat Status</strong><p class="muted">User must wait for a valid simulated sensor reading before normal control resumes.</p></div>
+<div class="card"><strong>Humidistat Status</strong><p class="muted">Set point retained successfully, but the page indicates regulation cannot complete until the output becomes available.</p></div>
+</div></div></div>
+</div></div></body></html>

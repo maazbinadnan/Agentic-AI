@@ -1,0 +1,121 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a DigitalHome user, I want to log in to the system and see only the functions allowed for my role so that I can use the system securely and appropriately.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "The story delivers clear user and security value and has objective login success/failure acceptance criteria. It is mostly independent, though role-based interface behavior depends on defined roles/permissions and available functions elsewhere in the system. It remains negotiable because it does not prescribe authentication technology or UI implementation. Estimability is good but would improve with explicit role definitions, session behavior, and authorization rules. Size is moderate because it combines authentication and role-based access/display, which may be separable. Testability is strong for credential validation but only partially specific for 'appropriate role-based interface' without enumerated expected permissions."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a General User, I want to see the current status of my home devices and connectivity in one dashboard so that I can quickly understand the condition of the home.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.7,
+                "testable": 0.85
+            },
+            "reasoning": "The story provides clear end-user value by consolidating device and connectivity status. It is mostly independent as a read-only dashboard capability, but depends on configured simulated devices, gateway status sources, and availability semantics. It is negotiable and avoids prescribing implementation details. Estimability is good because displayed data categories are listed, though exact status formats, refresh behavior, and stale-data thresholds are not specified. Size is somewhat broad because it spans multiple device domains: temperature, humidity, security, power, and connectivity. Acceptance criteria are largely objective and include unavailable-device behavior, but 'current' and stale-status determination need more precise timing rules for full testability."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a General User, I want to adjust thermostat set points from the web interface so that I can maintain a comfortable temperature in the home.",
+            "scores": {
+                "independent": 0.85,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.85
+            },
+            "reasoning": "This is a focused capability with clear user value and a bounded thermostat-control workflow. It is largely independent assuming authentication and a configured thermostat exist. The story is negotiable because it specifies the goal and observable behavior without mandating implementation. Estimability is good, but the supported temperature range, units, precision, and behavior when the thermostat becomes unreachable during update should be clarified. It is appropriately small and centered on one device-control function. Acceptance criteria are objective for valid and invalid values, but testability would improve by specifying exact valid ranges and validation message expectations."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a General User, I want to adjust humidity set points from the web interface so that I can maintain comfortable humidity levels in the home.",
+            "scores": {
+                "independent": 0.85,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.85
+            },
+            "reasoning": "The story is focused on a single humidity-control capability and expresses clear user value. It is mostly independent except for the assumed existence/configuration of a humidistat and authentication context. It remains negotiable by avoiding technical design constraints. Estimability is good, but valid humidity range, units/percentage precision, persistence rules, and validation for out-of-range values are not fully defined. It is small enough for a sprint because it covers one type of set-point control. Acceptance criteria are objective for reachable and unavailable/not configured states, but testability would improve with explicit supported range and exact expected unavailable-state behavior."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As a General User, I want to see security sensor status and alarm state so that I can detect a possible breach in the home.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "The story has strong safety/security value and a concise scope around viewing security sensor and alarm status. It is mostly independent as a monitoring/display feature, though it depends on configured magnetic contacts and alarm-state derivation. It is negotiable because it does not prescribe UI or sensor implementation. Estimability is good with clear breach and normal-state scenarios, but would benefit from definitions of monitored entries, alarm activation rules, and handling of unavailable sensors. The story is small and focused. Acceptance criteria are objective and suitable for deterministic tests, with minor remaining ambiguity around the exact mapping from contact states to breach/alarm state."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a General User, I want to turn appliances or lighting units on or off remotely so that I can manage convenience, safety, and energy use.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.85
+            },
+            "reasoning": "The story provides clear user and business value for remote device control. It is mostly independent but depends on configured reachable power switches, device communication, and likely authentication/authorization. It is negotiable and avoids specifying protocol or UI design. Estimability is reasonable, although scope across both appliances and lighting may imply multiple device types and edge cases, and the confirmation model for command success is not fully specified. Size is acceptable but could be split by device category if implementations differ. Acceptance criteria are testable for successful and unavailable states, but should clarify whether displayed state reflects command acknowledgement, actual device telemetry, or an optimistic update."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a Master User, I want to manage user accounts and default settings so that the household system remains correctly configured.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.55,
+                "small": 0.45,
+                "testable": 0.65
+            },
+            "reasoning": "The story has clear administrative value but combines at least two broad capabilities: user account management and default settings management. It is only partially independent because it depends on role-based authentication/authorization and may affect other system functions through default settings. Negotiability is acceptable, though 'manage' is broad and under-specified. Estimability is limited because account operations, default setting types, validation rules, edit/delete/reset behavior, and audit/security requirements are not defined. It is too large compared with a focused user story and should likely be split into create/manage accounts and manage defaults. Acceptance criteria are partially objective for account creation and unauthorized access, but they cover only a small subset of the stated management scope, making comprehensive QA coverage incomplete."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a DH Technician, I want to start, stop, and maintain the configured DigitalHome system so that I can support setup, maintenance, and troubleshooting.",
+            "scores": {
+                "independent": 0.65,
+                "negotiable": 0.75,
+                "valuable": 0.9,
+                "estimable": 0.6,
+                "small": 0.45,
+                "testable": 0.7
+            },
+            "reasoning": "The story expresses clear operational support value, but it bundles start, stop, and maintain activities, making the scope broad. Independence is partial because starting/stopping the system likely affects or depends on many normal control features and system state management. It remains somewhat negotiable, but 'maintain' is vague and could encompass many workflows. Estimability is limited because only start and stop are covered by acceptance criteria; maintenance and troubleshooting behavior are undefined. Size is low because this is closer to an operational epic than a single focused story. Testability is moderate for start and stop state transitions, but weak for 'maintain' and for details such as allowed states, error handling, permissions, and what 'prevents normal control actions' specifically means."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a Master User or DH Technician, I want system data to be stored and backed up so that configuration and operational information can be retained for continued use and recovery.",
+            "scores": {
+                "independent": 0.55,
+                "negotiable": 0.75,
+                "valuable": 1.0,
+                "estimable": 0.55,
+                "small": 0.4,
+                "testable": 0.65
+            },
+            "reasoning": "The story provides strong business value for retention and recovery, but it combines persistent storage, backup, and recovery-related concerns into a broad data-management capability. Independence is limited because it depends on the data model, user accounts, plans, operational data, administrative authorization, and backup infrastructure. It is reasonably negotiable but contains vague scope around 'stored and backed up' and 'continued use and recovery'. Estimability is weak because backup frequency, destination, retention, data sets, encryption/security, restore behavior, and failure modes are unspecified. It is not small and should be split into persistence, manual backup, scheduled backup, and restore/recovery stories. Testability is moderate for success/failure backup initiation, but acceptance criteria are not fully deterministic because 'backup support has completed' and 'preserves user accounts, plans, and home operational data' need verifiable artifacts and restore validation."
+        }
+    ]
+}

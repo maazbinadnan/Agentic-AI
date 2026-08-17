@@ -1,0 +1,277 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As an authenticated user, I want to sign in with my username and password so that I can securely access DigitalHome functions.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Clear authentication capability with direct security/access value and objective success/failure acceptance criteria. Slight dependency on existing account data and role permission definitions. The actor wording is slightly imprecise because a user signing in is typically unauthenticated at the start, but scope remains estimable and small."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a DigitalHome user, I want the system to enforce my role permissions so that I can access only the functions appropriate to my responsibilities.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Provides strong business/security value and mostly objective authorization scenarios. It depends on authentication, role definitions, and availability of protected functions. Scope is somewhat broad because permissions span multiple functional areas, and a complete role-permission matrix is not specified."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As an authenticated user, I want to log out of the web interface so that my access to protected DigitalHome functions is terminated.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 1.0,
+                "valuable": 1.0,
+                "estimable": 1.0,
+                "small": 1.0,
+                "testable": 1.0
+            },
+            "reasoning": "Focused single session-termination capability with clear user/security value and deterministic acceptance criteria for logout and post-logout protected access. Minor dependency on authentication/session infrastructure, but otherwise highly INVEST-compliant."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As an authenticated user, I want the home web server to store my plans, data, accounts, and backups so that DigitalHome information is available for ongoing use and recovery.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.5,
+                "valuable": 0.8,
+                "estimable": 0.4,
+                "small": 0.2,
+                "testable": 0.5
+            },
+            "reasoning": "The story combines several persistence domains: plans, operational data, accounts, database records, and backups. It prescribes a storage location and mixes data storage with backup behavior, making it broad and partially implementation-oriented. Acceptance criteria are directionally testable but lack specific data models, backup triggers, retention expectations, and verification rules."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As a DigitalHome user, I want the system to communicate with home devices through the gateway so that web-based monitoring and control can reach sensors and controllers in the home.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.7,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "The value is clear because gateway communication enables monitoring and control. However, the story depends on simulated devices, gateway availability, RF/link behavior, and remote connectivity assumptions. Acceptance criteria are somewhat objective but do not define supported protocols, message types, latency, retry/failure behavior, or what qualifies as successful exchange."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a General User, I want to view the current status of my home environment and device states so that I can understand current conditions in my home.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.6,
+                "testable": 0.9
+            },
+            "reasoning": "Clear user value and good objective display criteria, including unavailable data handling. It depends on authentication and upstream device/status data. It is slightly broad because it aggregates temperature, humidity, contacts, alarms, appliances, and lighting into one monitoring page capability."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a General User, I want to monitor temperature and set a thermostat target so that the system can regulate home temperature toward my preferred level.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Valuable and cohesive around thermostat control, with useful range validation. It combines viewing, set-point persistence, and heating/cooling regulation, so it is moderately sized. Some estimation and testing ambiguity remains around the regulation algorithm, output switching rules, units conversion, and behavior at boundaries."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a General User, I want to monitor humidity and set a humidistat target so that the system can regulate home humidity toward my preferred level.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "Cohesive humidity monitoring/control story with clear user value and an unavailable-output scenario. It depends on authenticated access and simulated humidistat/control devices. Acceptance criteria are mostly testable but lack valid set-point range, control thresholds, and detailed regulation behavior."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a General User, I want to monitor and change appliance or lighting power states so that I can manage energy use and household convenience.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Focused device power-state capability with direct value and objective success/failure criteria. It has manageable dependencies on authentication, reachable switches, and device communication. Scope is small and estimable, with only minor ambiguity around supported device inventory and command confirmation timing."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a General User, I want to see whether doors and windows are in a normal or breach state so that I can monitor entry security in my home.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Clear security-monitoring value, focused on contact sensor state display. Acceptance criteria are objective for active and inactive sensors. Minor dependencies exist on sensor configuration and state ingestion, but the story remains small and readily estimable."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a General User, I want security alarms to activate when a breach is detected so that I am informed of a possible security issue.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.8,
+                "testable": 0.9
+            },
+            "reasoning": "Strong user value and testable breach/no-breach outcomes. It depends on contact sensor monitoring and configured sound/light alarm capabilities. Scope is slightly broader than pure detection because it includes alarm activation and web-interface alarm-state display, and details of alarm configuration are not fully specified."
+        },
+        {
+            "us_id": "US-012",
+            "user_story": "As a General User, I want to create and maintain monthly plans for supported devices so that my home behavior can be scheduled over time.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.6,
+                "small": 0.5,
+                "testable": 0.6
+            },
+            "reasoning": "The user value is clear, but the story is broad because it includes create, update, maintain, storage, later execution readiness, and viewing monthly plans. It depends on authentication, supported device definitions, and persistence. Acceptance criteria do not define plan structure, validation rules, calendar semantics, conflict handling, or supported actions, reducing estimability and testability."
+        },
+        {
+            "us_id": "US-013",
+            "user_story": "As a General User, I want to create and maintain daily presets for supported devices so that recurring daily settings can be applied automatically.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.7,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "Clear recurring-settings value and mostly flexible user-intent framing. It depends on supported schedulable devices, authentication, and storage. Scope is somewhat broad because create/update/view and future execution readiness are included, while preset schema, validation, recurrence behavior, and conflict rules are not fully specified."
+        },
+        {
+            "us_id": "US-014",
+            "user_story": "As a General User, I want the system to execute saved plans and presets automatically so that scheduled home settings take effect at the planned times.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.6,
+                "testable": 0.8
+            },
+            "reasoning": "High value and measurable scheduled-execution outcomes, including unavailable-device handling. It is dependent on prior plan/preset creation, scheduler/time services, device control, and persistence. The story covers multiple device types and both monthly plans and daily presets, making it moderately broad; timing precision, conflict resolution, and retry/error behavior are unspecified."
+        },
+        {
+            "us_id": "US-015",
+            "user_story": "As a General User, I want to review historical reports of home operations so that I can understand trends, extremes, and downtime events.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Clear analytical user value with objective expected report outputs such as averages, minimums, maximums, and downtime logs. It depends on historical data capture and reportable device data existing. Estimation is reduced by undefined report scope, date ranges, aggregation rules, downtime definitions, and formatting expectations."
+        },
+        {
+            "us_id": "US-016",
+            "user_story": "As a Master User or DH Technician, I want to manage DigitalHome user accounts so that authorized household users can access the system appropriately.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Strong administrative value with testable authorized and unauthorized scenarios. It depends on role-based access and account storage. Scope includes create and update account management but omits required fields, validation rules, password/security handling, role assignment constraints, and audit behavior, which limits estimability."
+        },
+        {
+            "us_id": "US-017",
+            "user_story": "As a Master User or DH Technician, I want to configure system default parameters so that DigitalHome behavior can be adjusted for household needs.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.8,
+                "estimable": 0.5,
+                "small": 0.5,
+                "testable": 0.6
+            },
+            "reasoning": "The administrative value is understandable, and authorization criteria are clear. However, 'system default parameters' is undefined, making scope, validation, side effects, and testing incomplete. The story is potentially broad because it may cover many unrelated configuration parameters."
+        },
+        {
+            "us_id": "US-018",
+            "user_story": "As a Master User or DH Technician, I want to start or stop DigitalHome system operation so that I can control availability during maintenance or administrative activities.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "Focused administrative operation with clear maintenance value and authorized/unauthorized scenarios. It has some dependency on role-based access and system lifecycle management. Acceptance criteria are testable at a high level but do not define exact operational states, what services are affected, safe shutdown behavior, or user-facing status confirmation."
+        },
+        {
+            "us_id": "US-019",
+            "user_story": "As an authorized user, I want the system to back up account, plan, and home database information so that DigitalHome data can be preserved for later recovery.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.8,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Clear preservation/recovery value and reasonable backup success/missing-source criteria. It depends on account, plan, and home database persistence. Some implementation is implied by backup behavior, and acceptance criteria omit backup format, storage location, schedule/trigger, retention, integrity verification, and restore validation."
+        },
+        {
+            "us_id": "US-020",
+            "user_story": "As a DigitalHome user, I want all supported functions to operate against realistic simulated home devices and conditions so that the prototype can be used without physical hardware.",
+            "scores": {
+                "independent": 0.3,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.3,
+                "small": 0.1,
+                "testable": 0.4
+            },
+            "reasoning": "The prototype value is clear, but this is a cross-cutting epic rather than a small user story. It spans monitoring, control, planning, reporting, account management, backup, sensors, controllers, and simulated conditions. Acceptance criteria are broad and do not define what 'realistic' means, which devices are simulated, scenario coverage, data ranges, failure modes, or deterministic pass/fail checks."
+        },
+        {
+            "us_id": "US-021",
+            "user_story": "As a DigitalHome user, I want remote access to depend on broadband Internet availability so that I can understand when remote communication is possible.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 0.8,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.8
+            },
+            "reasoning": "The story captures a clear operational constraint around remote access and broadband availability. It depends on remote-access infrastructure, authentication, home web server, and gateway connectivity. Acceptance criteria are mostly objective but phrase the value as user understanding rather than a direct capability, and the unavailable-broadband behavior could be more explicit about error messaging and local-access impact."
+        }
+    ]
+}

@@ -1,0 +1,147 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a general user, I want to access DigitalHome through a web interface so that I can monitor and control my home remotely.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.9
+            },
+            "reasoning": "Overall INVEST mean: 0.8667. The story expresses clear user value and has objective login/logout acceptance criteria. It is mostly independent, although it assumes registration, role definitions, and authentication infrastructure exist. Scope is moderately small but combines access, login, role-based page availability, and logout. Estimation is feasible, though 'available DigitalHome pages for that user role' requires a defined role/page matrix."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a general user, I want to monitor and control supported home devices so that I can manage the environment in my home.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.5,
+                "small": 0.2,
+                "testable": 0.6
+            },
+            "reasoning": "Overall INVEST mean: 0.5833. The value is clear and the story remains user-goal oriented, but it is too broad: temperature, humidity, security, appliances, and lighting represent multiple functional areas. It depends heavily on device-specific monitoring/control capabilities and role enforcement. Acceptance criteria are partly objective, but 'within the prototype scope' and the unspecified list of available functions make estimation and deterministic testing difficult."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a master user or DH technician, I want to manage user accounts and configuration settings so that the system is correctly configured for home operation.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.8,
+                "valuable": 0.9,
+                "estimable": 0.6,
+                "small": 0.5,
+                "testable": 0.7
+            },
+            "reasoning": "Overall INVEST mean: 0.7000. The story provides clear operational/business value and reasonable role context. However, it combines user account administration with default parameter configuration, which may be two stories. Estimability is reduced because account attributes, configurable parameters, validation rules, and authorization matrix are not specified. Acceptance criteria are testable at a high level but require more concrete field-level and permission rules."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a master user or DH technician, I want to start or stop the DigitalHome system so that I can control system operation during setup, maintenance, or administration.",
+            "scores": {
+                "independent": 0.9,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Overall INVEST mean: 0.9083. This is a focused operational capability with clear value and objective start/stop scenarios. It is largely independent except for dependency on authentication/authorization and a defined system state model. The scope is small and testable, though estimation and QA would benefit from explicit definitions of 'operational state,' 'stopped state,' failure handling, and whether start/stop affects connected devices."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As an administrator, I want the home web server to host DigitalHome services so that users and administrators can interact with devices, data, accounts, and backups.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.5,
+                "valuable": 0.8,
+                "estimable": 0.4,
+                "small": 0.2,
+                "testable": 0.5
+            },
+            "reasoning": "Overall INVEST mean: 0.4667. The story has business value but is broad and infrastructure-heavy. It combines hosting services, device interaction, data storage, account data, user plans, home database records, and backup functionality, making it closer to an epic or architectural capability. It prescribes a home web server implementation and depends on many other domain models and services. Acceptance criteria are partially testable, but persistence targets, backup contents, backup format, restore expectations, retention, and authorization rules are undefined."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a system operator, I want the server to communicate with home devices through the gateway so that commands and status data can move between the user interface and device layer.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.6,
+                "valuable": 0.8,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.8
+            },
+            "reasoning": "Overall INVEST mean: 0.7000. The story delivers clear integration value and is cohesive around gateway communication. Independence is moderate because it depends on gateway connectivity, simulated devices, supported command definitions, and server/device protocols. Negotiability is reduced by implementation-specific wording such as broadband, gateway, wireless transmission, and RF module. Acceptance criteria are objective, but estimability would improve with explicit command types, status payloads, timeout/error behavior, and protocol boundaries."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a general user, I want to view current temperature and set a desired temperature so that heating or cooling can regulate my home to the target value.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "Overall INVEST mean: 0.7667. The user value is strong and the story is written from a user goal perspective. It is moderately independent but relies on thermostat availability, authorization, and heating/cooling device integration. Scope includes viewing readings, setting a target, persisting the set point, and control behavior, so it borders on multiple stories. Testability is acceptable, but the supported range, control algorithm, hysteresis/tolerance, invalid input behavior, and device failure handling are not specified."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a general user, I want to view current humidity and set a desired humidity so that humidification equipment can regulate my home to the target value.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.65,
+                "small": 0.6,
+                "testable": 0.7
+            },
+            "reasoning": "Overall INVEST mean: 0.7583. The story has clear user value and remains negotiable at the intent level. It is moderately independent but depends on humidistat data, authorization, humidifier/dehumidifier integration, and control rules. It combines viewing, setting, persistence, and regulation behavior. Acceptance criteria are testable at a high level, but estimation is weakened by the missing supported humidity range, validation rules, control thresholds, target tolerance, and equipment behavior under edge cases."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a general user, I want the system to monitor doors and windows and trigger alarms on breaches so that I can be alerted to possible intrusions.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.75
+            },
+            "reasoning": "Overall INVEST mean: 0.7917. The story has clear safety/security value and is cohesive around intrusion detection and alarm activation. Independence is moderate because it depends on configured sensors, alarm devices, and alarm rule definitions. Scope is manageable but includes both breach detection and sound/light alarm activation. Acceptance criteria are objective enough for core tests, but 'alarm activation rules,' configured alarms, active contact state semantics, debounce/false positives, and notification behavior are not fully defined."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a general user, I want to view and change the power state of appliances and lighting so that I can manage energy use and household convenience.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.85,
+                "testable": 0.9
+            },
+            "reasoning": "Overall INVEST mean: 0.8833. The story is valuable, focused, and mostly independent aside from dependency on connected programmable switches and authorization. It is negotiable and describes user intent rather than implementation. The acceptance criteria support deterministic tests for viewing and toggling power state. Minor estimation gaps remain around supported device types, command failure handling, latency, state synchronization, and authorization rules."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a system owner, I want user capabilities to be restricted by role so that only authorized users can perform configuration and operational administration actions.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.8,
+                "valuable": 0.95,
+                "estimable": 0.5,
+                "small": 0.4,
+                "testable": 0.6
+            },
+            "reasoning": "Overall INVEST mean: 0.6250. The story has strong security/business value and is stated as a goal, but role-based access is cross-cutting and overlaps many other stories. Independence is limited because the protected actions and role privilege matrix must be defined elsewhere. The scope may be too broad if it covers all configuration and operational administration actions across the system. Acceptance criteria are directionally testable, but 'permitted action,' 'privileged action,' and 'according to the role’s privileges' require an explicit authorization matrix for reliable estimation and QA."
+        }
+    ]
+}

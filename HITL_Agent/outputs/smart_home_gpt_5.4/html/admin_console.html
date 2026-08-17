@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHome - Admin Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}html,body{max-width:100%;overflow-x:hidden}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#111827;word-break:break-word;overflow-wrap:anywhere}.wrap{padding:24px;width:100%;overflow-x:hidden}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;max-width:1400px;margin:0 auto;width:100%}.phone{background:#6b7280;padding:10px;border-radius:28px;overflow:hidden}.screen{background:#f9fafb;border-radius:20px;min-height:860px;overflow:hidden}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#0f172a;color:#fff}.meta{font-size:12px;color:#cbd5e1}.content{padding:20px}.banner{padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:14px}.ok{background:#ecfdf5;border:1px solid #86efac;color:#166534}.warn{background:#fff7ed;border:1px solid #fdba74;color:#9a3412}.err{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c}.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:16px;margin-bottom:14px;width:100%;overflow:hidden}.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.input{width:100%;max-width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:12px;margin-top:8px;font:inherit}.btn{padding:10px 12px;border:none;border-radius:10px;background:#2563eb;color:#fff;font-weight:700;max-width:100%}.btn.red{background:#dc2626}.muted{font-size:13px;color:#6b7280}.table-wrap{width:100%;overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:13px;min-width:0}.table th,.table td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}
+@media(max-width:720px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="wrap"><div class="grid">
+<div class="phone"><div class="screen"><div class="top"><strong>Administration Console</strong><span class="meta">Authorized Populated State</span></div><div class="content">
+<div class="banner ok">Master User authenticated. Administrative functions are enabled.</div>
+<div class="row">
+  <div class="card"><strong>User Accounts</strong><div class="table-wrap"><table class="table"><tr><th>User</th><th>Role</th></tr><tr><td>amanda.owner</td><td>Master User</td></tr><tr><td>leo.resident</td><td>General User</td></tr><tr><td>tech.morris</td><td>DH Technician</td></tr></table></div><button class="btn" style="margin-top:10px">Add user account</button></div>
+  <div class="card"><strong>System Defaults</strong><label class="muted">Default thermostat</label><input class="input" value="70°F" /><label class="muted">Default humidity</label><input class="input" value="45%" /><button class="btn" style="margin-top:10px">Save parameters</button></div>
+</div>
+<div class="card"><strong>System Operation</strong><p class="muted">Start or stop DigitalHome during maintenance.</p><button class="btn">Start system</button> <button class="btn red">Stop system</button></div>
+<div class="card"><strong>Backup</strong><p class="muted">Preserve account records, user plans, and home database data for recovery.</p><button class="btn">Run backup now</button></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Administration Console</strong><span class="meta">Empty / No Backup Data State</span></div><div class="content">
+<div class="banner warn">No additional household accounts exist yet, and some backup source categories are currently absent.</div>
+<div class="card"><strong>User Accounts</strong><p class="muted">Create the first additional user account to share access appropriately.</p><button class="btn">Create user</button></div>
+<div class="card"><strong>Backup Preview</strong><p class="muted">Backup will include available data only and will not invent missing records for empty categories.</p></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Administration Console</strong><span class="meta">Restricted State</span></div><div class="content">
+<div class="banner err">Access denied. General Users cannot manage accounts, change default parameters, or start/stop system operation.</div>
+<div class="card"><strong>Blocked Action</strong><p class="muted">Attempted action: modify user account role.</p><button class="btn" disabled style="opacity:.45">Save changes</button></div>
+<div class="card"><strong>Permission Guidance</strong><p class="muted">Administrative views are available only to Master Users and DH Technicians.</p></div>
+</div></div></div>
+</div></div></body></html>

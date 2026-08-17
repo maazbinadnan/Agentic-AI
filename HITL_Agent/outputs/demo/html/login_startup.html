@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Login & Startup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#ffffff;--card:#f8fafc;--muted:#64748b;--text:#0f172a;--line:#dbe3ef;--brand:#39d98a;--brand2:#3b82f6;--warn:#ffcc66;--danger:#ff6b6b;--soft:#eef4fb}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,sans-serif;background:#ffffff;color:var(--text)}
+    .wrap{padding:24px} .intro{max-width:1100px;margin:0 auto 18px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1300px;margin:0 auto}
+    .phone{background:#ffffff;border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:0 20px 50px rgba(15,23,42,.08)}
+    .screen{min-height:760px;background:#ffffff;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#f8fafc;border-bottom:1px solid var(--line)}
+    .meta{font-size:12px;color:var(--muted)} .content{padding:20px}
+    .logo{font-weight:800;font-size:26px;margin:18px 0 8px}.hero{color:var(--muted);font-size:14px;line-height:1.5}
+    .metric{display:inline-flex;align-items:center;gap:8px;background:rgba(57,217,138,.12);color:#13795b;border:1px solid rgba(57,217,138,.28);padding:8px 12px;border-radius:999px;font-size:12px;margin:16px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:16px}
+    label{display:block;font-size:12px;color:var(--muted);margin:12px 0 6px} input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff;color:var(--text)}
+    .row{display:flex;justify-content:space-between;align-items:center;gap:12px}.check{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px;margin-top:12px}
+    .btn{width:100%;padding:13px 14px;border-radius:12px;border:none;font-weight:700;margin-top:14px;cursor:pointer}.primary{background:linear-gradient(90deg,var(--brand),#27c9ff);color:#062033}.ghost{background:#ffffff;color:var(--text);border:1px solid var(--line)}
+    .oauth{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.banner{padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:12px}
+    .ok{background:rgba(57,217,138,.12);color:#13795b;border:1px solid rgba(57,217,138,.28)} .err{background:rgba(255,107,107,.12);color:#b42318;border:1px solid rgba(255,107,107,.3)} .warn{background:rgba(255,204,102,.18);color:#9a6700;border:1px solid rgba(255,204,102,.4)}
+    .skeleton{height:12px;border-radius:99px;background:linear-gradient(90deg,#e2e8f0,#f8fafc,#e2e8f0);margin:10px 0}.footer-note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.5}
+    .gdpr{display:flex;gap:10px;align-items:flex-start;background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:14px;color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro">
+      <h1>LiveFootball App - Startup & Authentication Mockups</h1>
+      <p>Responsive mobile-first screens covering startup readiness, secure access, and GDPR-conscious authentication patterns.</p>
+    </div>
+    <div class="grid">
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Startup & Login</strong><span class="meta">Populated / Success State</span></div>
+        <div class="content">
+          <div class="logo">⚽ LiveFootball</div>
+          <div class="hero">Your football world in one place: tailored news, live ticker, team insights and approved stream links.</div>
+          <div class="metric">Ready in 1.7s • Performance target met</div>
+          <div class="card">
+            <div class="banner ok">Welcome back, Jamie. Authentication successful. Redirecting to your personalised dashboard.</div>
+            <label>Email</label><input value="jamie.fan@email.com" aria-label="Email address" />
+            <label>Password</label><input value="••••••••••" aria-label="Password" />
+            <div class="row"><div class="check"><input type="checkbox" checked /> Remember me</div><span class="meta">Forgot password?</span></div>
+            <button class="btn primary">Continue to App</button>
+            <div class="oauth"><button class="btn ghost">Google</button><button class="btn ghost">Apple</button></div>
+            <div class="gdpr"><span>🔒</span><span>By continuing, your account and preference data are processed under GDPR-compliant privacy controls.</span></div>
+          </div>
+          <div class="footer-note">Access to content modules remains blocked until registration or login is completed.</div>
+        </div>
+      </div></div>
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Startup & Login</strong><span class="meta">Empty / First-Time State</span></div>
+        <div class="content">
+          <div class="logo">⚽ LiveFootball</div>
+          <div class="hero">Sign in or create an account to follow clubs, enable notifications and sync your football preferences across devices.</div>
+          <div class="metric">Preparing app shell… target under 2 seconds</div>
+          <div class="card">
+            <label>Email</label><input placeholder="name@example.com" />
+            <label>Password</label><input placeholder="Enter password" />
+            <div class="row"><div class="check"><input type="checkbox" /> Remember me</div><span class="meta">Need an account? Register</span></div>
+            <button class="btn primary">Log In</button>
+            <div class="oauth"><button class="btn ghost">Continue with Google</button><button class="btn ghost">Continue with Apple</button></div>
+            <div class="gdpr"><span>🛡️</span><span>Consent notice, privacy policy link, and data usage summary are visible before account creation.</span></div>
+          </div>
+          <div class="card">
+            <strong>Loading app modules</strong>
+            <div class="skeleton" style="width:88%"></div>
+            <div class="skeleton" style="width:72%"></div>
+            <div class="skeleton" style="width:64%"></div>
+          </div>
+        </div>
+      </div></div>
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Startup & Login</strong><span class="meta">Error / Delayed Startup State</span></div>
+        <div class="content">
+          <div class="logo">⚽ LiveFootball</div>
+          <div class="hero">We’re still protecting account access and preserving app stability under poor network or temporary service delay.</div>
+          <div class="metric" style="background:rgba(255,204,102,.18);color:#9a6700;border-color:rgba(255,204,102,.4)">Startup exceeded 2.0s • Logged for support</div>
+          <div class="card">
+            <div class="banner err">Login failed. Please check your credentials or try again later. Access to app features is blocked until authentication succeeds.</div>
+            <label>Email</label><input value="jamie.fan@email.com" />
+            <label>Password</label><input value="wrong-pass" />
+            <button class="btn primary">Retry Login</button>
+            <button class="btn ghost">Create Account</button>
+            <div class="footer-note">If startup delay persists, the event is recorded as non-compliant and surfaced to operations monitoring.</div>
+          </div>
+          <div class="card">
+            <div class="banner warn">Limited connectivity detected. Secure local shell loaded; online modules will resume when connection improves.</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</body>
+</html>

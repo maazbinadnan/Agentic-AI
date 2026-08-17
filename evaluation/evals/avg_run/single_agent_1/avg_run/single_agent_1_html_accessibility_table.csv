@@ -1,7 +1,0 @@
-html_filename,violations_count,passes_count,incomplete_count,status
-discover_details.html,4,10,0,FAIL (4 Violations)
-home_news.html,4,10,0,FAIL (4 Violations)
-live_ticker.html,4,10,0,FAIL (4 Violations)
-onboarding_auth.html,5,13,0,FAIL (5 Violations)
-sharing_profile.html,4,12,0,FAIL (4 Violations)
-streams_notifications_settings.html,4,12,0,FAIL (4 Violations)

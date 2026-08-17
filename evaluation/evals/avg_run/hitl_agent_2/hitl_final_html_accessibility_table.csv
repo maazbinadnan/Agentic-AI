@@ -1,6 +1,0 @@
-html_filename,violations_count,passes_count,incomplete_count,status
-competitions_details.html,3,12,1,FAIL (3 Violations)
-home_news_personalization.html,3,12,0,FAIL (3 Violations)
-live_ticker_streams.html,3,14,1,FAIL (3 Violations)
-notifications_sharing_offline.html,3,14,1,FAIL (3 Violations)
-startup_auth.html,4,17,1,FAIL (4 Violations)

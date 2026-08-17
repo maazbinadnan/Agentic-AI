@@ -136,7 +136,7 @@ def main():
     iso_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_iso_eval.json")
     iso_table_path = os.path.join(agent_output_dir, f"{args.agent}_iso_table.csv")
     invest_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_invest_eval.json")
-    invest_table_path = os.path.join(agent_output_dir, f"{args.agent}_invest_table.json")
+    invest_table_path = os.path.join(agent_output_dir, f"{args.agent}_invest_table.csv")
     html_eval_json_path = os.path.join(agent_output_dir, f"{args.agent}_html_accessibility_eval.json")
     html_table_path = os.path.join(agent_output_dir, f"{args.agent}_html_accessibility_table.csv")
     ratio_table_path = os.path.join(agent_output_dir, f"{args.agent}_coverage_ratio_table.csv")

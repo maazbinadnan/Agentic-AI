@@ -47,13 +47,24 @@ def get_ground_truths():
 
     requirements_list = []
 
+    # Support dict wrapper with "requirements" key
+    if isinstance(ground_fnr, dict) and "requirements" in ground_fnr:
+        ground_fnr = ground_fnr["requirements"]
+
+    if isinstance(ground_nfnr, dict) and "requirements" in ground_nfnr:
+        ground_nfnr = ground_nfnr["requirements"]
+
     for req in ground_fnr:
-        if 'Requirement' in req:
-            requirements_list.append({"type": "fnr", "requirement": req['Requirement']})
+        if isinstance(req, dict):
+            text = req.get('Requirement') or req.get('text')
+            if text:
+                requirements_list.append({"type": "fnr", "requirement": text})
 
     for req in ground_nfnr:
-        if 'Requirement' in req:
-            requirements_list.append({"type": "nfnr", "requirement": req['Requirement']})
+        if isinstance(req, dict):
+            text = req.get('Requirement') or req.get('text')
+            if text:
+                requirements_list.append({"type": "nfnr", "requirement": text})
 
     return requirements_list
 

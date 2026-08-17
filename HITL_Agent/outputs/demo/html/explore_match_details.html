@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Explore, Match Details & Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a1220;--card:#10192c;--line:#25334b;--text:#eef4ff;--muted:#90a2bf;--green:#39d98a;--blue:#55a8ff;--red:#ff7a7a;--amber:#ffcc66}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,sans-serif;background:linear-gradient(180deg,#08101c,#0c1526);color:var(--text)} .wrap{padding:24px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1400px;margin:0 auto}
+    .phone{background:#0d1524;border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:0 18px 48px rgba(0,0,0,.35)} .screen{min-height:820px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#0f1b31,#0b1220)}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid var(--line)} .meta{font-size:12px;color:var(--muted)} .content{padding:16px}
+    .card{background:rgba(16,25,44,.86);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}.sub{font-size:12px;color:var(--muted);line-height:1.5}.row{display:flex;justify-content:space-between;gap:12px}.col{flex:1}
+    .btn{padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#11203a;color:var(--text);font-weight:700}.primary{background:linear-gradient(90deg,var(--green),#24d0ff);border:none;color:#072132}.danger{background:rgba(255,122,122,.12);border-color:rgba(255,122,122,.35);color:#ffc2c2}
+    .tag{display:inline-block;padding:6px 9px;border-radius:999px;font-size:11px;background:#152746;color:#a9c3ea;margin-right:6px}.ok{background:rgba(57,217,138,.14);color:#b3f4d3}.warn{background:rgba(255,204,102,.14);color:#ffe1a3}.bad{background:rgba(255,122,122,.14);color:#ffc2c2}
+    .switch{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:1px solid var(--line)} .toggle{width:46px;height:26px;border-radius:99px;background:#1c2b47;position:relative}.toggle:after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff}.toggle.on{background:#1ea86a}.toggle.on:after{left:23px}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.stat{background:#0c1628;border:1px solid var(--line);border-radius:12px;padding:12px}.list{display:grid;gap:10px}.share-sheet{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Explore / Match Details / Settings</strong><span class="meta">Populated State</span></div>
+        <div class="content">
+          <div class="card">
+            <span class="tag">Champions League</span><span class="tag ok">Rights valid in UK</span>
+            <h2 style="margin:10px 0 6px">Bayern vs Real Madrid</h2>
+            <div class="sub">Live now • Allianz Arena • Stream starts when provider broadcast is active.</div>
+            <div class="row" style="margin-top:12px"><button class="btn primary">Open on DAZN</button><button class="btn">Follow ticker</button></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Team & player details</h3>
+            <div class="stats"><div class="stat"><strong>Bayern</strong><div class="sub">Shots on target: 5<br>Possession: 58%</div></div><div class="stat"><strong>Harry Kane</strong><div class="sub">Goals: 1<br>Pass accuracy: 86%</div></div></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Personalisation & alerts</h3>
+            <div class="switch"><span>Bayern as favourite club</span><span class="toggle on" aria-hidden="true"></span></div>
+            <div class="switch"><span>Goal notifications</span><span class="toggle on" aria-hidden="true"></span></div>
+            <div class="switch"><span>Breaking news alerts</span><span class="toggle"></span></div>
+            <div class="row" style="margin-top:12px"><button class="btn primary">Save preferences</button><button class="btn">Edit clubs</button></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Share article / report</h3>
+            <div class="sub">Open the device share sheet with a match report, news article or scoreline summary.</div>
+            <div class="share-sheet"><span class="tag">WhatsApp</span><span class="tag">X</span><span class="tag">Instagram</span><span class="tag">Copy Link</span></div>
+          </div>
+        </div>
+      </div></div>
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Explore / Match Details / Settings</strong><span class="meta">Empty / Unconfigured State</span></div>
+        <div class="content">
+          <div class="card">
+            <span class="tag">League browser</span>
+            <h2 style="margin:10px 0 6px">Browse competitions</h2>
+            <div class="sub">National and international leagues are listed here. Select a team or player to view details when available.</div>
+            <div class="list" style="margin-top:12px"><div class="stat">Premier League</div><div class="stat">Bundesliga</div><div class="stat">La Liga</div><div class="stat">UEFA Champions League</div></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">No favourites configured</h3>
+            <div class="sub">Add clubs and enable notifications to personalise the experience.</div>
+            <div class="switch"><span>Goal notifications</span><span class="toggle"></span></div>
+            <div class="switch"><span>Match reminders</span><span class="toggle"></span></div>
+            <button class="btn primary" style="margin-top:12px">Add favourite clubs</button>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Share</h3>
+            <div class="sub">Choose any news article or game report to make sharing options available.</div>
+            <button class="btn">Browse shareable content</button>
+          </div>
+        </div>
+      </div></div>
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Explore / Match Details / Settings</strong><span class="meta">Restricted / Error State</span></div>
+        <div class="content">
+          <div class="card">
+            <span class="tag bad">Rights restricted</span><span class="tag warn">Broadcast not available in your country</span>
+            <h2 style="margin:10px 0 6px">Bayern vs Real Madrid</h2>
+            <div class="sub">The live stream deep link is withheld to comply with transmission rights. Match stats and ticker remain available.</div>
+            <div class="row" style="margin-top:12px"><button class="btn danger">Stream unavailable</button><button class="btn">View stats</button></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Unavailable entity data</h3>
+            <div class="sub">Player biography and advanced metrics could not be loaded from the data source. The rest of the interface remains usable.</div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Save preferences failed</h3>
+            <div class="sub">Your latest changes could not be saved. Last successful configuration has been retained.</div>
+            <div class="row" style="margin-top:12px"><button class="btn primary">Retry save</button><button class="btn">Keep previous settings</button></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Sharing unavailable</h3>
+            <div class="sub">Supported device sharing mechanisms could not be opened. Inform the user without blocking reading or navigation.</div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</body>
+</html>

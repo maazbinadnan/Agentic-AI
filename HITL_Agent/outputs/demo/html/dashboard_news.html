@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Dashboard, News & Live Ticker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b1220;--card:#101a2d;--soft:#13203a;--line:#24324a;--text:#edf4ff;--muted:#8ea0bd;--green:#39d98a;--blue:#4ea1ff;--amber:#ffcc66;--red:#ff7d7d}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,sans-serif;background:#09111d;color:var(--text)} .wrap{padding:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1400px;margin:0 auto}.phone{background:#0d1524;border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:0 18px 48px rgba(0,0,0,.35)}
+    .screen{min-height:790px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#0e1930,#0b1220)} .top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(255,255,255,.04);border-bottom:1px solid var(--line)} .meta{font-size:12px;color:var(--muted)}
+    .content{padding:16px}.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}.pill{background:#11203a;border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:12px;color:var(--muted)}
+    .hero{background:linear-gradient(135deg,#123465,#0d1d37);border:1px solid #28416a;border-radius:18px;padding:16px}.hero h2{margin:0 0 6px;font-size:20px}.hero p{margin:0;color:#c5d5ee;font-size:13px}
+    .chips,.channels{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.chip{padding:8px 10px;border-radius:999px;background:#12213b;border:1px solid var(--line);font-size:12px}.chip.active{background:rgba(57,217,138,.14);border-color:rgba(57,217,138,.35);color:#aef0cb}
+    .section{margin-top:16px}.section h3{margin:0 0 10px;font-size:15px}.ticker,.card,.empty{background:rgba(16,26,45,.85);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+    .score{display:flex;justify-content:space-between;align-items:center;font-weight:700}.sub{font-size:12px;color:var(--muted);margin-top:4px}.feed{display:grid;gap:12px}.badge{font-size:11px;border-radius:999px;padding:5px 8px;background:#152746;color:#a8c2ea}
+    .share{margin-top:10px;display:flex;gap:10px}.btn{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#11203a;color:var(--text);font-weight:600}.btn.primary{background:linear-gradient(90deg,var(--green),#2ad0ff);color:#082031;border:none}
+    .offline{background:rgba(255,204,102,.12);border:1px solid rgba(255,204,102,.3);color:#ffe3a7}.error{background:rgba(255,125,125,.12);border:1px solid rgba(255,125,125,.3);color:#ffbcbc}.bottom{position:sticky;bottom:0;background:#0c1424;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:10px 0;margin-top:16px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Dashboard / News / Ticker</strong><span class="meta">Populated State</span></div>
+        <div class="content">
+          <div class="nav"><strong>Good evening, Jamie</strong><span class="pill">Peak load stable • 84k users online</span></div>
+          <div class="hero"><h2>Your football at a glance</h2><p>Personalised headlines, near real-time scores, and direct access to core journeys within one consistent interface.</p>
+            <div class="chips"><span class="chip active">Liverpool</span><span class="chip active">Bayern</span><span class="chip active">Champions League</span></div>
+            <div class="channels"><span class="chip">Sky Sport</span><span class="chip active">DAZN</span><span class="chip">BBC Sport</span></div>
+          </div>
+          <div class="section"><h3>Live ticker</h3>
+            <div class="ticker"><div class="score"><span>Liverpool</span><span>2 - 1</span><span>Arsenal</span></div><div class="sub">74' • Salah scores from the spot • Updated 10 sec ago</div></div>
+            <div class="ticker"><div class="score"><span>Bayern</span><span>1 - 1</span><span>Dortmund</span></div><div class="sub">58' • Possession 61% • Updated 6 sec ago</div></div>
+          </div>
+          <div class="section"><h3>News feed</h3>
+            <div class="feed">
+              <div class="card"><span class="badge">Filtered by favourites</span><h4>Klopp praises late intensity in title race clash</h4><div class="sub">Sky Sport • 8 min ago</div><div class="share"><button class="btn">Save</button><button class="btn primary">Share</button></div></div>
+              <div class="card"><span class="badge">DAZN</span><h4>Bayern injury update ahead of European tie</h4><div class="sub">DAZN • 22 min ago</div><div class="share"><button class="btn">Open</button><button class="btn primary">Share</button></div></div>
+            </div>
+          </div>
+          <div class="bottom"><span>Home</span><span>News</span><span>Live</span><span>Explore</span><span>Profile</span></div>
+        </div>
+      </div></div>
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Dashboard / News / Ticker</strong><span class="meta">Empty / Unconfigured State</span></div>
+        <div class="content">
+          <div class="nav"><strong>Welcome</strong><span class="pill">Personalise to unlock tailored content</span></div>
+          <div class="hero"><h2>No favourites yet</h2><p>Select clubs and sports channels to tailor headlines and score updates. Until then, general football coverage remains available.</p></div>
+          <div class="section"><h3>Suggested teams</h3>
+            <div class="chips"><span class="chip">Manchester City</span><span class="chip">Barcelona</span><span class="chip">Juventus</span><span class="chip">PSG</span></div>
+          </div>
+          <div class="section"><h3>Live ticker</h3>
+            <div class="empty"><strong>No favourite matches tracked</strong><div class="sub">Choose clubs to pin live games here, or browse all live competitions.</div><button class="btn primary" style="margin-top:10px">Select favourites</button></div>
+          </div>
+          <div class="section"><h3>News feed</h3>
+            <div class="card"><span class="badge">General coverage</span><h4>Today’s transfer brief across Europe’s top leagues</h4><div class="sub">App editorial • 15 min ago</div></div>
+            <div class="card"><span class="badge">General coverage</span><h4>Weekend fixtures to watch across major competitions</h4><div class="sub">App editorial • 30 min ago</div></div>
+          </div>
+          <div class="bottom"><span>Home</span><span>News</span><span>Live</span><span>Explore</span><span>Profile</span></div>
+        </div>
+      </div></div>
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Dashboard / News / Ticker</strong><span class="meta">Offline / Error State</span></div>
+        <div class="content">
+          <div class="nav"><strong>Connection limited</strong><span class="pill">Offline mode</span></div>
+          <div class="ticker offline"><strong>Offline access active.</strong><div class="sub" style="color:#ffe3a7">Showing cached headlines and last synced scores. New live data will resume automatically.</div></div>
+          <div class="section"><h3>Live ticker</h3>
+            <div class="ticker error"><strong>Live updates temporarily unavailable</strong><div class="sub" style="color:#ffbcbc">External API could not be reached. App remains usable and layout is preserved.</div></div>
+          </div>
+          <div class="section"><h3>Cached news</h3>
+            <div class="card"><span class="badge">Cached 2h ago</span><h4>Matchday preview: key tactical battles tonight</h4><div class="sub">Available offline</div><div class="share"><button class="btn">Read</button><button class="btn">Share</button></div></div>
+            <div class="card"><span class="badge">No cache available</span><h4>Offline news unavailable for this source</h4><div class="sub">Reconnect to load fresh articles from preferred channels.</div></div>
+          </div>
+          <div class="section"><h3>Peak-load resilience</h3><div class="card"><div class="sub">If demand exceeds supported capacity, non-critical refreshes are reduced first while core browsing and navigation remain available.</div></div></div>
+          <div class="bottom"><span>Home</span><span>News</span><span>Live</span><span>Explore</span><span>Profile</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</body>
+</html>

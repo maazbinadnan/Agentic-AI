@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHome - Plans, Presets, Reports</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}html,body{max-width:100%;overflow-x:hidden}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0b1120;word-break:break-word;overflow-wrap:anywhere}.wrap{padding:24px;width:100%;overflow-x:hidden}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;max-width:1400px;margin:0 auto;width:100%}.phone{background:#94a3b8;padding:10px;border-radius:28px;overflow:hidden}.screen{background:#f8fafc;border-radius:20px;min-height:840px;overflow:hidden}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#111827;color:#fff}.meta{font-size:12px;color:#cbd5e1}.content{padding:20px}.banner{padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:14px}.ok{background:#ecfeff;border:1px solid #a5f3fc;color:#155e75}.warn{background:#fff7ed;border:1px solid #fdba74;color:#9a3412}.err{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c}.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;margin-bottom:14px;width:100%;overflow:hidden}.table-wrap{width:100%;overflow-x:auto}.table{width:100%;border-collapse:collapse;font-size:13px;min-width:0}.table th,.table td{padding:10px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}.btn{padding:10px 12px;border:none;border-radius:10px;background:#0ea5e9;color:#fff;font-weight:700;max-width:100%}.muted{font-size:13px;color:#64748b}.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.kpi{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px}.big{font-size:28px;font-weight:800}
+@media(max-width:720px){.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="wrap"><div class="grid">
+<div class="phone"><div class="screen"><div class="top"><strong>Plans, Presets & Reports</strong><span class="meta">Populated State</span></div><div class="content">
+<div class="banner ok">Saved monthly plans and daily presets are available and scheduled execution is enabled.</div>
+<div class="card"><strong>Monthly Plan</strong><div class="table-wrap"><table class="table"><tr><th>Date</th><th>Device</th><th>Action</th></tr><tr><td>1st</td><td>Thermostat</td><td>Set 69°F at 06:00</td></tr><tr><td>15th</td><td>Porch Light</td><td>On at 19:00</td></tr><tr><td>28th</td><td>Humidistat</td><td>Set 45%</td></tr></table></div></div>
+<div class="card"><strong>Daily Preset</strong><div class="table-wrap"><table class="table"><tr><th>Time</th><th>Device</th><th>Setting</th></tr><tr><td>06:30</td><td>Coffee Maker</td><td>On</td></tr><tr><td>22:00</td><td>Hallway Light</td><td>Off</td></tr></table></div></div>
+<div class="card"><strong>Historical Report</strong><div class="kpis"><div class="kpi"><div class="muted">Avg Temp</div><div class="big">71°F</div></div><div class="kpi"><div class="muted">Max Humidity</div><div class="big">63%</div></div><div class="kpi"><div class="muted">Downtime</div><div class="big">18m</div></div></div></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Plans, Presets & Reports</strong><span class="meta">Empty State</span></div><div class="content">
+<div class="banner warn">No monthly plans, daily presets, or report data exist yet for this account.</div>
+<div class="card"><strong>Create your first automation</strong><p class="muted">Users can store monthly plans and daily presets for climate and power-managed devices for later viewing and execution.</p><button class="btn">New plan</button></div>
+<div class="card"><strong>Historical Report</strong><p class="muted">No report data is available for the selected scope.</p></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Plans, Presets & Reports</strong><span class="meta">Execution / Device Unavailable State</span></div><div class="content">
+<div class="banner err">A scheduled action reached execution time, but the targeted device was unavailable. The UI does not mark the change as successfully applied.</div>
+<div class="card"><strong>Failed Scheduled Event</strong><div class="table-wrap"><table class="table"><tr><th>Time</th><th>Target</th><th>Status</th></tr><tr><td>07:00</td><td>Bedroom Lamp</td><td>Not executed - switch unreachable</td></tr></table></div></div>
+<div class="card"><strong>Backup / Data Storage Context</strong><p class="muted">Plans, account records, and home database information are stored on the home web server and can be included in backup operations when available.</p><button class="btn">View backup history</button></div>
+</div></div></div>
+</div></div></body></html>

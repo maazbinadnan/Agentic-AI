@@ -1,0 +1,1068 @@
+{
+    "coverage": [
+        {
+            "gt_id": 1,
+            "ground_truth_requirement": "The DigitalHome System shall allow a web-ready computer, cell phone or PDA to control a home's temperature, humidity, lights, security, and the state of small appliances.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers monitoring/status visibility for temperature, humidity, security, alarms, lights/appliances."
+                },
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers temperature monitoring and control."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidity monitoring and control."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers light and appliance state monitoring/control."
+                },
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall provide a browser-based user interface that supports common web interactions for non-technical users and renders core pages responsively on modern web-ready devices at widths from 320 px upward.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers browser/web-ready device access, including mobile-sized devices."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements collectively cover the major domains: temperature, humidity, lighting/appliances, security status, and web/mobile browser access. Security control is weaker than security monitoring/alarm display, and PDA/cell phone are not named explicitly, but responsive web-ready devices substantially cover the access constraint."
+        },
+        {
+            "gt_id": 2,
+            "ground_truth_requirement": "The communication center of the DH system shall be a DH home web server, through which a user shall be able to monitor and control home devices and systems.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers monitoring of home devices/systems."
+                },
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers thermostat monitoring/control."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidistat monitoring/control."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers appliance/light monitoring/control."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions the DH home web server."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Monitoring and control functions are represented, and the DH home web server is mentioned for storage. However, the generated requirements do not clearly establish the DH home web server as the central communication hub through which all monitoring and control occurs."
+        },
+        {
+            "gt_id": 3,
+            "ground_truth_requirement": "Each DigitalHome shall contain a master control device (the DH Gateway Device) that connects to the home’s broadband Internet connection, and uses wireless communication to send and receive communication between the DigitalHome system and the home devices and systems.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions a gateway and communication availability."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "Only a gateway is tangentially mentioned. The generated requirements omit the required master control device role, broadband Internet connection, and wireless send/receive communication between the DigitalHome system and home devices."
+        },
+        {
+            "gt_id": 4,
+            "ground_truth_requirement": "The DigitalHome shall be equipped with various environmental controllers and sensors (temperature controller-sensors: thermostats, humidity controller-sensors: humidistats, contact sensors, security sound and light alarms, and power switches).",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions most sensor/controller categories in status form."
+                },
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall operate in a realistic simulated environment that models the behavior and constraints of an actual home, including simulated sensors, controllers, and device state transitions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Generally covers existence/modeling of sensors and controllers."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements reference temperature, humidity, security sensors, alarms, appliance/light states, and generic sensors/controllers. They do not explicitly require the DigitalHome to be equipped with the complete listed physical device set, including thermostats, humidistats, sound/light alarms, and power switches."
+        },
+        {
+            "gt_id": 5,
+            "ground_truth_requirement": "Using wireless communication, sensor values can be read and saved in the home database.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers reading/displaying sensor values."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers persistence of operational data."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Sensor reading and storage of operational data are covered at a high level. The generated requirements omit wireless communication and do not explicitly specify saving sensor values in the home database."
+        },
+        {
+            "gt_id": 6,
+            "ground_truth_requirement": "Controller values can be sent to controllers to change the DH environment.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers sending temperature set points to affect the environment."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers sending humidity set points to affect the environment."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers changing appliance/light controller states."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover the core idea of updating controller/set-point values to change temperature, humidity, and appliance/light states. They do not phrase it as sending values over a control channel, but the functional effect is represented."
+        },
+        {
+            "gt_id": 7,
+            "ground_truth_requirement": "The DigitalHome programmable thermostat shall allow a user to monitor and control a home’s temperature from any location, using a web ready computer, cell phone, or PDA.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers thermostat monitoring and control."
+                },
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall provide a browser-based user interface that supports common web interactions for non-technical users and renders core pages responsively on modern web-ready devices at widths from 320 px upward.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers web-ready and mobile-sized device access."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Thermostat monitoring/control and browser-based access on modern web-ready devices are covered. The generated requirements do not explicitly state any-location access or name cell phone/PDA, but the web-responsive interface substantially captures the intended remote access."
+        },
+        {
+            "gt_id": 8,
+            "ground_truth_requirement": "A DH user shall be able to read the temperature at a thermostat position.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers viewing thermostat temperature readings."
+                },
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers display of current temperature readings."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The ability to read/view thermostat temperature readings is covered. The only missing detail is explicit reference to the thermostat's physical position."
+        },
+        {
+            "gt_id": 9,
+            "ground_truth_requirement": "A DH user shall be able to set the thermostat temperatures to between 60 ° F and 80 ° F, inclusive, at one degree increments.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers setting thermostat set points."
+                },
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall validate user-entered control values against configured device constraints and shall reject invalid entries with a clear error message without applying the change.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers validation against device constraints."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover the ability to set thermostat values and validate constraints, but they do not specify the required 60–80 °F inclusive range or one-degree increments."
+        },
+        {
+            "gt_id": 10,
+            "ground_truth_requirement": "Up to eight thermostats shall be placed in rooms throughout the home.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall operate in a realistic simulated environment that models the behavior and constraints of an actual home, including simulated sensors, controllers, and device state transitions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially references modeled home sensors/controllers."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies support for up to eight thermostats or placement in rooms throughout the home."
+        },
+        {
+            "gt_id": 11,
+            "ground_truth_requirement": "The thermostats may be controlled individually or collectively, so that temperature can be controlled at different levels in different home spaces.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers thermostat set-point control in general."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Thermostat control is covered generically, but the generated requirement does not specify individual versus collective control or separate temperature levels for different spaces/zones."
+        },
+        {
+            "gt_id": 12,
+            "ground_truth_requirement": "A single thermostat shall be placed in an enclosed space (e.g., a room in the house) for which the air temperature is to be controlled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement addresses physical placement of a single thermostat in each enclosed controlled space."
+        },
+        {
+            "gt_id": 13,
+            "ground_truth_requirement": "For each thermostat, up to twenty-four one hour settings per day for every day of the week can be scheduled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Only tangentially mentions stored home plans."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements do not provide thermostat scheduling, twenty-four one-hour settings, or day-of-week scheduling. Storing home plans is not sufficient to cover this behavior."
+        },
+        {
+            "gt_id": 14,
+            "ground_truth_requirement": "If a thermostat device allows a user to make a manual temperature setting, the setting shall remain in effect until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers manual thermostat overrides or reversion to planned/default values at the next time period."
+        },
+        {
+            "gt_id": 15,
+            "ground_truth_requirement": "A thermostat unit shall communicate, through wireless signals, with the master control unit.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially references communication with gateway/devices."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirement only discusses unavailability. It does not require thermostat wireless communication with the master control unit."
+        },
+        {
+            "gt_id": 16,
+            "ground_truth_requirement": "The system shall support Fahrenheit and Celsius temperature values.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies Fahrenheit and Celsius support."
+        },
+        {
+            "gt_id": 17,
+            "ground_truth_requirement": "The system shall be compatible with a centralized HVAC (Heating, Ventilation and Air Conditioning) systems: gas, oil, electricity, solar, or a combination of two or more. The system shall adhere to the standards, policies and procedures of the American Society of Heating, Refrigerating and Air-Conditioning Engineers [ASHRAE 2010].",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions heating/cooling control generally."
+                },
+                {
+                    "gen_id": 16,
+                    "gen_requirement": "The system shall use widely accepted, available hardware, software technologies, and communication standards where feasible to support cost-conscious prototype delivery and maintainability.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Generally references standards use."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements do not specify centralized HVAC compatibility, supported energy sources, or ASHRAE 2010 compliance. References to heating/cooling and generic standards are only tangential."
+        },
+        {
+            "gt_id": 18,
+            "ground_truth_requirement": "The DigitalHome programmable humidistat shall allow a user to monitor and control a home’s humidity from any location, using a web ready computer, cell phone, or PDA.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidistat monitoring and control."
+                },
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall provide a browser-based user interface that supports common web interactions for non-technical users and renders core pages responsively on modern web-ready devices at widths from 320 px upward.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers web-ready/mobile browser access."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Humidistat monitoring/control and web-ready responsive access are covered. Any-location access and PDA/cell phone are not explicitly named, but are substantially implied by browser-based responsive access."
+        },
+        {
+            "gt_id": 19,
+            "ground_truth_requirement": "A DH user shall be able to read the humidity at a humidistat position.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers viewing humidistat readings."
+                },
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers display of current humidity readings."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover reading humidity values from humidistats/status displays. They do not explicitly mention the physical humidistat position."
+        },
+        {
+            "gt_id": 20,
+            "ground_truth_requirement": "A DH user shall be able to set the humidity level for a humidistat, from 30% to 60%, inclusive a 1% increments.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers setting humidity set points."
+                },
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall validate user-entered control values against configured device constraints and shall reject invalid entries with a clear error message without applying the change.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers validation against configured constraints."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The ability to set humidity and validate constraints is covered, but the required 30%–60% inclusive range and 1% increments are not specified."
+        },
+        {
+            "gt_id": 21,
+            "ground_truth_requirement": "Up to eight humidistats shall be placed in rooms throughout the home.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall operate in a realistic simulated environment that models the behavior and constraints of an actual home, including simulated sensors, controllers, and device state transitions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially references sensors/controllers in a home model."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies up to eight humidistats or their placement in rooms throughout the home."
+        },
+        {
+            "gt_id": 22,
+            "ground_truth_requirement": "A single humidistat shall be placed in an enclosed space (e.g., a room in the house) for which the humidity is to be controlled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement addresses physical humidistat placement in enclosed spaces."
+        },
+        {
+            "gt_id": 23,
+            "ground_truth_requirement": "If a humidistat device allows a user to make a manual temperature setting, the setting shall remain in effect until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers manual humidistat override behavior or reversion to planned/default values."
+        },
+        {
+            "gt_id": 24,
+            "ground_truth_requirement": "For each humidistat, up to twenty-four one hour settings per day for every day of the week can be scheduled.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Only tangentially mentions stored home plans."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies humidistat scheduling, one-hour settings, or weekly scheduling."
+        },
+        {
+            "gt_id": 25,
+            "ground_truth_requirement": "A DigitalHome system shall use wireless signals to communicate, through the master control unit, with the humidistats.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially references communication with gateway/devices."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirement does not specify wireless communication through the master control unit with humidistats."
+        },
+        {
+            "gt_id": 26,
+            "ground_truth_requirement": "The DigitalHome security system consists of contact sensors and a set security alarms.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall monitor magnetic contact switches and activate or display security alarm status when a monitored breach condition is detected.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers contact switches/sensors and security alarm behavior."
+                },
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers display of security sensor and alarm states."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover contact sensors/switches and security alarms, though they describe behavior/status rather than explicitly defining system composition."
+        },
+        {
+            "gt_id": 27,
+            "ground_truth_requirement": "A DigitalHome system shall be able to manage up to fifty door and window contact sensors.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall monitor magnetic contact switches and activate or display security alarm status when a monitored breach condition is detected.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers monitoring contact switches/sensors."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Contact sensor monitoring is covered, but the generated requirement omits door/window specificity and the capacity limit of up to fifty sensors."
+        },
+        {
+            "gt_id": 28,
+            "ground_truth_requirement": "A DigitalHome system shall be able to activate both light and sound alarms: one sound alarm and one light alarm subsystem, with multiple lights.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall monitor magnetic contact switches and activate or display security alarm status when a monitored breach condition is detected.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers activation/display of security alarm status."
+                },
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers alarm state visibility."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Alarm activation/status is covered, but the generated requirements do not require both light and sound alarms, one sound subsystem, one light alarm subsystem, or multiple lights."
+        },
+        {
+            "gt_id": 29,
+            "ground_truth_requirement": "When a security breach occurs and a contact sensor is set OPEN, the alarm system shall be activated.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall monitor magnetic contact switches and activate or display security alarm status when a monitored breach condition is detected.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers activating alarm status when a contact-switch breach is detected."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement semantically covers contact sensor breach detection and alarm activation. It does not use the exact OPEN terminology, but 'monitored breach condition' is equivalent for this purpose."
+        },
+        {
+            "gt_id": 30,
+            "ground_truth_requirement": "The DigitalHome programmable Appliance Manager shall provide for management of a home’s small appliances, including lighting units, by allowing a user to turn them on or off as desired.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers viewing and changing appliance/lighting power state."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement covers managing appliances and lighting units by changing power states. It does not use the name Appliance Manager, but the capability is covered."
+        },
+        {
+            "gt_id": 31,
+            "ground_truth_requirement": "The Appliance Manager shall be able to manage up to one hundred 115 volt, 10 amp power switches.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers management of programmable power switches generally."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement covers programmable power switches, but not the capacity of one hundred switches or the 115 volt/10 amp electrical constraints."
+        },
+        {
+            "gt_id": 32,
+            "ground_truth_requirement": "The system shall be able to provide information about the state of a power switch (OFF or ON), indicating the whether an appliance connected to the power switch is OFF or ON.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers displaying current power switch and associated appliance/lighting state."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement directly covers displaying the current state of each programmable power switch and its appliance/lighting association."
+        },
+        {
+            "gt_id": 33,
+            "ground_truth_requirement": "The system shall be able to change the state of a power switch (OFF to ON, or ON to OFF), in turn changing the state of an appliance connected to the power switch.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers changing the power state of appliances/lighting units through switches."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement directly covers changing power switch state and thereby the associated appliance or lighting unit state."
+        },
+        {
+            "gt_id": 34,
+            "ground_truth_requirement": "If a user changes the state of power switch device manually, the device shall remain in that state until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers manual power-switch override persistence or reversion to planned/default settings."
+        },
+        {
+            "gt_id": 35,
+            "ground_truth_requirement": "DigitalHome Planner shall provide a user with the capability to direct the system to set various preset home parameters (temperature, humidity, security contacts, and on/off appliance/light status) for certain time periods.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions storage of home plans."
+                },
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers temperature parameter control, but not planning."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers humidity parameter control, but not planning."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers appliance/light state control, but not planned periods."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover individual parameter control and storage of home plans, but they do not specify a Planner capability to set preset temperature, humidity, security, and appliance/light values for defined time periods."
+        },
+        {
+            "gt_id": 36,
+            "ground_truth_requirement": "DigitalHome provides a monthly planner.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions home plans generally."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirement only mentions stored home plans and does not specify a monthly planner."
+        },
+        {
+            "gt_id": 37,
+            "ground_truth_requirement": "For a given month and year, a user shall be able to create or modify a month plan that specifies for each day, for up to four daily time periods, the environmental parameter settings (temperature, humidity, contact sensors and power switches).",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions stored home plans."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers creating/modifying monthly plans, month/year selection, daily entries, up to four time periods, or the full set of planned environmental parameters."
+        },
+        {
+            "gt_id": 38,
+            "ground_truth_requirement": "A user shall be able to override planned parameter values, through the DH website, or if available, through manual switches on household devices.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall allow authorized users to view thermostat readings and set or update thermostat temperature set points used to control heating and cooling behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct web-based temperature changes."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall allow authorized users to view humidistat readings and set or update humidity set points used to control humidifier and dehumidifier behavior.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct humidity changes."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall display the current state of each configured digital programmable power switch and allow authorized users to change the power state of the associated appliance or lighting unit.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct appliance/light state changes."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover direct user changes through the system, which may function as overrides. They do not explicitly tie changes to planned values, the DH website, or manual household switches."
+        },
+        {
+            "gt_id": 39,
+            "ground_truth_requirement": "For a given month and year, in the past two years, DigitalHome shall be able to provide a report on the management and control of the home.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Only provides possible underlying operational data storage."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies reports, month/year selection, or a two-year historical range."
+        },
+        {
+            "gt_id": 40,
+            "ground_truth_requirement": "The month report shall contain daily average, maximum (with time) and minimum (with time) values of temperature and humidity for each thermostat and humidistat, respectively.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers monthly report contents, daily statistics, timestamps, or per-thermostat/per-humidistat reporting."
+        },
+        {
+            "gt_id": 41,
+            "ground_truth_requirement": "The month report shall provide the day and time for which any security breaches occurred, that is, when the security alarms were activated.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall monitor magnetic contact switches and activate or display security alarm status when a monitored breach condition is detected.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers detection/activation of security breach alarms, but not reporting."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "May cover storing operational data related to breaches."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Breach detection/alarm activation and operational data storage are covered, but no generated requirement specifies a month report listing breach day and time."
+        },
+        {
+            "gt_id": 42,
+            "ground_truth_requirement": "The month report shall provide a section that indicates the periods of time when the DH System was not in operation.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers indicating unavailability at runtime."
+                },
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall present a consolidated home status view showing current temperature readings, humidity readings, security sensor states, alarm states, appliance or lighting power states, and system connectivity status.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers system connectivity status display."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover runtime connectivity/unavailability indication, but not a monthly report section documenting periods when the DH System was not in operation."
+        },
+        {
+            "gt_id": 43,
+            "ground_truth_requirement": "Displays of environmental conditions (temperature, humidity, contact sensors and power switches) shall be updated at least every two seconds.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 12,
+                    "gen_requirement": "The system shall display updated simulated device and sensor status to the user within 5 seconds of a page refresh or control request under normal prototype operating conditions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers display update timing for simulated device/sensor status."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement addresses status update latency, but its 5-second threshold is weaker than the required 2-second update rate and is tied to refresh/control requests rather than continuous environmental display updates."
+        },
+        {
+            "gt_id": 44,
+            "ground_truth_requirement": "Sensor (temperature, humidity, contact sensor, power state) shall have a minimum data acquisition rate of 10 Hz.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies sensor data acquisition frequency or a 10 Hz minimum rate."
+        },
+        {
+            "gt_id": 45,
+            "ground_truth_requirement": "An environmental sensor or controller device shall have to be within 1000 feet of the master control device, in order to be in communication with the system.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Only tangentially covers communication availability."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirement discusses unreachable components but does not specify the 1000-foot communication range or relationship to the master control device."
+        },
+        {
+            "gt_id": 46,
+            "ground_truth_requirement": "The DigitalHome System must be highly reliable with no more than 1 failure per 10,000 hours of operation.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies reliability or the maximum failure rate."
+        },
+        {
+            "gt_id": 47,
+            "ground_truth_requirement": "The Digital Home System shall incorporate backup and recovery mechanisms.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers backup support for selected information."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall persist user account data, plans, and operational data and shall support backup execution without loss of previously committed records during normal operation.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers persistence and backup execution."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Backup mechanisms are covered, but recovery mechanisms are not specified."
+        },
+        {
+            "gt_id": 48,
+            "ground_truth_requirement": "The DH System will backup all system data (configuration, default parameter settings, planning, and usage data) on a daily basis, with the backup time set by the DH Technician at system set up.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall store home plans, user account information, and home operational data on the DH home web server and shall provide backup support for that information.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers backup support for plans, accounts, and operational data."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall persist user account data, plans, and operational data and shall support backup execution without loss of previously committed records during normal operation.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers backup execution and persistence of some data."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover backup support for some data categories, but omit all-system data scope, configuration/default parameter settings, daily frequency, and DH Technician-configured backup time."
+        },
+        {
+            "gt_id": 49,
+            "ground_truth_requirement": "If the DH System fails (due to power loss, loss of internet access, or other software or hardware failure), the system recovery mechanism shall restore system data (configuration, default parameter settings, planning, and usage data) from the most recent backup.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall persist user account data, plans, and operational data and shall support backup execution without loss of previously committed records during normal operation.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers persistence/backup but not restoration."
+                },
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers handling unavailability, including possible loss of service."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements do not specify recovery from failure or restoration of system data from the most recent backup."
+        },
+        {
+            "gt_id": 50,
+            "ground_truth_requirement": "All DigitalHome operations shall incorporate exception handling so that the system responds to a user with a clear, descriptive message when an error or an exceptional condition occurs.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall validate user-entered control values against configured device constraints and shall reject invalid entries with a clear error message without applying the change.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers clear error messages for invalid control values."
+                },
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers user indication for communication/service unavailability."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover clear messages for invalid input and unavailability, but not exception handling for all DigitalHome operations or all exceptional conditions."
+        },
+        {
+            "gt_id": 51,
+            "ground_truth_requirement": "Although there are no specific safety requirements, high system reliability is important to insure there are no system failures in carrying out user requests. Such failures might affect the safety of home dwellers (e.g., security breaches, inadequate lighting in dark spaces, inappropriate temperature and humidity for people who are in ill-health, or powering certain appliances when young children are present).",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall validate user-entered control values against configured device constraints and shall reject invalid entries with a clear error message without applying the change.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially mitigates unsafe invalid control settings."
+                },
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall indicate communication or service unavailability when the home server, gateway, or simulated devices cannot be reached, and shall prevent control actions that require unavailable components.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially mitigates unsafe actions during unavailable service."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements do not state the required high reliability/safety rationale or prevention of failures in carrying out user requests. They only tangentially address input and availability safeguards."
+        },
+        {
+            "gt_id": 52,
+            "ground_truth_requirement": "Upon installation, a DigitalHome user account shall be established. The DigitalHome web system shall provide for authentication and information encryption through a recognized reliable and effective security technology, such as Transport Layer Security.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall provide a web-based authentication and session interface that allows authorized users to log in, log out, and access functions according to their assigned role.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers web authentication/session access."
+                },
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall allow Master Users and DH Technicians to establish and maintain user accounts and update configurable default system parameters.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers establishing and maintaining user accounts."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "User accounts and authentication are covered. The generated requirements omit installation-time account establishment and information encryption/TLS or equivalent security technology."
+        },
+        {
+            "gt_id": 53,
+            "ground_truth_requirement": "Log in to an account shall require entry of an account name and a password.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall provide a web-based authentication and session interface that allows authorized users to log in, log out, and access functions according to their assigned role.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers login/authentication capability."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "Login is covered, but the generated requirement does not explicitly require entry of an account name and password."
+        },
+        {
+            "gt_id": 54,
+            "ground_truth_requirement": "The development of the DH system shall use methods and techniques such as documentation of requirements/design/code, abstraction/module independence, and IEEE standards to support system maintenance.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 16,
+                    "gen_requirement": "The system shall use widely accepted, available hardware, software technologies, and communication standards where feasible to support cost-conscious prototype delivery and maintainability.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Generally covers standards and maintainability."
+                },
+                {
+                    "gen_id": 18,
+                    "gen_requirement": "The prototype software and supporting configuration shall be deliverable within a 12-month project window by a five-engineer team using the prescribed organizational development process.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "References use of an organizational development process."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements only reference generic standards/processes. They do not specify documentation of requirements/design/code, abstraction, information hiding, module independence, or IEEE standards for maintenance."
+        },
+        {
+            "gt_id": 55,
+            "ground_truth_requirement": "Documentation of requirements, design, and code.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement mandates documentation of requirements, design, and code."
+        },
+        {
+            "gt_id": 56,
+            "ground_truth_requirement": "Use of abstraction, information hiding and module independence in system design.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies abstraction, information hiding, or module independence."
+        },
+        {
+            "gt_id": 57,
+            "ground_truth_requirement": "Use of IEEE standards [IEEE830, IEEE1008, IEEE1016, IEEE1028] and the HomeOwner Coding Standard [HO4710].",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 16,
+                    "gen_requirement": "The system shall use widely accepted, available hardware, software technologies, and communication standards where feasible to support cost-conscious prototype delivery and maintainability.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Only generically mentions standards."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirement does not identify IEEE830, IEEE1008, IEEE1016, IEEE1028, or the HomeOwner Coding Standard HO4710."
+        },
+        {
+            "gt_id": 58,
+            "ground_truth_requirement": "Although the product produced under this document will be a 'prototype' version, all modules and components of this prototype version shall be designed and implemented in such a manner that it may be incorporated in a fully specified commercial version of the DigitalHome System.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 18,
+                    "gen_requirement": "The prototype software and supporting configuration shall be deliverable within a 12-month project window by a five-engineer team using the prescribed organizational development process.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions prototype software delivery."
+                },
+                {
+                    "gen_id": 16,
+                    "gen_requirement": "The system shall use widely accepted, available hardware, software technologies, and communication standards where feasible to support cost-conscious prototype delivery and maintainability.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions prototype maintainability considerations."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements mention a prototype but do not require modules/components to be designed for incorporation into a future commercial version."
+        },
+        {
+            "gt_id": 59,
+            "ground_truth_requirement": "All system documents (Software Requirements Specification, Architectural Design Specification, Module Detailed Design, Module Source Code, and all Test Plans) shall be up-to-date, use the Homeowner document format [HO2305] and reside in the HomeOwner Document Archive at completion of the project.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement covers required document types, currency, HO2305 format, or archive location."
+        },
+        {
+            "gt_id": 60,
+            "ground_truth_requirement": "HomeOwner has designated object-oriented development, using UML 2.0, as the preferred method for development of software for HomeOwner products. Exceptions to this rule must be approved by the CIO.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies object-oriented development, UML 2.0, or CIO approval for exceptions."
+        },
+        {
+            "gt_id": 61,
+            "ground_truth_requirement": "The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home (FAQ, parameter/sensor explanation, DH Planner guide).",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement provides online documentation, FAQ, parameter/sensor explanations, or a DH Planner guide."
+        },
+        {
+            "gt_id": 62,
+            "ground_truth_requirement": "An FAQ section – a set of 'Frequently Asked Questions' about use and maintenance of the DigitalHome System (e.g., 'How do I change my password?', 'Where to I go to get DigitalHome support?').",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies an FAQ section."
+        },
+        {
+            "gt_id": 63,
+            "ground_truth_requirement": "A section that explains how DH parameters are set and sensor values are read. This shall include information on limitations and constraints on parameter settings and sensor reading accuracy.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall validate user-entered control values against configured device constraints and shall reject invalid entries with a clear error message without applying the change.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Tangentially references parameter constraints, but not documentation."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirement validates constraints operationally but does not require a documentation section explaining parameter setting, sensor reading, limitations, constraints, or sensor accuracy."
+        },
+        {
+            "gt_id": 64,
+            "ground_truth_requirement": "A section that describes how to use the DH Planner.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [],
+            "coverage_verdict": "NONE",
+            "reasoning": "No generated requirement specifies documentation describing how to use the DH Planner."
+        }
+    ]
+}

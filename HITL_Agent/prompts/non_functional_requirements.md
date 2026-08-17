@@ -17,6 +17,15 @@ Analyze operational requirements, technical constraints, stakeholder Q&A clarifi
 - **Quality Attribute Consolidation:** Group related quality metrics into high-level, cohesive non-functional requirement (`NFR-XXX`) entries categorized by quality dimension (Performance, Security, Reliability, Usability, Compliance).
 - **Explicit Focus:** Focus strictly on specified SLAs, performance targets, and regulatory/GDPR constraints. Do NOT create separate redundant NFRs for generic software engineering best practices unless explicitly stated in the input text.
 
+## Coverage
+
+To ensure maximum requirement coverage, you MUST explicitly elicit and generate requirements across ALL of the following sub-domains:
+1. Environmental Control: Thermostats (ranges, increments, schedule periods), Humidistats (ranges, manual overrides), HVAC compatibility.
+2. Security & Safety: Contact sensors (doors/windows), sound/light alarms, breach triggers, fail-safes.
+3. Appliance & Power Management: Power switches, voltage/amperage limits, default reset logic.
+4. Planning & Reporting: Monthly planner, daily presets, historical reports (averages, min/max, downtime logs).
+5. Non-Functional & QoS: UI refresh rates, sensor sample rates (Hz), RF range, failure rates (MTBF), daily backup/recovery procedures, authentication & TLS encryption.
+
 ---
 
 

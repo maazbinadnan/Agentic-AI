@@ -1,0 +1,6 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+admin_console.html,3,10,0,FAIL (3 Violations)
+dashboard.html,2,12,0,FAIL (2 Violations)
+environment_control.html,5,14,0,FAIL (5 Violations)
+login.html,4,14,0,FAIL (4 Violations)
+security_power.html,4,11,0,FAIL (4 Violations)

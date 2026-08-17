@@ -1,7 +1,0 @@
-html_filename,violations_count,passes_count,incomplete_count,status
-auth_startup_mockup.html,4,17,1,FAIL (4 Violations)
-browse_details_offline_mockup.html,2,14,1,FAIL (2 Violations)
-favorites_notifications_mockup.html,2,13,0,FAIL (2 Violations)
-live_ticker_streams_mockup.html,2,14,0,FAIL (2 Violations)
-news_sharing_mockup.html,4,16,0,FAIL (4 Violations)
-unified_interface_feedback_mockup.html,2,11,0,FAIL (2 Violations)

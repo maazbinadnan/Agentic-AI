@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalHome - Login Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;min-width:0} 
+    html,body{max-width:100%;overflow-x:hidden}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b 40%,#0b1120);color:#0f172a;word-break:break-word;overflow-wrap:anywhere}
+    .wrap{padding:24px;min-height:100vh;width:100%;overflow-x:hidden}
+    .hero{color:#e2e8f0;margin:0 auto 18px;max-width:1200px}
+    .hero h1{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0;color:#94a3b8}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;max-width:1200px;margin:0 auto;width:100%}
+    .phone{background:#cbd5e1;border-radius:28px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);width:100%;overflow:hidden}
+    .screen{background:#f8fafc;border-radius:20px;min-height:760px;overflow:hidden;border:1px solid #e2e8f0;width:100%}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;background:#0f172a;color:#fff;flex-wrap:wrap}.meta{font-size:12px;color:#cbd5e1}
+    .content{padding:28px;width:100%}
+    .logo{display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}.badge{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#0ea5e9,#22c55e);display:grid;place-items:center;color:#fff;font-weight:800;flex:0 0 auto}.card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(15,23,42,.06);width:100%} h2{margin:0 0 8px;font-size:24px} p.sub{margin:0 0 22px;color:#64748b;font-size:14px}.field{margin-bottom:14px}.label{display:block;margin-bottom:8px;font-size:13px;font-weight:600;color:#334155} input,select{width:100%;max-width:100%;padding:12px 14px;border:1px solid #cbd5e1;border-radius:12px;font:inherit;background:#fff} .row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.check{display:flex;align-items:center;gap:8px;color:#475569;font-size:13px;flex-wrap:wrap}.btn{width:100%;max-width:100%;padding:13px 16px;border:none;border-radius:12px;background:#0ea5e9;color:#fff;font-weight:700;cursor:pointer}.btn.secondary{background:#e2e8f0;color:#0f172a}.alert{padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:16px}.alert.error{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}.alert.info{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}.muted{color:#64748b;font-size:12px}.footer{margin-top:18px;text-align:center;font-size:12px;color:#64748b}.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#e0f2fe;color:#0369a1;font-size:12px;font-weight:600;margin-bottom:12px;max-width:100%}.shield{margin-top:20px;padding:14px;border-radius:14px;background:#f8fafc;border:1px dashed #cbd5e1;color:#475569;font-size:13px}
+    a{word-break:break-word}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>DigitalHome Authentication</h1>
+      <p>Responsive mockup covering successful sign-in, first-use/idle state, and invalid credential handling.</p>
+    </div>
+    <div class="grid">
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Login</strong><span class="meta">Populated / Ready</span></div>
+        <div class="content">
+          <div class="logo"><div class="badge">DH</div><div><strong>DigitalHome</strong><div class="muted">Secure access to monitoring and control</div></div></div>
+          <div class="card">
+            <span class="pill">Authenticated access required</span>
+            <h2>Welcome back</h2>
+            <p class="sub">Sign in to view your home dashboard, schedules, reports, and device controls.</p>
+            <div class="field"><label class="label">Username</label><input value="amanda.owner" /></div>
+            <div class="field"><label class="label">Password</label><input type="password" value="password123" /></div>
+            <div class="row" style="margin:10px 0 18px">
+              <label class="check"><input type="checkbox" checked /> Remember this device</label>
+              <a class="muted" href="#">Forgot password?</a>
+            </div>
+            <button class="btn">Sign in</button>
+            <div class="shield">Role preview after login: <strong>General User</strong> sees monitoring, device control, plans, presets, and reports.</div>
+          </div>
+          <div class="footer">Protected functions remain inaccessible until authentication succeeds.</div>
+        </div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Login</strong><span class="meta">Empty State</span></div>
+        <div class="content">
+          <div class="logo"><div class="badge">DH</div><div><strong>DigitalHome</strong><div class="muted">Prototype smart home web portal</div></div></div>
+          <div class="card">
+            <div class="alert info">Use your assigned DigitalHome account. Master Users and Technicians receive expanded administrative options after sign-in.</div>
+            <h2>Sign in</h2>
+            <p class="sub">Enter your credentials to begin. This mockup assumes standard web knowledge for household users.</p>
+            <div class="field"><label class="label">Username</label><input placeholder="e.g. j.smith" /></div>
+            <div class="field"><label class="label">Password</label><input type="password" placeholder="Enter password" /></div>
+            <div class="row" style="margin:10px 0 18px">
+              <label class="check"><input type="checkbox" /> Remember this device</label>
+              <span class="muted">Secure HTTPS session</span>
+            </div>
+            <button class="btn">Sign in</button>
+            <button class="btn secondary" style="margin-top:10px">View demo environment</button>
+          </div>
+          <div class="footer">No physical hardware is required; the prototype can run fully in a simulated environment.</div>
+        </div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Login</strong><span class="meta">Error State</span></div>
+        <div class="content">
+          <div class="logo"><div class="badge">DH</div><div><strong>DigitalHome</strong><div class="muted">Access denied on invalid credentials</div></div></div>
+          <div class="card">
+            <div class="alert error"><strong>Sign-in failed.</strong> The username or password is invalid. Protected DigitalHome functions are still locked.</div>
+            <h2>Try again</h2>
+            <p class="sub">Users remain on the login page until a valid account is authenticated.</p>
+            <div class="field"><label class="label">Username</label><input value="guest.user" /></div>
+            <div class="field"><label class="label">Password</label><input type="password" value="wrongpass" /></div>
+            <div class="row" style="margin:10px 0 18px">
+              <label class="check"><input type="checkbox" /> Remember this device</label>
+              <a class="muted" href="#">Contact Master User</a>
+            </div>
+            <button class="btn">Retry sign in</button>
+            <div class="shield">Security behavior: access is denied, session is not created, and protected routes remain unavailable.</div>
+          </div>
+          <div class="footer">Supports US-001 and post-logout re-entry for US-003.</div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</body>
+</html>

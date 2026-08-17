@@ -1,0 +1,1090 @@
+[
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The DigitalHome System shall allow a web-ready computer, cell phone or PDA to control a home's temperature, humidity, lights, security, and the state of small appliances.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.695
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.6584
+      }
+    ],
+    "coverage_score": 0.6767
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The communication center of the DH system shall be a DH home web server, through which a user shall be able to monitor and control home devices and systems.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.7225
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to start and stop DigitalHome system operation through the web interface.",
+        "similarity_score": 0.6832
+      }
+    ],
+    "coverage_score": 0.7029
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "Each DigitalHome shall contain a master control device (the DH Gateway Device) that connects to the home’s broadband Internet connection, and uses wireless communication to send and receive communication between the DigitalHome system and the home devices and systems.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.7575
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall require broadband Internet service availability for remote communication between the home web server, gateway, and authenticated users accessing the DigitalHome web interface.",
+        "similarity_score": 0.664
+      }
+    ],
+    "coverage_score": 0.7108
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The DigitalHome shall be equipped with various environmental controllers and sensors (temperature controller-sensors: thermostats, humidity controller-sensors: humidistats, contact sensors, security sound and light alarms, and power switches).",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall execute all thermostat, humidistat, contact sensor, alarm, and programmable power switch behaviors in a simulated environment that adheres to realistic home physical properties and device constraints, with no dependency on actual installed household hardware.",
+        "similarity_score": 0.6153
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.6119
+      }
+    ],
+    "coverage_score": 0.6136
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "Using wireless communication, sensor values can be read and saved in the home database.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.5433
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall present updated values for monitored temperature, humidity, contact sensor status, and appliance power state on the web interface within 2 seconds of receiving a new device or simulated device status update.",
+        "similarity_score": 0.4301
+      }
+    ],
+    "coverage_score": 0.4867
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "Controller values can be sent to controllers to change the DH environment.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to configure and update system default parameters through the web interface.",
+        "similarity_score": 0.4314
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide role-based access control such that General Users can monitor and control home environmental and power-management functions, while Master Users and DH Technicians can additionally configure system parameters, maintain user accounts, and start or stop system operation.",
+        "similarity_score": 0.4198
+      }
+    ],
+    "coverage_score": 0.4256
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The DigitalHome programmable thermostat shall allow a user to monitor and control a home’s temperature from any location, using a web ready computer, cell phone, or PDA.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.6766
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.5742
+      }
+    ],
+    "coverage_score": 0.6254
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DH user shall be able to read the temperature at a thermostat position.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.6002
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support thermostat sensing and reporting only within the specified operating range of 14°F to 104°F (-10°C to 40°C), and shall reject or flag any simulated reading outside that range as invalid.",
+        "similarity_score": 0.5607
+      }
+    ],
+    "coverage_score": 0.5805
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DH user shall be able to set the thermostat temperatures to between 60 ° F and 80 ° F, inclusive, at one degree increments.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.615
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support thermostat sensing and reporting only within the specified operating range of 14°F to 104°F (-10°C to 40°C), and shall reject or flag any simulated reading outside that range as invalid.",
+        "similarity_score": 0.5781
+      }
+    ],
+    "coverage_score": 0.5966
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "Up to eight thermostats shall be placed in rooms throughout the home.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+        "similarity_score": 0.5468
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process thermostat readings at a minimum rate of 1 Hz for each active thermostat in the simulated environment.",
+        "similarity_score": 0.4742
+      }
+    ],
+    "coverage_score": 0.5105
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The thermostats may be controlled individually or collectively, so that temperature can be controlled at different levels in different home spaces.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.5127
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process thermostat readings at a minimum rate of 1 Hz for each active thermostat in the simulated environment.",
+        "similarity_score": 0.4771
+      }
+    ],
+    "coverage_score": 0.4949
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A single thermostat shall be placed in an enclosed space (e.g., a room in the house) for which the air temperature is to be controlled.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process thermostat readings at a minimum rate of 1 Hz for each active thermostat in the simulated environment.",
+        "similarity_score": 0.5242
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.5155
+      }
+    ],
+    "coverage_score": 0.5199
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "For each thermostat, up to twenty-four one hour settings per day for every day of the week can be scheduled.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+        "similarity_score": 0.677
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+        "similarity_score": 0.546
+      }
+    ],
+    "coverage_score": 0.6115
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "If a thermostat device allows a user to make a manual temperature setting, the setting shall remain in effect until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+        "similarity_score": 0.571
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.54
+      }
+    ],
+    "coverage_score": 0.5555
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A thermostat unit shall communicate, through wireless signals, with the master control unit.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process thermostat readings at a minimum rate of 1 Hz for each active thermostat in the simulated environment.",
+        "similarity_score": 0.5142
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.5059
+      }
+    ],
+    "coverage_score": 0.51
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The system shall support Fahrenheit and Celsius temperature values.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support thermostat sensing and reporting only within the specified operating range of 14°F to 104°F (-10°C to 40°C), and shall reject or flag any simulated reading outside that range as invalid.",
+        "similarity_score": 0.5925
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable thermostats by receiving current temperature readings, displaying the readings to users, accepting a user-entered temperature set point, and switching connected heating or cooling control outputs on or off as needed to regulate the enclosed space toward the set point within the thermostat sensing range of 14°F to 104°F (-10°C to 40°C).",
+        "similarity_score": 0.5367
+      }
+    ],
+    "coverage_score": 0.5646
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The system shall be compatible with a centralized HVAC (Heating, Ventilation and Air Conditioning) systems: gas, oil, electricity, solar, or a combination of two or more. The system shall adhere to the standards, policies and procedures of the American Society of Heating, Refrigerating and Air-Conditioning Engineers [ASHRAE 2010].",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall execute all thermostat, humidistat, contact sensor, alarm, and programmable power switch behaviors in a simulated environment that adheres to realistic home physical properties and device constraints, with no dependency on actual installed household hardware.",
+        "similarity_score": 0.5334
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall operate all monitoring, control, planning, reporting, account-management, and backup functions against simulated sensors, controllers, and home conditions that represent the behavior and constraints of an actual home environment.",
+        "similarity_score": 0.5092
+      }
+    ],
+    "coverage_score": 0.5213
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The DigitalHome programmable humidistat shall allow a user to monitor and control a home’s humidity from any location, using a web ready computer, cell phone, or PDA.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.7417
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall present authenticated General Users with current monitored home status information through the web interface, including current temperature readings, current humidity readings, door and window contact states, alarm status, and appliance or lighting power states.",
+        "similarity_score": 0.5612
+      }
+    ],
+    "coverage_score": 0.6514
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DH user shall be able to read the humidity at a humidistat position.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.6499
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.5552
+      }
+    ],
+    "coverage_score": 0.6025
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DH user shall be able to set the humidity level for a humidistat, from 30% to 60%, inclusive a 1% increments.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.5989
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.5468
+      }
+    ],
+    "coverage_score": 0.5729
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "Up to eight humidistats shall be placed in rooms throughout the home.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.5649
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.5389
+      }
+    ],
+    "coverage_score": 0.5519
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A single humidistat shall be placed in an enclosed space (e.g., a room in the house) for which the humidity is to be controlled.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.591
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.5874
+      }
+    ],
+    "coverage_score": 0.5892
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "If a humidistat device allows a user to make a manual temperature setting, the setting shall remain in effect until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.5785
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+        "similarity_score": 0.5636
+      }
+    ],
+    "coverage_score": 0.5711
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "For each humidistat, up to twenty-four one hour settings per day for every day of the week can be scheduled.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+        "similarity_score": 0.6674
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.5492
+      }
+    ],
+    "coverage_score": 0.6083
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DigitalHome system shall use wireless signals to communicate, through the master control unit, with the humidistats.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable humidistats by receiving current humidity readings, displaying the readings to users, accepting a user-entered humidity set point, and switching humidifier or dehumidifier control outputs as needed to regulate the enclosed space toward the set point.",
+        "similarity_score": 0.6986
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.6763
+      }
+    ],
+    "coverage_score": 0.6874
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The DigitalHome security system consists of contact sensors and a set security alarms.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+        "similarity_score": 0.5572
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.5363
+      }
+    ],
+    "coverage_score": 0.5468
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DigitalHome system shall be able to manage up to fifty door and window contact sensors.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.5777
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall permit only Master Users and DH Technicians to start or stop DigitalHome system operation, and shall complete the requested state transition within 10 seconds for 95% of requests.",
+        "similarity_score": 0.5378
+      }
+    ],
+    "coverage_score": 0.5578
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A DigitalHome system shall be able to activate both light and sound alarms: one sound alarm and one light alarm subsystem, with multiple lights.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+        "similarity_score": 0.5985
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall detect an active door or window contact sensor breach and activate the associated sound and light alarm indication within 2 seconds of the triggering event while the security monitoring function is active.",
+        "similarity_score": 0.5848
+      }
+    ],
+    "coverage_score": 0.5917
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "When a security breach occurs and a contact sensor is set OPEN, the alarm system shall be activated.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall detect an active door or window contact sensor breach and activate the associated sound and light alarm indication within 2 seconds of the triggering event while the security monitoring function is active.",
+        "similarity_score": 0.6973
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+        "similarity_score": 0.6817
+      }
+    ],
+    "coverage_score": 0.6895
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The DigitalHome programmable Appliance Manager shall provide for management of a home’s small appliances, including lighting units, by allowing a user to turn them on or off as desired.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+        "similarity_score": 0.6658
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.6132
+      }
+    ],
+    "coverage_score": 0.6395
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The Appliance Manager shall be able to manage up to one hundred 115 volt, 10 amp power switches.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support programmable power switches only for simulated small-appliance and lighting loads up to 120 volts and 15 amperes per switch.",
+        "similarity_score": 0.6396
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+        "similarity_score": 0.565
+      }
+    ],
+    "coverage_score": 0.6023
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The system shall be able to provide information about the state of a power switch (OFF or ON), indicating the whether an appliance connected to the power switch is OFF or ON.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+        "similarity_score": 0.7702
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall preserve the last confirmed appliance power state across server or application restart and, if the prior state cannot be verified during recovery, shall reset the affected programmable power switch to OFF by default.",
+        "similarity_score": 0.5957
+      }
+    ],
+    "coverage_score": 0.683
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The system shall be able to change the state of a power switch (OFF to ON, or ON to OFF), in turn changing the state of an appliance connected to the power switch.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+        "similarity_score": 0.7945
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support programmable power switches only for simulated small-appliance and lighting loads up to 120 volts and 15 amperes per switch.",
+        "similarity_score": 0.6154
+      }
+    ],
+    "coverage_score": 0.705
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "If a user changes the state of power switch device manually, the device shall remain in that state until the end of the planned or default time period, at which time the planned or default setting will be used for the next time period.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall preserve the last confirmed appliance power state across server or application restart and, if the prior state cannot be verified during recovery, shall reset the affected programmable power switch to OFF by default.",
+        "similarity_score": 0.6378
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall support digital programmable power switches by monitoring and displaying the current on/off state of each connected small appliance or lighting unit and by allowing authorized users to issue commands that change the power switch state from off to on or from on to off.",
+        "similarity_score": 0.5732
+      }
+    ],
+    "coverage_score": 0.6055
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "DigitalHome Planner shall provide a user with the capability to direct the system to set various preset home parameters (temperature, humidity, security contacts, and on/off appliance/light status) for certain time periods.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.7071
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store daily presets or schedules that specify planned thermostat set points, humidistat set points, and power switch states for supported devices.",
+        "similarity_score": 0.653
+      }
+    ],
+    "coverage_score": 0.6801
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "DigitalHome provides a monthly planner.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.6025
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.4599
+      }
+    ],
+    "coverage_score": 0.5312
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "For a given month and year, a user shall be able to create or modify a month plan that specifies for each day, for up to four daily time periods, the environmental parameter settings (temperature, humidity, contact sensors and power switches).",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.7086
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall support at least 4 schedule periods per day for each schedulable thermostat, humidistat, and programmable power switch within daily presets and monthly planning functions.",
+        "similarity_score": 0.6457
+      }
+    ],
+    "coverage_score": 0.6772
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "A user shall be able to override planned parameter values, through the DH website, or if available, through manual switches on household devices.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to configure and update system default parameters through the web interface.",
+        "similarity_score": 0.637
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to start and stop DigitalHome system operation through the web interface.",
+        "similarity_score": 0.5902
+      }
+    ],
+    "coverage_score": 0.6136
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "For a given month and year, in the past two years, DigitalHome shall be able to provide a report on the management and control of the home.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.5748
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.517
+      }
+    ],
+    "coverage_score": 0.5459
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The month report shall contain daily average, maximum (with time) and minimum (with time) values of temperature and humidity for each thermostat and humidistat, respectively.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.5607
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall generate historical reports containing averages, minimums, maximums, and downtime logs for a selected date range within 5 seconds for 95% of report requests covering up to 31 days of data.",
+        "similarity_score": 0.5485
+      }
+    ],
+    "coverage_score": 0.5546
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The month report shall provide the day and time for which any security breaches occurred, that is, when the security alarms were activated.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall activate configured security sound alarms and light alarms when it detects a security breach from an active magnetic contact switch and shall display the resulting alarm state through the web interface.",
+        "similarity_score": 0.4998
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall detect an active door or window contact sensor breach and activate the associated sound and light alarm indication within 2 seconds of the triggering event while the security monitoring function is active.",
+        "similarity_score": 0.4882
+      }
+    ],
+    "coverage_score": 0.494
+  },
+  {
+    "ground_truth_type": "fnr",
+    "ground_truth_requirement": "The month report shall provide a section that indicates the periods of time when the DH System was not in operation.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall generate historical reports containing averages, minimums, maximums, and downtime logs for a selected date range within 5 seconds for 95% of report requests covering up to 31 days of data.",
+        "similarity_score": 0.5092
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall achieve at least 99.0% availability over each 30-day period excluding planned maintenance windows not exceeding 4 hours per month.",
+        "similarity_score": 0.5091
+      }
+    ],
+    "coverage_score": 0.5091
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Displays of environmental conditions (temperature, humidity, contact sensors and power switches) shall be updated at least every two seconds.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall present updated values for monitored temperature, humidity, contact sensor status, and appliance power state on the web interface within 2 seconds of receiving a new device or simulated device status update.",
+        "similarity_score": 0.7279
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.5593
+      }
+    ],
+    "coverage_score": 0.6436
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Sensor (temperature, humidity, contact sensor, power state) shall have a minimum data acquisition rate of 10 Hz.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process humidistat readings at a minimum rate of 1 Hz for each active humidistat in the simulated environment.",
+        "similarity_score": 0.6242
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall sample and process thermostat readings at a minimum rate of 1 Hz for each active thermostat in the simulated environment.",
+        "similarity_score": 0.5856
+      }
+    ],
+    "coverage_score": 0.6049
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "An environmental sensor or controller device shall have to be within 1000 feet of the master control device, in order to be in communication with the system.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall communicate between the web server and DigitalHome sensors and controllers through a home gateway that connects to a broadband Internet connection and exchanges wireless RF messages with DigitalHome devices over an indoor transmission range of up to 1000 feet.",
+        "similarity_score": 0.5361
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall transmit and receive gateway-to-device wireless communications over a simulated indoor RF range of up to 1000 feet without loss of functional connectivity in the modeled environment.",
+        "similarity_score": 0.5353
+      }
+    ],
+    "coverage_score": 0.5357
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The DigitalHome System must be highly reliable with no more than 1 failure per 10,000 hours of operation.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall permit only Master Users and DH Technicians to start or stop DigitalHome system operation, and shall complete the requested state transition within 10 seconds for 95% of requests.",
+        "similarity_score": 0.652
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall achieve a mean time between service-affecting failures of at least 720 operating hours in the prototype test environment.",
+        "similarity_score": 0.5892
+      }
+    ],
+    "coverage_score": 0.6206
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The Digital Home System shall incorporate backup and recovery mechanisms.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall perform backup of user account information, user plans, and the home database so that stored DigitalHome configuration and usage information can be preserved for later recovery.",
+        "similarity_score": 0.7072
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.6402
+      }
+    ],
+    "coverage_score": 0.6737
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The DH System will backup all system data (configuration, default parameter settings, planning, and usage data) on a daily basis, with the backup time set by the DH Technician at system set up.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall perform backup of user account information, user plans, and the home database so that stored DigitalHome configuration and usage information can be preserved for later recovery.",
+        "similarity_score": 0.6658
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall perform an automated backup of user account information, user plans, and the home database at least once every 24 hours.",
+        "similarity_score": 0.6312
+      }
+    ],
+    "coverage_score": 0.6485
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "If the DH System fails (due to power loss, loss of internet access, or other software or hardware failure), the system recovery mechanism shall restore system data (configuration, default parameter settings, planning, and usage data) from the most recent backup.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall perform backup of user account information, user plans, and the home database so that stored DigitalHome configuration and usage information can be preserved for later recovery.",
+        "similarity_score": 0.6212
+      },
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall restore the most recent successful backup of user account information, user plans, and the home database within 4 hours of a recovery request.",
+        "similarity_score": 0.5565
+      }
+    ],
+    "coverage_score": 0.5888
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "All DigitalHome operations shall incorporate exception handling so that the system responds to a user with a clear, descriptive message when an error or an exceptional condition occurs.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall permit only Master Users and DH Technicians to start or stop DigitalHome system operation, and shall complete the requested state transition within 10 seconds for 95% of requests.",
+        "similarity_score": 0.5777
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.5658
+      }
+    ],
+    "coverage_score": 0.5717
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Although there are no specific safety requirements, high system reliability is important to insure there are no system failures in carrying out user requests. Such failures might affect the safety of home dwellers (e.g., security breaches, inadequate lighting in dark spaces, inappropriate temperature and humidity for people who are in ill-health, or powering certain appliances when young children are present).",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall execute all thermostat, humidistat, contact sensor, alarm, and programmable power switch behaviors in a simulated environment that adheres to realistic home physical properties and device constraints, with no dependency on actual installed household hardware.",
+        "similarity_score": 0.4886
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide role-based access control such that General Users can monitor and control home environmental and power-management functions, while Master Users and DH Technicians can additionally configure system parameters, maintain user accounts, and start or stop system operation.",
+        "similarity_score": 0.4874
+      }
+    ],
+    "coverage_score": 0.488
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Upon installation, a DigitalHome user account shall be established. The DigitalHome web system shall provide for authentication and information encryption through a recognized reliable and effective security technology, such as Transport Layer Security.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall authenticate users through a web interface using a valid username and password before permitting access to DigitalHome monitoring, control, planning, reporting, or administration functions.",
+        "similarity_score": 0.7283
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.6943
+      }
+    ],
+    "coverage_score": 0.7113
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Log in to an account shall require entry of an account name and a password.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall require successful username-and-password authentication before granting access to any monitoring, control, planning, reporting, or configuration function.",
+        "similarity_score": 0.511
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall authenticate users through a web interface using a valid username and password before permitting access to DigitalHome monitoring, control, planning, reporting, or administration functions.",
+        "similarity_score": 0.4487
+      }
+    ],
+    "coverage_score": 0.4798
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The development of the DH system shall use methods and techniques such as documentation of requirements/design/code, abstraction/module independence, and IEEE standards to support system maintenance.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to configure and update system default parameters through the web interface.",
+        "similarity_score": 0.4889
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to create, view, update, and maintain DigitalHome user accounts through the web interface.",
+        "similarity_score": 0.4838
+      }
+    ],
+    "coverage_score": 0.4864
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Documentation of requirements, design, and code.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall present web interface workflows for login, monitoring, control, planning, and reporting that can be completed using standard browser interactions without requiring technical product knowledge beyond basic web usage.",
+        "similarity_score": 0.3033
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.2972
+      }
+    ],
+    "coverage_score": 0.3003
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Use of abstraction, information hiding and module independence in system design.",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall present web interface workflows for login, monitoring, control, planning, and reporting that can be completed using standard browser interactions without requiring technical product knowledge beyond basic web usage.",
+        "similarity_score": 0.3166
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide role-based access control such that General Users can monitor and control home environmental and power-management functions, while Master Users and DH Technicians can additionally configure system parameters, maintain user accounts, and start or stop system operation.",
+        "similarity_score": 0.3033
+      }
+    ],
+    "coverage_score": 0.31
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Use of IEEE standards [IEEE830, IEEE1008, IEEE1016, IEEE1028] and the HomeOwner Coding Standard [HO4710].",
+    "top_matches": [
+      {
+        "gen_type": "gen_nfnr",
+        "gen_requirement": "The system shall execute all thermostat, humidistat, contact sensor, alarm, and programmable power switch behaviors in a simulated environment that adheres to realistic home physical properties and device constraints, with no dependency on actual installed household hardware.",
+        "similarity_score": 0.4211
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.4068
+      }
+    ],
+    "coverage_score": 0.414
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "Although the product produced under this document will be a 'prototype' version, all modules and components of this prototype version shall be designed and implemented in such a manner that it may be incorporated in a fully specified commercial version of the DigitalHome System.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.4794
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.4681
+      }
+    ],
+    "coverage_score": 0.4738
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "All system documents (Software Requirements Specification, Architectural Design Specification, Module Detailed Design, Module Source Code, and all Test Plans) shall be up-to-date, use the Homeowner document format [HO2305] and reside in the HomeOwner Document Archive at completion of the project.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall operate all monitoring, control, planning, reporting, account-management, and backup functions against simulated sensors, controllers, and home conditions that represent the behavior and constraints of an actual home environment.",
+        "similarity_score": 0.4638
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.4594
+      }
+    ],
+    "coverage_score": 0.4616
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "HomeOwner has designated object-oriented development, using UML 2.0, as the preferred method for development of software for HomeOwner products. Exceptions to this rule must be approved by the CIO.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.4291
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide role-based access control such that General Users can monitor and control home environmental and power-management functions, while Master Users and DH Technicians can additionally configure system parameters, maintain user accounts, and start or stop system operation.",
+        "similarity_score": 0.3998
+      }
+    ],
+    "coverage_score": 0.4144
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "The DigitalHome System shall provide users with online documentation about the DigitalHome system installed in their home (FAQ, parameter/sensor explanation, DH Planner guide).",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.6931
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to create, view, update, and maintain DigitalHome user accounts through the web interface.",
+        "similarity_score": 0.6395
+      }
+    ],
+    "coverage_score": 0.6663
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "An FAQ section – a set of 'Frequently Asked Questions' about use and maintenance of the DigitalHome System (e.g., 'How do I change my password?', 'Where to I go to get DigitalHome support?').",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide a home web server that supports user interaction with DigitalHome devices, stores DigitalHome plans and operational data, maintains user account records, and provides backup support for user account information, user plans, and the home database.",
+        "similarity_score": 0.5762
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to create, view, update, and maintain DigitalHome user accounts through the web interface.",
+        "similarity_score": 0.5401
+      }
+    ],
+    "coverage_score": 0.5582
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "A section that explains how DH parameters are set and sensor values are read. This shall include information on limitations and constraints on parameter settings and sensor reading accuracy.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to configure and update system default parameters through the web interface.",
+        "similarity_score": 0.4789
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall provide role-based access control such that General Users can monitor and control home environmental and power-management functions, while Master Users and DH Technicians can additionally configure system parameters, maintain user accounts, and start or stop system operation.",
+        "similarity_score": 0.4424
+      }
+    ],
+    "coverage_score": 0.4606
+  },
+  {
+    "ground_truth_type": "nfnr",
+    "ground_truth_requirement": "A section that describes how to use the DH Planner.",
+    "top_matches": [
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow General Users to create, view, update, and store monthly plans that define scheduled DigitalHome behavior for supported environmental and power-managed devices.",
+        "similarity_score": 0.5001
+      },
+      {
+        "gen_type": "gen_fnr",
+        "gen_requirement": "The system shall allow Master Users and DH Technicians to create, view, update, and maintain DigitalHome user accounts through the web interface.",
+        "similarity_score": 0.4428
+      }
+    ],
+    "coverage_score": 0.4715
+  }
+]

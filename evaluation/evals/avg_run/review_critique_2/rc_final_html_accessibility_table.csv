@@ -1,6 +1,0 @@
-html_filename,violations_count,passes_count,incomplete_count,status
-browse_details_interface_mockup.html,3,26,0,FAIL (3 Violations)
-feedback_support_mockup.html,3,11,0,FAIL (3 Violations)
-live_ticker_streams_mockup.html,3,19,1,FAIL (3 Violations)
-personalization_news_mockup.html,3,28,0,FAIL (3 Violations)
-startup_auth_mockup.html,3,31,1,FAIL (3 Violations)

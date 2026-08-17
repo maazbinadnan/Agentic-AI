@@ -18,6 +18,15 @@ Analyze operational requirements, stakeholder Q&A clarifications, and User Needs
 - **Explicit Focus:** Focus strictly on explicit business logic and system capabilities stated in the input text and `UN-XXX` needs. Do NOT infer speculative administrative sub-features or unrequested workflows.
 - **Target Ratio:** Aim to produce approximately 1 Functional Requirement (`FR-XXX`) per core system feature/workflow
 
+## Coverage
+
+To ensure maximum requirement coverage, you MUST explicitly elicit and generate requirements across ALL of the following sub-domains:
+1. Environmental Control: Thermostats (ranges, increments, schedule periods), Humidistats (ranges, manual overrides), HVAC compatibility.
+2. Security & Safety: Contact sensors (doors/windows), sound/light alarms, breach triggers, fail-safes.
+3. Appliance & Power Management: Power switches, voltage/amperage limits, default reset logic.
+4. Planning & Reporting: Monthly planner, daily presets, historical reports (averages, min/max, downtime logs).
+5. Non-Functional & QoS: UI refresh rates, sensor sample rates (Hz), RF range, failure rates (MTBF), daily backup/recovery procedures, authentication & TLS encryption.
+
 ---
 
 

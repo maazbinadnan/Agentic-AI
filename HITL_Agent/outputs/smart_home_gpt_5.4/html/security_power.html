@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DigitalHome - Security and Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;min-width:0}html,body{max-width:100%;overflow-x:hidden}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#020617;word-break:break-word;overflow-wrap:anywhere}.wrap{padding:24px;width:100%;overflow-x:hidden}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;max-width:1360px;margin:0 auto;width:100%}.phone{background:#64748b;padding:10px;border-radius:28px;overflow:hidden}.screen{background:#f8fafc;border-radius:20px;min-height:820px;overflow:hidden}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 16px;background:#111827;color:#fff}.meta{font-size:12px;color:#cbd5e1}.content{padding:22px}.section{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:16px;margin-bottom:14px;width:100%}.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.item{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px;border:1px solid #e2e8f0;border-radius:12px;margin-top:10px}.tag{padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700;max-width:100%}.green{background:#dcfce7;color:#166534}.red{background:#fee2e2;color:#991b1b}.gray{background:#e2e8f0;color:#475569}.btn{padding:10px 12px;border:none;border-radius:10px;background:#0ea5e9;color:#fff;font-weight:700;max-width:100%}.ghost{background:#e2e8f0;color:#0f172a}.banner{padding:12px 14px;border-radius:12px;font-size:13px;margin-bottom:14px}.warn{background:#fff7ed;border:1px solid #fdba74;color:#9a3412}.err{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c}.ok{background:#ecfdf5;border:1px solid #86efac;color:#166534}.muted{font-size:13px;color:#64748b}
+@media(max-width:720px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body><div class="wrap"><div class="grid">
+<div class="phone"><div class="screen"><div class="top"><strong>Security & Power</strong><span class="meta">Populated State</span></div><div class="content">
+<div class="banner ok">All monitored contacts and programmable switches are communicating normally.</div>
+<div class="row">
+  <div class="section"><strong>Entry Security</strong>
+    <div class="item"><span>Front Door</span><span class="tag green">Closed</span></div>
+    <div class="item"><span>Kitchen Window</span><span class="tag green">Closed</span></div>
+    <div class="item"><span>Alarm System</span><span class="tag gray">Standby</span></div>
+  </div>
+  <div class="section"><strong>Power Controls</strong>
+    <div class="item"><span>Porch Light</span><div><button class="btn">On</button> <button class="btn ghost">Off</button></div></div>
+    <div class="item"><span>Coffee Maker</span><div><button class="btn ghost">On</button> <button class="btn">Off</button></div></div>
+    <div class="item"><span>Desk Lamp</span><div><button class="btn">On</button> <button class="btn ghost">Off</button></div></div>
+  </div>
+</div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Security & Power</strong><span class="meta">Empty / Inactive State</span></div><div class="content">
+<div class="banner warn">Some contact sensors are installed but inactive; inactive sensors are not treated as active breach sources.</div>
+<div class="section"><strong>Entry Security</strong>
+  <div class="item"><span>Garage Side Door</span><span class="tag gray">Inactive sensor</span></div>
+  <div class="item"><span>Bedroom Window</span><span class="tag gray">Inactive sensor</span></div>
+</div>
+<div class="section"><strong>Power Controls</strong><p class="muted">No programmable appliance or lighting switch has been added yet.</p><button class="btn">Add simulated power switch</button></div>
+</div></div></div>
+
+<div class="phone"><div class="screen"><div class="top"><strong>Security & Power</strong><span class="meta">Breach / Unreachable State</span></div><div class="content">
+<div class="banner err">Security breach detected from an active contact sensor. Sound and light alarms have been activated.</div>
+<div class="row">
+  <div class="section"><strong>Alarm Event</strong>
+    <div class="item"><span>Patio Door</span><span class="tag red">Breach</span></div>
+    <div class="item"><span>Sound Alarm</span><span class="tag red">Active</span></div>
+    <div class="item"><span>Light Alarm</span><span class="tag red">Active</span></div>
+  </div>
+  <div class="section"><strong>Power Command Failure</strong>
+    <div class="item"><span>Space Heater Switch</span><span class="tag red">Unreachable</span></div>
+    <p class="muted" style="margin-top:10px">An On command was sent, but the UI does not report success because the actual switch state could not be updated.</p>
+  </div>
+</div>
+</div></div></div>
+</div></div></body></html>
