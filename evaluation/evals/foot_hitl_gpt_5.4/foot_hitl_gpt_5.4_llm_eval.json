@@ -1,0 +1,769 @@
+{
+    "coverage": [
+        {
+            "gt_id": 1,
+            "ground_truth_requirement": "The app must allow users to individually select and display current football news of their favorite team from preferred sports channels.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall allow authenticated users to create and maintain a personalized profile by following favorite football clubs and selecting preferred sports channels for use in news, live results, and notification personalization.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers selection of favorite football clubs and preferred sports channels used for personalization."
+                },
+                {
+                    "gen_id": 3,
+                    "gen_requirement": "The system shall display a personalized football news feed for authenticated users by filtering current football news according to the user’s followed favorite clubs and selected preferred sports channels.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers displaying current football news filtered by favorite clubs and preferred sports channels."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover individual selection of favorite teams/clubs, preferred sports channels, and display of current personalized football news. The authentication condition is an added constraint but does not reduce coverage."
+        },
+        {
+            "gt_id": 2,
+            "ground_truth_requirement": "The app must allow users to view live results of their favorite teams in real time via a live ticker.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers live ticker functionality, real-time/continuous updates, scores, match status, and favorite-team filtering."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall retrieve and display live ticker score and match-event updates in the user interface within five seconds at the 95th percentile after successful receipt of data from the external live-data API during live matches.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Adds a concrete timeliness constraint for displaying live ticker updates in the UI."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover viewing live results for favorite teams through a live ticker with continuous updates and UI display timing. This satisfies the real-time live ticker intent."
+        },
+        {
+            "gt_id": 3,
+            "ground_truth_requirement": "The app must allow users to view league tables and statistics from current as well as past seasons.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall provide authenticated users with access to team, player, league, and competition information for the initial release scope of top European leagues and competitions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions access to league and competition information, but not league tables, statistics, or historical season data."
+                },
+                {
+                    "gen_id": 6,
+                    "gen_requirement": "The system shall limit MVP football content coverage, including news, live ticker data, team information, player information, league information, competition information, and match reports, to top European leagues and competitions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions league information as part of content coverage but does not provide the required table/statistics functionality."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements only tangentially mention league information. They do not specify league tables, statistical views, current-season statistics, or past-season historical data, so the core functional requirement is not covered."
+        },
+        {
+            "gt_id": 4,
+            "ground_truth_requirement": "The app must provide users with detailed team and player information that can be accessed at any time.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 5,
+                    "gen_requirement": "The system shall provide authenticated users with access to team, player, league, and competition information for the initial release scope of top European leagues and competitions.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers access to team and player information."
+                },
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall cache previously loaded news, match reports, team information, player information, competition information, and last known live ticker data on the user’s device for read-only access during limited or lost connectivity.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Partially supports access at any time by enabling read-only access to cached team and player information during poor connectivity."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct UI access to team and player information."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover team and player information, direct access through the UI, and cached access when connectivity is limited. They do not explicitly say the information must be detailed, but the substantive access requirement is otherwise covered."
+        },
+        {
+            "gt_id": 5,
+            "ground_truth_requirement": "As soon as a live match begins the app must allow users to access live stream links from providers such as DAZN or Sky as long as the broadcast rights are valid.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 7,
+                    "gen_requirement": "The system shall display live broadcast access only as third-party deep links to authorized providers such as DAZN or Sky Sport after the relevant live broadcast has begun.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers provider links such as DAZN/Sky and the condition that links appear after the broadcast begins."
+                },
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall suppress live broadcast deep links when the required transmission rights are not fulfilled for the user’s country.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers suppression of links when broadcast rights are invalid."
+                },
+                {
+                    "gen_id": 27,
+                    "gen_requirement": "The system shall display live broadcast deep links only when the broadcast has begun and rights metadata confirms that the relevant provider link is authorized for the user’s country, and the system shall not host, retransmit, or embed live video streams.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers rights-compliant link display after match/broadcast start and clarifies that the app only links to providers."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover access to live stream/broadcast links, provider examples, the post-start condition, and valid broadcast-rights enforcement."
+        },
+        {
+            "gt_id": 6,
+            "ground_truth_requirement": "The app must allow users to register easily and log in directly from the start page.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall require users to complete registration or login at app startup before allowing access to news, live ticker, team and player information, personalization, notifications, social sharing, or live broadcast deep-link features.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers registration/login being available at app startup, which is semantically close to direct start-page access."
+                },
+                {
+                    "gen_id": 24,
+                    "gen_requirement": "The system shall require a valid authenticated session for 100% of protected app features, including news, live ticker, team/player information, personalization, notifications, sharing, and stream-link access, with only registration, login, password recovery, and privacy/legal information accessible without authentication.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Confirms registration and login are unauthenticated entry-point functions."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover registration and login at application startup/start-page level. They do not explicitly specify that the process is easy, but they do address direct availability from startup."
+        },
+        {
+            "gt_id": 7,
+            "ground_truth_requirement": "The app must allow users to personalize their experience by following their favorite teams and leagues.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall allow authenticated users to create and maintain a personalized profile by following favorite football clubs and selecting preferred sports channels for use in news, live results, and notification personalization.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers personalization by following favorite football teams/clubs."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers UI access to personalization capabilities."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover personalization through following favorite clubs/teams, but they omit the ability to follow favorite leagues. Therefore, only one of the two personalization dimensions is covered."
+        },
+        {
+            "gt_id": 8,
+            "ground_truth_requirement": "The app must allow users to select favorite teams and national teams to receive push notifications about news and updates.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall allow authenticated users to create and maintain a personalized profile by following favorite football clubs and selecting preferred sports channels for use in news, live results, and notification personalization.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers selecting/following favorite football clubs for notification personalization."
+                },
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall allow authenticated users to activate notifications and receive alerts about current events, news, live results, and match updates related to their favorite teams when notification permissions are enabled.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers activated notifications for news and updates about favorite teams."
+                },
+                {
+                    "gen_id": 28,
+                    "gen_requirement": "The system shall send football news, result, and match-event notifications only after the user has explicitly enabled notifications and granted operating-system notification permission, and the system shall stop sending such notifications within five minutes after notification permission or in-app notification preference withdrawal is detected.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers push-notification permission behavior and notification sending after explicit activation."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover favorite-team selection and notifications for news, results, and match updates. However, they do not explicitly support selecting national teams, so coverage is incomplete."
+        },
+        {
+            "gt_id": 9,
+            "ground_truth_requirement": "The app must allow users to receive push notifications about news or results of their favorite teams.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall allow authenticated users to activate notifications and receive alerts about current events, news, live results, and match updates related to their favorite teams when notification permissions are enabled.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers notifications for news and live results related to favorite teams."
+                },
+                {
+                    "gen_id": 28,
+                    "gen_requirement": "The system shall send football news, result, and match-event notifications only after the user has explicitly enabled notifications and granted operating-system notification permission, and the system shall stop sending such notifications within five minutes after notification permission or in-app notification preference withdrawal is detected.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Adds permission and preference constraints for sending push notifications."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover receiving notifications about football news and results for favorite teams, including activation and operating-system permission constraints."
+        },
+        {
+            "gt_id": 10,
+            "ground_truth_requirement": "The app must allow users to share news and match reports directly via social media.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 10,
+                    "gen_requirement": "The system shall allow authenticated users to share football news and match reports directly from the app through native mobile sharing or social media sharing mechanisms.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers sharing news and match reports through social media/native sharing."
+                },
+                {
+                    "gen_id": 33,
+                    "gen_requirement": "The system shall protect user privacy during social sharing by using native Android and iOS sharing mechanisms and by excluding authentication tokens, account identifiers, notification preferences, and other personal data from 100% of shared news or match-report payloads.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Adds privacy constraints for social sharing of news and match reports."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover direct sharing of news and match reports via social media or native mobile sharing mechanisms."
+        },
+        {
+            "gt_id": 11,
+            "ground_truth_requirement": "The live ticker module must allow users to retrieve and display live data.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers live ticker retrieval and display of live match data."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall retrieve and display live ticker score and match-event updates in the user interface within five seconds at the 95th percentile after successful receipt of data from the external live-data API during live matches.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Adds performance timing for retrieving/displaying live ticker data in the UI."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover retrieval and display of live data through the live ticker module."
+        },
+        {
+            "gt_id": 12,
+            "ground_truth_requirement": "The app must allow users to access live match results through the user interface directly.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers live match results and score display."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers direct UI access to the live ticker capability."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall retrieve and display live ticker score and match-event updates in the user interface within five seconds at the 95th percentile after successful receipt of data from the external live-data API during live matches.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers displaying live match result updates in the user interface."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover live score/result display and direct access through the user interface."
+        },
+        {
+            "gt_id": 13,
+            "ground_truth_requirement": "The user interface must allow users to view and manage content and modules together.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers a unified UI providing access to multiple integrated content areas and modules."
+                },
+                {
+                    "gen_id": 18,
+                    "gen_requirement": "The system shall provide smooth mobile interaction by completing primary in-app navigation actions, including opening news, live ticker, team/player information, notifications, and sharing screens, within one second at the 95th percentile on supported Android and iOS devices under normal operating conditions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Supports usability/performance for navigating across the UI modules."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover a unified UI for viewing and accessing multiple modules. They do not explicitly state that users can manage content and modules together, so the management aspect is only implied."
+        },
+        {
+            "gt_id": 14,
+            "ground_truth_requirement": "The registration system must allow the registration process to be carried out quickly and easily.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall require users to complete registration or login at app startup before allowing access to news, live ticker, team and player information, personalization, notifications, social sharing, or live broadcast deep-link features.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers existence of registration at startup."
+                },
+                {
+                    "gen_id": 24,
+                    "gen_requirement": "The system shall require a valid authenticated session for 100% of protected app features, including news, live ticker, team/player information, personalization, notifications, sharing, and stream-link access, with only registration, login, password recovery, and privacy/legal information accessible without authentication.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers registration as an unauthenticated accessible function."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements establish that registration is available, but they do not specify quick completion, ease of use, reduced steps, usability criteria, or timing constraints for registration."
+        },
+        {
+            "gt_id": 15,
+            "ground_truth_requirement": "The notification system must allow the app to send users information about current events once activated.",
+            "ground_truth_type": "fnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall allow authenticated users to activate notifications and receive alerts about current events, news, live results, and match updates related to their favorite teams when notification permissions are enabled.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers activated notifications for current events."
+                },
+                {
+                    "gen_id": 28,
+                    "gen_requirement": "The system shall send football news, result, and match-event notifications only after the user has explicitly enabled notifications and granted operating-system notification permission, and the system shall stop sending such notifications within five minutes after notification permission or in-app notification preference withdrawal is detected.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers permission-gated sending of notifications after activation."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover notification activation and sending users current-event information after activation/permission."
+        },
+        {
+            "gt_id": 16,
+            "ground_truth_requirement": "The app must be available for Android and iOS devices.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 23,
+                    "gen_requirement": "The system shall support both Android and iOS mobile platforms by passing 100% of release-blocking functional, startup-performance, and compatibility smoke tests on the supported operating-system versions and device classes defined for each production release.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers availability/support for Android and iOS platforms."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement fully covers support for Android and iOS devices, with added release-test acceptance criteria."
+        },
+        {
+            "gt_id": 17,
+            "ground_truth_requirement": "Once the app is started, its startup time must be less than or equal to two seconds.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 17,
+                    "gen_requirement": "The system shall load and be fully ready for authenticated user interaction within a maximum of two seconds after application start under normal supported-device and network conditions, excluding first-time installation, operating-system cold-start variance, and external provider outages.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers the two-second startup-time constraint."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement directly specifies readiness within two seconds after application start. Additional environmental assumptions do not undermine the core coverage."
+        },
+        {
+            "gt_id": 18,
+            "ground_truth_requirement": "The display of live streams in the app must comply with the respective broadcasting rights in the country.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 8,
+                    "gen_requirement": "The system shall suppress live broadcast deep links when the required transmission rights are not fulfilled for the user’s country.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers country-specific broadcast-rights enforcement."
+                },
+                {
+                    "gen_id": 27,
+                    "gen_requirement": "The system shall display live broadcast deep links only when the broadcast has begun and rights metadata confirms that the relevant provider link is authorized for the user’s country, and the system shall not host, retransmit, or embed live video streams.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers rights-compliant country-specific display of live broadcast links."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover compliance with country-specific broadcast rights before displaying live broadcast access."
+        },
+        {
+            "gt_id": 19,
+            "ground_truth_requirement": "Users personal data must be stored in compliance with GDPR.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 16,
+                    "gen_requirement": "The system shall process personal data used for registration, login, favorite clubs, sports channel preferences, notification settings, sharing actions, cached content access, and feedback evaluation in accordance with GDPR obligations.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers GDPR-compliant processing of personal data across app functions."
+                },
+                {
+                    "gen_id": 25,
+                    "gen_requirement": "The system shall protect personal data and authentication data by encrypting data in transit using TLS 1.2 or higher and by storing credentials, tokens, and personal data only in platform-secure storage or encrypted application storage on supported Android and iOS devices.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers secure storage controls for personal data."
+                },
+                {
+                    "gen_id": 26,
+                    "gen_requirement": "The system shall process all personal data in compliance with GDPR by supporting lawful processing, data minimization, privacy notices, consent capture where required, withdrawal of consent, and data-subject access, export, rectification, and erasure workflows within legally required response timeframes.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers GDPR compliance obligations for personal data."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover GDPR-compliant personal-data processing and add concrete storage/security and data-subject-rights controls."
+        },
+        {
+            "gt_id": 20,
+            "ground_truth_requirement": "The apps session management must ensure that logged-in users remain logged in until they actively log out.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 24,
+                    "gen_requirement": "The system shall require a valid authenticated session for 100% of protected app features, including news, live ticker, team/player information, personalization, notifications, sharing, and stream-link access, with only registration, login, password recovery, and privacy/legal information accessible without authentication.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions authenticated sessions for protected features but not persistence until active logout."
+                },
+                {
+                    "gen_id": 25,
+                    "gen_requirement": "The system shall protect personal data and authentication data by encrypting data in transit using TLS 1.2 or higher and by storing credentials, tokens, and personal data only in platform-secure storage or encrypted application storage on supported Android and iOS devices.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions secure token storage, which is related to session handling but not the required session lifecycle behavior."
+                }
+            ],
+            "coverage_verdict": "NONE",
+            "reasoning": "The generated requirements reference authentication sessions and secure token storage, but they do not require users to remain logged in until they explicitly log out. The persistence and logout-only termination behavior is missing."
+        },
+        {
+            "gt_id": 21,
+            "ground_truth_requirement": "The app must function reliably even with limited network connectivity.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 11,
+                    "gen_requirement": "The system shall cache previously loaded news, match reports, team information, player information, competition information, and last known live ticker data on the user’s device for read-only access during limited or lost connectivity.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers cached read-only access under limited/lost connectivity."
+                },
+                {
+                    "gen_id": 12,
+                    "gen_requirement": "The system shall prevent server-dependent user actions, including changes to favorites, sports channel preferences, notification settings, account details, and live data refreshes, when the app is offline.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers safe behavior for server-dependent actions while offline."
+                },
+                {
+                    "gen_id": 13,
+                    "gen_requirement": "The system shall indicate when displayed content is cached or when live ticker data may be outdated because the app has limited or no network connectivity.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers user feedback for stale/offline data."
+                },
+                {
+                    "gen_id": 22,
+                    "gen_requirement": "The system shall remain usable during limited or lost connectivity by presenting previously loaded cached content in read-only mode within two seconds, clearly indicating offline or stale status for live data, and preventing server-dependent changes such as favorite-team or notification-preference updates while offline.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers reliable limited-connectivity behavior with caching, status indication, and action restrictions."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover reliable limited-connectivity behavior, including cached access, stale-data indication, and prevention of unsafe server-dependent operations."
+        },
+        {
+            "gt_id": 22,
+            "ground_truth_requirement": "When the number of users reaches up to 100,000 simultaneously, the app must remain stable.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 20,
+                    "gen_requirement": "The system shall support up to 100,000 simultaneous users on high-traffic match days without performance loss, maintaining 95th-percentile backend response times of no more than one second for core read operations including news, live ticker, team/player information, and notification-related data retrieval.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Directly covers stability/performance under 100,000 simultaneous users."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirement fully covers the 100,000 simultaneous-user stability requirement and adds measurable backend response-time criteria."
+        },
+        {
+            "gt_id": 23,
+            "ground_truth_requirement": "After release, a support process must be established to quickly resolve technical issues.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 31,
+                    "gen_requirement": "The system shall support continuous improvement by collecting user feedback, app-review insights, and production defect reports, triaging them at least weekly, and triaging critical production defects within one business day of detection.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers an after-release defect-report triage process, including fast handling of critical defects."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirement establishes a post-release defect-report triage process and rapid triage for critical defects. However, it does not explicitly require a support process or quick resolution of technical issues, only collection and triage."
+        },
+        {
+            "gt_id": 24,
+            "ground_truth_requirement": "After six months of operation, feedback and user reviews must be analyzed to further develop the app.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 15,
+                    "gen_requirement": "The system shall support continuous evaluation of user feedback and app review information so product stakeholders can identify defects, usability issues, and opportunities for functional improvement.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers analysis/evaluation of feedback and reviews for functional improvement."
+                },
+                {
+                    "gen_id": 31,
+                    "gen_requirement": "The system shall support continuous improvement by collecting user feedback, app-review insights, and production defect reports, triaging them at least weekly, and triaging critical production defects within one business day of detection.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers ongoing collection and triage of app reviews and feedback for improvement."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover feedback and user-review analysis for further development. They specify continuous evaluation rather than the exact six-month milestone, which still satisfies the intent after operation begins."
+        },
+        {
+            "gt_id": 25,
+            "ground_truth_requirement": "The app must include an integrated live ticker module.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers the existence of live ticker functionality."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Explicitly refers to the live ticker as an integrated app capability."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover inclusion of an integrated live ticker capability/module in the app."
+        },
+        {
+            "gt_id": 26,
+            "ground_truth_requirement": "The app must include a user interface that is an integral part of the app.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers the app providing a central user interface for integrated capabilities."
+                },
+                {
+                    "gen_id": 18,
+                    "gen_requirement": "The system shall provide smooth mobile interaction by completing primary in-app navigation actions, including opening news, live ticker, team/player information, notifications, and sharing screens, within one second at the 95th percentile on supported Android and iOS devices under normal operating conditions.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Reinforces the presence of in-app UI navigation."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover the existence of an integral user interface as the means of accessing the app's core capabilities."
+        },
+        {
+            "gt_id": 27,
+            "ground_truth_requirement": "The live ticker module must be connected to the user interface through its own interface to display data.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers live ticker data being displayed, but not the architectural interface between module and UI."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall retrieve and display live ticker score and match-event updates in the user interface within five seconds at the 95th percentile after successful receipt of data from the external live-data API during live matches.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers live ticker data display in the UI, but not a dedicated internal interface."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements cover live ticker data being displayed in the user interface. They do not specify that the live ticker module is connected to the UI through its own dedicated interface, so the architectural connection constraint is only partially addressed."
+        },
+        {
+            "gt_id": 28,
+            "ground_truth_requirement": "The live ticker module must communicate with an external server via an API to retrieve current match data.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Directly covers retrieving live match data from an external API."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall retrieve and display live ticker score and match-event updates in the user interface within five seconds at the 95th percentile after successful receipt of data from the external live-data API during live matches.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Reinforces use of an external live-data API for current live ticker updates."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover live ticker communication with an external API to retrieve current/live match data."
+        },
+        {
+            "gt_id": 29,
+            "ground_truth_requirement": "The external server must provide the app with current match data.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Implies the external API/server provides live match data to the app."
+                },
+                {
+                    "gen_id": 19,
+                    "gen_requirement": "The system shall retrieve and display live ticker score and match-event updates in the user interface within five seconds at the 95th percentile after successful receipt of data from the external live-data API during live matches.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers receipt of match-event data from an external live-data API."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover the app receiving live/current match data from an external API, which satisfies the external-server data-provision requirement."
+        },
+        {
+            "gt_id": 30,
+            "ground_truth_requirement": "The external server must be physically located outside the app environment.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Mentions an external API, which implies a data source outside the app but does not specify physical location."
+                },
+                {
+                    "gen_id": 32,
+                    "gen_requirement": "The system shall maintain user-interface and module stability when external server data changes by tolerating additive API fields without application failure and by displaying a controlled error or fallback state within two seconds when required external data is unavailable or invalid.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions external server data but does not address physical deployment outside the app environment."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements refer to an external API/server, which partially implies separation from the app. However, they do not explicitly require the server to be physically located outside the app environment."
+        },
+        {
+            "gt_id": 31,
+            "ground_truth_requirement": "The app must include a user management system.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall require users to complete registration or login at app startup before allowing access to news, live ticker, team and player information, personalization, notifications, social sharing, or live broadcast deep-link features.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers registration and login capabilities, which are core user-management functions."
+                },
+                {
+                    "gen_id": 2,
+                    "gen_requirement": "The system shall allow authenticated users to create and maintain a personalized profile by following favorite football clubs and selecting preferred sports channels for use in news, live results, and notification personalization.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers user profile maintenance, another user-management function."
+                },
+                {
+                    "gen_id": 24,
+                    "gen_requirement": "The system shall require a valid authenticated session for 100% of protected app features, including news, live ticker, team/player information, personalization, notifications, sharing, and stream-link access, with only registration, login, password recovery, and privacy/legal information accessible without authentication.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers authenticated session control for protected user functions."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "Although not named as a separate architectural component, the generated requirements collectively cover registration, login, profile maintenance, and session handling, which substantively satisfy inclusion of a user management system."
+        },
+        {
+            "gt_id": 32,
+            "ground_truth_requirement": "The user management system must be connected to the user interface via its own interface.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 1,
+                    "gen_requirement": "The system shall require users to complete registration or login at app startup before allowing access to news, live ticker, team and player information, personalization, notifications, social sharing, or live broadcast deep-link features.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Shows user-management functions are exposed at app startup, but not the architectural interface to the UI."
+                },
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers UI access to personalization and app capabilities but not a dedicated user-management interface."
+                },
+                {
+                    "gen_id": 24,
+                    "gen_requirement": "The system shall require a valid authenticated session for 100% of protected app features, including news, live ticker, team/player information, personalization, notifications, sharing, and stream-link access, with only registration, login, password recovery, and privacy/legal information accessible without authentication.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers authentication/session access constraints but not a specific interface connection."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements indicate that registration, login, and protected user functions are available through the app/UI. They do not specify that a user management system is connected to the UI through its own dedicated interface."
+        },
+        {
+            "gt_id": 33,
+            "ground_truth_requirement": "The app must include a notification system.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 9,
+                    "gen_requirement": "The system shall allow authenticated users to activate notifications and receive alerts about current events, news, live results, and match updates related to their favorite teams when notification permissions are enabled.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers notification functionality."
+                },
+                {
+                    "gen_id": 28,
+                    "gen_requirement": "The system shall send football news, result, and match-event notifications only after the user has explicitly enabled notifications and granted operating-system notification permission, and the system shall stop sending such notifications within five minutes after notification permission or in-app notification preference withdrawal is detected.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers notification sending behavior and permission handling."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements fully cover inclusion of notification capabilities, including activation, sending, and permission behavior."
+        },
+        {
+            "gt_id": 34,
+            "ground_truth_requirement": "All modules and the user interface must be fixed components of the app.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 14,
+                    "gen_requirement": "The system shall provide a user interface that gives authenticated users direct access to the integrated news, live ticker, team and player information, live broadcast deep-link, notification, personalization, sharing, and offline cached-content capabilities.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Covers integrated UI access to multiple app capabilities/modules."
+                },
+                {
+                    "gen_id": 32,
+                    "gen_requirement": "The system shall maintain user-interface and module stability when external server data changes by tolerating additive API fields without application failure and by displaying a controlled error or fallback state within two seconds when required external data is unavailable or invalid.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Mentions user-interface and module stability, but not fixed-component status."
+                }
+            ],
+            "coverage_verdict": "PARTIAL",
+            "reasoning": "The generated requirements imply integrated modules and a stable UI, but they do not explicitly state that all modules and the UI are fixed components of the app."
+        },
+        {
+            "gt_id": 35,
+            "ground_truth_requirement": "The connection to the external server must be designed flexibly.",
+            "ground_truth_type": "nfnr",
+            "matched_generated_requirements": [
+                {
+                    "gen_id": 32,
+                    "gen_requirement": "The system shall maintain user-interface and module stability when external server data changes by tolerating additive API fields without application failure and by displaying a controlled error or fallback state within two seconds when required external data is unavailable or invalid.",
+                    "gen_type": "gen_nfnr",
+                    "individual_coverage_role": "Covers flexibility/robustness of the external-server integration when API data changes or is unavailable."
+                },
+                {
+                    "gen_id": 4,
+                    "gen_requirement": "The system shall provide live ticker functionality that retrieves live match data from an external API and continuously displays updated scores, match status, and key match events for covered matches involving the user’s favorite teams.",
+                    "gen_type": "gen_fnr",
+                    "individual_coverage_role": "Establishes the external API connection used by the live ticker."
+                }
+            ],
+            "coverage_verdict": "FULL",
+            "reasoning": "The generated requirements cover an external API connection and specify flexible handling of external data changes, invalid data, and unavailable data. This satisfies the intent of a flexible external-server connection."
+        }
+    ]
+}

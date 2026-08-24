@@ -1,0 +1,11 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+auth_login.html,1,37,2,FAIL (1 Violations)
+auth_onboarding.html,1,27,1,FAIL (1 Violations)
+home_dashboard.html,0,33,3,PASS (0 Violations)
+live_match_detail.html,2,31,2,FAIL (2 Violations)
+news_article_share.html,1,31,2,FAIL (1 Violations)
+notification_settings.html,2,34,1,FAIL (2 Violations)
+onboarding_preferences.html,1,32,2,FAIL (1 Violations)
+profile_privacy_offline.html,1,27,2,FAIL (1 Violations)
+stream_rights_state.html,1,26,1,FAIL (1 Violations)
+team_player_detail.html,1,35,2,FAIL (1 Violations)

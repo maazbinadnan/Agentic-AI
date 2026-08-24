@@ -1,0 +1,160 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a football fan, I want to use the app on my Android or iOS device so that I can access football content from my mobile phone.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.6,
+                "small": 0.3,
+                "testable": 0.7
+            },
+            "reasoning": "Overall mean INVEST score: 0.6833. The story has clear user value and leaves implementation mostly open, but mobile platform support is a broad, foundational capability rather than a small vertical slice. Estimation and testing are weakened because supported Android/iOS versions, device classes, OS constraints, and distribution-channel behavior are not defined. It is partially dependent on broader app packaging, deployment, and platform readiness."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As a football fan, I want to view current news about my favorite teams and selected sports channels so that I can stay informed from one place.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.7,
+                "testable": 0.75
+            },
+            "reasoning": "Overall mean INVEST score: 0.7750. The story provides clear user value and is mostly focused on personalized football news, with objective scenarios for configured and unconfigured preferences. Independence is reduced because it depends on preference selection and news/content feeds. Estimation and testing have minor ambiguity around what qualifies as current news, default configuration behavior, relevance ranking, and sports channel mapping."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As a football fan, I want to follow live results and match updates for my favorite teams so that I can stay updated during matches in real time.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.65,
+                "small": 0.7,
+                "testable": 0.7
+            },
+            "reasoning": "Overall mean INVEST score: 0.7583. The story has strong user value and clear intent, but it depends on favorite-team configuration and external live-data availability. Scope is focused on live ticker updates, though real-time behavior can be complex. Estimability and testability are limited because update frequency, latency expectations, supported match events, and retry/error handling are not specified."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a football fan, I want to browse content across national and international leagues and competitions so that I can follow a wide range of football events.",
+            "scores": {
+                "independent": 0.75,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.75,
+                "small": 0.8,
+                "testable": 0.75
+            },
+            "reasoning": "Overall mean INVEST score: 0.8083. The story is reasonably independent and focused on browsing competition coverage, with clear business value for content discovery. It remains somewhat broad because national and international coverage could include many leagues and content types. Acceptance criteria are testable at a high level, but would be stronger with an explicit competition list, supported content types, and sorting/filtering expectations."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As a football fan, I want to access team and player information so that I can understand match context and squad details.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.6,
+                "small": 0.6,
+                "testable": 0.6
+            },
+            "reasoning": "Overall mean INVEST score: 0.7333. The story has clear fan value and is mostly independent, but it combines team and player profiles and does not define which fields constitute detailed information. The acceptance criteria are objective in structure but too generic for deterministic QA coverage because mandatory versus optional fields, navigation entry points, and missing-data display rules are unspecified."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As a football fan, I want to access live stream links from approved providers when broadcasts are available in my country so that I can navigate quickly to live coverage.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.85,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.75,
+                "testable": 0.85
+            },
+            "reasoning": "Overall mean INVEST score: 0.8083. The story delivers clear user and business value and has strong pass/fail criteria for showing or hiding stream links. Independence is partial because it depends on rights metadata, country eligibility, broadcast state, and approved-provider data. Estimation would improve with explicit rules for country detection, rights validation, provider approval, time-window handling, and error cases."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As a new or returning user, I want to register or log in at app startup so that I can quickly access personalized features.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.6,
+                "small": 0.5,
+                "testable": 0.65
+            },
+            "reasoning": "Overall mean INVEST score: 0.7250. The story has clear value for enabling personalization and is not overly prescriptive. However, it combines registration and login, which are distinct workflows and may be better split. Acceptance criteria cover only happy paths and omit required registration fields, credential validation rules, invalid-login handling, password recovery, account verification, and the measurable meaning of quickly."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As a registered user, I want to follow clubs, select channels, configure modules, and activate notifications so that the app reflects my interests.",
+            "scores": {
+                "independent": 0.5,
+                "negotiable": 0.85,
+                "valuable": 1.0,
+                "estimable": 0.5,
+                "small": 0.3,
+                "testable": 0.55
+            },
+            "reasoning": "Overall mean INVEST score: 0.6167. The story expresses strong user value but aggregates several capabilities: following clubs, selecting channels, configuring modules, and notification preferences. It is dependent on authentication and multiple downstream features that consume preferences. Estimability and testability are reduced because module settings, preference data model, validation rules, persistence behavior, and application scope are not defined."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As a registered user, I want to receive notifications about relevant news and match results so that I stay informed without opening the app constantly.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.8,
+                "testable": 0.75
+            },
+            "reasoning": "Overall mean INVEST score: 0.8000. The story has clear value and is focused on notification delivery based on enabled or disabled preference state. Independence is partial because it depends on registration, notification preferences, event processing, and platform push infrastructure. Acceptance criteria are mostly testable, but relevance rules, event types, delivery timing, permission handling, and failure/retry behavior need further clarification."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a user, I want to share news and game reports through social media so that I can send football content to others easily.",
+            "scores": {
+                "independent": 0.9,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Overall mean INVEST score: 0.8917. The story is a focused, independently deliverable capability with clear user value and largely objective acceptance criteria. It appropriately relies on device-supported sharing rather than prescribing a custom implementation. Minor ambiguity remains around which content metadata is shared, whether deep links are required, and which platforms are considered supported, but the story is generally small and testable."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a user, I want the app to remain usable when my network connection is weak or interrupted so that I can still access available information.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.45,
+                "small": 0.3,
+                "testable": 0.55
+            },
+            "reasoning": "Overall mean INVEST score: 0.6000. The story has strong user value and flexible intent, but it is broad and cross-cutting across many app features. Independence is low because offline behavior depends on caching, content modules, live features, connectivity detection, and sync/resume mechanisms. Acceptance criteria use vague terms such as remain usable, locally available content, weak connection, and resume features, making estimation and deterministic testing difficult without tighter scope."
+        },
+        {
+            "us_id": "US-012",
+            "user_story": "As a user, I want to submit feedback in the app so that the product team can review it and improve the app over time.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.7,
+                "small": 0.5,
+                "testable": 0.75
+            },
+            "reasoning": "Overall mean INVEST score: 0.7417. The story provides clear business value and is mostly implementation-neutral. However, it combines two roles and capabilities: end-user feedback submission and internal product/support review. Estimation is limited by missing details such as feedback fields, validation, storage requirements, moderation/privacy rules, review permissions, and reporting interface behavior. Acceptance criteria are testable at a high level but would benefit from more precise pass/fail conditions."
+        }
+    ]
+}

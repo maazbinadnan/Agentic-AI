@@ -7,7 +7,7 @@ from pathlib import Path
 from global_layer.ba_state import RequirementsPipelineOutput
 from global_layer.ixd_state import IxdPipelineOutput
 
-DATA_FILE = r"Data\dataset3\requirements.md"
+DATA_FILE = r"Data\requirements.md"
 
 def _read_file(filepath:str):
     """Read and return the contents of a Markdown file.

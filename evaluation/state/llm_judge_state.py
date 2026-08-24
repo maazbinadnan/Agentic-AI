@@ -95,4 +95,129 @@ class SingleUserStoryINVESTEvaluation(BaseModel):
 
 class INVESTEvaluationReport(BaseModel):
     evaluations: List[SingleUserStoryINVESTEvaluation]
+
+
+# =============================================================================
+# ACCS (Acceptance Criteria Coverage Score) Models
+# =============================================================================
+
+class AcceptanceCriterion(BaseModel):
+    criterion_id: str = Field(
+        description="Unique identifier for the acceptance criterion, e.g. 'AC-001-1' or 'a_1'"
+    )
+    scenario: str = Field(
+        default="",
+        description="Scenario title or contextual summary"
+    )
+    given: str = Field(
+        default="",
+        description="Preconditions / initial context (Given clause)"
+    )
+    when: str = Field(
+        default="",
+        description="User action / event trigger (When clause)"
+    )
+    then: str = Field(
+        default="",
+        description="Expected result / assertion (Then clause)"
+    )
+    statement: str = Field(
+        description="Complete discrete, testable acceptance criterion statement"
+    )
+
+
+class UserStoryDecomposition(BaseModel):
+    us_id: str = Field(
+        description="Unique identifier for the user story (e.g. US-001)"
+    )
+    user_story: str = Field(
+        description="Text of the user story statement"
+    )
+    acceptance_criteria: List[AcceptanceCriterion] = Field(
+        default_factory=list,
+        description="List of discrete, testable acceptance criteria A = {a_1, a_2, ..., a_n}"
+    )
+
+
+class CriterionVerification(BaseModel):
+    criterion_id: str = Field(
+        description="Identifier of the criterion a_i being verified"
+    )
+    criterion_statement: str = Field(
+        description="Text of the acceptance criterion"
+    )
+    verification_score: float = Field(
+        description="Verification score v(a_i, C, D) in {0.0, 0.5, 1.0}: 1.0=Full, 0.5=Partial, 0.0=None"
+    )
+    verdict: Literal["FULL", "PARTIAL", "NONE"] = Field(
+        description="Categorical verdict: FULL (1.0), PARTIAL (0.5), or NONE (0.0)"
+    )
+    dom_evidence: str = Field(
+        description="Concrete DOM evidence (elements, attributes, layout, forms, buttons) observed in rendered DOM D"
+    )
+    code_evidence: str = Field(
+        description="Concrete code evidence (event handlers, JS logic, state mutations, functions) observed in generated code C"
+    )
+    reasoning: str = Field(
+        description="Detailed explanation justifying the verification score"
+    )
+
+
+class UserStoryACCS(BaseModel):
+    us_id: str = Field(
+        description="Unique identifier for the user story (e.g. US-001)"
+    )
+    user_story: str = Field(
+        description="Text of the user story"
+    )
+    criteria_count: int = Field(
+        description="Total number of discrete acceptance criteria |A| = n for this user story"
+    )
+    sum_verification_score: float = Field(
+        description="Sum of verification scores sum_{i=1}^n v(a_i, C, D)"
+    )
+    accs_score: float = Field(
+        description="Acceptance Criteria Coverage Score ACCS = sum(v(a_i, C, D)) / |A|"
+    )
+    verifications: List[CriterionVerification] = Field(
+        default_factory=list,
+        description="Per-criterion verification evaluations v(a_i, C, D)"
+    )
+
+
+class ACCSEvaluationReport(BaseModel):
+    total_user_stories: int = Field(
+        description="Total number of user stories evaluated"
+    )
+    total_criteria_count: int = Field(
+        description="Total number of discrete acceptance criteria evaluated across all user stories"
+    )
+    total_score_sum: float = Field(
+        description="Sum of all verification scores across all criteria"
+    )
+    overall_accs: float = Field(
+        description="Overall suite ACCS score = total_score_sum / total_criteria_count"
+    )
+    full_count: int = Field(
+        description="Count of criteria with full implementation (score 1.0)"
+    )
+    partial_count: int = Field(
+        description="Count of criteria with partial implementation (score 0.5)"
+    )
+    none_count: int = Field(
+        description="Count of criteria with non-implementation (score 0.0)"
+    )
+    full_ratio: float = Field(
+        description="Proportion of criteria with full implementation"
+    )
+    partial_ratio: float = Field(
+        description="Proportion of criteria with partial implementation"
+    )
+    none_ratio: float = Field(
+        description="Proportion of criteria with non-implementation"
+    )
+    evaluations: List[UserStoryACCS] = Field(
+        default_factory=list,
+        description="List of ACCS evaluations per user story"
+    )
     

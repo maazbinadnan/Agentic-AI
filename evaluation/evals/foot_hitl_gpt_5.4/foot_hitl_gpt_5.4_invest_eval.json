@@ -1,0 +1,212 @@
+{
+    "evaluations": [
+        {
+            "us_id": "US-001",
+            "user_story": "As a football fan, I want to register or log in at app startup so that I can securely access LiveFootball features with my personal account.",
+            "scores": {
+                "independent": 0.85,
+                "negotiable": 0.85,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.55,
+                "testable": 0.85
+            },
+            "reasoning": "Overall INVEST mean: 0.8083. The story has clear security and account-access value and mostly objective authentication/access-control acceptance criteria. Independence is good but it is foundational for many protected features. Negotiability is reduced slightly by prescribing app-startup gating and listing many protected modules. Estimability is weakened because registration is named in the story but not covered by detailed acceptance criteria, and the scope combines registration, login, session gating, and failed authentication. Testability is strong, though 'any protected app feature' is broad."
+        },
+        {
+            "us_id": "US-002",
+            "user_story": "As an authenticated football fan, I want to follow favorite clubs and select preferred sports channels so that my news, live results, and notifications are personalized to my interests.",
+            "scores": {
+                "independent": 0.75,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.85,
+                "small": 0.75,
+                "testable": 0.85
+            },
+            "reasoning": "Overall INVEST mean: 0.8500. The story expresses strong user value and remains mostly goal-oriented. It is partially dependent on authentication, profile persistence, and downstream news/results/notification modules that consume preferences. Scope is somewhat broad because it covers both club and channel preferences plus downstream targeting behavior. Acceptance criteria are clear, including empty and offline cases, but exact catalog rules, validation limits, and synchronization behavior are not fully specified."
+        },
+        {
+            "us_id": "US-003",
+            "user_story": "As an authenticated football fan, I want to view a personalized football news feed so that I can stay informed about my favorite teams and preferred sports channels.",
+            "scores": {
+                "independent": 0.75,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.7,
+                "small": 0.75,
+                "testable": 0.7
+            },
+            "reasoning": "Overall INVEST mean: 0.8000. The user benefit is clear and the story is centered on a single news-feed capability. It depends on authentication, saved preferences, news ingestion, and possibly US-002. Estimability and testability are reduced by ambiguous terms such as 'current football news,' 'filtered according to preferences,' and referenced but undefined response targets. The 100,000 concurrent-user performance scenario may require separate non-functional testing and infrastructure scope."
+        },
+        {
+            "us_id": "US-004",
+            "user_story": "As a match-day football fan, I want to follow live ticker updates for matches involving my favorite teams so that I can see scores, match status, and key events in near real time.",
+            "scores": {
+                "independent": 0.65,
+                "negotiable": 0.85,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.75,
+                "testable": 0.75
+            },
+            "reasoning": "Overall INVEST mean: 0.7917. The story has strong match-day value and coherent live-ticker intent. Independence is limited by reliance on authentication, favorite-team setup, external live-data APIs, and defined covered-match data. It is moderately sized but real-time polling/streaming, API fallback, and UI update latency may be technically significant. Acceptance criteria are mostly objective, but 'key events,' 'covered match,' and the 'defined live ticker update target' need explicit definitions for deterministic estimation and QA."
+        },
+        {
+            "us_id": "US-005",
+            "user_story": "As an authenticated football fan, I want to access team, player, league, and competition information so that I can understand the football context around covered European matches and clubs.",
+            "scores": {
+                "independent": 0.85,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.75,
+                "small": 0.55,
+                "testable": 0.7
+            },
+            "reasoning": "Overall INVEST mean: 0.7750. The story provides clear informational value and is largely independent except for authentication and content-source availability. It is broad because it combines four entity types: team, player, league, and competition information. Estimability is reduced by vague definitions of 'available information,' 'supported European coverage scope,' and the referenced navigation performance target. Test criteria are pass/fail at a high level but need specific field-level content expectations and performance thresholds."
+        },
+        {
+            "us_id": "US-006",
+            "user_story": "As an authenticated football fan, I want football content to be limited to the MVP coverage scope so that I receive consistent news, live ticker, team, player, league, competition, and match-report information for supported European competitions.",
+            "scores": {
+                "independent": 0.4,
+                "negotiable": 0.7,
+                "valuable": 0.8,
+                "estimable": 0.5,
+                "small": 0.3,
+                "testable": 0.65
+            },
+            "reasoning": "Overall INVEST mean: 0.5583. The business value of controlled MVP coverage is understandable, but the story is a cross-cutting content-governance constraint spanning search, personalization, news, live ticker, entity details, and match reports. It is not small and is dependent on multiple content modules. Estimability is limited because 'top European league or competition included in MVP scope' must be explicitly enumerated. Acceptance criteria are directionally testable but require a definitive coverage catalog and expected behavior per module."
+        },
+        {
+            "us_id": "US-007",
+            "user_story": "As an authenticated football fan, I want to open authorized third-party live broadcast links after a broadcast has begun so that I can access live viewing through legitimate providers.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.85,
+                "valuable": 0.95,
+                "estimable": 0.85,
+                "small": 0.9,
+                "testable": 0.9
+            },
+            "reasoning": "Overall INVEST mean: 0.8750. This is a focused, valuable capability around authorized external broadcast access. It is mostly independent but depends on authentication, broadcast start metadata, provider configuration, and deep-link infrastructure. Negotiability is slightly reduced by prescribing third-party deep-link mechanics, though this is likely a legitimate constraint. Acceptance criteria are objective and cover availability, pre-start suppression, and routing, with only minor ambiguity around configured provider-link behavior."
+        },
+        {
+            "us_id": "US-008",
+            "user_story": "As an authenticated football fan, I want live broadcast links to be hidden when transmission rights are not fulfilled in my country so that the app complies with broadcast restrictions.",
+            "scores": {
+                "independent": 0.7,
+                "negotiable": 0.9,
+                "valuable": 0.95,
+                "estimable": 0.85,
+                "small": 0.85,
+                "testable": 0.9
+            },
+            "reasoning": "Overall INVEST mean: 0.8583. The story has clear compliance and business value and is framed as user-facing behavior. It is partially dependent on the broadcast-link feature, user country determination, and rights metadata availability. Scope is focused on country-rights suppression/default-deny logic. Acceptance criteria are strong and deterministic, especially the unavailable/uncertain metadata case, though estimation requires details of country resolution and rights-data integration."
+        },
+        {
+            "us_id": "US-009",
+            "user_story": "As an authenticated football fan, I want to opt in to notifications for my favorite teams so that I can receive timely alerts about news, results, and match updates that matter to me.",
+            "scores": {
+                "independent": 0.75,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.8,
+                "small": 0.8,
+                "testable": 0.85
+            },
+            "reasoning": "Overall INVEST mean: 0.8500. The story has strong user value and a clear opt-in/permission model. It depends on authentication, favorite-team preferences, OS permissions, and notification delivery services. Scope is somewhat broad because it covers multiple alert types and both enabling and withdrawal behavior. Acceptance criteria are mostly objective, but 'timely alerts' and the 'defined withdrawal handling time' need explicit thresholds for full estimability and testability."
+        },
+        {
+            "us_id": "US-010",
+            "user_story": "As a social football fan, I want to share football news and match reports from the app so that I can discuss relevant football content through social media or native mobile sharing.",
+            "scores": {
+                "independent": 0.85,
+                "negotiable": 0.9,
+                "valuable": 0.95,
+                "estimable": 0.9,
+                "small": 0.9,
+                "testable": 0.95
+            },
+            "reasoning": "Overall INVEST mean: 0.9083. This is a well-scoped user-facing capability with clear social value. It is mostly independent, with limited dependencies on authentication, content detail pages, and native sharing APIs. Acceptance criteria are concrete and include privacy-safe payload generation and cancellation behavior. Minor estimation details remain around exact permitted payload fields and platform-specific share-sheet behavior, but the story is largely small and testable."
+        },
+        {
+            "us_id": "US-011",
+            "user_story": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+            "scores": {
+                "independent": 0.65,
+                "negotiable": 0.9,
+                "valuable": 1.0,
+                "estimable": 0.75,
+                "small": 0.6,
+                "testable": 0.8
+            },
+            "reasoning": "Overall INVEST mean: 0.7833. The value is strong for users with limited connectivity and the intent is flexible. Independence is reduced because offline access depends on caching behavior across many content modules. The story is broader than ideal because it includes news, reports, entity data, competition data, and live ticker data. Estimability requires cache retention rules, storage limits, invalidation rules, and the referenced offline usability target. Acceptance criteria are generally objective but need those thresholds to be fully deterministic."
+        },
+        {
+            "us_id": "US-012",
+            "user_story": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+            "scores": {
+                "independent": 0.6,
+                "negotiable": 0.9,
+                "valuable": 0.9,
+                "estimable": 0.75,
+                "small": 0.55,
+                "testable": 0.85
+            },
+            "reasoning": "Overall INVEST mean: 0.7583. The story provides clear value by preventing misleading offline state changes. It is cross-cutting and depends on many server-dependent workflows, including preferences, notification settings, account details, and live refresh. This makes it less small and less independent than a single workflow story. Acceptance criteria are reasonably objective, including restoration after reconnection, but estimation would benefit from an exhaustive list of blocked actions and consistent offline detection rules."
+        },
+        {
+            "us_id": "US-013",
+            "user_story": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+            "scores": {
+                "independent": 0.75,
+                "negotiable": 0.9,
+                "valuable": 0.95,
+                "estimable": 0.85,
+                "small": 0.8,
+                "testable": 0.9
+            },
+            "reasoning": "Overall INVEST mean: 0.8583. This is a valuable and understandable offline-transparency capability. It is partially dependent on cache/offline functionality and fresh-content retrieval but can be implemented as a coherent labeling behavior. Scope is moderate because it covers several content types and live ticker staleness. Acceptance criteria are clear and testable, including indicator removal after successful refresh, though exact UI wording and stale-age rules should be refined."
+        },
+        {
+            "us_id": "US-014",
+            "user_story": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+            "scores": {
+                "independent": 0.25,
+                "negotiable": 0.6,
+                "valuable": 0.9,
+                "estimable": 0.45,
+                "small": 0.2,
+                "testable": 0.55
+            },
+            "reasoning": "Overall INVEST mean: 0.4917. The user value of integrated navigation is real, but this is effectively an epic spanning all core modules plus startup performance and accessibility. It is highly dependent on completion of many other stories. The phrase 'clear mobile user interface' is subjective, and the acceptance criteria bundle navigation architecture, startup readiness, and WCAG 2.2 AA accessibility into one item. Testability is partial because some criteria are measurable, but the story needs to be decomposed into navigation shell, startup performance, and accessibility stories with specific acceptance thresholds."
+        },
+        {
+            "us_id": "US-015",
+            "user_story": "As a product stakeholder, I want user feedback and app review information to be continuously evaluated so that defects, usability issues, and improvement opportunities can inform future LiveFootball enhancements.",
+            "scores": {
+                "independent": 0.8,
+                "negotiable": 0.85,
+                "valuable": 0.9,
+                "estimable": 0.65,
+                "small": 0.65,
+                "testable": 0.75
+            },
+            "reasoning": "Overall INVEST mean: 0.7667. The story provides clear product and operational value and is mostly independent from user-facing app functionality. It is somewhat process-oriented rather than a pure product-user story. Estimability is reduced by ambiguity around whether 'the system or supporting process' is automated tooling, manual workflow, analytics integration, support process, or backlog triage. Weekly triage and one-business-day critical-defect handling are testable, but collection sources, roles, categorization rules, and evidence of completion need refinement."
+        },
+        {
+            "us_id": "US-016",
+            "user_story": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+            "scores": {
+                "independent": 0.35,
+                "negotiable": 0.65,
+                "valuable": 1.0,
+                "estimable": 0.45,
+                "small": 0.2,
+                "testable": 0.55
+            },
+            "reasoning": "Overall INVEST mean: 0.5333. The value is very high because security, privacy, and GDPR compliance are critical. However, the story is a broad compliance epic covering authentication, preferences, notifications, sharing, caching, feedback, consent, secure storage, data-subject requests, and legal response obligations. It is not small and is highly dependent on many functional stories. Negotiability is reduced by detailed implementation/legal constraints such as TLS version, storage requirements, consent handling, and GDPR rights workflows. Some criteria are testable, but lawful basis, minimization, privacy notices, DSR fulfillment, and legal timeframes require decomposition into auditable, narrowly scoped compliance stories."
+        }
+    ]
+}

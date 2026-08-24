@@ -1,0 +1,159 @@
+[
+    {
+        "filename": "dashboard.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\dashboard.html",
+        "violations_count": 1,
+        "passes_count": 21,
+        "incomplete_count": 1,
+        "inapplicable_count": 68,
+        "report_summary": "Found 1 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: button[onclick=\"alert('Opening live ticker')\"]\n\t\tSnippet: <button class=\"btn\" onclick=\"alert('Opening live ticker')\">View Live Matches</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: article:nth-child(1) > p > .live\n\t\tSnippet: <span class=\"live\">LIVE 72'</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.3 (foreground color: #ff4b4b, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: article:nth-child(2) > p > .live\n\t\tSnippet: <span class=\"live\">LIVE 18'</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.3 (foreground color: #ff4b4b, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: button:nth-child(1)\n\t\tSnippet: <button class=\"btn\">Manage Favorites</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .active\n\t\tSnippet: <a class=\"active\" href=\"dashboard.html\">Home</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 9.4pt (12.48px), font weight: bold). Expected contrast ratio of 4.5:1\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 5
+            }
+        ]
+    },
+    {
+        "filename": "live_ticker.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\live_ticker.html",
+        "violations_count": 1,
+        "passes_count": 20,
+        "incomplete_count": 1,
+        "inapplicable_count": 69,
+        "report_summary": "Found 1 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: span\n\t\tSnippet: <span class=\"badge\">LIVE API</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.3 (foreground color: #ffffff, background color: #ff4b4b, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: button\n\t\tSnippet: <button class=\"btn\" onclick=\"simulate()\">Simulate new event</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .event:nth-child(1) > .min\n\t\tSnippet: <div class=\"min\">70'</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .event:nth-child(1) > div:nth-child(2) > p\n\t\tSnippet: <p class=\"muted\">Salah finishes from close range. Score updated in real time.</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .event:nth-child(2) > .min\n\t\tSnippet: <div class=\"min\">55'</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: .event:nth-child(2) > div:nth-child(2) > p\n\t\tSnippet: <p class=\"muted\">Midfield challenge reviewed by referee.</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t7)\tTarget: .event:nth-child(3) > .min\n\t\tSnippet: <div class=\"min\">HT</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t8)\tTarget: .event:nth-child(3) > div:nth-child(2) > p\n\t\tSnippet: <p class=\"muted\">Live state preserved for offline fallback.</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t9)\tTarget: .active\n\t\tSnippet: <a class=\"active\" href=\"live_ticker.html\">Live</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 9.6pt (12.8px), font weight: bold). Expected contrast ratio of 4.5:1\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 9
+            }
+        ]
+    },
+    {
+        "filename": "login.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\login.html",
+        "violations_count": 3,
+        "passes_count": 28,
+        "incomplete_count": 1,
+        "inapplicable_count": 61,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .active\n\t\tSnippet: <button class=\"active\" onclick=\"switchMode('login',this)\">Login</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: a\n\t\tSnippet: <a href=\"#\">Forgot?</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: #submit\n\t\tSnippet: <button class=\"primary\" id=\"submit\">Log in</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: #status\n\t\tSnippet: <p id=\"status\" class=\"note\">Cold-start target: first usable screen within 2 seconds.</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .note:nth-child(6)\n\t\tSnippet: <p class=\"note\">By continuing you can review privacy information and manage GDPR consent in settings.</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 9.8pt (13.12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nheading-order - Ensure the order of headings is semantically correct\n\tURL: https://dequeuniversity.com/rules/axe/4.12/heading-order?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: h3\n\t\tSnippet: <h3>Choose favorite clubs</h3>\n\t\tMessages:\n\t\t* Heading order invalid\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .offline\n\t\tSnippet: <div class=\"offline\">Network-aware startup • cached fallback ready</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 5
+            },
+            {
+                "id": "heading-order",
+                "impact": "moderate",
+                "description": "Ensure the order of headings is semantically correct",
+                "help": "Heading levels should only increase by one",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "match_details_streams.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\match_details_streams.html",
+        "violations_count": 1,
+        "passes_count": 19,
+        "incomplete_count": 0,
+        "inapplicable_count": 70,
+        "report_summary": "Found 1 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .provider:nth-child(3) > button\n\t\tSnippet: <button class=\"btn\" onclick=\"alert('Opening authorized provider deeplink')\">Open</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .ok\n\t\tSnippet: <span class=\"ok\">LIVE 72'</span>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 12.0pt (16px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .active\n\t\tSnippet: <a class=\"active\" href=\"live_ticker.html\">Live</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 9.6pt (12.8px), font weight: bold). Expected contrast ratio of 4.5:1\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 3
+            }
+        ]
+    },
+    {
+        "filename": "news.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\news.html",
+        "violations_count": 2,
+        "passes_count": 24,
+        "incomplete_count": 0,
+        "inapplicable_count": 64,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .active.chip\n\t\tSnippet: <button class=\"chip active\">Favorites</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: article:nth-child(1) > .content > .meta\n\t\tSnippet: <p class=\"meta\">Sky Sport • 12 min ago • Liverpool</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: article:nth-child(1) > .content > .share\n\t\tSnippet: <button class=\"share\" onclick=\"navigator.share?navigator.share({title:'Liverpool report',url:location.href}):alert('Device share sheet unavailable')\">Share</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: article:nth-child(2) > .content > .meta\n\t\tSnippet: <p class=\"meta\">DAZN • 34 min ago • Dortmund</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: article:nth-child(2) > .content > .share\n\t\tSnippet: <button class=\"share\" onclick=\"alert('Share article through social media')\">Share</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t6)\tTarget: article:nth-child(3) > .content > .meta\n\t\tSnippet: <p class=\"meta\">International • 1h ago</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.44 (foreground color: #6b7b76, background color: #ffffff, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t7)\tTarget: article:nth-child(3) > .content > .share\n\t\tSnippet: <button class=\"share\">Share</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t8)\tTarget: a[href$=\"news.html\"]\n\t\tSnippet: <a class=\"active\" href=\"news.html\">News</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 9.6pt (12.8px), font weight: bold). Expected contrast ratio of 4.5:1\nRule Violated:\npage-has-heading-one - Ensure that the page, or at least one of its frames contains a level-one heading\n\tURL: https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Page must have a level-one heading\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 8
+            },
+            {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+                "help": "Page should contain a level-one heading",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/page-has-heading-one?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "settings.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\settings.html",
+        "violations_count": 1,
+        "passes_count": 20,
+        "incomplete_count": 0,
+        "inapplicable_count": 69,
+        "report_summary": "Found 1 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: section:nth-child(3) > button\n\t\tSnippet: <button class=\"btn\">Update preferences</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: section:nth-child(4) > button:nth-child(3)\n\t\tSnippet: <button class=\"btn\">Open privacy center</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: section:nth-child(5) > button\n\t\tSnippet: <button class=\"btn\" onclick=\"alert('Feedback submitted for continuous evaluation')\">Send feedback</button>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #ffffff, background color: #00a86b, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1\n\n\t4)\tTarget: .active\n\t\tSnippet: <a class=\"active\" href=\"settings.html\">Settings</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 9.6pt (12.8px), font weight: bold). Expected contrast ratio of 4.5:1\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 4
+            }
+        ]
+    },
+    {
+        "filename": "team_player_details.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\single_agent\\outputs\\livefootball_gpt_5.5\\html\\team_player_details.html",
+        "violations_count": 1,
+        "passes_count": 23,
+        "incomplete_count": 1,
+        "inapplicable_count": 66,
+        "report_summary": "Found 1 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .stat:nth-child(1)\n\t\tSnippet: <div class=\"stat\"><b>2</b><br>Position</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 1.07 (foreground color: #ffffff, background color: #f4f8f6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t2)\tTarget: .stat:nth-child(2)\n\t\tSnippet: <div class=\"stat\"><b>61</b><br>Points</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 1.07 (foreground color: #ffffff, background color: #f4f8f6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t3)\tTarget: .stat:nth-child(2) > b\n\t\tSnippet: <b>61</b>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 1.07 (foreground color: #ffffff, background color: #f4f8f6, font size: 16.8pt (22.4px), font weight: bold). Expected contrast ratio of 3:1\n\n\t4)\tTarget: .stat:nth-child(3)\n\t\tSnippet: <div class=\"stat\"><b>+38</b><br>Goal diff</div>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 1.07 (foreground color: #ffffff, background color: #f4f8f6, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1\n\n\t5)\tTarget: .stat:nth-child(3) > b\n\t\tSnippet: <b>+38</b>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 1.07 (foreground color: #ffffff, background color: #f4f8f6, font size: 16.8pt (22.4px), font weight: bold). Expected contrast ratio of 3:1\n\n\t6)\tTarget: .active\n\t\tSnippet: <a class=\"active\" href=\"team_player_details.html\">Teams</a>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 3.08 (foreground color: #00a86b, background color: #ffffff, font size: 9.6pt (12.8px), font weight: bold). Expected contrast ratio of 4.5:1\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 6
+            }
+        ]
+    }
+]

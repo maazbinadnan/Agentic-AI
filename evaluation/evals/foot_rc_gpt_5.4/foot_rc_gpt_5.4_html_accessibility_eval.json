@@ -1,0 +1,180 @@
+[
+    {
+        "filename": "competitions_details_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\gpt_5.5\\html\\competitions_details_mockup.html",
+        "violations_count": 2,
+        "passes_count": 11,
+        "incomplete_count": 0,
+        "inapplicable_count": 77,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap\n\t\tSnippet: <div class=\"wrap\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 1
+            }
+        ]
+    },
+    {
+        "filename": "live_ticker_streams_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\gpt_5.5\\html\\live_ticker_streams_mockup.html",
+        "violations_count": 2,
+        "passes_count": 19,
+        "incomplete_count": 0,
+        "inapplicable_count": 69,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: h1\n\t\tSnippet: <h1>Live Ticker &amp; Stream Links</h1>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: p\n\t\tSnippet: <p class=\"meta\">Revised action controls for clearer accessibility and implementation behavior. Covers US-003 and US-006.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Live ticker</strong><span class=\"meta\">Populated</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .phone:nth-child(1) > .screen > .content > .match > .meta\n\t\tSnippet: <div class=\"meta\">Premier League · 78'</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .phone:nth-child(1) > .screen > .content > .match > .score\n\t\tSnippet: <div class=\"score\">Arsenal 2 - 1 Chelsea</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .event:nth-child(3)\n\t\tSnippet: <div class=\"event\">65' Goal · Saka</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .event:nth-child(4)\n\t\tSnippet: <div class=\"event\">72' Yellow card · Enzo Fernández</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .event:nth-child(5)\n\t\tSnippet: <div class=\"event\">77' Substitution · Arsenal</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .phone:nth-child(1) > .screen > .content > .match > .ok.note\n\t\tSnippet: <div class=\"note ok\">Live data connected via external API. Updates refresh automatically.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(2)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t11)\tTarget: .phone:nth-child(3) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Broadcast availability</strong><span class=\"meta\">Rights-aware</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t12)\tTarget: .phone:nth-child(3) > .screen > .content > .match:nth-child(1) > .meta\n\t\tSnippet: <div class=\"meta\">Champions League · Live now</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t13)\tTarget: .phone:nth-child(3) > .screen > .content > .match:nth-child(1) > .score\n\t\tSnippet: <div class=\"score\" style=\"font-size:24px\">Barcelona vs Inter</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t14)\tTarget: .phone:nth-child(3) > .screen > .content > .match:nth-child(1) > .ok.note\n\t\tSnippet: <div class=\"note ok\">Stream available in your country via approved provider.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t15)\tTarget: .match:nth-child(2)\n\t\tSnippet: <div class=\"match\"><div class=\"meta\">Serie A · Starts in 2h</div><div class=\"score\" style=\"font-size:24px\">Milan vs Napoli</div><div class=\"note err\">No stream link shown because broadcast has not started or rights are unavailable in your country.</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 15
+            }
+        ]
+    },
+    {
+        "filename": "news_home_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\gpt_5.5\\html\\news_home_mockup.html",
+        "violations_count": 3,
+        "passes_count": 18,
+        "incomplete_count": 0,
+        "inapplicable_count": 70,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\nheading-order - Ensure the order of headings is semantically correct\n\tURL: https://dequeuniversity.com/rules/axe/4.12/heading-order?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: h3\n\t\tSnippet: <h3>No preferences selected yet</h3>\n\t\tMessages:\n\t\t* Heading order invalid\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: h1\n\t\tSnippet: <h1>News Feed</h1>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: .wrap > p\n\t\tSnippet: <p class=\"meta\">Revised to fully cover US-002 and US-010, including supported sharing sheet and semantic Share buttons.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Personalized news</strong><span class=\"meta\">Populated</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .phone:nth-child(1) > .screen > .content > div:nth-child(1)\n\t\tSnippet: <div><span class=\"chip\">Arsenal</span><span class=\"chip\">Barcelona</span><span class=\"chip\">Sky Sport</span><span class=\"chip\">DAZN</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .phone:nth-child(1) > .screen > .content > .card:nth-child(2) > .meta:nth-child(1)\n\t\tSnippet: <div class=\"meta\">Sky Sport · 5 min ago</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .phone:nth-child(1) > .screen > .content > .card:nth-child(2) > .title\n\t\tSnippet: <div class=\"title\">Arsenal confirm squad update before European clash</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .card:nth-child(2) > .meta:nth-child(3)\n\t\tSnippet: <div class=\"meta\">Tailored to favorite team selection.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .card:nth-child(3) > .meta:nth-child(1)\n\t\tSnippet: <div class=\"meta\">DAZN · 11 min ago</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .card:nth-child(3) > .title\n\t\tSnippet: <div class=\"title\">Barcelona training report and predicted lineup</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .card:nth-child(3) > .meta:nth-child(3)\n\t\tSnippet: <div class=\"meta\">Includes source channel preference.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t11)\tTarget: .phone:nth-child(2) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Share options</strong><span class=\"meta\">US-010 Scenario 1</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t12)\tTarget: .phone:nth-child(2) > .screen > .content > .card\n\t\tSnippet: <div class=\"card\"><div class=\"meta\">Selected content</div><div class=\"title\">Match report: Arsenal 2-1 Chelsea</div><div class=\"meta\">The device-supported social share sheet opens after tapping Share.</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t13)\tTarget: .sheet > strong\n\t\tSnippet: <strong>Share via</strong>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t14)\tTarget: .option:nth-child(2) > span\n\t\tSnippet: <span>WhatsApp</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t15)\tTarget: .option:nth-child(3) > span\n\t\tSnippet: <span>X / Twitter</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t16)\tTarget: .option:nth-child(4) > span\n\t\tSnippet: <span>Instagram</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t17)\tTarget: .option:nth-child(5) > span\n\t\tSnippet: <span>Copy link</span>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t18)\tTarget: .success\n\t\tSnippet: <div class=\"success\">Supported social sharing options are available on this device.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t19)\tTarget: .phone:nth-child(3) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>News setup / sharing unavailable</strong><span class=\"meta\">Default + error</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t20)\tTarget: .empty\n\t\tSnippet: <div class=\"empty\"><h3>No preferences selected yet</h3><p>Select favorite teams and sports channels to personalize your feed, or continue with general football headlines.</p></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t21)\tTarget: .phone:nth-child(3) > .screen > .content > .card > .meta\n\t\tSnippet: <div class=\"meta\">General football</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t22)\tTarget: .phone:nth-child(3) > .screen > .content > .card > .title\n\t\tSnippet: <div class=\"title\">Top stories from national and international competitions</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t23)\tTarget: .banner\n\t\tSnippet: <div class=\"banner\">Sharing is unavailable on this device. No supported social sharing options were found.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "heading-order",
+                "impact": "moderate",
+                "description": "Ensure the order of headings is semantically correct",
+                "help": "Heading levels should only increase by one",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/heading-order?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 23
+            }
+        ]
+    },
+    {
+        "filename": "offline_feedback_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\gpt_5.5\\html\\offline_feedback_mockup.html",
+        "violations_count": 2,
+        "passes_count": 24,
+        "incomplete_count": 0,
+        "inapplicable_count": 64,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: h1\n\t\tSnippet: <h1>Offline Use &amp; Feedback</h1>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: p\n\t\tSnippet: <p class=\"meta\">Revised to cover US-011 and both US-012 submission and product/support review functions.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .phone:nth-child(2) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Feedback submission</strong><span class=\"meta\">User flow</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .field:nth-child(1)\n\t\tSnippet: <div class=\"field\"><label for=\"fb-category\">Category</label><select id=\"fb-category\"><option>Feature request</option><option>Bug report</option><option>General feedback</option></select></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .field:nth-child(2)\n\t\tSnippet: <div class=\"field\"><label for=\"fb-text\">Your feedback</label><textarea id=\"fb-text\" rows=\"7\">Please add clearer match event filters in the live ticker.</textarea></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(2) > .screen > .content > .ok.banner\n\t\tSnippet: <div class=\"banner ok\" style=\"margin-top:12px\">Feedback submitted successfully and queued for product/support review.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .err\n\t\tSnippet: <div class=\"banner err\">Validation example: Feedback cannot be empty.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .phone:nth-child(3)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(4)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 10
+            }
+        ]
+    },
+    {
+        "filename": "personalization_notifications_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\gpt_5.5\\html\\personalization_notifications_mockup.html",
+        "violations_count": 2,
+        "passes_count": 21,
+        "incomplete_count": 0,
+        "inapplicable_count": 67,
+        "report_summary": "Found 2 accessibility violations:\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: h1\n\t\tSnippet: <h1>Personalization &amp; Notifications</h1>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: p\n\t\tSnippet: <p class=\"meta\">Revised to make US-008 update flow explicit and use semantic interactive controls for settings and notification preferences.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Edit preferences</strong><span class=\"meta\">Update flow</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: .checkgroup.section:nth-child(1)\n\t\tSnippet: <div class=\"section checkgroup\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .checkgroup.section:nth-child(2)\n\t\tSnippet: <div class=\"section checkgroup\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .checkgroup.section:nth-child(3)\n\t\tSnippet: <div class=\"section checkgroup\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(2) > .screen > .top\n\t\tSnippet: <div class=\"top\"><strong>Notification settings</strong><span class=\"meta\">Accessible controls</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .stack\n\t\tSnippet: <div class=\"section stack\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .radio\n\t\tSnippet: <div class=\"section radio\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(3)\n\t\tSnippet: <div class=\"phone\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 10
+            }
+        ]
+    },
+    {
+        "filename": "startup_login_mockup.html",
+        "filepath": "C:\\Users\\OMNI BOOK\\OneDrive - Lancaster University\\MSc Dissertation\\MSc Project\\review_critique\\outputs\\gpt_5.5\\html\\startup_login_mockup.html",
+        "violations_count": 3,
+        "passes_count": 24,
+        "incomplete_count": 1,
+        "inapplicable_count": 64,
+        "report_summary": "Found 3 accessibility violations:\nRule Violated:\ncolor-contrast - Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\n\tURL: https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI\n\tImpact Level: serious\n\tTags: ['cat.color', 'wcag2aa', 'wcag143', 'TTv5', 'TT13.c', 'EN-301-549', 'EN-9.1.4.3', 'ACT', 'RGAAv4', 'RGAA-3.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: .wrap > p\n\t\tSnippet: <p class=\"sub\">Revised to cover US-001 and all US-007 states, including successful returning-user login access to personalized features.</p>\n\t\tMessages:\n\t\t* Element has insufficient color contrast of 4.21 (foreground color: #6b7785, background color: #f4f6f8, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1\nRule Violated:\nlandmark-one-main - Ensure the document has a main landmark\n\tURL: https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.semantics', 'best-practice']\n\tElements Affected:\n\n\n\t1)\tTarget: html\n\t\tSnippet: <html lang=\"en\">\n\t\tMessages:\n\t\t* Document does not have a main landmark\nRule Violated:\nregion - Ensure all page content is contained by landmarks\n\tURL: https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI\n\tImpact Level: moderate\n\tTags: ['cat.keyboard', 'best-practice', 'RGAAv4', 'RGAA-9.2.1']\n\tElements Affected:\n\n\n\t1)\tTarget: h1\n\t\tSnippet: <h1>Startup / Registration / Login</h1>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t2)\tTarget: .wrap > p\n\t\tSnippet: <p class=\"sub\">Revised to cover US-001 and all US-007 states, including successful returning-user login access to personalized features.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t3)\tTarget: .phone:nth-child(1) > .screen > .top\n\t\tSnippet: <div class=\"top\"><div><div class=\"brand\">LiveFootball</div><div class=\"sub\">Default startup state</div></div><div class=\"pill\">Android / iOS</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t4)\tTarget: h2\n\t\tSnippet: <h2>Football in one place</h2>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t5)\tTarget: .hero > p\n\t\tSnippet: <p>News, live scores, teams, players, streams and notifications.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t6)\tTarget: .hero > .ok.banner\n\t\tSnippet: <div class=\"banner ok\">App ready in under 2 seconds on supported devices.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t7)\tTarget: .phone:nth-child(1) > .screen > .content\n\t\tSnippet: <div class=\"content\">\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t8)\tTarget: .phone:nth-child(2) > .screen > .top\n\t\tSnippet: <div class=\"top\"><div><div class=\"brand\">Create account</div><div class=\"sub\">Registration success state</div></div><div class=\"pill\">US-007</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t9)\tTarget: .phone:nth-child(2) > .screen > .content > .field:nth-child(1)\n\t\tSnippet: <div class=\"field\"><label for=\"reg-name\">Full name</label><input id=\"reg-name\" value=\"Ava Carter\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t10)\tTarget: .phone:nth-child(2) > .screen > .content > .field:nth-child(2)\n\t\tSnippet: <div class=\"field\"><label for=\"reg-email\">Email</label><input id=\"reg-email\" value=\"ava@example.com\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t11)\tTarget: .field:nth-child(3)\n\t\tSnippet: <div class=\"field\"><label for=\"reg-pass\">Password</label><input id=\"reg-pass\" type=\"password\" value=\"password123\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t12)\tTarget: .phone:nth-child(2) > .screen > .content > .ok.banner\n\t\tSnippet: <div class=\"banner ok\">Account created successfully. Continue to personalization.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t13)\tTarget: .phone:nth-child(2) > .screen > .content > .footer-note\n\t\tSnippet: <p class=\"footer-note\">Personal data handled in compliance with GDPR.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t14)\tTarget: .phone:nth-child(3) > .screen > .top\n\t\tSnippet: <div class=\"top\"><div><div class=\"brand\">Log in</div><div class=\"sub\">Validation / error state</div></div><div class=\"pill\">Error state</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t15)\tTarget: .phone:nth-child(3) > .screen > .content > .field:nth-child(1)\n\t\tSnippet: <div class=\"field\"><label for=\"login-email\">Email</label><input id=\"login-email\" value=\"ava@example\"></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t16)\tTarget: .error\n\t\tSnippet: <div class=\"field error\"><label for=\"login-password\">Password</label><input id=\"login-password\" type=\"password\" value=\"123\"><div class=\"help\">Password is incorrect. Please try again.</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t17)\tTarget: .warn\n\t\tSnippet: <div class=\"banner warn\">Login failed. Check your credentials or reset your password.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t18)\tTarget: .phone:nth-child(3) > .screen > .content > .footer-note\n\t\tSnippet: <div class=\"footer-note\">Unsupported platforms are not offered installation access.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t19)\tTarget: .phone:nth-child(4) > .screen > .top\n\t\tSnippet: <div class=\"top\"><div><div class=\"brand\">Welcome back, Ava</div><div class=\"sub\">Successful returning-user login</div></div><div class=\"pill\">Personalized access</div></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t20)\tTarget: .phone:nth-child(4) > .screen > .content > .ok.banner\n\t\tSnippet: <div class=\"banner ok\">Login successful. Personalized features are now available.</div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t21)\tTarget: .card:nth-child(2)\n\t\tSnippet: <div class=\"card\"><h3>Your favorites</h3><span class=\"chip\">Arsenal</span><span class=\"chip\">Barcelona</span></div>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t22)\tTarget: .card:nth-child(3) > h3\n\t\tSnippet: <h3>Quick actions</h3>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n\n\t23)\tTarget: .card:nth-child(3) > p\n\t\tSnippet: <p class=\"sub\">Access personalized news, live ticker updates, and notification settings.</p>\n\t\tMessages:\n\t\t* Some page content is not contained by landmarks\n",
+        "violations": [
+            {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark",
+                "help": "Document should have one main landmark",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/landmark-one-main?application=axeAPI",
+                "nodes_count": 1
+            },
+            {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks",
+                "help": "All page content should be contained by landmarks",
+                "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/region?application=axeAPI",
+                "nodes_count": 23
+            }
+        ]
+    }
+]

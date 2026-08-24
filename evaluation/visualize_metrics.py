@@ -226,5 +226,57 @@ def _load_invest_df(path: str | list[str]) -> pd.DataFrame:
 	return res_df
 
 
+def build_accs_ratio_table(filepath: str, output_table_path: str | None = None) -> pd.DataFrame:
+	"""Read ACCS evaluation JSON and return a ratio table for full, partial, and no implementation."""
+	with open(filepath, "r", encoding="utf-8") as jsonfile:
+		data = json.load(jsonfile)
+
+	total_criteria = data.get("total_criteria_count", 0)
+	full_count = data.get("full_count", 0)
+	partial_count = data.get("partial_count", 0)
+	none_count = data.get("none_count", 0)
+
+	if total_criteria == 0 and "evaluations" in data:
+		for story in data.get("evaluations", []):
+			for v in story.get("verifications", []):
+				total_criteria += 1
+				score = float(v.get("verification_score", 0.0))
+				if score == 1.0:
+					full_count += 1
+				elif score == 0.5:
+					partial_count += 1
+				else:
+					none_count += 1
+
+	rows = [
+		{
+			"implementation_status": "Full Implementation (1.0)",
+			"count": full_count,
+			"ratio": round(full_count / total_criteria, 4) if total_criteria else 0.0,
+		},
+		{
+			"implementation_status": "Partial Implementation (0.5)",
+			"count": partial_count,
+			"ratio": round(partial_count / total_criteria, 4) if total_criteria else 0.0,
+		},
+		{
+			"implementation_status": "Non-Implementation (0.0)",
+			"count": none_count,
+			"ratio": round(none_count / total_criteria, 4) if total_criteria else 0.0,
+		},
+	]
+
+	table = pd.DataFrame(rows)
+
+	if output_table_path:
+		output_dir = os.path.dirname(output_table_path)
+		if output_dir:
+			os.makedirs(output_dir, exist_ok=True)
+		table.to_csv(output_table_path, index=False)
+		print(f"Saved ACCS ratio table to: {output_table_path}")
+
+	return table
+
+
 
 

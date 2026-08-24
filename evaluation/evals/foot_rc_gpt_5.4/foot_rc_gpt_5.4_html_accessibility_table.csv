@@ -1,0 +1,7 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+competitions_details_mockup.html,2,11,0,FAIL (2 Violations)
+live_ticker_streams_mockup.html,2,19,0,FAIL (2 Violations)
+news_home_mockup.html,3,18,0,FAIL (3 Violations)
+offline_feedback_mockup.html,2,24,0,FAIL (2 Violations)
+personalization_notifications_mockup.html,2,21,0,FAIL (2 Violations)
+startup_login_mockup.html,3,24,1,FAIL (3 Violations)
