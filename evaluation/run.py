@@ -25,8 +25,8 @@ Usage examples:
 """
 
 import argparse
-import os
 import json
+import os
 import sys
 
 
@@ -166,7 +166,6 @@ def main():
 
     # --- Step 1: Embedding-based Coverage ---
     if not args.skip_coverage:
-
         print("\n[Step 1/5] Running embedding-based coverage evaluation...")
         from evaluation.confusion_matrix import get_ground_truths, get_generated, requirements_coverage
         from evaluation.visualize_metrics import build_coverage_ratio_table
@@ -236,8 +235,6 @@ def main():
         if html_target and (os.path.isdir(html_target) or os.path.isfile(html_target)):
             print("\n[Step 4/5] Running HTML Playwright/Axe Accessibility Evaluation...")
             from evaluation.html_evals import evaluate_html_accessibility, build_html_accessibility_table
-
-
             try:
                 evaluate_html_accessibility(
                     html_dir_or_file=html_target,
@@ -254,30 +251,6 @@ def main():
             print("\n[Step 4/5] Skipped HTML Accessibility Evaluation (HTML target directory/file not found or not provided).")
     else:
         print("\n[Step 4/5] Skipped HTML Accessibility Evaluation (--skip-html-eval).")
-
-    # --- Step 5: Acceptance Criteria Coverage Score (ACCS) ---
-    if not args.skip_accs:
-        if user_stories and os.path.isfile(user_stories) and html_target:
-            print("\n[Step 5/5] Running Acceptance Criteria Coverage Score (ACCS) Evaluation...")
-            from evaluation.accs_eval import evaluate_accs, build_accs_table
-
-            accs_report = evaluate_accs(
-                user_stories_source=user_stories,
-                html_target=html_target,
-                code_target=code_target,
-                output_json_path=accs_eval_json_path,
-                output_csv_path=accs_table_path,
-                model=args.model,
-            )
-            print(f"  ACCS Evaluation results saved to: {accs_eval_json_path}")
-            if os.path.isfile(accs_table_path):
-                print("\n  ACCS Summary Table:")
-                accs_table = build_accs_table(accs_report)
-                print(accs_table.to_string(index=False))
-        else:
-            print("\n[Step 5/5] Skipped ACCS Evaluation (Requires both User Stories and HTML/Code target).")
-    else:
-        print("\n[Step 5/5] Skipped ACCS Evaluation (--skip-accs).")
 
     print("\n" + "=" * 60)
     print("Evaluation complete.")

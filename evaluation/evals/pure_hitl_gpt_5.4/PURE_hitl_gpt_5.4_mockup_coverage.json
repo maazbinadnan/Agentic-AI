@@ -1,0 +1,135 @@
+[
+    {},
+    {
+        "story_id": "US-001",
+        "story_text": "As an authenticated user, I want to sign in with my username and password so that I can securely access DigitalHome functions.",
+        "html_file": "login.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-002",
+        "story_text": "As a DigitalHome user, I want the system to enforce my role permissions so that I can access only the functions appropriate to my responsibilities.",
+        "html_file": "dashboard_monitoring.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As an authenticated user, I want to log out of the web interface so that my access to protected DigitalHome functions is terminated.",
+        "html_file": "login.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As an authenticated user, I want the home web server to store my plans, data, accounts, and backups so that DigitalHome information is available for ongoing use and recovery.",
+        "html_file": "dashboard_monitoring.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As a DigitalHome user, I want the system to communicate with home devices through the gateway so that web-based monitoring and control can reach sensors and controllers in the home.",
+        "html_file": "dashboard_monitoring.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-006",
+        "story_text": "As a General User, I want to view the current status of my home environment and device states so that I can understand current conditions in my home.",
+        "html_file": "dashboard_monitoring.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a General User, I want to monitor temperature and set a thermostat target so that the system can regulate home temperature toward my preferred level.",
+        "html_file": "climate_controls.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As a General User, I want to monitor humidity and set a humidistat target so that the system can regulate home humidity toward my preferred level.",
+        "html_file": "climate_controls.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As a General User, I want to monitor and change appliance or lighting power states so that I can manage energy use and household convenience.",
+        "html_file": "security_power.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-010",
+        "story_text": "As a General User, I want to see whether doors and windows are in a normal or breach state so that I can monitor entry security in my home.",
+        "html_file": "security_power.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a General User, I want security alarms to activate when a breach is detected so that I am informed of a possible security issue.",
+        "html_file": "security_power.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a General User, I want to create and maintain monthly plans for supported devices so that my home behavior can be scheduled over time.",
+        "html_file": "plans_reports.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a General User, I want to create and maintain daily presets for supported devices so that recurring daily settings can be applied automatically.",
+        "html_file": "plans_reports.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As a General User, I want the system to execute saved plans and presets automatically so that scheduled home settings take effect at the planned times.",
+        "html_file": "plans_reports.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-015",
+        "story_text": "As a General User, I want to review historical reports of home operations so that I can understand trends, extremes, and downtime events.",
+        "html_file": "plans_reports.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a Master User or DH Technician, I want to manage DigitalHome user accounts so that authorized household users can access the system appropriately.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-017",
+        "story_text": "As a Master User or DH Technician, I want to configure system default parameters so that DigitalHome behavior can be adjusted for household needs.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-018",
+        "story_text": "As a Master User or DH Technician, I want to start or stop DigitalHome system operation so that I can control availability during maintenance or administrative activities.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-019",
+        "story_text": "As an authorized user, I want the system to back up account, plan, and home database information so that DigitalHome data can be preserved for later recovery.",
+        "html_file": "plans_reports.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-019",
+        "story_text": "As an authorized user, I want the system to back up account, plan, and home database information so that DigitalHome data can be preserved for later recovery.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-020",
+        "story_text": "As a DigitalHome user, I want all supported functions to operate against realistic simulated home devices and conditions so that the prototype can be used without physical hardware.",
+        "html_file": "dashboard_monitoring.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-021",
+        "story_text": "As a DigitalHome user, I want remote access to depend on broadband Internet availability so that I can understand when remote communication is possible.",
+        "html_file": "dashboard_monitoring.html",
+        "coverage": "full"
+    }
+]

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveFootball - Home & News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#042D13;--accent:#0B5E2B;--live:#16A34A;--danger:#DC2626;--link:#2563EB;--bg:#F8FAFC;--card:#FFF;--muted:#EEF2F7;--border:#D6DEE8;--text:#0F172A;--sub:#475569;--phone-h:820px}
+    *{box-sizing:border-box} body{margin:0;background:#eef4ef;font-family:Inter,sans-serif;color:var(--text)} .wrap{padding:24px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1280px;margin:0 auto;align-items:start}
+    .phone{background:#111827;padding:10px;border-radius:28px;height:calc(var(--phone-h) + 20px)}.screen{background:var(--bg);border-radius:20px;height:var(--phone-h);overflow-y:auto;overflow-x:hidden;display:flex;flex-direction:column;scrollbar-width:thin}.top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--primary);color:#fff;position:sticky;top:0;z-index:2}.meta{font-size:12px}.content{padding:14px 14px 24px;display:flex;flex-direction:column;gap:12px}.hero{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;padding:16px;border-radius:18px}.hero h2{margin:6px 0 4px;font-size:23px}.small{font-size:12px;color:var(--sub)} .chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:9px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);font-size:13px;font-weight:700}.chip.active{background:#dcfce7;border-color:#86efac;color:#166534}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:0 5px 14px rgba(15,23,42,.04)} .match{display:flex;justify-content:space-between;align-items:center}.badge{padding:5px 8px;border-radius:999px;font-size:11px;font-weight:800}.live{background:#dcfce7;color:#166534}.alert{background:#fee2e2;color:#991b1b}.news{display:grid;grid-template-columns:88px 1fr;gap:12px}.thumb{background:linear-gradient(135deg,#c7d2fe,#e2e8f0);border-radius:12px;min-height:84px}
+    .headline{font-weight:700;line-height:1.3}.tabs{position:sticky;bottom:0;margin-top:auto;background:#fff;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr)} .tab{padding:10px 6px;text-align:center;font-size:12px;color:var(--sub)} .tab.active{color:var(--primary);font-weight:800}
+  </style>
+</head>
+<body><div class="wrap"><div style="max-width:1280px;margin:0 auto 16px"><h1 style="margin:0 0 6px">Home, News & Personalization</h1><p style="margin:0;color:#475569">Personalized home/news feed based on favorite clubs and preferred channels, with empty and offline fallbacks.</p></div><div class="grid">
+  <div class="phone"><div class="screen"><div class="top"><strong>Home & News</strong><span class="meta">Populated State</span></div><div class="content">
+    <div class="hero"><div class="badge live">LIVE NOW</div><h2>Your football hub</h2><div>Personalized coverage for Liverpool, Dortmund and Serie A broadcasters.</div></div>
+    <div class="chips"><div class="chip active">Liverpool</div><div class="chip active">Dortmund</div><div class="chip">Premier League</div><div class="chip active">Sky Sport</div><div class="chip active">DAZN</div></div>
+    <div class="card"><div class="match"><div><div class="small">Pinned live ticker</div><div style="font-weight:800">Liverpool 2 - 1 Arsenal</div><div class="small">72' • Premier League</div></div><div class="badge alert">Goal update</div></div></div>
+    <div class="card"><div class="small" style="margin-bottom:10px">Top stories for your favorites</div>
+      <div class="news"><div class="thumb"></div><div><div class="headline">Klopp reacts to dramatic late winner in title race clash</div><div class="small">Sky Sport • 8 min ago</div></div></div>
+      <div style="height:12px"></div>
+      <div class="news"><div class="thumb"></div><div><div class="headline">Dortmund confirm squad boost before Champions League tie</div><div class="small">DAZN News • 18 min ago</div></div></div>
+      <div style="height:12px"></div>
+      <div class="news"><div class="thumb"></div><div><div class="headline">Serie A weekend preview: title contenders prepare for decisive fixtures</div><div class="small">Sky Sport • 31 min ago</div></div></div>
+    </div>
+  </div><div class="tabs"><div class="tab active">Home</div><div class="tab">Live</div><div class="tab">News</div><div class="tab">Following</div><div class="tab">Profile</div></div></div></div>
+
+  <div class="phone"><div class="screen"><div class="top"><strong>Home & News</strong><span class="meta">Empty / Unconfigured State</span></div><div class="content">
+    <div class="hero"><div class="badge live" style="background:#eef2f7;color:#475569">SETUP</div><h2>Start personalizing</h2><div>Follow clubs and choose sports channels to tailor your feed.</div></div>
+    <div class="card"><div style="font-weight:800;margin-bottom:6px">No favorite teams selected</div><div class="small">You’ll still see general football news until you follow clubs.</div><div style="height:12px"></div><button style="width:100%;padding:14px;border:0;border-radius:14px;background:#042D13;color:#fff;font-weight:800">Choose favorite clubs</button></div>
+    <div class="card"><div style="font-weight:800;margin-bottom:6px">No preferred channels saved</div><div class="small">Select channels like Sky Sport or DAZN to refine article sources.</div><div style="height:12px"></div><button style="width:100%;padding:14px;border-radius:14px;border:1px solid #D6DEE8;background:#fff;font-weight:700">Select channels</button></div>
+    <div class="card"><div class="small" style="margin-bottom:8px">General football news</div><div class="headline">Transfer window watch: biggest stories across Europe today</div><div class="small">Global feed • 22 min ago</div></div>
+  </div><div class="tabs"><div class="tab active">Home</div><div class="tab">Live</div><div class="tab">News</div><div class="tab">Following</div><div class="tab">Profile</div></div></div></div>
+
+  <div class="phone"><div class="screen"><div class="top"><strong>Home & News</strong><span class="meta">Offline / Cached State</span></div><div class="content">
+    <div class="hero"><div class="badge alert">OFFLINE</div><h2>Using cached content</h2><div>Live refresh is paused. Last synced 12 minutes ago.</div></div>
+    <div class="card" style="border-color:#fed7aa;background:#fff7ed"><div style="font-weight:800;color:#9a3412">Online-only actions unavailable</div><div class="small" style="color:#9a3412">Fresh live updates, external streams and push delivery require connection.</div></div>
+    <div class="card"><div class="small" style="margin-bottom:10px">Cached articles</div><div class="headline">Liverpool training report ahead of derby remains available offline</div><div class="small">Saved earlier today</div></div>
+    <div class="card"><div class="headline">Score snapshot: Dortmund 1 - 0 Milan</div><div class="small">Last cached at 61'</div></div>
+    <div class="card" style="background:#f8fafc"><div class="headline" style="font-size:15px">Article unavailable offline</div><div class="small">This story was not previously cached on your device.</div></div>
+  </div><div class="tabs"><div class="tab active">Home</div><div class="tab">Live</div><div class="tab">News</div><div class="tab">Following</div><div class="tab">Profile</div></div></div></div>
+</div></div></body></html>

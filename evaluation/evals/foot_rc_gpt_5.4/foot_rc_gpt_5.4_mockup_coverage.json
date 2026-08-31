@@ -1,0 +1,75 @@
+[
+    {},
+    {
+        "story_id": "US-001",
+        "story_text": "As a football fan, I want to use the app on my Android or iOS device so that I can access football content from my mobile phone.",
+        "html_file": "startup_login_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-002",
+        "story_text": "As a football fan, I want to view current news about my favorite teams and selected sports channels so that I can stay informed from one place.",
+        "html_file": "news_home_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As a football fan, I want to follow live results and match updates for my favorite teams so that I can stay updated during matches in real time.",
+        "html_file": "live_ticker_streams_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As a football fan, I want to browse content across national and international leagues and competitions so that I can follow a wide range of football events.",
+        "html_file": "competitions_details_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As a football fan, I want to access team and player information so that I can understand match context and squad details.",
+        "html_file": "competitions_details_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-006",
+        "story_text": "As a football fan, I want to access live stream links from approved providers when broadcasts are available in my country so that I can navigate quickly to live coverage.",
+        "html_file": "live_ticker_streams_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a new or returning user, I want to register or log in at app startup so that I can quickly access personalized features.",
+        "html_file": "startup_login_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As a registered user, I want to follow clubs, select channels, configure modules, and activate notifications so that the app reflects my interests.",
+        "html_file": "personalization_notifications_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As a registered user, I want to receive notifications about relevant news and match results so that I stay informed without opening the app constantly.",
+        "html_file": "personalization_notifications_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-010",
+        "story_text": "As a user, I want to share news and game reports through social media so that I can send football content to others easily.",
+        "html_file": "news_home_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a user, I want the app to remain usable when my network connection is weak or interrupted so that I can still access available information.",
+        "html_file": "offline_feedback_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a user, I want to submit feedback in the app so that the product team can review it and improve the app over time.",
+        "html_file": "offline_feedback_mockup.html",
+        "coverage": "full"
+    }
+]

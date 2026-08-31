@@ -1,0 +1,189 @@
+[
+    {},
+    {
+        "story_id": "US-001",
+        "story_text": "As a football fan, I want to open the app and reach a usable first screen quickly so that I can access football information without delay.",
+        "html_file": "login.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-001",
+        "story_text": "As a football fan, I want to open the app and reach a usable first screen quickly so that I can access football information without delay.",
+        "html_file": "dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-002",
+        "story_text": "As a new user, I want to register and log in easily at startup so that I can save preferences and receive personalized content.",
+        "html_file": "login.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As an authenticated fan, I want to follow favorite clubs so that the app can prioritize news, results, and notifications that matter to me.",
+        "html_file": "login.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As an authenticated fan, I want to follow favorite clubs so that the app can prioritize news, results, and notifications that matter to me.",
+        "html_file": "dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As an authenticated fan, I want to follow favorite clubs so that the app can prioritize news, results, and notifications that matter to me.",
+        "html_file": "settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As a fan, I want to select preferred sports channels so that my news feed reflects trusted or preferred sources.",
+        "html_file": "news.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As a fan, I want to select preferred sports channels so that my news feed reflects trusted or preferred sources.",
+        "html_file": "settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As a fan, I want to view current football news for my favorite teams so that I stay informed at all times.",
+        "html_file": "dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As a fan, I want to view current football news for my favorite teams so that I stay informed at all times.",
+        "html_file": "news.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-006",
+        "story_text": "As a fan, I want to open a news article and share it so that I can distribute relevant football updates through social media.",
+        "html_file": "news.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a fan, I want live ticker data to update during active matches so that I can follow events in real time.",
+        "html_file": "dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a fan, I want live ticker data to update during active matches so that I can follow events in real time.",
+        "html_file": "live_ticker.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a fan, I want live ticker data to update during active matches so that I can follow events in real time.",
+        "html_file": "match_details_streams.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As a fan, I want to browse leagues and competitions so that I can follow football beyond my favorite teams.",
+        "html_file": "team_player_details.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As a fan, I want to view team profiles so that I can understand fixtures, results, squad members, and key statistics.",
+        "html_file": "team_player_details.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-010",
+        "story_text": "As a fan, I want to view player profiles so that I can access biography and performance information.",
+        "html_file": "team_player_details.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a fan, I want to see live-stream links only when legally available so that I can access official broadcasts without rights violations.",
+        "html_file": "match_details_streams.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a fan, I want to configure notification categories so that I only receive relevant alerts.",
+        "html_file": "dashboard.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a fan, I want to configure notification categories so that I only receive relevant alerts.",
+        "html_file": "settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a fan, I want to receive notifications for configured current events so that I do not miss important football moments.",
+        "html_file": "dashboard.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a fan, I want to receive notifications for configured current events so that I do not miss important football moments.",
+        "html_file": "settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As a fan with poor connectivity, I want to use cached content offline so that I can still navigate key football information.",
+        "html_file": "news.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As a fan with poor connectivity, I want to use cached content offline so that I can still navigate key football information.",
+        "html_file": "live_ticker.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As a fan with poor connectivity, I want to use cached content offline so that I can still navigate key football information.",
+        "html_file": "match_details_streams.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As a fan with poor connectivity, I want to use cached content offline so that I can still navigate key football information.",
+        "html_file": "team_player_details.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-015",
+        "story_text": "As a privacy-conscious user, I want my personal data to be processed lawfully so that I can trust the app.",
+        "html_file": "login.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-015",
+        "story_text": "As a privacy-conscious user, I want my personal data to be processed lawfully so that I can trust the app.",
+        "html_file": "settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a match-day user, I want the app to remain stable during high traffic so that I can access live information when demand peaks.",
+        "html_file": "dashboard.html",
+        "coverage": "none"
+    },
+    {
+        "story_id": "US-017",
+        "story_text": "As a support team member, I want app malfunctions to be detected and diagnosed so that issues can be resolved before and after release.",
+        "html_file": "settings.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-018",
+        "story_text": "As a user, I want external content and API updates to be handled safely so that the app interface remains consistent.",
+        "html_file": "live_ticker.html",
+        "coverage": "partial"
+    }
+]

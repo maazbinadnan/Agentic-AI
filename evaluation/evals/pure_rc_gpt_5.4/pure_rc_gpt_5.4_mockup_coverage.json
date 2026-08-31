@@ -1,0 +1,87 @@
+[
+    {},
+    {
+        "story_id": "US-001",
+        "story_text": "As a general user, I want to access DigitalHome through a web interface so that I can monitor and control my home remotely.",
+        "html_file": "auth_access_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-002",
+        "story_text": "As a general user, I want to monitor and control supported home devices so that I can manage the environment in my home.",
+        "html_file": "environment_dashboard_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As a master user or DH technician, I want to manage user accounts and configuration settings so that the system is correctly configured for home operation.",
+        "html_file": "admin_configuration_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As a master user or DH technician, I want to start or stop the DigitalHome system so that I can control system operation during setup, maintenance, or administration.",
+        "html_file": "system_operations_and_server_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As an administrator, I want the home web server to host DigitalHome services so that users and administrators can interact with devices, data, accounts, and backups.",
+        "html_file": "system_operations_and_server_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-006",
+        "story_text": "As a system operator, I want the server to communicate with home devices through the gateway so that commands and status data can move between the user interface and device layer.",
+        "html_file": "gateway_communications_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a general user, I want to view current temperature and set a desired temperature so that heating or cooling can regulate my home to the target value.",
+        "html_file": "temperature_control_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As a general user, I want to view current humidity and set a desired humidity so that humidification equipment can regulate my home to the target value.",
+        "html_file": "humidity_control_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As a general user, I want the system to monitor doors and windows and trigger alarms on breaches so that I can be alerted to possible intrusions.",
+        "html_file": "security_monitoring_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-010",
+        "story_text": "As a general user, I want to view and change the power state of appliances and lighting so that I can manage energy use and household convenience.",
+        "html_file": "power_control_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a system owner, I want user capabilities to be restricted by role so that only authorized users can perform configuration and operational administration actions.",
+        "html_file": "auth_access_mockup.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a system owner, I want user capabilities to be restricted by role so that only authorized users can perform configuration and operational administration actions.",
+        "html_file": "environment_dashboard_mockup.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a system owner, I want user capabilities to be restricted by role so that only authorized users can perform configuration and operational administration actions.",
+        "html_file": "admin_configuration_mockup.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a system owner, I want user capabilities to be restricted by role so that only authorized users can perform configuration and operational administration actions.",
+        "html_file": "system_operations_and_server_mockup.html",
+        "coverage": "partial"
+    }
+]

@@ -1,0 +1,261 @@
+[
+    {},
+    {
+        "story_id": "US-001",
+        "story_text": "As a football fan, I want to register or log in at app startup so that I can securely access LiveFootball features with my personal account.",
+        "html_file": "auth_login.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-002",
+        "story_text": "As an authenticated football fan, I want to follow favorite clubs and select preferred sports channels so that my news, live results, and notifications are personalized to my interests.",
+        "html_file": "onboarding_preferences.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As an authenticated football fan, I want to view a personalized football news feed so that I can stay informed about my favorite teams and preferred sports channels.",
+        "html_file": "home_dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As a match-day football fan, I want to follow live ticker updates for matches involving my favorite teams so that I can see scores, match status, and key events in near real time.",
+        "html_file": "live_match_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As an authenticated football fan, I want to access team, player, league, and competition information so that I can understand the football context around covered European matches and clubs.",
+        "html_file": "team_player_detail.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-006",
+        "story_text": "As an authenticated football fan, I want football content to be limited to the MVP coverage scope so that I receive consistent news, live ticker, team, player, league, competition, and match-report information for supported European competitions.",
+        "html_file": "team_player_detail.html",
+        "coverage": "none"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As an authenticated football fan, I want to open authorized third-party live broadcast links after a broadcast has begun so that I can access live viewing through legitimate providers.",
+        "html_file": "live_match_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As an authenticated football fan, I want to open authorized third-party live broadcast links after a broadcast has begun so that I can access live viewing through legitimate providers.",
+        "html_file": "stream_rights_state.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As an authenticated football fan, I want live broadcast links to be hidden when transmission rights are not fulfilled in my country so that the app complies with broadcast restrictions.",
+        "html_file": "live_match_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As an authenticated football fan, I want live broadcast links to be hidden when transmission rights are not fulfilled in my country so that the app complies with broadcast restrictions.",
+        "html_file": "stream_rights_state.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As an authenticated football fan, I want to opt in to notifications for my favorite teams so that I can receive timely alerts about news, results, and match updates that matter to me.",
+        "html_file": "onboarding_preferences.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As an authenticated football fan, I want to opt in to notifications for my favorite teams so that I can receive timely alerts about news, results, and match updates that matter to me.",
+        "html_file": "notification_settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-010",
+        "story_text": "As a social football fan, I want to share football news and match reports from the app so that I can discuss relevant football content through social media or native mobile sharing.",
+        "html_file": "news_article_share.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+        "html_file": "home_dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+        "html_file": "live_match_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+        "html_file": "news_article_share.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+        "html_file": "team_player_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-011",
+        "story_text": "As a mobile football fan with limited connectivity, I want to access previously loaded content offline so that I can continue reading football information when the connection is poor or unavailable.",
+        "html_file": "profile_privacy_offline.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+        "html_file": "onboarding_preferences.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+        "html_file": "home_dashboard.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+        "html_file": "live_match_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+        "html_file": "team_player_detail.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+        "html_file": "notification_settings.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-012",
+        "story_text": "As a mobile football fan using the app offline, I want server-dependent actions to be prevented so that I do not believe unsaved preferences or live refreshes have been applied when connectivity is unavailable.",
+        "html_file": "profile_privacy_offline.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+        "html_file": "home_dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+        "html_file": "live_match_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+        "html_file": "news_article_share.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+        "html_file": "team_player_detail.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-013",
+        "story_text": "As a mobile football fan, I want cached or outdated content to be clearly identified so that I understand when information may not be current.",
+        "html_file": "profile_privacy_offline.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "auth_login.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "onboarding_preferences.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "home_dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "live_match_detail.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "news_article_share.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "team_player_detail.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "stream_rights_state.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "notification_settings.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-014",
+        "story_text": "As an authenticated football fan, I want a clear mobile user interface that connects all core LiveFootball modules so that I can directly access news, live ticker, team/player information, stream links, notifications, personalization, sharing, and cached content.",
+        "html_file": "profile_privacy_offline.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+        "html_file": "auth_login.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+        "html_file": "onboarding_preferences.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+        "html_file": "news_article_share.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+        "html_file": "notification_settings.html",
+        "coverage": "partial"
+    },
+    {
+        "story_id": "US-016",
+        "story_text": "As a registered user, I want my personal data to be processed securely and in accordance with GDPR so that I can trust LiveFootball with my account, preferences, notifications, sharing, cached-content access, and feedback data.",
+        "html_file": "profile_privacy_offline.html",
+        "coverage": "full"
+    }
+]

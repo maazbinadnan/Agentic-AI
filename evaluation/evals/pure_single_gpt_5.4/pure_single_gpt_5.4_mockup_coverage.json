@@ -1,0 +1,56 @@
+[
+    {
+        "story_id": "US-001",
+        "story_text": "As a DigitalHome user, I want to log in to the system and see only the functions allowed for my role so that I can use the system securely and appropriately.",
+        "html_file": "login.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-002",
+        "story_text": "As a General User, I want to see the current status of my home devices and connectivity in one dashboard so that I can quickly understand the condition of the home.",
+        "html_file": "dashboard.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-003",
+        "story_text": "As a General User, I want to adjust thermostat set points from the web interface so that I can maintain a comfortable temperature in the home.",
+        "html_file": "environment_control.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-004",
+        "story_text": "As a General User, I want to adjust humidity set points from the web interface so that I can maintain comfortable humidity levels in the home.",
+        "html_file": "environment_control.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-005",
+        "story_text": "As a General User, I want to see security sensor status and alarm state so that I can detect a possible breach in the home.",
+        "html_file": "security_power.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-006",
+        "story_text": "As a General User, I want to turn appliances or lighting units on or off remotely so that I can manage convenience, safety, and energy use.",
+        "html_file": "security_power.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-007",
+        "story_text": "As a Master User, I want to manage user accounts and default settings so that the household system remains correctly configured.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-008",
+        "story_text": "As a DH Technician, I want to start, stop, and maintain the configured DigitalHome system so that I can support setup, maintenance, and troubleshooting.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    },
+    {
+        "story_id": "US-009",
+        "story_text": "As a Master User or DH Technician, I want system data to be stored and backed up so that configuration and operational information can be retained for continued use and recovery.",
+        "html_file": "admin_console.html",
+        "coverage": "full"
+    }
+]

@@ -1,0 +1,6 @@
+html_filename,violations_count,passes_count,incomplete_count,status
+auth_startup.html,3,18,1,FAIL (3 Violations)
+discover_details_streams.html,2,14,1,FAIL (2 Violations)
+following_profile_settings.html,2,15,1,FAIL (2 Violations)
+home_news.html,2,14,1,FAIL (2 Violations)
+live_ticker.html,2,12,1,FAIL (2 Violations)

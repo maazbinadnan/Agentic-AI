@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveFootball - Authentication & Startup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#042D13;--accent:#0B5E2B;--live:#16A34A;--danger:#DC2626;--link:#2563EB;--bg:#F8FAFC;--card:#FFFFFF;--muted:#EEF2F7;--border:#D6DEE8;--text:#0F172A;--sub:#475569;--phone-h:820px}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:linear-gradient(180deg,#eef7f0,#f8fafc 26%);color:var(--text)}
+    .wrap{padding:24px}.hero{max-width:1200px;margin:0 auto 18px}.hero h1{margin:0 0 6px;font-size:28px}.hero p{margin:0;color:var(--sub)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1200px;margin:0 auto;align-items:start}
+    .phone{background:#111827;padding:10px;border-radius:28px;box-shadow:0 18px 50px rgba(2,6,23,.18);height:calc(var(--phone-h) + 20px)} .screen{background:var(--bg);border-radius:20px;overflow-y:auto;overflow-x:hidden;height:var(--phone-h);display:flex;flex-direction:column;scrollbar-width:thin}
+    .top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--primary);color:#fff;position:sticky;top:0;z-index:2}.meta{font-size:12px;opacity:.9}
+    .status{padding:10px 16px;font-size:12px;color:var(--sub);display:flex;justify-content:space-between;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:52px;z-index:1}
+    .content{padding:18px 16px 22px;display:flex;flex-direction:column;gap:14px}.brand{padding:18px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff}
+    .brand h2{margin:0 0 6px;font-size:24px}.brand p{margin:0;color:rgba(255,255,255,.86)} .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#dcfce7;color:#166534;font-size:12px;font-weight:700}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:0 4px 14px rgba(15,23,42,.05)}
+    label{display:block;font-size:13px;font-weight:600;margin-bottom:7px} input{width:100%;padding:14px 12px;border-radius:12px;border:1px solid var(--border);font-size:15px;background:#fff}
+    .row{display:flex;gap:10px}.row>*{flex:1}.btn{border:0;border-radius:14px;padding:14px 16px;font-weight:700;font-size:15px;min-height:48px} .btn-primary{background:var(--primary);color:#fff}.btn-secondary{background:#fff;border:1px solid var(--border)}
+    .social{display:grid;gap:10px}.social .btn{display:flex;justify-content:center;align-items:center;background:#fff;border:1px solid var(--border)}
+    .banner{padding:12px 14px;border-radius:14px;font-size:14px}.error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}.warn{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa}.ok{background:#ecfdf5;color:#166534;border:1px solid #bbf7d0}
+    .skeleton{height:14px;border-radius:999px;background:linear-gradient(90deg,#e2e8f0,#f8fafc,#e2e8f0);background-size:200% 100%;animation:sh 1.6s infinite}.skeleton.big{height:74px;border-radius:16px}@keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .foot{margin-top:auto;padding:14px 16px;border-top:1px solid var(--border);background:#fff;color:var(--sub);font-size:12px}
+    .small{font-size:12px;color:var(--sub)} .link{color:var(--link);font-weight:600} .center{text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>LiveFootball Startup & Authentication</h1>
+      <p>Mobile-first sign-in and registration flow with performance cues, validation, and unsupported access handling.</p>
+    </div>
+    <div class="grid">
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Startup Access</strong><span class="meta">Populated / Ready State</span></div>
+        <div class="status"><span>09:41</span><span>Ready in 1.6s • iOS / Android supported</span></div>
+        <div class="content">
+          <div class="brand"><span class="pill">Fast start</span><h2>Welcome back to LiveFootball</h2><p>News, live scores, streams and favorites available right after sign-in.</p></div>
+          <div class="banner ok">App shell loaded successfully. You can sign in or create an account in under two taps.</div>
+          <div class="card">
+            <label>Email</label><input value="alex.meyer@mail.com" />
+            <div style="height:12px"></div>
+            <label>Password</label><input type="password" value="password123" />
+            <div style="height:12px"></div>
+            <div class="row"><button class="btn btn-primary">Log in</button><button class="btn btn-secondary">Create account</button></div>
+            <div style="height:10px"></div>
+            <div class="row"><div><input type="checkbox" checked style="width:auto;transform:scale(1.1);margin-right:6px"> <span class="small">Remember me</span></div><div class="small" style="text-align:right"><span class="link">Forgot password?</span></div></div>
+          </div>
+          <div class="card">
+            <div class="small" style="margin-bottom:10px">Continue with</div>
+            <div class="social">
+              <button class="btn">Apple</button>
+              <button class="btn">Google</button>
+            </div>
+          </div>
+          <div class="small center">By continuing, you agree to Terms and GDPR-compliant data processing.</div>
+        </div>
+        <div class="foot">Core features unlock after authentication: Home, Live, News, Following, Profile.</div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Startup Access</strong><span class="meta">Empty / Registration State</span></div>
+        <div class="status"><span>09:41</span><span>Loading shell • skeleton visible</span></div>
+        <div class="content">
+          <div class="brand"><span class="pill">New fan?</span><h2>Create your football profile</h2><p>Pick clubs, channels and notification preferences after sign-up.</p></div>
+          <div class="card">
+            <label>Full name</label><input placeholder="Enter your name" />
+            <div style="height:12px"></div>
+            <label>Email</label><input placeholder="name@example.com" />
+            <div style="height:12px"></div>
+            <label>Password</label><input placeholder="Choose a secure password" />
+            <div style="height:12px"></div>
+            <button class="btn btn-primary" style="width:100%">Create account</button>
+          </div>
+          <div class="card">
+            <div class="small" style="margin-bottom:8px">Perceived performance loader</div>
+            <div class="skeleton big"></div>
+            <div style="height:10px"></div>
+            <div class="skeleton"></div>
+            <div style="height:8px"></div>
+            <div class="skeleton" style="width:72%"></div>
+          </div>
+          <div class="small center">Already have an account? <span class="link">Sign in</span></div>
+        </div>
+        <div class="foot">Content remains blocked until registration or login is completed.</div>
+      </div></div>
+
+      <div class="phone"><div class="screen">
+        <div class="top"><strong>Startup Access</strong><span class="meta">Error / Unsupported State</span></div>
+        <div class="status"><span>09:41</span><span>Compatibility / validation issue</span></div>
+        <div class="content">
+          <div class="brand"><span class="pill" style="background:#fee2e2;color:#991b1b">Action needed</span><h2>We couldn't sign you in</h2><p>Please correct the errors below or use a supported mobile device.</p></div>
+          <div class="banner error">Invalid email or password. Access to app content is blocked until authentication succeeds.</div>
+          <div class="card">
+            <label>Email</label><input value="alex@" style="border-color:#ef4444;background:#fff5f5" />
+            <div class="small" style="color:#b91c1c;margin-top:6px">Enter a valid email address.</div>
+            <div style="height:12px"></div>
+            <label>Password</label><input placeholder="••••••••" style="border-color:#ef4444;background:#fff5f5" />
+            <div class="small" style="color:#b91c1c;margin-top:6px">Password is required.</div>
+            <div style="height:12px"></div>
+            <button class="btn btn-primary" style="width:100%">Try again</button>
+          </div>
+          <div class="banner warn">Unsupported environment detected: this app is available only on supported Android and iOS mobile devices.</div>
+        </div>
+        <div class="foot">If startup exceeds 2 seconds, show lightweight shell + loader instead of a blank screen.</div>
+      </div></div>
+    </div>
+  </div>
+</body>
+</html>
