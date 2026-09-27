@@ -280,17 +280,17 @@ def generate_all_charts():
 
     # 1. Football Dataset (foot)
     foot_invest = {
-        "hitl": evals_dir / "foot_hitl_gpt_5.4" / "hitl_gpt_5.5_invest_table.csv",
+        "hitl": evals_dir / "foot_hitl_gpt_5.4" / "foot_hitl_gpt_5.4_invest_table.csv",
         "review": evals_dir / "foot_rc_gpt_5.4" / "foot_rc_gpt_5.4_invest_table.csv",
         "single": evals_dir / "foot_single_gpt_5.4" / "single_gpt_5.5_invest_table.csv",
     }
     foot_embedding = {
-        "hitl": evals_dir / "foot_hitl_gpt_5.4" / "hitl_gpt_5.5_coverage_ratio_table.csv",
+        "hitl": evals_dir / "foot_hitl_gpt_5.4" / "foot_hitl_gpt_5.4_coverage_ratio_table.csv",
         "review": evals_dir / "foot_rc_gpt_5.4" / "foot_rc_gpt_5.4_coverage_ratio_table.csv",
         "single": evals_dir / "foot_single_gpt_5.4" / "single_gpt_5.5_coverage_ratio_table.csv",
     }
     foot_llm = {
-        "hitl": evals_dir / "foot_hitl_gpt_5.4" / "hitl_gpt_5.5_llm_eval_table.csv",
+        "hitl": evals_dir / "foot_hitl_gpt_5.4" / "foot_hitl_gpt_5.4_llm_eval_table.csv",
         "review": evals_dir / "foot_rc_gpt_5.4" / "foot_rc_gpt_5.4_llm_eval_table.csv",
         "single": evals_dir / "foot_single_gpt_5.4" / "single_gpt_5.5_llm_eval_table.csv",
     }
